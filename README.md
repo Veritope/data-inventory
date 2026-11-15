@@ -2,12 +2,8 @@
 
 An open, versioned catalog of the public datasets relevant to Veritope's work:
 tumor-antigen **presentation**, T-cell **recognition**, protein **design**, and
-the **comparative-oncology** (dog → human) setting we start in. This is Stage 0 of
-the [research agenda](https://veritope.com/research/): map the data before making
-modeling claims.
+the **comparative-oncology** (dog → human) setting we start in.
 
-It is built to be used, not just read — by our pipelines, by collaborators, and by
-automated agents. See [`AGENTS.md`](AGENTS.md) for programmatic use.
 
 ## Start with the synthesis
 [`OVERVIEW.md`](OVERVIEW.md) reads the catalog: what we have, what to use first for
