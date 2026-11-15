@@ -7858,6 +7858,162 @@
     "commercial_use": null
   },
   {
+    "id": "ab-bind",
+    "name": "AB-Bind (antibody binding mutational database)",
+    "category": "functional-assay",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "Curated set of experimental binding free-energy changes (ddG) for point and multiple mutations in antibody-antigen (and related) complexes, each mapped to a solved PDB structure. Built as a benchmark for computational affinity- change prediction.\n",
+    "scale": "1,101 mutational variants across 32 antibody-antigen complexes, each with measured ddG",
+    "modalities": [
+      "binding-affinity",
+      "ddg",
+      "mutation",
+      "complex-structure"
+    ],
+    "formats": [
+      "csv",
+      "xlsx"
+    ],
+    "landing_url": "https://onlinelibrary.wiley.com/doi/10.1002/pro.2829",
+    "download_url": "https://onlinelibrary.wiley.com/doi/10.1002/pro.2829",
+    "license": "unknown",
+    "license_url": "https://onlinelibrary.wiley.com/doi/10.1002/pro.2829",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Keating Lab, MIT (Sirin, Apgar, Bennett, Keating)",
+      "key_refs": [
+        "10.1002/pro.2829"
+      ]
+    },
+    "last_updated": "2016",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "A focused antibody-antigen ddG benchmark for affinity-maturation / binder-optimization models — smaller and more antibody-specific than SKEMPI, and routinely paired with it for evaluation.\n"
+    },
+    "agent_access": "Dataset lives in the Protein Science article's supplementary files; copies are widely mirrored on GitHub by reusers. No API; fetch the SI tables.\n",
+    "caveats": "No explicit data license on the SI (mark unknown; confirm before redistribution). Small and well-trodden — risk of train/test leakage with SKEMPI 2.0 (overlapping complexes). Some entries are non-antibody PPIs.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://onlinelibrary.wiley.com/doi/10.1002/pro.2829",
+    "commercial_use": null
+  },
+  {
+    "id": "abrank-benchmark",
+    "name": "AbRank — antibody-antigen affinity ranking benchmark",
+    "category": "functional-assay",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "A large aggregated antibody-antigen binding benchmark reframing affinity prediction as pairwise ranking, pooling >380,000 binding assays from nine public sources with a fold-difference filter to form robust train/test pairs. Ships a metric-learning framework and standard splits.\n",
+    "scale": ">380,000 binding assays aggregated from 9 sources; main CSV ~296 MB",
+    "size_bytes": 310378496,
+    "modalities": [
+      "binding-affinity",
+      "ic50",
+      "kd",
+      "escape-fraction",
+      "antibody-sequence",
+      "ranking-pairs"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://arxiv.org/abs/2506.17857",
+    "download_url": "https://www.kaggle.com/datasets/aurlienplissier/abrank",
+    "api": "https://github.com/biochunan/AbRank-WALLE-Affinity",
+    "license": "unknown",
+    "license_url": "https://www.kaggle.com/datasets/aurlienplissier/abrank",
+    "access": "registration",
+    "provenance": {
+      "maintainer": "Plissier et al. (AbRank)",
+      "key_refs": [
+        "10.48550/arXiv.2506.17857"
+      ]
+    },
+    "last_updated": "2025",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "A ready-made, de-leaked ranking benchmark across many antibody-antigen affinity sources — directly usable to evaluate binder affinity-ranking models without rebuilding the aggregation.\n"
+    },
+    "agent_access": "Dataset on Kaggle (Kaggle account/registration to download); code + splits on GitHub (biochunan/AbRank-WALLE-Affinity).\n",
+    "caveats": "Aggregates sources ALREADY in or overlapping this catalog (AlphaSeq, SAbDab, SKEMPI-v2, HER2-binders, CATNAP, RBD-escape, Ab-CoV, AIntibody) — major dedup/leakage risk if combined with their primary entries. Kaggle download requires registration. Per-source licenses are inherited and mixed; the aggregate has no single stated data license (mark unknown).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://github.com/biochunan/AbRank-WALLE-Affinity",
+    "commercial_use": null
+  },
+  {
+    "id": "absci-her2-binders",
+    "name": "Absci de novo anti-HER2 antibody binders (Shanehsazzadeh 2023)",
+    "category": "functional-assay",
+    "species": [
+      "human"
+    ],
+    "description": "Open-sourced experimental results from a generative de novo antibody-design campaign: >400,000 HER2-targeted variants screened, with 421 SPR-validated binders and their measured affinities (KD), including Fab/mAb affinities and cross-species (cyno/mouse/canine) HER2 binding. A rare released wet-lab output of a real binder-design pipeline.\n",
+    "scale": ">400,000 designed variants screened; 421 SPR-characterised binders with KD",
+    "modalities": [
+      "binding-affinity",
+      "kd",
+      "spr",
+      "de-novo-design",
+      "antibody-sequence"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://www.biorxiv.org/content/10.1101/2023.01.08.523187v1",
+    "download_url": "https://github.com/AbSciBio/unlocking-de-novo-antibody-design",
+    "api": "https://github.com/AbSciBio/unlocking-de-novo-antibody-design",
+    "license": "unknown",
+    "license_url": "https://github.com/AbSciBio/unlocking-de-novo-antibody-design",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Absci Corporation (Shanehsazzadeh et al.)",
+      "key_refs": [
+        "10.1101/2023.01.08.523187"
+      ]
+    },
+    "last_updated": "2023-2024 (preprint updates)",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Direct precedent and benchmark for the binder-design program: real generative-design outputs with experimental SPR validation against a defined target, exactly the task Veritope aims to do for its targets.\n"
+    },
+    "agent_access": "CSV files in the AbSciBio GitHub repo (zero-shot-binders.csv etc.); clone to fetch. No API/auth.\n",
+    "caveats": "Single target (HER2). Repo license not explicitly stated (mark unknown; confirm reuse terms). Preprint, not peer-reviewed; selection pipeline biases the released positives.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://github.com/AbSciBio/unlocking-de-novo-antibody-design",
+    "commercial_use": null
+  },
+  {
     "id": "absolut",
     "name": "Absolut! in silico antibody-antigen binding database",
     "category": "functional-assay",
@@ -7912,6 +8068,57 @@
     "commercial_use": null
   },
   {
+    "id": "alphaseq-antibody-affinity",
+    "name": "AlphaSeq antibody-affinity dataset (anti-SARS-CoV-2 scFv)",
+    "category": "functional-assay",
+    "species": [
+      "human"
+    ],
+    "description": "A large quantitative antibody-antigen affinity dataset: scFv-format antibodies assayed by the AlphaSeq yeast-mating platform against a SARS-CoV-2 HR2 peptide, with predicted KD values spanning ~37 pM to ~22 mM. One of the largest single-target experimental affinity datasets released.\n",
+    "scale": "104,972 scFv designs built into the library; ~71,384 with an affinity value (triplicate)",
+    "modalities": [
+      "binding-affinity",
+      "kd",
+      "scfv",
+      "antibody-sequence"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://www.nature.com/articles/s41597-022-01779-4",
+    "download_url": "https://zenodo.org/records/5095284",
+    "license": "CC BY 4.0",
+    "license_url": "https://zenodo.org/records/5095284",
+    "access": "open",
+    "provenance": {
+      "maintainer": "MIT Lincoln Laboratory / A-Alpha Bio (Engelhart et al.)",
+      "key_refs": [
+        "10.1038/s41597-022-01779-4"
+      ],
+      "accessions": [
+        "10.5281/zenodo.5095284"
+      ]
+    },
+    "last_updated": "2022",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "A dense, quantitative affinity landscape against one target — ideal for training/benchmarking affinity-prediction and affinity-maturation models central to binder design.\n"
+    },
+    "agent_access": "Single CSV on Zenodo (plus GitHub mit-ll/AlphaSeq_Antibody_Dataset), no auth. Trivial to automate.\n",
+    "caveats": "Affinities are platform-\"predicted\" (AlphaSeq normalized scores), not SPR KD; single antigen/epitope. Minor count discrepancies between the paper and downstream benchmarks (~71.4k vs ~71.8k) — verify against the Zenodo file.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://zenodo.org/records/5095284",
+    "commercial_use": true
+  },
+  {
     "id": "alphaseq-sarscov2",
     "name": "AlphaSeq antibody-antigen binding dataset (SARS-CoV-2 peptide)",
     "category": "functional-assay",
@@ -7962,29 +8169,33 @@
   },
   {
     "id": "antijen",
-    "name": "AntiJen v2.0 — quantitative immunology database (TAP, proteasome, MHC)",
+    "name": "AntiJen Database (quantitative binding, functional & immunogenicity data)",
     "category": "functional-assay",
     "species": [
       "human",
       "mouse",
       "other"
     ],
-    "description": "Database integrating quantitative functional, thermodynamic, kinetic, biophysical and cellular immunology measurements, including peptide binding to TAP transporters and proteasome cleavage/ processing data, alongside peptide-MHC and TCR/antibody binding. A primary source of antigen- processing (TAP transport + proteasomal cleavage) training data; successor to JenPep.\n",
-    "scale": "~24,000-31,000 curated entries from published experiments",
+    "description": "A curated database of quantitative binding data and functional immunology measurements, including peptide-MHC binding affinities, TCR-pMHC and peptide-protein interactions, T-cell epitopes, and continuous/discontinuous B-cell epitopes, with kinetic/thermodynamic and functional (immunogenicity) annotations drawn from the literature. An older but genuinely distinct, quantitatively-annotated resource predating much of IEDB's growth — useful for binding-kinetics and functional labels.\n",
+    "scale": "~24,000+ quantitative entries spanning pMHC binding, TCR-pMHC, T-cell/B-cell epitopes",
     "modalities": [
       "tap-binding",
       "proteasome-cleavage",
       "mhc-binding",
-      "functional-assay"
+      "functional-assay",
+      "binding-assay",
+      "tcr-epitope",
+      "antibody-epitope"
     ],
     "formats": [
       "web",
-      "html"
+      "html",
+      "web-query"
     ],
     "landing_url": "https://www.ddg-pharmfac.net/antijen/AntiJen/antijenhomepage.htm",
     "download_url": "https://www.ddg-pharmfac.net/antijen/AntiJen/antijenhomepage.htm",
     "license": "unknown",
-    "license_url": "unknown",
+    "license_url": "http://www.ddg-pharmfac.net/antijen/AntiJen/antijenhomepage.htm",
     "access": "open",
     "accessions": [],
     "provenance": {
@@ -7997,12 +8208,13 @@
     "relevance": {
       "programs": [
         "presentation",
-        "design"
+        "design",
+        "recognition"
       ],
-      "why": "Rare source of quantitative TAP-transport and proteasome-cleavage data — the processing steps that gate which non-canonical/spliced sequences can ever reach HLA.\n"
+      "why": "Quantitative binding and functional/immunogenicity annotations (kinetics, thermodynamics) that complement IEDB's qualitative breadth; a distinct historical corpus for binding-kinetics modelling.\n"
     },
-    "agent_access": "Web search interface only (per-category search pages); no bulk-download/API documented — likely requires scraping. RRID:SCR_001750.\n",
-    "caveats": "NO explicit license (flag). Legacy resource (core data ~2005, not actively updated); verify the ddg-pharmfac.net mirror resolves. Mixed species.\n",
+    "agent_access": "Web query interface only (no documented bulk download or API) — scraping required; legacy host may be intermittently available. Verify the site resolves before relying on it.\n",
+    "caveats": "No explicit license posted — mark license unknown; confirm reuse terms before redistribution. Legacy resource: not actively maintained, host availability can lapse, and much of its content is now also in IEDB (dedup needed). No bulk export; agent access is scrape-only.\n",
     "agent_automatable": true,
     "open_access": true,
     "feeds_stages": [
@@ -8124,7 +8336,8 @@
     "category": "functional-assay",
     "species": [
       "human",
-      "mouse"
+      "mouse",
+      "other"
     ],
     "description": "A living benchmark aggregating experimentally measured therapeutic-antibody \"fitness\"/developability properties (e.g. binding affinity, thermostability, expression, aggregation, polyreactivity, viscosity, immunogenicity) across many published studies, with scoring scripts to test whether protein/antibody AI models can predict these properties.\n",
     "scale": "FLAb2 (2025): developability data for >4M antibodies across 32 studies, 7 properties (FLAb v1 covered 6 properties)",
@@ -8134,13 +8347,15 @@
       "thermostability",
       "expression",
       "polyreactivity",
-      "antibody-sequence"
+      "antibody-sequence",
+      "aggregation",
+      "sequence"
     ],
     "formats": [
       "csv"
     ],
     "landing_url": "https://github.com/Graylab/FLAb",
-    "download_url": "https://github.com/Graylab/FLAb",
+    "download_url": "https://registry.opendata.aws/flab/",
     "license": "CC BY 4.0",
     "license_url": "https://registry.opendata.aws/flab/",
     "access": "open",
@@ -8151,7 +8366,7 @@
         "10.64898/2025.12.27.696706"
       ]
     },
-    "last_updated": "2025",
+    "last_updated": "2025 (FLAb2 preprint); v1 2024",
     "relevance": {
       "programs": [
         "design"
@@ -8160,6 +8375,7 @@
     },
     "agent_access": "GitHub repo with datasets under data/ (organised by property) and scoring scripts under models/; also mirrored on the AWS Open Data Registry. No auth; clone/download directly. Per-dataset licenses listed in data/README.md.\n",
     "caveats": "Aggregate license given as CC BY 4.0 (AWS Open Data Registry), but individual constituent datasets have their own licenses listed in data/README.md — check per dataset before redistribution. Properties/assays are heterogeneous across source studies; FLAb2 itself reports current AI models fail to predict most (~80%) developability datasets, so treat as a hard benchmark.\n",
+    "api": "https://github.com/Graylab/FLAb",
     "agent_automatable": true,
     "open_access": true,
     "feeds_stages": [
@@ -8375,6 +8591,55 @@
     "commercial_use": null
   },
   {
+    "id": "jain-2017-developability",
+    "name": "Clinical-stage antibody biophysical/developability landscape (Jain 2017)",
+    "category": "functional-assay",
+    "species": [
+      "human",
+      "other"
+    ],
+    "description": "Head-to-head biophysical characterisation of 137 clinical-stage antibodies (incl. 48 approved) rebuilt as isotype-matched IgG1 and run through 12 developability assays (expression, solubility/self-association, thermal and colloidal stability, polyspecificity, HIC, cross-interaction, etc.). A benchmark reference for antibody developability.\n",
+    "scale": "137 antibodies x 12 biophysical assays",
+    "modalities": [
+      "biophysical-assay",
+      "developability",
+      "sequence"
+    ],
+    "formats": [
+      "xlsx",
+      "pdf"
+    ],
+    "landing_url": "https://www.pnas.org/doi/10.1073/pnas.1616408114",
+    "download_url": "https://www.pnas.org/doi/10.1073/pnas.1616408114",
+    "license": "unknown",
+    "license_url": "https://www.pnas.org/doi/10.1073/pnas.1616408114",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Adimab (Jain, Sun, Wittrup et al.)",
+      "key_refs": [
+        "10.1073/pnas.1616408114"
+      ]
+    },
+    "last_updated": "2017",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "The de facto gold-standard developability benchmark for real clinical antibodies — the target distribution a binder-design pipeline's outputs should resemble on manufacturability/liability axes.\n"
+    },
+    "agent_access": "Per-antibody assay values are in the PNAS supplementary dataset; no API. Fetch the SI tables.\n",
+    "caveats": "Only 137 molecules; assays are legacy formats. SI data license not stated (mark unknown). Sequences must be recovered from the SI / INN lookups.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.pnas.org/doi/10.1073/pnas.1616408114",
+    "commercial_use": null
+  },
+  {
     "id": "keskin-2019-neovax-gbm",
     "name": "Keskin 2019 personal neoantigen vaccine (glioblastoma; dbGaP phs001519)",
     "category": "functional-assay",
@@ -8425,6 +8690,54 @@
     "commercial_use": null
   },
   {
+    "id": "mason-2021-trastuzumab-dms",
+    "name": "Trastuzumab CDR-H3 deep mutational scan for HER2 binding (Mason 2021)",
+    "category": "functional-assay",
+    "species": [
+      "human"
+    ],
+    "description": "A deep mutational scanning dataset of trastuzumab variants (primarily CDR-H3) screened by mammalian display + FACS and deep sequencing into HER2-binder / non-binder classes, released as a benchmark for sequence-to-specificity learning and antibody optimization.\n",
+    "scale": "~36,000 classified CDR-H3 variants (binder vs non-binder); library ~10^4-10^5 designed",
+    "modalities": [
+      "binding-classification",
+      "deep-mutational-scanning",
+      "antibody-sequence",
+      "display-screen"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://www.nature.com/articles/s41551-021-00699-9",
+    "download_url": "https://www.nature.com/articles/s41551-021-00699-9",
+    "license": "unknown",
+    "license_url": "https://www.nature.com/articles/s41551-021-00699-9",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Reddy Lab, ETH Zurich (Mason, Friedensohn et al.)",
+      "key_refs": [
+        "10.1038/s41551-021-00699-9"
+      ]
+    },
+    "last_updated": "2021",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "A clean single-target binding DMS on a clinical antibody's CDR-H3 — a canonical benchmark for the sequence->binding models that underpin CDR-focused binder design and affinity maturation.\n"
+    },
+    "agent_access": "Classified-variant tables are in the paper's data availability / SI and are widely reused via community GitHub mirrors. Fetch the SI/mirror CSVs.\n",
+    "caveats": "Binary binder/non-binder labels (not quantitative KD); single target (HER2), mostly CDR-H3. Known label conflicts (~2,300 sequences) must be resolved before splitting. SI data license not explicitly stated (mark unknown).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.nature.com/articles/s41551-021-00699-9",
+    "commercial_use": null
+  },
+  {
     "id": "nasal-carcinoma-organoids-2026",
     "name": "Canine Nasal Carcinoma Organoid RNA-seq (Front Vet Sci 2026)",
     "category": "functional-assay",
@@ -8467,6 +8780,54 @@
       3
     ],
     "ingest_endpoint": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13741214",
+    "commercial_use": null
+  },
+  {
+    "id": "nbthermo",
+    "name": "NbThermo (nanobody thermostability database)",
+    "category": "functional-assay",
+    "species": [
+      "other"
+    ],
+    "description": "Manually curated database of experimental nanobody thermostability (melting temperature Tm) with sequences and associated metadata, assembled from the literature. A rare quantitative biophysical-property set for the single-domain binder modality.\n",
+    "scale": "~564 nanobodies with measured Tm (manually curated)",
+    "modalities": [
+      "nanobody",
+      "thermostability",
+      "biophysical-assay",
+      "sequence"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://valdes-tresanco-ms.github.io/NbThermo/",
+    "download_url": "https://valdes-tresanco-ms.github.io/NbThermo/",
+    "license": "unknown",
+    "license_url": "https://academic.oup.com/database/article/doi/10.1093/database/baad021/7115729",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Valdes-Tresanco et al.",
+      "key_refs": [
+        "10.1093/database/baad021"
+      ]
+    },
+    "last_updated": "2023",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Developability (stability) labels for nanobody binders — useful for multi-objective binder design where stability matters alongside affinity.\n"
+    },
+    "agent_access": "Downloadable table from the GitHub-Pages site; small. Paper in the Database journal (typically CC BY) but confirm the data-file license directly.\n",
+    "caveats": "Small, literature-aggregated; Tm assay conditions vary across sources. Data-file license not explicitly stated (mark unknown).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://valdes-tresanco-ms.github.io/NbThermo/",
     "commercial_use": null
   },
   {
@@ -8623,6 +8984,116 @@
     "commercial_use": null
   },
   {
+    "id": "ppb-affinity",
+    "name": "PPB-Affinity (protein-protein binding affinity dataset)",
+    "category": "functional-assay",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "A harmonised protein-protein binding affinity dataset pairing experimental KD/affinity values with complex crystal structures and chain/receptor-ligand annotations, compiled from SKEMPI v2.0, SAbDab, Affinity Benchmark v5.5, PDBbind v2020 and ATLAS. Includes antibody-antigen and TCR-pMHC subgroups.\n",
+    "scale": "~12,000 complexes (reported 12,052 samples from 3,027 PDB entries; ~12,019 after preprocessing)",
+    "modalities": [
+      "binding-affinity",
+      "kd",
+      "complex-structure",
+      "mutation",
+      "antibody-antigen",
+      "tcr-pmhc"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://www.nature.com/articles/s41597-024-03997-4",
+    "download_url": "https://zenodo.org/records/14271435",
+    "api": "https://github.com/ChenPy00/PPB-Affinity",
+    "license": "CC BY 4.0",
+    "license_url": "https://www.nature.com/articles/s41597-024-03997-4",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Liu, Chen, Zhai et al.",
+      "key_refs": [
+        "10.1038/s41597-024-03997-4"
+      ],
+      "accessions": [
+        "10.5281/zenodo.14271435"
+      ]
+    },
+    "last_updated": "2024 (Scientific Data v11:1316)",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "A structure-paired affinity set spanning antibody-antigen and TCR-pMHC — directly usable as a training/benchmark set for binder affinity prediction across both Veritope recognition and design modalities.\n"
+    },
+    "agent_access": "CSV on Zenodo + baseline model/weights on GitHub (ChenPy00/PPB-Affinity). No auth.\n",
+    "caveats": "Aggregated from five sources (SKEMPI2, SAbDab, Affinity Benchmark, PDBbind, ATLAS) — heavy overlap with existing catalog entries; dedup before combining. Source datasets carry their own (sometimes non-CC) terms despite the Zenodo CC BY 4.0 wrapper — check per-source before redistribution.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://github.com/ChenPy00/PPB-Affinity",
+    "commercial_use": true
+  },
+  {
+    "id": "ppi-affinity-benchmark5",
+    "name": "Protein-Protein Docking Benchmark 5 & Affinity Benchmark v2 (Weng lab)",
+    "category": "functional-assay",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "The integrated non-redundant benchmark of protein-protein complexes with bound+unbound structures (Docking Benchmark 5) and the subset with measured binding affinities (Affinity Benchmark v2), including an antibody-antigen category. The standard blind benchmark for docking and affinity prediction; maintained as DB5.5.\n",
+    "scale": "DB5: 230 complexes (incl. antibody-antigen cases); Affinity Benchmark v2: 179 complexes with measured KD",
+    "modalities": [
+      "complex-structure",
+      "binding-affinity",
+      "kd",
+      "docking",
+      "antibody-antigen"
+    ],
+    "formats": [
+      "pdb",
+      "csv"
+    ],
+    "landing_url": "https://zlab.wenglab.org/benchmark/",
+    "download_url": "https://zlab.wenglab.org/benchmark/",
+    "license": "unknown",
+    "license_url": "https://zlab.wenglab.org/benchmark/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Weng Lab, UMass Chan Medical School (Vreven, Moal et al.)",
+      "key_refs": [
+        "10.1016/j.jmb.2015.07.016"
+      ]
+    },
+    "last_updated": "DB5.5 (ongoing); v2 affinity 2015",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "The community-standard structural docking/affinity benchmark with an antibody-antigen split — for evaluating binder docking and affinity models against curated non-redundant complexes.\n"
+    },
+    "agent_access": "Download bundles of bound/unbound PDBs and affinity tables from the Weng lab page; a cleaned HADDOCK-ready copy is on GitHub (haddocking/BM5-clean). No auth.\n",
+    "caveats": "Academic benchmark; explicit redistribution license not stated (mark unknown). Small and canonical — high leakage risk if used for both train and test. Some linked affinity URLs in the paper are stale; use the current zlab page.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://zlab.wenglab.org/benchmark/",
+    "commercial_use": null
+  },
+  {
     "id": "prjdb17594-chs-celllines-rnaseq",
     "name": "PRJDB17594 — RNA-seq of 11 Canine Histiocytic Sarcoma Cell Lines (Vet Comp Oncol 2025)",
     "category": "functional-assay",
@@ -8763,6 +9234,58 @@
     ],
     "ingest_endpoint": "unknown",
     "commercial_use": null
+  },
+  {
+    "id": "skempi2-xref",
+    "name": "SKEMPI 2.0 (cross-reference — already catalogued)",
+    "category": "functional-assay",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "Pointer only. The Structural database of Kinetics and Energetics of Mutant Protein Interactions (ddG/kinetics on mutated PPI complexes, including many antibody-antigen and some TCR-pMHC) is the backbone affinity-mutation set for the design program. Recorded here for completeness of the antibody-binding domain.\n",
+    "scale": "~7,000+ mutations across ~345 complexes (antibody-antigen subset is large)",
+    "modalities": [
+      "binding-affinity",
+      "ddg",
+      "kinetics",
+      "mutation",
+      "complex-structure"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://life.bsc.es/pid/skempi2/",
+    "download_url": "https://life.bsc.es/pid/skempi2/database/index",
+    "license": "custom (academic; see site)",
+    "license_url": "https://life.bsc.es/pid/skempi2/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Barcelona Supercomputing Center / Moal & Fernandez-Recio",
+      "key_refs": [
+        "10.1093/bioinformatics/bty635"
+      ]
+    },
+    "last_updated": "2019 (v2.0)",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "Already fully catalogued as `skempi2` in domain-6. Listed here only so the antibody-binding domain is self-describing; do not double-count.\n"
+    },
+    "agent_access": "Bulk CSV download, no auth. See the primary `skempi2` entry for details.\n",
+    "caveats": "DUPLICATE of the existing `skempi2` entry — reference only, exclude from any deduplicated master count.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://life.bsc.es/pid/skempi2/database/index",
+    "commercial_use": false
   },
   {
     "id": "specht-2020-proteasome-peptide-db",
@@ -10434,6 +10957,58 @@
     "commercial_use": true
   },
   {
+    "id": "iedb-mhci-auto-benchmark",
+    "name": "IEDB automated weekly benchmark for peptide-MHC class I (and class II) binding predictions",
+    "category": "mhc-binding",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "A continuously updated, prospective benchmark in which newly deposited IEDB binding/elution data are used to score MHC binding predictors each week *before* the data are publicly released — avoiding the train/test overlap that plagues retrospective benchmarks. Live leaderboards and the per-week benchmark datasets (peptides, measured values, allele, prediction scores) are published for class I and class II. The canonical neutral evaluation set for pMHC binding/presentation methods.\n",
+    "scale": "Prospective weekly datasets since 2014; many alleles; per-week peptide sets with measured values",
+    "modalities": [
+      "binding-assay",
+      "mhc-ligand-elution",
+      "prediction-benchmark"
+    ],
+    "formats": [
+      "html",
+      "csv",
+      "tsv"
+    ],
+    "landing_url": "https://tools.iedb.org/auto_bench/mhci/weekly/",
+    "download_url": "https://tools.iedb.org/auto_bench/mhci/weekly/",
+    "license": "custom (IEDB terms)",
+    "license_url": "https://www.iedb.org/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "IEDB Analysis Resource + DTU (Trolle, Nielsen, Peters et al.)",
+      "key_refs": [
+        "10.1093/bioinformatics/btv123"
+      ]
+    },
+    "last_updated": "ongoing (weekly since 2014-03-21)",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "The least-biased way to judge pMHC prediction performance and to choose a presentation model; directly relevant to validating any in-house binding/presentation predictor.\n"
+    },
+    "agent_access": "Public web tables, per-week downloadable datasets, no auth. Agent-fetchable; iterate weekly pages.\n",
+    "caveats": "Benchmark peptides come from IEDB deposits (already-catalogued IEDB upstream) — honor IEDB terms for the underlying measurements. Coverage skews to well-studied alleles; weekly set sizes vary (some weeks small). Leaderboard pages can be stale in cached form — pull live. No standalone SPDX license.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2
+    ],
+    "ingest_endpoint": "https://tools.iedb.org/auto_bench/mhci/weekly/",
+    "commercial_use": null
+  },
+  {
     "id": "iedb-mhci-binding-benchmark-bd2013",
     "name": "IEDB MHC-I quantitative binding retraining & reliability benchmark (Kim 2014; BD2009/BD2013)",
     "category": "mhc-binding",
@@ -10489,6 +11064,54 @@
     ],
     "ingest_endpoint": "https://tools.iedb.org/static/main/benchmark_mhci_reliability.tar.gz",
     "commercial_use": null
+  },
+  {
+    "id": "iedb-mhcii-binding-dataset",
+    "name": "IEDB MHC class II binding dataset (benchmark binding-affinity collection)",
+    "category": "mhc-binding",
+    "species": [
+      "human",
+      "mouse"
+    ],
+    "description": "The curated MHC class II peptide-binding dataset distributed via the IEDB Analysis Resource download page — quantitative binding measurements for HLA-DR, HLA-DP, HLA-DQ and mouse H-2 class II molecules, assembled as a standard training/benchmark set for class II binding predictors. Companion to the IEDB MHC class I binding datasets and the basis for several published class II prediction benchmarks.\n",
+    "scale": "Tens of thousands of peptide-MHCII binding measurements across DR/DP/DQ + murine H-2",
+    "modalities": [
+      "binding-assay"
+    ],
+    "formats": [
+      "csv",
+      "txt"
+    ],
+    "landing_url": "https://tools.iedb.org/mhcii/download/",
+    "download_url": "https://tools.iedb.org/mhcii/download/",
+    "license": "custom (IEDB free use; non-commercial clauses possible)",
+    "license_url": "https://www.iedb.org/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "IEDB Analysis Resource (La Jolla Institute for Immunology; NIH/NIAID funded)",
+      "key_refs": [
+        "10.1186/1471-2105-11-568"
+      ]
+    },
+    "last_updated": "unknown",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Standard, reproducible class II binding benchmark for training/validating predictors and for deimmunization scoring; complements the EL-centric NetMHCIIpan sets.\n"
+    },
+    "agent_access": "Direct file download from the IEDB tools page, no auth. Agent-fetchable.\n",
+    "caveats": "Derived from IEDB curated assays (already-catalogued IEDB is the primary source) — this is the packaged benchmark subset, not a re-listing of the full IEDB. Confirm exact IEDB reuse terms (generally free for research; check for non-commercial clauses). Class II binding cores are ambiguous (register inference needed). Allele coverage is uneven.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2
+    ],
+    "ingest_endpoint": "https://tools.iedb.org/mhcii/download/",
+    "commercial_use": false
   },
   {
     "id": "ipd-mhc-dla",
@@ -10591,24 +11214,28 @@
   },
   {
     "id": "mhc-motif-atlas",
-    "name": "MHC Motif Atlas (binding specificities & ligands)",
+    "name": "MHC Motif Atlas (binding specificities, motifs & ligands for MHC-I and MHC-II)",
     "category": "mhc-binding",
     "species": [
       "human",
       "mouse",
       "other"
     ],
-    "description": "Curated database of MHC-I and MHC-II binding motifs, peptide length distributions, phospho-ligand motifs, multiple specificities, and links to X-ray structures, plus downloadable curated MHC ligand datasets. Derived largely from mono-allelic/deconvolved immunopeptidomics. Mix of curated experimental ligands and motif models.\n",
+    "description": "A database of MHC binding specificities and ligands covering thousands of MHC class I and class II molecules across species, with binding motifs (sequence logos), peptide-length distributions, ligand lists, multiple-specificity annotations, motifs for phosphorylated ligands, and links to crystal structures where available. Aggregates and curates MS immunopeptidomics and prediction-derived motifs into a browsable, downloadable reference of allele-level presentation specificity.\n",
     "scale": "Thousands of class I and class II MHC molecules; curated ligand lists + motifs + PDB links",
     "modalities": [
       "binding-motif",
       "mhc-ligand-elution",
       "structure-link",
+      "mhc-binding-motif",
+      "mhc-ligand",
+      "peptide-list",
       "mhc-binding"
     ],
     "formats": [
       "txt",
       "csv",
+      "logo-images",
       "web"
     ],
     "landing_url": "http://mhcmotifatlas.org/",
@@ -10628,10 +11255,10 @@
         "presentation",
         "design"
       ],
-      "why": "Clean per-allele motifs and curated ligand lists (human, mouse, cattle, chicken) useful for benchmarking presentation models and sanity-checking allele motifs.\n"
+      "why": "Allele-resolved presentation motifs for both class I and class II in one place — fast priors for antigen filtering, motif QC of predictions, and cross-species transfer; includes non-canonical (phospho) ligand motifs.\n"
     },
     "agent_access": "Direct text/CSV downloads of all_peptides.txt and sequence files (paths observed via third-party tooling; confirm on site). No auth; bulk-downloadable.\n",
-    "caveats": "CC BY-NC (non-commercial) per the Lausanne repository record - RED FLAG for a commercial company: non-commercial clause likely restricts commercial ML use. Confirm exact license text before training production models. No canine.\n",
+    "caveats": "No explicit SPDX license posted (\"free/open access\" = access, not reuse rights) — confirm terms before redistribution. Motifs are a mix of MS-derived and prediction-derived; ligand lists re-aggregate data whose primary sources (incl. IEDB, published immunopeptidomes) carry their own terms. Non-classical HLA-E/F/G coverage is limited.\n",
     "cross_listed": true,
     "agent_automatable": true,
     "open_access": true,
@@ -10837,6 +11464,57 @@
     ],
     "ingest_endpoint": "https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/",
     "commercial_use": null
+  },
+  {
+    "id": "netmhciipan43-training",
+    "name": "NetMHCIIpan-4.3 training & evaluation data (HLA class II eluted-ligand + binding)",
+    "category": "mhc-binding",
+    "species": [
+      "human",
+      "other"
+    ],
+    "description": "Training and benchmark datasets behind NetMHCIIpan-4.3, the MHC class II antigen-presentation predictor covering HLA-DR, HLA-DP, HLA-DQ (and BoLA-II). The release extends the eluted-ligand (EL) data with new HLA-DP, HLA-DR and BoLA-II mass-spec immunopeptidomes alongside binding-affinity (BA) measurements, with an allele-to-cell-line mapping file and MHC pseudosequence file. A reported BA subset covers 125,985 peptides across 72 HLA alleles. Distinct from (and newer than) the NetMHCIIpan-4.0 set already catalogued.\n",
+    "scale": "EL (multi-allele MS) + BA (~125,985 peptides / 72 HLA alleles) across DR/DP/DQ + BoLA-II",
+    "modalities": [
+      "mhc-ligand-elution",
+      "binding-assay"
+    ],
+    "formats": [
+      "txt",
+      "dat",
+      "tsv"
+    ],
+    "landing_url": "https://services.healthtech.dtu.dk/services/NetMHCIIpan-4.3/",
+    "download_url": "https://services.healthtech.dtu.dk/services/NetMHCIIpan-4.3/",
+    "license": "custom (academic/non-commercial)",
+    "license_url": "https://services.healthtech.dtu.dk/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "DTU Health Tech (Nilsson, Reynisson, Nielsen et al.)",
+      "key_refs": [
+        "10.1126/sciadv.adj6367"
+      ]
+    },
+    "last_updated": "2023",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition",
+        "design"
+      ],
+      "why": "State-of-the-art class II presentation training data (CD4 help, deimmunization, therapeutic-protein immunogenicity). Class II is critical for neoantigen vaccines and for predicting anti-drug T-help.\n"
+    },
+    "agent_access": "Training/eval archives download from the DTU service page (no auth). Agent-fetchable; verify exact archive URL on the page (links occasionally move between release pages).\n",
+    "caveats": "RED FLAG: DTU Health Tech tools/data carry academic/non-commercial terms — commercial use requires a separate licence; confirm before any commercial training use. Overlaps conceptually with the already- catalogued netmhciipan40-train-set (domain-11) — this is the expanded 4.3 release, not a re-listing. EL data are multi-allele (motif deconvolution needed); some BA records are legacy IEDB-derived.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2
+    ],
+    "ingest_endpoint": "https://services.healthtech.dtu.dk/services/NetMHCIIpan-4.3/",
+    "commercial_use": false
   },
   {
     "id": "netmhcpan",
@@ -14718,6 +15396,57 @@
     "commercial_use": true
   },
   {
+    "id": "bv-brc-epitopes",
+    "name": "BV-BRC viral/bacterial epitope features (ex-ViPR / ex-IRD)",
+    "category": "reference",
+    "species": [
+      "human",
+      "other"
+    ],
+    "description": "The epitope feature data within the Bacterial and Viral Bioinformatics Resource Center (BV-BRC), which consolidated the legacy Virus Pathogen Resource (ViPR), Influenza Research Database (IRD) and PATRIC. Epitope records (originally sourced from IEDB and mapped onto BV-BRC pathogen proteins/genomes) link experimentally characterized T- and B-cell epitopes to viral strains, surface glycoproteins and genome coordinates — useful for infectious-disease and vaccine epitope selection (influenza, flaviviruses, coronaviruses, etc.).\n",
+    "scale": "Epitope features across thousands of viral/bacterial pathogen genomes; IEDB-sourced, strain-mapped",
+    "modalities": [
+      "tcr-epitope",
+      "antibody-epitope",
+      "pathogen-genome-annotation"
+    ],
+    "formats": [
+      "csv",
+      "json",
+      "api",
+      "ftp"
+    ],
+    "landing_url": "https://www.bv-brc.org/",
+    "download_url": "https://www.bv-brc.org/docs/system_documentation/data_management_sharing.html",
+    "api": "https://www.bv-brc.org/api/",
+    "license": "custom (all public data freely available without restriction; code MIT)",
+    "license_url": "https://www.bv-brc.org/docs/system_documentation/data_management_sharing.html",
+    "access": "open",
+    "provenance": {
+      "maintainer": "BV-BRC (NIAID-funded; University of Chicago / Argonne / J. Craig Venter Institute et al.)",
+      "key_refs": [
+        "10.1093/nar/gkac1003"
+      ]
+    },
+    "last_updated": "2023",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "presentation"
+      ],
+      "why": "Strain- and structure-mapped infectious-disease/vaccine epitope context not readily available from IEDB alone; useful for pathogen-mimicry analyses and vaccine-antigen selection.\n"
+    },
+    "agent_access": "Public data \"freely available without restriction\"; access via website, data API, CLI and FTP. No auth for public data. Fully agent-fetchable.\n",
+    "caveats": "The epitope records are IEDB-derived (already-catalogued IEDB is the upstream source) — BV-BRC adds pathogen/strain mapping, not new assays. Any downstream reuse of the epitope evidence should respect IEDB's own terms. Code is MIT; \"data freely available\" is BV-BRC's own statement (no SPDX tag) — verify for commercial redistribution.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://www.bv-brc.org/api/",
+    "commercial_use": true
+  },
+  {
     "id": "cab-rep",
     "name": "cAb-Rep (Curated Antibody Repertoires)",
     "category": "reference",
@@ -15066,6 +15795,57 @@
     "commercial_use": true
   },
   {
+    "id": "cookhla-1kg-panel",
+    "name": "CookHLA 1000 Genomes HLA imputation reference panels (five super-populations)",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "HLA imputation reference panels distributed with CookHLA, built from 1000 Genomes Project SNP and HLA data for five super-populations (AFR, AMR, EAS, EUR, SAS). Each panel pairs ~225,194 MHC-region SNPs (chr6:28-35 Mb) with four-digit classical HLA types for HLA-A, -B, -C, -DQB1 and -DRB1, enabling reference-based imputation; CookHLA adds adaptive genetic-map and overlapping-window refinement.\n",
+    "scale": "~225,194 MHC SNPs + 4-digit HLA (A/B/C/DQB1/DRB1); 5 super-populations from 1000 Genomes",
+    "modalities": [
+      "hla-reference-panel",
+      "snp-genotype",
+      "hla-allele"
+    ],
+    "formats": [
+      "plink",
+      "bgl",
+      "panel-bundle"
+    ],
+    "landing_url": "https://github.com/WansonChoi/CookHLA",
+    "download_url": "https://github.com/WansonChoi/CookHLA",
+    "license": "custom (noncommercial academic)",
+    "license_url": "https://github.com/WansonChoi/CookHLA",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Choi, Han et al. (Seoul National University)",
+      "key_refs": [
+        "10.1038/s41467-021-21541-5"
+      ],
+      "accessions": [
+        "10.5281/zenodo.4294712"
+      ]
+    },
+    "last_updated": "2021",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "Openly bundled multi-super-population HLA reference built on the public 1000 Genomes data — a download-and-run alternative to restricted panels for imputing HLA across ancestries.\n"
+    },
+    "agent_access": "git clone of the repo brings down the panels; software DOI on Zenodo. No DUA for the 1000G-derived panels themselves. Agent-fetchable.\n",
+    "caveats": "RED FLAG: the paper states the software is for noncommercial academic research use — confirm whether the panel files inherit that restriction before commercial deployment. Panels cover only 5 classical loci (no DPB1/DRB3-5). Built on 1000 Genomes sample sizes (modest per-population counts for rare alleles).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://github.com/WansonChoi/CookHLA",
+    "commercial_use": false
+  },
+  {
     "id": "cosmic",
     "name": "COSMIC (Catalogue Of Somatic Mutations In Cancer)",
     "category": "reference",
@@ -15125,21 +15905,27 @@
       "other"
     ],
     "description": "A curated database of antibodies and nanobodies known to bind coronaviruses (SARS-CoV-2, SARS-CoV-1, MERS and others), each with heavy/light sequences where available, binding/neutralisation evidence, epitope/antigen target, origin and links to source publications and any PDB structures. A compact, antigen-labelled benchmark set for binder recognition.\n",
-    "scale": "~12,916 entries (site last updated 8 Feb 2024; may be higher now)",
+    "scale": "~12,900 unique antibody/nanobody entries (Feb 2024 release); 1,402 at 2020 launch",
     "modalities": [
       "antibody-sequence",
       "nanobody-sequence",
       "binding-evidence",
       "neutralization",
-      "epitope-annotation"
+      "epitope-annotation",
+      "nanobody",
+      "binding-annotation",
+      "neutralisation",
+      "complex-structure"
     ],
     "formats": [
-      "csv"
+      "csv",
+      "json",
+      "pdb"
     ],
     "landing_url": "https://opig.stats.ox.ac.uk/webapps/covabdab/",
     "download_url": "https://opig.stats.ox.ac.uk/webapps/covabdab/",
     "license": "CC BY 4.0",
-    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_url": "https://opig.stats.ox.ac.uk/webapps/covabdab/",
     "access": "open",
     "provenance": {
       "maintainer": "Oxford Protein Informatics Group (OPIG), University of Oxford",
@@ -15675,6 +16461,149 @@
     "commercial_use": true
   },
   {
+    "id": "hibag-prefit-panels",
+    "name": "HIBAG pre-fit HLA imputation classifiers (multi-ethnic model sets)",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "Pre-trained HLA imputation models (\"classifiers\") for the HIBAG attribute-bagging method, distributed so users can impute classical HLA alleles from SNP-array genotypes without owning raw reference individual-level data. Pre-fit models cover European, Asian, Hispanic and African ancestries and are provided per SNP-array platform; a later multi-ethnic panel (Degenhardt et al. 2019) extends class I and II coverage. Models are distributed as R objects (no individual genotypes exposed).\n",
+    "scale": "Pre-fit classifiers for 4 ancestries x multiple SNP platforms; HLA class I + II loci",
+    "modalities": [
+      "hla-reference-model",
+      "hla-allele"
+    ],
+    "formats": [
+      "rdata",
+      "R-object"
+    ],
+    "landing_url": "https://hibag.s3.amazonaws.com/index.html",
+    "download_url": "https://hibag.s3.amazonaws.com/index.html",
+    "license": "GPL-3.0",
+    "license_url": "https://bioconductor.org/packages/release/bioc/html/HIBAG.html",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Xiuwen Zheng et al.; distributed via Bioconductor + author S3/GitHub-Pages mirrors",
+      "key_refs": [
+        "10.1038/tpj.2013.18",
+        "10.1093/hmg/ddy443"
+      ]
+    },
+    "last_updated": "2019",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "Privacy-preserving, openly downloadable alternative to raw reference panels for HLA imputation across ancestries; lets an automated pipeline call HLA from arrays with no DUA for the pre-fit models.\n"
+    },
+    "agent_access": "Pre-fit model files are direct HTTPS downloads from the S3 mirror / GitHub Pages, no auth; HIBAG package installs from Bioconductor (GPL-3). Fully agent-fetchable for the open pre-fit sets.\n",
+    "caveats": "RED FLAG (partial): the GPL-3 covers the software, not necessarily every model set. The Zheng 2014 pre-fit classifiers are freely distributed, but the 2019 multi-ethnic panel (Degenhardt) is described as CC BY-NC 4.0 and/or available on request / only via outsourced imputation services — NonCommercial and request terms conflict across sources, so verify per-model license before commercial use. Imputation accuracy drops for rare alleles and under-represented ancestries.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://hibag.s3.amazonaws.com/index.html",
+    "commercial_use": null
+  },
+  {
+    "id": "hiv-molecular-immunology-db",
+    "name": "HIV Molecular Immunology Database (Los Alamos; CTL/Th epitope maps)",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "A curated, annotated database of HIV-1 cytotoxic T-lymphocyte (CTL/CD8), T-helper (CD4) and antibody epitopes maintained by Los Alamos National Laboratory (Group T-10), with HLA restriction, sequence, protein location, escape-mutation and literature annotations. Includes the \"best-characterized CTL/Th epitope\" summary sets. Sister LANL resources exist for HCV and (historically) Ebola immunology.\n",
+    "scale": "Thousands of annotated HIV-1 CTL/Th/antibody epitopes with HLA restriction + escape annotation",
+    "modalities": [
+      "tcr-epitope",
+      "ctl-epitope",
+      "antibody-epitope",
+      "hla-restriction"
+    ],
+    "formats": [
+      "csv",
+      "json",
+      "html"
+    ],
+    "landing_url": "https://www.hiv.lanl.gov/content/immunology/",
+    "download_url": "https://www.hiv.lanl.gov/content/immunology/tables/tables.html",
+    "license": "custom (US Govt; public release, distribution unlimited)",
+    "license_url": "https://www.hiv.lanl.gov/content/immunology/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Los Alamos National Laboratory, Theoretical Biology & Biophysics (Group T-10; Korber, Yusim et al.)",
+      "key_refs": [
+        "10.2172/975363"
+      ]
+    },
+    "last_updated": "unknown",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "presentation"
+      ],
+      "why": "Deeply annotated infectious-disease T-cell epitope set with HLA restriction and immune-escape data — a gold-standard non-cancer epitope corpus for benchmarking immunogenicity/recognition models and for cross-pathogen transfer.\n"
+    },
+    "agent_access": "Web search interface with CSV/JSON export per query; downloadable summary tables. No auth. Agent- fetchable via the export endpoints (not a single bulk dump — iterate queries).\n",
+    "caveats": "No explicit reuse LICENSE beyond the US-government \"approved for public release; distribution unlimited\" statement on compendium PDFs — that is a distribution statement, not a CC license; confirm reuse terms for the live database. Some epitope records ultimately overlap with IEDB (already catalogued). The DOI given is for a LANL compendium report; the live DB has no single journal DOI.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://www.hiv.lanl.gov/content/immunology/tables/tables.html",
+    "commercial_use": true
+  },
+  {
+    "id": "idc-immunogenicity",
+    "name": "Immunogenicity Database Collaborative (IDC) — therapeutic-protein ADA / deimmunization dataset",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "A curated, publicly accessible clinical-immunogenicity dataset linking anti-drug-antibody (ADA) outcomes for therapeutic proteins/antibodies with predicted CD4+ T-cell epitope content and molecule features — assembled to study and benchmark immunogenicity (deimmunization) prediction. Reports weak but positive correlation between predicted epitope counts and observed ADA rates. Part of a growing set of public ADA/deimmunization resources (alongside curated therapeutic-antibody ADA collections).\n",
+    "scale": "Curated clinical ADA outcomes across therapeutic proteins linked to CD4 epitope predictions",
+    "modalities": [
+      "immunogenicity-clinical",
+      "ada-outcome",
+      "cd4-epitope-prediction"
+    ],
+    "formats": [
+      "csv",
+      "supplementary"
+    ],
+    "landing_url": "https://www.biorxiv.org/content/10.64898/2025.12.08.692993v1",
+    "download_url": "https://www.biorxiv.org/content/10.64898/2025.12.08.692993v1.full",
+    "license": "unknown",
+    "license_url": "https://www.biorxiv.org/content/10.64898/2025.12.08.692993v1",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Immunogenicity Database Collaborative (IDC) consortium",
+      "key_refs": [
+        "10.64898/2025.12.08.692993"
+      ]
+    },
+    "last_updated": "2025-12",
+    "relevance": {
+      "programs": [
+        "design",
+        "presentation"
+      ],
+      "why": "Clinical ADA-linked immunogenicity labels for *therapeutic proteins* are exactly the deimmunization signal missing from epitope databases; directly relevant to designing low-immunogenicity biologics and validating class II / deimmunization predictors.\n"
+    },
+    "agent_access": "Dataset distributed via preprint supplements (bioRxiv) — downloadable, no auth. Agent-fetchable once the supplement URLs are confirmed.\n",
+    "caveats": "PREPRINT (2025) — not yet peer-reviewed; the DOI prefix (10.64898) is unusual for bioRxiv (normally 10.1101), so VERIFY the DOI/landing URL before citing. No dataset license established yet — mark unknown. Clinical immunogenicity is confounded (dose, route, assay, indication); correlations are weak. Some comparable clinical datasets (e.g. Roche/Genentech arms) remain proprietary/non-public.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://www.biorxiv.org/content/10.64898/2025.12.08.692993v1.full",
+    "commercial_use": null
+  },
+  {
     "id": "imgt-dog-antigen-receptor-loci",
     "name": "IMGT Dog (Canis lupus familiaris) IG/TR Germline Reference",
     "category": "reference",
@@ -15866,6 +16795,54 @@
     "commercial_use": null
   },
   {
+    "id": "indi-nanobody",
+    "name": "INDI — Integrated Nanobody Database for Immunoinformatics",
+    "category": "reference",
+    "species": [
+      "other"
+    ],
+    "description": "Aggregated nanobody (single-domain antibody / VHH) sequence database collating public repositories, patents and the literature into a single numbered, searchable resource. The nanobody analogue of OAS for the single-domain binder modality.\n",
+    "scale": ">11 million nanobody sequences",
+    "modalities": [
+      "nanobody",
+      "antibody-sequence",
+      "patent",
+      "literature-annotation"
+    ],
+    "formats": [
+      "csv",
+      "fasta"
+    ],
+    "landing_url": "https://research.naturalantibody.com/nanobodies",
+    "download_url": "https://research.naturalantibody.com/nanobodies",
+    "license": "unknown",
+    "license_url": "https://research.naturalantibody.com/nanobodies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "NaturalAntibody (Krawczyk et al.)",
+      "key_refs": [
+        "10.1093/nar/gkab1021"
+      ]
+    },
+    "last_updated": "2022 (NAR 2022 database issue)",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "Nanobodies are a prime small, single-domain binder scaffold; INDI is the broadest public VHH sequence prior for nanobody binder design.\n"
+    },
+    "agent_access": "Web search/browse and downloads on the NaturalAntibody research portal; the paper is CC BY 4.0 but the database is company-hosted. Programmatic bulk access/terms are not clearly documented.\n",
+    "caveats": "RED FLAG: hosted by a commercial entity (NaturalAntibody); no explicit data license for the database contents (paper license does not cover the data). Confirm bulk-download rights and redistribution/ML-training terms before use.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://research.naturalantibody.com/nanobodies",
+    "commercial_use": null
+  },
+  {
     "id": "interpro",
     "name": "InterPro",
     "category": "reference",
@@ -15979,6 +16956,55 @@
     "commercial_use": null
   },
   {
+    "id": "ipd-kir",
+    "name": "IPD-KIR Database (Killer-cell Immunoglobulin-like Receptors)",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "The official reference database of allelic sequences for the human Killer-cell Immunoglobulin-like Receptor (KIR) genes, part of the IPD (Immuno Polymorphism Database) at EMBL-EBI and the sister resource to IPD-IMGT/HLA. Provides curated KIR allele nomenclature, genomic and cDNA reference sequences, alignments and gene-content/haplotype context for the NK-cell receptor locus that pairs with HLA class I ligands.\n",
+    "scale": "All named KIR alleles across ~15 KIR genes/pseudogenes; release 2.15 (2025-12)",
+    "modalities": [
+      "kir-allele-sequence",
+      "alignment",
+      "nomenclature"
+    ],
+    "formats": [
+      "fasta",
+      "xml",
+      "flat-file",
+      "dat"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/ipd/kir/",
+    "download_url": "https://github.com/ANHIG/IPDKIR",
+    "license": "CC BY-ND 4.0",
+    "license_url": "https://www.ebi.ac.uk/ipd/kir/licence/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Anthony Nolan Research Institute + EMBL-EBI (Robinson, Barker, Marsh et al.)",
+      "key_refs": [
+        "10.1093/nar/gks1140"
+      ]
+    },
+    "last_updated": "2025-12",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "presentation"
+      ],
+      "why": "Canonical KIR allele reference needed to model NK-cell recognition of HLA class I and KIR-ligand (e.g. HLA-C C1/C2, Bw4) interactions — the receptor side of the innate arm complementing TCR work.\n"
+    },
+    "agent_access": "EBI web + FTP; reference sequences/alignments versioned on the ANHIG/IPDKIR GitHub (git-cloneable). No auth. Agent-fetchable.\n",
+    "caveats": "RED FLAG (partial): IPD databases carry Creative Commons terms that may include NoDerivatives (ND) — confirm the exact current licence on the IPD-KIR licence page before redistributing modified data. KIR gene-content/copy-number is not a simple allele table (structural complexity). For KIR allele/ genotype *frequencies* across populations, cross-reference the Allele Frequency Net Database (AFND, catalogued in domain-1) rather than this sequence reference.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://github.com/ANHIG/IPDKIR",
+    "commercial_use": null
+  },
+  {
     "id": "ipd-mhc",
     "name": "IPD-MHC Database (non-human, incl. canine DLA)",
     "category": "reference",
@@ -16075,6 +17101,52 @@
       0
     ],
     "ingest_endpoint": "https://img.jgi.doe.gov/",
+    "commercial_use": true
+  },
+  {
+    "id": "kirimp",
+    "name": "KIR*IMP — KIR gene-content imputation reference panel",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "A reference-based method and panel for imputing KIR gene content (presence/absence copy number of KIR genes) from SNP genotype data in the surrounding region. The UK reference panel was typed on the Illumina Immunochip and underpins KIR*IMP's models, letting large SNP-genotyped cohorts recover KIR haplotype/gene-content calls without direct KIR typing — the KIR analogue of SNP2HLA for HLA.\n",
+    "scale": "UK Immunochip-typed reference panel; imputes presence/absence of ~16 KIR genes",
+    "modalities": [
+      "kir-reference-panel",
+      "kir-gene-content",
+      "snp-genotype"
+    ],
+    "formats": [
+      "txt",
+      "server-job"
+    ],
+    "landing_url": "https://imp.science.unimelb.edu.au/kir/",
+    "download_url": "https://imp.science.unimelb.edu.au/kir/",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "request",
+    "provenance": {
+      "maintainer": "Vukcevic et al.; hosted at Murdoch Children's Research Institute / University of Melbourne",
+      "key_refs": [
+        "10.1016/j.ajhg.2015.09.005"
+      ]
+    },
+    "last_updated": "2015",
+    "relevance": {
+      "programs": [
+        "recognition"
+      ],
+      "why": "Enables KIR gene-content recovery in SNP-genotyped cohorts, bringing the NK/KIR axis into the same population-scale analyses already possible for HLA via imputation.\n"
+    },
+    "agent_access": "KIR*IMP runs as a remote server job (upload SNPs); the underlying UK reference panel is not posted as a bulk open download. Not fully agent-fetchable; plan for server submission.\n",
+    "caveats": "CC BY 4.0 covers the publication; the reference panel's own download/reuse terms are NOT separately stated — treat as request-only and confirm with authors. Imputes gene *content* (presence/absence), not full KIR allele resolution. European (UK Immunochip) reference — ancestry bias. A separate Japanese KIR panel is deposited at Japan's NBDC (different access terms).\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://imp.science.unimelb.edu.au/kir/",
     "commercial_use": true
   },
   {
@@ -16219,6 +17291,56 @@
     "commercial_use": true
   },
   {
+    "id": "multiethnic-hla-panel-luo",
+    "name": "Four-digit Multi-ethnic HLA imputation reference panel (Michigan Imputation Server / HLA-TAPAS)",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "High-resolution, multi-ancestry HLA imputation reference panel spanning five global populations (European, African, East Asian, South Asian, Admixed/Latino), built to improve HLA imputation and multi-ethnic fine-mapping. v1 (2021) contains 18,293 samples and v2 (2022) 20,349 samples (the study describes ~21,546 individuals), on GRCh37/hg19, with four-digit classical alleles and amino-acid variants. Served through the Michigan Imputation Server; the associated HLA-TAPAS pipeline is on GitHub.\n",
+    "scale": "v1 18,293 / v2 20,349 samples; 5 global populations; 4-digit HLA + amino-acid variants (GRCh37)",
+    "modalities": [
+      "hla-reference-panel",
+      "snp-genotype",
+      "hla-allele",
+      "hla-amino-acid"
+    ],
+    "formats": [
+      "vcf",
+      "m3vcf",
+      "imputation-server-job"
+    ],
+    "landing_url": "https://imputationserver.sph.umich.edu/",
+    "download_url": "https://github.com/immunogenomics/HLA-TAPAS",
+    "api": "https://imputationserver.sph.umich.edu/",
+    "license": "unknown",
+    "license_url": "https://github.com/immunogenomics/HLA-TAPAS",
+    "access": "registration",
+    "provenance": {
+      "maintainer": "Michigan Imputation Server (U-Michigan, Fuchsberger/Das) + Immunogenomics lab (Luo, Raychaudhuri)",
+      "key_refs": [
+        "10.1038/s41588-021-00935-7"
+      ]
+    },
+    "last_updated": "2022",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "The most widely used openly-accessible multi-ancestry HLA imputation panel; critical for calling HLA in non-European cohorts where the T1DGC/European panels underperform, reducing ancestry bias in antigen-coverage and HLA-association analyses.\n"
+    },
+    "agent_access": "Imputation is run by uploading SNP data to the Michigan Imputation Server (account registration, one-time-password-encrypted results, deleted after 7 days) — not a bulk file download. HLA-TAPAS code is openly cloneable from GitHub; the underlying panel is described in the literature as restricted-access.\n",
+    "caveats": "Underlying reference panel is NOT a free bulk download — it is consumed via the server or is restricted-access; confirm data-use terms before assuming redistribution rights. No explicit SPDX license located for the panel data (HLA-TAPAS code license on GitHub). GRCh37-only (liftover needed for GRCh38 inputs). Server deletes results after 7 days (plan automated retrieval).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://imputationserver.sph.umich.edu/",
+    "commercial_use": null
+  },
+  {
     "id": "nextprot",
     "name": "neXtProt",
     "category": "reference",
@@ -16272,6 +17394,102 @@
     "commercial_use": true
   },
   {
+    "id": "nmdp-dpb1-ninelocus-haplotypes",
+    "name": "NMDP extended HLA haplotype frequency datasets (DPB1 / nine-locus, Zenodo deposits)",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "Updated and extended NMDP/CIBMTR HLA haplotype frequency datasets deposited on Zenodo, going beyond the classic six-locus 2013 tables. Includes CSV haplotype frequency distributions incorporating HLA-DPB1 (used for DPB1 permissive-mismatch match-likelihood work) and a more recent nine-locus classical-HLA frequency set estimated from ~10 million donors. These are the machine-readable, versioned companions to the registry match-likelihood publications.\n",
+    "scale": "DPB1-inclusive haplotype CSVs; nine-locus set from ~10M donors across US registry populations",
+    "modalities": [
+      "hla-haplotype-frequency",
+      "hla-allele-frequency"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://zenodo.org/records/17966993",
+    "download_url": "https://zenodo.org/records/17966993",
+    "license": "CC BY-NC-ND 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "NMDP / CIBMTR (Maiers, Gragert, Osoegawa et al.)",
+      "key_refs": [
+        "10.1016/j.jtct.2023.03.019"
+      ],
+      "accessions": [
+        "10.5281/zenodo.4474442",
+        "zenodo:17966993"
+      ]
+    },
+    "last_updated": "2025",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "Current, DPB1-aware and nine-locus frequency priors improve population coverage estimates and HLA imputation validation beyond the legacy six-locus tables.\n"
+    },
+    "agent_access": "Zenodo direct download (HTTPS), stable DOIs, no auth. Fully machine-readable CSV.\n",
+    "caveats": "RED FLAG: the nine-locus Zenodo deposit is CC BY-NC-ND 4.0 — NonCommercial AND NoDerivatives, which forbids commercial use and forbids distributing modified/derived versions. This is a hard constraint for any commercial ML pipeline; the frequencies may be referenced but reprocessed/redistributed tables would violate ND. Verify the per-deposit license on each Zenodo record (the earlier DPB1 CSV may carry different terms). Registry-derived, US-ancestry-biased as in nmdp-haplotype-frequencies.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://zenodo.org/records/17966993",
+    "commercial_use": false
+  },
+  {
+    "id": "nmdp-haplotype-frequencies",
+    "name": "NMDP / Be The Match Registry HLA Haplotype Frequencies (US donor registry)",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "Population-level high-resolution HLA haplotype frequency estimates derived from the entire US National Marrow Donor Program (NMDP / Be The Match) volunteer donor registry. The 2013 release provides six-locus (A~C~B~DRB1~DRB3/4/5~DQB1) phased haplotype frequencies estimated by an expectation-maximisation algorithm from mixed-resolution typings of ~6.59 million donors, broken out by 21 detailed and 5 broad self-identified race/ethnicity categories. Distributed as downloadable frequency tables via the NMDP frequency portal.\n",
+    "scale": "~6.59M donor typings; 21 detailed + 5 broad populations; six-locus phased haplotype frequency tables",
+    "modalities": [
+      "hla-haplotype-frequency",
+      "hla-allele-frequency"
+    ],
+    "formats": [
+      "csv",
+      "xls",
+      "txt"
+    ],
+    "landing_url": "https://frequency.nmdp.org/",
+    "download_url": "https://frequency.nmdp.org/",
+    "license": "unknown",
+    "license_url": "https://frequency.nmdp.org/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "National Marrow Donor Program / Be The Match (Center for International Blood and Marrow Transplant Research, CIBMTR)",
+      "key_refs": [
+        "10.1016/j.humimm.2013.06.025"
+      ]
+    },
+    "last_updated": "2011-09",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "Reference allele/haplotype frequency priors for interpreting patient HLA genotypes, weighting population coverage of candidate epitopes, and sanity-checking HLA imputation output. Essential for population-aware antigen selection in a human program.\n"
+    },
+    "agent_access": "Web portal with downloadable tables (no API). No auth; direct file download. Older high-resolution release is static (2011); check portal for newer versions before relying on currency.\n",
+    "caveats": "No explicit SPDX license is posted on the NMDP frequency portal — confirm reuse/redistribution terms with NMDP before downstream distribution. US-registry-biased ancestry composition (self-identified race categories, not genetically-defined populations). Frequencies are registry-derived, not a random population sample. Cross-reference the Allele Frequency Net Database (catalogued in domain-1) for worldwide population frequencies.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://frequency.nmdp.org/",
+    "commercial_use": null
+  },
+  {
     "id": "oas",
     "name": "Observed Antibody Space (OAS)",
     "category": "reference",
@@ -16286,12 +17504,14 @@
       "bcr-repertoire",
       "antibody-sequence",
       "paired-chain",
-      "unpaired-chain"
+      "unpaired-chain",
+      "ngs"
     ],
     "formats": [
       "csv",
       "json",
-      "fasta"
+      "fasta",
+      "api"
     ],
     "landing_url": "https://opig.stats.ox.ac.uk/webapps/oas/",
     "download_url": "https://opig.stats.ox.ac.uk/webapps/oas/",
@@ -16311,7 +17531,7 @@
         "design",
         "recognition"
       ],
-      "why": "Primary sequence substrate for antibody design and antibody language-model pretraining. The paired subset is the key resource for learning native heavy-light pairing, directly relevant to designing developable binders.\n"
+      "why": "The largest open antibody sequence resource and the natural prior for binder design against new targets: supplies CDR distributions, paired chains and the training corpus behind antibody LMs/structure predictors the design program would build on.\n"
     },
     "agent_access": "Bulk download of the whole dataset or of filtered subsets built from the search forms (filter by chain type, species, isotype, disease, B-source). No auth. Downloads are per-study data units (CSV/JSON) served over HTTPS; easily scripted. No documented hard rate limit but be polite on bulk pulls.\n",
     "caveats": "Redistribution allowed under CC BY (attribute OPIG + original studies). Heavy study-to-study redundancy and sampling bias toward human peripheral blood; dedup and clonal-collapse needed before training. Paired data far smaller than unpaired. No canine repertoires — human/mouse dominate, so not a source for the comparative-oncology program.\n",
@@ -16425,6 +17645,54 @@
     ],
     "ingest_endpoint": "https://omia.org/download/",
     "commercial_use": true
+  },
+  {
+    "id": "onekg-hla-types",
+    "name": "1000 Genomes Project HLA types (IGSR high-resolution typing sets)",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "Classical HLA allele calls for the 1000 Genomes Project samples, served from the International Genome Sample Resource (IGSR) FTP. The most comprehensive set (Abi-Rached et al. 2018, PolyPheMe typing of the exomes) covers all 2,693 individuals; earlier sets (Gourraud et al. 2014) provide curated high-resolution HLA for a subset with population labels. Links genome-wide genotypes to orthogonal HLA typing for the canonical open human-genetics cohort.\n",
+    "scale": "~2,693 individuals (Abi-Rached 2018); subset high-resolution set (Gourraud 2014); 26 populations",
+    "modalities": [
+      "hla-allele",
+      "hla-typing"
+    ],
+    "formats": [
+      "txt",
+      "csv",
+      "tsv"
+    ],
+    "landing_url": "https://www.internationalgenome.org/category/hla/",
+    "download_url": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HLA_types/",
+    "license": "custom (1000 Genomes Fort Lauderdale / open data)",
+    "license_url": "https://www.internationalgenome.org/data",
+    "access": "open",
+    "provenance": {
+      "maintainer": "International Genome Sample Resource (IGSR) / EMBL-EBI",
+      "key_refs": [
+        "10.1371/journal.pone.0206512",
+        "10.1371/journal.pone.0097282"
+      ]
+    },
+    "last_updated": "2018",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "Ground-truth HLA calls paired with open WGS/WES across 26 populations — the default benchmark cohort for HLA typing-from-sequence tools and for linking HLA to population-genomic features.\n"
+    },
+    "agent_access": "Anonymous IGSR/EBI FTP + HTTPS mirrors; no auth, bulk fetchable. Underlying 1000 Genomes genotypes are fully open.\n",
+    "caveats": "HLA calls are computationally derived (imputation/typing-from-sequence), not gold-standard lab typing — accuracy varies by locus and allele frequency; different releases disagree. Confirm the exact FTP subpath and release version. 1000 Genomes open-data terms apply (attribution expected).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HLA_types/",
+    "commercial_use": null
   },
   {
     "id": "orthodb",
@@ -16541,21 +17809,25 @@
       "other"
     ],
     "description": "A curated, literature- and patent-annotated reference set of (mostly paired) antibody sequences with functional context: each entry links back to the patent or paper it was scraped from, and many are functionally characterised (antigen, therapeutic use). Searchable by keyword, sequence and structure, with ABodyBuilder2 models attached to entries.\n",
-    "scale": "~150,000 paired antibody sequences from >10,000 small-scale studies/patents",
+    "scale": ">150,000 paired sequences, >65,000 unique; full data bundle ~4.7 GB; paired-sequence CSV ~11 MB",
     "modalities": [
       "antibody-sequence",
       "paired-chain",
       "structure-model",
-      "functional-annotation"
+      "functional-annotation",
+      "computed-model",
+      "literature-annotation"
     ],
     "formats": [
-      "csv"
+      "csv",
+      "pdb",
+      "tar.gz"
     ],
     "landing_url": "https://opig.stats.ox.ac.uk/webapps/plabdab/",
     "download_url": "https://opig.stats.ox.ac.uk/webapps/plabdab/",
     "api": "https://github.com/oxpig/PLAbDab",
-    "license": "unknown",
-    "license_url": "unknown",
+    "license": "CC BY 4.0 (NAR article); database redistribution terms not separately stated",
+    "license_url": "https://academic.oup.com/nar/article/52/D1/D545/7424429",
     "access": "open",
     "provenance": {
       "maintainer": "Oxford Protein Informatics Group (OPIG), University of Oxford",
@@ -16563,7 +17835,7 @@
         "10.1093/nar/gkad1056"
       ]
     },
-    "last_updated": "2024",
+    "last_updated": "2024 (NAR 2024 database issue; periodic updates)",
     "accessions": [
       "10.5281/zenodo.7258553"
     ],
@@ -16576,13 +17848,14 @@
     },
     "agent_access": "Web app with keyword/sequence/structure search and a Download link for all hits of a query; precomputed structural models downloadable per entry. Python API via the oxpig/PLAbDab GitHub repo (contact maintainers / open an issue for programmatic access). Structural models bulk-archived on Zenodo.\n",
     "caveats": "The PLAbDab \"about\" page states no explicit license (license: unknown), even though sibling OPIG resources OAS and CoV-AbDab are CC BY 4.0 — confirm terms before redistribution; patent-derived sequences may carry IP considerations. Attribute Abanades et al. 2024.\n",
+    "size_bytes": 5046586573,
     "agent_automatable": true,
     "open_access": true,
     "feeds_stages": [
       0
     ],
     "ingest_endpoint": "https://github.com/oxpig/PLAbDab",
-    "commercial_use": null
+    "commercial_use": true
   },
   {
     "id": "plabdab-nano",
@@ -16632,6 +17905,54 @@
     ],
     "ingest_endpoint": "https://github.com/oxpig/PLAbDab_nano",
     "commercial_use": null
+  },
+  {
+    "id": "prime-immunogenicity",
+    "name": "PRIME neo-epitope immunogenicity dataset (CD8 T-cell response training data)",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "The experimentally-tested peptide immunogenicity dataset underpinning PRIME, a predictor of CD8 T-cell neo-epitope immunogenicity. Combines peptides tested for T-cell response from pathogens and cancer-testis antigens (~1,629) with cancer mutations (~3,329) plus random negatives, each labelled immunogenic/non-immunogenic with HLA restriction — a rare *functional immunogenicity* label set (not just binding/presentation). PRIME2.0 adds further labelled datasets.\n",
+    "scale": "~1,629 pathogen/CTA + ~3,329 cancer-mutation peptides, immunogenicity-labelled, with HLA restriction",
+    "modalities": [
+      "immunogenicity-assay",
+      "tcr-epitope",
+      "hla-restriction"
+    ],
+    "formats": [
+      "txt",
+      "tsv",
+      "supplementary-tables"
+    ],
+    "landing_url": "http://prime.gfellerlab.org/",
+    "download_url": "https://github.com/GfellerLab/PRIME",
+    "license": "custom (academic/non-commercial, Gfeller lab)",
+    "license_url": "https://github.com/GfellerLab/PRIME",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Gfeller lab (Ludwig Institute / University of Lausanne; Schmidt, Gfeller et al.)",
+      "key_refs": [
+        "10.1016/j.xcrm.2021.100194"
+      ]
+    },
+    "last_updated": "2022",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "design"
+      ],
+      "why": "Functional immunogenicity labels (did a T-cell respond?) are scarcer and more valuable than binding labels for neoantigen prioritization — this is a core training/validation set for immunogenicity models.\n"
+    },
+    "agent_access": "Training data in Cell Rep Med supplementary tables + GfellerLab/PRIME GitHub; git-cloneable. Agent- fetchable (supplementary tables may need PDF/XLSX extraction).\n",
+    "caveats": "RED FLAG: PRIME tool/data are academic / non-commercial use per the Gfeller lab terms — confirm before commercial training. Immunogenicity labels are assay- and cohort-dependent (negatives are \"not observed\", not proven non-immunogenic). Some peptides overlap IEDB sources. HLA coverage skewed to common alleles.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://github.com/GfellerLab/PRIME",
+    "commercial_use": false
   },
   {
     "id": "refseq",
@@ -16790,6 +18111,56 @@
     ],
     "ingest_endpoint": "https://www.ebi.ac.uk/ols4/",
     "commercial_use": true
+  },
+  {
+    "id": "snp2hla-t1dgc-panel",
+    "name": "SNP2HLA / T1DGC Immunochip HLA imputation reference panel",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "The classic European-ancestry HLA imputation reference panel built by the Type 1 Diabetes Genetics Consortium (T1DGC) and distributed with the SNP2HLA tool. Contains ~5,868 MHC-region SNPs (Illumina Immunochip) phased with four-digit classical HLA types and HLA amino-acid polymorphisms for ~5,225 unrelated individuals, enabling imputation of classical alleles and amino-acid variants from SNP data. The companion Pan-Asian panel ships inside the SNP2HLA v1.0.3 package.\n",
+    "scale": "~5,225 unrelated individuals; ~5,868 MHC SNPs + 4-digit HLA + amino-acid polymorphisms (T1DGC panel)",
+    "modalities": [
+      "hla-reference-panel",
+      "snp-genotype",
+      "hla-allele",
+      "hla-amino-acid"
+    ],
+    "formats": [
+      "plink",
+      "beagle",
+      "bgl",
+      "markers"
+    ],
+    "landing_url": "https://software.broadinstitute.org/mpg/snp2hla/",
+    "download_url": "https://software.broadinstitute.org/mpg/snp2hla/",
+    "license": "unknown",
+    "license_url": "https://software.broadinstitute.org/mpg/snp2hla/",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "Broad Institute (de Bakker lab) + Type 1 Diabetes Genetics Consortium (T1DGC)",
+      "key_refs": [
+        "10.1371/journal.pone.0064683"
+      ]
+    },
+    "last_updated": "2015-03",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "Foundational reference panel for turning cheap SNP-array genotypes into 4-digit HLA + amino-acid calls; the baseline that newer multi-ethnic panels (Luo 2021, CookHLA) are benchmarked against.\n"
+    },
+    "agent_access": "SNP2HLA tool + Pan-Asian panel: direct download, no auth. T1DGC panel: NOT in the package since v1.0.3 (removed for individual-genotype privacy reasons) — must be requested from the NIDDK Central Repository with an application; not agent-fetchable.\n",
+    "caveats": "RED FLAG: the core European T1DGC reference panel is no longer openly downloadable — it was pulled from the SNP2HLA distribution over individual-level genotype privacy and is now controlled-access via NIDDK (DUA/request). No explicit SPDX license on the tool page. European-ancestry panel (ancestry bias). Only the Pan-Asian panel remains openly bundled.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://software.broadinstitute.org/mpg/snp2hla/",
+    "commercial_use": null
   },
   {
     "id": "uniparc",
@@ -20154,6 +21525,58 @@
     "commercial_use": true
   },
   {
+    "id": "absolut-synthetic",
+    "name": "Absolut! synthetic antibody-antigen binding database",
+    "category": "structure",
+    "species": [
+      "human",
+      "mouse"
+    ],
+    "description": "A very large in silico database of antibody(CDR-H3)-antigen binding generated by exhaustive lattice-based docking against real antigen structures. Provides binding energies, binding poses/structures, and paratope/epitope annotations at a scale impossible experimentally, for ML methodology research on specificity prediction.\n",
+    "scale": ">1 billion antibody-antigen binding complexes across ~159 antigens (CDR-H3 vs antigen lattice docking)",
+    "size_bytes": null,
+    "modalities": [
+      "binding-affinity",
+      "synthetic-structure",
+      "paratope-epitope",
+      "docking"
+    ],
+    "formats": [
+      "txt",
+      "pdb"
+    ],
+    "landing_url": "https://greifflab.org/Absolut/",
+    "download_url": "https://ns9999k.webs.sigma2.no/10.11582_2021.00063/projects/NS9603K/pprobert/AbsolutOnline/",
+    "api": "https://github.com/csi-greifflab/Absolut",
+    "license": "unknown",
+    "license_url": "https://github.com/csi-greifflab/Absolut",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Greiff Lab, University of Oslo (Robert et al.)",
+      "key_refs": [
+        "10.1038/s43588-022-00372-4"
+      ]
+    },
+    "last_updated": "2022",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "A controllable, ground-truth-labelled binding dataset at massive scale for developing and stress-testing antibody specificity / binder-ranking models before applying them to scarce experimental data.\n"
+    },
+    "agent_access": "Bulk directories (Datasets1-4, RawBindings{Human,Murine}, Structures) on the NIRD/sigma2 archive; software on GitHub to regenerate or extend. Raw bindings are very large (multi-TB); fetch selectively.\n",
+    "caveats": "Binding is a coarse-grained lattice model, NOT experimental affinity — a methodological proxy, not real ddG. No explicit data license on the archive index (mark unknown; see Readme files). Code license is separate from data.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      5
+    ],
+    "ingest_endpoint": "https://github.com/csi-greifflab/Absolut",
+    "commercial_use": null
+  },
+  {
     "id": "afdb-foldseek-clusters",
     "name": "AFDB/Foldseek structural clusters (AFDB50/AFDBclusters)",
     "category": "structure",
@@ -21077,6 +22500,65 @@
     ],
     "ingest_endpoint": "https://gpcrmd-docs.readthedocs.io/",
     "commercial_use": false
+  },
+  {
+    "id": "graphinity-synthetic-ddg",
+    "name": "Graphinity synthetic antibody-antigen ddG datasets (FoldX + Rosetta FlexddG)",
+    "category": "structure",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "Two large synthetic antibody-antigen binding affinity-change (ddG) datasets generated by mutating SAbDab complex interfaces: a FoldX set and a smaller, higher-fidelity Rosetta Flex ddG set, each released with wild-type and (for FlexddG) mutant structures. Built to study how much data generalizable antibody-antigen ddG prediction needs.\n",
+    "scale": "FoldX: 942,723 mutations across 1,471 complexes (1,409 PDBs); Rosetta FlexddG: 20,829 mutations. FoldX mutant structures ~195 GB compressed / ~768 GB uncompressed",
+    "size_bytes": 209379655680,
+    "modalities": [
+      "binding-affinity",
+      "ddg",
+      "mutation",
+      "synthetic-structure",
+      "complex-structure"
+    ],
+    "formats": [
+      "csv",
+      "pdb"
+    ],
+    "landing_url": "https://www.nature.com/articles/s43588-025-00823-8",
+    "download_url": "https://zenodo.org/records/15384945",
+    "api": "https://github.com/oxpig/Graphinity",
+    "license": "unknown",
+    "license_url": "https://zenodo.org/records/15384945",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Oxford Protein Informatics Group (OPIG) (Hummer et al.)",
+      "key_refs": [
+        "10.1038/s43588-025-00823-8",
+        "10.1101/2023.05.17.541222"
+      ],
+      "accessions": [
+        "10.5281/zenodo.15384945",
+        "10.5281/zenodo.15237531"
+      ]
+    },
+    "last_updated": "2025 (Nat Comput Sci); preprint 2023",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "A million-scale synthetic ddG resource directly on antibody-antigen interfaces — training/benchmark data for affinity-maturation and binder-optimization models where experimental ddG is scarce.\n"
+    },
+    "agent_access": "Summary CSVs + FlexddG and FoldX wild-type PDBs on Zenodo; the very large FoldX mutant PDB archive is on the OPIG downloads page (opig.stats.ox.ac.uk/data/downloads/affinity_dataset/). Code on GitHub.\n",
+    "caveats": "ddG values are COMPUTED (FoldX / Rosetta), not experimental — a synthetic proxy, useful for pretraining but not ground truth. FoldX mutant archive is very large (~195 GB). Data-file license not explicitly stated (mark unknown). Derived from SAbDab — dedup against structural sets.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      5
+    ],
+    "ingest_endpoint": "https://github.com/oxpig/Graphinity",
+    "commercial_use": null
   },
   {
     "id": "hla3db",
@@ -22850,29 +24332,33 @@
       "antibody-sequence",
       "therapeutic-annotation",
       "structure-link",
-      "paired-chain"
+      "paired-chain",
+      "therapeutic-antibody",
+      "sequence",
+      "clinical-metadata"
     ],
     "formats": [
       "csv"
     ],
-    "landing_url": "https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/therasabdab",
+    "landing_url": "https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/therasabdab/",
     "download_url": "https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/therasabdab/search/",
     "license": "unknown",
-    "license_url": "unknown",
+    "license_url": "https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/therasabdab/about",
     "access": "open",
     "provenance": {
       "maintainer": "Oxford Protein Informatics Group (OPIG), University of Oxford",
       "key_refs": [
-        "10.1093/bioinformatics/btz827"
+        "10.1093/bioinformatics/btz827",
+        "10.1093/nar/gkz827"
       ]
     },
-    "last_updated": "2025 (updated with WHO INN lists)",
+    "last_updated": "2026 (synced weekly with SAbDab and WHO INN lists)",
     "relevance": {
       "programs": [
         "design",
         "recognition"
       ],
-      "why": "The developability/clinical \"gold set\": sequences and structures of approved and clinical-stage antibodies define the target region of sequence space a designed binder should land in to be developable.\n"
+      "why": "The canonical list of clinically validated antibody binders and their formats/targets — the real-world benchmark the design program is trying to match, and a source of sequence/structure pairs for approved drugs.\n"
     },
     "agent_access": "Searchable web app; sequences of all listed therapeutics plus metadata downloadable as a single spreadsheet. No auth. Cross-links to SAbDab structures (which are CC BY 4.0).\n",
     "caveats": "The Thera-SAbDab page states no explicit license (license: unknown); its parent SAbDab is CC BY 4.0, but do not assume the same for Thera-SAbDab — confirm before redistribution. Attribute Raybould et al. 2020. Small, curated set (clinical molecules only), not a repertoire corpus.\n",

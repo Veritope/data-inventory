@@ -177,6 +177,57 @@
     verify whether additional files exist. Paper DOI not yet on the record.
 
     '
+- id: iedb-mhci-auto-benchmark
+  name: IEDB automated weekly benchmark for peptide-MHC class I (and class II) binding predictions
+  category: mhc-binding
+  species:
+  - human
+  - mouse
+  - other
+  description: 'A continuously updated, prospective benchmark in which newly deposited IEDB binding/elution
+    data are used to score MHC binding predictors each week *before* the data are publicly released —
+    avoiding the train/test overlap that plagues retrospective benchmarks. Live leaderboards and the per-week
+    benchmark datasets (peptides, measured values, allele, prediction scores) are published for class
+    I and class II. The canonical neutral evaluation set for pMHC binding/presentation methods.
+
+    '
+  scale: Prospective weekly datasets since 2014; many alleles; per-week peptide sets with measured values
+  modalities:
+  - binding-assay
+  - mhc-ligand-elution
+  - prediction-benchmark
+  formats:
+  - html
+  - csv
+  - tsv
+  landing_url: https://tools.iedb.org/auto_bench/mhci/weekly/
+  download_url: https://tools.iedb.org/auto_bench/mhci/weekly/
+  license: custom (IEDB terms)
+  license_url: https://www.iedb.org/
+  access: open
+  provenance:
+    maintainer: IEDB Analysis Resource + DTU (Trolle, Nielsen, Peters et al.)
+    key_refs:
+    - 10.1093/bioinformatics/btv123
+  last_updated: ongoing (weekly since 2014-03-21)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'The least-biased way to judge pMHC prediction performance and to choose a presentation model;
+      directly relevant to validating any in-house binding/presentation predictor.
+
+      '
+  agent_access: 'Public web tables, per-week downloadable datasets, no auth. Agent-fetchable; iterate
+    weekly pages.
+
+    '
+  caveats: 'Benchmark peptides come from IEDB deposits (already-catalogued IEDB upstream) — honor IEDB
+    terms for the underlying measurements. Coverage skews to well-studied alleles; weekly set sizes vary
+    (some weeks small). Leaderboard pages can be stale in cached form — pull live. No standalone SPDX
+    license.
+
+    '
 - id: iedb-mhci-binding-benchmark-bd2013
   name: IEDB MHC-I quantitative binding retraining & reliability benchmark (Kim 2014; BD2009/BD2013)
   category: mhc-binding
@@ -230,6 +281,51 @@
   caveats: 'No explicit license stated on the IEDB datasets page; IEDB content is NIAID-funded and freely
     usable but lacks an SPDX tag here — confirm terms before redistribution. Overlaps with netmhcpan training
     sets and the stability set — dedup on peptide/allele.
+
+    '
+- id: iedb-mhcii-binding-dataset
+  name: IEDB MHC class II binding dataset (benchmark binding-affinity collection)
+  category: mhc-binding
+  species:
+  - human
+  - mouse
+  description: 'The curated MHC class II peptide-binding dataset distributed via the IEDB Analysis Resource
+    download page — quantitative binding measurements for HLA-DR, HLA-DP, HLA-DQ and mouse H-2 class II
+    molecules, assembled as a standard training/benchmark set for class II binding predictors. Companion
+    to the IEDB MHC class I binding datasets and the basis for several published class II prediction benchmarks.
+
+    '
+  scale: Tens of thousands of peptide-MHCII binding measurements across DR/DP/DQ + murine H-2
+  modalities:
+  - binding-assay
+  formats:
+  - csv
+  - txt
+  landing_url: https://tools.iedb.org/mhcii/download/
+  download_url: https://tools.iedb.org/mhcii/download/
+  license: custom (IEDB free use; non-commercial clauses possible)
+  license_url: https://www.iedb.org/
+  access: open
+  provenance:
+    maintainer: IEDB Analysis Resource (La Jolla Institute for Immunology; NIH/NIAID funded)
+    key_refs:
+    - 10.1186/1471-2105-11-568
+  last_updated: unknown
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Standard, reproducible class II binding benchmark for training/validating predictors and for
+      deimmunization scoring; complements the EL-centric NetMHCIIpan sets.
+
+      '
+  agent_access: 'Direct file download from the IEDB tools page, no auth. Agent-fetchable.
+
+    '
+  caveats: 'Derived from IEDB curated assays (already-catalogued IEDB is the primary source) — this is
+    the packaged benchmark subset, not a re-listing of the full IEDB. Confirm exact IEDB reuse terms (generally
+    free for research; check for non-commercial clauses). Class II binding cores are ambiguous (register
+    inference needed). Allele coverage is uneven.
 
     '
 - id: ipd-mhc-dla
@@ -325,16 +421,17 @@
 
     '
 - id: mhc-motif-atlas
-  name: MHC Motif Atlas (binding specificities & ligands)
+  name: MHC Motif Atlas (binding specificities, motifs & ligands for MHC-I and MHC-II)
   category: mhc-binding
   species:
   - human
   - mouse
   - other
-  description: 'Curated database of MHC-I and MHC-II binding motifs, peptide length distributions, phospho-ligand
-    motifs, multiple specificities, and links to X-ray structures, plus downloadable curated MHC ligand
-    datasets. Derived largely from mono-allelic/deconvolved immunopeptidomics. Mix of curated experimental
-    ligands and motif models.
+  description: 'A database of MHC binding specificities and ligands covering thousands of MHC class I
+    and class II molecules across species, with binding motifs (sequence logos), peptide-length distributions,
+    ligand lists, multiple-specificity annotations, motifs for phosphorylated ligands, and links to crystal
+    structures where available. Aggregates and curates MS immunopeptidomics and prediction-derived motifs
+    into a browsable, downloadable reference of allele-level presentation specificity.
 
     '
   scale: Thousands of class I and class II MHC molecules; curated ligand lists + motifs + PDB links
@@ -342,10 +439,14 @@
   - binding-motif
   - mhc-ligand-elution
   - structure-link
+  - mhc-binding-motif
+  - mhc-ligand
+  - peptide-list
   - mhc-binding
   formats:
   - txt
   - csv
+  - logo-images
   - web
   landing_url: http://mhcmotifatlas.org/
   download_url: http://mhcmotifatlas.org/
@@ -361,17 +462,19 @@
     programs:
     - presentation
     - design
-    why: 'Clean per-allele motifs and curated ligand lists (human, mouse, cattle, chicken) useful for
-      benchmarking presentation models and sanity-checking allele motifs.
+    why: 'Allele-resolved presentation motifs for both class I and class II in one place — fast priors
+      for antigen filtering, motif QC of predictions, and cross-species transfer; includes non-canonical
+      (phospho) ligand motifs.
 
       '
   agent_access: 'Direct text/CSV downloads of all_peptides.txt and sequence files (paths observed via
     third-party tooling; confirm on site). No auth; bulk-downloadable.
 
     '
-  caveats: 'CC BY-NC (non-commercial) per the Lausanne repository record - RED FLAG for a commercial company:
-    non-commercial clause likely restricts commercial ML use. Confirm exact license text before training
-    production models. No canine.
+  caveats: 'No explicit SPDX license posted ("free/open access" = access, not reuse rights) — confirm
+    terms before redistribution. Motifs are a mix of MS-derived and prediction-derived; ligand lists re-aggregate
+    data whose primary sources (incl. IEDB, published immunopeptidomes) carry their own terms. Non-classical
+    HLA-E/F/G coverage is limited.
 
     '
   cross_listed: true
@@ -552,6 +655,57 @@
   caveats: 'No explicit license on the DTU page (academic/non-profit free; commercial needs a license).
     BA values are log-transformed; file layout documentation is inconsistent across DTU pages — inspect
     the extracted folder before parsing.
+
+    '
+- id: netmhciipan43-training
+  name: NetMHCIIpan-4.3 training & evaluation data (HLA class II eluted-ligand + binding)
+  category: mhc-binding
+  species:
+  - human
+  - other
+  description: 'Training and benchmark datasets behind NetMHCIIpan-4.3, the MHC class II antigen-presentation
+    predictor covering HLA-DR, HLA-DP, HLA-DQ (and BoLA-II). The release extends the eluted-ligand (EL)
+    data with new HLA-DP, HLA-DR and BoLA-II mass-spec immunopeptidomes alongside binding-affinity (BA)
+    measurements, with an allele-to-cell-line mapping file and MHC pseudosequence file. A reported BA
+    subset covers 125,985 peptides across 72 HLA alleles. Distinct from (and newer than) the NetMHCIIpan-4.0
+    set already catalogued.
+
+    '
+  scale: EL (multi-allele MS) + BA (~125,985 peptides / 72 HLA alleles) across DR/DP/DQ + BoLA-II
+  modalities:
+  - mhc-ligand-elution
+  - binding-assay
+  formats:
+  - txt
+  - dat
+  - tsv
+  landing_url: https://services.healthtech.dtu.dk/services/NetMHCIIpan-4.3/
+  download_url: https://services.healthtech.dtu.dk/services/NetMHCIIpan-4.3/
+  license: custom (academic/non-commercial)
+  license_url: https://services.healthtech.dtu.dk/
+  access: open
+  provenance:
+    maintainer: DTU Health Tech (Nilsson, Reynisson, Nielsen et al.)
+    key_refs:
+    - 10.1126/sciadv.adj6367
+  last_updated: '2023'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'State-of-the-art class II presentation training data (CD4 help, deimmunization, therapeutic-protein
+      immunogenicity). Class II is critical for neoantigen vaccines and for predicting anti-drug T-help.
+
+      '
+  agent_access: 'Training/eval archives download from the DTU service page (no auth). Agent-fetchable;
+    verify exact archive URL on the page (links occasionally move between release pages).
+
+    '
+  caveats: 'RED FLAG: DTU Health Tech tools/data carry academic/non-commercial terms — commercial use
+    requires a separate licence; confirm before any commercial training use. Overlaps conceptually with
+    the already- catalogued netmhciipan40-train-set (domain-11) — this is the expanded 4.3 release, not
+    a re-listing. EL data are multi-allele (motif deconvolution needed); some BA records are legacy IEDB-derived.
 
     '
 - id: netmhcpan

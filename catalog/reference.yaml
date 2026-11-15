@@ -184,6 +184,59 @@
     if redistributing derivatives. Clusters with <3 sequences removed.
 
     '
+- id: bv-brc-epitopes
+  name: BV-BRC viral/bacterial epitope features (ex-ViPR / ex-IRD)
+  category: reference
+  species:
+  - human
+  - other
+  description: 'The epitope feature data within the Bacterial and Viral Bioinformatics Resource Center
+    (BV-BRC), which consolidated the legacy Virus Pathogen Resource (ViPR), Influenza Research Database
+    (IRD) and PATRIC. Epitope records (originally sourced from IEDB and mapped onto BV-BRC pathogen proteins/genomes)
+    link experimentally characterized T- and B-cell epitopes to viral strains, surface glycoproteins and
+    genome coordinates — useful for infectious-disease and vaccine epitope selection (influenza, flaviviruses,
+    coronaviruses, etc.).
+
+    '
+  scale: Epitope features across thousands of viral/bacterial pathogen genomes; IEDB-sourced, strain-mapped
+  modalities:
+  - tcr-epitope
+  - antibody-epitope
+  - pathogen-genome-annotation
+  formats:
+  - csv
+  - json
+  - api
+  - ftp
+  landing_url: https://www.bv-brc.org/
+  download_url: https://www.bv-brc.org/docs/system_documentation/data_management_sharing.html
+  api: https://www.bv-brc.org/api/
+  license: custom (all public data freely available without restriction; code MIT)
+  license_url: https://www.bv-brc.org/docs/system_documentation/data_management_sharing.html
+  access: open
+  provenance:
+    maintainer: BV-BRC (NIAID-funded; University of Chicago / Argonne / J. Craig Venter Institute et al.)
+    key_refs:
+    - 10.1093/nar/gkac1003
+  last_updated: '2023'
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'Strain- and structure-mapped infectious-disease/vaccine epitope context not readily available
+      from IEDB alone; useful for pathogen-mimicry analyses and vaccine-antigen selection.
+
+      '
+  agent_access: 'Public data "freely available without restriction"; access via website, data API, CLI
+    and FTP. No auth for public data. Fully agent-fetchable.
+
+    '
+  caveats: 'The epitope records are IEDB-derived (already-catalogued IEDB is the upstream source) — BV-BRC
+    adds pathogen/strain mapping, not new assays. Any downstream reuse of the epitope evidence should
+    respect IEDB''s own terms. Code is MIT; "data freely available" is BV-BRC''s own statement (no SPDX
+    tag) — verify for commercial redistribution.
+
+    '
 - id: cab-rep
   name: cAb-Rep (Curated Antibody Repertoires)
   category: reference
@@ -519,6 +572,56 @@
     Very large; impractical without large-RAM infrastructure.
 
     '
+- id: cookhla-1kg-panel
+  name: CookHLA 1000 Genomes HLA imputation reference panels (five super-populations)
+  category: reference
+  species:
+  - human
+  description: 'HLA imputation reference panels distributed with CookHLA, built from 1000 Genomes Project
+    SNP and HLA data for five super-populations (AFR, AMR, EAS, EUR, SAS). Each panel pairs ~225,194 MHC-region
+    SNPs (chr6:28-35 Mb) with four-digit classical HLA types for HLA-A, -B, -C, -DQB1 and -DRB1, enabling
+    reference-based imputation; CookHLA adds adaptive genetic-map and overlapping-window refinement.
+
+    '
+  scale: ~225,194 MHC SNPs + 4-digit HLA (A/B/C/DQB1/DRB1); 5 super-populations from 1000 Genomes
+  modalities:
+  - hla-reference-panel
+  - snp-genotype
+  - hla-allele
+  formats:
+  - plink
+  - bgl
+  - panel-bundle
+  landing_url: https://github.com/WansonChoi/CookHLA
+  download_url: https://github.com/WansonChoi/CookHLA
+  license: custom (noncommercial academic)
+  license_url: https://github.com/WansonChoi/CookHLA
+  access: open
+  provenance:
+    maintainer: Choi, Han et al. (Seoul National University)
+    key_refs:
+    - 10.1038/s41467-021-21541-5
+    accessions:
+    - 10.5281/zenodo.4294712
+  last_updated: '2021'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Openly bundled multi-super-population HLA reference built on the public 1000 Genomes data —
+      a download-and-run alternative to restricted panels for imputing HLA across ancestries.
+
+      '
+  agent_access: 'git clone of the repo brings down the panels; software DOI on Zenodo. No DUA for the
+    1000G-derived panels themselves. Agent-fetchable.
+
+    '
+  caveats: 'RED FLAG: the paper states the software is for noncommercial academic research use — confirm
+    whether the panel files inherit that restriction before commercial deployment. Panels cover only 5
+    classical loci (no DPB1/DRB3-5). Built on 1000 Genomes sample sizes (modest per-population counts
+    for rare alleles).
+
+    '
 - id: cosmic
   name: COSMIC (Catalogue Of Somatic Mutations In Cancer)
   category: reference
@@ -584,19 +687,25 @@
     A compact, antigen-labelled benchmark set for binder recognition.
 
     '
-  scale: ~12,916 entries (site last updated 8 Feb 2024; may be higher now)
+  scale: ~12,900 unique antibody/nanobody entries (Feb 2024 release); 1,402 at 2020 launch
   modalities:
   - antibody-sequence
   - nanobody-sequence
   - binding-evidence
   - neutralization
   - epitope-annotation
+  - nanobody
+  - binding-annotation
+  - neutralisation
+  - complex-structure
   formats:
   - csv
+  - json
+  - pdb
   landing_url: https://opig.stats.ox.ac.uk/webapps/covabdab/
   download_url: https://opig.stats.ox.ac.uk/webapps/covabdab/
   license: CC BY 4.0
-  license_url: https://creativecommons.org/licenses/by/4.0/
+  license_url: https://opig.stats.ox.ac.uk/webapps/covabdab/
   access: open
   provenance:
     maintainer: Oxford Protein Informatics Group (OPIG), University of Oxford
@@ -1108,6 +1217,156 @@
     listings mislabel as CC BY or GPL (GPL = software). Release numbering changes counts frequently.
 
     '
+- id: hibag-prefit-panels
+  name: HIBAG pre-fit HLA imputation classifiers (multi-ethnic model sets)
+  category: reference
+  species:
+  - human
+  description: 'Pre-trained HLA imputation models ("classifiers") for the HIBAG attribute-bagging method,
+    distributed so users can impute classical HLA alleles from SNP-array genotypes without owning raw
+    reference individual-level data. Pre-fit models cover European, Asian, Hispanic and African ancestries
+    and are provided per SNP-array platform; a later multi-ethnic panel (Degenhardt et al. 2019) extends
+    class I and II coverage. Models are distributed as R objects (no individual genotypes exposed).
+
+    '
+  scale: Pre-fit classifiers for 4 ancestries x multiple SNP platforms; HLA class I + II loci
+  modalities:
+  - hla-reference-model
+  - hla-allele
+  formats:
+  - rdata
+  - R-object
+  landing_url: https://hibag.s3.amazonaws.com/index.html
+  download_url: https://hibag.s3.amazonaws.com/index.html
+  license: GPL-3.0
+  license_url: https://bioconductor.org/packages/release/bioc/html/HIBAG.html
+  access: open
+  provenance:
+    maintainer: Xiuwen Zheng et al.; distributed via Bioconductor + author S3/GitHub-Pages mirrors
+    key_refs:
+    - 10.1038/tpj.2013.18
+    - 10.1093/hmg/ddy443
+  last_updated: '2019'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Privacy-preserving, openly downloadable alternative to raw reference panels for HLA imputation
+      across ancestries; lets an automated pipeline call HLA from arrays with no DUA for the pre-fit models.
+
+      '
+  agent_access: 'Pre-fit model files are direct HTTPS downloads from the S3 mirror / GitHub Pages, no
+    auth; HIBAG package installs from Bioconductor (GPL-3). Fully agent-fetchable for the open pre-fit
+    sets.
+
+    '
+  caveats: 'RED FLAG (partial): the GPL-3 covers the software, not necessarily every model set. The Zheng
+    2014 pre-fit classifiers are freely distributed, but the 2019 multi-ethnic panel (Degenhardt) is described
+    as CC BY-NC 4.0 and/or available on request / only via outsourced imputation services — NonCommercial
+    and request terms conflict across sources, so verify per-model license before commercial use. Imputation
+    accuracy drops for rare alleles and under-represented ancestries.
+
+    '
+- id: hiv-molecular-immunology-db
+  name: HIV Molecular Immunology Database (Los Alamos; CTL/Th epitope maps)
+  category: reference
+  species:
+  - human
+  description: 'A curated, annotated database of HIV-1 cytotoxic T-lymphocyte (CTL/CD8), T-helper (CD4)
+    and antibody epitopes maintained by Los Alamos National Laboratory (Group T-10), with HLA restriction,
+    sequence, protein location, escape-mutation and literature annotations. Includes the "best-characterized
+    CTL/Th epitope" summary sets. Sister LANL resources exist for HCV and (historically) Ebola immunology.
+
+    '
+  scale: Thousands of annotated HIV-1 CTL/Th/antibody epitopes with HLA restriction + escape annotation
+  modalities:
+  - tcr-epitope
+  - ctl-epitope
+  - antibody-epitope
+  - hla-restriction
+  formats:
+  - csv
+  - json
+  - html
+  landing_url: https://www.hiv.lanl.gov/content/immunology/
+  download_url: https://www.hiv.lanl.gov/content/immunology/tables/tables.html
+  license: custom (US Govt; public release, distribution unlimited)
+  license_url: https://www.hiv.lanl.gov/content/immunology/
+  access: open
+  provenance:
+    maintainer: Los Alamos National Laboratory, Theoretical Biology & Biophysics (Group T-10; Korber,
+      Yusim et al.)
+    key_refs:
+    - 10.2172/975363
+  last_updated: unknown
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'Deeply annotated infectious-disease T-cell epitope set with HLA restriction and immune-escape
+      data — a gold-standard non-cancer epitope corpus for benchmarking immunogenicity/recognition models
+      and for cross-pathogen transfer.
+
+      '
+  agent_access: 'Web search interface with CSV/JSON export per query; downloadable summary tables. No
+    auth. Agent- fetchable via the export endpoints (not a single bulk dump — iterate queries).
+
+    '
+  caveats: 'No explicit reuse LICENSE beyond the US-government "approved for public release; distribution
+    unlimited" statement on compendium PDFs — that is a distribution statement, not a CC license; confirm
+    reuse terms for the live database. Some epitope records ultimately overlap with IEDB (already catalogued).
+    The DOI given is for a LANL compendium report; the live DB has no single journal DOI.
+
+    '
+- id: idc-immunogenicity
+  name: Immunogenicity Database Collaborative (IDC) — therapeutic-protein ADA / deimmunization dataset
+  category: reference
+  species:
+  - human
+  description: 'A curated, publicly accessible clinical-immunogenicity dataset linking anti-drug-antibody
+    (ADA) outcomes for therapeutic proteins/antibodies with predicted CD4+ T-cell epitope content and
+    molecule features — assembled to study and benchmark immunogenicity (deimmunization) prediction. Reports
+    weak but positive correlation between predicted epitope counts and observed ADA rates. Part of a growing
+    set of public ADA/deimmunization resources (alongside curated therapeutic-antibody ADA collections).
+
+    '
+  scale: Curated clinical ADA outcomes across therapeutic proteins linked to CD4 epitope predictions
+  modalities:
+  - immunogenicity-clinical
+  - ada-outcome
+  - cd4-epitope-prediction
+  formats:
+  - csv
+  - supplementary
+  landing_url: https://www.biorxiv.org/content/10.64898/2025.12.08.692993v1
+  download_url: https://www.biorxiv.org/content/10.64898/2025.12.08.692993v1.full
+  license: unknown
+  license_url: https://www.biorxiv.org/content/10.64898/2025.12.08.692993v1
+  access: open
+  provenance:
+    maintainer: Immunogenicity Database Collaborative (IDC) consortium
+    key_refs:
+    - 10.64898/2025.12.08.692993
+  last_updated: 2025-12
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Clinical ADA-linked immunogenicity labels for *therapeutic proteins* are exactly the deimmunization
+      signal missing from epitope databases; directly relevant to designing low-immunogenicity biologics
+      and validating class II / deimmunization predictors.
+
+      '
+  agent_access: 'Dataset distributed via preprint supplements (bioRxiv) — downloadable, no auth. Agent-fetchable
+    once the supplement URLs are confirmed.
+
+    '
+  caveats: 'PREPRINT (2025) — not yet peer-reviewed; the DOI prefix (10.64898) is unusual for bioRxiv
+    (normally 10.1101), so VERIFY the DOI/landing URL before citing. No dataset license established yet
+    — mark unknown. Clinical immunogenicity is confounded (dose, route, assay, indication); correlations
+    are weak. Some comparable clinical datasets (e.g. Roche/Genentech arms) remain proprietary/non-public.
+
+    '
 - id: imgt-dog-antigen-receptor-loci
   name: IMGT Dog (Canis lupus familiaris) IG/TR Germline Reference
   category: reference
@@ -1293,6 +1552,52 @@
     dedup needed. Camelid single-domain only.
 
     '
+- id: indi-nanobody
+  name: INDI — Integrated Nanobody Database for Immunoinformatics
+  category: reference
+  species:
+  - other
+  description: 'Aggregated nanobody (single-domain antibody / VHH) sequence database collating public
+    repositories, patents and the literature into a single numbered, searchable resource. The nanobody
+    analogue of OAS for the single-domain binder modality.
+
+    '
+  scale: '>11 million nanobody sequences'
+  modalities:
+  - nanobody
+  - antibody-sequence
+  - patent
+  - literature-annotation
+  formats:
+  - csv
+  - fasta
+  landing_url: https://research.naturalantibody.com/nanobodies
+  download_url: https://research.naturalantibody.com/nanobodies
+  license: unknown
+  license_url: https://research.naturalantibody.com/nanobodies
+  access: open
+  provenance:
+    maintainer: NaturalAntibody (Krawczyk et al.)
+    key_refs:
+    - 10.1093/nar/gkab1021
+  last_updated: 2022 (NAR 2022 database issue)
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Nanobodies are a prime small, single-domain binder scaffold; INDI is the broadest public VHH
+      sequence prior for nanobody binder design.
+
+      '
+  agent_access: 'Web search/browse and downloads on the NaturalAntibody research portal; the paper is
+    CC BY 4.0 but the database is company-hosted. Programmatic bulk access/terms are not clearly documented.
+
+    '
+  caveats: 'RED FLAG: hosted by a commercial entity (NaturalAntibody); no explicit data license for the
+    database contents (paper license does not cover the data). Confirm bulk-download rights and redistribution/ML-training
+    terms before use.
+
+    '
 - id: interpro
   name: InterPro
   category: reference
@@ -1405,6 +1710,56 @@
     generally fine; redistribution of derivatives is the constraint. Human only.
 
     '
+- id: ipd-kir
+  name: IPD-KIR Database (Killer-cell Immunoglobulin-like Receptors)
+  category: reference
+  species:
+  - human
+  description: 'The official reference database of allelic sequences for the human Killer-cell Immunoglobulin-like
+    Receptor (KIR) genes, part of the IPD (Immuno Polymorphism Database) at EMBL-EBI and the sister resource
+    to IPD-IMGT/HLA. Provides curated KIR allele nomenclature, genomic and cDNA reference sequences, alignments
+    and gene-content/haplotype context for the NK-cell receptor locus that pairs with HLA class I ligands.
+
+    '
+  scale: All named KIR alleles across ~15 KIR genes/pseudogenes; release 2.15 (2025-12)
+  modalities:
+  - kir-allele-sequence
+  - alignment
+  - nomenclature
+  formats:
+  - fasta
+  - xml
+  - flat-file
+  - dat
+  landing_url: https://www.ebi.ac.uk/ipd/kir/
+  download_url: https://github.com/ANHIG/IPDKIR
+  license: CC BY-ND 4.0
+  license_url: https://www.ebi.ac.uk/ipd/kir/licence/
+  access: open
+  provenance:
+    maintainer: Anthony Nolan Research Institute + EMBL-EBI (Robinson, Barker, Marsh et al.)
+    key_refs:
+    - 10.1093/nar/gks1140
+  last_updated: 2025-12
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'Canonical KIR allele reference needed to model NK-cell recognition of HLA class I and KIR-ligand
+      (e.g. HLA-C C1/C2, Bw4) interactions — the receptor side of the innate arm complementing TCR work.
+
+      '
+  agent_access: 'EBI web + FTP; reference sequences/alignments versioned on the ANHIG/IPDKIR GitHub (git-cloneable).
+    No auth. Agent-fetchable.
+
+    '
+  caveats: 'RED FLAG (partial): IPD databases carry Creative Commons terms that may include NoDerivatives
+    (ND) — confirm the exact current licence on the IPD-KIR licence page before redistributing modified
+    data. KIR gene-content/copy-number is not a simple allele table (structural complexity). For KIR allele/
+    genotype *frequencies* across populations, cross-reference the Allele Frequency Net Database (AFND,
+    catalogued in domain-1) rather than this sequence reference.
+
+    '
 - id: ipd-mhc
   name: IPD-MHC Database (non-human, incl. canine DLA)
   category: reference
@@ -1499,6 +1854,53 @@
   caveats: 'Access is registration-gated for bulk download and ~16% of isolate genomes / ~30% of metagenomes
     are private. Terms follow the JGI Data Policy rather than a single CC license — review before redistribution/ML
     use. Large, heterogeneous holdings need careful dedup.
+
+    '
+- id: kirimp
+  name: KIR*IMP — KIR gene-content imputation reference panel
+  category: reference
+  species:
+  - human
+  description: 'A reference-based method and panel for imputing KIR gene content (presence/absence copy
+    number of KIR genes) from SNP genotype data in the surrounding region. The UK reference panel was
+    typed on the Illumina Immunochip and underpins KIR*IMP''s models, letting large SNP-genotyped cohorts
+    recover KIR haplotype/gene-content calls without direct KIR typing — the KIR analogue of SNP2HLA for
+    HLA.
+
+    '
+  scale: UK Immunochip-typed reference panel; imputes presence/absence of ~16 KIR genes
+  modalities:
+  - kir-reference-panel
+  - kir-gene-content
+  - snp-genotype
+  formats:
+  - txt
+  - server-job
+  landing_url: https://imp.science.unimelb.edu.au/kir/
+  download_url: https://imp.science.unimelb.edu.au/kir/
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: request
+  provenance:
+    maintainer: Vukcevic et al.; hosted at Murdoch Children's Research Institute / University of Melbourne
+    key_refs:
+    - 10.1016/j.ajhg.2015.09.005
+  last_updated: '2015'
+  relevance:
+    programs:
+    - recognition
+    why: 'Enables KIR gene-content recovery in SNP-genotyped cohorts, bringing the NK/KIR axis into the
+      same population-scale analyses already possible for HLA via imputation.
+
+      '
+  agent_access: 'KIR*IMP runs as a remote server job (upload SNPs); the underlying UK reference panel
+    is not posted as a bulk open download. Not fully agent-fetchable; plan for server submission.
+
+    '
+  caveats: 'CC BY 4.0 covers the publication; the reference panel''s own download/reuse terms are NOT
+    separately stated — treat as request-only and confirm with authors. Imputes gene *content* (presence/absence),
+    not full KIR allele resolution. European (UK Immunochip) reference — ancestry bias. A separate Japanese
+    KIR panel is deposited at Japan''s NBDC (different access terms).
 
     '
 - id: metaclust
@@ -1636,6 +2038,59 @@
     Atlas (structures over MGnify90) is catalogued separately in domain-9 (esm-atlas).
 
     '
+- id: multiethnic-hla-panel-luo
+  name: Four-digit Multi-ethnic HLA imputation reference panel (Michigan Imputation Server / HLA-TAPAS)
+  category: reference
+  species:
+  - human
+  description: 'High-resolution, multi-ancestry HLA imputation reference panel spanning five global populations
+    (European, African, East Asian, South Asian, Admixed/Latino), built to improve HLA imputation and
+    multi-ethnic fine-mapping. v1 (2021) contains 18,293 samples and v2 (2022) 20,349 samples (the study
+    describes ~21,546 individuals), on GRCh37/hg19, with four-digit classical alleles and amino-acid variants.
+    Served through the Michigan Imputation Server; the associated HLA-TAPAS pipeline is on GitHub.
+
+    '
+  scale: v1 18,293 / v2 20,349 samples; 5 global populations; 4-digit HLA + amino-acid variants (GRCh37)
+  modalities:
+  - hla-reference-panel
+  - snp-genotype
+  - hla-allele
+  - hla-amino-acid
+  formats:
+  - vcf
+  - m3vcf
+  - imputation-server-job
+  landing_url: https://imputationserver.sph.umich.edu/
+  download_url: https://github.com/immunogenomics/HLA-TAPAS
+  api: https://imputationserver.sph.umich.edu/
+  license: unknown
+  license_url: https://github.com/immunogenomics/HLA-TAPAS
+  access: registration
+  provenance:
+    maintainer: Michigan Imputation Server (U-Michigan, Fuchsberger/Das) + Immunogenomics lab (Luo, Raychaudhuri)
+    key_refs:
+    - 10.1038/s41588-021-00935-7
+  last_updated: '2022'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'The most widely used openly-accessible multi-ancestry HLA imputation panel; critical for calling
+      HLA in non-European cohorts where the T1DGC/European panels underperform, reducing ancestry bias
+      in antigen-coverage and HLA-association analyses.
+
+      '
+  agent_access: 'Imputation is run by uploading SNP data to the Michigan Imputation Server (account registration,
+    one-time-password-encrypted results, deleted after 7 days) — not a bulk file download. HLA-TAPAS code
+    is openly cloneable from GitHub; the underlying panel is described in the literature as restricted-access.
+
+    '
+  caveats: 'Underlying reference panel is NOT a free bulk download — it is consumed via the server or
+    is restricted-access; confirm data-use terms before assuming redistribution rights. No explicit SPDX
+    license located for the panel data (HLA-TAPAS code license on GitHub). GRCh37-only (liftover needed
+    for GRCh38 inputs). Server deletes results after 7 days (plan automated retrieval).
+
+    '
 - id: nextprot
   name: neXtProt
   category: reference
@@ -1689,6 +2144,108 @@
     layer, dedup against UniProt by accession.
 
     '
+- id: nmdp-dpb1-ninelocus-haplotypes
+  name: NMDP extended HLA haplotype frequency datasets (DPB1 / nine-locus, Zenodo deposits)
+  category: reference
+  species:
+  - human
+  description: 'Updated and extended NMDP/CIBMTR HLA haplotype frequency datasets deposited on Zenodo,
+    going beyond the classic six-locus 2013 tables. Includes CSV haplotype frequency distributions incorporating
+    HLA-DPB1 (used for DPB1 permissive-mismatch match-likelihood work) and a more recent nine-locus classical-HLA
+    frequency set estimated from ~10 million donors. These are the machine-readable, versioned companions
+    to the registry match-likelihood publications.
+
+    '
+  scale: DPB1-inclusive haplotype CSVs; nine-locus set from ~10M donors across US registry populations
+  modalities:
+  - hla-haplotype-frequency
+  - hla-allele-frequency
+  formats:
+  - csv
+  landing_url: https://zenodo.org/records/17966993
+  download_url: https://zenodo.org/records/17966993
+  license: CC BY-NC-ND 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+  access: open
+  provenance:
+    maintainer: NMDP / CIBMTR (Maiers, Gragert, Osoegawa et al.)
+    key_refs:
+    - 10.1016/j.jtct.2023.03.019
+    accessions:
+    - 10.5281/zenodo.4474442
+    - zenodo:17966993
+  last_updated: '2025'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Current, DPB1-aware and nine-locus frequency priors improve population coverage estimates and
+      HLA imputation validation beyond the legacy six-locus tables.
+
+      '
+  agent_access: 'Zenodo direct download (HTTPS), stable DOIs, no auth. Fully machine-readable CSV.
+
+    '
+  caveats: 'RED FLAG: the nine-locus Zenodo deposit is CC BY-NC-ND 4.0 — NonCommercial AND NoDerivatives,
+    which forbids commercial use and forbids distributing modified/derived versions. This is a hard constraint
+    for any commercial ML pipeline; the frequencies may be referenced but reprocessed/redistributed tables
+    would violate ND. Verify the per-deposit license on each Zenodo record (the earlier DPB1 CSV may carry
+    different terms). Registry-derived, US-ancestry-biased as in nmdp-haplotype-frequencies.
+
+    '
+- id: nmdp-haplotype-frequencies
+  name: NMDP / Be The Match Registry HLA Haplotype Frequencies (US donor registry)
+  category: reference
+  species:
+  - human
+  description: 'Population-level high-resolution HLA haplotype frequency estimates derived from the entire
+    US National Marrow Donor Program (NMDP / Be The Match) volunteer donor registry. The 2013 release
+    provides six-locus (A~C~B~DRB1~DRB3/4/5~DQB1) phased haplotype frequencies estimated by an expectation-maximisation
+    algorithm from mixed-resolution typings of ~6.59 million donors, broken out by 21 detailed and 5 broad
+    self-identified race/ethnicity categories. Distributed as downloadable frequency tables via the NMDP
+    frequency portal.
+
+    '
+  scale: ~6.59M donor typings; 21 detailed + 5 broad populations; six-locus phased haplotype frequency
+    tables
+  modalities:
+  - hla-haplotype-frequency
+  - hla-allele-frequency
+  formats:
+  - csv
+  - xls
+  - txt
+  landing_url: https://frequency.nmdp.org/
+  download_url: https://frequency.nmdp.org/
+  license: unknown
+  license_url: https://frequency.nmdp.org/
+  access: open
+  provenance:
+    maintainer: National Marrow Donor Program / Be The Match (Center for International Blood and Marrow
+      Transplant Research, CIBMTR)
+    key_refs:
+    - 10.1016/j.humimm.2013.06.025
+  last_updated: 2011-09
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Reference allele/haplotype frequency priors for interpreting patient HLA genotypes, weighting
+      population coverage of candidate epitopes, and sanity-checking HLA imputation output. Essential
+      for population-aware antigen selection in a human program.
+
+      '
+  agent_access: 'Web portal with downloadable tables (no API). No auth; direct file download. Older high-resolution
+    release is static (2011); check portal for newer versions before relying on currency.
+
+    '
+  caveats: 'No explicit SPDX license is posted on the NMDP frequency portal — confirm reuse/redistribution
+    terms with NMDP before downstream distribution. US-registry-biased ancestry composition (self-identified
+    race categories, not genetically-defined populations). Frequencies are registry-derived, not a random
+    population sample. Cross-reference the Allele Frequency Net Database (catalogued in domain-1) for
+    worldwide population frequencies.
+
+    '
 - id: oas
   name: Observed Antibody Space (OAS)
   category: reference
@@ -1710,10 +2267,12 @@
   - antibody-sequence
   - paired-chain
   - unpaired-chain
+  - ngs
   formats:
   - csv
   - json
   - fasta
+  - api
   landing_url: https://opig.stats.ox.ac.uk/webapps/oas/
   download_url: https://opig.stats.ox.ac.uk/webapps/oas/
   license: CC BY 4.0
@@ -1729,9 +2288,9 @@
     programs:
     - design
     - recognition
-    why: 'Primary sequence substrate for antibody design and antibody language-model pretraining. The
-      paired subset is the key resource for learning native heavy-light pairing, directly relevant to
-      designing developable binders.
+    why: 'The largest open antibody sequence resource and the natural prior for binder design against
+      new targets: supplies CDR distributions, paired chains and the training corpus behind antibody LMs/structure
+      predictors the design program would build on.
 
       '
   agent_access: 'Bulk download of the whole dataset or of filtered subsets built from the search forms
@@ -1847,6 +2406,54 @@
     co-authorship-discussion request for dump-based work. Internal gene IDs need mapping.
 
     '
+- id: onekg-hla-types
+  name: 1000 Genomes Project HLA types (IGSR high-resolution typing sets)
+  category: reference
+  species:
+  - human
+  description: 'Classical HLA allele calls for the 1000 Genomes Project samples, served from the International
+    Genome Sample Resource (IGSR) FTP. The most comprehensive set (Abi-Rached et al. 2018, PolyPheMe typing
+    of the exomes) covers all 2,693 individuals; earlier sets (Gourraud et al. 2014) provide curated high-resolution
+    HLA for a subset with population labels. Links genome-wide genotypes to orthogonal HLA typing for
+    the canonical open human-genetics cohort.
+
+    '
+  scale: ~2,693 individuals (Abi-Rached 2018); subset high-resolution set (Gourraud 2014); 26 populations
+  modalities:
+  - hla-allele
+  - hla-typing
+  formats:
+  - txt
+  - csv
+  - tsv
+  landing_url: https://www.internationalgenome.org/category/hla/
+  download_url: ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HLA_types/
+  license: custom (1000 Genomes Fort Lauderdale / open data)
+  license_url: https://www.internationalgenome.org/data
+  access: open
+  provenance:
+    maintainer: International Genome Sample Resource (IGSR) / EMBL-EBI
+    key_refs:
+    - 10.1371/journal.pone.0206512
+    - 10.1371/journal.pone.0097282
+  last_updated: '2018'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Ground-truth HLA calls paired with open WGS/WES across 26 populations — the default benchmark
+      cohort for HLA typing-from-sequence tools and for linking HLA to population-genomic features.
+
+      '
+  agent_access: 'Anonymous IGSR/EBI FTP + HTTPS mirrors; no auth, bulk fetchable. Underlying 1000 Genomes
+    genotypes are fully open.
+
+    '
+  caveats: 'HLA calls are computationally derived (imputation/typing-from-sequence), not gold-standard
+    lab typing — accuracy varies by locus and allele frequency; different releases disagree. Confirm the
+    exact FTP subpath and release version. 1000 Genomes open-data terms apply (attribution expected).
+
+    '
 - id: orthodb
   name: OrthoDB (hierarchical catalog of orthologs)
   category: reference
@@ -1959,25 +2566,30 @@
     and structure, with ABodyBuilder2 models attached to entries.
 
     '
-  scale: ~150,000 paired antibody sequences from >10,000 small-scale studies/patents
+  scale: '>150,000 paired sequences, >65,000 unique; full data bundle ~4.7 GB; paired-sequence CSV ~11
+    MB'
   modalities:
   - antibody-sequence
   - paired-chain
   - structure-model
   - functional-annotation
+  - computed-model
+  - literature-annotation
   formats:
   - csv
+  - pdb
+  - tar.gz
   landing_url: https://opig.stats.ox.ac.uk/webapps/plabdab/
   download_url: https://opig.stats.ox.ac.uk/webapps/plabdab/
   api: https://github.com/oxpig/PLAbDab
-  license: unknown
-  license_url: unknown
+  license: CC BY 4.0 (NAR article); database redistribution terms not separately stated
+  license_url: https://academic.oup.com/nar/article/52/D1/D545/7424429
   access: open
   provenance:
     maintainer: Oxford Protein Informatics Group (OPIG), University of Oxford
     key_refs:
     - 10.1093/nar/gkad1056
-  last_updated: '2024'
+  last_updated: 2024 (NAR 2024 database issue; periodic updates)
   accessions:
   - 10.5281/zenodo.7258553
   relevance:
@@ -2000,6 +2612,7 @@
     sequences may carry IP considerations. Attribute Abanades et al. 2024.
 
     '
+  size_bytes: 5046586573
 - id: plabdab-nano
   name: PLAbDab-nano — nanobodies from patents and literature
   category: reference
@@ -2047,6 +2660,56 @@
   caveats: 'No explicit license on the page (license: unknown) — confirm before reuse; attribute Gordon
     et al. 2025. The preprint warned that many patent/literature "nanobody" hits are false positives (VHH
     count dropped from ~21k to <7k after curation) — trust the curated published counts, not raw scrapes.
+
+    '
+- id: prime-immunogenicity
+  name: PRIME neo-epitope immunogenicity dataset (CD8 T-cell response training data)
+  category: reference
+  species:
+  - human
+  description: 'The experimentally-tested peptide immunogenicity dataset underpinning PRIME, a predictor
+    of CD8 T-cell neo-epitope immunogenicity. Combines peptides tested for T-cell response from pathogens
+    and cancer-testis antigens (~1,629) with cancer mutations (~3,329) plus random negatives, each labelled
+    immunogenic/non-immunogenic with HLA restriction — a rare *functional immunogenicity* label set (not
+    just binding/presentation). PRIME2.0 adds further labelled datasets.
+
+    '
+  scale: ~1,629 pathogen/CTA + ~3,329 cancer-mutation peptides, immunogenicity-labelled, with HLA restriction
+  modalities:
+  - immunogenicity-assay
+  - tcr-epitope
+  - hla-restriction
+  formats:
+  - txt
+  - tsv
+  - supplementary-tables
+  landing_url: http://prime.gfellerlab.org/
+  download_url: https://github.com/GfellerLab/PRIME
+  license: custom (academic/non-commercial, Gfeller lab)
+  license_url: https://github.com/GfellerLab/PRIME
+  access: open
+  provenance:
+    maintainer: Gfeller lab (Ludwig Institute / University of Lausanne; Schmidt, Gfeller et al.)
+    key_refs:
+    - 10.1016/j.xcrm.2021.100194
+  last_updated: '2022'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Functional immunogenicity labels (did a T-cell respond?) are scarcer and more valuable than
+      binding labels for neoantigen prioritization — this is a core training/validation set for immunogenicity
+      models.
+
+      '
+  agent_access: 'Training data in Cell Rep Med supplementary tables + GfellerLab/PRIME GitHub; git-cloneable.
+    Agent- fetchable (supplementary tables may need PDF/XLSX extraction).
+
+    '
+  caveats: 'RED FLAG: PRIME tool/data are academic / non-commercial use per the Gfeller lab terms — confirm
+    before commercial training. Immunogenicity labels are assay- and cohort-dependent (negatives are "not
+    observed", not proven non-immunogenic). Some peptides overlap IEDB sources. HLA coverage skewed to
+    common alleles.
 
     '
 - id: refseq
@@ -2199,6 +2862,59 @@
     '
   caveats: 'CC BY 4.0 (attribution). Peripheral to single-cell/antigen data proper — included as the standard
     vocabulary for the genomics-feature layer of an ingestion schema.
+
+    '
+- id: snp2hla-t1dgc-panel
+  name: SNP2HLA / T1DGC Immunochip HLA imputation reference panel
+  category: reference
+  species:
+  - human
+  description: 'The classic European-ancestry HLA imputation reference panel built by the Type 1 Diabetes
+    Genetics Consortium (T1DGC) and distributed with the SNP2HLA tool. Contains ~5,868 MHC-region SNPs
+    (Illumina Immunochip) phased with four-digit classical HLA types and HLA amino-acid polymorphisms
+    for ~5,225 unrelated individuals, enabling imputation of classical alleles and amino-acid variants
+    from SNP data. The companion Pan-Asian panel ships inside the SNP2HLA v1.0.3 package.
+
+    '
+  scale: ~5,225 unrelated individuals; ~5,868 MHC SNPs + 4-digit HLA + amino-acid polymorphisms (T1DGC
+    panel)
+  modalities:
+  - hla-reference-panel
+  - snp-genotype
+  - hla-allele
+  - hla-amino-acid
+  formats:
+  - plink
+  - beagle
+  - bgl
+  - markers
+  landing_url: https://software.broadinstitute.org/mpg/snp2hla/
+  download_url: https://software.broadinstitute.org/mpg/snp2hla/
+  license: unknown
+  license_url: https://software.broadinstitute.org/mpg/snp2hla/
+  access: controlled-access
+  provenance:
+    maintainer: Broad Institute (de Bakker lab) + Type 1 Diabetes Genetics Consortium (T1DGC)
+    key_refs:
+    - 10.1371/journal.pone.0064683
+  last_updated: 2015-03
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Foundational reference panel for turning cheap SNP-array genotypes into 4-digit HLA + amino-acid
+      calls; the baseline that newer multi-ethnic panels (Luo 2021, CookHLA) are benchmarked against.
+
+      '
+  agent_access: 'SNP2HLA tool + Pan-Asian panel: direct download, no auth. T1DGC panel: NOT in the package
+    since v1.0.3 (removed for individual-genotype privacy reasons) — must be requested from the NIDDK
+    Central Repository with an application; not agent-fetchable.
+
+    '
+  caveats: 'RED FLAG: the core European T1DGC reference panel is no longer openly downloadable — it was
+    pulled from the SNP2HLA distribution over individual-level genotype privacy and is now controlled-access
+    via NIDDK (DUA/request). No explicit SPDX license on the tool page. European-ancestry panel (ancestry
+    bias). Only the Pan-Asian panel remains openly bundled.
 
     '
 - id: uniparc

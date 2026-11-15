@@ -1,3 +1,149 @@
+- id: ab-bind
+  name: AB-Bind (antibody binding mutational database)
+  category: functional-assay
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Curated set of experimental binding free-energy changes (ddG) for point and multiple mutations
+    in antibody-antigen (and related) complexes, each mapped to a solved PDB structure. Built as a benchmark
+    for computational affinity- change prediction.
+
+    '
+  scale: 1,101 mutational variants across 32 antibody-antigen complexes, each with measured ddG
+  modalities:
+  - binding-affinity
+  - ddg
+  - mutation
+  - complex-structure
+  formats:
+  - csv
+  - xlsx
+  landing_url: https://onlinelibrary.wiley.com/doi/10.1002/pro.2829
+  download_url: https://onlinelibrary.wiley.com/doi/10.1002/pro.2829
+  license: unknown
+  license_url: https://onlinelibrary.wiley.com/doi/10.1002/pro.2829
+  access: open
+  provenance:
+    maintainer: Keating Lab, MIT (Sirin, Apgar, Bennett, Keating)
+    key_refs:
+    - 10.1002/pro.2829
+  last_updated: '2016'
+  relevance:
+    programs:
+    - design
+    why: 'A focused antibody-antigen ddG benchmark for affinity-maturation / binder-optimization models
+      — smaller and more antibody-specific than SKEMPI, and routinely paired with it for evaluation.
+
+      '
+  agent_access: 'Dataset lives in the Protein Science article''s supplementary files; copies are widely
+    mirrored on GitHub by reusers. No API; fetch the SI tables.
+
+    '
+  caveats: 'No explicit data license on the SI (mark unknown; confirm before redistribution). Small and
+    well-trodden — risk of train/test leakage with SKEMPI 2.0 (overlapping complexes). Some entries are
+    non-antibody PPIs.
+
+    '
+- id: abrank-benchmark
+  name: AbRank — antibody-antigen affinity ranking benchmark
+  category: functional-assay
+  species:
+  - human
+  - mouse
+  - other
+  description: 'A large aggregated antibody-antigen binding benchmark reframing affinity prediction as
+    pairwise ranking, pooling >380,000 binding assays from nine public sources with a fold-difference
+    filter to form robust train/test pairs. Ships a metric-learning framework and standard splits.
+
+    '
+  scale: '>380,000 binding assays aggregated from 9 sources; main CSV ~296 MB'
+  size_bytes: 310378496
+  modalities:
+  - binding-affinity
+  - ic50
+  - kd
+  - escape-fraction
+  - antibody-sequence
+  - ranking-pairs
+  formats:
+  - csv
+  landing_url: https://arxiv.org/abs/2506.17857
+  download_url: https://www.kaggle.com/datasets/aurlienplissier/abrank
+  api: https://github.com/biochunan/AbRank-WALLE-Affinity
+  license: unknown
+  license_url: https://www.kaggle.com/datasets/aurlienplissier/abrank
+  access: registration
+  provenance:
+    maintainer: Plissier et al. (AbRank)
+    key_refs:
+    - 10.48550/arXiv.2506.17857
+  last_updated: '2025'
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'A ready-made, de-leaked ranking benchmark across many antibody-antigen affinity sources — directly
+      usable to evaluate binder affinity-ranking models without rebuilding the aggregation.
+
+      '
+  agent_access: 'Dataset on Kaggle (Kaggle account/registration to download); code + splits on GitHub
+    (biochunan/AbRank-WALLE-Affinity).
+
+    '
+  caveats: 'Aggregates sources ALREADY in or overlapping this catalog (AlphaSeq, SAbDab, SKEMPI-v2, HER2-binders,
+    CATNAP, RBD-escape, Ab-CoV, AIntibody) — major dedup/leakage risk if combined with their primary entries.
+    Kaggle download requires registration. Per-source licenses are inherited and mixed; the aggregate
+    has no single stated data license (mark unknown).
+
+    '
+- id: absci-her2-binders
+  name: Absci de novo anti-HER2 antibody binders (Shanehsazzadeh 2023)
+  category: functional-assay
+  species:
+  - human
+  description: 'Open-sourced experimental results from a generative de novo antibody-design campaign:
+    >400,000 HER2-targeted variants screened, with 421 SPR-validated binders and their measured affinities
+    (KD), including Fab/mAb affinities and cross-species (cyno/mouse/canine) HER2 binding. A rare released
+    wet-lab output of a real binder-design pipeline.
+
+    '
+  scale: '>400,000 designed variants screened; 421 SPR-characterised binders with KD'
+  modalities:
+  - binding-affinity
+  - kd
+  - spr
+  - de-novo-design
+  - antibody-sequence
+  formats:
+  - csv
+  landing_url: https://www.biorxiv.org/content/10.1101/2023.01.08.523187v1
+  download_url: https://github.com/AbSciBio/unlocking-de-novo-antibody-design
+  api: https://github.com/AbSciBio/unlocking-de-novo-antibody-design
+  license: unknown
+  license_url: https://github.com/AbSciBio/unlocking-de-novo-antibody-design
+  access: open
+  provenance:
+    maintainer: Absci Corporation (Shanehsazzadeh et al.)
+    key_refs:
+    - 10.1101/2023.01.08.523187
+  last_updated: 2023-2024 (preprint updates)
+  relevance:
+    programs:
+    - design
+    why: 'Direct precedent and benchmark for the binder-design program: real generative-design outputs
+      with experimental SPR validation against a defined target, exactly the task Veritope aims to do
+      for its targets.
+
+      '
+  agent_access: 'CSV files in the AbSciBio GitHub repo (zero-shot-binders.csv etc.); clone to fetch. No
+    API/auth.
+
+    '
+  caveats: 'Single target (HER2). Repo license not explicitly stated (mark unknown; confirm reuse terms).
+    Preprint, not peer-reviewed; selection pipeline biases the released positives.
+
+    '
 - id: absolut
   name: Absolut! in silico antibody-antigen binding database
   category: functional-assay
@@ -51,6 +197,52 @@
     for real binding, useful for method development but not a substitute for experimental affinities.
 
     '
+- id: alphaseq-antibody-affinity
+  name: AlphaSeq antibody-affinity dataset (anti-SARS-CoV-2 scFv)
+  category: functional-assay
+  species:
+  - human
+  description: 'A large quantitative antibody-antigen affinity dataset: scFv-format antibodies assayed
+    by the AlphaSeq yeast-mating platform against a SARS-CoV-2 HR2 peptide, with predicted KD values spanning
+    ~37 pM to ~22 mM. One of the largest single-target experimental affinity datasets released.
+
+    '
+  scale: 104,972 scFv designs built into the library; ~71,384 with an affinity value (triplicate)
+  modalities:
+  - binding-affinity
+  - kd
+  - scfv
+  - antibody-sequence
+  formats:
+  - csv
+  landing_url: https://www.nature.com/articles/s41597-022-01779-4
+  download_url: https://zenodo.org/records/5095284
+  license: CC BY 4.0
+  license_url: https://zenodo.org/records/5095284
+  access: open
+  provenance:
+    maintainer: MIT Lincoln Laboratory / A-Alpha Bio (Engelhart et al.)
+    key_refs:
+    - 10.1038/s41597-022-01779-4
+    accessions:
+    - 10.5281/zenodo.5095284
+  last_updated: '2022'
+  relevance:
+    programs:
+    - design
+    why: 'A dense, quantitative affinity landscape against one target — ideal for training/benchmarking
+      affinity-prediction and affinity-maturation models central to binder design.
+
+      '
+  agent_access: 'Single CSV on Zenodo (plus GitHub mit-ll/AlphaSeq_Antibody_Dataset), no auth. Trivial
+    to automate.
+
+    '
+  caveats: 'Affinities are platform-"predicted" (AlphaSeq normalized scores), not SPR KD; single antigen/epitope.
+    Minor count discrepancies between the paper and downstream benchmarks (~71.4k vs ~71.8k) — verify
+    against the Zenodo file.
+
+    '
 - id: alphaseq-sarscov2
   name: AlphaSeq antibody-antigen binding dataset (SARS-CoV-2 peptide)
   category: functional-assay
@@ -101,31 +293,36 @@
 
     '
 - id: antijen
-  name: AntiJen v2.0 — quantitative immunology database (TAP, proteasome, MHC)
+  name: AntiJen Database (quantitative binding, functional & immunogenicity data)
   category: functional-assay
   species:
   - human
   - mouse
   - other
-  description: 'Database integrating quantitative functional, thermodynamic, kinetic, biophysical and
-    cellular immunology measurements, including peptide binding to TAP transporters and proteasome cleavage/
-    processing data, alongside peptide-MHC and TCR/antibody binding. A primary source of antigen- processing
-    (TAP transport + proteasomal cleavage) training data; successor to JenPep.
+  description: 'A curated database of quantitative binding data and functional immunology measurements,
+    including peptide-MHC binding affinities, TCR-pMHC and peptide-protein interactions, T-cell epitopes,
+    and continuous/discontinuous B-cell epitopes, with kinetic/thermodynamic and functional (immunogenicity)
+    annotations drawn from the literature. An older but genuinely distinct, quantitatively-annotated resource
+    predating much of IEDB''s growth — useful for binding-kinetics and functional labels.
 
     '
-  scale: ~24,000-31,000 curated entries from published experiments
+  scale: ~24,000+ quantitative entries spanning pMHC binding, TCR-pMHC, T-cell/B-cell epitopes
   modalities:
   - tap-binding
   - proteasome-cleavage
   - mhc-binding
   - functional-assay
+  - binding-assay
+  - tcr-epitope
+  - antibody-epitope
   formats:
   - web
   - html
+  - web-query
   landing_url: https://www.ddg-pharmfac.net/antijen/AntiJen/antijenhomepage.htm
   download_url: https://www.ddg-pharmfac.net/antijen/AntiJen/antijenhomepage.htm
   license: unknown
-  license_url: unknown
+  license_url: http://www.ddg-pharmfac.net/antijen/AntiJen/antijenhomepage.htm
   access: open
   accessions: []
   provenance:
@@ -137,16 +334,18 @@
     programs:
     - presentation
     - design
-    why: 'Rare source of quantitative TAP-transport and proteasome-cleavage data — the processing steps
-      that gate which non-canonical/spliced sequences can ever reach HLA.
+    - recognition
+    why: 'Quantitative binding and functional/immunogenicity annotations (kinetics, thermodynamics) that
+      complement IEDB''s qualitative breadth; a distinct historical corpus for binding-kinetics modelling.
 
       '
-  agent_access: 'Web search interface only (per-category search pages); no bulk-download/API documented
-    — likely requires scraping. RRID:SCR_001750.
+  agent_access: 'Web query interface only (no documented bulk download or API) — scraping required; legacy
+    host may be intermittently available. Verify the site resolves before relying on it.
 
     '
-  caveats: 'NO explicit license (flag). Legacy resource (core data ~2005, not actively updated); verify
-    the ddg-pharmfac.net mirror resolves. Mixed species.
+  caveats: 'No explicit license posted — mark license unknown; confirm reuse terms before redistribution.
+    Legacy resource: not actively maintained, host availability can lapse, and much of its content is
+    now also in IEDB (dedup needed). No bulk export; agent access is scrape-only.
 
     '
 - id: ccle-proteomics
@@ -255,6 +454,7 @@
   species:
   - human
   - mouse
+  - other
   description: 'A living benchmark aggregating experimentally measured therapeutic-antibody "fitness"/developability
     properties (e.g. binding affinity, thermostability, expression, aggregation, polyreactivity, viscosity,
     immunogenicity) across many published studies, with scoring scripts to test whether protein/antibody
@@ -270,10 +470,12 @@
   - expression
   - polyreactivity
   - antibody-sequence
+  - aggregation
+  - sequence
   formats:
   - csv
   landing_url: https://github.com/Graylab/FLAb
-  download_url: https://github.com/Graylab/FLAb
+  download_url: https://registry.opendata.aws/flab/
   license: CC BY 4.0
   license_url: https://registry.opendata.aws/flab/
   access: open
@@ -282,7 +484,7 @@
     key_refs:
     - 10.1101/2024.01.13.575504
     - 10.64898/2025.12.27.696706
-  last_updated: '2025'
+  last_updated: 2025 (FLAb2 preprint); v1 2024
   relevance:
     programs:
     - design
@@ -302,6 +504,7 @@
     fail to predict most (~80%) developability datasets, so treat as a hard benchmark.
 
     '
+  api: https://github.com/Graylab/FLAb
 - id: gse120272-mct-c2-rnaseq
   name: GSE120272 — Canine C2 Mast Cell Line Transcriptome (G-quadruplex study)
   category: functional-assay
@@ -467,6 +670,52 @@
       '
   caveats: Microarray, not RNA-seq. The drug-screen data were not verified as public. No explicit reuse
     license.
+- id: jain-2017-developability
+  name: Clinical-stage antibody biophysical/developability landscape (Jain 2017)
+  category: functional-assay
+  species:
+  - human
+  - other
+  description: 'Head-to-head biophysical characterisation of 137 clinical-stage antibodies (incl. 48 approved)
+    rebuilt as isotype-matched IgG1 and run through 12 developability assays (expression, solubility/self-association,
+    thermal and colloidal stability, polyspecificity, HIC, cross-interaction, etc.). A benchmark reference
+    for antibody developability.
+
+    '
+  scale: 137 antibodies x 12 biophysical assays
+  modalities:
+  - biophysical-assay
+  - developability
+  - sequence
+  formats:
+  - xlsx
+  - pdf
+  landing_url: https://www.pnas.org/doi/10.1073/pnas.1616408114
+  download_url: https://www.pnas.org/doi/10.1073/pnas.1616408114
+  license: unknown
+  license_url: https://www.pnas.org/doi/10.1073/pnas.1616408114
+  access: open
+  provenance:
+    maintainer: Adimab (Jain, Sun, Wittrup et al.)
+    key_refs:
+    - 10.1073/pnas.1616408114
+  last_updated: '2017'
+  relevance:
+    programs:
+    - design
+    why: 'The de facto gold-standard developability benchmark for real clinical antibodies — the target
+      distribution a binder-design pipeline''s outputs should resemble on manufacturability/liability
+      axes.
+
+      '
+  agent_access: 'Per-antibody assay values are in the PNAS supplementary dataset; no API. Fetch the SI
+    tables.
+
+    '
+  caveats: 'Only 137 molecules; assays are legacy formats. SI data license not stated (mark unknown).
+    Sequences must be recovered from the SI / INN lookups.
+
+    '
 - id: keskin-2019-neovax-gbm
   name: Keskin 2019 personal neoantigen vaccine (glioblastoma; dbGaP phs001519)
   category: functional-assay
@@ -511,6 +760,50 @@
   caveats: 'Controlled-access. Small phase-Ib cohort. Low-TMB setting limits neoantigen counts.
 
     '
+- id: mason-2021-trastuzumab-dms
+  name: Trastuzumab CDR-H3 deep mutational scan for HER2 binding (Mason 2021)
+  category: functional-assay
+  species:
+  - human
+  description: 'A deep mutational scanning dataset of trastuzumab variants (primarily CDR-H3) screened
+    by mammalian display + FACS and deep sequencing into HER2-binder / non-binder classes, released as
+    a benchmark for sequence-to-specificity learning and antibody optimization.
+
+    '
+  scale: ~36,000 classified CDR-H3 variants (binder vs non-binder); library ~10^4-10^5 designed
+  modalities:
+  - binding-classification
+  - deep-mutational-scanning
+  - antibody-sequence
+  - display-screen
+  formats:
+  - csv
+  landing_url: https://www.nature.com/articles/s41551-021-00699-9
+  download_url: https://www.nature.com/articles/s41551-021-00699-9
+  license: unknown
+  license_url: https://www.nature.com/articles/s41551-021-00699-9
+  access: open
+  provenance:
+    maintainer: Reddy Lab, ETH Zurich (Mason, Friedensohn et al.)
+    key_refs:
+    - 10.1038/s41551-021-00699-9
+  last_updated: '2021'
+  relevance:
+    programs:
+    - design
+    why: 'A clean single-target binding DMS on a clinical antibody''s CDR-H3 — a canonical benchmark for
+      the sequence->binding models that underpin CDR-focused binder design and affinity maturation.
+
+      '
+  agent_access: 'Classified-variant tables are in the paper''s data availability / SI and are widely reused
+    via community GitHub mirrors. Fetch the SI/mirror CSVs.
+
+    '
+  caveats: 'Binary binder/non-binder labels (not quantitative KD); single target (HER2), mostly CDR-H3.
+    Known label conflicts (~2,300 sequences) must be resolved before splitting. SI data license not explicitly
+    stated (mark unknown).
+
+    '
 - id: nasal-carcinoma-organoids-2026
   name: Canine Nasal Carcinoma Organoid RNA-seq (Front Vet Sci 2026)
   category: functional-assay
@@ -549,6 +842,49 @@
     names no repository or accession. Searches of NCBI GEO/BioProject, ENA (which mirrors DDBJ PRJDB)
     and the DDBJ Search API (BioProject, GEA and SRA; terms nasal, S100A2, canine organoid) returned no
     matching study. Treat as unavailable until the supplementary files or the authors supply an ID.
+
+    '
+- id: nbthermo
+  name: NbThermo (nanobody thermostability database)
+  category: functional-assay
+  species:
+  - other
+  description: 'Manually curated database of experimental nanobody thermostability (melting temperature
+    Tm) with sequences and associated metadata, assembled from the literature. A rare quantitative biophysical-property
+    set for the single-domain binder modality.
+
+    '
+  scale: ~564 nanobodies with measured Tm (manually curated)
+  modalities:
+  - nanobody
+  - thermostability
+  - biophysical-assay
+  - sequence
+  formats:
+  - csv
+  landing_url: https://valdes-tresanco-ms.github.io/NbThermo/
+  download_url: https://valdes-tresanco-ms.github.io/NbThermo/
+  license: unknown
+  license_url: https://academic.oup.com/database/article/doi/10.1093/database/baad021/7115729
+  access: open
+  provenance:
+    maintainer: Valdes-Tresanco et al.
+    key_refs:
+    - 10.1093/database/baad021
+  last_updated: '2023'
+  relevance:
+    programs:
+    - design
+    why: 'Developability (stability) labels for nanobody binders — useful for multi-objective binder design
+      where stability matters alongside affinity.
+
+      '
+  agent_access: 'Downloadable table from the GitHub-Pages site; small. Paper in the Database journal (typically
+    CC BY) but confirm the data-file license directly.
+
+    '
+  caveats: 'Small, literature-aggregated; Tm assay conditions vary across sources. Data-file license not
+    explicitly stated (mark unknown).
 
     '
 - id: nci-neoantigen-reactive-tcells
@@ -694,6 +1030,110 @@
     accession — cite the corrigendum. Small phase-I cohort.
 
     '
+- id: ppb-affinity
+  name: PPB-Affinity (protein-protein binding affinity dataset)
+  category: functional-assay
+  species:
+  - human
+  - mouse
+  - other
+  description: 'A harmonised protein-protein binding affinity dataset pairing experimental KD/affinity
+    values with complex crystal structures and chain/receptor-ligand annotations, compiled from SKEMPI
+    v2.0, SAbDab, Affinity Benchmark v5.5, PDBbind v2020 and ATLAS. Includes antibody-antigen and TCR-pMHC
+    subgroups.
+
+    '
+  scale: ~12,000 complexes (reported 12,052 samples from 3,027 PDB entries; ~12,019 after preprocessing)
+  modalities:
+  - binding-affinity
+  - kd
+  - complex-structure
+  - mutation
+  - antibody-antigen
+  - tcr-pmhc
+  formats:
+  - csv
+  landing_url: https://www.nature.com/articles/s41597-024-03997-4
+  download_url: https://zenodo.org/records/14271435
+  api: https://github.com/ChenPy00/PPB-Affinity
+  license: CC BY 4.0
+  license_url: https://www.nature.com/articles/s41597-024-03997-4
+  access: open
+  provenance:
+    maintainer: Liu, Chen, Zhai et al.
+    key_refs:
+    - 10.1038/s41597-024-03997-4
+    accessions:
+    - 10.5281/zenodo.14271435
+  last_updated: 2024 (Scientific Data v11:1316)
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'A structure-paired affinity set spanning antibody-antigen and TCR-pMHC — directly usable as
+      a training/benchmark set for binder affinity prediction across both Veritope recognition and design
+      modalities.
+
+      '
+  agent_access: 'CSV on Zenodo + baseline model/weights on GitHub (ChenPy00/PPB-Affinity). No auth.
+
+    '
+  caveats: 'Aggregated from five sources (SKEMPI2, SAbDab, Affinity Benchmark, PDBbind, ATLAS) — heavy
+    overlap with existing catalog entries; dedup before combining. Source datasets carry their own (sometimes
+    non-CC) terms despite the Zenodo CC BY 4.0 wrapper — check per-source before redistribution.
+
+    '
+- id: ppi-affinity-benchmark5
+  name: Protein-Protein Docking Benchmark 5 & Affinity Benchmark v2 (Weng lab)
+  category: functional-assay
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The integrated non-redundant benchmark of protein-protein complexes with bound+unbound
+    structures (Docking Benchmark 5) and the subset with measured binding affinities (Affinity Benchmark
+    v2), including an antibody-antigen category. The standard blind benchmark for docking and affinity
+    prediction; maintained as DB5.5.
+
+    '
+  scale: 'DB5: 230 complexes (incl. antibody-antigen cases); Affinity Benchmark v2: 179 complexes with
+    measured KD'
+  modalities:
+  - complex-structure
+  - binding-affinity
+  - kd
+  - docking
+  - antibody-antigen
+  formats:
+  - pdb
+  - csv
+  landing_url: https://zlab.wenglab.org/benchmark/
+  download_url: https://zlab.wenglab.org/benchmark/
+  license: unknown
+  license_url: https://zlab.wenglab.org/benchmark/
+  access: open
+  provenance:
+    maintainer: Weng Lab, UMass Chan Medical School (Vreven, Moal et al.)
+    key_refs:
+    - 10.1016/j.jmb.2015.07.016
+  last_updated: DB5.5 (ongoing); v2 affinity 2015
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'The community-standard structural docking/affinity benchmark with an antibody-antigen split
+      — for evaluating binder docking and affinity models against curated non-redundant complexes.
+
+      '
+  agent_access: 'Download bundles of bound/unbound PDBs and affinity tables from the Weng lab page; a
+    cleaned HADDOCK-ready copy is on GitHub (haddocking/BM5-clean). No auth.
+
+    '
+  caveats: 'Academic benchmark; explicit redistribution license not stated (mark unknown). Small and canonical
+    — high leakage risk if used for both train and test. Some linked affinity URLs in the paper are stale;
+    use the current zlab page.
+
+    '
 - id: prjdb17594-chs-celllines-rnaseq
   name: PRJDB17594 — RNA-seq of 11 Canine Histiocytic Sarcoma Cell Lines (Vet Comp Oncol 2025)
   category: functional-assay
@@ -808,6 +1248,53 @@
     '
   caveats: 'download_url + license unknown; sequencing data may not be openly deposited (industry sponsor).
     Immunogenicity results in the paper are readable but raw data access uncertain.
+
+    '
+- id: skempi2-xref
+  name: SKEMPI 2.0 (cross-reference — already catalogued)
+  category: functional-assay
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Pointer only. The Structural database of Kinetics and Energetics of Mutant Protein Interactions
+    (ddG/kinetics on mutated PPI complexes, including many antibody-antigen and some TCR-pMHC) is the
+    backbone affinity-mutation set for the design program. Recorded here for completeness of the antibody-binding
+    domain.
+
+    '
+  scale: ~7,000+ mutations across ~345 complexes (antibody-antigen subset is large)
+  modalities:
+  - binding-affinity
+  - ddg
+  - kinetics
+  - mutation
+  - complex-structure
+  formats:
+  - csv
+  landing_url: https://life.bsc.es/pid/skempi2/
+  download_url: https://life.bsc.es/pid/skempi2/database/index
+  license: custom (academic; see site)
+  license_url: https://life.bsc.es/pid/skempi2/
+  access: open
+  provenance:
+    maintainer: Barcelona Supercomputing Center / Moal & Fernandez-Recio
+    key_refs:
+    - 10.1093/bioinformatics/bty635
+  last_updated: 2019 (v2.0)
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Already fully catalogued as `skempi2` in domain-6. Listed here only so the antibody-binding
+      domain is self-describing; do not double-count.
+
+      '
+  agent_access: 'Bulk CSV download, no auth. See the primary `skempi2` entry for details.
+
+    '
+  caveats: 'DUPLICATE of the existing `skempi2` entry — reference only, exclude from any deduplicated
+    master count.
 
     '
 - id: specht-2020-proteasome-peptide-db
