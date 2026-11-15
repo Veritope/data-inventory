@@ -55,6 +55,58 @@
     "commercial_use": null
   },
   {
+    "id": "ameloblastoma-oscc-rnaseq",
+    "name": "GSE317244 / GSE317641 — Canine Acanthomatous Ameloblastoma & Oral SCC RNA-seq + snRNA-seq",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Bulk RNA-seq (GEO GSE317244) and single-nucleus RNA-seq (GSE317641; 19 samples — 6 canine acanthomatous ameloblastoma, 10 oral squamous cell carcinoma, 3 healthy gingiva; ~205k nuclei) characterizing neuroepithelial reprogramming and ERBB vulnerability in canine oral tumours (Mol Ther Oncol 2026).\n",
+    "scale": "snRNA: 19 samples / ~204,967 nuclei; + bulk RNA-seq",
+    "modalities": [
+      "bulk-rna-seq",
+      "single-nucleus-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "h5",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE317641",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE317244",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — Molecular Therapy: Oncology 2026)",
+      "key_refs": [
+        "10.1016/j.omton.2026.201300"
+      ]
+    },
+    "accessions": [
+      "GSE317244",
+      "GSE317641"
+    ],
+    "last_updated": "2026",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Oral-tumour gap filler with single-nucleus resolution across two tumour types plus healthy gingiva; ERBB axis is an actionable target and the atlas supports TME/antigen-expression work.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI open). Bulk per-dataset sample counts not stated in text (DS1 new, DS2 reused prior data) — inspect GEO metadata.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE317244",
+    "commercial_use": null
+  },
+  {
     "id": "braun-2020-rcc-checkmate",
     "name": "Braun et al. 2020 — advanced RCC nivolumab (CheckMate 009/010/025)",
     "category": "cancer-genomics",
@@ -156,6 +208,57 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB12081",
+    "commercial_use": null
+  },
+  {
+    "id": "canine-thyroid-carcinoma-wes-rnaseq",
+    "name": "PRJNA1222422 / GSE289443 — Canine Thyroid Carcinoma WES + RNA-seq (Commun Biol 2025)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Comparative genomic/transcriptomic profiling of canine thyroid carcinomas: whole-exome (SRA BioProject PRJNA1222422) and RNA-seq (GEO GSE289443) on 30 tumours (25 follicular, 5 medullary; WES+RNA on 27, RNA-only on 3), contrasting molecular profiles with human thyroid cancer (Commun Biol 2025). Normal-thyroid RNA comparators drawn from BarkBase.\n",
+    "scale": "30 tumours sequenced (of 60 total); 27 WES+RNA, 3 RNA-only",
+    "modalities": [
+      "whole-exome-seq",
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE289443",
+    "download_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1222422",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — Communications Biology 2025)",
+      "key_refs": [
+        "10.1038/s42003-025-09225-y"
+      ]
+    },
+    "accessions": [
+      "PRJNA1222422",
+      "GSE289443"
+    ],
+    "last_updated": "2025-11",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "New endocrine tumour type for the catalog with matched exome+expression and an explicit canine-vs-human molecular comparison; supports cross-species driver mapping.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI/INSDC open). WES (SRA) and RNA (GEO) in separate archives — join by sample. Figure source data on figshare; some data on-request.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1222422",
     "commercial_use": null
   },
   {
@@ -576,6 +679,205 @@
     "commercial_use": null
   },
   {
+    "id": "gse122916-prostate-fna-tissue",
+    "name": "GSE122916 — Canine Prostate Cancer FNA + Tissue RNA-seq",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "RNA-seq of canine prostate tissue and fine-needle aspirates spanning malignant and non-malignant samples (reanalyzed in a biomarker-prioritization framework, PMC8584104: 10 malignant and 14 non-malignant prostate tissue/FNA samples). Canine prostate cancer is predominantly castration-resistant, a model for aggressive human disease.\n",
+    "scale": "~24 samples (malignant + non-malignant tissue and FNA)",
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE122916",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE122916",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see papers)",
+      "key_refs": [
+        "10.3390/ijms222111481",
+        "10.1101/2024.08.18.608482"
+      ]
+    },
+    "accessions": [
+      "GSE122916"
+    ],
+    "last_updated": "2018",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Canine prostate expression reference; underpins a canine/human castration-resistance comparison (bioRxiv 2024) relevant to cross-species target discovery.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI open). Small malignant n. The comparative bioRxiv preprint key_ref was rate-limited at verification — confirm whether it deposits new accessions beyond this series. Framework DOI verified on PMC8584104.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE122916",
+    "commercial_use": null
+  },
+  {
+    "id": "gse190374-prostate-celllines",
+    "name": "GSE190374 / PRJNA786902 — Nine Canine Prostate Cancer Cell Lines RNA-seq",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "RNA-seq of nine canine prostate cancer cell lines compared with original tumour tissues, revealing diverse therapeutic-target signatures (Cancer Cell Int 2021). SRA study SRP349649 / BioProject PRJNA786902.\n",
+    "scale": "9 canine prostate cancer cell lines (+ tumour tissue)",
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE190374",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE190374",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — Cancer Cell International 2021)",
+      "key_refs": [
+        "10.1186/s12935-021-02422-9"
+      ]
+    },
+    "accessions": [
+      "GSE190374",
+      "SRP349649",
+      "PRJNA786902"
+    ],
+    "last_updated": "2021",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Canine prostate cancer cell-line panel expands the canine in-vitro model collection and pairs cell lines with source tumours for expression fidelity checks.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI/INSDC open). Cell lines — not primary cohort.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE190374",
+    "commercial_use": null
+  },
+  {
+    "id": "gse208664-sts-3types",
+    "name": "GSE208664 — Canine Soft-Tissue Sarcoma, 3 Subtypes FFPE RNA-seq (PLoS ONE 2022)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Comparative whole-transcriptome RNA-seq across three canine soft-tissue sarcoma subtypes from FFPE material, with FASTQ, metadata and read-count files deposited (PLoS ONE 2022). Complements GSE214154 with subtype-resolved expression.\n",
+    "scale": "canine STS, 3 subtypes (FFPE RNA-seq)",
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "csv",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE208664",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE208664",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — PLoS ONE 2022)",
+      "key_refs": [
+        "10.1371/journal.pone.0273705"
+      ]
+    },
+    "accessions": [
+      "GSE208664"
+    ],
+    "last_updated": "2022",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Subtype-level STS expression reference; useful to stratify the integrated cohort and for canine-human STS expression mapping.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI open). FFPE-derived — expect degradation artifacts.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE208664",
+    "commercial_use": null
+  },
+  {
+    "id": "gse214154-sts-integrated",
+    "name": "GSE214154 / PRJNA882864 — Canine Soft-Tissue Sarcoma Integrated Omics (Sci Rep 2023)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Integrated RNA-seq (GEO GSE214154, 29 samples) and matched tumour/normal whole-exome sequencing (SRA BioProject PRJNA882864) of canine soft-tissue sarcomas, reporting recurrent TP53 and KMT-gene mutations and recurrent PDGFB fusions (Sci Rep 2023).\n",
+    "scale": "29 STS RNA-seq samples + 29 tumour/normal WES pairs",
+    "modalities": [
+      "bulk-rna-seq",
+      "whole-exome-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE214154",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE214154",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — Scientific Reports 2023)",
+      "key_refs": [
+        "10.1038/s41598-023-37266-y"
+      ]
+    },
+    "accessions": [
+      "GSE214154",
+      "PRJNA882864"
+    ],
+    "last_updated": "2023",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Matched expression + exome in an under-covered tumour group; fusion and driver calls give both neoantigen candidates (fusions) and expression context for them.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI/INSDC open). RNA in GEO, WES in SRA — link by sample IDs. Heterogeneous STS subtypes within the cohort.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE214154",
+    "commercial_use": null
+  },
+  {
     "id": "gse238110",
     "name": "GSE238110 — Canine Osteosarcoma Bulk RNA-seq (DOG^2 / COTC022)",
     "category": "cancer-genomics",
@@ -620,6 +922,55 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE238110",
+    "commercial_use": null
+  },
+  {
+    "id": "gse288068-histiocytic-sarcoma-rnaseq",
+    "name": "GSE288068 — Canine Histiocytic Sarcoma Tumour + Cell-Line Transcriptomes (Engleberg 2025)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "RNA-seq of canine histiocytic sarcoma (18 HS-affected tumours vs 5 normal samples, plus three HS cell lines), identifying multiple therapeutic target pathways (Engleberg et al., Cancers 2025). Canine HS is a spontaneous model for the rare human histiocytic/dendritic neoplasms, with breed predisposition (e.g. Bernese Mountain Dog, Flat-Coated Retriever).\n",
+    "scale": "18 tumours + 5 normal + 3 cell lines (RNA-seq)",
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE288068",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE288068",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Michigan State University / NIH Genomics Core",
+      "key_refs": [
+        "10.3390/cancers17060954"
+      ]
+    },
+    "accessions": [
+      "GSE288068"
+    ],
+    "last_updated": "2025",
+    "relevance": {
+      "programs": [
+        "comparative",
+        "recognition"
+      ],
+      "why": "First-pass transcriptome for a previously uncovered canine tumour type with a direct rare-human-cancer analogue; supplies HS expression references and candidate targets.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI open). Modest cohort; normals n=5. Cell-line and tumour data mixed in one series — separate by sample metadata.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE288068",
     "commercial_use": null
   },
   {
@@ -1483,6 +1834,52 @@
     "commercial_use": null
   },
   {
+    "id": "mct-lcm-rnaseq-2026",
+    "name": "Canine MCT Laser-Capture-Microdissection RNA-seq (Sci Rep 2026)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "RNA sequencing of neoplastic mast cells isolated by laser-capture microdissection from FFPE biopsies of 32 canine cutaneous mast cell tumours across grades, reporting grade-associated molecular alterations with reduced stromal contamination.\n",
+    "scale": "32 canine cutaneous MCTs (LCM RNA-seq)",
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.nature.com/articles/s41598-026-66413-4",
+    "download_url": "https://www.nature.com/articles/s41598-026-66413-4",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — Scientific Reports 2026)",
+      "key_refs": [
+        "10.1038/s41598-026-66413-4"
+      ]
+    },
+    "accessions": [],
+    "last_updated": "2026",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Purest available primary-MCT expression signal (tumour cells only), ideal for MCT-specific marker and antigen discovery once the deposit is located.\n"
+    },
+    "caveats": "NOT YET VERIFIED: the Nature article page is access-gated and the repository accession (likely GEO/SRA) was not surfaced in its visible data-availability text — retrieve the exact accession from the full-text Data Availability section before use. Catalogued here so the dataset is tracked; mark access unconfirmed until the ID resolves.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.nature.com/articles/s41598-026-66413-4",
+    "commercial_use": null
+  },
+  {
     "id": "miao-2018-ccrcc-icb",
     "name": "Miao 2018 clear-cell renal carcinoma ICB cohort",
     "category": "cancer-genomics",
@@ -2325,6 +2722,56 @@
     "commercial_use": null
   },
   {
+    "id": "prjna518003-mct-wes",
+    "name": "PRJNA518003 / PRJNA576344 — Canine Mast Cell Tumour Exomes + Gene Panel (Vozdova 2020)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Whole-exome sequencing of canine cutaneous mast cell tumours identifying recurrent somatic mutations in 87 genes, including 10 recognized human cancer drivers (Vozdova et al., Vet Comp Oncol 2020). Exome reads are under BioProject PRJNA518003; targeted gene-panel NGS under PRJNA576344. Beyond the well-known KIT, the study flags additional recurrently mutated genes.\n",
+    "scale": "canine MCT exomes + targeted panel",
+    "modalities": [
+      "whole-exome-seq",
+      "targeted-panel-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA518003",
+    "download_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA518003",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Institute of Animal Genetics and Biotechnology / Veterinary Research Institute, Czechia",
+      "key_refs": [
+        "10.1111/vco.12572"
+      ]
+    },
+    "accessions": [
+      "PRJNA518003",
+      "PRJNA576344"
+    ],
+    "last_updated": "2020",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Mast cell tumour is one of the most common canine skin cancers and a priority under-covered tumour type; the somatic mutation set supplies candidate canine neoantigen loci beyond KIT.\n"
+    },
+    "caveats": "No explicit reuse license (INSDC/NCBI open). Exome, not RNA — pair with MCT expression data for neoantigen prioritization. Confirm sample-vs-run counts on NCBI.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA518003",
+    "commercial_use": null
+  },
+  {
     "id": "prjna552034-hsa-exome",
     "name": "PRJNA552034 — Canine Hemangiosarcoma Exome (Megquier, 47 GR)",
     "category": "cancer-genomics",
@@ -2419,6 +2866,53 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA559406",
+    "commercial_use": null
+  },
+  {
+    "id": "prjna574196-insulinoma-rnaseq",
+    "name": "PRJNA574196 — Canine Insulinoma Malignant-Progression RNA-seq (Sci Rep 2020)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Bulk RNA-seq characterizing malignant progression of canine insulinoma from normal pancreatic tissue through primary tumour to metastatic disease (Sci Rep 2020). Canine insulinoma is a spontaneous model of functional pancreatic neuroendocrine tumour.\n",
+    "scale": "normal + primary + metastatic insulinoma (RNA-seq)",
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA574196",
+    "download_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA574196",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — Scientific Reports 2020)",
+      "key_refs": [
+        "10.1038/s41598-020-68507-z"
+      ]
+    },
+    "accessions": [
+      "PRJNA574196"
+    ],
+    "last_updated": "2020",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Covers a previously uncatalogued endocrine tumour type with a stage-progression axis (normal→primary→met) useful for progression-associated antigen/expression analysis.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI/INSDC open). Accession from paper data statement; the Nature article page is access-gated — reconfirm run counts on the NCBI record.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA574196",
     "commercial_use": null
   },
   {
@@ -3900,6 +4394,110 @@
     "commercial_use": null
   },
   {
+    "id": "ctvt-186canids-wgs",
+    "name": "PRJEB7734-PRJEB7736 / PRJNA288568 — CTVT + 186 Canid Whole Genomes (Decker 2015)",
+    "category": "comparative-oncology",
+    "species": [
+      "dog",
+      "other"
+    ],
+    "description": "Whole-genome sequencing of CTVT tumours alongside 186 canid reference genomes (dogs, wolves, coyotes) used to reconstruct the CTVT somatic mutation landscape and evolutionary history (Decker et al., Genome Research 2015). Reads are split across ENA BioProjects PRJEB7734-PRJEB7736 (submitter deposits) and NCBI PRJNA288568.\n",
+    "scale": "CTVT genomes + 186 canid WGS",
+    "modalities": [
+      "whole-genome-seq"
+    ],
+    "formats": [
+      "fastq",
+      "bam"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA288568",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB7734",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/ena/browser/about/policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Transmissible Cancer Group, University of Cambridge; Wellcome Sanger Institute",
+      "key_refs": [
+        "10.1101/gr.190314.115"
+      ]
+    },
+    "accessions": [
+      "PRJEB7734",
+      "PRJEB7735",
+      "PRJEB7736",
+      "PRJNA288568"
+    ],
+    "last_updated": "2015",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Deepest somatic-mutation characterization of a transmissible canine cancer plus a large canid germline panel — a somatic/germline contrast useful for canine variant filtering and for understanding long-term tumour-genome evolution.\n"
+    },
+    "caveats": "No explicit reuse license (INSDC open-access). Reads span multiple projects across ENA and NCBI; de-duplicate samples before combining. Large WGS — plan storage/egress.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJEB7734",
+    "commercial_use": null
+  },
+  {
+    "id": "ctvt-founder-genomes-2014",
+    "name": "SAMEA2358413 / SAMEA2358415 — Original CTVT Founder Genomes (Murchison 2014)",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "The two CTVT genomes first sequenced by Murchison et al. (Science 2014), which established the ~11,000-year origin and ~1.9M somatic substitutions of the CTVT clone (Australia and Brazil tumours). Deposited as ENA biosamples SAMEA2358413 (genome 1) and SAMEA2358415 (genome 2); reused by downstream CTVT studies.\n",
+    "scale": "2 CTVT tumour genomes (WGS)",
+    "modalities": [
+      "whole-genome-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/ena/browser/view/SAMEA2358413",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/SAMEA2358413",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/ena/browser/about/policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Wellcome Sanger Institute; Transmissible Cancer Group, Cambridge",
+      "key_refs": [
+        "10.1126/science.1247167"
+      ]
+    },
+    "accessions": [
+      "SAMEA2358413",
+      "SAMEA2358415"
+    ],
+    "last_updated": "2014",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Foundational CTVT genomes; anchor for mutational-signature and clonal-cancer comparisons across the canine oncology dataset.\n"
+    },
+    "caveats": "No explicit reuse license (INSDC). These are sample accessions, not a BioProject — resolve to runs via ENA before download. Only two genomes; use with Decker 2015 panel.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/SAMEA2358413",
+    "commercial_use": null
+  },
+  {
     "id": "icdc",
     "name": "NCI Integrated Canine Data Commons (ICDC)",
     "category": "comparative-oncology",
@@ -4365,6 +4963,159 @@
     "commercial_use": true
   },
   {
+    "id": "prjeb19508-ctvt-regression-rnaseq",
+    "name": "PRJEB19508 — CTVT Regression RNA-seq (Frampton 2018)",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "Bulk RNA-seq of serial biopsies from canine transmissible venereal tumours (CTVT) undergoing vincristine-induced and natural regression vs. non-regressing tumours. The study (Frampton et al., Cancer Cell 2018) identified immune/inflammatory regression signatures and proposed CCL5 as a candidate driver of tumour rejection. CTVT is a naturally transmissible clonal cancer — a unique model of allogeneic tumour rejection and immune escape in an outbred canine host.\n",
+    "scale": "serial biopsies, regressing + non-regressing CTVT (RNA-seq)",
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB19508",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB19508",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/ena/browser/about/policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Transmissible Cancer Group, University of Cambridge (Murchison lab)",
+      "key_refs": [
+        "10.1016/j.ccell.2018.03.003"
+      ]
+    },
+    "accessions": [
+      "PRJEB19508"
+    ],
+    "last_updated": "2018",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Rare in vivo transcriptomic record of spontaneous immune-mediated tumour regression against an allogeneic (foreign-genotype) tumour; directly informs what a successful anti-tumour immune response looks like at the expression level.\n"
+    },
+    "agent_access": "ENA bulk FASTQ over HTTPS/FTP via Browser API or Aspera, no auth. Programmatic filereport endpoint (result=read_run) returns run accessions and download paths.\n",
+    "caveats": "No explicit reuse license (ENA/INSDC open-access policy applies; cite the paper). CTVT is clonal — tumour genotype differs from the host dog, so host-matched analyses require care. Confirm run-level accessions on the ENA record before bulk pull.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJEB19508",
+    "commercial_use": null
+  },
+  {
+    "id": "srp046723-headneck-scc",
+    "name": "SRP046723 — Canine Oral / Head-and-Neck Squamous Cell Carcinoma (PLoS Genet 2015)",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "Sequencing of canine spontaneous head-and-neck / oral squamous cell carcinomas shown to recapitulate their human counterparts at the molecular level (PLoS Genetics 2015). SRA study SRP046723.\n",
+    "scale": "canine HNSCC/OSCC cohort",
+    "modalities": [
+      "sequencing"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://trace.ncbi.nlm.nih.gov/Traces/?study=SRP046723",
+    "download_url": "https://trace.ncbi.nlm.nih.gov/Traces/?study=SRP046723",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — PLoS Genetics 2015)",
+      "key_refs": [
+        "10.1371/journal.pgen.1005277"
+      ]
+    },
+    "accessions": [
+      "SRP046723"
+    ],
+    "last_updated": "2015",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Explicit canine-human HNSCC molecular-equivalence dataset; a template for the cross-species validity argument central to the comparative-oncology thesis.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI/INSDC open). Confirm exact assay/sample composition on the SRA study record; accession taken from downstream citation.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://trace.ncbi.nlm.nih.gov/Traces/?study=SRP046723",
+    "commercial_use": null
+  },
+  {
+    "id": "antijen",
+    "name": "AntiJen v2.0 — quantitative immunology database (TAP, proteasome, MHC)",
+    "category": "functional-assay",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "Database integrating quantitative functional, thermodynamic, kinetic, biophysical and cellular immunology measurements, including peptide binding to TAP transporters and proteasome cleavage/ processing data, alongside peptide-MHC and TCR/antibody binding. A primary source of antigen- processing (TAP transport + proteasomal cleavage) training data; successor to JenPep.\n",
+    "scale": "~24,000-31,000 curated entries from published experiments",
+    "modalities": [
+      "tap-binding",
+      "proteasome-cleavage",
+      "mhc-binding",
+      "functional-assay"
+    ],
+    "formats": [
+      "web",
+      "html"
+    ],
+    "landing_url": "https://www.ddg-pharmfac.net/antijen/AntiJen/antijenhomepage.htm",
+    "download_url": "https://www.ddg-pharmfac.net/antijen/AntiJen/antijenhomepage.htm",
+    "license": "unknown",
+    "license_url": "unknown",
+    "access": "open",
+    "accessions": [],
+    "provenance": {
+      "maintainer": "Jenner Institute / Aston University (Flower group)",
+      "key_refs": [
+        "10.1186/1745-7580-1-4"
+      ]
+    },
+    "last_updated": "2005 (v2.0; site maintained)",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Rare source of quantitative TAP-transport and proteasome-cleavage data — the processing steps that gate which non-canonical/spliced sequences can ever reach HLA.\n"
+    },
+    "agent_access": "Web search interface only (per-category search pages); no bulk-download/API documented — likely requires scraping. RRID:SCR_001750.\n",
+    "caveats": "NO explicit license (flag). Legacy resource (core data ~2005, not actively updated); verify the ddg-pharmfac.net mirror resolves. Mixed species.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ddg-pharmfac.net/antijen/AntiJen/antijenhomepage.htm",
+    "commercial_use": null
+  },
+  {
     "id": "ccle-proteomics",
     "name": "CCLE Quantitative Proteomics (Nusinow/Gygi)",
     "category": "functional-assay",
@@ -4470,6 +5221,55 @@
     "commercial_use": null
   },
   {
+    "id": "gse120272-mct-c2-rnaseq",
+    "name": "GSE120272 — Canine C2 Mast Cell Line Transcriptome (G-quadruplex study)",
+    "category": "functional-assay",
+    "species": [
+      "dog",
+      "human"
+    ],
+    "description": "RNA-seq of the canine C2 mastocytoma cell line (and a matched human line) profiling whole-transcriptome response to a G-quadruplex-binding small molecule (Zorzan et al., Sci Rep 2018). Provides a canine mast cell tumour in-vitro expression baseline and a directly paired canine/human comparison.\n",
+    "scale": "canine + human mast cell line RNA-seq (treatment vs control)",
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120272",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120272",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "University of Padova (Dacasto / Giantin lab)",
+      "key_refs": [
+        "10.1038/s41598-018-35516-y"
+      ]
+    },
+    "accessions": [
+      "GSE120272"
+    ],
+    "last_updated": "2018",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Paired canine/human mast cell transcriptomes support cross-species expression mapping; a usable canine mast-cell-line reference for the MCT program.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI open). Cell-line, drug-perturbation context — not a primary-tumour cohort. Small sample number.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120272",
+    "commercial_use": null
+  },
+  {
     "id": "keskin-2019-neovax-gbm",
     "name": "Keskin 2019 personal neoantigen vaccine (glioblastoma; dbGaP phs001519)",
     "category": "functional-assay",
@@ -4517,6 +5317,51 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001519.v1.p1",
+    "commercial_use": null
+  },
+  {
+    "id": "nasal-carcinoma-organoids-2026",
+    "name": "Canine Nasal Carcinoma Organoid RNA-seq (Front Vet Sci 2026)",
+    "category": "functional-assay",
+    "species": [
+      "dog"
+    ],
+    "description": "Bulk RNA-seq of patient-derived canine nasal carcinoma organoids (n=6) vs normal nasal cells (n=4), used for drug-sensitivity testing and functional characterization of S100A2 (Yamamoto/Elbadawy/Sasaki, Front Vet Sci 2026). First organoid model for this tumour type.\n",
+    "scale": "6 NC organoid + 4 normal nasal samples (RNA-seq)",
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2026.1912335/full",
+    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13741214",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Yamaguchi University (Sasaki / Elbadawy lab)",
+      "key_refs": [
+        "10.3389/fvets.2026.1912335"
+      ]
+    },
+    "accessions": [],
+    "last_updated": "2026",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Fills the nasal-carcinoma gap and adds a canine organoid model; S100A2 highlighted as a candidate target.\n"
+    },
+    "caveats": "NOT YET VERIFIED: data-availability statement says data are \"in online repositories\" with the accession in the article/Supplementary material; the repository ID (this group typically uses DDBJ/DRA) was not in the main text. Retrieve the exact accession from the supplementary files before download. Catalogued so the dataset is tracked.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13741214",
     "commercial_use": null
   },
   {
@@ -4721,6 +5566,59 @@
     "commercial_use": null
   },
   {
+    "id": "specht-2020-proteasome-peptide-db",
+    "name": "Proteasome spliced/non-spliced peptide generation database (Specht et al. 2020, Mishto/Liepe)",
+    "category": "functional-assay",
+    "species": [
+      "human"
+    ],
+    "description": "Large curated database of in-vitro proteasome digestion products — both spliced and non-spliced peptides generated by purified proteasomes from synthetic polypeptide substrates — built for analysing and predicting proteasomal cleavage and peptide splicing. Antigen- processing training data underpinning spliced-epitope prediction. MS raw data on PRIDE + processed tables on Mendeley Data.\n",
+    "scale": "Thousands of proteasome-generated spliced/non-spliced peptide products",
+    "modalities": [
+      "in-vitro-digestion-ms",
+      "proteasome-cleavage"
+    ],
+    "formats": [
+      "raw-ms",
+      "xlsx",
+      "csv"
+    ],
+    "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7228940",
+    "download_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD016782",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "accessions": [
+      "PRIDE: PXD016782",
+      "Mendeley Data: 10.17632/nr7cs764rc.1"
+    ],
+    "provenance": {
+      "maintainer": "King's College London / MDC Berlin / MPI (Mishto & Liepe labs)",
+      "key_refs": [
+        "10.1038/s41597-020-0487-6"
+      ]
+    },
+    "last_updated": "2020-05",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Ground-truth proteasome cleavage/splicing data for building and validating antigen- processing models that decide which sequences can be generated and presented.\n"
+    },
+    "agent_access": "PRIDE (raw MS) + Mendeley Data (processed tables) bulk download, no auth. Article CC BY 4.0.\n",
+    "caveats": "In-vitro proteasome products (synthetic substrates), not direct HLA ligands — bridges to presentation via processing models. Human proteasomes.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/pride/archive/projects/PXD016782",
+    "commercial_use": true
+  },
+  {
     "id": "tesla-benchmark",
     "name": "TESLA (Tumor nEoantigen SeLection Alliance) benchmark (Synapse syn21048999)",
     "category": "functional-assay",
@@ -4771,6 +5669,56 @@
       3
     ],
     "ingest_endpoint": "https://www.synapse.org/#!Synapse:syn21048999",
+    "commercial_use": null
+  },
+  {
+    "id": "urothelial-organoid-biobank",
+    "name": "GSE306810 / GSE306811 — Canine Urothelial Carcinoma Organoid Biobank (2026)",
+    "category": "functional-assay",
+    "species": [
+      "dog"
+    ],
+    "description": "A canine invasive urothelial (bladder) carcinoma-derived organoid biobank with RNA-seq deposited across GEO series GSE306810 and GSE306811, positioned as a comparative/ translational platform (Zdyrski et al., Clin Transl Med 2026; bioRxiv 2025).\n",
+    "scale": "canine urothelial carcinoma organoid panel (RNA-seq)",
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306810",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306811",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Iowa State University (Zdyrski / Mochel / Allenspach group)",
+      "key_refs": [
+        "10.1002/ctm2.70645",
+        "10.1101/2025.09.27.678962"
+      ]
+    },
+    "accessions": [
+      "GSE306810",
+      "GSE306811"
+    ],
+    "last_updated": "2026",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Living organoid resource for an under-covered tumour; complements iUC primary-tumour genomics already in the catalog and enables functional antigen/target validation.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI open). Organoids (biobank access via the group may be request-based even though the sequence data are open). Two GEO series — check split.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306811",
     "commercial_use": null
   },
   {
@@ -6083,6 +7031,119 @@
     "commercial_use": null
   },
   {
+    "id": "holec-2025-yeastdisplay-pmhci-binding",
+    "name": "High-throughput class-I pMHC binding via yeast surface display (Holec 2025)",
+    "category": "mhc-binding",
+    "species": [
+      "human"
+    ],
+    "description": "Supplement for a yeast-surface-display platform that measures class-I peptide-MHC binding at scale: NNK benchmark libraries (quantitative enrichment/binding readouts across selected HLA-I alleles) plus pathogen peptide libraries (M. tuberculosis T7SS substrates, Dengue, Zika, SARS-CoV-2). Release includes raw + processed read counts, enrichment/rank tables, NetMHC predictions, oligo pools, and figures; raw sequencing at NIH SRA.\n",
+    "scale": "NNK benchmark libraries across multiple HLA-I alleles + 4 pathogen libraries; archive 384.7 MB (page lists ~29.6 GB total)",
+    "size_bytes": 384700000,
+    "modalities": [
+      "binding-assay",
+      "yeast-display",
+      "mhc-ligand-affinity"
+    ],
+    "formats": [
+      "xlsx",
+      "csv",
+      "fasta",
+      "zip"
+    ],
+    "landing_url": "https://zenodo.org/records/17093099",
+    "download_url": "https://zenodo.org/records/17093099/files/Supplement%20--%20Holec%20et%20al%202025.zip",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Holec et al. (Birnbaum lab, MIT); Zenodo + NIH SRA",
+      "key_refs": [
+        "10.5281/zenodo.17093099"
+      ],
+      "accessions": [
+        "10.5281/zenodo.17093099",
+        "SUB15276783"
+      ]
+    },
+    "last_updated": "2025-12-31",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "A large, recent, CC BY quantitative pMHC-I binding screen (yeast display) — exactly the kind of high-throughput experimental binding set third-pass gap-filling targets; clean license makes it directly usable for model training.\n"
+    },
+    "agent_access": "Zenodo anonymous HTTPS download (single 384.7 MB zip of processed data); raw reads via SRA. CC BY 4.0 permits reuse with attribution.\n",
+    "caveats": "Zenodo statistics report ~29.6 GB total vs a 384.7 MB archive — the discrepancy is unexplained; verify whether additional files exist. Paper DOI not yet on the record.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2
+    ],
+    "ingest_endpoint": "https://zenodo.org/records/17093099/files/Supplement%20--%20Holec%20et%20al%202025.zip",
+    "commercial_use": true
+  },
+  {
+    "id": "iedb-mhci-binding-benchmark-bd2013",
+    "name": "IEDB MHC-I quantitative binding retraining & reliability benchmark (Kim 2014; BD2009/BD2013)",
+    "category": "mhc-binding",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "The curated quantitative peptide-MHC-I binding-affinity datasets used to retrain the IEDB prediction tools and to build the reliability benchmark of Kim et al. BD2009 (~137,654 measurements) and BD2013 (~179,692 measurements) span human HLA plus mouse H-2, macaque and chimpanzee alleles; a \"Blind\" set (BD2013 minus BD2009, similarity- reduced) and cross-validation partitions (cv_rnd/cv_sr/cv_gs) are included. Same page hosts the Wang 2008 MHC-II affinity set and Peters 2006 benchmark predictions.\n",
+    "scale": "BD2009 ~137,654; BD2013 ~179,692 quantitative affinity measurements; multi-species HLA + H-2",
+    "size_bytes": null,
+    "modalities": [
+      "binding-assay",
+      "mhc-ligand-affinity"
+    ],
+    "formats": [
+      "txt",
+      "zip",
+      "tar.gz"
+    ],
+    "landing_url": "https://tools.iedb.org/main/datasets/",
+    "download_url": "https://tools.iedb.org/static/main/binding_data_2013.zip",
+    "api": "https://tools.iedb.org/static/main/benchmark_mhci_reliability.tar.gz",
+    "license": "unknown",
+    "license_url": "https://www.iedb.org/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "IEDB Analysis Resource (LJI / NIAID)",
+      "key_refs": [
+        "10.1186/1471-2105-15-241"
+      ],
+      "accessions": [
+        "binding_data_2013.zip",
+        "benchmark_mhci_reliability.tar.gz"
+      ]
+    },
+    "last_updated": "2014",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "The reference quantitative IC50 training corpus behind a generation of pMHC-I predictors; includes mouse H-2 affinities, giving a rare multi-species quantitative binding set for cross-species presentation modelling and benchmark reproduction.\n"
+    },
+    "agent_access": "Direct HTTPS downloads of the zip/tar.gz; no auth. Note link text on the page differs from the real path (benchmark_mhci_reliability.tar.gz).\n",
+    "caveats": "No explicit license stated on the IEDB datasets page; IEDB content is NIAID-funded and freely usable but lacks an SPDX tag here — confirm terms before redistribution. Overlaps with netmhcpan training sets and the stability set — dedup on peptide/allele.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2
+    ],
+    "ingest_endpoint": "https://tools.iedb.org/static/main/benchmark_mhci_reliability.tar.gz",
+    "commercial_use": null
+  },
+  {
     "id": "ipd-mhc-dla",
     "name": "IPD-MHC Dog (DLA) Section + ISAG DLA Nomenclature",
     "category": "mhc-binding",
@@ -6378,6 +7439,59 @@
     "commercial_use": false
   },
   {
+    "id": "netmhciipan40-train-set",
+    "name": "NetMHCIIpan-4.0 training set — MHC-II binding affinity + eluted ligand (incl. mouse H-2)",
+    "category": "mhc-binding",
+    "species": [
+      "human",
+      "mouse"
+    ],
+    "description": "The combined quantitative binding-affinity (BA) and mass-spec eluted-ligand (EL) training corpus for NetMHCIIpan-4.0: >500,000 measurements covering human HLA-DR, HLA-DQ, HLA-DP AND mouse H-2 (I-A/I-E) class-II molecules. Distributed as a single tar archive with 5-fold cross-validation partitions (train/test BA and EL files) and an MHC pseudo-sequence file. Companion to the NetMHCpan-4.1 release.\n",
+    "scale": ">500,000 BA+EL measurements; HLA-DR/DQ/DP + mouse H-2 class II",
+    "modalities": [
+      "binding-assay",
+      "mhc-ligand-elution",
+      "mhc-ligand-affinity"
+    ],
+    "formats": [
+      "tar.gz",
+      "txt"
+    ],
+    "landing_url": "https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/",
+    "download_url": "https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/",
+    "license": "unknown",
+    "license_url": "https://services.healthtech.dtu.dk/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Reynisson, Alvarez, Nielsen et al. (DTU Health Tech)",
+      "key_refs": [
+        "10.1093/nar/gkaa379"
+      ],
+      "accessions": [
+        "NetMHCIIpan_train.tar.gz"
+      ]
+    },
+    "last_updated": "2020-05",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "The largest public quantitative + EL class-II training set and one of the few that includes MOUSE H-2 class II — directly fills the preclinical CD4/MHC-II gap for presentation prediction and cross-species transfer.\n"
+    },
+    "agent_access": "Download the tar archive over HTTPS from the DTU supplementary page (cat/untar). No auth. Distinct archive from the already-catalogued NetMHCpan-4.1 class-I training set.\n",
+    "caveats": "No explicit license on the DTU page (academic/non-profit free; commercial needs a license). BA values are log-transformed; file layout documentation is inconsistent across DTU pages — inspect the extracted folder before parsing.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2
+    ],
+    "ingest_endpoint": "https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/",
+    "commercial_use": null
+  },
+  {
     "id": "netmhcpan",
     "name": "NetMHCpan / NetMHCIIpan (DTU) + training data",
     "category": "mhc-binding",
@@ -6470,6 +7584,59 @@
       2
     ],
     "ingest_endpoint": "https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/",
+    "commercial_use": null
+  },
+  {
+    "id": "netmhcstabpan-stability-data",
+    "name": "NetMHCstabpan peptide-MHC-I complex stability dataset (Rasmussen/Harndahl 2016)",
+    "category": "mhc-binding",
+    "species": [
+      "human"
+    ],
+    "description": "Quantitative peptide-MHC class I complex STABILITY measurements (half-life of the pMHC complex, a correlate of immunogenicity distinct from affinity), generated by the Buus lab and used to train NetMHCstabpan. >25,000 stability data points across 75 HLA molecules; the publication-level file is released as HLA/peptide/Thalf tuples, with the stand-alone training archive (data.tar.gz) and a counts table.\n",
+    "scale": ">25,000 stability measurements; 75 HLA-I molecules (publication reports up to ~136k stability+affinity points)",
+    "modalities": [
+      "binding-assay",
+      "pmhc-stability"
+    ],
+    "formats": [
+      "txt",
+      "tar.gz",
+      "xls"
+    ],
+    "landing_url": "https://services.healthtech.dtu.dk/services/NetMHCstabpan-1.0/",
+    "download_url": "https://services.healthtech.dtu.dk/suppl/immunology/NetMHCstabpan-1.0/Stability.txt",
+    "license": "unknown",
+    "license_url": "https://services.healthtech.dtu.dk/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Rasmussen, Fenoy, Harndahl, Nielsen, Buus (DTU Health Tech / U. Copenhagen)",
+      "key_refs": [
+        "10.4049/jimmunol.1600582"
+      ],
+      "accessions": [
+        "Stability.txt",
+        "data.tar.gz"
+      ]
+    },
+    "last_updated": "2016",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Stability (off-rate) is a stronger correlate of CTL immunogenicity than affinity; this is the primary public quantitative stability set for training/validating stability predictors and immunogenicity filters.\n"
+    },
+    "agent_access": "Direct HTTPS download of Stability.txt (HLA/peptide/Thalf) and data.tar.gz from DTU; counts.xls describes the training table. No auth; small files.\n",
+    "caveats": "No explicit license on the DTU page; DTU tools are free for academic/non-profit use, commercial use needs a license — treat the data as academic-use, cite Rasmussen 2016. Quantitative binding inputs were drawn from IEDB (overlap with IEDB sets below).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2
+    ],
+    "ingest_endpoint": "https://services.healthtech.dtu.dk/suppl/immunology/NetMHCstabpan-1.0/Stability.txt",
     "commercial_use": null
   },
   {
@@ -6616,6 +7783,157 @@
       2
     ],
     "ingest_endpoint": "https://zenodo.org/records/5715479",
+    "commercial_use": null
+  },
+  {
+    "id": "walshe-2014-hlab2705-affinities",
+    "name": "Experimental HLA-B*2705 peptide-binding affinity dataset (Walshe 2014)",
+    "category": "mhc-binding",
+    "species": [
+      "human"
+    ],
+    "description": "A focused \"data paper\" releasing experimentally measured binding affinities for 223 peptides to HLA-B*2705, determined with an in-house FACS-based MHC stabilization assay — a clean, fully experimental single-allele quantitative binding set published with the data as the primary object (Dataset Papers in Science).\n",
+    "scale": "223 peptides, single allele HLA-B*2705; experimental affinities",
+    "modalities": [
+      "binding-assay",
+      "mhc-ligand-affinity"
+    ],
+    "formats": [
+      "xlsx",
+      "pdf"
+    ],
+    "landing_url": "https://onlinelibrary.wiley.com/doi/10.1155/2014/914684",
+    "download_url": "https://onlinelibrary.wiley.com/doi/10.1155/2014/914684",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Walshe et al.; Dataset Papers in Science (Hindawi, open access)",
+      "key_refs": [
+        "10.1155/2014/914684"
+      ]
+    },
+    "last_updated": "2014",
+    "relevance": {
+      "programs": [
+        "presentation"
+      ],
+      "why": "Small but fully experimental, well-documented single-allele affinity set useful as an independent held-out test for HLA-B27 binding predictors (B27 is clinically important and often under-represented in training data).\n"
+    },
+    "agent_access": "Open-access article + supplementary data table via the Wiley/Hindawi page; CC BY 3.0.\n",
+    "caveats": "Small scale and single allele; stabilization-assay affinities are not directly IC50 and should be normalized before merging with competitive-binding sets.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2
+    ],
+    "ingest_endpoint": "https://onlinelibrary.wiley.com/doi/10.1155/2014/914684",
+    "commercial_use": true
+  },
+  {
+    "id": "wang-2008-mhcii-binding-affinity",
+    "name": "Wang 2008 quantitative MHC class II peptide-binding affinity dataset (IEDB)",
+    "category": "mhc-binding",
+    "species": [
+      "human",
+      "mouse"
+    ],
+    "description": "Curated quantitative MHC class II peptide-binding affinity dataset assembled by Wang et al. for a systematic MHC-II prediction benchmark, released via the IEDB datasets page. Includes the peptide-affinity table, a non-redundant PDB core-peptide/allele reference, and an LCMV T-cell activation table.\n",
+    "scale": "quantitative IC50 affinities across human HLA class II + mouse H-2; thousands of peptides",
+    "modalities": [
+      "binding-assay",
+      "mhc-ligand-affinity"
+    ],
+    "formats": [
+      "zip",
+      "txt"
+    ],
+    "landing_url": "https://tools.iedb.org/main/datasets/",
+    "download_url": "https://tools.iedb.org/static/main/peptide_affinity_dataset.zip",
+    "license": "unknown",
+    "license_url": "https://www.iedb.org/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "IEDB Analysis Resource (LJI / NIAID)",
+      "key_refs": [
+        "10.1371/journal.pcbi.1000048"
+      ],
+      "accessions": [
+        "peptide_affinity_dataset.zip",
+        "non_redundant_pdb_core_pep_allele.txt",
+        "LCMV_T_cell_activation.txt"
+      ]
+    },
+    "last_updated": "2008",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "A clean legacy quantitative MHC-II affinity benchmark (human + mouse H-2) still used to compare class-II predictors; complements the much larger NetMHCIIpan-4.0 corpus.\n"
+    },
+    "agent_access": "Direct HTTPS download of the zip/txt from IEDB; no auth; small files.\n",
+    "caveats": "No explicit license on the IEDB page. Older curation; expect overlap with BD2013 and NetMHCIIpan sets — dedup on peptide/allele/measurement.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2
+    ],
+    "ingest_endpoint": "https://tools.iedb.org/static/main/peptide_affinity_dataset.zip",
+    "commercial_use": null
+  },
+  {
+    "id": "alspach-2019-mhcii-sarcoma-neoantigen",
+    "name": "MHC-II neoantigens in mouse T3 sarcoma (Alspach 2019)",
+    "category": "neoantigen",
+    "species": [
+      "mouse"
+    ],
+    "description": "Characterization of the MHC class II-restricted neoantigen landscape of the T3 MCA sarcoma, defining mITGB1 (N710Y Itgb1) as a major I-A(b)-restricted CD4 neoantigen and showing MHC-II neoantigens are required for optimal checkpoint-blockade response. Processed mutation/neoepitope data and immunogenicity readouts are in the paper's extended-data and supplementary tables.\n",
+    "scale": "T3 sarcoma; defined MHC-II (mITGB1) and MHC-I neoantigens; CD4/CD8 reactivity data",
+    "modalities": [
+      "wes",
+      "rna-seq",
+      "neoepitope-annotation",
+      "functional-assay"
+    ],
+    "formats": [
+      "xlsx",
+      "pdf"
+    ],
+    "landing_url": "https://www.nature.com/articles/s41586-019-1671-8",
+    "download_url": "https://www.nature.com/articles/s41586-019-1671-8#Sec26",
+    "license": "unknown",
+    "license_url": "https://www.nature.com/nature/editorial-policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Alspach/Schreiber lab (WashU); journal supplementary tables",
+      "key_refs": [
+        "10.1038/s41586-019-1671-8"
+      ]
+    },
+    "last_updated": "2019-10",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "One of the few well-defined mouse MHC-II (CD4) tumour neoantigen datasets; essential for CD4 neoantigen prediction and for modelling the CD4/CD8 interplay underlying vaccine and checkpoint responses, where class-II data are scarce.\n"
+    },
+    "agent_access": "Extended-data / supplementary tables from the Nature article page (no auth for SI).\n",
+    "caveats": "No deposited raw-sequence accession confirmed; processed data only in SI under Springer Nature terms (no explicit open license). Confirm any GEO ID in the paper.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.nature.com/articles/s41586-019-1671-8#Sec26",
     "commercial_use": null
   },
   {
@@ -6919,6 +8237,61 @@
     "commercial_use": null
   },
   {
+    "id": "gubin-2014-sarcoma-neoantigens",
+    "name": "Checkpoint-blockade mouse sarcoma mutant-antigen landscape (Gubin 2014; GSE62771 / phs001005)",
+    "category": "neoantigen",
+    "species": [
+      "mouse"
+    ],
+    "description": "Whole-exome + transcriptome characterization of MCA-induced mouse sarcomas (e.g. d42m1-T3) defining tumour-specific mutant antigens (incl. the mLAMA4 and mALG8 neoepitopes) that are the targets of CD8 T-cell responses driving regression after anti-PD-1 / anti-CTLA-4. RNA-seq in GEO; raw exome/transcriptome reads in SRA/dbGaP.\n",
+    "scale": "MCA sarcoma lines; exome + RNA-seq; defined H2-Kb/Db mutant neoepitopes",
+    "modalities": [
+      "wes",
+      "rna-seq",
+      "neoepitope-annotation"
+    ],
+    "formats": [
+      "fastq",
+      "soft",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62771",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE62771&format=file",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "Gubin/Schreiber lab (WashU); GEO + dbGaP",
+      "key_refs": [
+        "10.1038/nature13988"
+      ],
+      "accessions": [
+        "GSE62771",
+        "PRJNA278450",
+        "phs001005"
+      ]
+    },
+    "last_updated": "2014-11",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "Foundational syngeneic neoantigen dataset linking mutation discovery to checkpoint response; mLAMA4/mALG8 are reference immunogenic mouse neoepitopes for benchmarking neoantigen ranking and TCR-recognition models.\n"
+    },
+    "agent_access": "GSE62771 processed RNA-seq is open on GEO (anonymous HTTP). Raw reads under dbGaP phs001005 need an approved Data Use Certification (controlled access).\n",
+    "caveats": "Raw sequence is controlled-access (dbGaP DUA) — catalog but note the gate. GEO processed matrices are open but carry no explicit redistribution license.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE62771&format=file",
+    "commercial_use": null
+  },
+  {
     "id": "iedb-tumor",
     "name": "IEDB — tumor/cancer subset",
     "category": "neoantigen",
@@ -6972,6 +8345,287 @@
       4
     ],
     "ingest_endpoint": "https://query-api.iedb.org/",
+    "commercial_use": true
+  },
+  {
+    "id": "kahles-2018-splicing-neoepitopes",
+    "name": "TCGA pan-cancer alternative-splicing neoepitopes (Kahles et al. 2018, PCAWG/SplAdder)",
+    "category": "neoantigen",
+    "species": [
+      "human"
+    ],
+    "description": "Comprehensive alternative-splicing analysis across 8,705 TCGA patients (32 cancer types) with SplAdder, cataloguing tumor-specific splicing events and deriving predicted splicing-derived MHC neoepitopes. The deposited-data table releases the predicted neoepitope set and the tumor variant set via Synapse, with the splicing event catalogue mirrored at the NCI GDC (PanCanAtlas-Splicing-2018).\n",
+    "scale": "8,705 patients, 32 cancer types; genome-wide splicing event + neoepitope catalogues",
+    "modalities": [
+      "rna-seq-derived",
+      "splicing-events",
+      "predicted-neoepitopes"
+    ],
+    "formats": [
+      "tsv",
+      "csv"
+    ],
+    "landing_url": "https://www.cell.com/cancer-cell/fulltext/S1535-6108(18)30306-4",
+    "download_url": "https://www.synapse.org/#!Synapse:syn12180140",
+    "license": "unknown",
+    "license_url": "https://www.synapse.org/#!Help:GoverningLawAndTerms",
+    "access": "registration",
+    "accessions": [
+      "Synapse: syn12180140",
+      "Synapse: syn12179113",
+      "GDC: PanCanAtlas-Splicing-2018"
+    ],
+    "provenance": {
+      "maintainer": "TCGA PanCanAtlas splicing working group (Ratsch/Robinson labs; MSKCC/ETH Zurich)",
+      "key_refs": [
+        "10.1016/j.ccell.2018.07.001"
+      ]
+    },
+    "last_updated": "2018-08",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Largest pan-cancer map of splicing-derived antigen candidates; the released neoepitope table is a direct prioritisation input for alternative-splicing antigen programs.\n"
+    },
+    "agent_access": "Synapse requires a (free) registered account + accepting governance terms for download; programmatic access via synapseclient. GDC splicing catalogue is openly downloadable.\n",
+    "caveats": "Synapse data governance: registration + terms acceptance required (not fully \"open\"); some upstream TCGA variant/HLA inputs are controlled-access. Neoepitopes are predicted, not MS-validated. Human only.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.synapse.org/#!Synapse:syn12180140",
+    "commercial_use": null
+  },
+  {
+    "id": "kwok-2025-splicing-public-neoantigens",
+    "name": "Tumour-wide splicing-derived public neoantigens (Kwok et al. 2025, SSNIP)",
+    "category": "neoantigen",
+    "species": [
+      "human"
+    ],
+    "description": "Spatially-mapped tumor RNA-seq (gliomas and other tumor types) used to identify recurrent, tumour-wide RNA-splicing aberrations that generate shared (\"public\") neoantigens, with the SSNIP pipeline and HLA-presentation validation. The study's own spatially-mapped glioma biopsy RNA-seq is deposited in EGA (controlled) plus a NODE mirror for other RNA-seq.\n",
+    "scale": "Spatially-mapped multi-region biopsies; recurrent public splicing neoantigens",
+    "modalities": [
+      "rna-seq",
+      "mhc-ligand-elution",
+      "predicted-neoepitopes"
+    ],
+    "formats": [
+      "fastq",
+      "tsv"
+    ],
+    "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11903331",
+    "download_url": "https://www.biosino.org/node/project/detail/OEP002956",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "controlled-access",
+    "accessions": [
+      "EGA: EGAS00001007986",
+      "EGA: EGAD00001005221",
+      "EGA: EGAD00001005222",
+      "EGA: EGAD00001009496",
+      "EGA: EGAD00001009497",
+      "NODE: OEP002956"
+    ],
+    "provenance": {
+      "maintainer": "University of California San Francisco (Okada lab; Parker Institute for Cancer Immunotherapy)",
+      "key_refs": [
+        "10.1038/s41586-024-08552-0"
+      ]
+    },
+    "last_updated": "2025-03",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition",
+        "design"
+      ],
+      "why": "\"Public\" splicing neoantigens shared across patients and across tumor regions are prime shared-target candidates; SSNIP (github.com/dakwok/SSNIP) is reusable for discovery.\n"
+    },
+    "agent_access": "Own glioma biopsy RNA-seq is EGA controlled-access (DAC approval + DUA). NODE OEP002956 is openly downloadable. Code on GitHub.\n",
+    "caveats": "Core patient RNA-seq is controlled-access (EGA). Immunopeptidome relied on reused CPTAC/PIDB data (no new MS accession). Human only.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.biosino.org/node/project/detail/OEP002956",
+    "commercial_use": true
+  },
+  {
+    "id": "laumont-2018-aetsa",
+    "name": "Aberrantly-expressed TSA immunopeptidome (Laumont et al. 2018, Perreault/Thibault)",
+    "category": "neoantigen",
+    "species": [
+      "human",
+      "mouse"
+    ],
+    "description": "Proteogenomic datasets underpinning the finding that non-coding/aberrantly-expressed genomic regions (endogenous retroelements, non-coding RNAs, intergenic/UTR regions) are the main source of targetable tumor-specific antigens (aeTSAs). The study built tumor-specific protein databases by subtracting the mature medullary thymic epithelial cell (mTEC) transcriptome, then validated MHC-I-eluted peptides by MS across murine lines (CT26, EL4) and human B-ALL and lung tumor samples. Multiple PRIDE/ProteomeXchange immunopeptidome deposits.\n",
+    "scale": "Multiple MHC-I elution datasets across mouse lines + human tumors",
+    "modalities": [
+      "mhc-ligand-elution",
+      "rna-seq",
+      "proteogenomics-database"
+    ],
+    "formats": [
+      "raw-ms",
+      "mzml",
+      "fastq"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD009753",
+    "download_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD009753",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/pride/markdownpage/aboutpride",
+    "access": "open",
+    "accessions": [
+      "PRIDE: PXD009753",
+      "PRIDE: PXD009064",
+      "PRIDE: PXD009750",
+      "PRIDE: PXD009751",
+      "PRIDE: PXD007935"
+    ],
+    "provenance": {
+      "maintainer": "Institute for Research in Immunology and Cancer (IRIC), Universite de Montreal (Perreault & Thibault labs)",
+      "key_refs": [
+        "10.1126/scitranslmed.aau5516"
+      ]
+    },
+    "last_updated": "2018-10",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "Primary evidence and data for the \"dark matter\" / non-coding source of shared tumor antigens. Mouse + human elution data are reusable for training/benchmarking non-canonical ligand detection and for the know/believe/prove separation on aeTSAs.\n"
+    },
+    "agent_access": "PRIDE bulk FTP/Aspera download, no auth; related accessions cross-linked within each project.\n",
+    "caveats": "No explicit dataset reuse license beyond PRIDE/EBI terms — confirm before redistribution. Species metadata on individual PRIDE records can mislabel mixed mouse/human submissions.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/pride/archive/projects/PXD009753",
+    "commercial_use": null
+  },
+  {
+    "id": "laumont-2018-mouse-tsa",
+    "name": "Noncoding-derived tumour-specific antigens in mouse models (Laumont 2018; GSE111092 / PXD009064)",
+    "category": "neoantigen",
+    "species": [
+      "mouse",
+      "human"
+    ],
+    "description": "Proteogenomic discovery of tumour-specific antigens (TSAs) in two murine lines (CT26 BALB/c colon carcinoma; EL4 C57BL/6 lymphoma) plus 7 human primary tumours, showing ~90% of TSAs arise from allegedly noncoding regions. Pairs RNA-seq / exome (GEO GSE111092, mouse + human sub-series) with MHC-I immunopeptidomics MS (PRIDE, EL4/CT26 ligandomes).\n",
+    "scale": "21 mouse + 30 human TSAs; CT26 & EL4 lines; RNA-seq + immunopeptidome MS",
+    "modalities": [
+      "rna-seq",
+      "mhc-ligand-elution",
+      "raw-ms",
+      "neoepitope-annotation"
+    ],
+    "formats": [
+      "fastq",
+      "raw",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE111092",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE111092&format=file",
+    "api": "https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD009064",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Laumont/Perreault lab (IRIC, U. Montréal); GEO + PRIDE",
+      "key_refs": [
+        "10.1126/scitranslmed.aau5516"
+      ],
+      "accessions": [
+        "GSE111092",
+        "PXD009064",
+        "PXD009750"
+      ]
+    },
+    "last_updated": "2018-12",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Key evidence that noncoding/aberrant translation drives the mouse (and human) TSA repertoire; immunopeptidome + RNA pairing is a direct proteogenomics training set for non-canonical antigen discovery, with matched syngeneic models (CT26/EL4).\n"
+    },
+    "agent_access": "GSE111092 open on GEO (anonymous HTTP); PXD009064 raw MS via anonymous PRIDE FTP.\n",
+    "caveats": "No explicit SPDX license on either GEO or PRIDE. PXD009750 linkage to this study is inferred from co-deposition dates — verify in the paper's data-availability text.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD009064",
+    "commercial_use": null
+  },
+  {
+    "id": "merlotti-2023-te-splicejunction",
+    "name": "Exon-TE splice-junction neoantigens in lung cancer (Merlotti/Burbage 2023, Institut Curie)",
+    "category": "neoantigen",
+    "species": [
+      "human"
+    ],
+    "description": "HLA-I immunopeptidomics and matched transcriptomics identifying immunogenic, patient-shared neoantigens encoded by non-canonical splice junctions between coding exons and transposable elements in non-small-cell lung cancer and lung tumor lines. Companion study (Burbage et al.) shows these junction antigens are epigenetically (DNA-methylation) controlled. The PRIDE deposit is released under CC0.\n",
+    "scale": "NSCLC primary samples + lung tumor cell lines; recurrent junction-derived peptides",
+    "modalities": [
+      "mhc-ligand-elution",
+      "rna-seq"
+    ],
+    "formats": [
+      "raw-ms",
+      "fastq"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD034820",
+    "download_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD034820",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "access": "open",
+    "accessions": [
+      "PRIDE: PXD034820"
+    ],
+    "provenance": {
+      "maintainer": "Institut Curie, Paris (Amigorena lab; submitter Y. Arribas)",
+      "key_refs": [
+        "10.1126/sciimmunol.abm6359",
+        "10.1126/sciimmunol.abm6360"
+      ]
+    },
+    "last_updated": "2023-02",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition",
+        "design"
+      ],
+      "why": "Recurrent exon-TE junction antigens are candidate shared targets; CC0 licensing makes the immunopeptidome fully reusable for training and for proving recurrence across patients.\n"
+    },
+    "agent_access": "PRIDE bulk download, no auth. CC0 permits unrestricted reuse including ML training.\n",
+    "caveats": "Companion Burbage (abm6360) deposit accession not individually verified here — cite the Merlotti PXD034820 for the released immunopeptidome. Human lung cancer only.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/pride/archive/projects/PXD034820",
     "commercial_use": true
   },
   {
@@ -7168,6 +8822,279 @@
       4
     ],
     "ingest_endpoint": "http://nep.whu.edu.cn/",
+    "commercial_use": null
+  },
+  {
+    "id": "ouspenskaia-2022-nuorfdb",
+    "name": "nuORFdb v1.0 + Ribo-seq/MHC-I immunopeptidome (Ouspenskaia et al. 2022)",
+    "category": "neoantigen",
+    "species": [
+      "human"
+    ],
+    "description": "Ribosome-profiling-derived database of ~230k+ translated non-canonical/unannotated ORFs (nuORFs: uORFs, out-of-frame, lncRNA, 5'UTR, 3'UTR, pseudogene ORFs) built across human cell lines and tissues, plus the matched MHC-I immunopeptidomics used to show ~3,555 nuORF-derived peptides are presented on HLA class I in cancer. The deposited bundle includes the Ribo-seq raw data, transcript quantifications, and the nuORFdb_v1.0.bed database itself (via GEO), with the mass-spectrometry raw files on MassIVE. This is a foundational resource for cryptic/ non-canonical tumor antigen discovery.\n",
+    "scale": "~237k nuORFs in nuORFdb v1.0; 3,555 translated nuORFs detected in MHC-I MS",
+    "modalities": [
+      "ribo-seq",
+      "rna-seq",
+      "mhc-ligand-elution",
+      "proteogenomics-database"
+    ],
+    "formats": [
+      "bed",
+      "fastq",
+      "raw-ms",
+      "tsv"
+    ],
+    "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198624",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE143263",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html",
+    "access": "open",
+    "accessions": [
+      "GEO: GSE143263",
+      "GEO: GSE131267",
+      "MassIVE: MSV000084787",
+      "dbGaP: phs001998",
+      "dbGaP: phs001451",
+      "dbGaP: phs001519"
+    ],
+    "provenance": {
+      "maintainer": "Broad Institute of MIT and Harvard; Dana-Farber (Clauser/Carr/Regev labs)",
+      "key_refs": [
+        "10.1038/s41587-021-01021-3"
+      ]
+    },
+    "last_updated": "2022-02",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "The canonical reference for expanding the presentable antigen space beyond annotated coding genes. nuORFdb is directly usable as a search space for immunopeptidome re-analysis and for training presentation models on non-canonical ligands.\n"
+    },
+    "agent_access": "GEO (nuORFdb_v1.0.bed + Ribo-seq) and MassIVE (MS) are bulk-downloadable without auth; code at github.com/klarman-cell-observatory/Riboseq-nuORFs. Patient-derived raw data are under dbGaP controlled access (DUA + eRA/approval required).\n",
+    "caveats": "Patient-sample raw sequencing is dbGaP controlled-access, not open. No explicit reuse license is attached to the GEO/MassIVE deposits (repository terms only) — flag before redistribution. nuORFdb is human-only.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE143263",
+    "commercial_use": null
+  },
+  {
+    "id": "rna-source-neoantigens-2023",
+    "name": "RNA-source (editing/variant) tumor-agnostic neoantigen immunopeptidome (2023)",
+    "category": "neoantigen",
+    "species": [
+      "human"
+    ],
+    "description": "Proteogenomic study showing RNA-level variants — notably A-to-I RNA-editing events (detected as A>G) — are a major, tumor-agnostic source of HLA-presented neoantigens, with many neoantigens derived only from RNA (not DNA) variants. Mass spectrometry immunopeptidome data deposited at PRIDE.\n",
+    "scale": "Patient cohort; high fraction of RNA-only / RNA-editing-derived neoantigens",
+    "modalities": [
+      "mhc-ligand-elution",
+      "rna-seq",
+      "proteogenomics"
+    ],
+    "formats": [
+      "raw-ms"
+    ],
+    "landing_url": "https://www.nature.com/articles/s41467-023-39570-7",
+    "download_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD037655",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "accessions": [
+      "PRIDE: PXD037655"
+    ],
+    "provenance": {
+      "maintainer": "See 10.1038/s41467-023-39570-7 (Nature Communications 2023)",
+      "key_refs": [
+        "10.1038/s41467-023-39570-7"
+      ]
+    },
+    "last_updated": "2023-06",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition",
+        "design"
+      ],
+      "why": "Directly demonstrates RNA-editing neoantigens on HLA — a non-mutational, potentially shared antigen class; the MS data support proving editing-derived targets.\n"
+    },
+    "agent_access": "PRIDE bulk download, no auth. Article CC BY 4.0.\n",
+    "caveats": "Immunopeptidome MS deposited; upstream patient sequencing access varies. A>G calls require careful SNP/editing discrimination. Human only.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/pride/archive/projects/PXD037655",
+    "commercial_use": true
+  },
+  {
+    "id": "ruizcuevas-2021-noncanonical-dlbcl",
+    "name": "Non-canonical proteome & immunopeptidome of DLBCL (Ruiz Cuevas et al. 2021)",
+    "category": "neoantigen",
+    "species": [
+      "human"
+    ],
+    "description": "Integrated Ribo-seq (translation initiation + elongation), RNA-seq and MHC-I immunopeptidome MS for three human diffuse large B-cell lymphoma lines (HBL-1, DoHH2, SU-DHL-4), used to catalogue 2,503 new non-canonical proteins (1,842 cryptic proteins + 661 novel isoforms) and assess how few reach the immunopeptidome. Primary data + the custom proteogenomic databases are deposited (PRIDE + SRA).\n",
+    "scale": "3 DLBCL lines; 2,503 non-canonical proteins catalogued",
+    "modalities": [
+      "ribo-seq",
+      "rna-seq",
+      "mhc-ligand-elution",
+      "proteogenomics-database"
+    ],
+    "formats": [
+      "raw-ms",
+      "fastq"
+    ],
+    "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8040094",
+    "download_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD020620",
+    "license": "CC BY-NC-ND 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "access": "open",
+    "accessions": [
+      "PRIDE: PXD020620",
+      "SRA/BioProject: PRJNA647736"
+    ],
+    "provenance": {
+      "maintainer": "IRIC, Universite de Montreal (Perreault lab) with Yewdell (NIAID)",
+      "key_refs": [
+        "10.1016/j.celrep.2021.108815"
+      ]
+    },
+    "last_updated": "2021-03",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Quantifies the gap between non-canonical translation and actual HLA presentation — directly relevant to prioritising which cryptic ORFs are worth proving as antigens. Code: lemieux-lab/Ribo-db.\n"
+    },
+    "agent_access": "PRIDE + SRA bulk download, no auth; analysis code on GitHub (lemieux-lab/Ribo-db).\n",
+    "caveats": "Article is CC BY-NC-ND (no derivatives / non-commercial) — note for any derived redistribution. Human lymphoma cell lines only.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/pride/archive/projects/PXD020620",
+    "commercial_use": false
+  },
+  {
+    "id": "shah-2023-te-antigens",
+    "name": "Pan-cancer transposable-element-derived tumor antigens (Shah et al. 2023, TEProf2)",
+    "category": "neoantigen",
+    "species": [
+      "human"
+    ],
+    "description": "Pan-cancer (33 TCGA tumor types) identification of 1,068 transposable-element-chimeric transcripts (exon-TE splice products) predicted to yield shared tumor-specific TE antigens (TS-TEAs), with HLA-pulldown and whole-lysate mass spectrometry confirming TE-derived peptides (e.g. four L1PA2-derived ligands in DMS53). New sequencing and MS data were deposited; the TEProf2 pipeline is released.\n",
+    "scale": "1,068 TE-chimeric candidate transcripts across 33 tumor types",
+    "modalities": [
+      "rna-seq",
+      "mhc-ligand-elution",
+      "proteomics"
+    ],
+    "formats": [
+      "fastq",
+      "raw-ms"
+    ],
+    "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13152471",
+    "download_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD033351",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/pride/markdownpage/aboutpride",
+    "access": "open",
+    "accessions": [
+      "GEO: GSE201021",
+      "PRIDE: PXD033351",
+      "EGA: EGAD00001000725"
+    ],
+    "provenance": {
+      "maintainer": "Washington University School of Medicine, St. Louis (Ting Wang lab)",
+      "key_refs": [
+        "10.1038/s41588-023-01349-3"
+      ]
+    },
+    "last_updated": "2023-03",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design",
+        "comparative"
+      ],
+      "why": "Shared, tumor-specific TE antigens are attractive off-the-shelf targets; the new GEO/PRIDE deposits plus TEProf2 (github.com/twlab/TEProf2Paper) let us re-derive and prove candidates.\n"
+    },
+    "agent_access": "GEO + PRIDE bulk download, no auth. Note some upstream inputs (EGAD00001000725 cell lines) are EGA controlled-access; TCGA/GTEx/CPTAC used as references.\n",
+    "caveats": "No explicit reuse license on GEO/PRIDE deposits (repository terms). Antigen calls are prediction-heavy; only a handful MS-validated. Human only.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/pride/archive/projects/PXD033351",
+    "commercial_use": null
+  },
+  {
+    "id": "smart-2018-intron-retention-neoepitopes",
+    "name": "Intron-retention neoepitopes in cancer (Smart et al. 2018)",
+    "category": "neoantigen",
+    "species": [
+      "human"
+    ],
+    "description": "In-silico framework (plus MS evidence on MHC-I in cancer cell lines) establishing intron retention as a source of tumor neoepitopes, applied to melanoma immunotherapy cohorts. No new primary sequencing was deposited; the work re-analysed public cohorts (Snyder 2014; Hugo 2016) whose raw data are at dbGaP/SRA, and released its pipeline and predictions.\n",
+    "scale": "Melanoma ICB cohorts re-analysed; intron-retention neoepitope predictions",
+    "modalities": [
+      "rna-seq-derived",
+      "predicted-neoepitopes",
+      "mhc-ligand-elution-reanalysis"
+    ],
+    "formats": [
+      "tsv"
+    ],
+    "landing_url": "https://www.nature.com/articles/nbt.4239",
+    "download_url": "https://www.ncbi.nlm.nih.gov/sra/?term=SRP070710",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "controlled-access",
+    "accessions": [
+      "dbGaP: phs001038.v1.p1",
+      "SRA: SRP070710"
+    ],
+    "provenance": {
+      "maintainer": "Broad Institute (Hacohen/Margolis and colleagues)",
+      "key_refs": [
+        "10.1038/nbt.4239"
+      ]
+    },
+    "last_updated": "2018-10",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Establishes intron retention as an antigen class to test; useful as a method reference and for benchmarking splicing-antigen pipelines against ICB outcomes.\n"
+    },
+    "agent_access": "SRP070710 openly downloadable from SRA; Snyder cohort (phs001038) is dbGaP controlled-access. No new deposit — a reanalysis/method paper.\n",
+    "caveats": "Reuses external cohorts rather than depositing new primary data; one cohort is controlled. Neoepitopes are predicted with limited MS validation. Human only.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/sra/?term=SRP070710",
     "commercial_use": null
   },
   {
@@ -7516,6 +9443,161 @@
     ],
     "ingest_endpoint": "https://tumoragdb.com.cn/",
     "commercial_use": null
+  },
+  {
+    "id": "yadav-2014-mc38-tramp-neoantigens",
+    "name": "MC38 & TRAMP-C1 MS-validated mouse neoantigens (Yadav 2014)",
+    "category": "neoantigen",
+    "species": [
+      "mouse"
+    ],
+    "description": "Combined whole-exome + transcriptome sequencing and MHC-I immunopeptidomics in two widely used syngeneic lines (MC38 colon carcinoma, TRAMP-C1 prostate) to identify MS-confirmed, MHC-I-presented mutant peptides — including the reference H2-Db neoepitope Adpgk (ASMTNMELM, ~2 nM). Variant peptides, LC-MS identifications, RNA-seq expression, and MHC-I-presented variants are released as Supplementary Tables 1-5.\n",
+    "scale": "2 syngeneic lines; thousands of nonsynonymous variants; handful of MS-confirmed neoepitopes",
+    "modalities": [
+      "wes",
+      "rna-seq",
+      "mhc-ligand-elution",
+      "neoepitope-annotation"
+    ],
+    "formats": [
+      "xlsx"
+    ],
+    "landing_url": "https://www.nature.com/articles/nature14001",
+    "download_url": "https://www.nature.com/articles/nature14001#Sec16",
+    "license": "unknown",
+    "license_url": "https://www.nature.com/nature/editorial-policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Yadav, Jhunjhunwala et al. (Genentech); data in journal supplementary tables",
+      "key_refs": [
+        "10.1038/nature14001"
+      ]
+    },
+    "last_updated": "2014-11",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "Adpgk/Reps1/Dpagt1 (MC38) are among the most-used mouse neoantigen benchmarks for vaccine and TCR work; the paper's MS-validated presented variants are a clean positive set for immunogenicity/presentation modelling in syngeneic systems.\n"
+    },
+    "agent_access": "Supplementary Excel tables downloadable from the Nature article page (no auth for SI). No raw-read repository accession was deposited.\n",
+    "caveats": "Data live only as journal supplementary tables (no GEO/SRA/PRIDE accession); governed by Springer Nature SI terms, not an open license — redistribution not clearly granted.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.nature.com/articles/nature14001#Sec16",
+    "commercial_use": null
+  },
+  {
+    "id": "yang-2019-fusion-neoantigens",
+    "name": "Gene-fusion-derived neoantigens (Yang et al. 2019, MSKCC)",
+    "category": "neoantigen",
+    "species": [
+      "human"
+    ],
+    "description": "Whole-exome and RNA-seq of patient tumors used to detect tumor-specific gene fusions and demonstrate that fusion-junction neoantigens are strongly immunogenic and can drive immunotherapy responses (incl. a complete responder with a fusion neoantigen). Pan-cancer TCGA analysis estimated fusion neoantigens in ~24% of fusion-positive tumors. New sequencing deposited under one BioProject.\n",
+    "scale": "TCGA pan-cancer fusion survey (1,404/5,825 fusion+ tumors with predicted neoantigen) + patient cohort",
+    "modalities": [
+      "wes",
+      "rna-seq",
+      "functional-assay"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6558662",
+    "download_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA527992",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "accessions": [
+      "SRA/BioProject: PRJNA527992"
+    ],
+    "provenance": {
+      "maintainer": "Memorial Sloan Kettering Cancer Center (Chan & Morris labs); sequencing at New York Genome Center",
+      "key_refs": [
+        "10.1038/s41591-019-0434-2"
+      ]
+    },
+    "last_updated": "2019-05",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition",
+        "design"
+      ],
+      "why": "Fusion-junction neoantigens are a distinct, often clonal antigen class; the deposited WES/ RNA-seq supports fusion-caller benchmarking and antigen recurrence analysis.\n"
+    },
+    "agent_access": "PRJNA527992 bulk-downloadable from SRA, no auth; some TCGA inputs via cBioPortal/controlled TCGA.\n",
+    "caveats": "No explicit reuse license on the SRA deposit (NCBI policy only). Human only.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA527992",
+    "commercial_use": null
+  },
+  {
+    "id": "zhou-2020-rnaedit-neoantigens",
+    "name": "Systematic A-to-I RNA-editing neoantigen catalogue (Zhou et al. 2020, PREP)",
+    "category": "neoantigen",
+    "species": [
+      "human"
+    ],
+    "description": "Systematic in-silico characterization of A-to-I RNA-editing-derived neoantigens across TCGA cancer types, with the PREP pipeline and MS validation of an editing-derived peptide (OSBPL9) in ovarian tumors. The released resource is a set of supplementary neoantigen tables plus the open pipeline; it re-analyses public RNA-editing, RNA-seq and MS data rather than depositing new MS.\n",
+    "scale": "Pan-cancer TCGA RNA-editing neoantigen predictions; 1 MS-validated editope",
+    "modalities": [
+      "rna-editing-derived",
+      "predicted-neoepitopes",
+      "mhc-ligand-elution-reanalysis"
+    ],
+    "formats": [
+      "xlsx",
+      "docx"
+    ],
+    "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7758481",
+    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7758481",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "accessions": [
+      "reuses TCGA RNA-editing: Synapse syn2374375",
+      "reuses ovarian RNA-seq: SRA PRJNA398141",
+      "reuses ovarian MS: PRIDE PXD007635"
+    ],
+    "provenance": {
+      "maintainer": "Tongji University / ShanghaiTech / USTC (Qi Liu lab)",
+      "key_refs": [
+        "10.3389/fonc.2020.593989"
+      ]
+    },
+    "last_updated": "2020-12",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Complements the RNA-source immunopeptidome: provides a pan-cancer predicted editope catalogue and an open pipeline (PREP, github.com/bm2-lab/PREP) for editing-antigen discovery.\n"
+    },
+    "agent_access": "Neoantigen tables are open article supplements; PREP on GitHub. Underlying editing data via Synapse (registration) and some controlled TCGA (phs000178) inputs.\n",
+    "caveats": "Predictions (reanalysis), not a new primary deposit; only one editope MS-validated. TCGA HLA/ neoantigen inputs partly controlled. Human only.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      4
+    ],
+    "ingest_endpoint": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7758481",
+    "commercial_use": true
   },
   {
     "id": "abelin-2017-monoallelic",
@@ -8052,6 +10134,55 @@
     "commercial_use": null
   },
   {
+    "id": "faridi-2018-spliced-peptides",
+    "name": "Cis/trans spliced HLA-I peptide immunopeptidome (Faridi et al. 2018, Purcell lab)",
+    "category": "presentation",
+    "species": [
+      "human"
+    ],
+    "description": "LC-MS/MS immunopeptidomics dataset (\"Trans-splicing of class I HLA bound peptides diversifies the immunopeptidome\") supporting the claim that a subset of HLA-I ligands are not genomically templated but arise from proteasome-catalysed cis-/trans-peptide splicing. A contested but heavily re-analysed resource for post-translationally generated (spliced) antigens.\n",
+    "scale": "HLA-I elution across cell lines/alleles; spliced-peptide fraction estimates",
+    "modalities": [
+      "mhc-ligand-elution"
+    ],
+    "formats": [
+      "raw-ms"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD009660",
+    "download_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD009660",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/pride/markdownpage/aboutpride",
+    "access": "open",
+    "accessions": [
+      "PRIDE: PXD009660"
+    ],
+    "provenance": {
+      "maintainer": "Monash University, Melbourne (Purcell lab)",
+      "key_refs": [
+        "10.1126/sciimmunol.aar3947"
+      ]
+    },
+    "last_updated": "2018-10",
+    "relevance": {
+      "programs": [
+        "presentation"
+      ],
+      "why": "Spliced peptides, if real at scale, expand the presentable antigen space and complicate genome-anchored prediction; essential data for the \"believe vs prove\" line on spliced antigens.\n"
+    },
+    "agent_access": "PRIDE bulk download, no auth.\n",
+    "caveats": "SCIENTIFIC DISPUTE: later Science Immunology comment (10.1126/sciimmunol.aaw1622) argues the spliced-peptide fraction is overestimated (<1% at 1% FDR) and that only 8 result files were shared. Treat spliced-peptide counts as contested. No explicit reuse license beyond PRIDE terms.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/pride/archive/projects/PXD009660",
+    "commercial_use": null
+  },
+  {
     "id": "gfeller-2018-meningioma-hla1",
     "name": "Gfeller 2018 meningioma HLA-I peptidome (length/multiple specificity)",
     "category": "presentation",
@@ -8318,6 +10449,114 @@
     ],
     "ingest_endpoint": "https://query-api.iedb.org/",
     "commercial_use": true
+  },
+  {
+    "id": "jaeger-2022-invivo-immunopeptidome",
+    "name": "In vivo autochthonous tumour immunopeptidome via KbStrep GEMM (PXD033232)",
+    "category": "presentation",
+    "species": [
+      "mouse"
+    ],
+    "description": "MHC-I immunopeptidomics from autochthonous mouse tumours using a genetically engineered KbStrep allele (StrepTag knocked into H2-K1) enabling StrepTactin affinity purification of MHC-I peptides directly from KP pancreatic (PDAC) and lung (LUAD) adenocarcinoma in vivo. Identified 438 tumour-specific peptides, 192 of which were missed by conventional antibody immunoprecipitation; several LUAD peptides derive from genes with minimal cognate mRNA.\n",
+    "scale": "438 tumour-specific peptides (192 unique to StrepTactin purification); PDAC + LUAD GEMMs",
+    "modalities": [
+      "mhc-ligand-elution",
+      "raw-ms"
+    ],
+    "formats": [
+      "raw",
+      "txt"
+    ],
+    "landing_url": "https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD033232",
+    "download_url": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/pride/markdownpage/license",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Jaeger, Stopfer, White et al. (MIT/Koch Institute); PRIDE deposit",
+      "key_refs": [
+        "10.1038/s41586-022-04839-2"
+      ],
+      "accessions": [
+        "PXD033232",
+        "PXD026337"
+      ]
+    },
+    "last_updated": "2022-06",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "Rare in vivo (not cultured-line) mouse tumour ligandome; gold standard for what is actually presented by autochthonous tumours, incl. non-canonical / low-mRNA antigens that cell-line immunopeptidomics and RNA-based prediction miss.\n"
+    },
+    "agent_access": "Anonymous PRIDE FTP; bulk per-file download. Verify exact subfolder path under the 2022 archive via the ProteomeXchange landing page.\n",
+    "caveats": "No explicit per-dataset SPDX license on PRIDE. Two accessions exist (peer-reviewed PXD033232 vs preprint PXD026337) — dedup to PXD033232.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/",
+    "commercial_use": null
+  },
+  {
+    "id": "murine-mhci-immunopeptidome-draftmap",
+    "name": "Tissue-based draft map of the murine MHC class I immunopeptidome (PXD008733 / SYSMHC00018)",
+    "category": "presentation",
+    "species": [
+      "mouse"
+    ],
+    "description": "Mass-spectrometry immunopeptidome of H2-Db/H2-Kb-eluted peptides across 19 normal C57BL/6 tissues plus mouse tumour cell lines (EL4, LLC1/LL2, B16F10). ~30,000 high-confidence H2-Db/Kb ligands identified and annotated, built as a reference \"draft map\" of the steady-state mouse MHC-I ligandome. Raw files on PRIDE; curated identifications mirrored in the SysteMHC Atlas (SYSMHC00018) and SWATH Atlas, with a figshare collection of supplementary tables.\n",
+    "scale": "~30,000 high-confidence H2-Db/Kb peptides; 19 normal tissues + 3-4 tumour lines",
+    "modalities": [
+      "mhc-ligand-elution",
+      "raw-ms"
+    ],
+    "formats": [
+      "raw",
+      "mztab",
+      "txt",
+      "tsv"
+    ],
+    "landing_url": "https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD008733",
+    "download_url": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/06/PXD008733/",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/pride/markdownpage/license",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Schuster/Caron et al.; deposited at PRIDE (EMBL-EBI); mirrored at SysteMHC Atlas",
+      "key_refs": [
+        "10.1038/sdata.2018.157"
+      ],
+      "accessions": [
+        "PXD008733",
+        "SYSMHC00018",
+        "10.6084/m9.figshare.c.4118675"
+      ]
+    },
+    "last_updated": "2018-06",
+    "relevance": {
+      "programs": [
+        "presentation"
+      ],
+      "why": "The canonical normal-tissue mouse H2-Db/Kb ligandome needed to subtract self from tumour-specific signal in syngeneic models; direct training/validation data for murine presentation prediction and for cross-species transfer to human.\n"
+    },
+    "agent_access": "Anonymous PRIDE FTP, per-file wget/rsync. SysteMHC Atlas offers parsed peptide tables via its web UI. No auth; raw files are large (GB-scale).\n",
+    "caveats": "PRIDE does not attach an explicit per-dataset license; data are \"freely available\" but no SPDX license is stated — confirm before redistribution. Raw .raw files need reprocessing to reach peptide lists; use the SysteMHC/figshare tables for ready IDs.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/06/PXD008733/",
+    "commercial_use": null
   },
   {
     "id": "pearson-2016-maps",
@@ -9342,6 +11581,54 @@
     "commercial_use": false
   },
   {
+    "id": "ctdatabase",
+    "name": "CTdatabase — cancer-testis antigen knowledge base",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "Curated knowledge base of cancer-testis antigens (CTAs): gene aliases, RefSeq accessions, genomic locations, splice variants and family members, plus manually curated mRNA/protein expression and antigen-specific immune-response data in cancer patients. The reference catalogue for the classic shared tumor-antigen class (MAGE, NY-ESO-1, SSX, etc.).\n",
+    "scale": "Hundreds of curated CTA genes/families with expression + immunogenicity annotation",
+    "modalities": [
+      "curated-antigen-annotation",
+      "expression"
+    ],
+    "formats": [
+      "web",
+      "html"
+    ],
+    "landing_url": "http://www.cta.lncc.br",
+    "download_url": "http://www.cta.lncc.br",
+    "license": "unknown",
+    "license_url": "unknown",
+    "access": "open",
+    "accessions": [],
+    "provenance": {
+      "maintainer": "Ludwig Institute for Cancer Research / LNCC (Brazil)",
+      "key_refs": [
+        "10.1093/nar/gkn673"
+      ]
+    },
+    "last_updated": "2009 (NAR Database issue; site maintained since)",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design",
+        "comparative"
+      ],
+      "why": "The canonical CTA reference for shared tumor antigens — a baseline antigen list to cross- check non-canonical/TE/ERV candidates against established cancer-germline antigens.\n"
+    },
+    "agent_access": "Web interface (cta.lncc.br); no documented bulk-download API — may require scraping. Verify the site resolves before relying on it.\n",
+    "caveats": "NO explicit license stated (flag before redistribution/ML training). Site is legacy (core content ~2009) and availability can be intermittent. Human only.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "http://www.cta.lncc.br",
+    "commercial_use": null
+  },
+  {
     "id": "darwins-ark",
     "name": "Darwin's Ark — Companion-Animal Citizen-Science Genomics",
     "category": "reference",
@@ -9698,6 +11985,97 @@
       0
     ],
     "ingest_endpoint": "https://www.gencodegenes.org/human/",
+    "commercial_use": null
+  },
+  {
+    "id": "imgt-dog-antigen-receptor-loci",
+    "name": "IMGT Dog (Canis lupus familiaris) IG/TR Germline Reference",
+    "category": "reference",
+    "species": [
+      "dog"
+    ],
+    "description": "IMGT's curated germline annotation of the canine immunoglobulin (IGH, IGK, IGL) and T-cell-receptor (TRA/TRB/TRG/TRD) loci — gene tables, allele sequences, locus maps and gene order — the canine analogue of the human IMGT germline sets used for V(D)J assignment. Underlying comprehensive annotation from Martin et al. (Immunogenetics 2017).\n",
+    "scale": "canine IG + TR germline V/D/J/C gene tables and alleles",
+    "modalities": [
+      "germline-reference",
+      "gene-annotation"
+    ],
+    "formats": [
+      "fasta",
+      "html",
+      "web"
+    ],
+    "landing_url": "https://www.imgt.org/IMGTrepertoire/index.php?species=dog",
+    "download_url": "https://www.imgt.org/genedb/",
+    "license": "custom",
+    "license_url": "https://www.imgt.org/about/termsofuse.php",
+    "access": "open",
+    "provenance": {
+      "maintainer": "IMGT, the international ImMunoGeneTics information system (Montpellier/CNRS)",
+      "key_refs": [
+        "10.1007/s00251-017-1028-0"
+      ]
+    },
+    "last_updated": "2024",
+    "relevance": {
+      "programs": [
+        "recognition"
+      ],
+      "why": "The germline backbone for canine TCR/BCR repertoire analysis (V(D)J assignment, CDR3 calling) — essential canine-specific infrastructure where human IMGT cannot substitute. Enables canine recognition-arm work analogous to human IMGT pipelines.\n"
+    },
+    "agent_access": "IMGT/GENE-DB and IMGT/V-QUEST provide canine reference sets; web and FASTA export. No bulk API; scraping is restricted by terms of use — prefer the provided export tools.\n",
+    "caveats": "IMGT terms of use are restrictive (academic use, mandatory citation, redistribution limited) — verify license_url before redistributing or using for ML training. Canine TRA/TRD and light-chain annotation historically lagged; coverage still improving.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://www.imgt.org/genedb/",
+    "commercial_use": null
+  },
+  {
+    "id": "imgt-dog-igk-locus",
+    "name": "IMGT Canine IGK Locus Annotation (NAR Genom Bioinform 2026)",
+    "category": "reference",
+    "species": [
+      "dog"
+    ],
+    "description": "Dedicated IMGT annotation of the canine immunoglobulin kappa (IGK) light-chain locus on chromosome 17 (~317-349 kb; 31 genes: 25 V, 5 J, 1 C), built from Boxer (CanFam3.1) and Basenji assemblies with cross-breed insights. Fills a long-standing light-chain gap in canine immunogenetics.\n",
+    "scale": "canine IGK locus — 31 genes (25V/5J/1C)",
+    "modalities": [
+      "germline-reference",
+      "gene-annotation"
+    ],
+    "formats": [
+      "fasta",
+      "html",
+      "web"
+    ],
+    "landing_url": "https://academic.oup.com/nargab/article/8/1/lqag020/8494700",
+    "download_url": "https://www.imgt.org/IMGTrepertoire/index.php?species=dog",
+    "license": "custom",
+    "license_url": "https://www.imgt.org/about/termsofuse.php",
+    "access": "open",
+    "provenance": {
+      "maintainer": "IMGT (Montpellier/CNRS)",
+      "key_refs": [
+        "10.1093/nargab/lqag020"
+      ]
+    },
+    "last_updated": "2026",
+    "relevance": {
+      "programs": [
+        "recognition"
+      ],
+      "why": "Completes the canine light-chain germline reference needed for full BCR (IGK) V(D)J analysis in the recognition program.\n"
+    },
+    "caveats": "IMGT terms of use apply (see license_url). Breed-specific allele variation noted — confirm which reference breed matches the study samples.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://www.imgt.org/IMGTrepertoire/index.php?species=dog",
     "commercial_use": null
   },
   {
@@ -10393,6 +12771,163 @@
     "commercial_use": null
   },
   {
+    "id": "ali-2020-metabric-imc",
+    "name": "Ali/Jackson et al. 2020 — METABRIC imaging mass cytometry breast cancer",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Imaging mass cytometry quantifying 37 proteins at subcellular resolution across 483 breast tumors from the METABRIC genomic cohort, linking spatial single-cell phenotypes to the extensively characterized METABRIC genomic/clinical data. Hosted at the Image Data Resource (IDR) as idr0076 with cell masks and multichannel images.\n",
+    "scale": "483 METABRIC tumors, 37-protein panel, IMC single-cell + masks",
+    "modalities": [
+      "imaging-mass-cytometry",
+      "spatial-proteomics",
+      "single-cell-segmentation"
+    ],
+    "formats": [
+      "tiff",
+      "ome-tiff",
+      "csv"
+    ],
+    "landing_url": "https://idr.openmicroscopy.org/",
+    "download_url": "https://idr.openmicroscopy.org/search/?query=Name:idr0076",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Bodenmiller Lab / Image Data Resource (idr0076-ali-metabric)",
+      "key_refs": [
+        "10.1038/s43018-020-0026-6",
+        "10.1038/s41588-022-01041-y"
+      ]
+    },
+    "last_updated": "2020",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "comparative"
+      ],
+      "why": "Couples spatial single-cell proteomics with deep genomics on the same tumors, a rare multi-modal anchor for relating antigenic/immune spatial context to genomic drivers.\n"
+    },
+    "agent_access": "IDR download via Globus/Aspera for full images; processed single-cell data also on Zenodo (5850952) for the 2022 follow-up. Genomics/clinical via cBioPortal (METABRIC).\n",
+    "caveats": "Full image transfer is large and Globus-based (not plain HTTPS). Linked METABRIC genomics governed separately. 2020 vs 2022 deposits differ (reanalysis/new structures).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://idr.openmicroscopy.org/search/?query=Name:idr0076",
+    "commercial_use": true
+  },
+  {
+    "id": "barkley-2022-pancancer-spatial",
+    "name": "Barkley et al. 2022 — Recurrent cancer cell states (pan-cancer scRNA + spatial)",
+    "category": "single-cell",
+    "species": [
+      "human",
+      "mouse"
+    ],
+    "description": "Pan-cancer single-cell RNA-seq across 15 cancer types combined with sequencing-based spatial transcriptomics of tumor sections, defining recurrent cancer cell \"states\" and their specific interactions with the tumor microenvironment across tumor types.\n",
+    "scale": "scRNA across 15 cancer types + spatial transcriptomics of multiple tumor sections",
+    "modalities": [
+      "scrna-seq",
+      "spatial-transcriptomics"
+    ],
+    "formats": [
+      "mtx",
+      "csv",
+      "h5"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE203612",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE203612",
+    "license": "NCBI GEO terms (no explicit SPDX)",
+    "license_url": "https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Yanai Lab (NYU) / NCBI GEO",
+      "key_refs": [
+        "10.1038/s41588-022-01141-9"
+      ],
+      "accessions": [
+        "GSE203612"
+      ]
+    },
+    "last_updated": "2022-08-05",
+    "relevance": {
+      "programs": [
+        "comparative",
+        "presentation"
+      ],
+      "why": "Cross-tumor recurrent cancer-cell states plus their spatial TME partners give a pan-cancer frame for which tumor states co-occur with immune niches.\n"
+    },
+    "agent_access": "GEO open bulk download; matrices + spatial data. No auth. Scriptable over HTTPS/FTP.\n",
+    "caveats": "Spatial component is a subset of tumors; combines human and mouse. Confirm per-sample platform (sequencing-based ST) before assuming Visium specifics.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE203612",
+    "commercial_use": null
+  },
+  {
+    "id": "bi-2021-ccrcc-icb-scrna",
+    "name": "Bi et al. 2021 — Tumor/immune reprogramming during ICB in advanced RCC (scRNA)",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Single-cell RNA-seq of metastatic clear cell renal cell carcinoma sampled before or after immune checkpoint blockade (alone or with TKI), profiling how ICB remodels cancer and immune cell states and their interactions. Processed data on the Broad Single Cell Portal; raw scRNA + bulk exome under dbGaP controlled access.\n",
+    "scale": "~34,326 cells, 8 patients (5 ICB-treated), 10x scRNA-seq",
+    "modalities": [
+      "scrna-seq",
+      "immunotherapy-response"
+    ],
+    "formats": [
+      "mtx",
+      "csv",
+      "h5ad"
+    ],
+    "landing_url": "https://singlecell.broadinstitute.org/single_cell/study/SCP1288",
+    "download_url": "https://singlecell.broadinstitute.org/single_cell/study/SCP1288",
+    "license": "custom (Broad Single Cell Portal terms); raw under dbGaP DUA",
+    "license_url": "https://singlecell.broadinstitute.org/single_cell/terms_of_service",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "Dana-Farber / Broad Institute; Single Cell Portal SCP1288",
+      "key_refs": [
+        "10.1016/j.ccell.2021.02.015"
+      ],
+      "accessions": [
+        "SCP1288",
+        "phs002065.v1.p1"
+      ]
+    },
+    "last_updated": "2021-03",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "On-treatment single-cell view of ICB remodeling in an immunotherapy-responsive tumor; direct signal on how immune recognition states shift with checkpoint blockade.\n"
+    },
+    "agent_access": "Processed matrices downloadable from Single Cell Portal after Google-account sign-in. Raw scRNA + exome require dbGaP (phs002065) controlled-access approval (DUA).\n",
+    "caveats": "CONTROLLED ACCESS for raw (dbGaP DUA). Processed layer gated behind SCP login terms. Small patient cohort.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://singlecell.broadinstitute.org/single_cell/study/SCP1288",
+    "commercial_use": null
+  },
+  {
     "id": "broad-scp",
     "name": "Broad Institute Single Cell Portal (SCP)",
     "category": "single-cell",
@@ -10601,6 +13136,111 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/",
+    "commercial_use": null
+  },
+  {
+    "id": "caushi-2021-nsclc-mana-til",
+    "name": "Caushi et al. 2021 — Neoantigen-specific TIL in anti-PD-1 lung cancer (scRNA + TCR)",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Single-cell RNA-seq and TCR-seq of tumor-infiltrating lymphocytes from resectable NSCLC treated with neoadjuvant anti-PD-1, using MANA (mutation-associated neoantigen) functional expansion to identify and transcriptionally profile neoantigen-specific (vs viral- and cancer-testis-specific) T cells and their programs.\n",
+    "scale": "NSCLC neoadjuvant anti-PD-1 cohort; MANA/viral/CT-antigen-specific TIL scRNA + TCR",
+    "modalities": [
+      "scrna-seq",
+      "tcr-seq",
+      "neoantigen-specific-til",
+      "immunotherapy-response"
+    ],
+    "formats": [
+      "mtx",
+      "csv",
+      "h5"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE176021",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE176021",
+    "license": "NCBI GEO terms (processed); EGA controlled (raw)",
+    "license_url": "https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "Smith/Pardoll/Anagnostou labs (Johns Hopkins) / GEO + EGA + immuneACCESS",
+      "key_refs": [
+        "10.1038/s41586-021-03752-4"
+      ],
+      "accessions": [
+        "GSE176021",
+        "GSE173351",
+        "EGAS00001005343"
+      ]
+    },
+    "last_updated": "2021-07",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "presentation"
+      ],
+      "why": "Rare dataset of experimentally identified neoantigen-SPECIFIC TIL with paired transcriptome and TCR — ground truth for linking neoantigen recognition to T-cell state.\n"
+    },
+    "agent_access": "Processed scRNA (GSE176021) and bulk TCR (GSE173351) open from GEO. Raw reads in EGA (EGAS00001005343) require controlled-access DAC approval. TCR also on Adaptive immuneACCESS (clients.adaptivebiotech.com/pub/caushi-2021-n).\n",
+    "caveats": "CONTROLLED ACCESS for raw (EGA). Neoantigen specificity assignments are the key labeled layer; confirm which GEO subseries maps to which specificity.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE176021",
+    "commercial_use": null
+  },
+  {
+    "id": "chevrier-2017-ccrcc-cytof",
+    "name": "Chevrier et al. 2017 — Immune atlas of clear cell renal cell carcinoma (CyTOF)",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Mass cytometry immune atlas of clear cell renal cell carcinoma (ccRCC) using T-cell and myeloid/TAM antibody panels, profiling ~3.5 million cells across tumor, adjacent kidney, and blood to define tumor-associated immune cell states and an immune signature associated with outcome. Paired scRNA-seq in ArrayExpress.\n",
+    "scale": "~3.5M measured cells, ccRCC + adjacent + blood, two CyTOF panels",
+    "modalities": [
+      "mass-cytometry",
+      "cytof",
+      "scrna-seq"
+    ],
+    "formats": [
+      "fcs",
+      "csv"
+    ],
+    "landing_url": "https://www.cell.com/cell/fulltext/S0092-8674(17)30429-4",
+    "download_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-5640",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-5640",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Bodenmiller Lab (University of Zurich); seq in ArrayExpress E-MTAB-5640",
+      "key_refs": [
+        "10.1016/j.cell.2017.04.016"
+      ]
+    },
+    "last_updated": "2017-05",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Deep high-parameter immune phenotyping of a major immunotherapy-responsive tumor type (ccRCC); complements the Krishna/Bi ccRCC single-cell cohorts in this domain.\n"
+    },
+    "agent_access": "Sequencing data (E-MTAB-5640) is open bulk download from ArrayExpress/BioStudies. CyTOF .fcs were released via the lab's project website; confirm current link.\n",
+    "caveats": "LICENSE RED FLAG — no explicit reuse license on the CyTOF deposit; ArrayExpress data under EBI terms. CyTOF project-site link may have moved; verify before scripting.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-5640",
     "commercial_use": null
   },
   {
@@ -11603,6 +14243,308 @@
     "commercial_use": null
   },
   {
+    "id": "jackson-2020-breast-imc",
+    "name": "Jackson et al. 2020 — Single-cell pathology landscape of breast cancer (IMC)",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Imaging mass cytometry (IMC) of breast cancer with a 35-marker antibody panel. 720 high-dimensional images from 352 patients (long-term survival data for 281), deposited as high-dimensional TIFFs, tumor/stroma and single-cell masks, plus single-cell and patient-level metadata. Defines recurrent single-cell phenotypes and spatial communities linked to clinical outcome.\n",
+    "scale": "720 IMC images, 352 patients, 35-marker panel, ~1.2M single cells",
+    "modalities": [
+      "imaging-mass-cytometry",
+      "spatial-proteomics",
+      "single-cell-segmentation"
+    ],
+    "formats": [
+      "tiff",
+      "csv"
+    ],
+    "landing_url": "https://doi.org/10.5281/zenodo.3518284",
+    "download_url": "https://zenodo.org/records/3518284",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Bodenmiller Lab (University of Zurich) / Zenodo",
+      "key_refs": [
+        "10.1038/s41586-019-1876-x"
+      ]
+    },
+    "last_updated": "2019-10",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "comparative"
+      ],
+      "why": "Large spatial-proteomic map of breast tumor cell phenotypes and their neighborhoods; a benchmark for relating immune infiltration structure to tumor biology at scale.\n"
+    },
+    "agent_access": "Zenodo bulk download, no auth. Multi-GB TIFF archives plus compact single-cell CSVs. Companion processing code (ImcSegmentationPipeline) on GitHub.\n",
+    "caveats": "Protein panel only (35 markers). Full image archive is large; single-cell tables are the practical layer for ML. Patient outcome subset (n=281) smaller than imaged cohort.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://zenodo.org/records/3518284",
+    "commercial_use": true
+  },
+  {
+    "id": "ji-2020-cscc-spatial",
+    "name": "Ji et al. 2020 — Cutaneous squamous cell carcinoma (scRNA + spatial ST)",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Multimodal single-cell RNA-seq and spatial transcriptomics (ST/Visium-style) of human cutaneous squamous cell carcinoma and matched normal skin, defining a tumor-specific keratinocyte state and spatially mapping tumor-immune niches at the leading edge.\n",
+    "scale": "cSCC + matched normal; scRNA-seq + spatial transcriptomics sections",
+    "modalities": [
+      "scrna-seq",
+      "spatial-transcriptomics"
+    ],
+    "formats": [
+      "mtx",
+      "csv",
+      "tiff"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE144240",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE144240",
+    "license": "NCBI GEO terms (no explicit SPDX)",
+    "license_url": "https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Khavari Lab (Stanford) / NCBI GEO (superseries GSE144240)",
+      "key_refs": [
+        "10.1016/j.cell.2020.05.039"
+      ],
+      "accessions": [
+        "GSE144240",
+        "GSE144239"
+      ]
+    },
+    "last_updated": "2020-06",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "comparative"
+      ],
+      "why": "Spatially resolved tumor-immune boundary in an immunogenic skin cancer; informs how presentation and immune access vary across tumor architecture.\n"
+    },
+    "agent_access": "GEO open download; superseries GSE144240 contains scRNA + ST subseries (incl. GSE144239). No auth; HTTPS/FTP.\n",
+    "caveats": "Superseries layout: confirm which subseries holds the spatial vs scRNA layer. Paper had a 2020 figure correction (did not affect conclusions).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE144240",
+    "commercial_use": null
+  },
+  {
+    "id": "keren-2018-mibi-tnbc",
+    "name": "Keren et al. 2018 — Triple-negative breast cancer MIBI-TOF atlas",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Multiplexed ion beam imaging by time-of-flight (MIBI-TOF) of triple-negative breast cancer: 36 labeled antibodies across 41 patients, revealing structured vs mixed tumor-immune architectures with prognostic value. Portal provides channel images, segmentation masks, and cell identities; patient metadata in the paper's supplement.\n",
+    "scale": "~1,763 images, 41 TNBC patients, 36-marker panel",
+    "modalities": [
+      "mibi-tof",
+      "spatial-proteomics",
+      "single-cell-segmentation"
+    ],
+    "formats": [
+      "tiff",
+      "csv"
+    ],
+    "landing_url": "https://mibi-share.ionpath.com/",
+    "download_url": "https://mibi-share.ionpath.com/",
+    "license": "unknown",
+    "license_url": "https://mibi-share.ionpath.com/",
+    "access": "registration",
+    "provenance": {
+      "maintainer": "Angelo Lab (Stanford) / IonPath mibi-share portal",
+      "key_refs": [
+        "10.1016/j.cell.2018.08.039"
+      ]
+    },
+    "last_updated": "2018-09",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "comparative"
+      ],
+      "why": "Early, widely-reused spatial-proteomic benchmark for tumor-immune spatial organization; defines \"structured\" vs \"mixed\" immune architectures relevant to how T cells access tumor antigen in situ.\n"
+    },
+    "agent_access": "Web portal with registration/login to browse and download; not a plain bulk HTTPS endpoint. Intermediate processed outputs mirrored on the authors' GitHub.\n",
+    "caveats": "LICENSE RED FLAG — explicit reuse/redistribution license not stated on the IonPath portal; treat terms as unknown and confirm before redistribution or ML training. Protein panel only; portal access may require account.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://mibi-share.ionpath.com/",
+    "commercial_use": null
+  },
+  {
+    "id": "krieg-2018-melanoma-cytof",
+    "name": "Krieg et al. 2018 — Anti-PD-1 response prediction in melanoma (CyTOF)",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "High-dimensional mass cytometry of peripheral blood from stage-IV melanoma patients before and during anti-PD-1 immunotherapy (plus healthy controls), identifying a baseline CD14+CD16-HLA-DRhi classical-monocyte frequency that predicts response and survival. Raw .fcs files in FlowRepository.\n",
+    "scale": "~40 patient blood samples pre/on anti-PD-1 + 10 controls, CyTOF panel",
+    "modalities": [
+      "mass-cytometry",
+      "cytof",
+      "immunotherapy-response"
+    ],
+    "formats": [
+      "fcs"
+    ],
+    "landing_url": "http://flowrepository.org/id/FR-FCM-ZY34",
+    "download_url": "http://flowrepository.org/id/FR-FCM-ZY34",
+    "license": "unknown",
+    "license_url": "http://flowrepository.org/id/FR-FCM-ZY34",
+    "access": "registration",
+    "provenance": {
+      "maintainer": "Becher Lab (University of Zurich) / FlowRepository",
+      "key_refs": [
+        "10.1038/nm.4466",
+        "10.1038/s41591-018-0094-7"
+      ]
+    },
+    "last_updated": "2018-01",
+    "relevance": {
+      "programs": [
+        "recognition"
+      ],
+      "why": "Links circulating high-parameter immune phenotypes to ICB outcome; a labeled responder/non-responder cytometry cohort for immune-correlate modeling.\n"
+    },
+    "agent_access": "FlowRepository download; browsing/download typically needs a free account. A second deposit FR-FCM-ZYL8 is also associated (per Bioconductor HDCytoData).\n",
+    "caveats": "LICENSE RED FLAG — FlowRepository deposits rarely carry an explicit reuse license; confirm terms. Peripheral blood (not intratumoral). Small cohort.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "http://flowrepository.org/id/FR-FCM-ZY34",
+    "commercial_use": null
+  },
+  {
+    "id": "krishna-2021-ccrcc-scrna-tcr",
+    "name": "Krishna et al. 2021 — Multiregional ccRCC single-cell + TCR immune landscape",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Paired single-cell RNA-seq and TCR-seq of clear cell renal cell carcinoma across tumor regions, tumor-normal interface, lymph node, normal kidney, and blood (including ICB-treated patients), linking tissue-resident/exhausted CD8 T-cell states and TCR clonality to tumor topology and therapy efficacy. ~167k cells.\n",
+    "scale": "~167,283 cells, multiregional ccRCC incl. 4 ICB-treated; paired scRNA + TCR",
+    "modalities": [
+      "scrna-seq",
+      "tcr-seq",
+      "immunotherapy-response"
+    ],
+    "formats": [
+      "mtx",
+      "csv",
+      "h5ad"
+    ],
+    "landing_url": "https://cellxgene.cziscience.com/collections/3f50314f-bdc9-40c6-8e4a-b0901ebfbe4c",
+    "download_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA705464",
+    "license": "custom (CZ CELLxGENE processed; SRA raw public)",
+    "license_url": "https://cellxgene.cziscience.com/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Chan Lab (MSKCC) / SRA PRJNA705464; processed on CZ CELLxGENE Discover",
+      "key_refs": [
+        "10.1016/j.ccell.2021.03.007"
+      ],
+      "accessions": [
+        "PRJNA705464"
+      ]
+    },
+    "last_updated": "2021-05",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Joint single-cell transcriptome + TCR in a checkpoint-responsive tumor; directly couples T-cell recognition (clonotypes) to functional states and spatial topology.\n"
+    },
+    "agent_access": "Processed object downloadable from CZ CELLxGENE Discover (h5ad/RDS), no auth. Raw reads via SRA PRJNA705464 (open) — large FASTQ. Some secondary sources cite GSE121638 (unverified).\n",
+    "caveats": "Confirm the raw accession (PRJNA705464 verified via SRA/CELLxGENE; GSE121638 citation is unconfirmed). Paired-TCR layer requires VDJ-aware parsing.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA705464",
+    "commercial_use": null
+  },
+  {
+    "id": "lavin-2017-lung-cytof-scrna",
+    "name": "Lavin et al. 2017 — Innate immune landscape of early lung adenocarcinoma",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Paired single-cell analyses (mass cytometry + MARS-seq scRNA-seq) of early-stage lung adenocarcinoma, tumor-adjacent normal lung, and blood, mapping tumor-remodeled innate/myeloid immune states very early in disease. scRNA-seq in GEO; CyTOF via the paper's data-availability section.\n",
+    "scale": "Stage IA lung adenocarcinoma + adjacent + blood; CyTOF + MARS-seq scRNA",
+    "modalities": [
+      "mass-cytometry",
+      "cytof",
+      "scrna-seq"
+    ],
+    "formats": [
+      "fcs",
+      "txt",
+      "csv"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97168",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97168",
+    "license": "NCBI GEO terms (public domain-like, no explicit SPDX)",
+    "license_url": "https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Merad Lab (Icahn School of Medicine at Mount Sinai) / NCBI GEO",
+      "key_refs": [
+        "10.1016/j.cell.2017.04.014"
+      ]
+    },
+    "last_updated": "2017-04",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Multi-modal early-tumor immune map; myeloid/innate remodeling context that shapes the antigen-presenting milieu before adaptive responses dominate.\n"
+    },
+    "agent_access": "GEO (GSE97168) open bulk download via FTP/HTTPS, no auth. CyTOF .fcs availability is stated in the paper; confirm deposit location for the cytometry layer.\n",
+    "caveats": "GEO holds the scRNA layer cleanly; cytometry deposit path less explicit. Small patient numbers (early-stage discovery cohort).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97168",
+    "commercial_use": true
+  },
+  {
     "id": "lowery-2022-neotcr",
     "name": "Lowery et al. 2022 neoantigen-reactive TCR (NeoTCR) signatures",
     "category": "single-cell",
@@ -11705,6 +14647,55 @@
     "commercial_use": true
   },
   {
+    "id": "nirmal-2022-melanoma-cycif",
+    "name": "Nirmal et al. 2022 — Spatial landscape of primary melanoma (CyCIF, HTAN)",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Tissue-cyclic-immunofluorescence (t-CyCIF) whole-slide multiplexed imaging of primary melanoma spanning precursor to invasive regions at single-cell resolution, mapping progression and immunoediting. Part of the Human Tumor Atlas Network (HTAN); releases whole-slide OME-TIFF images (~2.3 TB) with single-cell quantification tables.\n",
+    "scale": "~2.3 TB imaging, ~3.0e5 image tiles, single-cell CyCIF quantification",
+    "modalities": [
+      "cycif-multiplexed-imaging",
+      "spatial-proteomics",
+      "single-cell-segmentation"
+    ],
+    "formats": [
+      "ome-tiff",
+      "csv"
+    ],
+    "landing_url": "https://humantumoratlas.org/",
+    "download_url": "https://www.synapse.org/#!Synapse:syn22345750",
+    "license": "CC BY 4.0",
+    "license_url": "https://humantumoratlas.org/data-access",
+    "access": "registration",
+    "provenance": {
+      "maintainer": "Sorger Lab (Harvard Medical School) / HTAN (Synapse)",
+      "key_refs": [
+        "10.1158/2159-8290.CD-21-1357"
+      ]
+    },
+    "last_updated": "2022-06",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "comparative"
+      ],
+      "why": "High-plex spatial map of how the immune compartment edits melanoma as it progresses; direct in-situ view of immune-tumor interfaces for recognition/presentation modeling.\n"
+    },
+    "agent_access": "HTAN data via Synapse requires a (free) Synapse account and acceptance of HTAN terms; programmatic access via synapseclient. Whole-slide OME-TIFFs are very large.\n",
+    "caveats": "Image volume is multi-TB — plan for the single-cell quantification layer, not raw images, for most ML. HTAN governance/registration applies.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.synapse.org/#!Synapse:syn22345750",
+    "commercial_use": true
+  },
+  {
     "id": "oliveira-2021-melanoma",
     "name": "Oliveira et al. 2021 melanoma antitumor CD8 TCR specificity/avidity",
     "category": "single-cell",
@@ -11755,6 +14746,106 @@
     "commercial_use": null
   },
   {
+    "id": "pozniak-2024-melanoma-icb",
+    "name": "Pozniak et al. 2024 — Melanoma ICB single-cell + spatial (TCF4 GRN)",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Single-cell RNA-seq (with spatial profiling) of treatment-naive and immune-checkpoint- blockade-treated melanoma, mapping the cellular architecture and a TCF4-dependent gene regulatory network associated with resistance to immunotherapy. Released as Seurat objects (RDS) with raw counts and responder/non-responder clinical metadata.\n",
+    "scale": "Treatment-naive + ICB-treated melanoma; scRNA-seq + spatial, responder/NR metadata",
+    "modalities": [
+      "scrna-seq",
+      "spatial-transcriptomics",
+      "immunotherapy-response"
+    ],
+    "formats": [
+      "rds",
+      "h5"
+    ],
+    "landing_url": "https://rdr.kuleuven.be/",
+    "download_url": "https://doi.org/10.48804/GSAXBN",
+    "license": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Bechter/Marine labs (KU Leuven) / KU Leuven Research Data Repository (RDR)",
+      "key_refs": [
+        "10.1016/j.cell.2023.11.037"
+      ]
+    },
+    "last_updated": "2024-01",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Paired treatment-naive vs on-ICB melanoma single-cell + spatial with outcome labels; a resistance-focused complement to the Sade-Feldman/Jerby-Arnon melanoma ICB cohorts.\n"
+    },
+    "agent_access": "KU Leuven RDR open download (RDS/Seurat objects), no controlled access. DOI-resolvable.\n",
+    "caveats": "LICENSE RED FLAG — CC BY-NC-SA 4.0 forbids commercial use and imposes share-alike; problematic for commercial model training. Data shipped as R/Seurat objects (not raw FASTQ).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://doi.org/10.48804/GSAXBN",
+    "commercial_use": false
+  },
+  {
+    "id": "prjeb86016-insulinoma-scrna",
+    "name": "PRJEB86016 — Canine Insulinoma Single-Cell RNA-seq (2025)",
+    "category": "single-cell",
+    "species": [
+      "dog"
+    ],
+    "description": "Single-cell RNA-seq of 5,532 cells from three Boxer canine insulinoma samples (two primary insulinomas and one metastasis), resolving distinct sub-populations of insulin-expressing cancer cells (2025). Deposited in ENA as study ERP169389 under project PRJEB86016 (samples ERS23781655-57).\n",
+    "scale": "5,532 cells, 3 samples, 2 dogs",
+    "modalities": [
+      "single-cell-rna-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB86016",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB86016",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/ena/browser/about/policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — 2025)",
+      "key_refs": [
+        "10.1186/s44356-025-00026-3"
+      ]
+    },
+    "accessions": [
+      "PRJEB86016",
+      "ERP169389",
+      "ERS23781655",
+      "ERS23781656",
+      "ERS23781657"
+    ],
+    "last_updated": "2025",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Only known single-cell view of a canine endocrine tumour; adds a neuroendocrine lineage to the canine single-cell atlas collection.\n"
+    },
+    "caveats": "No explicit reuse license (ENA/INSDC open). Small cohort (2 dogs). Raw reads only — processed objects not noted; expect to run the scRNA pipeline from FASTQ.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJEB86016",
+    "commercial_use": null
+  },
+  {
     "id": "qian-2020-pancancer-blueprint",
     "name": "Qian et al. 2020 — pan-cancer TME blueprint (Lambrechts lab)",
     "category": "single-cell",
@@ -11800,6 +14891,56 @@
     ],
     "ingest_endpoint": "http://blueprint.lambrechtslab.org/",
     "commercial_use": null
+  },
+  {
+    "id": "schurch-2020-crc-codex",
+    "name": "Schürch et al. 2020 — Colorectal cancer CODEX multiplexed imaging atlas",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Highly multiplexed CODEX (co-detection by indexing) fluorescence imaging of advanced-stage colorectal carcinoma. 140 tissue-microarray spots from 35 patients stained with a 56-protein panel, segmented to single cells with spatial coordinates, enabling cellular-neighborhood analysis of the tumor-immune microenvironment. Includes raw multichannel images, segmentation masks, and single-cell feature tables.\n",
+    "scale": "140 CODEX images, 35 CRC patients, 56-protein panel, ~240k annotated cells",
+    "modalities": [
+      "codex-multiplexed-imaging",
+      "spatial-proteomics",
+      "single-cell-segmentation"
+    ],
+    "formats": [
+      "tiff",
+      "csv"
+    ],
+    "landing_url": "https://www.cancerimagingarchive.net/collection/crc_ffpe-codex_cellneighs/",
+    "download_url": "https://doi.org/10.7937/TCIA.2020.FQN0-0326",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Nolan Lab (Stanford) / hosted on The Cancer Imaging Archive (TCIA)",
+      "key_refs": [
+        "10.1016/j.cell.2020.07.005",
+        "10.7937/TCIA.2020.FQN0-0326"
+      ]
+    },
+    "last_updated": "2020",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "comparative"
+      ],
+      "why": "Spatially resolved tumor-immune niches at single-cell resolution give ground truth for where antigen-presenting and effector cells co-localize in a human solid tumor, informing models of in-situ immune recognition and presentation context.\n"
+    },
+    "agent_access": "Bulk download from TCIA via DOI; no auth for the imaging collection. Large TIFF files; processed single-cell CSVs also mirrored on Mendeley Data. Scriptable over HTTPS.\n",
+    "caveats": "Imaging is TMA-based (spots, not whole sections). Processed single-cell intensities/ coordinates are the most agent-friendly layer; raw images are multi-GB. Panel is protein markers, not transcriptome.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://doi.org/10.7937/TCIA.2020.FQN0-0326",
+    "commercial_use": true
   },
   {
     "id": "stephenson-2021-covid-emtab10026",
@@ -11851,6 +14992,61 @@
       3
     ],
     "ingest_endpoint": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-10026",
+    "commercial_use": null
+  },
+  {
+    "id": "stomicsdb",
+    "name": "STOmicsDB — Spatial Transcript Omics DataBase",
+    "category": "single-cell",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "Comprehensive aggregator database for spatial transcriptomics: a one-stop hub to search, visualize, archive, and analyze spatial datasets across many species and platforms (including numerous tumor spatial datasets). Hosts hundreds of curated spatial datasets with harmonized metadata and online analysis/visualization.\n",
+    "scale": "~400+ curated spatial transcriptomics datasets, 12+ species (growing)",
+    "modalities": [
+      "spatial-transcriptomics",
+      "aggregator",
+      "visualization"
+    ],
+    "formats": [
+      "h5ad",
+      "csv",
+      "custom"
+    ],
+    "landing_url": "https://db.cngb.org/stomics/",
+    "download_url": "https://db.cngb.org/stomics/",
+    "license": "mixed (per-dataset); portal CNGB terms",
+    "license_url": "https://db.cngb.org/stomics/help",
+    "access": "open",
+    "provenance": {
+      "maintainer": "China National GeneBank (CNGB) / BGI",
+      "key_refs": [
+        "10.1093/nar/gkad933"
+      ],
+      "accessions": [
+        "re3data:r3d100014512"
+      ]
+    },
+    "last_updated": "2024",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "comparative"
+      ],
+      "why": "Discovery/index layer to locate tumor spatial-transcriptomics datasets across platforms — useful for finding additional primary tumor atlases to catalog.\n"
+    },
+    "agent_access": "Web portal with browse/search and dataset download; some datasets visualize in-browser. Not a single bulk endpoint — per-dataset access varies.\n",
+    "caveats": "LICENSE RED FLAG — licenses vary per contributed dataset; not uniformly open. It is an aggregator/index, not a single primary dataset — individual tumor datasets must be de-duplicated against GEO/other sources before cataloging.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://db.cngb.org/stomics/",
     "commercial_use": null
   },
   {
@@ -11908,6 +15104,62 @@
     "commercial_use": true
   },
   {
+    "id": "tenx-xenium-breast-cancer",
+    "name": "10x Genomics Xenium — Human breast cancer in-situ (public demo datasets)",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Public 10x Genomics Xenium in-situ single-cell spatial transcriptomics datasets on human breast cancer FFPE tissue, including the Janesick et al. preprint data (Chromium + Visium + two Xenium replicates on consecutive sections) and newer Xenium Prime 5K pan-tissue + custom panels. Outputs include cell-feature matrices, transcript tables, cell boundaries, and registered H&E images.\n",
+    "scale": "Breast cancer FFPE; ~hundreds of genes (base) to 5,000+ (Prime 5K) panels",
+    "modalities": [
+      "xenium-in-situ",
+      "spatial-transcriptomics",
+      "single-cell-segmentation"
+    ],
+    "formats": [
+      "h5",
+      "csv",
+      "parquet",
+      "tiff",
+      "zarr"
+    ],
+    "landing_url": "https://www.10xgenomics.com/datasets/ffpe-human-breast-with-pre-designed-panel-1-standard",
+    "download_url": "https://zenodo.org/records/10076046",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "10x Genomics (dataset program) / Zenodo mirror for preprint data",
+      "key_refs": [
+        "10.1038/s41467-023-43458-x"
+      ],
+      "accessions": [
+        "zenodo.10076046"
+      ]
+    },
+    "last_updated": "2022-11-03",
+    "size_bytes": 7600000000,
+    "relevance": {
+      "programs": [
+        "presentation",
+        "comparative"
+      ],
+      "why": "Subcellular-resolution spatial transcriptomics of a tumor with matched Chromium/Visium; a clean, openly-licensed benchmark for integrating single-cell and in-situ tumor data.\n"
+    },
+    "agent_access": "Zenodo preprint bundle (~7.6 GB) open HTTPS download, CC BY 4.0. 10x dataset pages provide additional bundles with md5 checksums (CC BY 4.0); some newer sets need a form.\n",
+    "caveats": "Preprint Zenodo bundle is a legacy pre-release (file/QC naming and image alignment differ from current outputs). Newer 10x demo datasets may require an email form.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://zenodo.org/records/10076046",
+    "commercial_use": true
+  },
+  {
     "id": "tisch2",
     "name": "TISCH2 — Tumor Immune Single-cell Hub 2",
     "category": "single-cell",
@@ -11961,6 +15213,106 @@
     ],
     "ingest_endpoint": "http://tisch.comp-genomics.org/download/",
     "commercial_use": false
+  },
+  {
+    "id": "vizgen-merscope-ffpe-io",
+    "name": "Vizgen MERSCOPE — Human FFPE Immuno-oncology MERFISH data release",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Vizgen MERSCOPE (MERFISH) in-situ spatial transcriptomics across multiple human FFPE tumor types including melanoma, lung, ovarian, colon, liver, prostate, breast, and uterine cancer. Measures ~500-gene panels (newer panels up to ~815/1,000 genes), releasing cell-by-gene matrices, per-transcript coordinates, and cell boundaries.\n",
+    "scale": "~16-26 tumor samples, 8+ cancer types, ~4-6B transcripts, ~9-10M cells",
+    "modalities": [
+      "merfish",
+      "spatial-transcriptomics",
+      "single-cell-segmentation"
+    ],
+    "formats": [
+      "csv",
+      "parquet",
+      "hdf5",
+      "tiff"
+    ],
+    "landing_url": "https://vizgen.com/data-release-program/",
+    "download_url": "https://info.vizgen.com/merscope-ffpe-solution",
+    "license": "custom (Vizgen Data Release Program terms)",
+    "license_url": "https://vizgen.com/data-release-program/",
+    "access": "registration",
+    "provenance": {
+      "maintainer": "Vizgen Inc. (Data Release Program)",
+      "key_refs": [
+        "https://vizgen.com/human-ffpe-immunooncology-release-roadmap/"
+      ]
+    },
+    "last_updated": "2024-01",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "comparative"
+      ],
+      "why": "Multi-tumor-type MERFISH gives in-situ transcriptomic maps of tumor-immune spatial organization across cancers, complementing the Xenium/Visium entries.\n"
+    },
+    "agent_access": "Download via Vizgen's Data Release Program page; participation/registration required. Not a plain anonymous bulk endpoint.\n",
+    "caveats": "LICENSE RED FLAG — vendor Data Release Program terms, not a standard open license; confirm redistribution/ML-training allowance. Gene-count figures differ across Vizgen pages (panel versions). Access is registration-gated.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://info.vizgen.com/merscope-ffpe-solution",
+    "commercial_use": null
+  },
+  {
+    "id": "wagner-2019-breast-cytof",
+    "name": "Wagner et al. 2019 — Single-cell atlas of human breast cancer ecosystem (CyTOF)",
+    "category": "single-cell",
+    "species": [
+      "human"
+    ],
+    "description": "Mass cytometry (CyTOF) atlas of the tumor and immune ecosystem of human breast cancer using tumor and immune antibody panels. Profiles ~26 million cells from 144 tumors, 46 juxta-tumoral samples, and four reduction mammoplasties, defining immune/stromal/tumor phenotype abundances across subtypes. Deposited as raw .fcs files plus IF images.\n",
+    "scale": "~26M cells, 144 tumors + 46 juxta-tumoral + 4 mammoplasties, two CyTOF panels",
+    "modalities": [
+      "mass-cytometry",
+      "cytof",
+      "immunofluorescence"
+    ],
+    "formats": [
+      "fcs",
+      "tiff"
+    ],
+    "landing_url": "https://data.mendeley.com/datasets/gb83sywsjc/1",
+    "download_url": "https://data.mendeley.com/datasets/gb83sywsjc/1",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Bodenmiller Lab (University of Zurich) / Mendeley Data",
+      "key_refs": [
+        "10.1016/j.cell.2019.03.005"
+      ]
+    },
+    "last_updated": "2019-04-12",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "One of the largest single-tumor-type CyTOF immune atlases; high-parameter protein phenotyping of tumor-infiltrating immune cells to anchor immune-composition priors.\n"
+    },
+    "agent_access": "Mendeley Data bulk download, no auth. Native .fcs (flow/mass cytometry) files; parse with flowCore / readfcs. CC BY 4.0 per Mendeley record.\n",
+    "caveats": "Protein marker panel (no transcriptome). .fcs requires cytometry-specific parsing and arcsinh transform. Large number of files.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://data.mendeley.com/datasets/gb83sywsjc/1",
+    "commercial_use": true
   },
   {
     "id": "weizmann-3ca",
@@ -15004,6 +18356,55 @@
     "commercial_use": true
   },
   {
+    "id": "bentzen-2016-dna-barcoded-multimers",
+    "name": "DNA-barcoded peptide-MHC-I multimer screen (Bentzen 2016)",
+    "category": "tcr-recognition",
+    "species": [
+      "human"
+    ],
+    "description": "The founding dataset for DNA-barcode-labelled pMHC-I multimers, enabling simultaneous detection of >1,000 peptide specificities per sample by sequencing the barcodes of bound multimers. Release includes the barcode-labelled multimer panels (e.g. a 1,031- specificity panel and a 110-specificity panel) and the T-cell screening readouts as supplementary tables.\n",
+    "scale": ">1,000 pMHC specificities per sample; 1,031- and 110-plex barcoded multimer panels",
+    "modalities": [
+      "pmhc-multimer",
+      "tcr-epitope",
+      "barcode-seq"
+    ],
+    "formats": [
+      "xlsx",
+      "pdf"
+    ],
+    "landing_url": "https://www.nature.com/articles/nbt.3662",
+    "download_url": "https://www.nature.com/articles/nbt.3662#Sec30",
+    "license": "unknown",
+    "license_url": "https://www.nature.com/nature/editorial-policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Bentzen, Marquard, Hadrup et al. (DTU / Herlev Hospital)",
+      "key_refs": [
+        "10.1038/nbt.3662"
+      ]
+    },
+    "last_updated": "2016-08",
+    "relevance": {
+      "programs": [
+        "recognition"
+      ],
+      "why": "The method and data that scaled antigen-specific T-cell detection beyond fluorescent multimers; a large pMHC-specificity screen independent of the 10x dextramer releases, useful for TCR-antigen pairing benchmarks.\n"
+    },
+    "agent_access": "Supplementary Excel tables on the Nature Biotechnology article page (no auth for SI). No separate GEO/Zenodo repository was deposited.\n",
+    "caveats": "Data only as journal SI under Springer Nature terms (no open license). Barcode panels describe reagents/specificities, not necessarily paired-TCR sequences.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.nature.com/articles/nbt.3662#Sec30",
+    "commercial_use": null
+  },
+  {
     "id": "birnbaum-pmhc-yeast-display",
     "name": "pMHC yeast-display library screens (Birnbaum/Garcia lineage)",
     "category": "tcr-recognition",
@@ -16302,6 +19703,56 @@
     "commercial_use": null
   },
   {
+    "id": "prjna790470-canine-ig-repertoire",
+    "name": "PRJNA790470 — Canine Immunoglobulin (IGH/IGK/IGL) Repertoire NGS (PLoS ONE 2022)",
+    "category": "tcr-recognition",
+    "species": [
+      "dog"
+    ],
+    "description": "5'-RACE next-generation sequencing of the canine immunoglobulin (BCR) repertoire — IGH, IGK and IGL — from 25 healthy control dogs and 18 dogs with intermediate-to-large B-cell lymphoma (pre-treatment T1; 13 also sampled post-treatment T2), with a dedicated bioinformatics pipeline (PLoS ONE 2022). One of the few unbiased high-throughput canine BCR repertoire datasets.\n",
+    "scale": "25 healthy + 18 BCL dogs (13 paired post-treatment); IGH/IGK/IGL",
+    "modalities": [
+      "bcr-seq",
+      "immune-repertoire"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA790470",
+    "download_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA790470",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — PLoS ONE 2022)",
+      "key_refs": [
+        "10.1371/journal.pone.0270710"
+      ]
+    },
+    "accessions": [
+      "PRJNA790470"
+    ],
+    "last_updated": "2022",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Rare canine BCR/antibody repertoire resource with a disease (B-cell lymphoma) vs healthy contrast and longitudinal treatment samples — directly supports canine antibody/BCR modeling in the recognition arm.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI/INSDC open). Reads concatenated by sample/time point. Pair with IMGT canine germline for V(D)J assignment. Repertoire depth per sample should be checked before clonality analysis.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA790470",
+    "commercial_use": null
+  },
+  {
     "id": "tchard",
     "name": "TChard",
     "category": "tcr-recognition",
@@ -16509,6 +19960,112 @@
       3
     ],
     "ingest_endpoint": "https://support.10xgenomics.com/single-cell-vdj/datasets",
+    "commercial_use": null
+  },
+  {
+    "id": "tettcr-seq-zhang-2018",
+    "name": "TetTCR-seq barcoded-tetramer single-cell TCR specificity dataset (Zhang 2018)",
+    "category": "tcr-recognition",
+    "species": [
+      "human"
+    ],
+    "description": "Data from TetTCR-seq, which pairs DNA-barcoded pMHC tetramers (made rapidly by in vitro transcription/translation) with single-cell TCR sequencing to link TCR sequence to antigen specificity at scale. Released as six \"TetTCR-seq summary\" supplementary tables (experiments 1-6) linking TCRs to tetramer-barcode specificities.\n",
+    "scale": "Thousands of single cells; 6 experiment summary tables of TCR-to-antigen pairings",
+    "modalities": [
+      "pmhc-multimer",
+      "tcr-epitope",
+      "single-cell",
+      "barcode-seq"
+    ],
+    "formats": [
+      "xlsx",
+      "pdf"
+    ],
+    "landing_url": "https://www.nature.com/articles/nbt.4282",
+    "download_url": "https://www.nature.com/articles/nbt.4282#Sec22",
+    "license": "unknown",
+    "license_url": "https://www.nature.com/nature/editorial-policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Zhang, Ma, Jiang et al. (UT Austin / UPenn)",
+      "key_refs": [
+        "10.1038/nbt.4282",
+        "10.1101/457069"
+      ]
+    },
+    "last_updated": "2018-11",
+    "relevance": {
+      "programs": [
+        "recognition"
+      ],
+      "why": "Paired TCR-sequence/antigen-specificity data from a non-10x barcoded-tetramer platform; direct training/test material for TCR-pMHC specificity prediction.\n"
+    },
+    "agent_access": "Six supplementary Excel tables from the Nature Biotechnology article page (no auth for SI). Raw sequencing not clearly deposited in a public GEO/SRA accession.\n",
+    "caveats": "Data only as journal SI (Springer Nature terms, no open license). Raw reads location not confirmed — pairings available, raw FASTQ may be restricted/absent.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.nature.com/articles/nbt.4282#Sec22",
+    "commercial_use": null
+  },
+  {
+    "id": "tettcr-seqhd-ma-2021",
+    "name": "TetTCR-SeqHD high-dimensional barcoded-tetramer T-cell dataset (Ma 2021)",
+    "category": "tcr-recognition",
+    "species": [
+      "human"
+    ],
+    "description": "TetTCR-SeqHD jointly profiles antigen specificity (DNA-barcoded pMHC tetramers), gene expression, surface phenotype, and paired alpha/beta TCR sequence in single CD8 T cells. The study profiled ~33,000 single cells from healthy donors and type-1-diabetes donors; raw sequencing is deposited at dbGaP (controlled access).\n",
+    "scale": "~32,992 single cells; GEX + phenotype + paired TCR + tetramer-barcode antigen",
+    "modalities": [
+      "pmhc-multimer",
+      "tcr-epitope",
+      "single-cell",
+      "scrna-seq",
+      "barcode-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.nature.com/articles/s41590-021-01073-2",
+    "download_url": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002441",
+    "license": "unknown",
+    "license_url": "https://www.nature.com/nature/editorial-policies",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "Ma, Schonnesen, Jiang et al. (UT Austin / UPenn); dbGaP",
+      "key_refs": [
+        "10.1038/s41590-021-01073-2",
+        "10.1101/2021.03.04.433914"
+      ],
+      "accessions": [
+        "phs002441.v1.p1"
+      ]
+    },
+    "last_updated": "2021-11",
+    "relevance": {
+      "programs": [
+        "recognition"
+      ],
+      "why": "A rich multimodal barcoded-tetramer dataset (antigen + TCR + transcriptome + phenotype) beyond the 10x releases; valuable for jointly modelling TCR specificity and T-cell state, if dbGaP access is obtained.\n"
+    },
+    "agent_access": "Raw sequencing is controlled-access under dbGaP phs002441 (requires an approved Data Use Certification). Summary tables accompany the paper as SI.\n",
+    "caveats": "Controlled-access (dbGaP DUA) for raw data — catalog but note the gate. SI tables are open but under Springer Nature terms.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002441",
     "commercial_use": null
   },
   {
@@ -17116,6 +20673,54 @@
       0
     ],
     "ingest_endpoint": "https://github.com/IdoSpringer/ERGO-II",
+    "commercial_use": null
+  },
+  {
+    "id": "ervmap",
+    "name": "ERVmap — genome-wide human endogenous retrovirus transcription tool + locus set",
+    "category": "tooling",
+    "species": [
+      "human"
+    ],
+    "description": "Open-source pipeline and curated set of 3,220 human proviral ERV loci for quantifying genome- wide ERV transcription from RNA-seq, with an accompanying web tool. The reference method/locus annotation for measuring ERV expression — the substrate for ERV-derived tumor antigens.\n",
+    "scale": "3,220 annotated ERV loci; per-locus normalized/raw expression outputs",
+    "modalities": [
+      "rna-seq-quantification",
+      "erv-locus-annotation"
+    ],
+    "formats": [
+      "bed",
+      "tsv",
+      "code"
+    ],
+    "landing_url": "https://mtokuyama.github.io/ERVmap/",
+    "download_url": "https://github.com/mtokuyama/ERVmap",
+    "license": "unknown",
+    "license_url": "https://github.com/mtokuyama/ERVmap",
+    "access": "open",
+    "accessions": [],
+    "provenance": {
+      "maintainer": "Yale University (Iwasaki lab; Tokuyama et al.)",
+      "key_refs": [
+        "10.1073/pnas.1814589115"
+      ]
+    },
+    "last_updated": "2018-11",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "comparative"
+      ],
+      "why": "ERV-derived antigens depend on accurately quantifying locus-specific ERV transcription; ERVmap provides the standard locus set and pipeline to screen tumors for ERV antigen sources.\n"
+    },
+    "agent_access": "Code + locus annotation on GitHub, no auth. Accuracy debated vs Telescope (see PNAS exchange 10.1073/pnas.1907705116 / 10.1073/pnas.1915450116).\n",
+    "caveats": "NO LICENSE file located in the GitHub repo (flag before reuse). It is a tool + annotation, not a tumor antigen dataset per se. Human only; read-assignment accuracy is contested.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://github.com/mtokuyama/ERVmap",
     "commercial_use": null
   },
   {

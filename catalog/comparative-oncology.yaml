@@ -308,6 +308,91 @@
   caveats: 'Sponsor-owned data not redistributable; public access is the ICDC subset only.
 
     '
+- id: ctvt-186canids-wgs
+  name: PRJEB7734-PRJEB7736 / PRJNA288568 — CTVT + 186 Canid Whole Genomes (Decker 2015)
+  category: comparative-oncology
+  species:
+  - dog
+  - other
+  description: 'Whole-genome sequencing of CTVT tumours alongside 186 canid reference genomes (dogs, wolves,
+    coyotes) used to reconstruct the CTVT somatic mutation landscape and evolutionary history (Decker
+    et al., Genome Research 2015). Reads are split across ENA BioProjects PRJEB7734-PRJEB7736 (submitter
+    deposits) and NCBI PRJNA288568.
+
+    '
+  scale: CTVT genomes + 186 canid WGS
+  modalities:
+  - whole-genome-seq
+  formats:
+  - fastq
+  - bam
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA288568
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB7734
+  license: unknown
+  license_url: https://www.ebi.ac.uk/ena/browser/about/policies
+  access: open
+  provenance:
+    maintainer: Transmissible Cancer Group, University of Cambridge; Wellcome Sanger Institute
+    key_refs:
+    - 10.1101/gr.190314.115
+  accessions:
+  - PRJEB7734
+  - PRJEB7735
+  - PRJEB7736
+  - PRJNA288568
+  last_updated: '2015'
+  relevance:
+    programs:
+    - comparative
+    why: 'Deepest somatic-mutation characterization of a transmissible canine cancer plus a large canid
+      germline panel — a somatic/germline contrast useful for canine variant filtering and for understanding
+      long-term tumour-genome evolution.
+
+      '
+  caveats: 'No explicit reuse license (INSDC open-access). Reads span multiple projects across ENA and
+    NCBI; de-duplicate samples before combining. Large WGS — plan storage/egress.
+
+    '
+- id: ctvt-founder-genomes-2014
+  name: SAMEA2358413 / SAMEA2358415 — Original CTVT Founder Genomes (Murchison 2014)
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'The two CTVT genomes first sequenced by Murchison et al. (Science 2014), which established
+    the ~11,000-year origin and ~1.9M somatic substitutions of the CTVT clone (Australia and Brazil tumours).
+    Deposited as ENA biosamples SAMEA2358413 (genome 1) and SAMEA2358415 (genome 2); reused by downstream
+    CTVT studies.
+
+    '
+  scale: 2 CTVT tumour genomes (WGS)
+  modalities:
+  - whole-genome-seq
+  formats:
+  - fastq
+  landing_url: https://www.ebi.ac.uk/ena/browser/view/SAMEA2358413
+  download_url: https://www.ebi.ac.uk/ena/browser/view/SAMEA2358413
+  license: unknown
+  license_url: https://www.ebi.ac.uk/ena/browser/about/policies
+  access: open
+  provenance:
+    maintainer: Wellcome Sanger Institute; Transmissible Cancer Group, Cambridge
+    key_refs:
+    - 10.1126/science.1247167
+  accessions:
+  - SAMEA2358413
+  - SAMEA2358415
+  last_updated: '2014'
+  relevance:
+    programs:
+    - comparative
+    why: 'Foundational CTVT genomes; anchor for mutational-signature and clonal-cancer comparisons across
+      the canine oncology dataset.
+
+      '
+  caveats: 'No explicit reuse license (INSDC). These are sample accessions, not a BioProject — resolve
+    to runs via ENA before download. Only two genomes; use with Decker 2015 panel.
+
+    '
 - id: icdc
   name: NCI Integrated Canine Data Commons (ICDC)
   category: comparative-oncology
@@ -695,5 +780,89 @@
   caveats: 'Still only a handful of DLA-88 allotypes and almost entirely class I; DLA class II barely
     covered. Raw MS needs reprocessing. Nonetheless the richest canine source - directly addresses the
     canine data gap flagged across this domain.
+
+    '
+- id: prjeb19508-ctvt-regression-rnaseq
+  name: PRJEB19508 — CTVT Regression RNA-seq (Frampton 2018)
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'Bulk RNA-seq of serial biopsies from canine transmissible venereal tumours (CTVT) undergoing
+    vincristine-induced and natural regression vs. non-regressing tumours. The study (Frampton et al.,
+    Cancer Cell 2018) identified immune/inflammatory regression signatures and proposed CCL5 as a candidate
+    driver of tumour rejection. CTVT is a naturally transmissible clonal cancer — a unique model of allogeneic
+    tumour rejection and immune escape in an outbred canine host.
+
+    '
+  scale: serial biopsies, regressing + non-regressing CTVT (RNA-seq)
+  modalities:
+  - bulk-rna-seq
+  formats:
+  - fastq
+  landing_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB19508
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB19508
+  license: unknown
+  license_url: https://www.ebi.ac.uk/ena/browser/about/policies
+  access: open
+  provenance:
+    maintainer: Transmissible Cancer Group, University of Cambridge (Murchison lab)
+    key_refs:
+    - 10.1016/j.ccell.2018.03.003
+  accessions:
+  - PRJEB19508
+  last_updated: '2018'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Rare in vivo transcriptomic record of spontaneous immune-mediated tumour regression against
+      an allogeneic (foreign-genotype) tumour; directly informs what a successful anti-tumour immune response
+      looks like at the expression level.
+
+      '
+  agent_access: 'ENA bulk FASTQ over HTTPS/FTP via Browser API or Aspera, no auth. Programmatic filereport
+    endpoint (result=read_run) returns run accessions and download paths.
+
+    '
+  caveats: 'No explicit reuse license (ENA/INSDC open-access policy applies; cite the paper). CTVT is
+    clonal — tumour genotype differs from the host dog, so host-matched analyses require care. Confirm
+    run-level accessions on the ENA record before bulk pull.
+
+    '
+- id: srp046723-headneck-scc
+  name: SRP046723 — Canine Oral / Head-and-Neck Squamous Cell Carcinoma (PLoS Genet 2015)
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'Sequencing of canine spontaneous head-and-neck / oral squamous cell carcinomas shown to
+    recapitulate their human counterparts at the molecular level (PLoS Genetics 2015). SRA study SRP046723.
+
+    '
+  scale: canine HNSCC/OSCC cohort
+  modalities:
+  - sequencing
+  formats:
+  - fastq
+  landing_url: https://trace.ncbi.nlm.nih.gov/Traces/?study=SRP046723
+  download_url: https://trace.ncbi.nlm.nih.gov/Traces/?study=SRP046723
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: (see paper — PLoS Genetics 2015)
+    key_refs:
+    - 10.1371/journal.pgen.1005277
+  accessions:
+  - SRP046723
+  last_updated: '2015'
+  relevance:
+    programs:
+    - comparative
+    why: 'Explicit canine-human HNSCC molecular-equivalence dataset; a template for the cross-species
+      validity argument central to the comparative-oncology thesis.
+
+      '
+  caveats: 'No explicit reuse license (NCBI/INSDC open). Confirm exact assay/sample composition on the
+    SRA study record; accession taken from downstream citation.
 
     '

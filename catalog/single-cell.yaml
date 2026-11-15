@@ -93,6 +93,147 @@
     terms (not a standard CC license) — review before redistribution.
 
     '
+- id: ali-2020-metabric-imc
+  name: Ali/Jackson et al. 2020 — METABRIC imaging mass cytometry breast cancer
+  category: single-cell
+  species:
+  - human
+  description: 'Imaging mass cytometry quantifying 37 proteins at subcellular resolution across 483 breast
+    tumors from the METABRIC genomic cohort, linking spatial single-cell phenotypes to the extensively
+    characterized METABRIC genomic/clinical data. Hosted at the Image Data Resource (IDR) as idr0076 with
+    cell masks and multichannel images.
+
+    '
+  scale: 483 METABRIC tumors, 37-protein panel, IMC single-cell + masks
+  modalities:
+  - imaging-mass-cytometry
+  - spatial-proteomics
+  - single-cell-segmentation
+  formats:
+  - tiff
+  - ome-tiff
+  - csv
+  landing_url: https://idr.openmicroscopy.org/
+  download_url: https://idr.openmicroscopy.org/search/?query=Name:idr0076
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Bodenmiller Lab / Image Data Resource (idr0076-ali-metabric)
+    key_refs:
+    - 10.1038/s43018-020-0026-6
+    - 10.1038/s41588-022-01041-y
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Couples spatial single-cell proteomics with deep genomics on the same tumors, a rare multi-modal
+      anchor for relating antigenic/immune spatial context to genomic drivers.
+
+      '
+  agent_access: 'IDR download via Globus/Aspera for full images; processed single-cell data also on Zenodo
+    (5850952) for the 2022 follow-up. Genomics/clinical via cBioPortal (METABRIC).
+
+    '
+  caveats: 'Full image transfer is large and Globus-based (not plain HTTPS). Linked METABRIC genomics
+    governed separately. 2020 vs 2022 deposits differ (reanalysis/new structures).
+
+    '
+- id: barkley-2022-pancancer-spatial
+  name: Barkley et al. 2022 — Recurrent cancer cell states (pan-cancer scRNA + spatial)
+  category: single-cell
+  species:
+  - human
+  - mouse
+  description: 'Pan-cancer single-cell RNA-seq across 15 cancer types combined with sequencing-based spatial
+    transcriptomics of tumor sections, defining recurrent cancer cell "states" and their specific interactions
+    with the tumor microenvironment across tumor types.
+
+    '
+  scale: scRNA across 15 cancer types + spatial transcriptomics of multiple tumor sections
+  modalities:
+  - scrna-seq
+  - spatial-transcriptomics
+  formats:
+  - mtx
+  - csv
+  - h5
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE203612
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE203612
+  license: NCBI GEO terms (no explicit SPDX)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Yanai Lab (NYU) / NCBI GEO
+    key_refs:
+    - 10.1038/s41588-022-01141-9
+    accessions:
+    - GSE203612
+  last_updated: '2022-08-05'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'Cross-tumor recurrent cancer-cell states plus their spatial TME partners give a pan-cancer frame
+      for which tumor states co-occur with immune niches.
+
+      '
+  agent_access: 'GEO open bulk download; matrices + spatial data. No auth. Scriptable over HTTPS/FTP.
+
+    '
+  caveats: 'Spatial component is a subset of tumors; combines human and mouse. Confirm per-sample platform
+    (sequencing-based ST) before assuming Visium specifics.
+
+    '
+- id: bi-2021-ccrcc-icb-scrna
+  name: Bi et al. 2021 — Tumor/immune reprogramming during ICB in advanced RCC (scRNA)
+  category: single-cell
+  species:
+  - human
+  description: 'Single-cell RNA-seq of metastatic clear cell renal cell carcinoma sampled before or after
+    immune checkpoint blockade (alone or with TKI), profiling how ICB remodels cancer and immune cell
+    states and their interactions. Processed data on the Broad Single Cell Portal; raw scRNA + bulk exome
+    under dbGaP controlled access.
+
+    '
+  scale: ~34,326 cells, 8 patients (5 ICB-treated), 10x scRNA-seq
+  modalities:
+  - scrna-seq
+  - immunotherapy-response
+  formats:
+  - mtx
+  - csv
+  - h5ad
+  landing_url: https://singlecell.broadinstitute.org/single_cell/study/SCP1288
+  download_url: https://singlecell.broadinstitute.org/single_cell/study/SCP1288
+  license: custom (Broad Single Cell Portal terms); raw under dbGaP DUA
+  license_url: https://singlecell.broadinstitute.org/single_cell/terms_of_service
+  access: controlled-access
+  provenance:
+    maintainer: Dana-Farber / Broad Institute; Single Cell Portal SCP1288
+    key_refs:
+    - 10.1016/j.ccell.2021.02.015
+    accessions:
+    - SCP1288
+    - phs002065.v1.p1
+  last_updated: 2021-03
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'On-treatment single-cell view of ICB remodeling in an immunotherapy-responsive tumor; direct
+      signal on how immune recognition states shift with checkpoint blockade.
+
+      '
+  agent_access: 'Processed matrices downloadable from Single Cell Portal after Google-account sign-in.
+    Raw scRNA + exome require dbGaP (phs002065) controlled-access approval (DUA).
+
+    '
+  caveats: 'CONTROLLED ACCESS for raw (dbGaP DUA). Processed layer gated behind SCP login terms. Small
+    patient cohort.
+
+    '
 - id: broad-scp
   name: Broad Institute Single Cell Portal (SCP)
   category: single-cell
@@ -286,6 +427,102 @@
     '
   caveats: 'Fragmented across papers/accessions (no unified canine immune cell atlas); donor numbers small;
     DLA typing and antigen specificity absent.
+
+    '
+- id: caushi-2021-nsclc-mana-til
+  name: Caushi et al. 2021 — Neoantigen-specific TIL in anti-PD-1 lung cancer (scRNA + TCR)
+  category: single-cell
+  species:
+  - human
+  description: 'Single-cell RNA-seq and TCR-seq of tumor-infiltrating lymphocytes from resectable NSCLC
+    treated with neoadjuvant anti-PD-1, using MANA (mutation-associated neoantigen) functional expansion
+    to identify and transcriptionally profile neoantigen-specific (vs viral- and cancer-testis-specific)
+    T cells and their programs.
+
+    '
+  scale: NSCLC neoadjuvant anti-PD-1 cohort; MANA/viral/CT-antigen-specific TIL scRNA + TCR
+  modalities:
+  - scrna-seq
+  - tcr-seq
+  - neoantigen-specific-til
+  - immunotherapy-response
+  formats:
+  - mtx
+  - csv
+  - h5
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE176021
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE176021
+  license: NCBI GEO terms (processed); EGA controlled (raw)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: controlled-access
+  provenance:
+    maintainer: Smith/Pardoll/Anagnostou labs (Johns Hopkins) / GEO + EGA + immuneACCESS
+    key_refs:
+    - 10.1038/s41586-021-03752-4
+    accessions:
+    - GSE176021
+    - GSE173351
+    - EGAS00001005343
+  last_updated: 2021-07
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'Rare dataset of experimentally identified neoantigen-SPECIFIC TIL with paired transcriptome
+      and TCR — ground truth for linking neoantigen recognition to T-cell state.
+
+      '
+  agent_access: 'Processed scRNA (GSE176021) and bulk TCR (GSE173351) open from GEO. Raw reads in EGA
+    (EGAS00001005343) require controlled-access DAC approval. TCR also on Adaptive immuneACCESS (clients.adaptivebiotech.com/pub/caushi-2021-n).
+
+    '
+  caveats: 'CONTROLLED ACCESS for raw (EGA). Neoantigen specificity assignments are the key labeled layer;
+    confirm which GEO subseries maps to which specificity.
+
+    '
+- id: chevrier-2017-ccrcc-cytof
+  name: Chevrier et al. 2017 — Immune atlas of clear cell renal cell carcinoma (CyTOF)
+  category: single-cell
+  species:
+  - human
+  description: 'Mass cytometry immune atlas of clear cell renal cell carcinoma (ccRCC) using T-cell and
+    myeloid/TAM antibody panels, profiling ~3.5 million cells across tumor, adjacent kidney, and blood
+    to define tumor-associated immune cell states and an immune signature associated with outcome. Paired
+    scRNA-seq in ArrayExpress.
+
+    '
+  scale: ~3.5M measured cells, ccRCC + adjacent + blood, two CyTOF panels
+  modalities:
+  - mass-cytometry
+  - cytof
+  - scrna-seq
+  formats:
+  - fcs
+  - csv
+  landing_url: https://www.cell.com/cell/fulltext/S0092-8674(17)30429-4
+  download_url: https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-5640
+  license: unknown
+  license_url: https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-5640
+  access: open
+  provenance:
+    maintainer: Bodenmiller Lab (University of Zurich); seq in ArrayExpress E-MTAB-5640
+    key_refs:
+    - 10.1016/j.cell.2017.04.016
+  last_updated: 2017-05
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Deep high-parameter immune phenotyping of a major immunotherapy-responsive tumor type (ccRCC);
+      complements the Krishna/Bi ccRCC single-cell cohorts in this domain.
+
+      '
+  agent_access: 'Sequencing data (E-MTAB-5640) is open bulk download from ArrayExpress/BioStudies. CyTOF
+    .fcs were released via the lab''s project website; confirm current link.
+
+    '
+  caveats: 'LICENSE RED FLAG — no explicit reuse license on the CyTOF deposit; ArrayExpress data under
+    EBI terms. CyTOF project-site link may have moved; verify before scripting.
 
     '
 - id: combat-2022-blood-atlas
@@ -1159,6 +1396,280 @@
     depth differs from 10x; mixes adult + fetal (filter for adult "self").
 
     '
+- id: jackson-2020-breast-imc
+  name: Jackson et al. 2020 — Single-cell pathology landscape of breast cancer (IMC)
+  category: single-cell
+  species:
+  - human
+  description: 'Imaging mass cytometry (IMC) of breast cancer with a 35-marker antibody panel. 720 high-dimensional
+    images from 352 patients (long-term survival data for 281), deposited as high-dimensional TIFFs, tumor/stroma
+    and single-cell masks, plus single-cell and patient-level metadata. Defines recurrent single-cell
+    phenotypes and spatial communities linked to clinical outcome.
+
+    '
+  scale: 720 IMC images, 352 patients, 35-marker panel, ~1.2M single cells
+  modalities:
+  - imaging-mass-cytometry
+  - spatial-proteomics
+  - single-cell-segmentation
+  formats:
+  - tiff
+  - csv
+  landing_url: https://doi.org/10.5281/zenodo.3518284
+  download_url: https://zenodo.org/records/3518284
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Bodenmiller Lab (University of Zurich) / Zenodo
+    key_refs:
+    - 10.1038/s41586-019-1876-x
+  last_updated: 2019-10
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Large spatial-proteomic map of breast tumor cell phenotypes and their neighborhoods; a benchmark
+      for relating immune infiltration structure to tumor biology at scale.
+
+      '
+  agent_access: 'Zenodo bulk download, no auth. Multi-GB TIFF archives plus compact single-cell CSVs.
+    Companion processing code (ImcSegmentationPipeline) on GitHub.
+
+    '
+  caveats: 'Protein panel only (35 markers). Full image archive is large; single-cell tables are the practical
+    layer for ML. Patient outcome subset (n=281) smaller than imaged cohort.
+
+    '
+- id: ji-2020-cscc-spatial
+  name: Ji et al. 2020 — Cutaneous squamous cell carcinoma (scRNA + spatial ST)
+  category: single-cell
+  species:
+  - human
+  description: 'Multimodal single-cell RNA-seq and spatial transcriptomics (ST/Visium-style) of human
+    cutaneous squamous cell carcinoma and matched normal skin, defining a tumor-specific keratinocyte
+    state and spatially mapping tumor-immune niches at the leading edge.
+
+    '
+  scale: cSCC + matched normal; scRNA-seq + spatial transcriptomics sections
+  modalities:
+  - scrna-seq
+  - spatial-transcriptomics
+  formats:
+  - mtx
+  - csv
+  - tiff
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE144240
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE144240
+  license: NCBI GEO terms (no explicit SPDX)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Khavari Lab (Stanford) / NCBI GEO (superseries GSE144240)
+    key_refs:
+    - 10.1016/j.cell.2020.05.039
+    accessions:
+    - GSE144240
+    - GSE144239
+  last_updated: 2020-06
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Spatially resolved tumor-immune boundary in an immunogenic skin cancer; informs how presentation
+      and immune access vary across tumor architecture.
+
+      '
+  agent_access: 'GEO open download; superseries GSE144240 contains scRNA + ST subseries (incl. GSE144239).
+    No auth; HTTPS/FTP.
+
+    '
+  caveats: 'Superseries layout: confirm which subseries holds the spatial vs scRNA layer. Paper had a
+    2020 figure correction (did not affect conclusions).
+
+    '
+- id: keren-2018-mibi-tnbc
+  name: Keren et al. 2018 — Triple-negative breast cancer MIBI-TOF atlas
+  category: single-cell
+  species:
+  - human
+  description: 'Multiplexed ion beam imaging by time-of-flight (MIBI-TOF) of triple-negative breast cancer:
+    36 labeled antibodies across 41 patients, revealing structured vs mixed tumor-immune architectures
+    with prognostic value. Portal provides channel images, segmentation masks, and cell identities; patient
+    metadata in the paper''s supplement.
+
+    '
+  scale: ~1,763 images, 41 TNBC patients, 36-marker panel
+  modalities:
+  - mibi-tof
+  - spatial-proteomics
+  - single-cell-segmentation
+  formats:
+  - tiff
+  - csv
+  landing_url: https://mibi-share.ionpath.com/
+  download_url: https://mibi-share.ionpath.com/
+  license: unknown
+  license_url: https://mibi-share.ionpath.com/
+  access: registration
+  provenance:
+    maintainer: Angelo Lab (Stanford) / IonPath mibi-share portal
+    key_refs:
+    - 10.1016/j.cell.2018.08.039
+  last_updated: 2018-09
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Early, widely-reused spatial-proteomic benchmark for tumor-immune spatial organization; defines
+      "structured" vs "mixed" immune architectures relevant to how T cells access tumor antigen in situ.
+
+      '
+  agent_access: 'Web portal with registration/login to browse and download; not a plain bulk HTTPS endpoint.
+    Intermediate processed outputs mirrored on the authors'' GitHub.
+
+    '
+  caveats: 'LICENSE RED FLAG — explicit reuse/redistribution license not stated on the IonPath portal;
+    treat terms as unknown and confirm before redistribution or ML training. Protein panel only; portal
+    access may require account.
+
+    '
+- id: krieg-2018-melanoma-cytof
+  name: Krieg et al. 2018 — Anti-PD-1 response prediction in melanoma (CyTOF)
+  category: single-cell
+  species:
+  - human
+  description: 'High-dimensional mass cytometry of peripheral blood from stage-IV melanoma patients before
+    and during anti-PD-1 immunotherapy (plus healthy controls), identifying a baseline CD14+CD16-HLA-DRhi
+    classical-monocyte frequency that predicts response and survival. Raw .fcs files in FlowRepository.
+
+    '
+  scale: ~40 patient blood samples pre/on anti-PD-1 + 10 controls, CyTOF panel
+  modalities:
+  - mass-cytometry
+  - cytof
+  - immunotherapy-response
+  formats:
+  - fcs
+  landing_url: http://flowrepository.org/id/FR-FCM-ZY34
+  download_url: http://flowrepository.org/id/FR-FCM-ZY34
+  license: unknown
+  license_url: http://flowrepository.org/id/FR-FCM-ZY34
+  access: registration
+  provenance:
+    maintainer: Becher Lab (University of Zurich) / FlowRepository
+    key_refs:
+    - 10.1038/nm.4466
+    - 10.1038/s41591-018-0094-7
+  last_updated: 2018-01
+  relevance:
+    programs:
+    - recognition
+    why: 'Links circulating high-parameter immune phenotypes to ICB outcome; a labeled responder/non-responder
+      cytometry cohort for immune-correlate modeling.
+
+      '
+  agent_access: 'FlowRepository download; browsing/download typically needs a free account. A second deposit
+    FR-FCM-ZYL8 is also associated (per Bioconductor HDCytoData).
+
+    '
+  caveats: 'LICENSE RED FLAG — FlowRepository deposits rarely carry an explicit reuse license; confirm
+    terms. Peripheral blood (not intratumoral). Small cohort.
+
+    '
+- id: krishna-2021-ccrcc-scrna-tcr
+  name: Krishna et al. 2021 — Multiregional ccRCC single-cell + TCR immune landscape
+  category: single-cell
+  species:
+  - human
+  description: 'Paired single-cell RNA-seq and TCR-seq of clear cell renal cell carcinoma across tumor
+    regions, tumor-normal interface, lymph node, normal kidney, and blood (including ICB-treated patients),
+    linking tissue-resident/exhausted CD8 T-cell states and TCR clonality to tumor topology and therapy
+    efficacy. ~167k cells.
+
+    '
+  scale: ~167,283 cells, multiregional ccRCC incl. 4 ICB-treated; paired scRNA + TCR
+  modalities:
+  - scrna-seq
+  - tcr-seq
+  - immunotherapy-response
+  formats:
+  - mtx
+  - csv
+  - h5ad
+  landing_url: https://cellxgene.cziscience.com/collections/3f50314f-bdc9-40c6-8e4a-b0901ebfbe4c
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA705464
+  license: custom (CZ CELLxGENE processed; SRA raw public)
+  license_url: https://cellxgene.cziscience.com/
+  access: open
+  provenance:
+    maintainer: Chan Lab (MSKCC) / SRA PRJNA705464; processed on CZ CELLxGENE Discover
+    key_refs:
+    - 10.1016/j.ccell.2021.03.007
+    accessions:
+    - PRJNA705464
+  last_updated: 2021-05
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Joint single-cell transcriptome + TCR in a checkpoint-responsive tumor; directly couples T-cell
+      recognition (clonotypes) to functional states and spatial topology.
+
+      '
+  agent_access: 'Processed object downloadable from CZ CELLxGENE Discover (h5ad/RDS), no auth. Raw reads
+    via SRA PRJNA705464 (open) — large FASTQ. Some secondary sources cite GSE121638 (unverified).
+
+    '
+  caveats: 'Confirm the raw accession (PRJNA705464 verified via SRA/CELLxGENE; GSE121638 citation is unconfirmed).
+    Paired-TCR layer requires VDJ-aware parsing.
+
+    '
+- id: lavin-2017-lung-cytof-scrna
+  name: Lavin et al. 2017 — Innate immune landscape of early lung adenocarcinoma
+  category: single-cell
+  species:
+  - human
+  description: 'Paired single-cell analyses (mass cytometry + MARS-seq scRNA-seq) of early-stage lung
+    adenocarcinoma, tumor-adjacent normal lung, and blood, mapping tumor-remodeled innate/myeloid immune
+    states very early in disease. scRNA-seq in GEO; CyTOF via the paper''s data-availability section.
+
+    '
+  scale: Stage IA lung adenocarcinoma + adjacent + blood; CyTOF + MARS-seq scRNA
+  modalities:
+  - mass-cytometry
+  - cytof
+  - scrna-seq
+  formats:
+  - fcs
+  - txt
+  - csv
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97168
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE97168
+  license: NCBI GEO terms (public domain-like, no explicit SPDX)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Merad Lab (Icahn School of Medicine at Mount Sinai) / NCBI GEO
+    key_refs:
+    - 10.1016/j.cell.2017.04.014
+  last_updated: 2017-04
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Multi-modal early-tumor immune map; myeloid/innate remodeling context that shapes the antigen-presenting
+      milieu before adaptive responses dominate.
+
+      '
+  agent_access: 'GEO (GSE97168) open bulk download via FTP/HTTPS, no auth. CyTOF .fcs availability is
+    stated in the paper; confirm deposit location for the cytometry layer.
+
+    '
+  caveats: 'GEO holds the scRNA layer cleanly; cytometry deposit path less explicit. Small patient numbers
+    (early-stage discovery cohort).
+
+    '
 - id: lowery-2022-neotcr
   name: Lowery et al. 2022 neoantigen-reactive TCR (NeoTCR) signatures
   category: single-cell
@@ -1249,6 +1760,51 @@
     No dog.
 
     '
+- id: nirmal-2022-melanoma-cycif
+  name: Nirmal et al. 2022 — Spatial landscape of primary melanoma (CyCIF, HTAN)
+  category: single-cell
+  species:
+  - human
+  description: 'Tissue-cyclic-immunofluorescence (t-CyCIF) whole-slide multiplexed imaging of primary
+    melanoma spanning precursor to invasive regions at single-cell resolution, mapping progression and
+    immunoediting. Part of the Human Tumor Atlas Network (HTAN); releases whole-slide OME-TIFF images
+    (~2.3 TB) with single-cell quantification tables.
+
+    '
+  scale: ~2.3 TB imaging, ~3.0e5 image tiles, single-cell CyCIF quantification
+  modalities:
+  - cycif-multiplexed-imaging
+  - spatial-proteomics
+  - single-cell-segmentation
+  formats:
+  - ome-tiff
+  - csv
+  landing_url: https://humantumoratlas.org/
+  download_url: https://www.synapse.org/#!Synapse:syn22345750
+  license: CC BY 4.0
+  license_url: https://humantumoratlas.org/data-access
+  access: registration
+  provenance:
+    maintainer: Sorger Lab (Harvard Medical School) / HTAN (Synapse)
+    key_refs:
+    - 10.1158/2159-8290.CD-21-1357
+  last_updated: 2022-06
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'High-plex spatial map of how the immune compartment edits melanoma as it progresses; direct
+      in-situ view of immune-tumor interfaces for recognition/presentation modeling.
+
+      '
+  agent_access: 'HTAN data via Synapse requires a (free) Synapse account and acceptance of HTAN terms;
+    programmatic access via synapseclient. Whole-slide OME-TIFFs are very large.
+
+    '
+  caveats: 'Image volume is multi-TB — plan for the single-cell quantification layer, not raw images,
+    for most ML. HTAN governance/registration applies.
+
+    '
 - id: oliveira-2021-melanoma
   name: Oliveira et al. 2021 melanoma antitumor CD8 TCR specificity/avidity
   category: single-cell
@@ -1291,6 +1847,92 @@
     '
   caveats: 'Raw data controlled-access; exact accession to verify. Curated TCRs are in supplements. Human
     only.
+
+    '
+- id: pozniak-2024-melanoma-icb
+  name: Pozniak et al. 2024 — Melanoma ICB single-cell + spatial (TCF4 GRN)
+  category: single-cell
+  species:
+  - human
+  description: 'Single-cell RNA-seq (with spatial profiling) of treatment-naive and immune-checkpoint-
+    blockade-treated melanoma, mapping the cellular architecture and a TCF4-dependent gene regulatory
+    network associated with resistance to immunotherapy. Released as Seurat objects (RDS) with raw counts
+    and responder/non-responder clinical metadata.
+
+    '
+  scale: Treatment-naive + ICB-treated melanoma; scRNA-seq + spatial, responder/NR metadata
+  modalities:
+  - scrna-seq
+  - spatial-transcriptomics
+  - immunotherapy-response
+  formats:
+  - rds
+  - h5
+  landing_url: https://rdr.kuleuven.be/
+  download_url: https://doi.org/10.48804/GSAXBN
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  access: open
+  provenance:
+    maintainer: Bechter/Marine labs (KU Leuven) / KU Leuven Research Data Repository (RDR)
+    key_refs:
+    - 10.1016/j.cell.2023.11.037
+  last_updated: 2024-01
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Paired treatment-naive vs on-ICB melanoma single-cell + spatial with outcome labels; a resistance-focused
+      complement to the Sade-Feldman/Jerby-Arnon melanoma ICB cohorts.
+
+      '
+  agent_access: 'KU Leuven RDR open download (RDS/Seurat objects), no controlled access. DOI-resolvable.
+
+    '
+  caveats: 'LICENSE RED FLAG — CC BY-NC-SA 4.0 forbids commercial use and imposes share-alike; problematic
+    for commercial model training. Data shipped as R/Seurat objects (not raw FASTQ).
+
+    '
+- id: prjeb86016-insulinoma-scrna
+  name: PRJEB86016 — Canine Insulinoma Single-Cell RNA-seq (2025)
+  category: single-cell
+  species:
+  - dog
+  description: 'Single-cell RNA-seq of 5,532 cells from three Boxer canine insulinoma samples (two primary
+    insulinomas and one metastasis), resolving distinct sub-populations of insulin-expressing cancer cells
+    (2025). Deposited in ENA as study ERP169389 under project PRJEB86016 (samples ERS23781655-57).
+
+    '
+  scale: 5,532 cells, 3 samples, 2 dogs
+  modalities:
+  - single-cell-rna-seq
+  formats:
+  - fastq
+  landing_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB86016
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB86016
+  license: unknown
+  license_url: https://www.ebi.ac.uk/ena/browser/about/policies
+  access: open
+  provenance:
+    maintainer: (see paper — 2025)
+    key_refs:
+    - 10.1186/s44356-025-00026-3
+  accessions:
+  - PRJEB86016
+  - ERP169389
+  - ERS23781655
+  - ERS23781656
+  - ERS23781657
+  last_updated: '2025'
+  relevance:
+    programs:
+    - comparative
+    why: 'Only known single-cell view of a canine endocrine tumour; adds a neuroendocrine lineage to the
+      canine single-cell atlas collection.
+
+      '
+  caveats: 'No explicit reuse license (ENA/INSDC open). Small cohort (2 dogs). Raw reads only — processed
+    objects not noted; expect to run the scRNA pipeline from FASTQ.
 
     '
 - id: qian-2020-pancancer-blueprint
@@ -1336,6 +1978,54 @@
     not pinned here (portal-first); read the paper''s Data Availability for ArrayExpress E-MTAB IDs.
 
     '
+- id: schurch-2020-crc-codex
+  name: Schürch et al. 2020 — Colorectal cancer CODEX multiplexed imaging atlas
+  category: single-cell
+  species:
+  - human
+  description: 'Highly multiplexed CODEX (co-detection by indexing) fluorescence imaging of advanced-stage
+    colorectal carcinoma. 140 tissue-microarray spots from 35 patients stained with a 56-protein panel,
+    segmented to single cells with spatial coordinates, enabling cellular-neighborhood analysis of the
+    tumor-immune microenvironment. Includes raw multichannel images, segmentation masks, and single-cell
+    feature tables.
+
+    '
+  scale: 140 CODEX images, 35 CRC patients, 56-protein panel, ~240k annotated cells
+  modalities:
+  - codex-multiplexed-imaging
+  - spatial-proteomics
+  - single-cell-segmentation
+  formats:
+  - tiff
+  - csv
+  landing_url: https://www.cancerimagingarchive.net/collection/crc_ffpe-codex_cellneighs/
+  download_url: https://doi.org/10.7937/TCIA.2020.FQN0-0326
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Nolan Lab (Stanford) / hosted on The Cancer Imaging Archive (TCIA)
+    key_refs:
+    - 10.1016/j.cell.2020.07.005
+    - 10.7937/TCIA.2020.FQN0-0326
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Spatially resolved tumor-immune niches at single-cell resolution give ground truth for where
+      antigen-presenting and effector cells co-localize in a human solid tumor, informing models of in-situ
+      immune recognition and presentation context.
+
+      '
+  agent_access: 'Bulk download from TCIA via DOI; no auth for the imaging collection. Large TIFF files;
+    processed single-cell CSVs also mirrored on Mendeley Data. Scriptable over HTTPS.
+
+    '
+  caveats: 'Imaging is TMA-based (spots, not whole sections). Processed single-cell intensities/ coordinates
+    are the most agent-friendly layer; raw images are multi-GB. Panel is protein markers, not transcriptome.
+
+    '
 - id: stephenson-2021-covid-emtab10026
   name: Stephenson et al. 2021 COVID-19 single-cell multi-omics atlas (E-MTAB-10026)
   category: single-cell
@@ -1379,6 +2069,57 @@
 
     '
   caveats: 'Not antigen-labeled. Confirm VDJ-specific files within E-MTAB-10026 / portal. Human only.
+
+    '
+- id: stomicsdb
+  name: STOmicsDB — Spatial Transcript Omics DataBase
+  category: single-cell
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Comprehensive aggregator database for spatial transcriptomics: a one-stop hub to search,
+    visualize, archive, and analyze spatial datasets across many species and platforms (including numerous
+    tumor spatial datasets). Hosts hundreds of curated spatial datasets with harmonized metadata and online
+    analysis/visualization.
+
+    '
+  scale: ~400+ curated spatial transcriptomics datasets, 12+ species (growing)
+  modalities:
+  - spatial-transcriptomics
+  - aggregator
+  - visualization
+  formats:
+  - h5ad
+  - csv
+  - custom
+  landing_url: https://db.cngb.org/stomics/
+  download_url: https://db.cngb.org/stomics/
+  license: mixed (per-dataset); portal CNGB terms
+  license_url: https://db.cngb.org/stomics/help
+  access: open
+  provenance:
+    maintainer: China National GeneBank (CNGB) / BGI
+    key_refs:
+    - 10.1093/nar/gkad933
+    accessions:
+    - re3data:r3d100014512
+  last_updated: '2024'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Discovery/index layer to locate tumor spatial-transcriptomics datasets across platforms — useful
+      for finding additional primary tumor atlases to catalog.
+
+      '
+  agent_access: 'Web portal with browse/search and dataset download; some datasets visualize in-browser.
+    Not a single bulk endpoint — per-dataset access varies.
+
+    '
+  caveats: 'LICENSE RED FLAG — licenses vary per contributed dataset; not uniformly open. It is an aggregator/index,
+    not a single primary dataset — individual tumor datasets must be de-duplicated against GEO/other sources
+    before cataloging.
 
     '
 - id: tabula-sapiens-2
@@ -1427,6 +2168,57 @@
     '
   caveats: 'Confirm the exact Cell DOI and final cell/donor counts against the published article (2026).
     Supersedes much of v1 — prefer for new work but note version in provenance.
+
+    '
+- id: tenx-xenium-breast-cancer
+  name: 10x Genomics Xenium — Human breast cancer in-situ (public demo datasets)
+  category: single-cell
+  species:
+  - human
+  description: 'Public 10x Genomics Xenium in-situ single-cell spatial transcriptomics datasets on human
+    breast cancer FFPE tissue, including the Janesick et al. preprint data (Chromium + Visium + two Xenium
+    replicates on consecutive sections) and newer Xenium Prime 5K pan-tissue + custom panels. Outputs
+    include cell-feature matrices, transcript tables, cell boundaries, and registered H&E images.
+
+    '
+  scale: Breast cancer FFPE; ~hundreds of genes (base) to 5,000+ (Prime 5K) panels
+  modalities:
+  - xenium-in-situ
+  - spatial-transcriptomics
+  - single-cell-segmentation
+  formats:
+  - h5
+  - csv
+  - parquet
+  - tiff
+  - zarr
+  landing_url: https://www.10xgenomics.com/datasets/ffpe-human-breast-with-pre-designed-panel-1-standard
+  download_url: https://zenodo.org/records/10076046
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: 10x Genomics (dataset program) / Zenodo mirror for preprint data
+    key_refs:
+    - 10.1038/s41467-023-43458-x
+    accessions:
+    - zenodo.10076046
+  last_updated: '2022-11-03'
+  size_bytes: 7600000000
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Subcellular-resolution spatial transcriptomics of a tumor with matched Chromium/Visium; a clean,
+      openly-licensed benchmark for integrating single-cell and in-situ tumor data.
+
+      '
+  agent_access: 'Zenodo preprint bundle (~7.6 GB) open HTTPS download, CC BY 4.0. 10x dataset pages provide
+    additional bundles with md5 checksums (CC BY 4.0); some newer sets need a form.
+
+    '
+  caveats: 'Preprint Zenodo bundle is a legacy pre-release (file/QC naming and image alignment differ
+    from current outputs). Newer 10x demo datasets may require an email form.
 
     '
 - id: tisch2
@@ -1482,6 +2274,99 @@
   caveats: 'License is non-commercial (CC BY-NC 4.0) — flag for any commercial/for-profit use and clarify
     before building a product on it. Secondary resource: cells are reprocessed, so re-derive raw where
     provenance matters. No stable programmatic API.
+
+    '
+- id: vizgen-merscope-ffpe-io
+  name: Vizgen MERSCOPE — Human FFPE Immuno-oncology MERFISH data release
+  category: single-cell
+  species:
+  - human
+  description: 'Vizgen MERSCOPE (MERFISH) in-situ spatial transcriptomics across multiple human FFPE tumor
+    types including melanoma, lung, ovarian, colon, liver, prostate, breast, and uterine cancer. Measures
+    ~500-gene panels (newer panels up to ~815/1,000 genes), releasing cell-by-gene matrices, per-transcript
+    coordinates, and cell boundaries.
+
+    '
+  scale: ~16-26 tumor samples, 8+ cancer types, ~4-6B transcripts, ~9-10M cells
+  modalities:
+  - merfish
+  - spatial-transcriptomics
+  - single-cell-segmentation
+  formats:
+  - csv
+  - parquet
+  - hdf5
+  - tiff
+  landing_url: https://vizgen.com/data-release-program/
+  download_url: https://info.vizgen.com/merscope-ffpe-solution
+  license: custom (Vizgen Data Release Program terms)
+  license_url: https://vizgen.com/data-release-program/
+  access: registration
+  provenance:
+    maintainer: Vizgen Inc. (Data Release Program)
+    key_refs:
+    - https://vizgen.com/human-ffpe-immunooncology-release-roadmap/
+  last_updated: 2024-01
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Multi-tumor-type MERFISH gives in-situ transcriptomic maps of tumor-immune spatial organization
+      across cancers, complementing the Xenium/Visium entries.
+
+      '
+  agent_access: 'Download via Vizgen''s Data Release Program page; participation/registration required.
+    Not a plain anonymous bulk endpoint.
+
+    '
+  caveats: 'LICENSE RED FLAG — vendor Data Release Program terms, not a standard open license; confirm
+    redistribution/ML-training allowance. Gene-count figures differ across Vizgen pages (panel versions).
+    Access is registration-gated.
+
+    '
+- id: wagner-2019-breast-cytof
+  name: Wagner et al. 2019 — Single-cell atlas of human breast cancer ecosystem (CyTOF)
+  category: single-cell
+  species:
+  - human
+  description: 'Mass cytometry (CyTOF) atlas of the tumor and immune ecosystem of human breast cancer
+    using tumor and immune antibody panels. Profiles ~26 million cells from 144 tumors, 46 juxta-tumoral
+    samples, and four reduction mammoplasties, defining immune/stromal/tumor phenotype abundances across
+    subtypes. Deposited as raw .fcs files plus IF images.
+
+    '
+  scale: ~26M cells, 144 tumors + 46 juxta-tumoral + 4 mammoplasties, two CyTOF panels
+  modalities:
+  - mass-cytometry
+  - cytof
+  - immunofluorescence
+  formats:
+  - fcs
+  - tiff
+  landing_url: https://data.mendeley.com/datasets/gb83sywsjc/1
+  download_url: https://data.mendeley.com/datasets/gb83sywsjc/1
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Bodenmiller Lab (University of Zurich) / Mendeley Data
+    key_refs:
+    - 10.1016/j.cell.2019.03.005
+  last_updated: '2019-04-12'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'One of the largest single-tumor-type CyTOF immune atlases; high-parameter protein phenotyping
+      of tumor-infiltrating immune cells to anchor immune-composition priors.
+
+      '
+  agent_access: 'Mendeley Data bulk download, no auth. Native .fcs (flow/mass cytometry) files; parse
+    with flowCore / readfcs. CC BY 4.0 per Mendeley record.
+
+    '
+  caveats: 'Protein marker panel (no transcriptome). .fcs requires cytometry-specific parsing and arcsinh
+    transform. Large number of files.
 
     '
 - id: weizmann-3ca

@@ -466,6 +466,49 @@
     Data accession UNVERIFIED here.
 
     '
+- id: faridi-2018-spliced-peptides
+  name: Cis/trans spliced HLA-I peptide immunopeptidome (Faridi et al. 2018, Purcell lab)
+  category: presentation
+  species:
+  - human
+  description: 'LC-MS/MS immunopeptidomics dataset ("Trans-splicing of class I HLA bound peptides diversifies
+    the immunopeptidome") supporting the claim that a subset of HLA-I ligands are not genomically templated
+    but arise from proteasome-catalysed cis-/trans-peptide splicing. A contested but heavily re-analysed
+    resource for post-translationally generated (spliced) antigens.
+
+    '
+  scale: HLA-I elution across cell lines/alleles; spliced-peptide fraction estimates
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw-ms
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD009660
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD009660
+  license: unknown
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/aboutpride
+  access: open
+  accessions:
+  - 'PRIDE: PXD009660'
+  provenance:
+    maintainer: Monash University, Melbourne (Purcell lab)
+    key_refs:
+    - 10.1126/sciimmunol.aar3947
+  last_updated: 2018-10
+  relevance:
+    programs:
+    - presentation
+    why: 'Spliced peptides, if real at scale, expand the presentable antigen space and complicate genome-anchored
+      prediction; essential data for the "believe vs prove" line on spliced antigens.
+
+      '
+  agent_access: 'PRIDE bulk download, no auth.
+
+    '
+  caveats: 'SCIENTIFIC DISPUTE: later Science Immunology comment (10.1126/sciimmunol.aaw1622) argues the
+    spliced-peptide fraction is overestimated (<1% at 1% FDR) and that only 8 result files were shared.
+    Treat spliced-peptide counts as contested. No explicit reuse license beyond PRIDE terms.
+
+    '
 - id: gfeller-2018-meningioma-hla1
   name: Gfeller 2018 meningioma HLA-I peptidome (length/multiple specificity)
   category: presentation
@@ -709,6 +752,107 @@
     data.gov record lists ODbL. Treat as CC BY 4.0 and attribute both IEDB and original data authors.
     Heavy dedup/normalization needed (same epitope across many assays/papers; mixed qualitative + quantitative).
     Canine (DLA) coverage is sparse.
+
+    '
+- id: jaeger-2022-invivo-immunopeptidome
+  name: In vivo autochthonous tumour immunopeptidome via KbStrep GEMM (PXD033232)
+  category: presentation
+  species:
+  - mouse
+  description: 'MHC-I immunopeptidomics from autochthonous mouse tumours using a genetically engineered
+    KbStrep allele (StrepTag knocked into H2-K1) enabling StrepTactin affinity purification of MHC-I peptides
+    directly from KP pancreatic (PDAC) and lung (LUAD) adenocarcinoma in vivo. Identified 438 tumour-specific
+    peptides, 192 of which were missed by conventional antibody immunoprecipitation; several LUAD peptides
+    derive from genes with minimal cognate mRNA.
+
+    '
+  scale: 438 tumour-specific peptides (192 unique to StrepTactin purification); PDAC + LUAD GEMMs
+  modalities:
+  - mhc-ligand-elution
+  - raw-ms
+  formats:
+  - raw
+  - txt
+  landing_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD033232
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/
+  license: unknown
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/license
+  access: open
+  provenance:
+    maintainer: Jaeger, Stopfer, White et al. (MIT/Koch Institute); PRIDE deposit
+    key_refs:
+    - 10.1038/s41586-022-04839-2
+    accessions:
+    - PXD033232
+    - PXD026337
+  last_updated: 2022-06
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Rare in vivo (not cultured-line) mouse tumour ligandome; gold standard for what is actually
+      presented by autochthonous tumours, incl. non-canonical / low-mRNA antigens that cell-line immunopeptidomics
+      and RNA-based prediction miss.
+
+      '
+  agent_access: 'Anonymous PRIDE FTP; bulk per-file download. Verify exact subfolder path under the 2022
+    archive via the ProteomeXchange landing page.
+
+    '
+  caveats: 'No explicit per-dataset SPDX license on PRIDE. Two accessions exist (peer-reviewed PXD033232
+    vs preprint PXD026337) — dedup to PXD033232.
+
+    '
+- id: murine-mhci-immunopeptidome-draftmap
+  name: Tissue-based draft map of the murine MHC class I immunopeptidome (PXD008733 / SYSMHC00018)
+  category: presentation
+  species:
+  - mouse
+  description: 'Mass-spectrometry immunopeptidome of H2-Db/H2-Kb-eluted peptides across 19 normal C57BL/6
+    tissues plus mouse tumour cell lines (EL4, LLC1/LL2, B16F10). ~30,000 high-confidence H2-Db/Kb ligands
+    identified and annotated, built as a reference "draft map" of the steady-state mouse MHC-I ligandome.
+    Raw files on PRIDE; curated identifications mirrored in the SysteMHC Atlas (SYSMHC00018) and SWATH
+    Atlas, with a figshare collection of supplementary tables.
+
+    '
+  scale: ~30,000 high-confidence H2-Db/Kb peptides; 19 normal tissues + 3-4 tumour lines
+  modalities:
+  - mhc-ligand-elution
+  - raw-ms
+  formats:
+  - raw
+  - mztab
+  - txt
+  - tsv
+  landing_url: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD008733
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/06/PXD008733/
+  license: unknown
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/license
+  access: open
+  provenance:
+    maintainer: Schuster/Caron et al.; deposited at PRIDE (EMBL-EBI); mirrored at SysteMHC Atlas
+    key_refs:
+    - 10.1038/sdata.2018.157
+    accessions:
+    - PXD008733
+    - SYSMHC00018
+    - 10.6084/m9.figshare.c.4118675
+  last_updated: 2018-06
+  relevance:
+    programs:
+    - presentation
+    why: 'The canonical normal-tissue mouse H2-Db/Kb ligandome needed to subtract self from tumour-specific
+      signal in syngeneic models; direct training/validation data for murine presentation prediction and
+      for cross-species transfer to human.
+
+      '
+  agent_access: 'Anonymous PRIDE FTP, per-file wget/rsync. SysteMHC Atlas offers parsed peptide tables
+    via its web UI. No auth; raw files are large (GB-scale).
+
+    '
+  caveats: 'PRIDE does not attach an explicit per-dataset license; data are "freely available" but no
+    SPDX license is stated — confirm before redistribution. Raw .raw files need reprocessing to reach
+    peptide lists; use the SysteMHC/figshare tables for ready IDs.
 
     '
 - id: pearson-2016-maps

@@ -49,6 +49,51 @@
     — pair with VDJdb/MIRA for labels.
 
     '
+- id: bentzen-2016-dna-barcoded-multimers
+  name: DNA-barcoded peptide-MHC-I multimer screen (Bentzen 2016)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'The founding dataset for DNA-barcode-labelled pMHC-I multimers, enabling simultaneous
+    detection of >1,000 peptide specificities per sample by sequencing the barcodes of bound multimers.
+    Release includes the barcode-labelled multimer panels (e.g. a 1,031- specificity panel and a 110-specificity
+    panel) and the T-cell screening readouts as supplementary tables.
+
+    '
+  scale: '>1,000 pMHC specificities per sample; 1,031- and 110-plex barcoded multimer panels'
+  modalities:
+  - pmhc-multimer
+  - tcr-epitope
+  - barcode-seq
+  formats:
+  - xlsx
+  - pdf
+  landing_url: https://www.nature.com/articles/nbt.3662
+  download_url: https://www.nature.com/articles/nbt.3662#Sec30
+  license: unknown
+  license_url: https://www.nature.com/nature/editorial-policies
+  access: open
+  provenance:
+    maintainer: Bentzen, Marquard, Hadrup et al. (DTU / Herlev Hospital)
+    key_refs:
+    - 10.1038/nbt.3662
+  last_updated: 2016-08
+  relevance:
+    programs:
+    - recognition
+    why: 'The method and data that scaled antigen-specific T-cell detection beyond fluorescent multimers;
+      a large pMHC-specificity screen independent of the 10x dextramer releases, useful for TCR-antigen
+      pairing benchmarks.
+
+      '
+  agent_access: 'Supplementary Excel tables on the Nature Biotechnology article page (no auth for SI).
+    No separate GEO/Zenodo repository was deposited.
+
+    '
+  caveats: 'Data only as journal SI under Springer Nature terms (no open license). Barcode panels describe
+    reagents/specificities, not necessarily paired-TCR sequences.
+
+    '
 - id: birnbaum-pmhc-yeast-display
   name: pMHC yeast-display library screens (Birnbaum/Garcia lineage)
   category: tcr-recognition
@@ -1199,6 +1244,49 @@
   caveats: 'No antigen specificity (no pMHC-labeled TCRs). Small donor n.
 
     '
+- id: prjna790470-canine-ig-repertoire
+  name: PRJNA790470 — Canine Immunoglobulin (IGH/IGK/IGL) Repertoire NGS (PLoS ONE 2022)
+  category: tcr-recognition
+  species:
+  - dog
+  description: '5''-RACE next-generation sequencing of the canine immunoglobulin (BCR) repertoire — IGH,
+    IGK and IGL — from 25 healthy control dogs and 18 dogs with intermediate-to-large B-cell lymphoma
+    (pre-treatment T1; 13 also sampled post-treatment T2), with a dedicated bioinformatics pipeline (PLoS
+    ONE 2022). One of the few unbiased high-throughput canine BCR repertoire datasets.
+
+    '
+  scale: 25 healthy + 18 BCL dogs (13 paired post-treatment); IGH/IGK/IGL
+  modalities:
+  - bcr-seq
+  - immune-repertoire
+  formats:
+  - fastq
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA790470
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA790470
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: (see paper — PLoS ONE 2022)
+    key_refs:
+    - 10.1371/journal.pone.0270710
+  accessions:
+  - PRJNA790470
+  last_updated: '2022'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Rare canine BCR/antibody repertoire resource with a disease (B-cell lymphoma) vs healthy contrast
+      and longitudinal treatment samples — directly supports canine antibody/BCR modeling in the recognition
+      arm.
+
+      '
+  caveats: 'No explicit reuse license (NCBI/INSDC open). Reads concatenated by sample/time point. Pair
+    with IMGT canine germline for V(D)J assignment. Repertoire depth per sample should be checked before
+    clonality analysis.
+
+    '
 - id: tchard
   name: TChard
   category: tcr-recognition
@@ -1388,6 +1476,102 @@
   caveats: 'Raw dextramer calls are noisy (high background); most downstream work uses the ICON- curated
     subset (~53k cells, Zhang et al. 2021) with corrected pMHC/TCR annotations — prefer that for labels.
     pMHC/HLA nomenclature: cross-ref the presentation agent.
+
+    '
+- id: tettcr-seq-zhang-2018
+  name: TetTCR-seq barcoded-tetramer single-cell TCR specificity dataset (Zhang 2018)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Data from TetTCR-seq, which pairs DNA-barcoded pMHC tetramers (made rapidly by in vitro
+    transcription/translation) with single-cell TCR sequencing to link TCR sequence to antigen specificity
+    at scale. Released as six "TetTCR-seq summary" supplementary tables (experiments 1-6) linking TCRs
+    to tetramer-barcode specificities.
+
+    '
+  scale: Thousands of single cells; 6 experiment summary tables of TCR-to-antigen pairings
+  modalities:
+  - pmhc-multimer
+  - tcr-epitope
+  - single-cell
+  - barcode-seq
+  formats:
+  - xlsx
+  - pdf
+  landing_url: https://www.nature.com/articles/nbt.4282
+  download_url: https://www.nature.com/articles/nbt.4282#Sec22
+  license: unknown
+  license_url: https://www.nature.com/nature/editorial-policies
+  access: open
+  provenance:
+    maintainer: Zhang, Ma, Jiang et al. (UT Austin / UPenn)
+    key_refs:
+    - 10.1038/nbt.4282
+    - 10.1101/457069
+  last_updated: 2018-11
+  relevance:
+    programs:
+    - recognition
+    why: 'Paired TCR-sequence/antigen-specificity data from a non-10x barcoded-tetramer platform; direct
+      training/test material for TCR-pMHC specificity prediction.
+
+      '
+  agent_access: 'Six supplementary Excel tables from the Nature Biotechnology article page (no auth for
+    SI). Raw sequencing not clearly deposited in a public GEO/SRA accession.
+
+    '
+  caveats: 'Data only as journal SI (Springer Nature terms, no open license). Raw reads location not confirmed
+    — pairings available, raw FASTQ may be restricted/absent.
+
+    '
+- id: tettcr-seqhd-ma-2021
+  name: TetTCR-SeqHD high-dimensional barcoded-tetramer T-cell dataset (Ma 2021)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'TetTCR-SeqHD jointly profiles antigen specificity (DNA-barcoded pMHC tetramers), gene
+    expression, surface phenotype, and paired alpha/beta TCR sequence in single CD8 T cells. The study
+    profiled ~33,000 single cells from healthy donors and type-1-diabetes donors; raw sequencing is deposited
+    at dbGaP (controlled access).
+
+    '
+  scale: ~32,992 single cells; GEX + phenotype + paired TCR + tetramer-barcode antigen
+  modalities:
+  - pmhc-multimer
+  - tcr-epitope
+  - single-cell
+  - scrna-seq
+  - barcode-seq
+  formats:
+  - fastq
+  - txt
+  landing_url: https://www.nature.com/articles/s41590-021-01073-2
+  download_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002441
+  license: unknown
+  license_url: https://www.nature.com/nature/editorial-policies
+  access: controlled-access
+  provenance:
+    maintainer: Ma, Schonnesen, Jiang et al. (UT Austin / UPenn); dbGaP
+    key_refs:
+    - 10.1038/s41590-021-01073-2
+    - 10.1101/2021.03.04.433914
+    accessions:
+    - phs002441.v1.p1
+  last_updated: 2021-11
+  relevance:
+    programs:
+    - recognition
+    why: 'A rich multimodal barcoded-tetramer dataset (antigen + TCR + transcriptome + phenotype) beyond
+      the 10x releases; valuable for jointly modelling TCR specificity and T-cell state, if dbGaP access
+      is obtained.
+
+      '
+  agent_access: 'Raw sequencing is controlled-access under dbGaP phs002441 (requires an approved Data
+    Use Certification). Summary tables accompany the paper as SI.
+
+    '
+  caveats: 'Controlled-access (dbGaP DUA) for raw data — catalog but note the gate. SI tables are open
+    but under Springer Nature terms.
 
     '
 - id: titan-data

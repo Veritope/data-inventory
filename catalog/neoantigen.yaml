@@ -1,3 +1,49 @@
+- id: alspach-2019-mhcii-sarcoma-neoantigen
+  name: MHC-II neoantigens in mouse T3 sarcoma (Alspach 2019)
+  category: neoantigen
+  species:
+  - mouse
+  description: 'Characterization of the MHC class II-restricted neoantigen landscape of the T3 MCA sarcoma,
+    defining mITGB1 (N710Y Itgb1) as a major I-A(b)-restricted CD4 neoantigen and showing MHC-II neoantigens
+    are required for optimal checkpoint-blockade response. Processed mutation/neoepitope data and immunogenicity
+    readouts are in the paper''s extended-data and supplementary tables.
+
+    '
+  scale: T3 sarcoma; defined MHC-II (mITGB1) and MHC-I neoantigens; CD4/CD8 reactivity data
+  modalities:
+  - wes
+  - rna-seq
+  - neoepitope-annotation
+  - functional-assay
+  formats:
+  - xlsx
+  - pdf
+  landing_url: https://www.nature.com/articles/s41586-019-1671-8
+  download_url: https://www.nature.com/articles/s41586-019-1671-8#Sec26
+  license: unknown
+  license_url: https://www.nature.com/nature/editorial-policies
+  access: open
+  provenance:
+    maintainer: Alspach/Schreiber lab (WashU); journal supplementary tables
+    key_refs:
+    - 10.1038/s41586-019-1671-8
+  last_updated: 2019-10
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'One of the few well-defined mouse MHC-II (CD4) tumour neoantigen datasets; essential for CD4
+      neoantigen prediction and for modelling the CD4/CD8 interplay underlying vaccine and checkpoint
+      responses, where class-II data are scarce.
+
+      '
+  agent_access: 'Extended-data / supplementary tables from the Nature article page (no auth for SI).
+
+    '
+  caveats: 'No deposited raw-sequence accession confirmed; processed data only in SI under Springer Nature
+    terms (no explicit open license). Confirm any GEO ID in the paper.
+
+    '
 - id: bassani-2016-melanoma-neoepitopes
   name: Bassani-Sternberg 2016 native melanoma immunopeptidome + neoepitopes
   category: neoantigen
@@ -283,6 +329,57 @@
     Single-host (.cn) site on only the index.php path — fragile. Glioma-centric; limited breadth.
 
     '
+- id: gubin-2014-sarcoma-neoantigens
+  name: Checkpoint-blockade mouse sarcoma mutant-antigen landscape (Gubin 2014; GSE62771 / phs001005)
+  category: neoantigen
+  species:
+  - mouse
+  description: 'Whole-exome + transcriptome characterization of MCA-induced mouse sarcomas (e.g. d42m1-T3)
+    defining tumour-specific mutant antigens (incl. the mLAMA4 and mALG8 neoepitopes) that are the targets
+    of CD8 T-cell responses driving regression after anti-PD-1 / anti-CTLA-4. RNA-seq in GEO; raw exome/transcriptome
+    reads in SRA/dbGaP.
+
+    '
+  scale: MCA sarcoma lines; exome + RNA-seq; defined H2-Kb/Db mutant neoepitopes
+  modalities:
+  - wes
+  - rna-seq
+  - neoepitope-annotation
+  formats:
+  - fastq
+  - soft
+  - txt
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62771
+  download_url: https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE62771&format=file
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: controlled-access
+  provenance:
+    maintainer: Gubin/Schreiber lab (WashU); GEO + dbGaP
+    key_refs:
+    - 10.1038/nature13988
+    accessions:
+    - GSE62771
+    - PRJNA278450
+    - phs001005
+  last_updated: 2014-11
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Foundational syngeneic neoantigen dataset linking mutation discovery to checkpoint response;
+      mLAMA4/mALG8 are reference immunogenic mouse neoepitopes for benchmarking neoantigen ranking and
+      TCR-recognition models.
+
+      '
+  agent_access: 'GSE62771 processed RNA-seq is open on GEO (anonymous HTTP). Raw reads under dbGaP phs001005
+    need an approved Data Use Certification (controlled access).
+
+    '
+  caveats: 'Raw sequence is controlled-access (dbGaP DUA) — catalog but note the gate. GEO processed matrices
+    are open but carry no explicit redistribution license.
+
+    '
 - id: iedb-tumor
   name: IEDB — tumor/cancer subset
   category: neoantigen
@@ -335,6 +432,266 @@
   caveats: 'CC BY 4.0 — redistribution OK with attribution (good). Heavy overlap with CEDAR; ingest one
     as canonical and treat the other as supplement to avoid double-counting. Tumor subset requires disease-field
     filtering, not a prebuilt file.
+
+    '
+- id: kahles-2018-splicing-neoepitopes
+  name: TCGA pan-cancer alternative-splicing neoepitopes (Kahles et al. 2018, PCAWG/SplAdder)
+  category: neoantigen
+  species:
+  - human
+  description: 'Comprehensive alternative-splicing analysis across 8,705 TCGA patients (32 cancer types)
+    with SplAdder, cataloguing tumor-specific splicing events and deriving predicted splicing-derived
+    MHC neoepitopes. The deposited-data table releases the predicted neoepitope set and the tumor variant
+    set via Synapse, with the splicing event catalogue mirrored at the NCI GDC (PanCanAtlas-Splicing-2018).
+
+    '
+  scale: 8,705 patients, 32 cancer types; genome-wide splicing event + neoepitope catalogues
+  modalities:
+  - rna-seq-derived
+  - splicing-events
+  - predicted-neoepitopes
+  formats:
+  - tsv
+  - csv
+  landing_url: https://www.cell.com/cancer-cell/fulltext/S1535-6108(18)30306-4
+  download_url: https://www.synapse.org/#!Synapse:syn12180140
+  license: unknown
+  license_url: https://www.synapse.org/#!Help:GoverningLawAndTerms
+  access: registration
+  accessions:
+  - 'Synapse: syn12180140'
+  - 'Synapse: syn12179113'
+  - 'GDC: PanCanAtlas-Splicing-2018'
+  provenance:
+    maintainer: TCGA PanCanAtlas splicing working group (Ratsch/Robinson labs; MSKCC/ETH Zurich)
+    key_refs:
+    - 10.1016/j.ccell.2018.07.001
+  last_updated: 2018-08
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Largest pan-cancer map of splicing-derived antigen candidates; the released neoepitope table
+      is a direct prioritisation input for alternative-splicing antigen programs.
+
+      '
+  agent_access: 'Synapse requires a (free) registered account + accepting governance terms for download;
+    programmatic access via synapseclient. GDC splicing catalogue is openly downloadable.
+
+    '
+  caveats: 'Synapse data governance: registration + terms acceptance required (not fully "open"); some
+    upstream TCGA variant/HLA inputs are controlled-access. Neoepitopes are predicted, not MS-validated.
+    Human only.
+
+    '
+- id: kwok-2025-splicing-public-neoantigens
+  name: Tumour-wide splicing-derived public neoantigens (Kwok et al. 2025, SSNIP)
+  category: neoantigen
+  species:
+  - human
+  description: 'Spatially-mapped tumor RNA-seq (gliomas and other tumor types) used to identify recurrent,
+    tumour-wide RNA-splicing aberrations that generate shared ("public") neoantigens, with the SSNIP pipeline
+    and HLA-presentation validation. The study''s own spatially-mapped glioma biopsy RNA-seq is deposited
+    in EGA (controlled) plus a NODE mirror for other RNA-seq.
+
+    '
+  scale: Spatially-mapped multi-region biopsies; recurrent public splicing neoantigens
+  modalities:
+  - rna-seq
+  - mhc-ligand-elution
+  - predicted-neoepitopes
+  formats:
+  - fastq
+  - tsv
+  landing_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11903331
+  download_url: https://www.biosino.org/node/project/detail/OEP002956
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: controlled-access
+  accessions:
+  - 'EGA: EGAS00001007986'
+  - 'EGA: EGAD00001005221'
+  - 'EGA: EGAD00001005222'
+  - 'EGA: EGAD00001009496'
+  - 'EGA: EGAD00001009497'
+  - 'NODE: OEP002956'
+  provenance:
+    maintainer: University of California San Francisco (Okada lab; Parker Institute for Cancer Immunotherapy)
+    key_refs:
+    - 10.1038/s41586-024-08552-0
+  last_updated: 2025-03
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: '"Public" splicing neoantigens shared across patients and across tumor regions are prime shared-target
+      candidates; SSNIP (github.com/dakwok/SSNIP) is reusable for discovery.
+
+      '
+  agent_access: 'Own glioma biopsy RNA-seq is EGA controlled-access (DAC approval + DUA). NODE OEP002956
+    is openly downloadable. Code on GitHub.
+
+    '
+  caveats: 'Core patient RNA-seq is controlled-access (EGA). Immunopeptidome relied on reused CPTAC/PIDB
+    data (no new MS accession). Human only.
+
+    '
+- id: laumont-2018-aetsa
+  name: Aberrantly-expressed TSA immunopeptidome (Laumont et al. 2018, Perreault/Thibault)
+  category: neoantigen
+  species:
+  - human
+  - mouse
+  description: 'Proteogenomic datasets underpinning the finding that non-coding/aberrantly-expressed genomic
+    regions (endogenous retroelements, non-coding RNAs, intergenic/UTR regions) are the main source of
+    targetable tumor-specific antigens (aeTSAs). The study built tumor-specific protein databases by subtracting
+    the mature medullary thymic epithelial cell (mTEC) transcriptome, then validated MHC-I-eluted peptides
+    by MS across murine lines (CT26, EL4) and human B-ALL and lung tumor samples. Multiple PRIDE/ProteomeXchange
+    immunopeptidome deposits.
+
+    '
+  scale: Multiple MHC-I elution datasets across mouse lines + human tumors
+  modalities:
+  - mhc-ligand-elution
+  - rna-seq
+  - proteogenomics-database
+  formats:
+  - raw-ms
+  - mzml
+  - fastq
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD009753
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD009753
+  license: unknown
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/aboutpride
+  access: open
+  accessions:
+  - 'PRIDE: PXD009753'
+  - 'PRIDE: PXD009064'
+  - 'PRIDE: PXD009750'
+  - 'PRIDE: PXD009751'
+  - 'PRIDE: PXD007935'
+  provenance:
+    maintainer: Institute for Research in Immunology and Cancer (IRIC), Universite de Montreal (Perreault
+      & Thibault labs)
+    key_refs:
+    - 10.1126/scitranslmed.aau5516
+  last_updated: 2018-10
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Primary evidence and data for the "dark matter" / non-coding source of shared tumor antigens.
+      Mouse + human elution data are reusable for training/benchmarking non-canonical ligand detection
+      and for the know/believe/prove separation on aeTSAs.
+
+      '
+  agent_access: 'PRIDE bulk FTP/Aspera download, no auth; related accessions cross-linked within each
+    project.
+
+    '
+  caveats: 'No explicit dataset reuse license beyond PRIDE/EBI terms — confirm before redistribution.
+    Species metadata on individual PRIDE records can mislabel mixed mouse/human submissions.
+
+    '
+- id: laumont-2018-mouse-tsa
+  name: Noncoding-derived tumour-specific antigens in mouse models (Laumont 2018; GSE111092 / PXD009064)
+  category: neoantigen
+  species:
+  - mouse
+  - human
+  description: 'Proteogenomic discovery of tumour-specific antigens (TSAs) in two murine lines (CT26 BALB/c
+    colon carcinoma; EL4 C57BL/6 lymphoma) plus 7 human primary tumours, showing ~90% of TSAs arise from
+    allegedly noncoding regions. Pairs RNA-seq / exome (GEO GSE111092, mouse + human sub-series) with
+    MHC-I immunopeptidomics MS (PRIDE, EL4/CT26 ligandomes).
+
+    '
+  scale: 21 mouse + 30 human TSAs; CT26 & EL4 lines; RNA-seq + immunopeptidome MS
+  modalities:
+  - rna-seq
+  - mhc-ligand-elution
+  - raw-ms
+  - neoepitope-annotation
+  formats:
+  - fastq
+  - raw
+  - txt
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE111092
+  download_url: https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE111092&format=file
+  api: https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD009064
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Laumont/Perreault lab (IRIC, U. Montréal); GEO + PRIDE
+    key_refs:
+    - 10.1126/scitranslmed.aau5516
+    accessions:
+    - GSE111092
+    - PXD009064
+    - PXD009750
+  last_updated: 2018-12
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Key evidence that noncoding/aberrant translation drives the mouse (and human) TSA repertoire;
+      immunopeptidome + RNA pairing is a direct proteogenomics training set for non-canonical antigen
+      discovery, with matched syngeneic models (CT26/EL4).
+
+      '
+  agent_access: 'GSE111092 open on GEO (anonymous HTTP); PXD009064 raw MS via anonymous PRIDE FTP.
+
+    '
+  caveats: 'No explicit SPDX license on either GEO or PRIDE. PXD009750 linkage to this study is inferred
+    from co-deposition dates — verify in the paper''s data-availability text.
+
+    '
+- id: merlotti-2023-te-splicejunction
+  name: Exon-TE splice-junction neoantigens in lung cancer (Merlotti/Burbage 2023, Institut Curie)
+  category: neoantigen
+  species:
+  - human
+  description: 'HLA-I immunopeptidomics and matched transcriptomics identifying immunogenic, patient-shared
+    neoantigens encoded by non-canonical splice junctions between coding exons and transposable elements
+    in non-small-cell lung cancer and lung tumor lines. Companion study (Burbage et al.) shows these junction
+    antigens are epigenetically (DNA-methylation) controlled. The PRIDE deposit is released under CC0.
+
+    '
+  scale: NSCLC primary samples + lung tumor cell lines; recurrent junction-derived peptides
+  modalities:
+  - mhc-ligand-elution
+  - rna-seq
+  formats:
+  - raw-ms
+  - fastq
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD034820
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD034820
+  license: CC0 1.0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/
+  access: open
+  accessions:
+  - 'PRIDE: PXD034820'
+  provenance:
+    maintainer: Institut Curie, Paris (Amigorena lab; submitter Y. Arribas)
+    key_refs:
+    - 10.1126/sciimmunol.abm6359
+    - 10.1126/sciimmunol.abm6360
+  last_updated: 2023-02
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'Recurrent exon-TE junction antigens are candidate shared targets; CC0 licensing makes the immunopeptidome
+      fully reusable for training and for proving recurrence across patients.
+
+      '
+  agent_access: 'PRIDE bulk download, no auth. CC0 permits unrestricted reuse including ML training.
+
+    '
+  caveats: 'Companion Burbage (abm6360) deposit accession not individually verified here — cite the Merlotti
+    PXD034820 for the released immunopeptidome. Human lung cancer only.
 
     '
 - id: neodb
@@ -521,6 +878,257 @@
   caveats: 'No explicit data license found — license: unknown. Headline count (~17.5k) is dominated by
     negatives; true immunogenic count is small (~173). Last updated 2021 — stale. Single-institution host;
     monitor for drift.
+
+    '
+- id: ouspenskaia-2022-nuorfdb
+  name: nuORFdb v1.0 + Ribo-seq/MHC-I immunopeptidome (Ouspenskaia et al. 2022)
+  category: neoantigen
+  species:
+  - human
+  description: 'Ribosome-profiling-derived database of ~230k+ translated non-canonical/unannotated ORFs
+    (nuORFs: uORFs, out-of-frame, lncRNA, 5''UTR, 3''UTR, pseudogene ORFs) built across human cell lines
+    and tissues, plus the matched MHC-I immunopeptidomics used to show ~3,555 nuORF-derived peptides are
+    presented on HLA class I in cancer. The deposited bundle includes the Ribo-seq raw data, transcript
+    quantifications, and the nuORFdb_v1.0.bed database itself (via GEO), with the mass-spectrometry raw
+    files on MassIVE. This is a foundational resource for cryptic/ non-canonical tumor antigen discovery.
+
+    '
+  scale: ~237k nuORFs in nuORFdb v1.0; 3,555 translated nuORFs detected in MHC-I MS
+  modalities:
+  - ribo-seq
+  - rna-seq
+  - mhc-ligand-elution
+  - proteogenomics-database
+  formats:
+  - bed
+  - fastq
+  - raw-ms
+  - tsv
+  landing_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10198624
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE143263
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  accessions:
+  - 'GEO: GSE143263'
+  - 'GEO: GSE131267'
+  - 'MassIVE: MSV000084787'
+  - 'dbGaP: phs001998'
+  - 'dbGaP: phs001451'
+  - 'dbGaP: phs001519'
+  provenance:
+    maintainer: Broad Institute of MIT and Harvard; Dana-Farber (Clauser/Carr/Regev labs)
+    key_refs:
+    - 10.1038/s41587-021-01021-3
+  last_updated: 2022-02
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'The canonical reference for expanding the presentable antigen space beyond annotated coding
+      genes. nuORFdb is directly usable as a search space for immunopeptidome re-analysis and for training
+      presentation models on non-canonical ligands.
+
+      '
+  agent_access: 'GEO (nuORFdb_v1.0.bed + Ribo-seq) and MassIVE (MS) are bulk-downloadable without auth;
+    code at github.com/klarman-cell-observatory/Riboseq-nuORFs. Patient-derived raw data are under dbGaP
+    controlled access (DUA + eRA/approval required).
+
+    '
+  caveats: 'Patient-sample raw sequencing is dbGaP controlled-access, not open. No explicit reuse license
+    is attached to the GEO/MassIVE deposits (repository terms only) — flag before redistribution. nuORFdb
+    is human-only.
+
+    '
+- id: rna-source-neoantigens-2023
+  name: RNA-source (editing/variant) tumor-agnostic neoantigen immunopeptidome (2023)
+  category: neoantigen
+  species:
+  - human
+  description: 'Proteogenomic study showing RNA-level variants — notably A-to-I RNA-editing events (detected
+    as A>G) — are a major, tumor-agnostic source of HLA-presented neoantigens, with many neoantigens derived
+    only from RNA (not DNA) variants. Mass spectrometry immunopeptidome data deposited at PRIDE.
+
+    '
+  scale: Patient cohort; high fraction of RNA-only / RNA-editing-derived neoantigens
+  modalities:
+  - mhc-ligand-elution
+  - rna-seq
+  - proteogenomics
+  formats:
+  - raw-ms
+  landing_url: https://www.nature.com/articles/s41467-023-39570-7
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD037655
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  accessions:
+  - 'PRIDE: PXD037655'
+  provenance:
+    maintainer: See 10.1038/s41467-023-39570-7 (Nature Communications 2023)
+    key_refs:
+    - 10.1038/s41467-023-39570-7
+  last_updated: 2023-06
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'Directly demonstrates RNA-editing neoantigens on HLA — a non-mutational, potentially shared
+      antigen class; the MS data support proving editing-derived targets.
+
+      '
+  agent_access: 'PRIDE bulk download, no auth. Article CC BY 4.0.
+
+    '
+  caveats: 'Immunopeptidome MS deposited; upstream patient sequencing access varies. A>G calls require
+    careful SNP/editing discrimination. Human only.
+
+    '
+- id: ruizcuevas-2021-noncanonical-dlbcl
+  name: Non-canonical proteome & immunopeptidome of DLBCL (Ruiz Cuevas et al. 2021)
+  category: neoantigen
+  species:
+  - human
+  description: 'Integrated Ribo-seq (translation initiation + elongation), RNA-seq and MHC-I immunopeptidome
+    MS for three human diffuse large B-cell lymphoma lines (HBL-1, DoHH2, SU-DHL-4), used to catalogue
+    2,503 new non-canonical proteins (1,842 cryptic proteins + 661 novel isoforms) and assess how few
+    reach the immunopeptidome. Primary data + the custom proteogenomic databases are deposited (PRIDE
+    + SRA).
+
+    '
+  scale: 3 DLBCL lines; 2,503 non-canonical proteins catalogued
+  modalities:
+  - ribo-seq
+  - rna-seq
+  - mhc-ligand-elution
+  - proteogenomics-database
+  formats:
+  - raw-ms
+  - fastq
+  landing_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8040094
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD020620
+  license: CC BY-NC-ND 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+  access: open
+  accessions:
+  - 'PRIDE: PXD020620'
+  - 'SRA/BioProject: PRJNA647736'
+  provenance:
+    maintainer: IRIC, Universite de Montreal (Perreault lab) with Yewdell (NIAID)
+    key_refs:
+    - 10.1016/j.celrep.2021.108815
+  last_updated: 2021-03
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Quantifies the gap between non-canonical translation and actual HLA presentation — directly
+      relevant to prioritising which cryptic ORFs are worth proving as antigens. Code: lemieux-lab/Ribo-db.
+
+      '
+  agent_access: 'PRIDE + SRA bulk download, no auth; analysis code on GitHub (lemieux-lab/Ribo-db).
+
+    '
+  caveats: 'Article is CC BY-NC-ND (no derivatives / non-commercial) — note for any derived redistribution.
+    Human lymphoma cell lines only.
+
+    '
+- id: shah-2023-te-antigens
+  name: Pan-cancer transposable-element-derived tumor antigens (Shah et al. 2023, TEProf2)
+  category: neoantigen
+  species:
+  - human
+  description: 'Pan-cancer (33 TCGA tumor types) identification of 1,068 transposable-element-chimeric
+    transcripts (exon-TE splice products) predicted to yield shared tumor-specific TE antigens (TS-TEAs),
+    with HLA-pulldown and whole-lysate mass spectrometry confirming TE-derived peptides (e.g. four L1PA2-derived
+    ligands in DMS53). New sequencing and MS data were deposited; the TEProf2 pipeline is released.
+
+    '
+  scale: 1,068 TE-chimeric candidate transcripts across 33 tumor types
+  modalities:
+  - rna-seq
+  - mhc-ligand-elution
+  - proteomics
+  formats:
+  - fastq
+  - raw-ms
+  landing_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC13152471
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD033351
+  license: unknown
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/aboutpride
+  access: open
+  accessions:
+  - 'GEO: GSE201021'
+  - 'PRIDE: PXD033351'
+  - 'EGA: EGAD00001000725'
+  provenance:
+    maintainer: Washington University School of Medicine, St. Louis (Ting Wang lab)
+    key_refs:
+    - 10.1038/s41588-023-01349-3
+  last_updated: 2023-03
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Shared, tumor-specific TE antigens are attractive off-the-shelf targets; the new GEO/PRIDE deposits
+      plus TEProf2 (github.com/twlab/TEProf2Paper) let us re-derive and prove candidates.
+
+      '
+  agent_access: 'GEO + PRIDE bulk download, no auth. Note some upstream inputs (EGAD00001000725 cell lines)
+    are EGA controlled-access; TCGA/GTEx/CPTAC used as references.
+
+    '
+  caveats: 'No explicit reuse license on GEO/PRIDE deposits (repository terms). Antigen calls are prediction-heavy;
+    only a handful MS-validated. Human only.
+
+    '
+- id: smart-2018-intron-retention-neoepitopes
+  name: Intron-retention neoepitopes in cancer (Smart et al. 2018)
+  category: neoantigen
+  species:
+  - human
+  description: 'In-silico framework (plus MS evidence on MHC-I in cancer cell lines) establishing intron
+    retention as a source of tumor neoepitopes, applied to melanoma immunotherapy cohorts. No new primary
+    sequencing was deposited; the work re-analysed public cohorts (Snyder 2014; Hugo 2016) whose raw data
+    are at dbGaP/SRA, and released its pipeline and predictions.
+
+    '
+  scale: Melanoma ICB cohorts re-analysed; intron-retention neoepitope predictions
+  modalities:
+  - rna-seq-derived
+  - predicted-neoepitopes
+  - mhc-ligand-elution-reanalysis
+  formats:
+  - tsv
+  landing_url: https://www.nature.com/articles/nbt.4239
+  download_url: https://www.ncbi.nlm.nih.gov/sra/?term=SRP070710
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: controlled-access
+  accessions:
+  - 'dbGaP: phs001038.v1.p1'
+  - 'SRA: SRP070710'
+  provenance:
+    maintainer: Broad Institute (Hacohen/Margolis and colleagues)
+    key_refs:
+    - 10.1038/nbt.4239
+  last_updated: 2018-10
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Establishes intron retention as an antigen class to test; useful as a method reference and for
+      benchmarking splicing-antigen pipelines against ICB outcomes.
+
+      '
+  agent_access: 'SRP070710 openly downloadable from SRA; Snyder cohort (phs001038) is dbGaP controlled-access.
+    No new deposit — a reanalysis/method paper.
+
+    '
+  caveats: 'Reuses external cohorts rather than depositing new primary data; one cohort is controlled.
+    Neoepitopes are predicted with limited MS validation. Human only.
 
     '
 - id: tantigen
@@ -849,5 +1457,149 @@
   caveats: 'No data license found — license: unknown. Large total count (~187k) is mostly predicted/simulated/mouse-model
     data; validated core is ~1,106 — separate carefully. Chinese single-host site; longevity unproven.
     Count discrepancies between v1/v2 in sources — verify on-site.
+
+    '
+- id: yadav-2014-mc38-tramp-neoantigens
+  name: MC38 & TRAMP-C1 MS-validated mouse neoantigens (Yadav 2014)
+  category: neoantigen
+  species:
+  - mouse
+  description: 'Combined whole-exome + transcriptome sequencing and MHC-I immunopeptidomics in two widely
+    used syngeneic lines (MC38 colon carcinoma, TRAMP-C1 prostate) to identify MS-confirmed, MHC-I-presented
+    mutant peptides — including the reference H2-Db neoepitope Adpgk (ASMTNMELM, ~2 nM). Variant peptides,
+    LC-MS identifications, RNA-seq expression, and MHC-I-presented variants are released as Supplementary
+    Tables 1-5.
+
+    '
+  scale: 2 syngeneic lines; thousands of nonsynonymous variants; handful of MS-confirmed neoepitopes
+  modalities:
+  - wes
+  - rna-seq
+  - mhc-ligand-elution
+  - neoepitope-annotation
+  formats:
+  - xlsx
+  landing_url: https://www.nature.com/articles/nature14001
+  download_url: https://www.nature.com/articles/nature14001#Sec16
+  license: unknown
+  license_url: https://www.nature.com/nature/editorial-policies
+  access: open
+  provenance:
+    maintainer: Yadav, Jhunjhunwala et al. (Genentech); data in journal supplementary tables
+    key_refs:
+    - 10.1038/nature14001
+  last_updated: 2014-11
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Adpgk/Reps1/Dpagt1 (MC38) are among the most-used mouse neoantigen benchmarks for vaccine and
+      TCR work; the paper''s MS-validated presented variants are a clean positive set for immunogenicity/presentation
+      modelling in syngeneic systems.
+
+      '
+  agent_access: 'Supplementary Excel tables downloadable from the Nature article page (no auth for SI).
+    No raw-read repository accession was deposited.
+
+    '
+  caveats: 'Data live only as journal supplementary tables (no GEO/SRA/PRIDE accession); governed by Springer
+    Nature SI terms, not an open license — redistribution not clearly granted.
+
+    '
+- id: yang-2019-fusion-neoantigens
+  name: Gene-fusion-derived neoantigens (Yang et al. 2019, MSKCC)
+  category: neoantigen
+  species:
+  - human
+  description: 'Whole-exome and RNA-seq of patient tumors used to detect tumor-specific gene fusions and
+    demonstrate that fusion-junction neoantigens are strongly immunogenic and can drive immunotherapy
+    responses (incl. a complete responder with a fusion neoantigen). Pan-cancer TCGA analysis estimated
+    fusion neoantigens in ~24% of fusion-positive tumors. New sequencing deposited under one BioProject.
+
+    '
+  scale: TCGA pan-cancer fusion survey (1,404/5,825 fusion+ tumors with predicted neoantigen) + patient
+    cohort
+  modalities:
+  - wes
+  - rna-seq
+  - functional-assay
+  formats:
+  - fastq
+  landing_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6558662
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA527992
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  accessions:
+  - 'SRA/BioProject: PRJNA527992'
+  provenance:
+    maintainer: Memorial Sloan Kettering Cancer Center (Chan & Morris labs); sequencing at New York Genome
+      Center
+    key_refs:
+    - 10.1038/s41591-019-0434-2
+  last_updated: 2019-05
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'Fusion-junction neoantigens are a distinct, often clonal antigen class; the deposited WES/ RNA-seq
+      supports fusion-caller benchmarking and antigen recurrence analysis.
+
+      '
+  agent_access: 'PRJNA527992 bulk-downloadable from SRA, no auth; some TCGA inputs via cBioPortal/controlled
+    TCGA.
+
+    '
+  caveats: 'No explicit reuse license on the SRA deposit (NCBI policy only). Human only.
+
+    '
+- id: zhou-2020-rnaedit-neoantigens
+  name: Systematic A-to-I RNA-editing neoantigen catalogue (Zhou et al. 2020, PREP)
+  category: neoantigen
+  species:
+  - human
+  description: 'Systematic in-silico characterization of A-to-I RNA-editing-derived neoantigens across
+    TCGA cancer types, with the PREP pipeline and MS validation of an editing-derived peptide (OSBPL9)
+    in ovarian tumors. The released resource is a set of supplementary neoantigen tables plus the open
+    pipeline; it re-analyses public RNA-editing, RNA-seq and MS data rather than depositing new MS.
+
+    '
+  scale: Pan-cancer TCGA RNA-editing neoantigen predictions; 1 MS-validated editope
+  modalities:
+  - rna-editing-derived
+  - predicted-neoepitopes
+  - mhc-ligand-elution-reanalysis
+  formats:
+  - xlsx
+  - docx
+  landing_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7758481
+  download_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7758481
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  accessions:
+  - 'reuses TCGA RNA-editing: Synapse syn2374375'
+  - 'reuses ovarian RNA-seq: SRA PRJNA398141'
+  - 'reuses ovarian MS: PRIDE PXD007635'
+  provenance:
+    maintainer: Tongji University / ShanghaiTech / USTC (Qi Liu lab)
+    key_refs:
+    - 10.3389/fonc.2020.593989
+  last_updated: 2020-12
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Complements the RNA-source immunopeptidome: provides a pan-cancer predicted editope catalogue
+      and an open pipeline (PREP, github.com/bm2-lab/PREP) for editing-antigen discovery.
+
+      '
+  agent_access: 'Neoantigen tables are open article supplements; PREP on GitHub. Underlying editing data
+    via Synapse (registration) and some controlled TCGA (phs000178) inputs.
+
+    '
+  caveats: 'Predictions (reanalysis), not a new primary deposit; only one editope MS-validated. TCGA HLA/
+    neoantigen inputs partly controlled. Human only.
 
     '

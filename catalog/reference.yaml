@@ -384,6 +384,52 @@
     is royalty-free but still a contract. Commercial pipelines need paid QIAGEN licensing.
 
     '
+- id: ctdatabase
+  name: CTdatabase — cancer-testis antigen knowledge base
+  category: reference
+  species:
+  - human
+  description: 'Curated knowledge base of cancer-testis antigens (CTAs): gene aliases, RefSeq accessions,
+    genomic locations, splice variants and family members, plus manually curated mRNA/protein expression
+    and antigen-specific immune-response data in cancer patients. The reference catalogue for the classic
+    shared tumor-antigen class (MAGE, NY-ESO-1, SSX, etc.).
+
+    '
+  scale: Hundreds of curated CTA genes/families with expression + immunogenicity annotation
+  modalities:
+  - curated-antigen-annotation
+  - expression
+  formats:
+  - web
+  - html
+  landing_url: http://www.cta.lncc.br
+  download_url: http://www.cta.lncc.br
+  license: unknown
+  license_url: unknown
+  access: open
+  accessions: []
+  provenance:
+    maintainer: Ludwig Institute for Cancer Research / LNCC (Brazil)
+    key_refs:
+    - 10.1093/nar/gkn673
+  last_updated: 2009 (NAR Database issue; site maintained since)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'The canonical CTA reference for shared tumor antigens — a baseline antigen list to cross- check
+      non-canonical/TE/ERV candidates against established cancer-germline antigens.
+
+      '
+  agent_access: 'Web interface (cta.lncc.br); no documented bulk-download API — may require scraping.
+    Verify the site resolves before relying on it.
+
+    '
+  caveats: 'NO explicit license stated (flag before redistribution/ML training). Site is legacy (core
+    content ~2009) and availability can be intermittent. Human only.
+
+    '
 - id: darwins-ark
   name: Darwin's Ark — Companion-Animal Citizen-Science Genomics
   category: reference
@@ -724,6 +770,91 @@
   caveats: 'No explicit standalone license document — data is free/open but cite the GENCODE paper; verify
     terms if redistributing. Human + mouse only (no dog — use Ensembl/RefSeq for canine annotation). Pin
     release number (annotation changes between releases).
+
+    '
+- id: imgt-dog-antigen-receptor-loci
+  name: IMGT Dog (Canis lupus familiaris) IG/TR Germline Reference
+  category: reference
+  species:
+  - dog
+  description: 'IMGT''s curated germline annotation of the canine immunoglobulin (IGH, IGK, IGL) and T-cell-receptor
+    (TRA/TRB/TRG/TRD) loci — gene tables, allele sequences, locus maps and gene order — the canine analogue
+    of the human IMGT germline sets used for V(D)J assignment. Underlying comprehensive annotation from
+    Martin et al. (Immunogenetics 2017).
+
+    '
+  scale: canine IG + TR germline V/D/J/C gene tables and alleles
+  modalities:
+  - germline-reference
+  - gene-annotation
+  formats:
+  - fasta
+  - html
+  - web
+  landing_url: https://www.imgt.org/IMGTrepertoire/index.php?species=dog
+  download_url: https://www.imgt.org/genedb/
+  license: custom
+  license_url: https://www.imgt.org/about/termsofuse.php
+  access: open
+  provenance:
+    maintainer: IMGT, the international ImMunoGeneTics information system (Montpellier/CNRS)
+    key_refs:
+    - 10.1007/s00251-017-1028-0
+  last_updated: '2024'
+  relevance:
+    programs:
+    - recognition
+    why: 'The germline backbone for canine TCR/BCR repertoire analysis (V(D)J assignment, CDR3 calling)
+      — essential canine-specific infrastructure where human IMGT cannot substitute. Enables canine recognition-arm
+      work analogous to human IMGT pipelines.
+
+      '
+  agent_access: 'IMGT/GENE-DB and IMGT/V-QUEST provide canine reference sets; web and FASTA export. No
+    bulk API; scraping is restricted by terms of use — prefer the provided export tools.
+
+    '
+  caveats: 'IMGT terms of use are restrictive (academic use, mandatory citation, redistribution limited)
+    — verify license_url before redistributing or using for ML training. Canine TRA/TRD and light-chain
+    annotation historically lagged; coverage still improving.
+
+    '
+- id: imgt-dog-igk-locus
+  name: IMGT Canine IGK Locus Annotation (NAR Genom Bioinform 2026)
+  category: reference
+  species:
+  - dog
+  description: 'Dedicated IMGT annotation of the canine immunoglobulin kappa (IGK) light-chain locus on
+    chromosome 17 (~317-349 kb; 31 genes: 25 V, 5 J, 1 C), built from Boxer (CanFam3.1) and Basenji assemblies
+    with cross-breed insights. Fills a long-standing light-chain gap in canine immunogenetics.
+
+    '
+  scale: canine IGK locus — 31 genes (25V/5J/1C)
+  modalities:
+  - germline-reference
+  - gene-annotation
+  formats:
+  - fasta
+  - html
+  - web
+  landing_url: https://academic.oup.com/nargab/article/8/1/lqag020/8494700
+  download_url: https://www.imgt.org/IMGTrepertoire/index.php?species=dog
+  license: custom
+  license_url: https://www.imgt.org/about/termsofuse.php
+  access: open
+  provenance:
+    maintainer: IMGT (Montpellier/CNRS)
+    key_refs:
+    - 10.1093/nargab/lqag020
+  last_updated: '2026'
+  relevance:
+    programs:
+    - recognition
+    why: 'Completes the canine light-chain germline reference needed for full BCR (IGK) V(D)J analysis
+      in the recognition program.
+
+      '
+  caveats: 'IMGT terms of use apply (see license_url). Breed-specific allele variation noted — confirm
+    which reference breed matches the study samples.
 
     '
 - id: imgt-gene-db

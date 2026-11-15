@@ -123,6 +123,115 @@
     non-DLA-88 class I and all class II far less characterized.
 
     '
+- id: holec-2025-yeastdisplay-pmhci-binding
+  name: High-throughput class-I pMHC binding via yeast surface display (Holec 2025)
+  category: mhc-binding
+  species:
+  - human
+  description: 'Supplement for a yeast-surface-display platform that measures class-I peptide-MHC binding
+    at scale: NNK benchmark libraries (quantitative enrichment/binding readouts across selected HLA-I
+    alleles) plus pathogen peptide libraries (M. tuberculosis T7SS substrates, Dengue, Zika, SARS-CoV-2).
+    Release includes raw + processed read counts, enrichment/rank tables, NetMHC predictions, oligo pools,
+    and figures; raw sequencing at NIH SRA.
+
+    '
+  scale: NNK benchmark libraries across multiple HLA-I alleles + 4 pathogen libraries; archive 384.7 MB
+    (page lists ~29.6 GB total)
+  size_bytes: 384700000
+  modalities:
+  - binding-assay
+  - yeast-display
+  - mhc-ligand-affinity
+  formats:
+  - xlsx
+  - csv
+  - fasta
+  - zip
+  landing_url: https://zenodo.org/records/17093099
+  download_url: https://zenodo.org/records/17093099/files/Supplement%20--%20Holec%20et%20al%202025.zip
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Holec et al. (Birnbaum lab, MIT); Zenodo + NIH SRA
+    key_refs:
+    - 10.5281/zenodo.17093099
+    accessions:
+    - 10.5281/zenodo.17093099
+    - SUB15276783
+  last_updated: '2025-12-31'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'A large, recent, CC BY quantitative pMHC-I binding screen (yeast display) — exactly the kind
+      of high-throughput experimental binding set third-pass gap-filling targets; clean license makes
+      it directly usable for model training.
+
+      '
+  agent_access: 'Zenodo anonymous HTTPS download (single 384.7 MB zip of processed data); raw reads via
+    SRA. CC BY 4.0 permits reuse with attribution.
+
+    '
+  caveats: 'Zenodo statistics report ~29.6 GB total vs a 384.7 MB archive — the discrepancy is unexplained;
+    verify whether additional files exist. Paper DOI not yet on the record.
+
+    '
+- id: iedb-mhci-binding-benchmark-bd2013
+  name: IEDB MHC-I quantitative binding retraining & reliability benchmark (Kim 2014; BD2009/BD2013)
+  category: mhc-binding
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The curated quantitative peptide-MHC-I binding-affinity datasets used to retrain the IEDB
+    prediction tools and to build the reliability benchmark of Kim et al. BD2009 (~137,654 measurements)
+    and BD2013 (~179,692 measurements) span human HLA plus mouse H-2, macaque and chimpanzee alleles;
+    a "Blind" set (BD2013 minus BD2009, similarity- reduced) and cross-validation partitions (cv_rnd/cv_sr/cv_gs)
+    are included. Same page hosts the Wang 2008 MHC-II affinity set and Peters 2006 benchmark predictions.
+
+    '
+  scale: BD2009 ~137,654; BD2013 ~179,692 quantitative affinity measurements; multi-species HLA + H-2
+  size_bytes: null
+  modalities:
+  - binding-assay
+  - mhc-ligand-affinity
+  formats:
+  - txt
+  - zip
+  - tar.gz
+  landing_url: https://tools.iedb.org/main/datasets/
+  download_url: https://tools.iedb.org/static/main/binding_data_2013.zip
+  api: https://tools.iedb.org/static/main/benchmark_mhci_reliability.tar.gz
+  license: unknown
+  license_url: https://www.iedb.org/
+  access: open
+  provenance:
+    maintainer: IEDB Analysis Resource (LJI / NIAID)
+    key_refs:
+    - 10.1186/1471-2105-15-241
+    accessions:
+    - binding_data_2013.zip
+    - benchmark_mhci_reliability.tar.gz
+  last_updated: '2014'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'The reference quantitative IC50 training corpus behind a generation of pMHC-I predictors; includes
+      mouse H-2 affinities, giving a rare multi-species quantitative binding set for cross-species presentation
+      modelling and benchmark reproduction.
+
+      '
+  agent_access: 'Direct HTTPS downloads of the zip/tar.gz; no auth. Note link text on the page differs
+    from the real path (benchmark_mhci_reliability.tar.gz).
+
+    '
+  caveats: 'No explicit license stated on the IEDB datasets page; IEDB content is NIAID-funded and freely
+    usable but lacks an SPDX tag here — confirm terms before redistribution. Overlaps with netmhcpan training
+    sets and the stability set — dedup on peptide/allele.
+
+    '
 - id: ipd-mhc-dla
   name: IPD-MHC Dog (DLA) Section + ISAG DLA Nomenclature
   category: mhc-binding
@@ -394,6 +503,57 @@
     as a standalone download.
 
     '
+- id: netmhciipan40-train-set
+  name: NetMHCIIpan-4.0 training set — MHC-II binding affinity + eluted ligand (incl. mouse H-2)
+  category: mhc-binding
+  species:
+  - human
+  - mouse
+  description: 'The combined quantitative binding-affinity (BA) and mass-spec eluted-ligand (EL) training
+    corpus for NetMHCIIpan-4.0: >500,000 measurements covering human HLA-DR, HLA-DQ, HLA-DP AND mouse
+    H-2 (I-A/I-E) class-II molecules. Distributed as a single tar archive with 5-fold cross-validation
+    partitions (train/test BA and EL files) and an MHC pseudo-sequence file. Companion to the NetMHCpan-4.1
+    release.
+
+    '
+  scale: '>500,000 BA+EL measurements; HLA-DR/DQ/DP + mouse H-2 class II'
+  modalities:
+  - binding-assay
+  - mhc-ligand-elution
+  - mhc-ligand-affinity
+  formats:
+  - tar.gz
+  - txt
+  landing_url: https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/
+  download_url: https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/
+  license: unknown
+  license_url: https://services.healthtech.dtu.dk/
+  access: open
+  provenance:
+    maintainer: Reynisson, Alvarez, Nielsen et al. (DTU Health Tech)
+    key_refs:
+    - 10.1093/nar/gkaa379
+    accessions:
+    - NetMHCIIpan_train.tar.gz
+  last_updated: 2020-05
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'The largest public quantitative + EL class-II training set and one of the few that includes
+      MOUSE H-2 class II — directly fills the preclinical CD4/MHC-II gap for presentation prediction and
+      cross-species transfer.
+
+      '
+  agent_access: 'Download the tar archive over HTTPS from the DTU supplementary page (cat/untar). No auth.
+    Distinct archive from the already-catalogued NetMHCpan-4.1 class-I training set.
+
+    '
+  caveats: 'No explicit license on the DTU page (academic/non-profit free; commercial needs a license).
+    BA values are log-transformed; file layout documentation is inconsistent across DTU pages — inspect
+    the extracted folder before parsing.
+
+    '
 - id: netmhcpan
   name: NetMHCpan / NetMHCIIpan (DTU) + training data
   category: mhc-binding
@@ -483,6 +643,58 @@
   caveats: 'The training-data tables carry no explicit license on the suppl page - marked unknown; attribute
     and confirm reuse terms. Includes some non-human alleles (e.g. BoLA integrated in 4.1). Dedup vs IEDB/SysteMHC
     needed (overlapping sources).
+
+    '
+- id: netmhcstabpan-stability-data
+  name: NetMHCstabpan peptide-MHC-I complex stability dataset (Rasmussen/Harndahl 2016)
+  category: mhc-binding
+  species:
+  - human
+  description: 'Quantitative peptide-MHC class I complex STABILITY measurements (half-life of the pMHC
+    complex, a correlate of immunogenicity distinct from affinity), generated by the Buus lab and used
+    to train NetMHCstabpan. >25,000 stability data points across 75 HLA molecules; the publication-level
+    file is released as HLA/peptide/Thalf tuples, with the stand-alone training archive (data.tar.gz)
+    and a counts table.
+
+    '
+  scale: '>25,000 stability measurements; 75 HLA-I molecules (publication reports up to ~136k stability+affinity
+    points)'
+  modalities:
+  - binding-assay
+  - pmhc-stability
+  formats:
+  - txt
+  - tar.gz
+  - xls
+  landing_url: https://services.healthtech.dtu.dk/services/NetMHCstabpan-1.0/
+  download_url: https://services.healthtech.dtu.dk/suppl/immunology/NetMHCstabpan-1.0/Stability.txt
+  license: unknown
+  license_url: https://services.healthtech.dtu.dk/
+  access: open
+  provenance:
+    maintainer: Rasmussen, Fenoy, Harndahl, Nielsen, Buus (DTU Health Tech / U. Copenhagen)
+    key_refs:
+    - 10.4049/jimmunol.1600582
+    accessions:
+    - Stability.txt
+    - data.tar.gz
+  last_updated: '2016'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Stability (off-rate) is a stronger correlate of CTL immunogenicity than affinity; this is the
+      primary public quantitative stability set for training/validating stability predictors and immunogenicity
+      filters.
+
+      '
+  agent_access: 'Direct HTTPS download of Stability.txt (HLA/peptide/Thalf) and data.tar.gz from DTU;
+    counts.xls describes the training table. No auth; small files.
+
+    '
+  caveats: 'No explicit license on the DTU page; DTU tools are free for academic/non-profit use, commercial
+    use needs a license — treat the data as academic-use, cite Rasmussen 2016. Quantitative binding inputs
+    were drawn from IEDB (overlap with IEDB sets below).
 
     '
 - id: syfpeithi
@@ -618,5 +830,96 @@
   caveats: 'License not explicit on the archive - mark unknown; confirm before reuse. Source DOI to verify.
     Dataset largely re-derived from IEDB/public EL (dedup needed). Do not confuse with TransHLA (different,
     later model). Human only.
+
+    '
+- id: walshe-2014-hlab2705-affinities
+  name: Experimental HLA-B*2705 peptide-binding affinity dataset (Walshe 2014)
+  category: mhc-binding
+  species:
+  - human
+  description: 'A focused "data paper" releasing experimentally measured binding affinities for 223 peptides
+    to HLA-B*2705, determined with an in-house FACS-based MHC stabilization assay — a clean, fully experimental
+    single-allele quantitative binding set published with the data as the primary object (Dataset Papers
+    in Science).
+
+    '
+  scale: 223 peptides, single allele HLA-B*2705; experimental affinities
+  modalities:
+  - binding-assay
+  - mhc-ligand-affinity
+  formats:
+  - xlsx
+  - pdf
+  landing_url: https://onlinelibrary.wiley.com/doi/10.1155/2014/914684
+  download_url: https://onlinelibrary.wiley.com/doi/10.1155/2014/914684
+  license: CC BY 3.0
+  license_url: https://creativecommons.org/licenses/by/3.0/
+  access: open
+  provenance:
+    maintainer: Walshe et al.; Dataset Papers in Science (Hindawi, open access)
+    key_refs:
+    - 10.1155/2014/914684
+  last_updated: '2014'
+  relevance:
+    programs:
+    - presentation
+    why: 'Small but fully experimental, well-documented single-allele affinity set useful as an independent
+      held-out test for HLA-B27 binding predictors (B27 is clinically important and often under-represented
+      in training data).
+
+      '
+  agent_access: 'Open-access article + supplementary data table via the Wiley/Hindawi page; CC BY 3.0.
+
+    '
+  caveats: 'Small scale and single allele; stabilization-assay affinities are not directly IC50 and should
+    be normalized before merging with competitive-binding sets.
+
+    '
+- id: wang-2008-mhcii-binding-affinity
+  name: Wang 2008 quantitative MHC class II peptide-binding affinity dataset (IEDB)
+  category: mhc-binding
+  species:
+  - human
+  - mouse
+  description: 'Curated quantitative MHC class II peptide-binding affinity dataset assembled by Wang et
+    al. for a systematic MHC-II prediction benchmark, released via the IEDB datasets page. Includes the
+    peptide-affinity table, a non-redundant PDB core-peptide/allele reference, and an LCMV T-cell activation
+    table.
+
+    '
+  scale: quantitative IC50 affinities across human HLA class II + mouse H-2; thousands of peptides
+  modalities:
+  - binding-assay
+  - mhc-ligand-affinity
+  formats:
+  - zip
+  - txt
+  landing_url: https://tools.iedb.org/main/datasets/
+  download_url: https://tools.iedb.org/static/main/peptide_affinity_dataset.zip
+  license: unknown
+  license_url: https://www.iedb.org/
+  access: open
+  provenance:
+    maintainer: IEDB Analysis Resource (LJI / NIAID)
+    key_refs:
+    - 10.1371/journal.pcbi.1000048
+    accessions:
+    - peptide_affinity_dataset.zip
+    - non_redundant_pdb_core_pep_allele.txt
+    - LCMV_T_cell_activation.txt
+  last_updated: '2008'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'A clean legacy quantitative MHC-II affinity benchmark (human + mouse H-2) still used to compare
+      class-II predictors; complements the much larger NetMHCIIpan-4.0 corpus.
+
+      '
+  agent_access: 'Direct HTTPS download of the zip/txt from IEDB; no auth; small files.
+
+    '
+  caveats: 'No explicit license on the IEDB page. Older curation; expect overlap with BD2013 and NetMHCIIpan
+    sets — dedup on peptide/allele/measurement.
 
     '

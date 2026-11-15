@@ -1,3 +1,52 @@
+- id: antijen
+  name: AntiJen v2.0 — quantitative immunology database (TAP, proteasome, MHC)
+  category: functional-assay
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Database integrating quantitative functional, thermodynamic, kinetic, biophysical and
+    cellular immunology measurements, including peptide binding to TAP transporters and proteasome cleavage/
+    processing data, alongside peptide-MHC and TCR/antibody binding. A primary source of antigen- processing
+    (TAP transport + proteasomal cleavage) training data; successor to JenPep.
+
+    '
+  scale: ~24,000-31,000 curated entries from published experiments
+  modalities:
+  - tap-binding
+  - proteasome-cleavage
+  - mhc-binding
+  - functional-assay
+  formats:
+  - web
+  - html
+  landing_url: https://www.ddg-pharmfac.net/antijen/AntiJen/antijenhomepage.htm
+  download_url: https://www.ddg-pharmfac.net/antijen/AntiJen/antijenhomepage.htm
+  license: unknown
+  license_url: unknown
+  access: open
+  accessions: []
+  provenance:
+    maintainer: Jenner Institute / Aston University (Flower group)
+    key_refs:
+    - 10.1186/1745-7580-1-4
+  last_updated: 2005 (v2.0; site maintained)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Rare source of quantitative TAP-transport and proteasome-cleavage data — the processing steps
+      that gate which non-canonical/spliced sequences can ever reach HLA.
+
+      '
+  agent_access: 'Web search interface only (per-category search pages); no bulk-download/API documented
+    — likely requires scraping. RRID:SCR_001750.
+
+    '
+  caveats: 'NO explicit license (flag). Legacy resource (core data ~2005, not actively updated); verify
+    the ddg-pharmfac.net mirror resolves. Mixed species.
+
+    '
 - id: ccle-proteomics
   name: CCLE Quantitative Proteomics (Nusinow/Gygi)
   category: functional-assay
@@ -98,6 +147,46 @@
     can be controlled. Proteomics is a few cancer types, not pan-cancer at TCGA scale.
 
     '
+- id: gse120272-mct-c2-rnaseq
+  name: GSE120272 — Canine C2 Mast Cell Line Transcriptome (G-quadruplex study)
+  category: functional-assay
+  species:
+  - dog
+  - human
+  description: 'RNA-seq of the canine C2 mastocytoma cell line (and a matched human line) profiling whole-transcriptome
+    response to a G-quadruplex-binding small molecule (Zorzan et al., Sci Rep 2018). Provides a canine
+    mast cell tumour in-vitro expression baseline and a directly paired canine/human comparison.
+
+    '
+  scale: canine + human mast cell line RNA-seq (treatment vs control)
+  modalities:
+  - bulk-rna-seq
+  formats:
+  - fastq
+  - txt
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120272
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120272
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: University of Padova (Dacasto / Giantin lab)
+    key_refs:
+    - 10.1038/s41598-018-35516-y
+  accessions:
+  - GSE120272
+  last_updated: '2018'
+  relevance:
+    programs:
+    - comparative
+    why: 'Paired canine/human mast cell transcriptomes support cross-species expression mapping; a usable
+      canine mast-cell-line reference for the MCT program.
+
+      '
+  caveats: 'No explicit reuse license (NCBI open). Cell-line, drug-perturbation context — not a primary-tumour
+    cohort. Small sample number.
+
+    '
 - id: keskin-2019-neovax-gbm
   name: Keskin 2019 personal neoantigen vaccine (glioblastoma; dbGaP phs001519)
   category: functional-assay
@@ -140,6 +229,45 @@
 
     '
   caveats: 'Controlled-access. Small phase-Ib cohort. Low-TMB setting limits neoantigen counts.
+
+    '
+- id: nasal-carcinoma-organoids-2026
+  name: Canine Nasal Carcinoma Organoid RNA-seq (Front Vet Sci 2026)
+  category: functional-assay
+  species:
+  - dog
+  description: 'Bulk RNA-seq of patient-derived canine nasal carcinoma organoids (n=6) vs normal nasal
+    cells (n=4), used for drug-sensitivity testing and functional characterization of S100A2 (Yamamoto/Elbadawy/Sasaki,
+    Front Vet Sci 2026). First organoid model for this tumour type.
+
+    '
+  scale: 6 NC organoid + 4 normal nasal samples (RNA-seq)
+  modalities:
+  - bulk-rna-seq
+  formats:
+  - fastq
+  landing_url: https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2026.1912335/full
+  download_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC13741214
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Yamaguchi University (Sasaki / Elbadawy lab)
+    key_refs:
+    - 10.3389/fvets.2026.1912335
+  accessions: []
+  last_updated: '2026'
+  relevance:
+    programs:
+    - comparative
+    why: 'Fills the nasal-carcinoma gap and adds a canine organoid model; S100A2 highlighted as a candidate
+      target.
+
+      '
+  caveats: 'NOT YET VERIFIED: data-availability statement says data are "in online repositories" with
+    the accession in the article/Supplementary material; the repository ID (this group typically uses
+    DDBJ/DRA) was not in the main text. Retrieve the exact accession from the supplementary files before
+    download. Catalogued so the dataset is tracked.
 
     '
 - id: nci-neoantigen-reactive-tcells
@@ -327,6 +455,54 @@
     Immunogenicity results in the paper are readable but raw data access uncertain.
 
     '
+- id: specht-2020-proteasome-peptide-db
+  name: Proteasome spliced/non-spliced peptide generation database (Specht et al. 2020, Mishto/Liepe)
+  category: functional-assay
+  species:
+  - human
+  description: 'Large curated database of in-vitro proteasome digestion products — both spliced and non-spliced
+    peptides generated by purified proteasomes from synthetic polypeptide substrates — built for analysing
+    and predicting proteasomal cleavage and peptide splicing. Antigen- processing training data underpinning
+    spliced-epitope prediction. MS raw data on PRIDE + processed tables on Mendeley Data.
+
+    '
+  scale: Thousands of proteasome-generated spliced/non-spliced peptide products
+  modalities:
+  - in-vitro-digestion-ms
+  - proteasome-cleavage
+  formats:
+  - raw-ms
+  - xlsx
+  - csv
+  landing_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7228940
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD016782
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  accessions:
+  - 'PRIDE: PXD016782'
+  - 'Mendeley Data: 10.17632/nr7cs764rc.1'
+  provenance:
+    maintainer: King's College London / MDC Berlin / MPI (Mishto & Liepe labs)
+    key_refs:
+    - 10.1038/s41597-020-0487-6
+  last_updated: 2020-05
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Ground-truth proteasome cleavage/splicing data for building and validating antigen- processing
+      models that decide which sequences can be generated and presented.
+
+      '
+  agent_access: 'PRIDE (raw MS) + Mendeley Data (processed tables) bulk download, no auth. Article CC
+    BY 4.0.
+
+    '
+  caveats: 'In-vitro proteasome products (synthetic substrates), not direct HLA ligands — bridges to presentation
+    via processing models. Human proteasomes.
+
+    '
 - id: tesla-benchmark
   name: TESLA (Tumor nEoantigen SeLection Alliance) benchmark (Synapse syn21048999)
   category: functional-assay
@@ -375,5 +551,46 @@
     '
   caveats: 'access: registration + Synapse governance/terms (not fully open); check conditions of use
     / any restriction. Only 6 subjects — small but deeply validated; a benchmark, not a volume source.
+
+    '
+- id: urothelial-organoid-biobank
+  name: GSE306810 / GSE306811 — Canine Urothelial Carcinoma Organoid Biobank (2026)
+  category: functional-assay
+  species:
+  - dog
+  description: 'A canine invasive urothelial (bladder) carcinoma-derived organoid biobank with RNA-seq
+    deposited across GEO series GSE306810 and GSE306811, positioned as a comparative/ translational platform
+    (Zdyrski et al., Clin Transl Med 2026; bioRxiv 2025).
+
+    '
+  scale: canine urothelial carcinoma organoid panel (RNA-seq)
+  modalities:
+  - bulk-rna-seq
+  formats:
+  - fastq
+  - txt
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306810
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306811
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Iowa State University (Zdyrski / Mochel / Allenspach group)
+    key_refs:
+    - 10.1002/ctm2.70645
+    - 10.1101/2025.09.27.678962
+  accessions:
+  - GSE306810
+  - GSE306811
+  last_updated: '2026'
+  relevance:
+    programs:
+    - comparative
+    why: 'Living organoid resource for an under-covered tumour; complements iUC primary-tumour genomics
+      already in the catalog and enables functional antigen/target validation.
+
+      '
+  caveats: 'No explicit reuse license (NCBI open). Organoids (biobank access via the group may be request-based
+    even though the sequence data are open). Two GEO series — check split.
 
     '

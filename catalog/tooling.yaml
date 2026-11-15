@@ -425,6 +425,51 @@
     Repo-level license unclear — verify. No dog.
 
     '
+- id: ervmap
+  name: ERVmap — genome-wide human endogenous retrovirus transcription tool + locus set
+  category: tooling
+  species:
+  - human
+  description: 'Open-source pipeline and curated set of 3,220 human proviral ERV loci for quantifying
+    genome- wide ERV transcription from RNA-seq, with an accompanying web tool. The reference method/locus
+    annotation for measuring ERV expression — the substrate for ERV-derived tumor antigens.
+
+    '
+  scale: 3,220 annotated ERV loci; per-locus normalized/raw expression outputs
+  modalities:
+  - rna-seq-quantification
+  - erv-locus-annotation
+  formats:
+  - bed
+  - tsv
+  - code
+  landing_url: https://mtokuyama.github.io/ERVmap/
+  download_url: https://github.com/mtokuyama/ERVmap
+  license: unknown
+  license_url: https://github.com/mtokuyama/ERVmap
+  access: open
+  accessions: []
+  provenance:
+    maintainer: Yale University (Iwasaki lab; Tokuyama et al.)
+    key_refs:
+    - 10.1073/pnas.1814589115
+  last_updated: 2018-11
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'ERV-derived antigens depend on accurately quantifying locus-specific ERV transcription; ERVmap
+      provides the standard locus set and pipeline to screen tumors for ERV antigen sources.
+
+      '
+  agent_access: 'Code + locus annotation on GitHub, no auth. Accuracy debated vs Telescope (see PNAS exchange
+    10.1073/pnas.1907705116 / 10.1073/pnas.1915450116).
+
+    '
+  caveats: 'NO LICENSE file located in the GitHub repo (flag before reuse). It is a tool + annotation,
+    not a tumor antigen dataset per se. Human only; read-assignment accuracy is contested.
+
+    '
 - id: figshare
   name: figshare
   category: tooling

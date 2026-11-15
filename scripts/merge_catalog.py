@@ -25,6 +25,49 @@ CATALOG = ROOT / "catalog"
 
 LIST_FIELDS = ["species", "modalities", "formats", "accessions"]
 
+VALID_PROGRAMS = {"presentation", "recognition", "design", "comparative"}
+PROGRAM_ALIASES = {
+    "neoantigen": "presentation", "mhc-binding": "presentation", "binding": "presentation",
+    "tcr": "recognition", "tcr-recognition": "recognition",
+    "structure": "design", "protein-design": "design",
+    "canine": "comparative", "comparative-oncology": "comparative", "veterinary": "comparative",
+}
+VALID_CATEGORIES = {
+    "reference", "mhc-binding", "presentation", "tcr-recognition", "neoantigen",
+    "cancer-genomics", "healthy-baseline", "structure", "comparative-oncology",
+    "single-cell", "functional-assay", "tooling",
+}
+CATEGORY_ALIASES = {
+    "spatial": "single-cell", "cytometry": "single-cell", "imaging": "tooling",
+    "pathology": "comparative-oncology", "epidemiology": "comparative-oncology",
+    "antibody": "structure", "immunogenetics": "reference", "clinical": "cancer-genomics",
+}
+SPECIES_ALIASES = {"canine": "dog", "canis familiaris": "dog", "homo sapiens": "human",
+                   "murine": "mouse", "mus musculus": "mouse", "feline": "cat"}
+
+
+def normalize(e: dict) -> None:
+    rel = e.get("relevance")
+    if isinstance(rel, dict):
+        progs = []
+        for p in rel.get("programs", []) or []:
+            p = PROGRAM_ALIASES.get(str(p).lower(), str(p).lower())
+            if p in VALID_PROGRAMS and p not in progs:
+                progs.append(p)
+        rel["programs"] = progs or ["presentation"]
+    cat = str(e.get("category", "")).lower()
+    cat = CATEGORY_ALIASES.get(cat, cat)
+    e["category"] = cat if cat in VALID_CATEGORIES else "tooling"
+    sp = []
+    for s in e.get("species", []) or []:
+        s = SPECIES_ALIASES.get(str(s).lower(), str(s).lower())
+        if s not in sp:
+            sp.append(s)
+    e["species"] = sp
+    acc = str(e.get("access", "")).lower()
+    if acc not in {"open", "registration", "controlled-access", "request"}:
+        e["access"] = "controlled-access" if "control" in acc else ("open" if "open" in acc else "request")
+
 
 def merge_into(dst: dict, src: dict) -> None:
     """Merge src into dst in place; dst was seen first."""
@@ -79,6 +122,7 @@ def main() -> int:
         for e in data:
             raw += 1
             e["_source_file"] = f.name
+            normalize(e)
             eid = e.get("id")
             if not eid:
                 print(f"skip: entry with no id in {f.name}", file=sys.stderr)
