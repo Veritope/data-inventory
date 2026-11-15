@@ -134,6 +134,56 @@
     No MHC/immune-specific layer. License not explicitly stated.
 
     '
+- id: bfd
+  name: Big Fantastic Database (BFD)
+  category: reference
+  species:
+  - other
+  description: 'One of the largest publicly available clustered protein-sequence databases, built for
+    deep MSA generation in AlphaFold2. Contains 65,983,866 protein families as MSAs and profile HMMs covering
+    ~2.2 billion sequences, clustered at 30% identity / 90% coverage from UniProt, Metaclust, the Soil
+    Reference Catalog and the Marine Eukaryotic Reference Catalog (~2.5B input sequences).
+
+    '
+  scale: 65,983,866 families / clusters; ~2,204,359,010 clustered sequences (~2.5B input)
+  size_bytes: 291649557441
+  modalities:
+  - protein-sequence
+  - msa
+  - hmm
+  - sequence-clusters
+  formats:
+  - fasta
+  - a3m
+  - hhm
+  landing_url: https://bfd.mmseqs.com/
+  download_url: https://bfd.mmseqs.com/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt.tar.gz
+  license: CC BY 4.0
+  license_url: https://bfd.mmseqs.com/
+  access: open
+  provenance:
+    maintainer: Steinegger / Mirdita / Söding (Söding Lab, MMseqs2 ecosystem); produced for AlphaFold
+    key_refs:
+    - 10.1038/s41586-021-03819-2
+    - 10.1038/s41467-018-04964-5
+  last_updated: 2021 (frozen AlphaFold2 release build)
+  relevance:
+    programs:
+    - design
+    why: 'Massive clustered metagenome-inclusive corpus for deep MSA construction and large-scale PLM
+      pretraining; reaches far beyond UniProt into environmental sequence space relevant to novel-fold
+      and representation learning.
+
+      '
+  agent_access: 'Direct HTTP(S) bulk download (Google Cloud and GWDG mirrors); ~272 GiB tarball, aria2c
+    recommended. No auth. Plan for very large disk/RAM footprint.
+
+    '
+  caveats: 'Frozen 2021 build (not updated). Enormous download. Derived inputs include Metaclust, which
+    is CC BY-NC-SA (see metaclust entry) — BFD itself is released CC BY 4.0, but confirm downstream terms
+    if redistributing derivatives. Clusters with <3 sequences removed.
+
+    '
 - id: cab-rep
   name: cAb-Rep (Curated Antibody Repertoires)
   category: reference
@@ -422,6 +472,51 @@
     '
   caveats: 'CC BY 4.0 (attribution). One name annotation imported from OBO Foundry is CC0 — negligible.
     Do not confuse CL with CLO (Cell Line Ontology), which has its own (disputed) license.
+
+    '
+- id: colabfolddb
+  name: ColabFoldDB
+  category: reference
+  species:
+  - other
+  description: 'A merged environmental + reference protein database built for fast MMseqs2-based MSA generation
+    in ColabFold. Combines BFD/MGnify clusters with additional metagenomic protein catalogs (eukaryotic,
+    phage, updated MetaClust), clustered at 30% identity / 90% coverage. Final database: 209,335,865 representative
+    sequences and 738,695,580 members.
+
+    '
+  scale: 209,335,865 representatives; 738,695,580 members (~182M env clusters merged with BFD)
+  modalities:
+  - protein-sequence
+  - msa
+  - sequence-clusters
+  formats:
+  - fasta
+  - mmseqs2-db
+  landing_url: https://colabfold.mmseqs.com/
+  download_url: https://colabfold.mmseqs.com/
+  license: CC BY 4.0 (follows BFD/MGnify; verify component terms)
+  license_url: https://colabfold.mmseqs.com/
+  access: open
+  provenance:
+    maintainer: Mirdita / Steinegger / Söding (ColabFold / MMseqs2)
+    key_refs:
+    - 10.1038/s41592-022-01488-1
+  last_updated: 2023 (release 2302, ~103 GB; earlier 2103 ~75 GB)
+  relevance:
+    programs:
+    - design
+    why: 'Ready-made large environmental corpus for MSA generation and as an alternative/augmenting pretraining
+      corpus beyond UniRef; the practical database behind ColabFold MSAs.
+
+      '
+  agent_access: 'HTTP(S) bulk download of MMseqs2-formatted database via setup_databases.sh. Searching
+    it requires a machine with ~768 GB RAM; bulk download only for infra-heavy users.
+
+    '
+  caveats: 'Aggregates multiple sources with differing provenance (MGnify, Metaclust-derived, phage/euk
+    catalogs) — redistribution terms should be checked per component; Metaclust lineage carries NC-SA.
+    Very large; impractical without large-RAM infrastructure.
 
     '
 - id: cosmic
@@ -807,6 +902,58 @@
     before redistribution. Served over plain HTTP; verify integrity.
 
     '
+- id: eggnog
+  name: 'eggNOG (evolutionary genealogy of genes: Non-supervised Orthologous Groups)'
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'A hierarchical catalog of orthologous groups with functional and phylogenetic annotation,
+    built on reference proteomes across all domains of life. eggNOG 6.0 covers 12,535 organisms (1,322
+    eukaryotes, 10,756 bacteria, 457 archaea) with >17M orthologous groups at 1,601 taxonomic levels.
+    Supplies orthology-structured sequence/annotation sets and powers eggNOG-mapper functional annotation.
+
+    '
+  scale: 12,535 organisms; >17M orthologous groups (incl. 17,011,080 NOGs) at 1,601 tax levels
+  modalities:
+  - protein-sequence
+  - orthology
+  - hmm
+  - functional-annotation
+  formats:
+  - fasta
+  - hmm
+  - tsv
+  landing_url: http://eggnog6.embl.de/
+  download_url: http://eggnog6.embl.de/download/
+  api: http://eggnog5.embl.de/#/app/api
+  license: unknown
+  license_url: http://eggnog6.embl.de/
+  access: open
+  provenance:
+    maintainer: Bork Lab (EMBL) / Huerta-Cepas et al.
+    key_refs:
+    - 10.1093/nar/gkac1022
+    - 10.1093/nar/gky1085
+  last_updated: 2022 (eggNOG 6.0)
+  relevance:
+    programs:
+    - design
+    - comparative
+    why: 'Orthology-grouped protein sequences and HMMs for building evolution-aware corpora, functional
+      labels for representation-learning tasks, and comparative-genomics context.
+
+      '
+  agent_access: 'Bulk download (per-level members, FASTA, HMMs) from eggNOG website; eggNOG-mapper tool
+    separate. No auth.
+
+    '
+  caveats: 'LICENSE UNVERIFIED — the 6.0 paper is CC BY 4.0 but no explicit data license is stated on
+    the download page (eggNOG 2008 release used CC BY 3.0 for data). Do not assume terms; confirm on the
+    download page before redistribution/ML use. Marked unknown per cataloguing rules.
+
+    '
 - id: ensembl
   name: Ensembl (genomes, gene models, comparative genomics)
   category: reference
@@ -912,6 +1059,53 @@
   caveats: 'No explicit standalone license document — data is free/open but cite the GENCODE paper; verify
     terms if redistributing. Human + mouse only (no dog — use Ensembl/RefSeq for canine annotation). Pin
     release number (annotation changes between releases).
+
+    '
+- id: gtdb
+  name: Genome Taxonomy Database (GTDB)
+  category: reference
+  species:
+  - other
+  description: 'A standardized, phylogenetically consistent taxonomy and reference genome set for bacteria
+    and archaea, with representative genomes, aligned marker genes, and full genome sequences. A clean,
+    taxonomically balanced prokaryotic genomic corpus widely used to sample sequence diversity for training
+    and benchmarking.
+
+    '
+  scale: 'R10 (RS226): ~732,475 genomes (715,230 bacterial + 17,245 archaeal); R232 ~901,341 genomes'
+  modalities:
+  - genome-sequence
+  - marker-gene-msa
+  - protein-sequence
+  formats:
+  - fasta
+  - tsv
+  - newick
+  landing_url: https://gtdb.ecogenomic.org/
+  download_url: https://gtdb.ecogenomic.org/downloads
+  license: CC BY-SA 4.0
+  license_url: https://gtdb.ecogenomic.org/downloads
+  access: open
+  provenance:
+    maintainer: Australian Centre for Ecogenomics (University of Queensland)
+    key_refs:
+    - 10.1093/nar/gkaf1040
+    - 10.1093/nar/gkab776
+  last_updated: R232 (2026-04-15); R10/RS226 is the DOI-cited release
+  relevance:
+    programs:
+    - design
+    - comparative
+    why: 'Taxonomically de-biased prokaryotic genome/protein source for sampling sequence diversity in
+      PLM pretraining and for phylogenetically aware benchmarking.
+
+      '
+  agent_access: 'HTTP(S)/FTP bulk download across Europe/Asia-Pacific/worldwide mirrors plus academic
+    torrent; no auth. Large genome archives.
+
+    '
+  caveats: 'CC BY-SA (ShareAlike) — derivatives inherit the license (differs from CC BY). Some third-party
+    listings mislabel as CC BY or GPL (GPL = software). Release numbering changes counts frequently.
 
     '
 - id: imgt-dog-antigen-receptor-loci
@@ -1255,6 +1449,193 @@
     gap for Veritope.
 
     '
+- id: jgi-img-m
+  name: JGI IMG/M (Integrated Microbial Genomes & Microbiomes)
+  category: reference
+  species:
+  - other
+  description: 'DOE JGI''s data-management and comparative-analysis system for microbial genomes and metagenomes,
+    with gene/protein predictions and functional annotation over a very large public holding of isolate
+    genomes and metagenomes. A major genomic/metagenomic sequence source for building microbial protein
+    corpora.
+
+    '
+  scale: Very large (tens of thousands of metagenomes + isolate genomes); counts grow continuously
+  modalities:
+  - genome-sequence
+  - metagenome
+  - protein-sequence
+  - functional-annotation
+  formats:
+  - fasta
+  - gff
+  - tsv
+  - web
+  landing_url: https://img.jgi.doe.gov/m/
+  download_url: https://genome.jgi.doe.gov/portal/
+  api: https://img.jgi.doe.gov/
+  license: JGI Data Utilization/Release Policy (NCBI-imported genomes public domain)
+  license_url: https://jgi.doe.gov/user-programs/pmo-overview/policies/
+  access: registration
+  provenance:
+    maintainer: DOE Joint Genome Institute (Lawrence Berkeley National Laboratory)
+    key_refs:
+    - 10.1093/nar/gky901
+    - 10.1093/nar/gkw929
+  last_updated: v5.0 system (ongoing data additions)
+  relevance:
+    programs:
+    - design
+    - comparative
+    why: 'Large microbial genome/metagenome corpus and gene-prediction source for expanding protein sequence
+      space and comparative microbial analyses.
+
+      '
+  agent_access: 'Public data downloadable via JGI Data Portal; many bulk downloads require a (free) JGI/ORCID
+    account login. Private submissions embargoed (18 mo genomes / 24 mo metagenomes). Not a no-auth bulk
+    FTP like UniProt.
+
+    '
+  caveats: 'Access is registration-gated for bulk download and ~16% of isolate genomes / ~30% of metagenomes
+    are private. Terms follow the JGI Data Policy rather than a single CC license — review before redistribution/ML
+    use. Large, heterogeneous holdings need careful dedup.
+
+    '
+- id: metaclust
+  name: Metaclust (clustered metagenomic/metatranscriptomic proteins)
+  category: reference
+  species:
+  - other
+  description: 'A clustered catalog of protein-coding fragments predicted from metagenomic and metatranscriptomic
+    datasets, produced with Linclust/MMseqs2. Built from ~1.59 billion predicted protein fragments across
+    ~2,200 metagenome/metatranscriptome datasets, reduced to ~424 million clusters. A key metagenomic
+    input to BFD and ColabFoldDB.
+
+    '
+  scale: ~1.59B input fragments from ~2,200 datasets; ~424M clusters
+  modalities:
+  - protein-sequence
+  - sequence-clusters
+  formats:
+  - fasta
+  landing_url: https://metaclust.mmseqs.org/
+  download_url: https://metaclust.mmseqs.org/
+  license: CC BY-NC-SA 4.0
+  license_url: https://metaclust.mmseqs.org/
+  access: open
+  provenance:
+    maintainer: Steinegger & Söding (Söding Lab / MMseqs2)
+    key_refs:
+    - 10.1038/s41467-018-04964-5
+  last_updated: 2018 (frozen build)
+  relevance:
+    programs:
+    - design
+    why: 'Large metagenomic protein corpus expanding sequence space for PLM pretraining and MSA generation;
+      a documented input to BFD/ColabFoldDB.
+
+      '
+  agent_access: 'HTTP(S) bulk download; no auth. Frozen release.
+
+    '
+  caveats: 'LICENSE RED FLAG — CC BY-NC-SA 4.0: NonCommercial clause restricts commercial use (including
+    some commercial ML training) and ShareAlike propagates to derivatives. This is why it must be flagged
+    when it appears as an input to BFD/ColabFoldDB. Frozen 2018 build.
+
+    '
+- id: mgnify-genomes
+  name: MGnify Genome Catalogues (prokaryotic MAGs/isolates)
+  category: reference
+  species:
+  - other
+  description: 'Biome-specific catalogues of non-redundant, species-level clustered prokaryotic genomes
+    (metagenome-assembled genomes and isolates) from MGnify, with pan-genome and functional annotation.
+    A genomic (not just protein) sequence corpus spanning human gut, marine, soil and other environments
+    — a source of genome-context and coding-sequence data for comparative and sequence-model work.
+
+    '
+  scale: Multiple biome catalogues; hundreds of thousands of genomes clustered to species-level reps
+  modalities:
+  - genome-sequence
+  - protein-sequence
+  - pangenome
+  formats:
+  - fasta
+  - gff
+  - api
+  landing_url: https://www.ebi.ac.uk/metagenomics/browse/genomes
+  download_url: https://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/
+  api: https://www.ebi.ac.uk/metagenomics/api/v1/genome-catalogues
+  license: EMBL-EBI terms of use (verify per catalogue; underlying data generally open)
+  license_url: https://www.ebi.ac.uk/about/terms-of-use
+  access: open
+  provenance:
+    maintainer: EMBL-EBI (MGnify team)
+    key_refs:
+    - 10.1093/nar/gkac1080
+    - 10.1016/j.jmb.2023.168016
+  last_updated: 2023-2024 (ongoing catalogue releases)
+  relevance:
+    programs:
+    - design
+    - comparative
+    why: 'Genome-level metagenomic corpus for coding-sequence extraction, genomic-context modeling and
+      comparative analyses that complement the MGnify protein set.
+
+      '
+  agent_access: 'FTP bulk download per catalogue + MGnify REST API (genome-catalogues endpoint). No auth.
+
+    '
+  caveats: 'License is the general EMBL-EBI terms rather than the CC0 that covers the protein DB — confirm
+    per catalogue before redistribution. Catalogue counts grow release-to-release; verify current totals.
+
+    '
+- id: mgnify-proteins
+  name: MGnify Protein Database (MGnify90)
+  category: reference
+  species:
+  - other
+  description: 'EMBL-EBI''s non-redundant catalog of protein sequences predicted from assembled metagenomes
+    in MGnify — the largest publicly described metagenomic protein collection. The ~2.48 billion sequences
+    (clustered representations, e.g. MGnify90) vastly expand sequence space beyond UniProt and are the
+    source behind the ESM Metagenomic Atlas (which folded MGnify90).
+
+    '
+  scale: ~2,477,479,951 protein sequences (current release); MGnify90 clustered set
+  modalities:
+  - protein-sequence
+  - sequence-clusters
+  formats:
+  - fasta
+  - bigquery
+  - hmmer-searchable
+  landing_url: https://www.ebi.ac.uk/metagenomics/proteins
+  download_url: https://ftp.ebi.ac.uk/pub/databases/metagenomics/
+  api: https://www.ebi.ac.uk/metagenomics/api/v1/
+  license: CC0 1.0 (protein database; most other MGnify content is EMBL-EBI terms)
+  license_url: https://www.ebi.ac.uk/metagenomics/
+  access: open
+  provenance:
+    maintainer: EMBL-EBI (MGnify team)
+    key_refs:
+    - 10.1093/nar/gkac1080
+  last_updated: 2023_02 and later (public beta web resource)
+  relevance:
+    programs:
+    - design
+    why: 'The premier metagenomic protein corpus for expanding PLM pretraining into the ''dark matter''
+      of protein space; underpins ESM-scale metagenomic structure/representation work.
+
+      '
+  agent_access: 'Bulk FTP download, HMMER search, and BigQuery access. Web resource in public beta. CC0
+    makes the protein set unusually unrestricted for ML training.
+
+    '
+  caveats: 'CC0 applies to the protein database specifically; broader MGnify content falls under EMBL-EBI
+    terms — do not generalize CC0. Huge scale; heavy dedup vs UniRef recommended. Note ESM Metagenomic
+    Atlas (structures over MGnify90) is catalogued separately in domain-9 (esm-atlas).
+
+    '
 - id: nextprot
   name: neXtProt
   category: reference
@@ -1365,6 +1746,58 @@
     not a source for the comparative-oncology program.
 
     '
+- id: oma
+  name: OMA (Orthologous MAtrix)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'A large orthology database inferring orthologs across thousands of complete genomes, with
+    OMA Groups, Hierarchical Orthologous Groups (HOGs), pairwise orthologs, and downloadable all-species
+    protein/CDS FASTA. Provides evolutionarily grouped sequence sets useful for ortholog-aware corpora
+    and comparative representation learning.
+
+    '
+  scale: ~2,983 complete genomes; ~26.5M proteins; ~1.5M OMA groups (May2026 release)
+  modalities:
+  - protein-sequence
+  - cds
+  - orthology
+  formats:
+  - fasta
+  - orthoxml
+  - tsv
+  - api
+  landing_url: https://omabrowser.org/
+  download_url: https://omabrowser.org/oma/current/
+  api: https://omabrowser.org/api/
+  license: CC BY 4.0
+  license_url: https://omabrowser.org/oma/terms_of_use/
+  access: open
+  provenance:
+    maintainer: Dessimoz Lab (SIB / University of Lausanne / UCL)
+    key_refs:
+    - 10.1093/nar/gkad1020
+    - 10.1093/nar/gkaa1007
+  last_updated: All.May2026 release
+  relevance:
+    programs:
+    - design
+    - comparative
+    why: 'Ortholog groupings and all-species sequence sets for building evolution-aware corpora and for
+      comparative (cross-species) analyses supporting design.
+
+      '
+  agent_access: 'Bulk download of protein/CDS FASTA + OrthoXML/TSV; REST API for targeted queries. No
+    auth.
+
+    '
+  caveats: 'Current terms are CC BY 4.0 but older pages/papers cite CC BY-SA 2.5 or CC0 — rely on the
+    live terms page. OMA name/logos may not be reused. Underlying source sequences may carry third-party
+    constraints.
+
+    '
 - id: omia
   name: Online Mendelian Inheritance in Animals (OMIA)
   category: reference
@@ -1412,6 +1845,55 @@
   caveats: 'License is reported inconsistently across indexers (re3data: CC BY 4.0; Integbio: CC0; a Sydney
     library record: all-rights-reserved) — treat as CC BY 4.0 but verify, and honor OMIA''s citation /
     co-authorship-discussion request for dump-based work. Internal gene IDs need mapping.
+
+    '
+- id: orthodb
+  name: OrthoDB (hierarchical catalog of orthologs)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'A hierarchical catalog of orthologous protein-coding genes across the tree of life, with
+    orthologous groups computed at many taxonomic levels and bulk FASTA/mapping downloads. Provides broadly
+    sampled, evolution-structured sequence sets; also the basis of BUSCO completeness assessment.
+
+    '
+  scale: 'v12.2: ~32,072 species; hundreds of thousands+ orthologous groups'
+  modalities:
+  - protein-sequence
+  - orthology
+  formats:
+  - fasta
+  - tsv
+  - api
+  - sparql
+  landing_url: https://www.orthodb.org/
+  download_url: https://data.orthodb.org/v12/download/
+  api: https://data.orthodb.org/
+  license: CC BY 4.0
+  license_url: https://www.orthodb.org/
+  access: open
+  provenance:
+    maintainer: Zdobnov Lab (SIB / University of Geneva)
+    key_refs:
+    - 10.1093/nar/gkae987
+    - 10.1093/nar/gks1116
+  last_updated: v12.2 (2024-2025)
+  relevance:
+    programs:
+    - design
+    - comparative
+    why: 'Wide-sampling ortholog groups and sequences for evolution-aware corpora, cross-species transfer,
+      and comparative benchmarking.
+
+      '
+  agent_access: 'Bulk download (OG tables, species tables, gene mappings), REST API (v12), and SPARQL
+    endpoint. No auth.
+
+    '
+  caveats: 'Current release CC BY 4.0; older v1x papers used CC BY-NC 3.0, and Wikipedia lists outdated
+    CC BY 3.0 — verify current terms. v11 counts not confirmed here.
 
     '
 - id: pfam
@@ -1719,6 +2201,53 @@
     vocabulary for the genomics-feature layer of an ingestion schema.
 
     '
+- id: uniparc
+  name: UniParc (UniProt Archive)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'A comprehensive, non-redundant sequence archive that stores every protein sequence ever
+    submitted to UniProt''s source databases, tracking each unique sequence with a stable UPI and full
+    provenance/cross-references, including sequences no longer in UniProtKB. It is the broadest single
+    protein-sequence superset UniProt offers and a candidate source for maximally diverse pretraining
+    corpora (at the cost of including obsolete/low-quality entries).
+
+    '
+  scale: '>900M unique sequences (UPIs), release-dependent — broadest UniProt sequence set'
+  modalities:
+  - protein-sequence
+  formats:
+  - fasta
+  - xml
+  landing_url: https://www.uniprot.org/help/uniparc
+  download_url: https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/
+  api: https://rest.uniprot.org/uniparc/
+  license: CC BY 4.0
+  license_url: https://www.uniprot.org/help/license
+  access: open
+  provenance:
+    maintainer: UniProt Consortium (EMBL-EBI, SIB, PIR)
+    key_refs:
+    - 10.1093/nar/gkae1010
+  last_updated: 2025 (UniProt release cadence)
+  relevance:
+    programs:
+    - design
+    why: 'Superset sequence archive for building maximally diverse PLM pretraining corpora or for recovering
+      sequences dropped from UniProtKB; useful when corpus breadth matters more than curation.
+
+      '
+  agent_access: 'Open FTP bulk download (very large XML/FASTA), no auth. REST API at rest.uniprot.org/uniparc
+    for targeted lookups; bulk FTP for corpus-scale use.
+
+    '
+  caveats: 'Includes obsolete, redundant-source, and low-quality sequences by design (archive, not a curated
+    KB) — heavy cleaning/clustering needed before training. Very large downloads. Deduplicate against
+    UniRef/UniProtKB.
+
+    '
 - id: uniprot
   name: UniProt / UniProtKB (Universal Protein Knowledgebase)
   category: reference
@@ -1782,6 +2311,109 @@
   caveats: 'CC BY 4.0 (ignore stale "NoDerivs" claims on third-party pages). TrEMBL is unreviewed — prefer
     Swiss-Prot + canonical for a clean self set. Canine proteome is less deeply curated than human; many
     entries are TrEMBL-level.
+
+    '
+- id: uniref
+  name: UniRef (UniProt Reference Clusters — UniRef100/90/50)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Non-redundant clustered views of UniProtKB (plus selected UniParc records). UniRef100
+    merges identical sequences and sub-fragments; UniRef90 and UniRef50 cluster at 90% and 50% sequence
+    identity respectively, each represented by a single seed sequence. UniRef50/90 are the de facto pretraining
+    corpora for protein language models (ESM-1b/ESM-2 sample evenly across UniRef50 clusters; ProtTrans
+    used UniRef100/UniRef50), because clustering removes the massive redundancy of raw UniProtKB while
+    preserving sequence diversity.
+
+    '
+  scale: UniRef90 ~190M clusters; UniRef50 ~60M clusters (release-dependent); UniRef100 >400M entries
+  size_bytes: 116000000000
+  modalities:
+  - protein-sequence
+  - sequence-clusters
+  formats:
+  - fasta
+  - xml
+  landing_url: https://www.uniprot.org/help/uniref
+  download_url: https://ftp.uniprot.org/pub/databases/uniprot/uniref/
+  api: https://rest.uniprot.org/uniref/
+  license: CC BY 4.0
+  license_url: https://www.uniprot.org/help/license
+  access: open
+  provenance:
+    maintainer: UniProt Consortium (EMBL-EBI, SIB, PIR)
+    key_refs:
+    - 10.1093/bioinformatics/btu739
+    - 10.1093/nar/gkae1010
+  last_updated: 2025 (UniProt release cadence ~8x/yr)
+  relevance:
+    programs:
+    - design
+    why: 'Primary pretraining corpus for protein language models underpinning representation learning
+      and sequence-based design. UniRef50/90 give diversity-balanced sequence sets without the redundancy
+      of raw UniProtKB.
+
+      '
+  agent_access: 'Open FTP bulk download (FASTA + XML) of full UniRef100/90/50 flat files, no auth. REST
+    API at rest.uniprot.org/uniref with pagination; bulk download strongly preferred over API for corpora.
+
+    '
+  caveats: 'Overlaps the combined ''uniprot'' entries (domain-5, domain-9) which bundle UniRef mention;
+    this entry is the dedicated pretraining-corpus view. Cluster counts change every release — verify
+    against release notes. CC BY requires attribution; a few legacy mirrors still cite old CC BY-NC terms
+    (superseded). Deduplicate against UniParc/UniProtKB if combining corpora.
+
+    '
+- id: uniref30-uniclust
+  name: UniRef30 / Uniclust30 (clustered UniProtKB for HH-suite)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Deeply annotated clustered UniProtKB sequence/alignment database (clustered ~at 30% identity)
+    distributed as HH-suite/HHblits profile databases. The standard UniProtKB MSA input for AlphaFold2/OpenFold
+    pipelines (alongside BFD), and a compact clustered sequence source for PLM pretraining and profile-based
+    representation learning.
+
+    '
+  scale: Tens of millions of clusters; HH-suite archive 2023_01 ~64 GB (2020_06 ~46 GB)
+  size_bytes: 64000000000
+  modalities:
+  - protein-sequence
+  - msa
+  - hmm
+  - sequence-clusters
+  formats:
+  - a3m
+  - hhm
+  - ffindex
+  landing_url: https://uniclust.mmseqs.com/
+  download_url: https://wwwuser.gwdg.de/~compbiol/uniclust/
+  license: CC BY-SA 4.0
+  license_url: https://uniclust.mmseqs.com/
+  access: open
+  provenance:
+    maintainer: Söding Lab / Steinegger (GWDG / MMseqs2 ecosystem)
+    key_refs:
+    - 10.1093/nar/gkw1081
+  last_updated: '2023_01 (periodic releases: 2016_03 … 2020_06 … 2023_01)'
+  relevance:
+    programs:
+    - design
+    why: 'Standard clustered-UniProt MSA database for structure-prediction MSA generation and a clean,
+      diversity-reduced corpus for profile/representation learning.
+
+      '
+  agent_access: 'HTTP(S) bulk download of versioned HH-suite archives from GWDG mirror; no auth. Companion
+    uniref_mapping.tsv.gz provided.
+
+    '
+  caveats: 'CC BY-SA (ShareAlike) — derivative databases must carry the same license; note this differs
+    from UniProt''s CC BY. HH-suite software is GPLv3 (separate). Overlaps UniRef conceptually but packaged
+    for HHblits profiles.
 
     '
 - id: uu-cfam-gsd

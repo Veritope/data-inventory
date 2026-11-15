@@ -544,10 +544,11 @@
       target.
 
       '
-  caveats: 'NOT YET VERIFIED: data-availability statement says data are "in online repositories" with
-    the accession in the article/Supplementary material; the repository ID (this group typically uses
-    DDBJ/DRA) was not in the main text. Retrieve the exact accession from the supplementary files before
-    download. Catalogued so the dataset is tracked.
+  caveats: 'NO PUBLIC DEPOSIT LOCATED (rechecked 2026-11-15). The data-availability statement says the
+    data are "in online repositories" with accessions in the article or supplement, but the full text
+    names no repository or accession. Searches of NCBI GEO/BioProject, ENA (which mirrors DDBJ PRJDB)
+    and the DDBJ Search API (BioProject, GEA and SRA; terms nasal, S100A2, canine organoid) returned no
+    matching study. Treat as unavailable until the supplementary files or the authors supply an ID.
 
     '
 - id: nci-neoantigen-reactive-tcells
@@ -936,6 +937,8 @@
   accessions:
   - GSE306810
   - GSE306811
+  - PRJNA1312371
+  - PRJNA1312370
   last_updated: '2026'
   relevance:
     programs:

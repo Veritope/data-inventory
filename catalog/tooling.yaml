@@ -517,6 +517,53 @@
     archives (tens of GB) need resumable download handling. Self-deposit, so curation varies.
 
     '
+- id: flip
+  name: FLIP (Fitness Landscape Inference for Proteins)
+  category: tooling
+  species:
+  - human
+  - other
+  description: 'A benchmark of protein fitness-landscape tasks with predefined train/test splits designed
+    to stress-test representation learning for protein engineering. Core landscapes include AAV capsids,
+    GB1, and thermostability (Meltome); FLIP2 (2026) adds seven further enzyme/photoprotein/PPI landscapes.
+
+    '
+  scale: 'FLIP: 3 core landscapes, multiple splits; FLIP2: 7 datasets, 16 predefined splits'
+  modalities:
+  - fitness-assay
+  - benchmark-splits
+  - protein-sequence
+  formats:
+  - csv
+  - fasta
+  - zip
+  landing_url: https://benchmark.protein.properties/
+  download_url: https://data.bioembeddings.com/public/FLIP/
+  api: https://github.com/J-SNACKKB/FLIP
+  license: AFL-3.0 (code); data release stated CC BY 4.0 (FLIP2) — verify per dataset
+  license_url: https://github.com/J-SNACKKB/FLIP/blob/main/LICENSE
+  access: open
+  provenance:
+    maintainer: Rost Lab / bioembeddings collaborators — Dallago et al.
+    key_refs:
+    - 10.1101/2021.11.09.467890
+  last_updated: FLIP 2021; FLIP2 2026 (Zenodo 10.5281/zenodo.18433203)
+  relevance:
+    programs:
+    - design
+    why: 'Benchmark for protein-engineering fitness prediction with realistic low-N / extrapolation splits
+      — tests whether PLM representations generalize for design.
+
+      '
+  agent_access: 'Split files + FASTA via benchmark site and bioembeddings mirror; Zenodo archive for FLIP2.
+    GitHub for code. No auth.
+
+    '
+  caveats: 'Code is AFL-3.0; data license is stated as CC BY 4.0 for FLIP2 but not uniformly named for
+    the original FLIP data — confirm per dataset/source. Underlying assays come from primary papers with
+    their own terms.
+
+    '
 - id: geo-ncbi
   name: NCBI Gene Expression Omnibus (GEO) + ArrayExpress/BioStudies
   category: tooling
@@ -771,6 +818,57 @@
     every original submitted file (use Cloud Data Delivery Service).
 
     '
+- id: proteingym
+  name: ProteinGym (fitness/mutation-effect benchmark)
+  category: tooling
+  species:
+  - human
+  - other
+  description: 'A large-scale benchmark suite for protein fitness prediction and design, aggregating deep
+    mutational scanning (DMS) assays plus clinical-variant datasets, with standardized splits and a public
+    leaderboard. The reference benchmark for scoring protein language models / variant-effect predictors
+    on mutation effects.
+
+    '
+  scale: 217 substitution DMS assays (~2.4-2.7M variants); 74 indel DMS assays (~300k); 2,525 clinical
+    proteins
+  modalities:
+  - deep-mutational-scanning
+  - variant-effect
+  - msa
+  - benchmark-splits
+  formats:
+  - csv
+  - zip
+  - api
+  landing_url: https://proteingym.org/
+  download_url: https://zenodo.org/records/13936340
+  api: https://github.com/OATML-Markslab/ProteinGym
+  license: MIT
+  license_url: https://github.com/OATML-Markslab/ProteinGym/blob/main/LICENSE
+  access: open
+  provenance:
+    maintainer: OATML (Oxford) / Marks Lab (Harvard) — Notin et al.
+    key_refs:
+    - 10.1101/2023.12.07.570727
+    - 10.5281/zenodo.13936340
+  last_updated: 2024 (Zenodo 13936340; ongoing)
+  relevance:
+    programs:
+    - design
+    why: 'Standard evaluation harness for mutation-effect / fitness prediction — directly measures whether
+      learned representations transfer to design-relevant variant scoring.
+
+      '
+  agent_access: 'Zenodo zip bulk download + GitHub repo (code, splits, baselines). MIT license is permissive
+    for ML use. No auth.
+
+    '
+  caveats: 'Variant/assay counts differ slightly across preprint vs repo (releases evolve) — cite the
+    release used. Underlying DMS assays originate from many primary papers; MIT covers the ProteinGym
+    packaging, not necessarily every upstream dataset''s original terms.
+
+    '
 - id: proteinmpnn-rfdiffusion
   name: ProteinMPNN / RFdiffusion (design models, weights & training data)
   category: tooling
@@ -912,6 +1010,54 @@
     '
   caveats: 'Repo license not confirmed — verify before reuse. Underlying pairs drawn from public DBs (inherits
     their terms). MHC-I 9-mer scope only; human only, no dog.
+
+    '
+- id: tape
+  name: TAPE (Tasks Assessing Protein Embeddings)
+  category: tooling
+  species:
+  - human
+  - other
+  description: 'An early standardized benchmark + pretraining-corpus bundle for protein transfer learning:
+    a Pfam-derived pretraining set (~31M protein domains) plus five downstream supervised tasks (secondary
+    structure, contact prediction, remote homology, fluorescence, stability). Widely used as a reference
+    point for PLM representation learning.
+
+    '
+  scale: 'Pretraining: ~31M Pfam domains (~7 GB compressed / ~19 GB uncompressed, PyTorch release)'
+  modalities:
+  - protein-sequence
+  - benchmark-splits
+  - functional-assay
+  formats:
+  - lmdb
+  - tfrecord
+  - fasta
+  landing_url: https://github.com/songlab-cal/tape
+  download_url: https://github.com/songlab-cal/tape
+  api: https://pypi.org/project/tape-proteins/
+  license: BSD-3-Clause
+  license_url: https://github.com/songlab-cal/tape/blob/master/LICENSE
+  access: open
+  provenance:
+    maintainer: Song Lab (UC Berkeley) — Rao et al.
+    key_refs:
+    - 10.48550/arXiv.1906.08230
+  last_updated: 2019 (PyTorch repo maintained; dataset frozen)
+  relevance:
+    programs:
+    - design
+    why: 'Foundational benchmark + Pfam pretraining corpus for evaluating protein representation learning;
+      a baseline reference for design-relevant transfer.
+
+      '
+  agent_access: 'download_data.sh fetches Pfam pretraining set + task data from AWS (LMDB). pip package
+    tape-proteins. No auth.
+
+    '
+  caveats: 'License differs by version: current PyTorch repo BSD-3-Clause; deprecated TF repo MIT; a PyPI
+    listing shows a likely-typo ''BSD-1-Clause'' — check the LICENSE in the exact repo used. Pfam-derived
+    corpus inherits Pfam terms (CC0 for Pfam-produced data).
 
     '
 - id: ucsc-xena

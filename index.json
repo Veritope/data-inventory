@@ -164,6 +164,69 @@
     "commercial_use": null
   },
   {
+    "id": "apollo-network",
+    "name": "APOLLO Network (Applied Proteogenomics OrganizationaL Learning and Outcomes)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "DoD/VA/NCI proteogenomic program profiling DNA, RNA and protein from thousands of annotated tumor specimens (lung, ovary, endometrium, prostate, breast in phase 1). A proteogenomics resource beyond core CPTAC, distributed across NCI's Cancer Research Data Commons: genomics in GDC, proteomics in the Proteomic Data Commons, images in TCIA.\n",
+    "scale": "~8,000 annotated specimens targeted; first studies lung-focused",
+    "modalities": [
+      "wxs",
+      "wgs",
+      "rna-seq",
+      "proteomics",
+      "phosphoproteomics",
+      "clinical"
+    ],
+    "formats": [
+      "bam",
+      "vcf",
+      "maf",
+      "mzml",
+      "raw",
+      "tsv",
+      "api"
+    ],
+    "landing_url": "https://proteomics.cancer.gov/programs/apollo-network",
+    "download_url": "https://proteomic.datacommons.cancer.gov/pdc/",
+    "api": "https://proteomic.datacommons.cancer.gov/pdc/",
+    "license": "NIH GDS Policy (dbGaP phs003488 for controlled genomics); PDC/ProteomeXchange open proteomics",
+    "license_url": "https://datascience.cancer.gov/collaborations/applied-proteogenomics-organizational-learning-and-outcomes-apollo-network",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "NCI + U.S. Department of Defense + Department of Veterans Affairs",
+      "key_refs": [
+        "10.1158/2767-9764.CRC-24-0310"
+      ],
+      "accessions": [
+        "phs003488",
+        "PXD045417",
+        "PXD045710"
+      ]
+    },
+    "last_updated": "2023-2024 (initial public studies; more in queue)",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Matched proteomics + genomics on large tumor cohorts lets antigen pipelines test whether candidate neoantigens are actually translated (protein-level evidence), not just encoded.\n"
+    },
+    "agent_access": "Proteomics (mzML/raw + processed) openly downloadable from PDC and ProteomeXchange via API/FTP, no auth. Controlled genomics need a dbGaP DAR (phs003488) + GDC token. Imaging via TCIA.\n",
+    "caveats": "Not all APOLLO studies are public yet (some \"in queue\"); release status differs between the PDC FAQ (describes PDC as open) and the program page (genomics permissioned) — verify per study. Genomics is controlled; proteomics raw files are large.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://proteomic.datacommons.cancer.gov/pdc/",
+    "commercial_use": null
+  },
+  {
     "id": "braun-2020-rcc-checkmate",
     "name": "Braun et al. 2020 — advanced RCC nivolumab (CheckMate 009/010/025)",
     "category": "cancer-genomics",
@@ -316,6 +379,233 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1222422",
+    "commercial_use": null
+  },
+  {
+    "id": "cbtn-pbta",
+    "name": "Pediatric Brain Tumor Atlas (PBTA) — Children's Brain Tumor Network / PNOC",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Multi-institution pediatric brain-tumor atlas assembled by the Children's Brain Tumor Network (CBTN) and the Pacific Pediatric Neuro-Oncology Consortium (PNOC): >1,000 tumors across many CNS histologies with WGS, WXS, RNA-seq, methylation and matched clinical/ imaging/specimen data, harmonized in the Kids First Data Resource Center. The raw-data source behind OpenPBTA and the proteogenomic pediatric-brain studies.\n",
+    "scale": ">1,000 tumors / ~940+ patients (OpenPBTA core); full CBTN release spans ~7,600 subjects",
+    "modalities": [
+      "wgs",
+      "wxs",
+      "rna-seq",
+      "methylation",
+      "mutation-calls",
+      "copy-number",
+      "imaging",
+      "clinical"
+    ],
+    "formats": [
+      "bam",
+      "cram",
+      "vcf",
+      "maf",
+      "tsv"
+    ],
+    "landing_url": "https://cbtn.org/pediatric-brain-tumor-atlas",
+    "download_url": "https://portal.kidsfirstdrc.org/",
+    "license": "NIH Genomic Data Sharing Policy (dbGaP phs002517); CBTN data-use terms",
+    "license_url": "https://kidsfirstdrc.org/help-center/accessing-controlled-data-via-dbgap/",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "Children's Brain Tumor Network (CBTN) + PNOC; hosted by Kids First DRC / CAVATICA",
+      "key_refs": [
+        "10.1016/j.xgen.2023.100340"
+      ],
+      "accessions": [
+        "phs002517"
+      ]
+    },
+    "last_updated": "rolling (CBTN/Kids First releases)",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Pediatric CNS tumors with paired germline and expression — low-mutation-burden settings that stress-test neoantigen pipelines and provide fusion/structural antigen candidates distinct from adult cohorts.\n"
+    },
+    "agent_access": "Open/registration metadata browsable on the Kids First Portal and PedcBioPortal; raw harmonized files need a Kids First account plus dbGaP approval (phs002517, eRA Commons ID). Specimen/raw requests route through CBTN. CAVATICA offers in-cloud analysis.\n",
+    "caveats": "Controlled under dbGaP DUA; pediatric consent sensitivity. Release versions move (phs002517.v4.p2 at time of writing) — pin the version. Raw data \"upon request to CBTN\" for some material.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://portal.kidsfirstdrc.org/",
+    "commercial_use": null
+  },
+  {
+    "id": "cgga",
+    "name": "Chinese Glioma Genome Atlas (CGGA)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Large functional-genomics resource for Chinese glioma patients: ~1,000 mRNA-seq samples (two batches), 286 WES samples, plus microarray, DNA-methylation and miRNA data, with clinical annotation. Openly downloadable processed matrices; raw FASTQ via a Chinese bioinformatics archive. An Asian, organ-specific CNS cohort complementary to TCGA-GBM/LGG.\n",
+    "scale": "~1,018 mRNA-seq, 286 WES, 301 microarray, 159 methylation, 198 miRNA samples",
+    "modalities": [
+      "rna-seq",
+      "wxs",
+      "microarray",
+      "methylation",
+      "mirna",
+      "clinical"
+    ],
+    "formats": [
+      "tsv",
+      "txt",
+      "fastq"
+    ],
+    "landing_url": "https://www.cgga.org.cn/",
+    "download_url": "https://www.cgga.org.cn/download.jsp",
+    "license": "unknown — portal states open download but no explicit license/SPDX or use terms",
+    "license_url": "https://www.cgga.org.cn/download.jsp",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Beijing Neurosurgical Institute / Chinese Glioma Cooperative Group",
+      "key_refs": [
+        "10.1016/j.gpb.2020.10.005"
+      ],
+      "accessions": [
+        "PRJCA001636"
+      ]
+    },
+    "last_updated": "2021 (portal rolling)",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Asian glioma expression + WES at scale — broadens the HLA/mutation diversity behind CNS antigen models and offers an independent validation set to TCGA glioma.\n"
+    },
+    "agent_access": "Processed clinical/expression/methylation/mutation tables are direct downloads from the CGGA portal (no auth, scriptable). Raw FASTQ via NGDC/BIGD (PRJCA001636) may need an application.\n",
+    "caveats": "LICENSE RED FLAG: no explicit license or data-use/redistribution/ML terms stated on the portal — treat redistribution and ML-training rights as unverified until confirmed. Sample counts vary across sources; verify against the current download page.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.cgga.org.cn/download.jsp",
+    "commercial_use": null
+  },
+  {
+    "id": "cnhpp-hcc",
+    "name": "CNHPP Early-stage Hepatocellular Carcinoma Proteomics (Jiang et al.)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Proteomic (and phosphoproteomic) characterization of early-stage HBV-related HCC from the Chinese Human Proteome Project, with matched transcriptome and clinical outcome; defines proteomic subtypes (e.g., S-III) linked to prognosis and identifies SOAT1 as a target. Organ-specific Asian cohort complementary to Gao et al.\n",
+    "scale": "~110 paired early-stage HCC tumors/normals (proteome)",
+    "modalities": [
+      "proteomics",
+      "phosphoproteomics",
+      "rna-seq",
+      "mutation-calls",
+      "clinical"
+    ],
+    "formats": [
+      "raw",
+      "mzml",
+      "tsv"
+    ],
+    "landing_url": "https://www.nature.com/articles/s41586-019-0987-8",
+    "download_url": "https://www.iprox.cn/",
+    "license": "custom — CNHPP liver data portal terms; summary-level genetics only, on application",
+    "license_url": "https://www.nature.com/articles/s41586-019-0987-8",
+    "access": "request",
+    "provenance": {
+      "maintainer": "Chinese Human Proteome Project (CNHPP)",
+      "key_refs": [
+        "10.1038/s41586-019-0987-8"
+      ]
+    },
+    "last_updated": "2019",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Early-stage HCC proteome with outcome — protein-level validation of antigen candidates in a stage and population underrepresented in TCGA.\n"
+    },
+    "agent_access": "Proteome/phosphoproteome and gene-expression data available via Supplementary Information and the CNHPP liver data portal; proteomics also on iProX/ProteomeXchange. No anonymous bulk genomics.\n",
+    "caveats": "LICENSE/ACCESS RED FLAG: the paper states individual genetic data cannot be uploaded/shared under Chinese human genetic resources rules — only summary-level genetics are shared, on application. Not redistributable at individual level.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.iprox.cn/",
+    "commercial_use": null
+  },
+  {
+    "id": "cptac-pediatric-braintumor",
+    "name": "CPTAC Pediatric Brain Tumor Proteogenomics (Petralia et al.)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Proteogenomic characterization of 218 pediatric brain tumors across seven histologies (including low- and high-grade glioma, ependymoma, medulloblastoma, ATRT, ganglioglioma, craniopharyngioma, germinoma). Integrates genome, transcriptome, proteome and phosphoproteome. A non-core (pilot) CPTAC proteogenomics study in a pediatric setting, with an interactive ProTrack portal.\n",
+    "scale": "218 pediatric brain tumors, 7 histologies",
+    "modalities": [
+      "wgs",
+      "wxs",
+      "rna-seq",
+      "proteomics",
+      "phosphoproteomics",
+      "mutation-calls"
+    ],
+    "formats": [
+      "raw",
+      "mzml",
+      "tsv",
+      "maf",
+      "api"
+    ],
+    "landing_url": "https://proteomic.datacommons.cancer.gov/pdc/study/PDC000176",
+    "download_url": "https://proteomic.datacommons.cancer.gov/pdc/",
+    "api": "https://proteomic.datacommons.cancer.gov/pdc/",
+    "license": "PDC open-access proteomics; underlying genomic data via Kids First DRC (dbGaP)",
+    "license_url": "https://proteomic.datacommons.cancer.gov/pdc/",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "CPTAC / Children's Brain Tumor Network; analysis by Wang lab (Mount Sinai) et al.",
+      "key_refs": [
+        "10.1016/j.cell.2020.10.044"
+      ],
+      "accessions": [
+        "PDC000176"
+      ]
+    },
+    "last_updated": "2020 (PDC release V1.0.14, Sep 2020)",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Pediatric-brain proteome + phosphoproteome anchored to genomics — protein-level confirmation of expressed antigens in a tumor class with few mutations, where RNA evidence alone is weak.\n"
+    },
+    "agent_access": "Proteomics raw + processed openly downloadable from PDC (API/FTP). Processed proteogenomic tables also queryable/downloadable from the ProTrack web tool (pbt.cptac-data-view.org). Genomic reads route through Kids First DRC (controlled, dbGaP).\n",
+    "caveats": "Pilot-study scope. Genomic layer is controlled (Kids First / dbGaP); only proteomics are openly downloadable. Confirm current PDC study IDs for proteome vs phosphoproteome.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://proteomic.datacommons.cancer.gov/pdc/",
     "commercial_use": null
   },
   {
@@ -476,6 +766,66 @@
     ],
     "ingest_endpoint": "https://registry.opendata.aws/depmap-omics-ccle/",
     "commercial_use": true
+  },
+  {
+    "id": "eogc-proteogenomics",
+    "name": "Early-Onset Gastric Cancer Proteogenomics (Mun et al., Korean cohort)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Proteogenomic characterization of 80 diffuse-type early-onset gastric cancers (patients ≤45 yr) from a Korean cohort: genome, transcriptome, proteome, phosphoproteome and glycoproteome, defining molecular subtypes with therapeutic implications. An organ- and population-specific proteogenomics resource beyond core CPTAC.\n",
+    "scale": "80 tumor/normal pairs (early-onset diffuse gastric cancer)",
+    "modalities": [
+      "wes",
+      "rna-seq",
+      "proteomics",
+      "phosphoproteomics",
+      "glycoproteomics",
+      "mutation-calls"
+    ],
+    "formats": [
+      "raw",
+      "mzml",
+      "tsv"
+    ],
+    "landing_url": "https://www.cell.com/cancer-cell/fulltext/S1535-6108(18)30574-9",
+    "download_url": "https://proteomic.datacommons.cancer.gov/pdc/study/PDC000214",
+    "api": "https://proteomic.datacommons.cancer.gov/pdc/",
+    "license": "PDC open-access proteomics; expression in GEO (GSE122401); mutations in Korean Variant Archive (KOVA)",
+    "license_url": "https://proteomic.datacommons.cancer.gov/pdc/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Korea University / CPTAC-associated (Hwang, Lee, Paik et al.)",
+      "key_refs": [
+        "10.1016/j.ccell.2018.12.003"
+      ],
+      "accessions": [
+        "PDC000214",
+        "PDC000215",
+        "PDC000216",
+        "GSE122401"
+      ]
+    },
+    "last_updated": "2019",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Diffuse gastric cancer in a young Asian population with multi-layer proteomics — protein- and glycoprotein-level evidence for candidate antigens in a tumor type and demographic underrepresented in Western atlases.\n"
+    },
+    "agent_access": "Proteome/phospho/glyco raw + processed openly downloadable from PDC (API/FTP). Expression via GEO (GSE122401, verify). Mutation data via the Korean Variant Archive (KOVA).\n",
+    "caveats": "Confirm GSE122401 and the exact KOVA deposition before relying on the genomic layer. Proteomics are open; genomic/variant terms differ by repository.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://proteomic.datacommons.cancer.gov/pdc/",
+    "commercial_use": null
   },
   {
     "id": "equine-sarcoid-methylome",
@@ -763,6 +1113,60 @@
       3
     ],
     "ingest_endpoint": "https://www.nature.com/articles/s41698-023-00346-3",
+    "commercial_use": null
+  },
+  {
+    "id": "gbm-neoadjuvant-pd1",
+    "name": "Recurrent Glioblastoma Neoadjuvant anti-PD-1 trial (Cloughesy et al.)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Randomized trial of neoadjuvant vs adjuvant pembrolizumab in recurrent glioblastoma with tumor RNA-seq and TCR sequencing; neoadjuvant anti-PD-1 induced intratumoral interferon signaling, clonal T-cell expansion and a survival benefit. An immunotherapy-outcome cohort in GBM with openly deposited expression data (beyond the usual melanoma/RCC/ urothelial ICB cohorts).\n",
+    "scale": "~35 patients (neoadjuvant + adjuvant arms); tumor RNA-seq + TCR-seq",
+    "modalities": [
+      "rna-seq",
+      "tcr-seq",
+      "clinical",
+      "treatment-response"
+    ],
+    "formats": [
+      "tsv",
+      "fastq",
+      "geo-supplementary"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE121810",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE121810",
+    "license": "NCBI GEO open-access terms",
+    "license_url": "https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html",
+    "access": "open",
+    "provenance": {
+      "maintainer": "UCLA (Cloughesy/Prins labs) and multi-institution consortium",
+      "key_refs": [
+        "10.1038/s41591-018-0337-7"
+      ],
+      "accessions": [
+        "GSE121810"
+      ]
+    },
+    "last_updated": "2019",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "Paired expression + TCR with ICB response in GBM — directly links the presented-antigen/ T-cell axis to clinical benefit in a cold tumor, a hard test case for recognition models.\n"
+    },
+    "agent_access": "GEO series GSE121810 is openly downloadable (supplementary tables; SRA-linked reads), no auth. Some data \"available from the corresponding author on reasonable request.\"\n",
+    "caveats": "Small cohort. GEO holds the RNA-seq; full clinical/remaining data may require author request. Confirm whether SRA raw reads (controlled-of-origin? no — open) suit your need.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE121810",
     "commercial_use": null
   },
   {
@@ -1621,6 +2025,114 @@
     "commercial_use": null
   },
   {
+    "id": "hartwig-metastatic",
+    "name": "Hartwig Medical Foundation metastatic cancer WGS database",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "One of the largest uniformly-processed metastatic pan-cancer whole-genome resources: tumor WGS with matched germline and (for many) RNA-seq, plus structured clinical and treatment-response data, from patients across the Netherlands (CPCT/DRUP/WIDE). Captures advanced/treated disease and structural variation absent from primary-tumor atlases.\n",
+    "scale": ">5,000 metastatic tumor WGS (growing); 360+ approved data requests served",
+    "modalities": [
+      "wgs",
+      "rna-seq",
+      "mutation-calls",
+      "copy-number",
+      "structural-variants",
+      "clinical",
+      "treatment-response"
+    ],
+    "formats": [
+      "vcf",
+      "tsv",
+      "bam",
+      "gcp-bucket"
+    ],
+    "landing_url": "https://www.hartwigmedicalfoundation.nl/en/data/",
+    "download_url": "https://www.hartwigmedicalfoundation.nl/en/data/data-access-request/",
+    "api": "https://hartwigmedical.github.io/documentation/data-access-request-guide.html",
+    "license": "custom — Hartwig license agreement + data transfer agreement (academic use)",
+    "license_url": "https://hartwigmedical.github.io/documentation/data-access-request-guide.html",
+    "access": "request",
+    "provenance": {
+      "maintainer": "Hartwig Medical Foundation (Netherlands)",
+      "key_refs": [
+        "10.1038/s41586-019-1689-y"
+      ]
+    },
+    "last_updated": "rolling",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Metastatic WGS + RNA-seq + treatment outcome at scale — the setting where therapy- resistant, expressed neoantigens matter, and where structural-variant antigens are enriched relative to exome cohorts.\n"
+    },
+    "agent_access": "No open download: email dataaccess@hartwigmedicalfoundation.nl, submit an online request on behalf of an institution, sign the license/DTA; data are delivered to an authorized GCP account with time-limited access. An agent can fetch from GCP only after approval.\n",
+    "caveats": "LICENSE RED FLAG: bespoke license + DTA, institution-signed, time-limited; \"free for academic use\" means no fee, not unrestricted — redistribution and likely commercial/ML terms are constrained. Board review required.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://hartwigmedical.github.io/documentation/data-access-request-guide.html",
+    "commercial_use": false
+  },
+  {
+    "id": "hbv-hcc-proteogenomics",
+    "name": "HBV-related Hepatocellular Carcinoma Proteogenomics (Gao et al., Chinese cohort)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Integrated proteogenomic characterization of 159 paired tumor/non-tumor liver tissues from HBV-related HCC patients in a Chinese cohort (a CPTAC/ICPC partner study). Genome, transcriptome, proteome and phosphoproteome define metabolic subtypes and candidate therapeutic targets. Organ-specific, non-TCGA Asian proteogenomic resource.\n",
+    "scale": "159 HBV-related HCC patients (paired tumor/non-tumor)",
+    "modalities": [
+      "wes",
+      "rna-seq",
+      "proteomics",
+      "phosphoproteomics",
+      "mutation-calls"
+    ],
+    "formats": [
+      "raw",
+      "mzml",
+      "tsv"
+    ],
+    "landing_url": "https://www.cell.com/cell/fulltext/S0092-8674(19)31003-7",
+    "download_url": "https://www.biosino.org/node/",
+    "license": "custom — National Omics Data Encyclopedia (NODE) terms for genomics; proteomics via iProX/ProteomeXchange",
+    "license_url": "https://www.biosino.org/node/",
+    "access": "request",
+    "provenance": {
+      "maintainer": "Fudan University / CPTAC-China (ICPC partner)",
+      "key_refs": [
+        "10.1016/j.cell.2019.08.052"
+      ]
+    },
+    "last_updated": "2019",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "HBV-driven HCC in an Asian cohort with matched proteome — expands antigen models beyond Western cohorts and gives protein-level evidence for virally-associated tumor antigens.\n"
+    },
+    "agent_access": "Proteomics mirrored to iProX/ProteomeXchange (openly fetchable). Genomic data hosted in NODE (biosino.org) under application/registration — not a simple anonymous bulk download.\n",
+    "caveats": "LICENSE/ACCESS RED FLAG: individual-level genetic data are subject to China's Human Genetic Resources regulations — genomics are application-gated via NODE, not openly redistributable. Confirm the exact NODE accession and terms before reuse.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.biosino.org/node/",
+    "commercial_use": null
+  },
+  {
     "id": "htan",
     "name": "Human Tumor Atlas Network (HTAN) Data Portal",
     "category": "cancer-genomics",
@@ -2174,6 +2686,59 @@
     "commercial_use": null
   },
   {
+    "id": "imbrave150-hcc-icb",
+    "name": "IMbrave150 / GO30140 HCC atezolizumab + bevacizumab transcriptomic cohort",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Tumor gene-expression data from the IMbrave150 phase 3 and GO30140 phase 1b trials of atezolizumab + bevacizumab in advanced hepatocellular carcinoma, used to derive and validate ICB-response signatures (e.g., ABRS, ISS). An HCC immunotherapy-outcome cohort beyond the melanoma/RCC/urothelial sets, with controlled-access expression data in EGA.\n",
+    "scale": "advanced HCC; expression from IMbrave150 (phase 3) + GO30140 (phase 1b) arms",
+    "modalities": [
+      "rna-seq",
+      "clinical",
+      "treatment-response"
+    ],
+    "formats": [
+      "tsv",
+      "fastq"
+    ],
+    "landing_url": "https://www.e-cmh.org/journal/view.php?doi=10.3350/cmh.2024.0333",
+    "download_url": "https://ega-archive.org/datasets/EGAD00001008128",
+    "license": "EGA controlled-access data access agreement (Roche/Genentech DAC)",
+    "license_url": "https://ega-archive.org/datasets/EGAD00001008128",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "Genentech/Roche; analyses by multiple academic groups",
+      "key_refs": [
+        "10.3350/cmh.2024.0333",
+        "10.1038/s41591-021-01537-w"
+      ],
+      "accessions": [
+        "EGAD00001008128"
+      ]
+    },
+    "last_updated": "2021-2024",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "HCC ICB-outcome expression at trial scale — links immune/antigen-presentation signatures to combination-immunotherapy benefit in a tumor type absent from the usual ICB cohorts.\n"
+    },
+    "agent_access": "Expression data require an EGA controlled-access DAR (EGAD00001008128) through the sponsor's data access committee + DTA; no open download. Derived signatures are published in the papers.\n",
+    "caveats": "Industry-sponsored, EGA-controlled (sponsor DAC approval, DTA). Access is to gene-expression data; raw clinical/genomic depth is limited. Confirm current dataset/accession on EGA.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://ega-archive.org/datasets/EGAD00001008128",
+    "commercial_use": null
+  },
+  {
     "id": "kids-first",
     "name": "Gabriella Miller Kids First Data Resource",
     "category": "cancer-genomics",
@@ -2228,6 +2793,63 @@
     ],
     "ingest_endpoint": "https://kidsfirstdrc.org/",
     "commercial_use": true
+  },
+  {
+    "id": "kidsfirst-drc",
+    "name": "Gabriella Miller Kids First Data Resource Center (DRC)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "NIH Common Fund cloud platform harmonizing genomic + clinical data across many pediatric cancer and structural-birth-defect cohorts (including CBTN/PBTA, pediatric solid and hematologic tumors). WGS/WXS/RNA-seq with matched germline across dozens of studies, with a registration tier and a dbGaP-gated controlled tier; integrates with CAVATICA for in-cloud analysis. The umbrella resource that aggregates many of the pediatric subprojects.\n",
+    "scale": ">110,000 data files; ~15 cancer + 22 birth-defect cohorts, >28,500 participants",
+    "modalities": [
+      "wgs",
+      "wxs",
+      "rna-seq",
+      "mutation-calls",
+      "germline",
+      "clinical"
+    ],
+    "formats": [
+      "bam",
+      "cram",
+      "vcf",
+      "gvcf",
+      "tsv",
+      "api"
+    ],
+    "landing_url": "https://kidsfirstdrc.org/",
+    "download_url": "https://portal.kidsfirstdrc.org/",
+    "api": "https://kidsfirstdrc.org/help-center/",
+    "license": "NIH Genomic Data Sharing Policy; per-study dbGaP DUAs",
+    "license_url": "https://kidsfirstdrc.org/help-center/accessing-controlled-data-via-dbgap/",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "NIH Common Fund; DRC led by Children's Hospital of Philadelphia (D3b) + partners",
+      "key_refs": [
+        "10.1093/jncics/pkad079"
+      ]
+    },
+    "last_updated": "rolling (new studies + data updates)",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "One access path to many pediatric tumor genomes with germline — lets antigen pipelines span histologies and calibrate against pediatric HLA/mutation backgrounds rather than adult-only data.\n"
+    },
+    "agent_access": "Portal browsing + API with a free account for registration-tier files; controlled files require dbGaP approval (eRA Commons ID) per study (phs accessions), then detected by the portal. CAVATICA for in-cloud compute.\n",
+    "caveats": "Controlled tier is per-study dbGaP (not one blanket DUA). Pediatric consent sensitivity. File/participant counts are point-in-time — verify on the portal.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://kidsfirstdrc.org/help-center/",
+    "commercial_use": null
   },
   {
     "id": "liu-2019-melanoma-pd1",
@@ -2434,21 +3056,22 @@
   },
   {
     "id": "mct-lcm-rnaseq-2026",
-    "name": "Canine MCT Laser-Capture-Microdissection RNA-seq (Sci Rep 2026)",
+    "name": "GSE306319 / PRJNA1310467 — Canine MCT Laser-Capture-Microdissection RNA-seq (Sci Rep 2026)",
     "category": "cancer-genomics",
     "species": [
       "dog"
     ],
-    "description": "RNA sequencing of neoplastic mast cells isolated by laser-capture microdissection from FFPE biopsies of 32 canine cutaneous mast cell tumours across grades, reporting grade-associated molecular alterations with reduced stromal contamination.\n",
-    "scale": "32 canine cutaneous MCTs (LCM RNA-seq)",
+    "description": "RNA sequencing of neoplastic mast cells isolated by laser-capture microdissection from FFPE biopsies of 32 canine cutaneous mast cell tumours across grades, reporting grade-associated molecular alterations with reduced stromal contamination. GEO series GSE306319 (BioProject PRJNA1310467) provides processed RDS/TXT supplementary files.\n",
+    "scale": "32 canine cutaneous MCTs (LCM RNA-seq); GEO lists 1 sample record",
     "modalities": [
       "bulk-rna-seq"
     ],
     "formats": [
-      "fastq"
+      "rds",
+      "txt"
     ],
-    "landing_url": "https://www.nature.com/articles/s41598-026-66413-4",
-    "download_url": "https://www.nature.com/articles/s41598-026-66413-4",
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306319",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306319",
     "license": "unknown",
     "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
     "access": "open",
@@ -2458,16 +3081,19 @@
         "10.1038/s41598-026-66413-4"
       ]
     },
-    "accessions": [],
-    "last_updated": "2026",
+    "accessions": [
+      "GSE306319",
+      "PRJNA1310467"
+    ],
+    "last_updated": "2026-08",
     "relevance": {
       "programs": [
         "recognition",
         "comparative"
       ],
-      "why": "Purest available primary-MCT expression signal (tumour cells only), ideal for MCT-specific marker and antigen discovery once the deposit is located.\n"
+      "why": "Cleanest primary-MCT expression signal available (tumour cells only), suited to MCT-specific marker and antigen discovery.\n"
     },
-    "caveats": "NOT YET VERIFIED: the Nature article page is access-gated and the repository accession (likely GEO/SRA) was not surfaced in its visible data-availability text — retrieve the exact accession from the full-text Data Availability section before use. Catalogued here so the dataset is tracked; mark access unconfirmed until the ID resolves.\n",
+    "caveats": "Accession resolved in pass 14b via GEO search (title matches the paper). Raw reads are NOT public: on 2026-11-15, NCBI SRA had 0 experiments and ENA had 0 runs under PRJNA1310467, and GEO shows a single sample record carrying processed RDS/TXT files. Expect a count/expression object, not FASTQ, and confirm it covers all 32 tumours.\n",
     "agent_automatable": true,
     "open_access": true,
     "feeds_stages": [
@@ -2475,7 +3101,62 @@
       2,
       3
     ],
-    "ingest_endpoint": "https://www.nature.com/articles/s41598-026-66413-4",
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306319",
+    "commercial_use": null
+  },
+  {
+    "id": "met500",
+    "name": "MET500 metastatic cancer cohort (Robinson et al.)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Integrative clinical genomics of 500 adult patients with metastatic solid tumors of ~30 types: whole-exome plus whole-transcriptome sequencing across diverse metastatic sites, with somatic mutation and CNV calls. An early, widely reused metastatic pan-cancer reference distinct from primary-tumor TCGA.\n",
+    "scale": "500 metastatic tumors, ~30 cancer types (WXS + RNA-seq)",
+    "modalities": [
+      "wxs",
+      "rna-seq",
+      "mutation-calls",
+      "copy-number",
+      "clinical"
+    ],
+    "formats": [
+      "bam",
+      "vcf",
+      "tsv"
+    ],
+    "landing_url": "https://met500.path.med.umich.edu/",
+    "download_url": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000673.v2.p1",
+    "license": "NIH Genomic Data Sharing Policy (dbGaP phs000673)",
+    "license_url": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000673.v2.p1",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "Michigan Center for Translational Pathology (MCTP), University of Michigan",
+      "key_refs": [
+        "10.1038/nature23306"
+      ],
+      "accessions": [
+        "phs000673"
+      ]
+    },
+    "last_updated": "2017",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Metastatic WXS + RNA-seq across many tumor types — expands antigen-candidate discovery into advanced disease and provides a cross-site expression reference.\n"
+    },
+    "agent_access": "Somatic mutation/CNV summaries downloadable from the MET500 web portal; raw reads require a dbGaP DAR (phs000673.v2.p1) with institutional signing.\n",
+    "caveats": "Raw data controlled (dbGaP DUA). Mixed RNA-seq protocols (PolyA vs capture) require batch care. Older cohort (2017); GRCh37-era processing.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000673.v2.p1",
     "commercial_use": null
   },
   {
@@ -2575,6 +3256,67 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001493.v3.p1",
+    "commercial_use": null
+  },
+  {
+    "id": "mmrf-commpass",
+    "name": "MMRF CoMMpass (Relating Clinical Outcomes in MM to Personal Assessment of Genetic Profile)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Longitudinal multiple-myeloma cohort from the Multiple Myeloma Research Foundation: ~1,150 newly diagnosed patients followed over ≥8 years with serial sampling at diagnosis and relapse. Tumor/normal whole-exome, whole-genome and RNA-seq are paired with deep clinical annotation (treatment, response, survival). The flagship rare-cancer genomics resource not covered by TCGA, widely used for myeloma subtype and progression analysis.\n",
+    "scale": "~1,150 patients (995 cases with controlled seq in GDC MMRF-COMMPASS); serial timepoints",
+    "modalities": [
+      "wxs",
+      "wgs",
+      "rna-seq",
+      "mutation-calls",
+      "copy-number",
+      "clinical",
+      "longitudinal"
+    ],
+    "formats": [
+      "bam",
+      "vcf",
+      "maf",
+      "tsv",
+      "api"
+    ],
+    "landing_url": "https://themmrf.org/finding-a-cure/our-work/the-mmrf-commpass-study/",
+    "download_url": "https://portal.gdc.cancer.gov/projects/MMRF-COMMPASS",
+    "api": "https://api.gdc.cancer.gov/",
+    "license": "NIH Genomic Data Sharing Policy (dbGaP phs000748); MMRF Gateway registration terms for processed tier",
+    "license_url": "https://gdc.cancer.gov/about-gdc/contributed-genomic-data-cancer-research/foundation-medicine/multiple-myeloma-research-foundation-mmrf",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "Multiple Myeloma Research Foundation (MMRF); sequencing by TGen; served via NCI GDC",
+      "key_refs": [
+        "10.1038/s41588-024-01853-0"
+      ],
+      "accessions": [
+        "phs000748",
+        "MMRF-COMMPASS"
+      ]
+    },
+    "last_updated": "staged 6-monthly interim releases; public release 12 months after each interim",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Rare-cancer cohort with paired WGS/WXS/RNA-seq and longitudinal relapse sampling — a clean substrate for enumerating expressed somatic variants and watching how the antigen landscape shifts under therapy in a non-TCGA tumor type.\n"
+    },
+    "agent_access": "Open-tier derivatives and the controlled tier are both GDC API-addressable (gdc-client, manifests). Raw reads need an approved dbGaP DAR (phs000748) + GDC token. Processed/ clinical tables need a free MMRF Researcher Gateway account (research.themmrf.org); a newer MMRF Virtual Lab also hosts the data (terms unverified).\n",
+    "caveats": "Staged release embargo: data reach the public ~12 months after each interim release, with sponsors/sites getting earlier access — expect the newest timepoints to be withheld. Raw reads are controlled (dbGaP DUA, institutional signing). Gateway registration terms govern redistribution of the processed tier.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://api.gdc.cancer.gov/",
     "commercial_use": null
   },
   {
@@ -2683,6 +3425,113 @@
     ],
     "ingest_endpoint": "https://www.cbioportal.org/api",
     "commercial_use": null
+  },
+  {
+    "id": "nci-mesothelioma-clinomics",
+    "name": "NCI Mesothelioma Clinical Genomics / Clinomics cohort (Hmeljak/Thorsson et al.)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "NCI mesothelioma resource combining expression and clinical data for ~100 patients, including a subset (16) treated with anti-PD-1 therapy (pembrolizumab/nivolumab) and outcome. Served via the NCI Clinomics site with controlled-access raw data in dbGaP; an organ-specific rare-cancer cohort with ICB-treated patients.\n",
+    "scale": "~100 patients with expression; 16 anti-PD-1 treated",
+    "modalities": [
+      "rna-seq",
+      "mutation-calls",
+      "clinical",
+      "treatment-response"
+    ],
+    "formats": [
+      "tsv",
+      "bam",
+      "vcf"
+    ],
+    "landing_url": "https://clinomics.ccr.cancer.gov/",
+    "download_url": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002207",
+    "license": "NIH Genomic Data Sharing Policy (dbGaP phs002207)",
+    "license_url": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002207",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "National Cancer Institute (CCR)",
+      "key_refs": [
+        "10.1158/2159-8290.CD-18-0804"
+      ],
+      "accessions": [
+        "phs002207"
+      ]
+    },
+    "last_updated": "2021",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "Rare-cancer cohort with ICB-treated patients and expression — supports immunotherapy- response modeling in mesothelioma, complementing PrE0505.\n"
+    },
+    "agent_access": "Some expression/summary data via the NCI Clinomics portal; raw reads require dbGaP authorization (phs002207). Individual transcriptomic data for ICB-treated patients may be limited.\n",
+    "caveats": "Only 16 ICB-treated patients, and per-patient transcriptomic data for the trial subset were reported as not individually available — verify granularity before response modeling. Raw data dbGaP-controlled.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002207",
+    "commercial_use": null
+  },
+  {
+    "id": "openpbta",
+    "name": "Open Pediatric Brain Tumor Atlas (OpenPBTA) — open processed analysis layer",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Open, reproducible analysis of the PBTA: harmonized processed somatic mutations, fusions, copy-number, expression matrices and derived subtype calls for 1,074 tumors and 22 cell lines from 943 patients, released openly on GitHub/CAVATICA/PedcBioPortal with a download script. Successor project \"Open Pediatric Cancer (OpenPedCan)\" extends it across pediatric cancers. The open counterpart to the controlled PBTA raw data.\n",
+    "scale": "1,074 tumors + 22 cell lines, 943 patients (processed)",
+    "modalities": [
+      "mutation-calls",
+      "gene-fusions",
+      "copy-number",
+      "rna-seq-expression",
+      "subtype-calls"
+    ],
+    "formats": [
+      "tsv",
+      "rds",
+      "maf"
+    ],
+    "landing_url": "https://github.com/AlexsLemonade/OpenPBTA-analysis",
+    "download_url": "https://github.com/AlexsLemonade/OpenPBTA-analysis/blob/dev/download-data.sh",
+    "license": "code BSD-3-Clause; processed data under CC-BY-style release (CBTN) — confirm per file",
+    "license_url": "https://github.com/AlexsLemonade/OpenPBTA-analysis/blob/dev/LICENSE",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Alex's Lemonade Stand Foundation Childhood Cancer Data Lab + CBTN",
+      "key_refs": [
+        "10.1016/j.xgen.2023.100340",
+        "10.1101/2024.07.09.599086"
+      ]
+    },
+    "last_updated": "rolling data releases (OpenPedCan)",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Ready-to-use expressed-mutation, fusion and expression matrices for pediatric brain tumors — immediately usable for antigen-candidate enumeration without clearing a DUA, with the controlled raw tier available when read-level evidence is needed.\n"
+    },
+    "agent_access": "Fully scriptable: a single download-data.sh pulls the current release from S3; no auth. PedcBioPortal gives web/API access to processed calls.\n",
+    "caveats": "Processed-only; read-level validation still needs the controlled PBTA tier. Confirm the per-file data license (code is BSD-3; data release terms derive from CBTN) before redistribution or ML training. Pin the release tag for reproducibility.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://github.com/AlexsLemonade/OpenPBTA-analysis/blob/dev/download-data.sh",
+    "commercial_use": true
   },
   {
     "id": "opentargets",
@@ -2834,6 +3683,118 @@
       3
     ],
     "ingest_endpoint": "https://www.biorxiv.org/content/10.1101/2024.04.01.587600v1",
+    "commercial_use": null
+  },
+  {
+    "id": "pog570",
+    "name": "Personalized OncoGenomics POG570 (advanced/metastatic pan-cancer)",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "570 patients with advanced and metastatic cancers of many types, profiled at BC Cancer by tumor whole-genome and RNA sequencing with matched germline. A real-world metastatic cohort (not primary-tumor, unlike TCGA) that captures treatment-resistant disease and structural variation; a long-read subset was later added. Raw reads are in EGA; processed small-mutation calls and expression TPMs are openly downloadable from the GSC.\n",
+    "scale": "570 advanced/metastatic tumors (WGS + RNA-seq, matched normal)",
+    "modalities": [
+      "wgs",
+      "rna-seq",
+      "mutation-calls",
+      "copy-number",
+      "structural-variants",
+      "clinical"
+    ],
+    "formats": [
+      "bam",
+      "vcf",
+      "tsv"
+    ],
+    "landing_url": "https://www.personalizedoncogenomics.org/",
+    "download_url": "https://www.bcgsc.ca/downloads/POG570/",
+    "license": "custom — POG data-use guidelines/restrictions; processed tier terms per GSC download page",
+    "license_url": "https://www.bcgsc.ca/downloads/POG570/",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "Canada's Michael Smith Genome Sciences Centre, BC Cancer",
+      "key_refs": [
+        "10.1038/s43018-020-0050-6",
+        "10.1016/j.celrep.2021.110137"
+      ],
+      "accessions": [
+        "EGAS00001001159"
+      ]
+    },
+    "last_updated": "2020 (core); long-read subset 2024",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "design"
+      ],
+      "why": "Metastatic, heavily pretreated tumors with WGS + expression — useful for seeing which antigen-generating variants persist in advanced disease and for structural-variant- derived neoantigens that exome-only cohorts miss.\n"
+    },
+    "agent_access": "Processed small-mutation and expression files are a direct HTTPS download from the GSC (no auth, scriptable). Raw WGS/RNA-seq reads require an EGA controlled-access DAR (EGAS00001001159) negotiated with the POG data access committee.\n",
+    "caveats": "Raw reads are EGA-controlled under POG's own data-use restrictions (not a standard open license). Confirm redistribution/ML-training terms of the processed tier on the GSC page before reuse; the download page states no explicit SPDX license.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.bcgsc.ca/downloads/POG570/",
+    "commercial_use": null
+  },
+  {
+    "id": "pre0505-meso",
+    "name": "PrE0505 durvalumab + platinum-pemetrexed pleural mesothelioma trial",
+    "category": "cancer-genomics",
+    "species": [
+      "human"
+    ],
+    "description": "Phase 2 trial (NCT02899195) of first-line durvalumab (anti-PD-L1) plus chemotherapy in 55 patients with unresectable pleural mesothelioma, with germline/somatic whole-exome and immunologic analyses correlating mutation burden and HLA with survival. A rare-cancer ICB- outcome cohort beyond the usual melanoma/RCC/urothelial sets.\n",
+    "scale": "55 patients (germline evaluable 44, somatic 40)",
+    "modalities": [
+      "wxs",
+      "mutation-calls",
+      "hla-typing",
+      "clinical",
+      "treatment-response"
+    ],
+    "formats": [
+      "bam",
+      "vcf",
+      "tsv"
+    ],
+    "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8604731/",
+    "download_url": "https://ega-archive.org/studies/EGAS00001005426",
+    "license": "EGA controlled-access data access agreement",
+    "license_url": "https://ega-archive.org/studies/EGAS00001005426",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "PrECOG LLC / Johns Hopkins (Forde, Anagnostou et al.)",
+      "key_refs": [
+        "10.1038/s41591-021-01541-0"
+      ],
+      "accessions": [
+        "EGAS00001005426"
+      ]
+    },
+    "last_updated": "2021",
+    "relevance": {
+      "programs": [
+        "presentation",
+        "recognition"
+      ],
+      "why": "ICB-outcome mesothelioma with WXS + HLA — a low-TMB tumor where the mutation-to-response link is subtle, useful for calibrating immunogenicity models outside high-TMB cancers.\n"
+    },
+    "agent_access": "Figure source data are open with the paper; individual-level genomics require an EGA controlled-access DAR (EGAS00001005426) with a data access committee + DTA.\n",
+    "caveats": "Small single-arm cohort. Raw genomics EGA-controlled. A dbGaP id (phs000452) cited in the paper refers to re-analyzed prior data, not PrE0505's own deposit — do not conflate.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://ega-archive.org/studies/EGAS00001005426",
     "commercial_use": null
   },
   {
@@ -4664,50 +5625,58 @@
   },
   {
     "id": "stjude-cloud",
-    "name": "St. Jude Cloud (pediatric cancer genomics)",
+    "name": "St. Jude Cloud (Genomics Platform + PeCan knowledgebase)",
     "category": "cancer-genomics",
     "species": [
       "human"
     ],
-    "description": "Pediatric cancer genomic data-sharing ecosystem (PCGP, RTCG, Clinical Pilot and more) hosting paired tumor/normal WGS, WES and RNA-seq with clinical data, plus analysis apps. The largest public pediatric cancer genomics resource; raw sequence data are controlled behind a signed agreement and DACO-style committee.\n",
+    "description": "The largest pediatric-cancer genomic ecosystem: paired tumor/normal WGS, WXS and RNA-seq across pediatric cancers and long-term survivors, plus germline. Two front doors — the controlled-access Genomics Platform (request raw data, analyzed in-cloud without download) and the open PeCan knowledgebase of curated somatic variants from published pediatric genomes. ~1.25 PB total across open/registered/controlled tiers.\n",
     "scale": "~12,000 WGS, ~7,700 WES, ~2,200 RNA-seq samples (2020); ~12,000 total in portal",
+    "size_bytes": 1250000000000000,
     "modalities": [
       "wgs",
       "wxs",
       "rna-seq",
       "mutation-calls",
-      "structural-variants",
-      "clinical"
+      "copy-number",
+      "germline",
+      "clinical",
+      "structural-variants"
     ],
     "formats": [
       "bam",
       "cram",
       "vcf",
+      "maf",
       "tsv",
+      "api",
       "cloud-platform"
     ],
     "landing_url": "https://platform.stjude.cloud/",
     "download_url": "https://docs.stjude.cloud/genomics-platform/about-our-data/data-sets-and-data-access-units",
+    "api": "https://university.stjude.cloud/docs/genomics-platform/",
     "license": "St. Jude Cloud Data Access Agreement (committee-reviewed; no redistribution)",
     "license_url": "https://docs.stjude.cloud/genomics-platform/accessing-data/",
     "access": "controlled-access",
     "provenance": {
-      "maintainer": "St. Jude Children's Research Hospital (DNAnexus-hosted)",
+      "maintainer": "St. Jude Children's Research Hospital",
       "key_refs": [
         "10.1158/2159-8290.CD-20-1230"
       ]
     },
-    "last_updated": "2026 (rolling)",
+    "last_updated": "rolling; portal current",
     "relevance": {
       "programs": [
         "presentation",
-        "comparative",
-        "design"
+        "design",
+        "recognition",
+        "comparative"
       ],
-      "why": "Deep paired tumor/normal pediatric WGS+RNA — ideal for fusion- and SV-derived neoantigens and for validating that antigen pipelines hold in low-TMB childhood cancers.\n"
+      "why": "Deep pediatric tumor genomes with matched germline — a distinct mutational and HLA context from adult TCGA, important for not over-fitting antigen models to adult cancers and for pediatric-specific neoantigen candidates.\n"
     },
-    "agent_access": "Browse/metadata open; raw data require a signed Data Access Agreement reviewed by a data access committee, after which data are accessed inside the DNAnexus-based cloud platform (compute-to-data) rather than bulk-downloaded locally.\n",
-    "caveats": "Signed agreement + committee review; cloud-native analysis model. Portal and docs report slightly different sample totals — confirm current counts in the live Data Browser.\n",
+    "agent_access": "PeCan variant pages and some summary data are open to browse/export. Raw genomics are controlled: a one-time DAC request (DocuSign for US requesters), then data are \"vended\" into a private cloud workspace — analysis happens in-cloud rather than by bulk download, so a pure local-fetch agent cannot pull reads.\n",
+    "caveats": "In-cloud analysis model limits conventional bulk download of the controlled tier. DAA governs use; terms and data volumes change — verify at platform.stjude.cloud. Pediatric data carry heightened consent/redistribution sensitivity.\n",
+    "cross_listed": true,
     "agent_automatable": false,
     "open_access": false,
     "feeds_stages": [
@@ -4715,7 +5684,7 @@
       2,
       3
     ],
-    "ingest_endpoint": "https://docs.stjude.cloud/genomics-platform/about-our-data/data-sets-and-data-access-units",
+    "ingest_endpoint": "https://university.stjude.cloud/docs/genomics-platform/",
     "commercial_use": true
   },
   {
@@ -7489,7 +8458,7 @@
       ],
       "why": "Fills the nasal-carcinoma gap and adds a canine organoid model; S100A2 highlighted as a candidate target.\n"
     },
-    "caveats": "NOT YET VERIFIED: data-availability statement says data are \"in online repositories\" with the accession in the article/Supplementary material; the repository ID (this group typically uses DDBJ/DRA) was not in the main text. Retrieve the exact accession from the supplementary files before download. Catalogued so the dataset is tracked.\n",
+    "caveats": "NO PUBLIC DEPOSIT LOCATED (rechecked 2026-11-15). The data-availability statement says the data are \"in online repositories\" with accessions in the article or supplement, but the full text names no repository or accession. Searches of NCBI GEO/BioProject, ENA (which mirrors DDBJ PRJDB) and the DDBJ Search API (BioProject, GEA and SRA; terms nasal, S100A2, canine organoid) returned no matching study. Treat as unavailable until the supplementary files or the authors supply an ID.\n",
     "agent_automatable": true,
     "open_access": true,
     "feeds_stages": [
@@ -7931,7 +8900,9 @@
     },
     "accessions": [
       "GSE306810",
-      "GSE306811"
+      "GSE306811",
+      "PRJNA1312371",
+      "PRJNA1312370"
     ],
     "last_updated": "2026",
     "relevance": {
@@ -13697,6 +14668,56 @@
     "commercial_use": null
   },
   {
+    "id": "bfd",
+    "name": "Big Fantastic Database (BFD)",
+    "category": "reference",
+    "species": [
+      "other"
+    ],
+    "description": "One of the largest publicly available clustered protein-sequence databases, built for deep MSA generation in AlphaFold2. Contains 65,983,866 protein families as MSAs and profile HMMs covering ~2.2 billion sequences, clustered at 30% identity / 90% coverage from UniProt, Metaclust, the Soil Reference Catalog and the Marine Eukaryotic Reference Catalog (~2.5B input sequences).\n",
+    "scale": "65,983,866 families / clusters; ~2,204,359,010 clustered sequences (~2.5B input)",
+    "size_bytes": 291649557441,
+    "modalities": [
+      "protein-sequence",
+      "msa",
+      "hmm",
+      "sequence-clusters"
+    ],
+    "formats": [
+      "fasta",
+      "a3m",
+      "hhm"
+    ],
+    "landing_url": "https://bfd.mmseqs.com/",
+    "download_url": "https://bfd.mmseqs.com/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt.tar.gz",
+    "license": "CC BY 4.0",
+    "license_url": "https://bfd.mmseqs.com/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Steinegger / Mirdita / Söding (Söding Lab, MMseqs2 ecosystem); produced for AlphaFold",
+      "key_refs": [
+        "10.1038/s41586-021-03819-2",
+        "10.1038/s41467-018-04964-5"
+      ]
+    },
+    "last_updated": "2021 (frozen AlphaFold2 release build)",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Massive clustered metagenome-inclusive corpus for deep MSA construction and large-scale PLM pretraining; reaches far beyond UniProt into environmental sequence space relevant to novel-fold and representation learning.\n"
+    },
+    "agent_access": "Direct HTTP(S) bulk download (Google Cloud and GWDG mirrors); ~272 GiB tarball, aria2c recommended. No auth. Plan for very large disk/RAM footprint.\n",
+    "caveats": "Frozen 2021 build (not updated). Enormous download. Derived inputs include Metaclust, which is CC BY-NC-SA (see metaclust entry) — BFD itself is released CC BY 4.0, but confirm downstream terms if redistributing derivatives. Clusters with <3 sequences removed.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://bfd.mmseqs.com/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt.tar.gz",
+    "commercial_use": true
+  },
+  {
     "id": "cab-rep",
     "name": "cAb-Rep (Curated Antibody Repertoires)",
     "category": "reference",
@@ -13996,6 +15017,52 @@
       0
     ],
     "ingest_endpoint": "https://www.ebi.ac.uk/ols4/",
+    "commercial_use": true
+  },
+  {
+    "id": "colabfolddb",
+    "name": "ColabFoldDB",
+    "category": "reference",
+    "species": [
+      "other"
+    ],
+    "description": "A merged environmental + reference protein database built for fast MMseqs2-based MSA generation in ColabFold. Combines BFD/MGnify clusters with additional metagenomic protein catalogs (eukaryotic, phage, updated MetaClust), clustered at 30% identity / 90% coverage. Final database: 209,335,865 representative sequences and 738,695,580 members.\n",
+    "scale": "209,335,865 representatives; 738,695,580 members (~182M env clusters merged with BFD)",
+    "modalities": [
+      "protein-sequence",
+      "msa",
+      "sequence-clusters"
+    ],
+    "formats": [
+      "fasta",
+      "mmseqs2-db"
+    ],
+    "landing_url": "https://colabfold.mmseqs.com/",
+    "download_url": "https://colabfold.mmseqs.com/",
+    "license": "CC BY 4.0 (follows BFD/MGnify; verify component terms)",
+    "license_url": "https://colabfold.mmseqs.com/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Mirdita / Steinegger / Söding (ColabFold / MMseqs2)",
+      "key_refs": [
+        "10.1038/s41592-022-01488-1"
+      ]
+    },
+    "last_updated": "2023 (release 2302, ~103 GB; earlier 2103 ~75 GB)",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Ready-made large environmental corpus for MSA generation and as an alternative/augmenting pretraining corpus beyond UniRef; the practical database behind ColabFold MSAs.\n"
+    },
+    "agent_access": "HTTP(S) bulk download of MMseqs2-formatted database via setup_databases.sh. Searching it requires a machine with ~768 GB RAM; bulk download only for infra-heavy users.\n",
+    "caveats": "Aggregates multiple sources with differing provenance (MGnify, Metaclust-derived, phage/euk catalogs) — redistribution terms should be checked per component; Metaclust lineage carries NC-SA. Very large; impractical without large-RAM infrastructure.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://colabfold.mmseqs.com/",
     "commercial_use": true
   },
   {
@@ -14397,6 +15464,59 @@
     "commercial_use": null
   },
   {
+    "id": "eggnog",
+    "name": "eggNOG (evolutionary genealogy of genes: Non-supervised Orthologous Groups)",
+    "category": "reference",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "A hierarchical catalog of orthologous groups with functional and phylogenetic annotation, built on reference proteomes across all domains of life. eggNOG 6.0 covers 12,535 organisms (1,322 eukaryotes, 10,756 bacteria, 457 archaea) with >17M orthologous groups at 1,601 taxonomic levels. Supplies orthology-structured sequence/annotation sets and powers eggNOG-mapper functional annotation.\n",
+    "scale": "12,535 organisms; >17M orthologous groups (incl. 17,011,080 NOGs) at 1,601 tax levels",
+    "modalities": [
+      "protein-sequence",
+      "orthology",
+      "hmm",
+      "functional-annotation"
+    ],
+    "formats": [
+      "fasta",
+      "hmm",
+      "tsv"
+    ],
+    "landing_url": "http://eggnog6.embl.de/",
+    "download_url": "http://eggnog6.embl.de/download/",
+    "api": "http://eggnog5.embl.de/#/app/api",
+    "license": "unknown",
+    "license_url": "http://eggnog6.embl.de/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Bork Lab (EMBL) / Huerta-Cepas et al.",
+      "key_refs": [
+        "10.1093/nar/gkac1022",
+        "10.1093/nar/gky1085"
+      ]
+    },
+    "last_updated": "2022 (eggNOG 6.0)",
+    "relevance": {
+      "programs": [
+        "design",
+        "comparative"
+      ],
+      "why": "Orthology-grouped protein sequences and HMMs for building evolution-aware corpora, functional labels for representation-learning tasks, and comparative-genomics context.\n"
+    },
+    "agent_access": "Bulk download (per-level members, FASTA, HMMs) from eggNOG website; eggNOG-mapper tool separate. No auth.\n",
+    "caveats": "LICENSE UNVERIFIED — the 6.0 paper is CC BY 4.0 but no explicit data license is stated on the download page (eggNOG 2008 release used CC BY 3.0 for data). Do not assume terms; confirm on the download page before redistribution/ML use. Marked unknown per cataloguing rules.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "http://eggnog5.embl.de/#/app/api",
+    "commercial_use": null
+  },
+  {
     "id": "ensembl",
     "name": "Ensembl (genomes, gene models, comparative genomics)",
     "category": "reference",
@@ -14504,6 +15624,55 @@
     ],
     "ingest_endpoint": "https://www.gencodegenes.org/human/",
     "commercial_use": null
+  },
+  {
+    "id": "gtdb",
+    "name": "Genome Taxonomy Database (GTDB)",
+    "category": "reference",
+    "species": [
+      "other"
+    ],
+    "description": "A standardized, phylogenetically consistent taxonomy and reference genome set for bacteria and archaea, with representative genomes, aligned marker genes, and full genome sequences. A clean, taxonomically balanced prokaryotic genomic corpus widely used to sample sequence diversity for training and benchmarking.\n",
+    "scale": "R10 (RS226): ~732,475 genomes (715,230 bacterial + 17,245 archaeal); R232 ~901,341 genomes",
+    "modalities": [
+      "genome-sequence",
+      "marker-gene-msa",
+      "protein-sequence"
+    ],
+    "formats": [
+      "fasta",
+      "tsv",
+      "newick"
+    ],
+    "landing_url": "https://gtdb.ecogenomic.org/",
+    "download_url": "https://gtdb.ecogenomic.org/downloads",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://gtdb.ecogenomic.org/downloads",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Australian Centre for Ecogenomics (University of Queensland)",
+      "key_refs": [
+        "10.1093/nar/gkaf1040",
+        "10.1093/nar/gkab776"
+      ]
+    },
+    "last_updated": "R232 (2026-04-15); R10/RS226 is the DOI-cited release",
+    "relevance": {
+      "programs": [
+        "design",
+        "comparative"
+      ],
+      "why": "Taxonomically de-biased prokaryotic genome/protein source for sampling sequence diversity in PLM pretraining and for phylogenetically aware benchmarking.\n"
+    },
+    "agent_access": "HTTP(S)/FTP bulk download across Europe/Asia-Pacific/worldwide mirrors plus academic torrent; no auth. Large genome archives.\n",
+    "caveats": "CC BY-SA (ShareAlike) — derivatives inherit the license (differs from CC BY). Some third-party listings mislabel as CC BY or GPL (GPL = software). Release numbering changes counts frequently.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://gtdb.ecogenomic.org/downloads",
+    "commercial_use": true
   },
   {
     "id": "imgt-dog-antigen-receptor-loci",
@@ -14857,6 +16026,199 @@
     "commercial_use": null
   },
   {
+    "id": "jgi-img-m",
+    "name": "JGI IMG/M (Integrated Microbial Genomes & Microbiomes)",
+    "category": "reference",
+    "species": [
+      "other"
+    ],
+    "description": "DOE JGI's data-management and comparative-analysis system for microbial genomes and metagenomes, with gene/protein predictions and functional annotation over a very large public holding of isolate genomes and metagenomes. A major genomic/metagenomic sequence source for building microbial protein corpora.\n",
+    "scale": "Very large (tens of thousands of metagenomes + isolate genomes); counts grow continuously",
+    "modalities": [
+      "genome-sequence",
+      "metagenome",
+      "protein-sequence",
+      "functional-annotation"
+    ],
+    "formats": [
+      "fasta",
+      "gff",
+      "tsv",
+      "web"
+    ],
+    "landing_url": "https://img.jgi.doe.gov/m/",
+    "download_url": "https://genome.jgi.doe.gov/portal/",
+    "api": "https://img.jgi.doe.gov/",
+    "license": "JGI Data Utilization/Release Policy (NCBI-imported genomes public domain)",
+    "license_url": "https://jgi.doe.gov/user-programs/pmo-overview/policies/",
+    "access": "registration",
+    "provenance": {
+      "maintainer": "DOE Joint Genome Institute (Lawrence Berkeley National Laboratory)",
+      "key_refs": [
+        "10.1093/nar/gky901",
+        "10.1093/nar/gkw929"
+      ]
+    },
+    "last_updated": "v5.0 system (ongoing data additions)",
+    "relevance": {
+      "programs": [
+        "design",
+        "comparative"
+      ],
+      "why": "Large microbial genome/metagenome corpus and gene-prediction source for expanding protein sequence space and comparative microbial analyses.\n"
+    },
+    "agent_access": "Public data downloadable via JGI Data Portal; many bulk downloads require a (free) JGI/ORCID account login. Private submissions embargoed (18 mo genomes / 24 mo metagenomes). Not a no-auth bulk FTP like UniProt.\n",
+    "caveats": "Access is registration-gated for bulk download and ~16% of isolate genomes / ~30% of metagenomes are private. Terms follow the JGI Data Policy rather than a single CC license — review before redistribution/ML use. Large, heterogeneous holdings need careful dedup.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://img.jgi.doe.gov/",
+    "commercial_use": true
+  },
+  {
+    "id": "metaclust",
+    "name": "Metaclust (clustered metagenomic/metatranscriptomic proteins)",
+    "category": "reference",
+    "species": [
+      "other"
+    ],
+    "description": "A clustered catalog of protein-coding fragments predicted from metagenomic and metatranscriptomic datasets, produced with Linclust/MMseqs2. Built from ~1.59 billion predicted protein fragments across ~2,200 metagenome/metatranscriptome datasets, reduced to ~424 million clusters. A key metagenomic input to BFD and ColabFoldDB.\n",
+    "scale": "~1.59B input fragments from ~2,200 datasets; ~424M clusters",
+    "modalities": [
+      "protein-sequence",
+      "sequence-clusters"
+    ],
+    "formats": [
+      "fasta"
+    ],
+    "landing_url": "https://metaclust.mmseqs.org/",
+    "download_url": "https://metaclust.mmseqs.org/",
+    "license": "CC BY-NC-SA 4.0",
+    "license_url": "https://metaclust.mmseqs.org/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Steinegger & Söding (Söding Lab / MMseqs2)",
+      "key_refs": [
+        "10.1038/s41467-018-04964-5"
+      ]
+    },
+    "last_updated": "2018 (frozen build)",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Large metagenomic protein corpus expanding sequence space for PLM pretraining and MSA generation; a documented input to BFD/ColabFoldDB.\n"
+    },
+    "agent_access": "HTTP(S) bulk download; no auth. Frozen release.\n",
+    "caveats": "LICENSE RED FLAG — CC BY-NC-SA 4.0: NonCommercial clause restricts commercial use (including some commercial ML training) and ShareAlike propagates to derivatives. This is why it must be flagged when it appears as an input to BFD/ColabFoldDB. Frozen 2018 build.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://metaclust.mmseqs.org/",
+    "commercial_use": false
+  },
+  {
+    "id": "mgnify-genomes",
+    "name": "MGnify Genome Catalogues (prokaryotic MAGs/isolates)",
+    "category": "reference",
+    "species": [
+      "other"
+    ],
+    "description": "Biome-specific catalogues of non-redundant, species-level clustered prokaryotic genomes (metagenome-assembled genomes and isolates) from MGnify, with pan-genome and functional annotation. A genomic (not just protein) sequence corpus spanning human gut, marine, soil and other environments — a source of genome-context and coding-sequence data for comparative and sequence-model work.\n",
+    "scale": "Multiple biome catalogues; hundreds of thousands of genomes clustered to species-level reps",
+    "modalities": [
+      "genome-sequence",
+      "protein-sequence",
+      "pangenome"
+    ],
+    "formats": [
+      "fasta",
+      "gff",
+      "api"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/metagenomics/browse/genomes",
+    "download_url": "https://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/",
+    "api": "https://www.ebi.ac.uk/metagenomics/api/v1/genome-catalogues",
+    "license": "EMBL-EBI terms of use (verify per catalogue; underlying data generally open)",
+    "license_url": "https://www.ebi.ac.uk/about/terms-of-use",
+    "access": "open",
+    "provenance": {
+      "maintainer": "EMBL-EBI (MGnify team)",
+      "key_refs": [
+        "10.1093/nar/gkac1080",
+        "10.1016/j.jmb.2023.168016"
+      ]
+    },
+    "last_updated": "2023-2024 (ongoing catalogue releases)",
+    "relevance": {
+      "programs": [
+        "design",
+        "comparative"
+      ],
+      "why": "Genome-level metagenomic corpus for coding-sequence extraction, genomic-context modeling and comparative analyses that complement the MGnify protein set.\n"
+    },
+    "agent_access": "FTP bulk download per catalogue + MGnify REST API (genome-catalogues endpoint). No auth.\n",
+    "caveats": "License is the general EMBL-EBI terms rather than the CC0 that covers the protein DB — confirm per catalogue before redistribution. Catalogue counts grow release-to-release; verify current totals.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/metagenomics/api/v1/genome-catalogues",
+    "commercial_use": null
+  },
+  {
+    "id": "mgnify-proteins",
+    "name": "MGnify Protein Database (MGnify90)",
+    "category": "reference",
+    "species": [
+      "other"
+    ],
+    "description": "EMBL-EBI's non-redundant catalog of protein sequences predicted from assembled metagenomes in MGnify — the largest publicly described metagenomic protein collection. The ~2.48 billion sequences (clustered representations, e.g. MGnify90) vastly expand sequence space beyond UniProt and are the source behind the ESM Metagenomic Atlas (which folded MGnify90).\n",
+    "scale": "~2,477,479,951 protein sequences (current release); MGnify90 clustered set",
+    "modalities": [
+      "protein-sequence",
+      "sequence-clusters"
+    ],
+    "formats": [
+      "fasta",
+      "bigquery",
+      "hmmer-searchable"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/metagenomics/proteins",
+    "download_url": "https://ftp.ebi.ac.uk/pub/databases/metagenomics/",
+    "api": "https://www.ebi.ac.uk/metagenomics/api/v1/",
+    "license": "CC0 1.0 (protein database; most other MGnify content is EMBL-EBI terms)",
+    "license_url": "https://www.ebi.ac.uk/metagenomics/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "EMBL-EBI (MGnify team)",
+      "key_refs": [
+        "10.1093/nar/gkac1080"
+      ]
+    },
+    "last_updated": "2023_02 and later (public beta web resource)",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "The premier metagenomic protein corpus for expanding PLM pretraining into the 'dark matter' of protein space; underpins ESM-scale metagenomic structure/representation work.\n"
+    },
+    "agent_access": "Bulk FTP download, HMMER search, and BigQuery access. Web resource in public beta. CC0 makes the protein set unusually unrestricted for ML training.\n",
+    "caveats": "CC0 applies to the protein database specifically; broader MGnify content falls under EMBL-EBI terms — do not generalize CC0. Huge scale; heavy dedup vs UniRef recommended. Note ESM Metagenomic Atlas (structures over MGnify90) is catalogued separately in domain-9 (esm-atlas).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/metagenomics/api/v1/",
+    "commercial_use": true
+  },
+  {
     "id": "nextprot",
     "name": "neXtProt",
     "category": "reference",
@@ -14962,6 +16324,59 @@
     "commercial_use": true
   },
   {
+    "id": "oma",
+    "name": "OMA (Orthologous MAtrix)",
+    "category": "reference",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "A large orthology database inferring orthologs across thousands of complete genomes, with OMA Groups, Hierarchical Orthologous Groups (HOGs), pairwise orthologs, and downloadable all-species protein/CDS FASTA. Provides evolutionarily grouped sequence sets useful for ortholog-aware corpora and comparative representation learning.\n",
+    "scale": "~2,983 complete genomes; ~26.5M proteins; ~1.5M OMA groups (May2026 release)",
+    "modalities": [
+      "protein-sequence",
+      "cds",
+      "orthology"
+    ],
+    "formats": [
+      "fasta",
+      "orthoxml",
+      "tsv",
+      "api"
+    ],
+    "landing_url": "https://omabrowser.org/",
+    "download_url": "https://omabrowser.org/oma/current/",
+    "api": "https://omabrowser.org/api/",
+    "license": "CC BY 4.0",
+    "license_url": "https://omabrowser.org/oma/terms_of_use/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Dessimoz Lab (SIB / University of Lausanne / UCL)",
+      "key_refs": [
+        "10.1093/nar/gkad1020",
+        "10.1093/nar/gkaa1007"
+      ]
+    },
+    "last_updated": "All.May2026 release",
+    "relevance": {
+      "programs": [
+        "design",
+        "comparative"
+      ],
+      "why": "Ortholog groupings and all-species sequence sets for building evolution-aware corpora and for comparative (cross-species) analyses supporting design.\n"
+    },
+    "agent_access": "Bulk download of protein/CDS FASTA + OrthoXML/TSV; REST API for targeted queries. No auth.\n",
+    "caveats": "Current terms are CC BY 4.0 but older pages/papers cite CC BY-SA 2.5 or CC0 — rely on the live terms page. OMA name/logos may not be reused. Underlying source sequences may carry third-party constraints.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://omabrowser.org/api/",
+    "commercial_use": true
+  },
+  {
     "id": "omia",
     "name": "Online Mendelian Inheritance in Animals (OMIA)",
     "category": "reference",
@@ -15009,6 +16424,58 @@
       0
     ],
     "ingest_endpoint": "https://omia.org/download/",
+    "commercial_use": true
+  },
+  {
+    "id": "orthodb",
+    "name": "OrthoDB (hierarchical catalog of orthologs)",
+    "category": "reference",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "A hierarchical catalog of orthologous protein-coding genes across the tree of life, with orthologous groups computed at many taxonomic levels and bulk FASTA/mapping downloads. Provides broadly sampled, evolution-structured sequence sets; also the basis of BUSCO completeness assessment.\n",
+    "scale": "v12.2: ~32,072 species; hundreds of thousands+ orthologous groups",
+    "modalities": [
+      "protein-sequence",
+      "orthology"
+    ],
+    "formats": [
+      "fasta",
+      "tsv",
+      "api",
+      "sparql"
+    ],
+    "landing_url": "https://www.orthodb.org/",
+    "download_url": "https://data.orthodb.org/v12/download/",
+    "api": "https://data.orthodb.org/",
+    "license": "CC BY 4.0",
+    "license_url": "https://www.orthodb.org/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Zdobnov Lab (SIB / University of Geneva)",
+      "key_refs": [
+        "10.1093/nar/gkae987",
+        "10.1093/nar/gks1116"
+      ]
+    },
+    "last_updated": "v12.2 (2024-2025)",
+    "relevance": {
+      "programs": [
+        "design",
+        "comparative"
+      ],
+      "why": "Wide-sampling ortholog groups and sequences for evolution-aware corpora, cross-species transfer, and comparative benchmarking.\n"
+    },
+    "agent_access": "Bulk download (OG tables, species tables, gene mappings), REST API (v12), and SPARQL endpoint. No auth.\n",
+    "caveats": "Current release CC BY 4.0; older v1x papers used CC BY-NC 3.0, and Wikipedia lists outdated CC BY 3.0 — verify current terms. v11 counts not confirmed here.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://data.orthodb.org/",
     "commercial_use": true
   },
   {
@@ -15325,6 +16792,53 @@
     "commercial_use": true
   },
   {
+    "id": "uniparc",
+    "name": "UniParc (UniProt Archive)",
+    "category": "reference",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "A comprehensive, non-redundant sequence archive that stores every protein sequence ever submitted to UniProt's source databases, tracking each unique sequence with a stable UPI and full provenance/cross-references, including sequences no longer in UniProtKB. It is the broadest single protein-sequence superset UniProt offers and a candidate source for maximally diverse pretraining corpora (at the cost of including obsolete/low-quality entries).\n",
+    "scale": ">900M unique sequences (UPIs), release-dependent — broadest UniProt sequence set",
+    "modalities": [
+      "protein-sequence"
+    ],
+    "formats": [
+      "fasta",
+      "xml"
+    ],
+    "landing_url": "https://www.uniprot.org/help/uniparc",
+    "download_url": "https://ftp.uniprot.org/pub/databases/uniprot/current_release/uniparc/",
+    "api": "https://rest.uniprot.org/uniparc/",
+    "license": "CC BY 4.0",
+    "license_url": "https://www.uniprot.org/help/license",
+    "access": "open",
+    "provenance": {
+      "maintainer": "UniProt Consortium (EMBL-EBI, SIB, PIR)",
+      "key_refs": [
+        "10.1093/nar/gkae1010"
+      ]
+    },
+    "last_updated": "2025 (UniProt release cadence)",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Superset sequence archive for building maximally diverse PLM pretraining corpora or for recovering sequences dropped from UniProtKB; useful when corpus breadth matters more than curation.\n"
+    },
+    "agent_access": "Open FTP bulk download (very large XML/FASTA), no auth. REST API at rest.uniprot.org/uniparc for targeted lookups; bulk FTP for corpus-scale use.\n",
+    "caveats": "Includes obsolete, redundant-source, and low-quality sequences by design (archive, not a curated KB) — heavy cleaning/clustering needed before training. Very large downloads. Deduplicate against UniRef/UniProtKB.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://rest.uniprot.org/uniparc/",
+    "commercial_use": true
+  },
+  {
     "id": "uniprot",
     "name": "UniProt / UniProtKB (Universal Protein Knowledgebase)",
     "category": "reference",
@@ -15387,6 +16901,107 @@
       0
     ],
     "ingest_endpoint": "https://rest.uniprot.org/",
+    "commercial_use": true
+  },
+  {
+    "id": "uniref",
+    "name": "UniRef (UniProt Reference Clusters — UniRef100/90/50)",
+    "category": "reference",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "Non-redundant clustered views of UniProtKB (plus selected UniParc records). UniRef100 merges identical sequences and sub-fragments; UniRef90 and UniRef50 cluster at 90% and 50% sequence identity respectively, each represented by a single seed sequence. UniRef50/90 are the de facto pretraining corpora for protein language models (ESM-1b/ESM-2 sample evenly across UniRef50 clusters; ProtTrans used UniRef100/UniRef50), because clustering removes the massive redundancy of raw UniProtKB while preserving sequence diversity.\n",
+    "scale": "UniRef90 ~190M clusters; UniRef50 ~60M clusters (release-dependent); UniRef100 >400M entries",
+    "size_bytes": 116000000000,
+    "modalities": [
+      "protein-sequence",
+      "sequence-clusters"
+    ],
+    "formats": [
+      "fasta",
+      "xml"
+    ],
+    "landing_url": "https://www.uniprot.org/help/uniref",
+    "download_url": "https://ftp.uniprot.org/pub/databases/uniprot/uniref/",
+    "api": "https://rest.uniprot.org/uniref/",
+    "license": "CC BY 4.0",
+    "license_url": "https://www.uniprot.org/help/license",
+    "access": "open",
+    "provenance": {
+      "maintainer": "UniProt Consortium (EMBL-EBI, SIB, PIR)",
+      "key_refs": [
+        "10.1093/bioinformatics/btu739",
+        "10.1093/nar/gkae1010"
+      ]
+    },
+    "last_updated": "2025 (UniProt release cadence ~8x/yr)",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Primary pretraining corpus for protein language models underpinning representation learning and sequence-based design. UniRef50/90 give diversity-balanced sequence sets without the redundancy of raw UniProtKB.\n"
+    },
+    "agent_access": "Open FTP bulk download (FASTA + XML) of full UniRef100/90/50 flat files, no auth. REST API at rest.uniprot.org/uniref with pagination; bulk download strongly preferred over API for corpora.\n",
+    "caveats": "Overlaps the combined 'uniprot' entries (domain-5, domain-9) which bundle UniRef mention; this entry is the dedicated pretraining-corpus view. Cluster counts change every release — verify against release notes. CC BY requires attribution; a few legacy mirrors still cite old CC BY-NC terms (superseded). Deduplicate against UniParc/UniProtKB if combining corpora.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://rest.uniprot.org/uniref/",
+    "commercial_use": true
+  },
+  {
+    "id": "uniref30-uniclust",
+    "name": "UniRef30 / Uniclust30 (clustered UniProtKB for HH-suite)",
+    "category": "reference",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "Deeply annotated clustered UniProtKB sequence/alignment database (clustered ~at 30% identity) distributed as HH-suite/HHblits profile databases. The standard UniProtKB MSA input for AlphaFold2/OpenFold pipelines (alongside BFD), and a compact clustered sequence source for PLM pretraining and profile-based representation learning.\n",
+    "scale": "Tens of millions of clusters; HH-suite archive 2023_01 ~64 GB (2020_06 ~46 GB)",
+    "size_bytes": 64000000000,
+    "modalities": [
+      "protein-sequence",
+      "msa",
+      "hmm",
+      "sequence-clusters"
+    ],
+    "formats": [
+      "a3m",
+      "hhm",
+      "ffindex"
+    ],
+    "landing_url": "https://uniclust.mmseqs.com/",
+    "download_url": "https://wwwuser.gwdg.de/~compbiol/uniclust/",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://uniclust.mmseqs.com/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Söding Lab / Steinegger (GWDG / MMseqs2 ecosystem)",
+      "key_refs": [
+        "10.1093/nar/gkw1081"
+      ]
+    },
+    "last_updated": "2023_01 (periodic releases: 2016_03 … 2020_06 … 2023_01)",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Standard clustered-UniProt MSA database for structure-prediction MSA generation and a clean, diversity-reduced corpus for profile/representation learning.\n"
+    },
+    "agent_access": "HTTP(S) bulk download of versioned HH-suite archives from GWDG mirror; no auth. Companion uniref_mapping.tsv.gz provided.\n",
+    "caveats": "CC BY-SA (ShareAlike) — derivative databases must carry the same license; note this differs from UniProt's CC BY. HH-suite software is GPLv3 (separate). Overlaps UniRef conceptually but packaged for HHblits profiles.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://wwwuser.gwdg.de/~compbiol/uniclust/",
     "commercial_use": true
   },
   {
@@ -23893,6 +25508,55 @@
     "commercial_use": true
   },
   {
+    "id": "flip",
+    "name": "FLIP (Fitness Landscape Inference for Proteins)",
+    "category": "tooling",
+    "species": [
+      "human",
+      "other"
+    ],
+    "description": "A benchmark of protein fitness-landscape tasks with predefined train/test splits designed to stress-test representation learning for protein engineering. Core landscapes include AAV capsids, GB1, and thermostability (Meltome); FLIP2 (2026) adds seven further enzyme/photoprotein/PPI landscapes.\n",
+    "scale": "FLIP: 3 core landscapes, multiple splits; FLIP2: 7 datasets, 16 predefined splits",
+    "modalities": [
+      "fitness-assay",
+      "benchmark-splits",
+      "protein-sequence"
+    ],
+    "formats": [
+      "csv",
+      "fasta",
+      "zip"
+    ],
+    "landing_url": "https://benchmark.protein.properties/",
+    "download_url": "https://data.bioembeddings.com/public/FLIP/",
+    "api": "https://github.com/J-SNACKKB/FLIP",
+    "license": "AFL-3.0 (code); data release stated CC BY 4.0 (FLIP2) — verify per dataset",
+    "license_url": "https://github.com/J-SNACKKB/FLIP/blob/main/LICENSE",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Rost Lab / bioembeddings collaborators — Dallago et al.",
+      "key_refs": [
+        "10.1101/2021.11.09.467890"
+      ]
+    },
+    "last_updated": "FLIP 2021; FLIP2 2026 (Zenodo 10.5281/zenodo.18433203)",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Benchmark for protein-engineering fitness prediction with realistic low-N / extrapolation splits — tests whether PLM representations generalize for design.\n"
+    },
+    "agent_access": "Split files + FASTA via benchmark site and bioembeddings mirror; Zenodo archive for FLIP2. GitHub for code. No auth.\n",
+    "caveats": "Code is AFL-3.0; data license is stated as CC BY 4.0 for FLIP2 but not uniformly named for the original FLIP data — confirm per dataset/source. Underlying assays come from primary papers with their own terms.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://github.com/J-SNACKKB/FLIP",
+    "commercial_use": true
+  },
+  {
     "id": "geo-ncbi",
     "name": "NCBI Gene Expression Omnibus (GEO) + ArrayExpress/BioStudies",
     "category": "tooling",
@@ -24158,6 +25822,57 @@
     "commercial_use": null
   },
   {
+    "id": "proteingym",
+    "name": "ProteinGym (fitness/mutation-effect benchmark)",
+    "category": "tooling",
+    "species": [
+      "human",
+      "other"
+    ],
+    "description": "A large-scale benchmark suite for protein fitness prediction and design, aggregating deep mutational scanning (DMS) assays plus clinical-variant datasets, with standardized splits and a public leaderboard. The reference benchmark for scoring protein language models / variant-effect predictors on mutation effects.\n",
+    "scale": "217 substitution DMS assays (~2.4-2.7M variants); 74 indel DMS assays (~300k); 2,525 clinical proteins",
+    "modalities": [
+      "deep-mutational-scanning",
+      "variant-effect",
+      "msa",
+      "benchmark-splits"
+    ],
+    "formats": [
+      "csv",
+      "zip",
+      "api"
+    ],
+    "landing_url": "https://proteingym.org/",
+    "download_url": "https://zenodo.org/records/13936340",
+    "api": "https://github.com/OATML-Markslab/ProteinGym",
+    "license": "MIT",
+    "license_url": "https://github.com/OATML-Markslab/ProteinGym/blob/main/LICENSE",
+    "access": "open",
+    "provenance": {
+      "maintainer": "OATML (Oxford) / Marks Lab (Harvard) — Notin et al.",
+      "key_refs": [
+        "10.1101/2023.12.07.570727",
+        "10.5281/zenodo.13936340"
+      ]
+    },
+    "last_updated": "2024 (Zenodo 13936340; ongoing)",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Standard evaluation harness for mutation-effect / fitness prediction — directly measures whether learned representations transfer to design-relevant variant scoring.\n"
+    },
+    "agent_access": "Zenodo zip bulk download + GitHub repo (code, splits, baselines). MIT license is permissive for ML use. No auth.\n",
+    "caveats": "Variant/assay counts differ slightly across preprint vs repo (releases evolve) — cite the release used. Underlying DMS assays originate from many primary papers; MIT covers the ProteinGym packaging, not necessarily every upstream dataset's original terms.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://github.com/OATML-Markslab/ProteinGym",
+    "commercial_use": true
+  },
+  {
     "id": "proteinmpnn-rfdiffusion",
     "name": "ProteinMPNN / RFdiffusion (design models, weights & training data)",
     "category": "tooling",
@@ -24305,6 +26020,55 @@
     ],
     "ingest_endpoint": "https://github.com/schumacherlab/STAPLER",
     "commercial_use": null
+  },
+  {
+    "id": "tape",
+    "name": "TAPE (Tasks Assessing Protein Embeddings)",
+    "category": "tooling",
+    "species": [
+      "human",
+      "other"
+    ],
+    "description": "An early standardized benchmark + pretraining-corpus bundle for protein transfer learning: a Pfam-derived pretraining set (~31M protein domains) plus five downstream supervised tasks (secondary structure, contact prediction, remote homology, fluorescence, stability). Widely used as a reference point for PLM representation learning.\n",
+    "scale": "Pretraining: ~31M Pfam domains (~7 GB compressed / ~19 GB uncompressed, PyTorch release)",
+    "modalities": [
+      "protein-sequence",
+      "benchmark-splits",
+      "functional-assay"
+    ],
+    "formats": [
+      "lmdb",
+      "tfrecord",
+      "fasta"
+    ],
+    "landing_url": "https://github.com/songlab-cal/tape",
+    "download_url": "https://github.com/songlab-cal/tape",
+    "api": "https://pypi.org/project/tape-proteins/",
+    "license": "BSD-3-Clause",
+    "license_url": "https://github.com/songlab-cal/tape/blob/master/LICENSE",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Song Lab (UC Berkeley) — Rao et al.",
+      "key_refs": [
+        "10.48550/arXiv.1906.08230"
+      ]
+    },
+    "last_updated": "2019 (PyTorch repo maintained; dataset frozen)",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Foundational benchmark + Pfam pretraining corpus for evaluating protein representation learning; a baseline reference for design-relevant transfer.\n"
+    },
+    "agent_access": "download_data.sh fetches Pfam pretraining set + task data from AWS (LMDB). pip package tape-proteins. No auth.\n",
+    "caveats": "License differs by version: current PyTorch repo BSD-3-Clause; deprecated TF repo MIT; a PyPI listing shows a likely-typo 'BSD-1-Clause' — check the LICENSE in the exact repo used. Pfam-derived corpus inherits Pfam terms (CC0 for Pfam-produced data).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://pypi.org/project/tape-proteins/",
+    "commercial_use": true
   },
   {
     "id": "ucsc-xena",
