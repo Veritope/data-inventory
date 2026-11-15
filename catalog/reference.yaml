@@ -1,0 +1,1294 @@
+- id: afnd
+  name: Allele Frequency Net Database (AFND)
+  category: reference
+  species:
+  - human
+  description: 'A repository of HLA (and KIR, MIC, cytokine) allele, genotype, and haplotype frequencies
+    across worldwide populations, with a gold-standard data classification. Used to weight/prioritize
+    alleles by population prevalence.
+
+    '
+  scale: Thousands of population samples across 8 HLA genes (+KIR/MIC/cytokine); millions of typings
+  modalities:
+  - allele-frequency
+  - haplotype-frequency
+  formats:
+  - html
+  - tsv
+  landing_url: https://www.allelefrequencies.net/
+  download_url: https://www.allelefrequencies.net/hla.asp
+  license: unknown
+  access: open
+  provenance:
+    maintainer: University of Liverpool (Andrew R. Jones et al.)
+    key_refs:
+    - 10.1093/nar/gkz1029
+  last_updated: ongoing
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Population allele frequencies decide which HLA alleles to prioritize for population coverage
+      in presentation/design (shared-antigen vaccine or TCR design).
+
+      '
+  agent_access: 'Native access is paginated HTML tables (scrape-only, no clean bulk API) - a real friction
+    point for agents. Community mirrors exist: slowkow/allelefrequencies (single afnd.tsv, MIT-licensed
+    repo) and the HLAfreq Python package automate download/combination. Prefer those for bulk pulls.
+
+    '
+  caveats: 'AFND''s own site has "Licensing" and "Disclaimer" pages that were not retrievable at catalog
+    time - data license marked unknown; confirm before redistribution. AFND asks you to also cite the
+    ORIGINAL publication of each dataset used. Community mirror''s MIT license covers the repo/code, not
+    the underlying frequencies.
+
+    '
+- id: barkbase
+  name: BarkBase — Canine Epigenomic Annotation
+  category: reference
+  species:
+  - dog
+  description: 'Epigenomic reference for the dog: RNA-seq, WGS and ATAC-seq across 27 adult tissues (with
+    replicates) plus staged embryonic timepoints, with a download portal. Foundational for regulatory
+    annotation of the canine genome.
+
+    '
+  scale: 27 adult tissues + embryonic timepoints; 37/46 ATAC-seq libraries passed QC
+  modalities:
+  - rna-seq
+  - atac-seq
+  - wgs
+  formats:
+  - bam
+  - bigwig
+  - bed
+  - fastq
+  landing_url: http://www.barkbase.org/
+  download_url: http://www.barkbase.org/
+  license: unknown (portal download; SRA raw reads public-domain norms)
+  license_url: https://doi.org/10.3390/genes10060433
+  access: open
+  provenance:
+    maintainer: Broad Institute / UMass Chan (Karlsson/Megquier)
+    key_refs:
+    - 10.3390/genes10060433
+  last_updated: '2019'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'Tissue-level regulatory annotation helps interpret expression context of tumor antigens; a baseline
+      for "self" expression used in neoantigen filtering.
+
+      '
+  agent_access: 'Portal downloads + SRA raw reads (project IDs in supp. Table S1); no auth.
+
+    '
+  caveats: 'ATAC-seq quality limited (many samples FRiP <0.3, below ENCODE threshold); not ENCODE-depth.
+    No MHC/immune-specific layer. License not explicitly stated.
+
+    '
+- id: caid
+  name: CAID (Critical Assessment of Intrinsic Disorder)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'CASP-style blind benchmark for intrinsic disorder and disordered-binding-region prediction,
+    built on community-curated DisProt annotations (plus DisProt-PDB / DisProt-Binding reference sets).
+    Defines where a sequence does NOT adopt a single stable 3D structure — an important complement/caveat
+    to folding models.
+
+    '
+  scale: 'CAID1: 646 proteins, 43 methods; CAID2: expanded DisProt-based sets (e.g. 210-protein NOX subset)'
+  modalities:
+  - sequence
+  - disorder-annotation
+  - predictions
+  - assessment-scores
+  formats:
+  - fasta
+  - tsv
+  - caid-format
+  landing_url: https://caid.idpcentral.org/
+  download_url: https://caid.idpcentral.org/challenge
+  api: https://disprot.org/api
+  license: CC BY 4.0 (DisProt annotations)
+  license_url: https://disprot.org/
+  access: open
+  provenance:
+    maintainer: Tosatto group / DisProt consortium; OpenEBench
+    key_refs:
+    - 10.1038/s41592-021-01117-3
+    - 10.1002/prot.26582
+  last_updated: 2023 (CAID2); ongoing via OpenEBench
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Disorder labels mark regions where sequence->single-structure assumptions break down (low-pLDDT
+      regions in AFDB often coincide); useful for masking/ confidence modelling and for antigen-flexibility
+      reasoning.
+
+      '
+  agent_access: 'Reference datasets and predictions downloadable from the CAID portal / OpenEBench; DisProt
+    has a REST API and flat-file downloads. No auth.
+
+    '
+  caveats: 'Tangential to 3D coordinate learning (disorder, not folds) — included as a boundary/negative-signal
+    resource. Datasets are small (benchmark scale). Cite DisProt/CAID.
+
+    '
+- id: cameo
+  name: CAMEO (Continuous Automated Model EvaluatiOn)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Weekly, fully automated blind benchmark that evaluates structure (and other) prediction
+    servers on soon-to-be-released PDB targets. Provides continuous, ongoing held-out assessment data
+    complementing the biennial CASP.
+
+    '
+  scale: Weekly targets since 2012 (rolling archive of predictions + scores)
+  modalities:
+  - sequence
+  - reference-structure
+  - predictions
+  - assessment-scores
+  formats:
+  - pdb
+  - json
+  - csv
+  landing_url: https://www.cameo3d.org/
+  download_url: https://www.cameo3d.org/
+  license: CC BY-SA 4.0
+  license_url: https://cameo3d.org/cameong_terms/
+  access: open
+  provenance:
+    maintainer: Schwede group, SIB / Biozentrum Basel
+    key_refs:
+    - 10.1002/prot.25431
+  last_updated: 2025 (weekly)
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Continuous, low-leakage evaluation stream for monitoring folding-model performance on fresh
+      structures — useful for tracking model drift between CASP rounds.
+
+      '
+  agent_access: 'Per-window "Raw Data" downloads over HTTPS; no auth. Some older category pages frozen.
+    Agent can fetch snapshots.
+
+    '
+  caveats: 'RED FLAG: CC BY-SA 4.0 share-alike — derivatives inherit the license. Primarily an evaluation
+    resource, not a bulk training corpus; download layout can change.
+
+    '
+- id: canfam31
+  name: CanFam3.1 Reference Assembly (Boxer "Tasha")
+  category: reference
+  species:
+  - dog
+  description: 'The long-standing Boxer-derived dog reference genome (Sep 2011, Broad). Still the most
+    widely used coordinate system for legacy canine GEO/SRA studies and most published tumor variant calls.
+
+    '
+  scale: ~2.4 Gb; 39 chromosomes (38 autosomes + X)
+  modalities:
+  - genome-assembly
+  - annotation
+  formats:
+  - fasta
+  - gtf
+  - 2bit
+  landing_url: https://www.ensembl.org/Canis_lupus_familiaris/
+  download_url: https://ftp.ensembl.org/pub/release-110/fasta/canis_lupus_familiaris/
+  license: public (INSDC / Ensembl — no restriction on use)
+  license_url: https://www.ensembl.org/info/about/legal/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Broad Institute; Ensembl/UCSC/NCBI
+    key_refs:
+    - 10.1038/nature04338
+  last_updated: 2011 (assembly); ongoing annotation
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Default coordinate space for historical canine cancer datasets; needed for liftover and to interpret
+      legacy mutation calls.
+
+      '
+  agent_access: 'Bulk FASTA/GTF from Ensembl/UCSC/NCBI FTP; no auth. UCSC canFam3.
+
+    '
+  caveats: 'Fragmented vs newer long-read assemblies; coordinate mismatch with CanFam4/ROS/Tasha1.0 —
+    liftover required. Aging annotation.
+
+    '
+- id: cath
+  name: CATH / CATH-Gene3D
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Hierarchical structural classification of protein domains (Class, Architecture, Topology/fold,
+    Homologous superfamily) derived from PDB, extended to sequence space via Gene3D (HMM-based assignment
+    to UniProt). Provides domain boundaries, fold labels and representative/non-redundant sets used to
+    build leakage-free ML train/test splits.
+
+    '
+  scale: 'v4.3.0: 500,238 classified structural domains, 5,481 superfamilies; ~151M predicted sequence
+    domains (Gene3D)'
+  modalities:
+  - domain-classification
+  - domain-boundaries
+  - hmm
+  - representatives
+  formats:
+  - tsv
+  - fasta
+  - pdb
+  - hmm
+  landing_url: https://www.cathdb.info/
+  download_url: https://cathdb.info/download
+  api: https://www.cathdb.info/search/by_sequence
+  license: custom (Gene3D copyright; research use, no resale, attribution)
+  license_url: https://cathdb.info/download
+  access: open
+  provenance:
+    maintainer: Orengo group, UCL (Global Biodata Core Resource)
+    key_refs:
+    - 10.1093/nar/gkaa1079
+    - 10.1093/nar/gkac1019
+  last_updated: 2021 (v4.3.0); Gene3D v12 FTP
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Standard source of fold/superfamily labels and non-redundant domain sets for structure-aware
+      pretraining and for defining clustered data splits that prevent homology leakage between train and
+      test.
+
+      '
+  agent_access: 'Open FTP/HTTPS bulk download and FunFam/sequence search APIs; no auth. Agent-mirrorable.
+
+    '
+  caveats: 'RED FLAG: data files are Gene3D copyright with a research-use policy that forbids resale and
+    requires acknowledgement — NOT a CC licence. Confirm terms before redistribution or commercial product
+    use. Classification lags PDB.
+
+    '
+- id: cell-ontology
+  name: Cell Ontology (CL)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Structured, species-neutral ontology of cell types (including immune cell types) used
+    as the controlled vocabulary for annotating single-cell datasets (e.g. CELLxGENE, Tabula Sapiens).
+    The backbone for harmonizing cell-type labels across sources.
+
+    '
+  scale: thousands of cell-type classes
+  modalities:
+  - ontology
+  - controlled-vocabulary
+  formats:
+  - owl
+  - obo
+  - json
+  landing_url: https://obofoundry.org/ontology/cl.html
+  download_url: http://purl.obolibrary.org/obo/cl.owl
+  api: https://www.ebi.ac.uk/ols4/
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: OBO Foundry / obophenotype (GitHub)
+    key_refs:
+    - 10.1038/s41597-026-07173-8
+  last_updated: continuous (versioned PURLs)
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    - recognition
+    why: 'Required controlled vocabulary to merge cell-type annotations across atlases and to query cells
+      by type programmatically (e.g. in the Census).
+
+      '
+  agent_access: 'PROGRAMMATIC: download OWL/OBO/JSON from persistent PURLs (versioned for reproducibility);
+    query via EBI OLS API; GitHub source. Fully automatable, no auth.
+
+    '
+  caveats: 'CC BY 4.0 (attribution). One name annotation imported from OBO Foundry is CC0 — negligible.
+    Do not confuse CL with CLO (Cell Line Ontology), which has its own (disputed) license.
+
+    '
+- id: cosmic
+  name: COSMIC (Catalogue Of Somatic Mutations In Cancer)
+  category: reference
+  species:
+  - human
+  description: 'The largest expert-curated catalogue of somatic mutations in human cancer, aggregating
+    point mutations, CNVs, fusions, drug-resistance variants and the Cancer Gene Census from literature
+    and large screens. Core reference for annotating which tumor variants are recurrent/driver and for
+    mutational-signature analysis.
+
+    '
+  scale: tens of millions of coding mutations; v104+ (May 2026)
+  modalities:
+  - mutation-calls
+  - copy-number
+  - fusions
+  - gene-census
+  - mutational-signatures
+  formats:
+  - tsv
+  - vcf
+  - csv
+  landing_url: https://cancer.sanger.ac.uk/cosmic
+  download_url: https://cancer.sanger.ac.uk/cosmic/download/cosmic
+  license: Custom — free for academic/non-profit (registration); commercial via QIAGEN; redistribution
+    prohibited
+  license_url: https://www.cosmickb.org/terms/
+  access: registration
+  provenance:
+    maintainer: Wellcome Sanger Institute (Genome Research Limited)
+    key_refs:
+    - 10.1093/nar/gkad986
+  last_updated: 2026 (v104, 19 May 2026; terms amended 30 Oct 2025)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Recurrence and driver annotation for candidate neoantigens — distinguishing recurrent hotspot
+      mutations (shared-antigen opportunities) from private passengers, and sourcing curated fusion/resistance
+      variants.
+
+      '
+  agent_access: 'Bulk downloads require a registered COSMIC account; files are fetched via authenticated
+    HTTPS (email+password → download token/URL). Scriptable with stored credentials but NOT anonymous.
+    Commercial automated use needs a QIAGEN license.
+
+    '
+  caveats: 'REDISTRIBUTION FORBIDDEN — COSMIC data may not be re-packaged or passed to third parties without
+    a commercial licence; flag for any product that would ship derived COSMIC content. Academic licence
+    is royalty-free but still a contract. Commercial pipelines need paid QIAGEN licensing.
+
+    '
+- id: darwins-ark
+  name: Darwin's Ark — Companion-Animal Citizen-Science Genomics
+  category: reference
+  species:
+  - dog
+  description: 'Open citizen-science cohort (co-founded by E. Karlsson) linking owner-reported phenotype
+    questionnaires to low-pass WGS in tens of thousands of dogs. Phenotype + genotype data released openly
+    (e.g., Dryad) alongside behavior-genetics publications.
+
+    '
+  scale: ~48,500+ dogs registered; sequenced subset in the thousands
+  modalities:
+  - low-pass-wgs
+  - genotype
+  - phenotype-survey
+  formats:
+  - vcf
+  - csv
+  landing_url: https://darwinsark.org/
+  download_url: https://datadryad.org/dataset/doi:10.5061/dryad.g4f4qrfr0
+  license: CC0 (Dryad datasets, per deposit)
+  license_url: https://datadryad.org/dataset/doi:10.5061/dryad.g4f4qrfr0
+  access: open
+  provenance:
+    maintainer: Darwin's Ark Foundation / UMass Chan (Karlsson)
+    key_refs:
+    - 10.1126/science.abk0639
+  last_updated: 2022-2025 (ongoing enrollment)
+  relevance:
+    programs:
+    - comparative
+    why: 'Large open germline + phenotype resource; breed-structure and germline background useful for
+      population-aware variant interpretation. Minimal direct oncology/immune content.
+
+      '
+  agent_access: 'Dryad bulk downloads (CC0); surveys as CSV. No auth.
+
+    '
+  caveats: 'Behavior/morphology focus, not cancer; low-pass depth limits somatic/immune uses.
+
+    '
+- id: dog10k
+  name: Dog10K / CanFam canine reference genome & variation
+  category: reference
+  species:
+  - dog
+  description: 'Canine reference genome assemblies and a large multi-omics variation resource for dogs
+    and wild canids. Centers on the UU_Cfam_GSD_1.0 (canFam4, German Shepherd) assembly with GFF annotation,
+    plus the Dog10K consortium SNV/structural-variant panel from ~2000 canids. The primary dog reference
+    for the comparative-oncology program.
+
+    '
+  scale: SNPs from ~2,075 individuals; VCF from 1,987 samples (phase-1 from 1,929)
+  modalities:
+  - genome-assembly
+  - gene-annotation
+  - variation-snv
+  - structural-variants
+  - wgs
+  - snv
+  - sv
+  - genotype
+  formats:
+  - fasta
+  - gff
+  - vcf
+  - txt
+  - tabix
+  - plink-bed
+  landing_url: https://dog10k.kiz.ac.cn/
+  download_url: https://dog10k.kiz.ac.cn/Home/Download
+  api: https://ngdc.cncb.ac.cn/dog10k/download.html
+  license: unknown (freely available online; no explicit license posted)
+  license_url: https://dog10k.kiz.ac.cn/Home/Guide
+  access: open
+  provenance:
+    maintainer: Dog10K Consortium (incl. Kunming Inst. Zoology CAS; Kidd lab, U Michigan; iDog/NGDC)
+    key_refs:
+    - 10.1186/s13059-023-02975-0
+    - 10.1093/nar/gkae928
+    - 10.1186/s13059-023-02875-3
+  last_updated: 2024 (DB); phase-1 release 2022-2023
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'The canine reference genome + variation baseline needed to translate human target/antigen concepts
+      into dog (naturally occurring canine cancers as comparative-oncology models) and to distinguish
+      germline canine variation from tumor-specific changes.
+
+      '
+  agent_access: 'Genome FASTA (GCF_011100685.1_UU_Cfam_GSD_1.0), GFF, aliases, and SNV VCFs download from
+    the Dog10K site; variant files/annotations mirrored on the Kidd lab share (kiddlabshare.med.umich.edu/dog10K/)
+    and Zenodo (record 8084059). UCSC canFam4 and NCBI Datasets also serve the assembly. No auth.
+
+    '
+  caveats: 'Dog10K portal does not state an explicit license — treat as unknown and rely on the NCBI/UCSC
+    assembly (unrestricted) + cite the papers; verify terms for the variant panel before redistribution.
+    Multiple canine assemblies in circulation (canFam3.1/4/5/6, ROS_Cfam_1.0) — fix one and be consistent.
+    Canine gene annotation is less mature than human.
+
+    '
+  cross_listed: true
+- id: dog10k-boxer-tasha
+  name: Dog10K_Boxer_Tasha_1.0 (Long-read Boxer assembly)
+  category: reference
+  species:
+  - dog
+  description: 'Long-read (PacBio) reassembly of the original Boxer "Tasha", scaffolded against CanFam3.1.
+    NCBI GCF_000002285.5; UCSC canFam6. Higher contiguity on the historical Boxer background.
+
+    '
+  scale: chromosome-level; ~2.4 Gb
+  modalities:
+  - genome-assembly
+  - annotation
+  formats:
+  - fasta
+  - gff3
+  landing_url: https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000002285.5/
+  download_url: https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000002285.5/
+  license: public (INSDC)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Dog10K Consortium; NCBI
+    key_refs:
+    - 10.3390/genes12060847
+  last_updated: '2021'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Bridges legacy Boxer-based (CanFam3.1) resources with long-read quality; useful for DLA-region
+      assembly comparisons.
+
+      '
+  agent_access: 'NCBI Datasets / FTP; no auth. UCSC canFam6.
+
+    '
+  caveats: 'A third coordinate system — adds to the dog-reference fragmentation problem. Note: ROS_Cfam_1.0
+    (GCF_014441545.1, canFam5) is the current NCBI RefSeq reference for Canis lupus familiaris.
+
+    '
+- id: doga-epigenome
+  name: DoGA — Dog Genome Annotation (Integrative Epigenome Map)
+  category: reference
+  species:
+  - dog
+  description: 'Integrative dog epigenome reference annotation (RNA-seq + regulatory marks) across many
+    tissues for comparative inter-tissue and cross-species studies; complements BarkBase.
+
+    '
+  scale: multi-tissue epigenome (dozens of tissues/samples)
+  modalities:
+  - rna-seq
+  - epigenome
+  - regulatory-annotation
+  formats:
+  - bam
+  - bigwig
+  - bed
+  landing_url: https://www.science.org/doi/10.1126/sciadv.ade3399
+  download_url: https://www.ncbi.nlm.nih.gov/geo/
+  license: CC BY 4.0 (article); data via SRA/GEO public norms
+  license_url: https://www.science.org/doi/10.1126/sciadv.ade3399
+  access: open
+  provenance:
+    maintainer: DoGA consortium (incl. University of Helsinki / Lohi, Broad)
+    key_refs:
+    - 10.1126/sciadv.ade3399
+  last_updated: '2023'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'Stronger regulatory/expression annotation than BarkBase; supports gene-model and self-expression
+      references for the dog.
+
+      '
+  agent_access: 'Processed tracks + raw reads via GEO/SRA/EGA (check paper data-availability for exact
+    accession and any controlled-access splits); no auth for public parts.
+
+    '
+  caveats: 'Not tied to Darwin''s Ark/Karlsson despite overlap of people; confirm exact accessions. ENCODE-level
+    canine functional data still does not exist.
+
+    '
+- id: ecod
+  name: ECOD (Evolutionary Classification of protein Domains)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Classification of PDB domains emphasising distant evolutionary (homologous) relationships,
+    with an automatically updated hierarchy (X/H/T/F groups). Recent releases extend classification to
+    AlphaFold DB models (AFDB-ECOD), giving domain labels over predicted structures too.
+
+    '
+  scale: '>500,000 PDB domains (~3,400 homologous groups); plus AFDB-derived domains'
+  modalities:
+  - domain-classification
+  - domain-boundaries
+  - representatives
+  formats:
+  - txt
+  - fasta
+  - pdb
+  landing_url: http://prodata.swmed.edu/ecod/
+  download_url: http://prodata.swmed.edu/ecod/distributions/
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Grishin lab, UT Southwestern
+    key_refs:
+    - 10.1371/journal.pcbi.1003926
+    - 10.1093/nar/gky1143
+  last_updated: weekly develop releases (2025)
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Evolution-aware domain boundaries and remote-homology groupings help define challenging, leakage-controlled
+      splits and augment fold-label coverage, including over predicted (AFDB) structures.
+
+      '
+  agent_access: 'Flat-file distributions downloadable over HTTP; no auth. Agent-mirrorable. No documented
+    bulk API.
+
+    '
+  caveats: 'RED FLAG: no explicit license found on the site — treat as unknown and confirm reuse terms
+    before redistribution. Served over plain HTTP; verify integrity.
+
+    '
+- id: ensembl
+  name: Ensembl (genomes, gene models, comparative genomics)
+  category: reference
+  species:
+  - human
+  - mouse
+  - dog
+  - other
+  description: 'Reference genome assemblies with automated + manually integrated gene annotation, variation,
+    regulation, and comparative genomics for vertebrates. Provides human (GRCh38, with GENCODE as the
+    human gene set) and multiple dog assemblies (incl. ROS_Cfam_1.0, UU_Cfam_GSD_1.0/canFam4, Boxer Tasha),
+    with cross-species orthology.
+
+    '
+  scale: Hundreds of vertebrate genomes; human GRCh38 + GRCh37; multiple dog assemblies
+  modalities:
+  - genome-assembly
+  - gene-annotation
+  - variation
+  - regulation
+  - orthology
+  formats:
+  - fasta
+  - gtf
+  - gff3
+  - vcf
+  - embl
+  - json
+  - mysql
+  - api
+  landing_url: https://www.ensembl.org/
+  download_url: https://www.ensembl.org/info/data/ftp/index.html
+  api: https://rest.ensembl.org/
+  license: Apache-2.0 (software); data open / no restrictions
+  license_url: https://www.ensembl.org/info/about/legal/disclaimer.html
+  access: open
+  provenance:
+    maintainer: EMBL-EBI & Wellcome Sanger Institute
+    key_refs:
+    - 10.1093/nar/gkad1049
+  last_updated: 2024-10 (release 113) and later
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Supplies the human and dog reference genomes + gene models underpinning transcript/protein references
+      and variant interpretation. Cross-species orthology directly serves the comparative-oncology (canine)
+      program (mapping human targets to the dog genome).
+
+      '
+  agent_access: 'REST API (rest.ensembl.org; GRCh37 mirror grch37.rest.ensembl.org), Perl API, BioMart,
+    and FTP for FASTA/GTF/GFF3/VCF. No auth. Highly scriptable; per-release archive hosts for pinning.
+
+    '
+  caveats: 'Multiple dog assemblies exist — pick one deliberately (ROS_Cfam_1.0 vs UU_Cfam_GSD_1.0/canFam4)
+    and keep human/dog coordinate systems consistent. Release-versioned; pin releases for reproducibility.
+
+    '
+- id: gencode
+  name: GENCODE (reference gene annotation)
+  category: reference
+  species:
+  - human
+  - mouse
+  description: 'The reference gene annotation for the human (and mouse) genome: comprehensive, manually
+    curated + computationally supported models of protein-coding genes, lncRNAs, pseudogenes, and alternative
+    splicing on GRCh38. Adopted as the human gene set in Ensembl and (via MANE) aligned with RefSeq.
+
+    '
+  scale: Human ~63,000 genes, ~20,000 protein-coding, ~250,000 transcripts (recent releases)
+  modalities:
+  - gene-annotation
+  - transcript-models
+  - translation-sequence
+  formats:
+  - gtf
+  - gff3
+  - fasta
+  landing_url: https://www.gencodegenes.org/
+  download_url: https://www.gencodegenes.org/human/
+  license: custom
+  license_url: https://www.gencodegenes.org/pages/faq.html
+  access: open
+  provenance:
+    maintainer: GENCODE consortium (EMBL-EBI/HAVANA + collaborators), part of ENCODE
+    key_refs:
+    - 10.1093/nar/gkaa1087
+  last_updated: 2024-2025 (release 47+, GRCh38.p14)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'The authoritative transcript/ORF catalog defining the canonical human proteome coordinate space.
+      Alternative-splice and ORF annotation is the substrate for enumerating normal protein products vs.
+      candidate tumor-specific transcripts/ORFs.
+
+      '
+  agent_access: 'Direct HTTPS/FTP download of GTF/GFF3 and transcript/translation FASTA per release; small,
+    scriptable, versioned. No auth, no API needed (static files).
+
+    '
+  caveats: 'No explicit standalone license document — data is free/open but cite the GENCODE paper; verify
+    terms if redistributing. Human + mouse only (no dog — use Ensembl/RefSeq for canine annotation). Pin
+    release number (annotation changes between releases).
+
+    '
+- id: imgt-gene-db
+  name: IMGT/GENE-DB (IG & TR reference genes)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The international reference for immunoglobulin (IG) and T-cell receptor (TR) gene and
+    allele nomenclature and germline reference sequences; supplies the reference directories used by IMGT/V-QUEST
+    and most AIRR annotation tools.
+
+    '
+  scale: ~8,500 IG/TR genes across species (human + mouse core)
+  modalities:
+  - germline-reference
+  - gene-nomenclature
+  - allele-sequences
+  formats:
+  - fasta
+  - flatfile
+  - web
+  landing_url: https://www.imgt.org/
+  download_url: https://www.imgt.org/genedb/
+  api: https://www.imgt.org/genedb/
+  license: 'conflicting: site states CC BY 4.0; NAR 2025 states CC BY-NC-ND 4.0'
+  license_url: https://www.imgt.org/
+  access: open
+  provenance:
+    maintainer: IMGT / CNRS, Montpellier
+    key_refs:
+    - 10.1093/nar/gki010
+    - 10.1093/nar/gkab1136
+  last_updated: continuous
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Canonical germline reference for TCR/IG gene naming and sequences — required to standardize
+      V/D/J gene calls across all recognition datasets.
+
+      '
+  agent_access: 'Germline FASTA reference sets downloadable from the site; query interface for genes.
+    No open REST API — fetch reference directories as files. IMGT/V-QUEST has a web API but with usage
+    terms (contact IMGT).
+
+    '
+  caveats: 'LICENSE CONFLICT: imgt.org states CC BY 4.0 while the NAR 2025 overview states academic CC
+    BY-NC-ND 4.0 with commercial use requiring a CNRS financial arrangement — resolve with IMGT (contact-imgt@igh.cnrs.fr)
+    before any commercial use. Scraping discouraged; prefer the provided reference files.
+
+    '
+- id: interpro
+  name: InterPro
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Integrative classification of proteins into families, domains and sites by combining 13+
+    member databases (Pfam, CATH-Gene3D, PANTHER, PROSITE, SMART, SUPERFAMILY, NCBIfam, CDD, etc.). Provides
+    domain architectures and residue annotations across 200M+ UniProt sequences, with structural member
+    databases (CATH-Gene3D, SUPERFAMILY) linking families to folds.
+
+    '
+  scale: 'Release 10x.0: 45,899 InterPro entries from 84,588 member signatures; >200M sequences'
+  modalities:
+  - family-annotation
+  - domain-architecture
+  - signatures
+  - hmm
+  formats:
+  - tsv
+  - xml
+  - json
+  - fasta
+  - api
+  landing_url: https://www.ebi.ac.uk/interpro/
+  download_url: https://ftp.ebi.ac.uk/pub/databases/interpro/
+  api: https://www.ebi.ac.uk/interpro/api/
+  license: CC0 1.0 for InterPro-produced data; InterProScan Apache-2.0; member DBs vary
+  license_url: https://www.ebi.ac.uk/interpro/about/
+  access: open
+  provenance:
+    maintainer: EMBL-EBI InterPro consortium
+    key_refs:
+    - 10.1093/nar/gkae1082
+    - 10.1093/nar/gkac993
+  last_updated: 2025 (8-week release cycle)
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Domain-architecture and structural-family labels across all of UniProt provide weak supervision
+      and conditioning signals for sequence->structure models, and a route to propagate structural family
+      labels onto unlabelled sequences.
+
+      '
+  agent_access: 'Open FTP bulk download and a comprehensive REST API; no auth. Agent-mirrorable. New releases
+    every ~8 weeks.
+
+    '
+  caveats: 'Member databases carry their own licenses (e.g. CATH-Gene3D research-use/no- resale; PANTHER,
+    SMART have terms). InterPro''s own aggregation is CC0 but check a member DB''s terms before redistributing
+    that portion.
+
+    '
+- id: ipd-imgt-hla
+  name: IPD-IMGT/HLA Database
+  category: reference
+  species:
+  - human
+  description: 'The authoritative reference of human HLA allele sequences and official HLA nomenclature.
+    Provides genomic/cDNA/protein sequences, alignments, and a flat-file database. The canonical source
+    for HLA allele definitions used by every typing and prediction pipeline.
+
+    '
+  scale: ~43,758 HLA alleles (release 3.63, Jan 2026); 47 genes; 44,876 total sequences
+  modalities:
+  - reference-sequence
+  - alignment
+  - nomenclature
+  - allele-sequences
+  - alignments
+  formats:
+  - fasta
+  - pir
+  - msf
+  - flat-file
+  - sql/dat
+  - flatfile
+  landing_url: https://www.ebi.ac.uk/ipd/imgt/hla/
+  download_url: https://github.com/ANHIG/IMGTHLA
+  api: https://www.ebi.ac.uk/ipd/imgt/hla/download/
+  license: CC BY-ND 4.0 (Attribution-NoDerivs)
+  license_url: https://www.ebi.ac.uk/ipd/imgt/hla/licence/
+  access: open
+  provenance:
+    maintainer: Anthony Nolan Research Institute + EMBL-EBI (IPD), UK
+    key_refs:
+    - 10.1093/nar/gkac1011
+    - 10.1093/nar/gkac973
+    - 10.1093/nar/gkz950
+    - 10.1093/nar/gkv1161
+  last_updated: '2026-01 (release 3.63; quarterly: Jan/Apr/Jul/Oct)'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'Required reference to standardize HLA alleles when joining pMHC/presentation data with TCR-recognition
+      datasets. Cross-ref the presentation agent for MHC/HLA depth — do not duplicate deeply.
+
+      '
+  agent_access: 'PROGRAMMATIC: EBI FTP/HTTP file download (latest release) and GitHub (ANHIG/IMGTHLA)
+    with a branch per release + compressed archives — ideal for version-pinned ingestion. No auth.
+
+    '
+  caveats: 'CC BY-ND - RED FLAG: NoDerivs means you may redistribute verbatim with attribution (commercial
+    OK) but distributing a MODIFIED version requires prior written permission. Deriving and re-publishing
+    altered sequence sets, or shipping a reformatted subset, needs permission. Internal use/derived features
+    generally fine; redistribution of derivatives is the constraint. Human only.
+
+    '
+- id: ipd-mhc
+  name: IPD-MHC Database (non-human, incl. canine DLA)
+  category: reference
+  species:
+  - dog
+  - other
+  description: 'The inter-species sister database to IPD-IMGT/HLA: curated MHC allele sequences and nomenclature
+    for non-human species, including canine DLA. The authoritative source for DLA allele definitions (DLA-88,
+    DLA-DRB1, etc.).
+
+    '
+  scale: '>7,000 alleles across ~70 species; canine (DLA) subset is comparatively small'
+  modalities:
+  - reference-sequence
+  - nomenclature
+  formats:
+  - fasta
+  - flat-file
+  landing_url: https://www.ebi.ac.uk/ipd/mhc/
+  download_url: https://github.com/ANHIG/IPDMHC
+  license: CC BY-ND 4.0 (Attribution-NoDerivs)
+  license_url: https://www.ebi.ac.uk/ipd/mhc/
+  access: open
+  provenance:
+    maintainer: EMBL-EBI (IPD) + species nomenclature committees
+    key_refs:
+    - 10.1093/nar/gkx1029
+  last_updated: ongoing
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'The canine DLA reference needed for any dog immuno-oncology work: pseudo-sequences and allele
+      definitions for DLA-restricted presentation modeling. Core to Veritope''s comparative-oncology angle.
+
+      '
+  agent_access: 'Downloadable per-species flat files + GitHub. No auth; bulk-fetchable.
+
+    '
+  caveats: 'CC BY-ND (same NoDerivs constraint as IPD-IMGT/HLA). Canine coverage is SPARSE relative to
+    human - few alleles, and sequence-only (no binding/elution data here). This is the central canine
+    gap for Veritope.
+
+    '
+- id: nextprot
+  name: neXtProt
+  category: reference
+  species:
+  - human
+  description: 'Human-centric protein knowledgebase built on UniProtKB/Swiss-Prot and enriched with curated
+    expression, PTM, variant, proteotypic-peptide and subcellular-localization data. Tracks the "missing
+    proteins" / protein-existence (PE) evidence for the Human Proteome Project. A deeply annotated human
+    "self" protein reference with peptide-level evidence.
+
+    '
+  scale: ~20,400 human protein entries; curated isoforms, PTMs, variants, peptides
+  modalities:
+  - protein-sequence
+  - functional-annotation
+  - ptm
+  - proteotypic-peptides
+  - expression
+  formats:
+  - xml
+  - json
+  - fasta
+  - peff
+  - api
+  landing_url: https://www.nextprot.org/
+  download_url: https://www.nextprot.org/help/downloads
+  api: https://api.nextprot.org/
+  license: CC BY 4.0
+  license_url: https://www.nextprot.org/help/licence
+  access: open
+  provenance:
+    maintainer: SIB Swiss Institute of Bioinformatics (CALIPHO group)
+    key_refs:
+    - 10.1093/nar/gkz995
+  last_updated: 2020+ (releases; data CC BY 4.0 since 2018-02-21)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Human-only, peptide-and-PTM-rich self reference; proteotypic-peptide and protein-existence annotation
+      supports deciding whether a candidate antigen maps to a well-evidenced normal protein vs. an uncertain/missing
+      one.
+
+      '
+  agent_access: 'REST API (api.nextprot.org) and SPARQL endpoint; bulk download of all annotations as
+    XML/PEFF, plus per-entry XML/JSON/FASTA. No auth.
+
+    '
+  caveats: 'Data is CC BY 4.0 since 2018 (earlier releases were CC BY-ND; ignore journal-article CC BY-NC
+    labels). Human only (no dog). Overlaps UniProt (it is built on Swiss-Prot) — use for the extra curation
+    layer, dedup against UniProt by accession.
+
+    '
+- id: pfam
+  name: Pfam (protein families)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Library of protein families represented by curated multiple sequence alignments and profile
+    HMMs, now delivered through InterPro. Many families carry structural mappings (to PDB/CATH via InterPro/SIFTS),
+    making Pfam a bridge between sequence family space and structure.
+
+    '
+  scale: 'Pfam 37.x/38.0: ~20,000+ families'
+  modalities:
+  - msa
+  - profile-hmm
+  - family-annotation
+  - seed-alignments
+  formats:
+  - stockholm
+  - hmm
+  - fasta
+  - tsv
+  landing_url: https://www.ebi.ac.uk/interpro/entry/pfam/
+  download_url: https://ftp.ebi.ac.uk/pub/databases/Pfam/
+  license: CC0 1.0 (public domain)
+  license_url: https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/
+  access: open
+  provenance:
+    maintainer: EMBL-EBI (formerly Wellcome Sanger); integrated into InterPro
+    key_refs:
+    - 10.1093/nar/gkaa913
+    - 10.1093/nar/gkx922
+  last_updated: 2024-2025 (Pfam 37.x/38.0 via InterPro)
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Curated family MSAs and HMMs are standard conditioning/pretraining inputs for evolutionary-coupling
+      and folding models; seed alignments give high-quality sequence groupings tied to structural families.
+
+      '
+  agent_access: 'Open FTP bulk download (full Pfam-A.hmm, seed/full alignments). No auth. Agent-mirrorable.
+    Interactive access via the InterPro site/API.
+
+    '
+  caveats: 'Standalone pfam.xfam.org was decommissioned; access is now via InterPro and the EBI FTP. Pfam-produced
+    data is CC0, but downstream UniProt sequence content has its own (CC BY 4.0) terms.
+
+    '
+- id: refseq
+  name: NCBI RefSeq (Reference Sequence Collection)
+  category: reference
+  species:
+  - human
+  - mouse
+  - dog
+  - other
+  description: 'Curated, non-redundant reference sequences for genomes, transcripts (NM_/XM_), and proteins
+    (NP_/XP_) across organisms, with the RefSeq Select / MANE (jointly with Ensembl) representative transcript
+    set for human. The NCBI counterpart reference for human and dog genomes/proteomes.
+
+    '
+  scale: '>400M sequences across all RefSeq organisms; human + dog fully annotated'
+  modalities:
+  - genome-assembly
+  - transcript-sequence
+  - protein-sequence
+  - gene-annotation
+  formats:
+  - fasta
+  - gff3
+  - gbff
+  - gtf
+  - api
+  landing_url: https://www.ncbi.nlm.nih.gov/refseq/
+  download_url: https://ftp.ncbi.nlm.nih.gov/refseq/
+  api: https://www.ncbi.nlm.nih.gov/datasets/docs/v2/
+  license: custom
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI / U.S. National Library of Medicine (NIH)
+    key_refs:
+    - 10.1093/nar/gkv1189
+    - 10.1038/s41586-022-04558-8
+  last_updated: 2025 (continuous)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Alternative/complementary reference proteome and transcriptome for human and especially dog
+      (NCBI is the primary annotator for several canine assemblies). MANE gives a stable, agreed human
+      transcript per gene for consistent variant and antigen coordinates.
+
+      '
+  agent_access: 'Bulk via NCBI FTP (per-organism and per-assembly FASTA/GFF3/GBFF). NCBI Datasets v2 REST
+    API + CLI (dehydrated "bags" for large sets). E-utilities for record-level fetch. No auth; API key
+    raises E-utils rate limits.
+
+    '
+  caveats: 'NCBI states RefSeq is "available without restriction" (U.S. gov work, effectively public domain);
+    no single SPDX license — a few registries mislabel it (e.g. ODbL). Watch RefSeq vs GenBank accession
+    semantics; keep assembly/annotation-release versions consistent across human and dog.
+
+    '
+- id: scope
+  name: SCOPe (Structural Classification of Proteins - extended)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Manually/semi-automatically curated classification of protein domains into a class/fold/superfamily/family
+    hierarchy, continuing SCOP. ASTRAL compendium provides sequence/structure subsets at defined identity
+    cutoffs (e.g. 40%) widely used as non-redundant benchmark sets for fold recognition.
+
+    '
+  scale: 'v2.08: 344,851 domains from 106,976 PDB entries'
+  modalities:
+  - domain-classification
+  - astral-subsets
+  - representatives
+  formats:
+  - fasta
+  - pdb
+  - sql
+  - tsv
+  landing_url: https://scop.berkeley.edu/
+  download_url: https://scop.berkeley.edu/downloads/
+  license: custom (freely available; no explicit SPDX license stated)
+  license_url: https://scop.berkeley.edu/
+  access: open
+  provenance:
+    maintainer: Fox/Brenner lab, UC Berkeley
+    key_refs:
+    - 10.1093/nar/gkt1240
+    - 10.1093/nar/gkab1054
+  last_updated: 2021 (2.08) + 2.08-stable updates to 2023
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'ASTRAL non-redundant domain subsets are a classic basis for fold-level ML benchmarks and for
+      building clustered train/test splits; curated fold labels complement CATH.
+
+      '
+  agent_access: 'Open download of parseable flat files and a ~2 GB MySQL dump; also archived on Zenodo.
+    No auth; agent-mirrorable.
+
+    '
+  caveats: 'License not stated as a standard SPDX id — "freely available" but confirm reuse terms before
+    redistribution (mark license as custom/unknown). Curation lags the PDB; large fraction of recent entries
+    unclassified.
+
+    '
+- id: sequence-ontology
+  name: Sequence Ontology (SO)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Standardized ontology of biological sequence features and variant/annotation terms (genes,
+    transcripts, variants, feature types), used to normalize feature and variant vocabulary in genomics
+    pipelines.
+
+    '
+  scale: ~2,500+ sequence-feature terms
+  modalities:
+  - ontology
+  - controlled-vocabulary
+  formats:
+  - owl
+  - obo
+  landing_url: https://obofoundry.org/ontology/so.html
+  download_url: http://purl.obolibrary.org/obo/so.owl
+  api: https://www.ebi.ac.uk/ols4/
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: The Sequence Ontology (GitHub) / OBO Foundry
+    key_refs:
+    - 10.1186/gb-2005-6-5-r44
+  last_updated: continuous (versioned)
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Normalizes sequence-feature and variant terminology when integrating cancer-genomics and annotation
+      data into a common schema.
+
+      '
+  agent_access: 'PROGRAMMATIC: download OWL/OBO from PURL; query via EBI OLS API; GitHub source. Automatable.
+
+    '
+  caveats: 'CC BY 4.0 (attribution). Peripheral to single-cell/antigen data proper — included as the standard
+    vocabulary for the genomics-feature layer of an ingestion schema.
+
+    '
+- id: uniprot
+  name: UniProt / UniProtKB (Universal Protein Knowledgebase)
+  category: reference
+  species:
+  - human
+  - mouse
+  - dog
+  - other
+  description: 'Central reference for protein sequences and functional annotation. UniProtKB combines
+    curated Swiss-Prot and computationally annotated TrEMBL; Reference Proteomes provide one representative,
+    non-redundant proteome per species (human UP000005640; dog present). The canonical "self" protein
+    sequence set for immunopeptidomics search and antigen mapping.
+
+    '
+  scale: ~25,000 reference proteomes; human proteome ~20,400 canonical proteins
+  modalities:
+  - protein-sequence
+  - functional-annotation
+  - ptm
+  - isoforms
+  - cross-references
+  - sequence
+  - annotation
+  - clusters
+  - xrefs
+  formats:
+  - fasta
+  - xml
+  - txt
+  - tsv
+  - json
+  - gff
+  - api
+  landing_url: https://www.uniprot.org/
+  download_url: https://ftp.uniprot.org/pub/databases/uniprot/
+  api: https://rest.uniprot.org/
+  license: CC BY 4.0
+  license_url: https://www.uniprot.org/help/license
+  access: open
+  provenance:
+    maintainer: UniProt Consortium (EMBL-EBI, SIB Swiss Institute of Bioinformatics, PIR)
+    key_refs:
+    - 10.1093/nar/gkae1010
+    - 10.1093/nar/gkac1052
+  last_updated: 2025_xx (8-weekly releases)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    - comparative
+    why: 'The reference "self" proteome for both human and dog — the search database against which MS
+      immunopeptidomes are identified and the self-filter for candidate neoantigens/epitopes. Isoform
+      and PTM annotation supports distinguishing variant vs. canonical sequence.
+
+      '
+  agent_access: 'REST API at rest.uniprot.org (no auth) with proteomes, uniprotkb, and ID-mapping endpoints,
+    content negotiation to FASTA/JSON/TSV; bulk reference-proteome FASTA via FTP. Fully scriptable.
+
+    '
+  caveats: 'CC BY 4.0 (ignore stale "NoDerivs" claims on third-party pages). TrEMBL is unreviewed — prefer
+    Swiss-Prot + canonical for a clean self set. Canine proteome is less deeply curated than human; many
+    entries are TrEMBL-level.
+
+    '
+- id: uu-cfam-gsd
+  name: UU_Cfam_GSD_1.0 / CanFam4 (German Shepherd "Mischka")
+  category: reference
+  species:
+  - dog
+  description: 'Uppsala University German Shepherd Dog assembly, more contiguous than CanFam3.1; the build
+    on which Dog10K variant calls are made. NCBI GCF_011100685.1.
+
+    '
+  scale: chromosome-level; ~2.4 Gb
+  modalities:
+  - genome-assembly
+  - annotation
+  formats:
+  - fasta
+  - gff3
+  landing_url: https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_011100685.1/
+  download_url: https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_011100685.1/
+  license: public (INSDC)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Uppsala University (Lindblad-Toh lab); NCBI
+    key_refs:
+    - 10.1093/gigascience/giaa027
+  last_updated: '2020'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Current Dog10K coordinate system; preferred modern reference for new canine WGS/WES analysis.
+
+      '
+  agent_access: 'NCBI Datasets CLI / FTP; no auth. UCSC canFam4.
+
+    '
+  caveats: 'Not the same coordinates as CanFam3.1 or Tasha1.0 — standardize a reference across the program.
+
+    '

@@ -1,0 +1,2602 @@
+- id: abodybuilder2-models
+  name: ABodyBuilder2 predicted antibody structures + ImmuneBuilder weights
+  category: structure
+  species:
+  - human
+  - mouse
+  description: 'ImmuneBuilder (ABodyBuilder2/NanoBodyBuilder2/TCRBuilder2) data release: predicted structural
+    models for a large set of paired antibody sequences from the Observed Antibody Space, bundled with
+    all ImmuneBuilder model weights. Antibody-binder precedent for the pMHC design program.
+
+    '
+  scale: ~148k ABodyBuilder2 models of paired antibody sequences (from OAS) + ImmuneBuilder weights
+  modalities:
+  - antibody
+  - nanobody
+  - computed-model
+  - weights
+  formats:
+  - pdb
+  - pytorch-weights
+  landing_url: https://github.com/oxpig/ImmuneBuilder
+  download_url: https://doi.org/10.5281/zenodo.7258553
+  api: null
+  license: CC BY 4.0 (Zenodo); code BSD-3-Clause
+  license_url: https://doi.org/10.5281/zenodo.7258553
+  access: open
+  provenance:
+    maintainer: Oxford Protein Informatics Group (OPIG), University of Oxford
+    key_refs:
+    - 10.1038/s42003-023-04927-7
+    - 10.5281/zenodo.7258553
+  last_updated: 2022-2023 (Zenodo + Commun Biol)
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Open antibody/nanobody structure predictor + weights, the binder-design precedent most transferable
+      to engineering antibody-like binders against peptide-MHC.
+
+      '
+  agent_access: 'Open Zenodo download (10.5281/zenodo.7258553); pip-installable code with bundled weights.
+    Fully scriptable.
+
+    '
+  caveats: 'Models are predictions, not experiments. Antibody-centric (TCR via sibling TCRBuilder2). Attribution
+    required (CC BY 4.0).
+
+    '
+- id: afdb-foldseek-clusters
+  name: AFDB/Foldseek structural clusters (AFDB50/AFDBclusters)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Structural clustering of the entire AlphaFold DB with Foldseek, collapsing ~214M models
+    into ~2.3M non-singleton structural clusters with representatives. Provides a non-redundant, structure-defined
+    view of the predicted universe — ideal for building de-duplicated training sets and sampling diverse
+    folds.
+
+    '
+  scale: ~2.3M clusters from ~214M AFDB models; ~2.27M cluster representatives
+  modalities:
+  - predicted-structure
+  - structural-clusters
+  - representatives
+  formats:
+  - tsv
+  - foldseek-db
+  - mmcif
+  landing_url: https://cluster.foldseek.com/
+  download_url: https://afdb-cluster.steineggerlab.workers.dev/
+  license: CC BY 4.0 (derived from AFDB)
+  license_url: https://alphafold.ebi.ac.uk/assets/License-Disclaimer.pdf
+  access: open
+  provenance:
+    maintainer: Steinegger & van Kempen (Seoul National Univ. / groups)
+    key_refs:
+    - 10.1038/s41586-023-06510-w
+  last_updated: '2023'
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Non-redundant structural representatives let you train/evaluate without drowning in near-duplicate
+      AFDB models and enable balanced sampling across the fold space — key for representation learning.
+
+      '
+  agent_access: 'Downloadable cluster membership tables, representative sets and Foldseek databases over
+    HTTPS; no auth. Agent-mirrorable.
+
+    '
+  caveats: 'Derived from AFDB predictions (same prediction caveats). Confirm current download mirror URLs.
+    Inherits AFDB CC BY 4.0 terms.
+
+    '
+- id: alphafold-db
+  name: AlphaFold Protein Structure Database (AFDB)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'DeepMind/EMBL-EBI database of AlphaFold2-predicted 3D structures covering essentially
+    the whole of UniProt. Each model carries per-residue pLDDT confidence and PAE. The largest openly
+    licensed predicted sequence->structure corpus with explicit commercial-use permission; widely used
+    for distillation and structure-aware pretraining.
+
+    '
+  scale: '>214M predicted structures (as of Sept 2023); redesigned interface/coverage in 2025'
+  modalities:
+  - computed-model
+  - confidence-plddt
+  - pae
+  - predicted-structure
+  - plddt
+  - coordinates
+  formats:
+  - pdb
+  - mmcif
+  - json
+  - api
+  landing_url: https://alphafold.ebi.ac.uk/
+  download_url: https://ftp.ebi.ac.uk/pub/databases/alphafold/
+  api: https://alphafold.ebi.ac.uk/api-docs
+  license: CC BY 4.0
+  license_url: https://alphafold.ebi.ac.uk/assets/License-Disclaimer.pdf
+  access: open
+  provenance:
+    maintainer: Google DeepMind + EMBL-EBI
+    key_refs:
+    - 10.1093/nar/gkab1061
+    - 10.1093/nar/gkad1011
+    - 10.1038/s41586-021-03819-2
+  last_updated: 2025 (interface/coverage update); UniProt sync lagged for a period
+  relevance:
+    programs:
+    - design
+    - recognition
+    - presentation
+    why: 'Massive, commercially usable predicted-structure corpus for pretraining, distillation and augmenting
+      experimental data; pLDDT/PAE enable confidence- weighted training. Directly ML-training-friendly
+      by license.
+
+      '
+  agent_access: 'Bulk: Google Cloud public bucket (gs://public-datasets-deepmind-alphafold-v4) for the
+    full set (~23 TB); EBI FTP (ftp.ebi.ac.uk/pub/databases/alphafold) and per-organism + Swiss-Prot archives;
+    REST API for single entries. No auth. Fully agent-downloadable; use gsutil/aws for the complete corpus.
+
+    '
+  caveats: 'Models are predictions, not experiments; low-pLDDT and disordered regions are unreliable.
+    CC BY requires attribution; EMBL-EBI Terms of Use also apply. Heavy redundancy — cluster before training
+    (see AFDB Foldseek clusters).
+
+    '
+  size_bytes: 23000000000000
+- id: atlas-md
+  name: ATLAS (protein molecular-dynamics database)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Standardized all-atom MD of representative protein structures (3 x 100 ns replicas per
+    chain) with precomputed analyses — RMSF, flexibility, secondary-structure dynamics, contacts. Covers
+    a broad, non-redundant set of PDB chains plus curated subsets (Chameleon fold-switchers, DPF). NOT
+    the TCR–pMHC affinity "ATLAS" in domain-6.
+
+    '
+  scale: 1,938 main ATLAS structures (+16 Chameleon, +100 DPF); 3 x 100 ns each
+  modalities:
+  - md-trajectory
+  - flexibility-analysis
+  - contacts
+  formats:
+  - xtc
+  - pdb
+  - tpr
+  - csv
+  landing_url: https://www.dsimb.inserm.fr/ATLAS/
+  download_url: https://www.dsimb.inserm.fr/ATLAS/download.html
+  api: https://www.dsimb.inserm.fr/ATLAS/api/docs
+  license: CC BY-NC 4.0
+  license_url: https://www.dsimb.inserm.fr/ATLAS/download.html
+  access: open
+  provenance:
+    maintainer: DSIMB, INSERM / Université Paris Cité (Galochkina, Gelly et al.)
+    key_refs:
+    - 10.1093/nar/gkad1084
+  last_updated: '2024'
+  relevance:
+    programs:
+    - design
+    why: 'Broad, uniform MD coverage of diverse folds with ready-made flexibility metrics — strong supervision
+      for sequence-to-dynamics/ensemble and B-factor/flexibility prediction.
+
+      '
+  agent_access: 'Bulk download script (download_ATLAS.py) and a /api/parsable REST endpoint; per- entry
+    XTC+PDB+analysis bundles. No auth. Fully automatable.
+
+    '
+  caveats: 'CC BY-NC 4.0 — NON-COMMERCIAL. A computational-oncology company must treat this as restricted
+    for commercial model training/redistribution; use for evaluation or seek a license. 3 x 100 ns is
+    modest sampling for slow motions.
+
+    '
+- id: atlas-tcr-pmhc
+  name: ATLAS (Altered TCR Ligand Affinities and Structures)
+  category: structure
+  species:
+  - human
+  - mouse
+  description: 'Manually curated database linking experimental binding affinities (and some kinetics)
+    to 3D structures for wild-type and mutant TCR-pMHC complexes. Where a mutant has no crystal structure,
+    a modeled structure is provided. The canonical affinity+structure resource for TCR-pMHC interactions.
+
+    '
+  scale: ~253 affinity values paired with TCR-pMHC complex structures (growing; original 2017 release
+    + post-2017 literature)
+  modalities:
+  - tcr-pmhc-structure
+  - binding-affinity
+  - mutant-scan
+  - complex-structure
+  - tcr-pmhc
+  - kinetics
+  - mutant
+  formats:
+  - web
+  - pdb
+  - csv
+  - tsv
+  landing_url: https://atlas.ibbr.umd.edu/
+  download_url: https://github.com/weng-lab/ATLAS
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Pierce/Weng labs (IBBR, UMD / UMass)
+    key_refs:
+    - 10.1002/prot.25260
+  last_updated: Original 2017; affinities re-surfaced via TCR3d 2.0 (2024)
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Direct structure-to-affinity labels for TCR-pMHC, including mutational effects — essential for
+      training/benchmarking affinity predictors and for validating peptide-MHC binder design against measured
+      Kd.
+
+      '
+  agent_access: 'Data and build scripts on GitHub (weng-lab/ATLAS, piercelab fork); affinities also exposed
+    through TCR3d. Clone the repo for programmatic access.
+
+    '
+  caveats: 'No explicit repository license found (marked unknown) — check before reuse. Small, manually
+    curated set; mixes experimental and modeled mutant structures (flag the modeled ones). Overlaps TCR3d.
+
+    '
+  api: https://github.com/piercelab/ATLAS
+  license_url: https://github.com/weng-lab/ATLAS
+- id: bfvd
+  name: BFVD (Big Fantastic Virus Database)
+  category: structure
+  species:
+  - other
+  description: 'Repository of ColabFold-predicted structures for viral protein sequence representatives
+    of UniRef30 clusters — filling a gap (viral proteins are under-represented in AFDB). Complements general
+    corpora with viral fold diversity; each model carries pLDDT.
+
+    '
+  scale: 351,242 predicted viral protein structures (median pLDDT 70.2)
+  modalities:
+  - predicted-structure
+  - plddt
+  - foldseek-db
+  formats:
+  - pdb
+  - foldseek-db
+  landing_url: https://bfvd.foldseek.com/
+  download_url: https://bfvd.steineggerlab.workers.dev
+  license: CC BY 4.0
+  license_url: https://zenodo.org/records/13993145
+  access: open
+  size_bytes: 9100000000
+  provenance:
+    maintainer: Steinegger lab (Seoul National University)
+    key_refs:
+    - 10.1093/nar/gkae1119
+  last_updated: '2024'
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Adds viral structural space absent from AFDB — useful for oncolytic-virus / viral-antigen modelling
+      and for broadening fold coverage in pretraining.
+
+      '
+  agent_access: 'Zenodo tarball (bfvd.tar.gz ~9.1 GB) and Cloudflare mirror; Foldseek DB. No auth. Fully
+    agent-downloadable.
+
+    '
+  caveats: 'Predicted structures (median medium confidence ~70 pLDDT); ~204k singletons. Verify current
+    mirror. Viral-only scope.
+
+    '
+- id: bmrb
+  name: Biological Magnetic Resonance Data Bank (BMRB)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The wwPDB NMR archive: assigned chemical shifts, coupling constants, relaxation data,
+    residual dipolar couplings, restraints, and time-domain/raw NMR spectral data for proteins, nucleic
+    acids, carbohydrates, metabolites and other organics. NMR uniquely captures solution-state behavior
+    and dynamics, not just a single static conformer.
+
+    '
+  scale: '>14,000 entries with assigned shift data (archive >15,000 depositions); spectral peak lists
+    and raw time-domain data for many entries'
+  modalities:
+  - nmr-chemical-shifts
+  - restraints
+  - relaxation
+  - rdc
+  - raw-fid
+  - metabolomics
+  formats:
+  - nmr-star
+  - xml
+  - rdf
+  - json
+  - csv
+  landing_url: https://bmrb.io/
+  download_url: https://bmrb.io/ftp/pub/bmrb/
+  api: https://api.bmrb.io/
+  license: public domain (BMRB/wwPDB policy); some secondary sources cite CC BY 4.0 — see caveats
+  license_url: https://bmrb.io/
+  access: open
+  provenance:
+    maintainer: UConn Health (prev. University of Wisconsin-Madison); NIGMS R24GM150793; wwPDB member;
+      mirror BMRBj at PDBj
+    key_refs:
+    - 10.1093/nar/gkac1050
+  last_updated: 2026 (continuous deposition)
+  relevance:
+    programs:
+    - design
+    why: 'Chemical shifts and restraints encode local backbone/side-chain conformation and solution dynamics
+      — directly useful for sequence-to-conformation and ensemble models, and for cross-checking predicted
+      structures against experiment.
+
+      '
+  agent_access: 'Anonymous FTP/HTTPS bulk download of the full NMR-STAR archive; rsync and Globus endpoints
+    for keeping a local mirror; REST API (api.bmrb.io) and CSV relational tables. PDBj BMRBj mirror serves
+    NMR-STAR/XML/RDF/JSON over HTTP. Fully agent- downloadable.
+
+    '
+  caveats: 'License statements conflict: BMRB data are generally treated as public domain under wwPDB
+    policy, but at least one book chapter cites CC BY 4.0 and Wikipedia lists "public domain." Treat as
+    freely reusable but attribute. Raw time-domain (FID) data exist only for a subset. NMR-STAR requires
+    parsing (PyNMRSTAR library).
+
+    '
+- id: capri
+  name: CAPRI (Critical Assessment of PRedicted Interactions)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Community-wide blind assessment of protein-protein docking and complex structure prediction,
+    run jointly with CASP for assembly rounds. Provides curated target complexes (incl. antibody-antigen
+    and nanobody complexes) and score-set ensembles of submitted models for benchmarking docking/scoring.
+
+    '
+  scale: CASP15-CAPRI round = 37 targets (incl. 3 antibody-antigen); score-set benchmark ~15 published
+    targets with large model ensembles
+  modalities:
+  - complex-structure
+  - docking-target
+  - model-ensemble
+  - benchmark
+  formats:
+  - pdb
+  - mmcif
+  landing_url: https://www.capri-docking.org/
+  download_url: https://www.capri-docking.org/
+  api: null
+  license: unknown
+  license_url: https://www.capri-docking.org/
+  access: open
+  provenance:
+    maintainer: CAPRI management (EBI/IGBMC and community), coordinated with CASP
+    key_refs:
+    - 10.1002/prot.26609
+  last_updated: 2022-2024 (CASP15-CAPRI round 54; CASP16 rounds)
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Antibody-antigen and nanobody docking targets are the closest public blind benchmarks for interface
+      prediction relevant to pMHC binder docking and scoring; score-sets give labeled good/bad models
+      for scorer development.
+
+      '
+  agent_access: 'Targets and score-sets distributed via capri-docking.org / scoreset.org; manual/semi-automated
+    download. No documented programmatic API.
+
+    '
+  caveats: 'Explicit reuse license not clearly posted (marked unknown). No pMHC-specific targets historically
+    — antibody-antigen is the proxy. Some materials released only to registered participants during active
+    rounds.
+
+    '
+- id: casp
+  name: CASP (Critical Assessment of Structure Prediction) datasets
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Biennial blind community experiment assessing protein (and complex/RNA) structure prediction.
+    Releases target sequences, experimental reference structures, all participant predictions and numerical
+    assessment results — the gold-standard held-out benchmark for sequence->structure methods.
+
+    '
+  scale: Per-round target + prediction archives (e.g. CASP15; CASP16 2024 ~300 targets across 5 categories)
+  modalities:
+  - structure-target
+  - model-ensemble
+  - benchmark
+  - sequence
+  - reference-structure
+  - predictions
+  - assessment-scores
+  formats:
+  - pdb
+  - mmcif
+  - tar-archives
+  - fasta
+  - txt
+  landing_url: https://predictioncenter.org/
+  download_url: https://predictioncenter.org/download_area/
+  api: null
+  license: custom (freely downloadable for research; cite Prediction Center)
+  license_url: https://predictioncenter.org/
+  access: open
+  provenance:
+    maintainer: Protein Structure Prediction Center (UC Davis), NIGMS funded
+    key_refs:
+    - 10.1002/prot.26617
+  last_updated: 2024 (CASP16); archives per round from CASP1 onward
+  relevance:
+    programs:
+    - design
+    - recognition
+    - presentation
+    why: 'Standardized targets with experimental references and large model ensembles provide a reusable
+      accuracy benchmark for monomer/complex prediction methods feeding the structure-based design and
+      recognition pipelines.
+
+      '
+  agent_access: 'Open download_area indexed by round and file type (targets, predictions, results) as
+    tar.gz; directly fetchable/scriptable over HTTPS.
+
+    '
+  caveats: 'No single SPDX license — a research-use/citation convention; verify before redistribution.
+    Targets are deliberately limited in number (benchmark, not a training corpus). Reference structures
+    embargoed until each season ends.
+
+    '
+- id: cryoet-data-portal
+  name: CZ cryoET Data Portal
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Open-access portal for cryo-electron tomography: tilt series, reconstructed tomograms,
+    and dense expert/ML annotations (segmentations, particle picks) of cellular and in-situ structures.
+    Built to accelerate ML-based annotation of cryo-ET, and interoperates with EMPIAR for raw-data hosting.
+
+    '
+  scale: 392 datasets, 60,512 tomograms, 179,902 annotations, 51 species (2026)
+  modalities:
+  - tilt-series
+  - tomogram
+  - segmentation
+  - particle-annotations
+  formats:
+  - zarr
+  - mrc
+  - ndjson
+  - json
+  landing_url: https://cryoetdataportal.czscience.com/
+  download_url: https://chanzuckerberg.github.io/cryoet-data-portal/
+  api: https://chanzuckerberg.github.io/cryoet-data-portal/python-api.html
+  license: CC BY 4.0 (portal data; verify per-dataset)
+  license_url: https://cryoetdataportal.czscience.com/
+  access: open
+  provenance:
+    maintainer: Chan Zuckerberg Imaging Institute / CZ Biohub
+    key_refs:
+    - https://chanzuckerberg.github.io/cryoet-data-portal/
+  last_updated: 2026 (rolling)
+  relevance:
+    programs:
+    - design
+    why: 'In-situ 3D structure with annotations — training data for structure/particle identification
+      in crowded cellular context, pushing sequence-and-context-to-3D beyond purified single particles.
+
+      '
+  agent_access: 'Dedicated Python client (pip install cryoet-data-portal) and GraphQL API over an S3 bucket;
+    public, no account. napari plugin for inspection. Tomograms stored as multiscale Zarr/MRC — large
+    but chunk-streamable, well-suited to scripted access.
+
+    '
+  caveats: 'Confirm license per dataset (portal applies CC BY 4.0 by default; contributors vary). Volumetric
+    data are large; use the S3/Zarr chunked access rather than full downloads.
+
+    '
+- id: cycpeptmpdb
+  name: CycPeptMPDB (cyclic-peptide membrane-permeability database)
+  category: structure
+  species:
+  - other
+  description: 'Database of cyclic peptides with measured membrane permeability and defined chemical structure
+    (HELM notation, incl. non-natural residues and cyclization), compiled from 45 papers and 2 patents.
+    The reference resource for cyclic-peptide chemistry and conformation–permeability relationships.
+
+    '
+  scale: 7,334 cyclic peptides with measured permeability
+  modalities:
+  - cyclic-peptide-structure
+  - helm
+  - permeability-assay
+  - descriptors
+  formats:
+  - csv
+  - sdf
+  - helm
+  landing_url: http://cycpeptmpdb.com/
+  download_url: http://cycpeptmpdb.com/download/
+  api: http://cycpeptmpdb.com/
+  license: custom (free academic access) — no explicit SPDX license stated
+  license_url: http://cycpeptmpdb.com/
+  access: open
+  provenance:
+    maintainer: Li, Kihara et al. (Mitsubishi Tanabe / academic collaboration)
+    key_refs:
+    - 10.1021/acs.jcim.2c01573
+  last_updated: 2023+
+  relevance:
+    programs:
+    - design
+    why: 'Cyclic/macrocyclic peptides are a prime therapeutic modality; this links peptide structure (incl.
+      non-natural chemistry) to a measured developability property — training signal for cyclic-peptide
+      structure/conformation and property models.
+
+      '
+  agent_access: 'Web download of structures + permeability tables; HELM strings give unambiguous structure.
+    No auth. Scriptable; modest size.
+
+    '
+  caveats: 'No explicit CC/SPDX license; "freely accessed" by convention — confirm before commercial use.
+    Permeability is the primary label; 3D conformers are derivable from HELM/structure but not all deposited
+    as ensembles.
+
+    '
+- id: dbaasp
+  name: DBAASP (Database of Antimicrobial Activity and Structure of Peptides)
+  category: structure
+  species:
+  - human
+  - other
+  description: 'Manually curated database of antimicrobial/cytotoxic peptides with sequence, chemical
+    modifications, target-organism activity (MIC), and structural data — including >400 entries linked
+    to experimental PDB structures and >3,200 peptides with computed MD models/trajectories viewable and
+    downloadable in-browser.
+
+    '
+  scale: '>15,700 entries (v3): ~14,500 monomers + ~400 multimers; >400 PDB-linked, >3,200 with MD models'
+  modalities:
+  - peptide-sequence
+  - amp-activity-mic
+  - peptide-structure
+  - md-model
+  formats:
+  - json
+  - csv
+  - pdb
+  landing_url: https://dbaasp.org/
+  download_url: https://dbaasp.org/download
+  api: https://dbaasp.org/api
+  license: open-access, free to use — no explicit SPDX/CC license stated (see caveats)
+  license_url: https://dbaasp.org/help
+  access: open
+  provenance:
+    maintainer: Ivane Beritashvili Center / Pirtskhalava et al. (Georgia)
+    key_refs:
+    - 10.1093/nar/gkaa991
+  last_updated: 2021+ (v3, continuous curation)
+  relevance:
+    programs:
+    - design
+    why: 'Pairs peptide sequence/chemistry with activity AND structure (PDB links + MD models) — directly
+      on-domain for antimicrobial/therapeutic peptide design and for sequence-to-conformation learning
+      on short peptides with non-natural residues.
+
+      '
+  agent_access: 'REST API with simple URL-addressable entries and query sets; per-entry PDB/MD downloads.
+    No auth. Fully scriptable.
+
+    '
+  caveats: 'No explicit CC/SPDX license surfaced (site states free/open use) — confirm terms before redistribution/training.
+    MD models are computed (not experimental) — treat as predicted conformers. Peptides include non-standard
+    residues needing special parsing.
+
+    '
+- id: emdb
+  name: Electron Microscopy Data Bank (EMDB)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Public wwPDB repository for cryo-EM/cryo-ET 3D reconstructions: density maps, half-maps,
+    additional maps and masks of macromolecular complexes and subcellular structures, plus representative
+    tomograms. Each entry carries rich metadata (resolution, reconstruction method, symmetry, fitted-model
+    cross-links to PDB). The processed-volume counterpart to EMPIAR''s raw images.
+
+    '
+  scale: 64,332 entries (2026-11-11), growing fast with cryo-EM
+  modalities:
+  - cryoem-density-map
+  - half-map
+  - mask
+  - tomogram
+  formats:
+  - mrc
+  - ccp4-map
+  - xml
+  - json
+  landing_url: https://www.ebi.ac.uk/emdb/
+  download_url: https://ftp.ebi.ac.uk/pub/databases/emdb/
+  api: https://www.ebi.ac.uk/emdb/api/
+  license: CC0 1.0 (wwPDB public-domain data policy)
+  license_url: https://www.ebi.ac.uk/licencing
+  access: open
+  provenance:
+    maintainer: EMBL-EBI, as part of wwPDB / EMDB-EMPIAR
+    key_refs:
+    - 10.1093/nar/gkad1019
+  last_updated: 2026-11 (weekly releases)
+  relevance:
+    programs:
+    - design
+    why: 'Experimental 3D density for large and membrane/complex assemblies that crystallography misses.
+      Maps + fitted models are training/validation signal for sequence-to-3D and complex-assembly models,
+      complementing the PDB in domain-6.
+
+      '
+  agent_access: 'Fully anonymous FTP/HTTPS mirror (ftp.ebi.ac.uk/pub/databases/emdb) is directly wget/rsync-able
+    per entry; REST API at /emdb/api for metadata and search. No auth. Maps are large (tens of MB to several
+    GB each) but individually scriptable.
+
+    '
+  caveats: 'wwPDB releases data to the public domain (CC0); the EBI general terms-of-use page governs
+    the service. Maps alone are not atomic coordinates — pair with the fitted PDB model (cross-referenced
+    in each entry) for sequence-to-structure supervision.
+
+    '
+- id: empiar
+  name: Electron Microscopy Public Image Archive (EMPIAR)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Public archive of the RAW image data underpinning cryo-EM maps and tomograms — motion-corrected/aligned
+    movie frames, micrographs, tilt series and particle stacks — plus volume-EM and soft/hard X-ray tomography
+    datasets. This is the "scan"-level resource: the primary detector output before reconstruction.
+
+    '
+  scale: 3,278 entries (2026-11-15); total archive 9.77 PiB; representative raw entries ~0.5–12 TB each
+    (avg ~3 TB)
+  size_bytes: 11000000000000000
+  modalities:
+  - cryoem-movies
+  - micrographs
+  - tilt-series
+  - particle-stacks
+  - volume-em
+  - xray-tomography
+  formats:
+  - mrc
+  - tiff
+  - mrcs
+  - dm4
+  - eer
+  - star
+  landing_url: https://www.ebi.ac.uk/empiar/
+  download_url: https://ftp.ebi.ac.uk/empiar/world_availability/
+  api: https://www.ebi.ac.uk/empiar/api/
+  license: CC0 1.0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/
+  access: open
+  provenance:
+    maintainer: EMBL-EBI (run jointly with EMDB)
+    key_refs:
+    - 10.1093/nar/gkac1062
+  last_updated: 2026-11 (rolling depositions)
+  relevance:
+    programs:
+    - design
+    why: 'The only public source of raw cryo-EM/cryo-ET scans at scale — needed for any model that learns
+      reconstruction, denoising, or image-to-3D, and for self- supervised pretraining on primary experimental
+      data. The single largest raw-data resource in this domain.
+
+      '
+  agent_access: 'Anonymous download via Aspera (ascp), Globus, HTTPS/FTP and Python clients; per- entry
+    directories under ftp.ebi.ac.uk/empiar. REST API for metadata. No auth, but entries are individually
+    huge (multi-TB) — plan for Aspera/Globus, staging and bandwidth, not naive wget of the full archive
+    (~9.8 PiB).
+
+    '
+  caveats: 'CC0, fully redistributable. Cost is scale, not license: downloading representative tomography/single-particle
+    sets means terabytes per entry. Formats vary by microscope/detector (EER, TIFF, DM4, MRC). Needs substantial
+    preprocessing to be ML-ready.
+
+    '
+- id: esm-atlas
+  name: ESM Metagenomic Atlas (Meta/FAIR)
+  category: structure
+  species:
+  - other
+  description: 'Meta AI''s database of ESMFold-predicted structures for metagenomic proteins (MGnify-derived),
+    expanding structural coverage into unexplored metagenomic sequence space far beyond UniProt. Each
+    prediction carries pLDDT and pTM. One of the largest predicted sequence->structure corpora.
+
+    '
+  scale: ~617M structures (v0, 2022); ~772M total with the +150M 2023_02 update
+  modalities:
+  - predicted-structure
+  - plddt
+  - ptm
+  - embeddings
+  - foldseek-db
+  formats:
+  - pdb
+  - mmcif
+  - foldseek-db
+  - parquet
+  - sqlite
+  landing_url: https://esmatlas.com/
+  download_url: https://esmatlas.com/resources
+  api: https://esmatlas.com/about#api
+  license: CC BY 4.0 (also subject to Meta Open Source Terms)
+  license_url: https://esmatlas.com/about#license
+  access: open
+  provenance:
+    maintainer: Meta AI (FAIR / EvolutionaryScale lineage)
+    key_refs:
+    - 10.1126/science.ade2574
+  last_updated: 2023-02 (v2023_02)
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Adds enormous structural diversity from metagenomic sequence space for pretraining/distillation
+      beyond the UniProt-centric AFDB; embeddings and Foldseek DBs are directly usable for representation
+      learning.
+
+      '
+  agent_access: 'Bulk tarballs of predicted structures plus Foldseek DBs and embeddings; recommended via
+    s5cmd/aria2c. Metadata ~25 GB (SQLite/Parquet). Split by pLDDT/pTM so high-confidence subsets can
+    be fetched. Also mirrored on AWS Open Data. No auth.
+
+    '
+  caveats: 'RED FLAG: hosting continuity uncertain — the original Meta-hosted endpoints (esmatlas.com
+    / fbaipublicfiles) have had availability issues; the AWS Open Data mirror and the Biohub successor
+    are more durable. Predictions, not experiments; many low-confidence models.
+
+    '
+- id: esm-atlas-biohub
+  name: ESM Atlas (Biohub, ESMC/ESMFold2)
+  category: structure
+  species:
+  - other
+  description: 'Large-scale public successor atlas of computational structure/feature outputs generated
+    with ESMC and ESMFold2 over a deduplicated set of 6.8B+ public protein sequences, hosted on the AWS
+    Registry of Open Data. Reported as ~1.1 billion predicted structures — the largest sequence->structure
+    corpus found.
+
+    '
+  scale: ~1.1B predicted structures from ~6.8B deduplicated sequences (v1.0)
+  modalities:
+  - predicted-structure
+  - embeddings
+  - protein-features
+  formats:
+  - parquet
+  - pdb
+  - mmcif
+  landing_url: https://registry.opendata.aws/biohub-esm-atlas/
+  download_url: https://registry.opendata.aws/biohub-esm-atlas/
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Arc/Biohub (ESM lineage); hosted on AWS Open Data
+    key_refs:
+    - 10.1126/science.ade2574
+  last_updated: 2024-2025 (v1.0)
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Largest openly hosted predicted sequence->structure + features corpus; extreme scale and diversity
+      for pretraining and distillation.
+
+      '
+  agent_access: 'AWS S3 Open Data bucket, downloadable with aws CLI --no-sign-request; no auth. Agent-downloadable
+    at scale (expect multi-TB).
+
+    '
+  caveats: 'License not clearly stated in search results (AWS Open Data entries are usually open but verify
+    the exact license on the registry page before ML/commercial use). Predictions, not experiments. Confirm
+    exact counts against official docs.
+
+    '
+- id: foldingathome-datasets
+  name: Folding@home public datasets (incl. COVID Moonshot / SARS-CoV-2)
+  category: structure
+  species:
+  - human
+  - other
+  description: 'Openly released trajectory and free-energy datasets from the Folding@home distributed-computing
+    project — notably the massive SARS-CoV-2 / COVID Moonshot simulations (Markov-state-model-scale adaptive
+    sampling, absolute binding free energies, protein–ligand trajectories). Among the largest aggregate
+    MD volumes ever released openly.
+
+    '
+  scale: Multi-TB to ~PB-scale aggregate trajectory data across releases (e.g. full SARS-CoV-2 proteome
+    sampling + Moonshot FECs)
+  modalities:
+  - md-trajectory
+  - markov-state-model
+  - free-energy
+  - protein-ligand
+  formats:
+  - xtc
+  - dcd
+  - h5
+  - csv
+  landing_url: https://foldingathome.org/data
+  download_url: https://registry.opendata.aws/foldingathome-covid19/
+  api: https://registry.opendata.aws/foldingathome-covid19/
+  license: open data (AWS Open Data Program; CC-style open access) — verify per dataset
+  license_url: https://registry.opendata.aws/foldingathome-covid19/
+  access: open
+  provenance:
+    maintainer: Folding@home Consortium (Bowman, Chodera, Voelz labs et al.)
+    key_refs:
+    - https://foldingathome.org/data
+    - https://registry.opendata.aws/foldingathome-covid19/
+  last_updated: 2021+ (datasets released as produced)
+  relevance:
+    programs:
+    - design
+    why: 'Enormous, equilibrium-and-enhanced-sampling MD plus rigorous free-energy data — high-value pretraining/benchmark
+      signal for dynamics, kinetics (MSM) and binding models at a scale no single curated DB matches.
+
+      '
+  agent_access: 'Public S3 buckets via AWS CLI with --no-sign-request (no AWS account); index CSVs map
+    RUNs to systems (MolSSI/BioExcel COVID Hub). Fully scriptable; just multi-TB per target, so stage
+    selectively.
+
+    '
+  caveats: 'Multiple buckets with inconsistent naming across the AWS registry and GitHub YAML — verify
+    bucket paths before scripting. Open-data access, but confirm the specific dataset''s reuse terms.
+    Preprocessing (framing, alignment) required.
+
+    '
+- id: gpcrmd
+  name: GPCRmd
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Community database of membrane molecular-dynamics simulations of G-protein-coupled receptors
+    in realistic lipid bilayers, with a large analysis toolbox (contacts, allosteric networks, pockets,
+    water, pharmacophores). Deep, target-focused MD for a major drug-target family.
+
+    '
+  scale: Thousands of trajectories across ~637 PDB structures, 50 GPCR families, 116 subtypes
+  modalities:
+  - md-trajectory
+  - membrane-protein
+  - lipid-bilayer
+  - analysis
+  formats:
+  - xtc
+  - pdb
+  - psf
+  - dcd
+  landing_url: https://www.gpcrmd.org/
+  download_url: https://www.gpcrmd.org/dynadb/
+  api: https://gpcrmd-docs.readthedocs.io/
+  license: custom / open academic — no explicit SPDX license stated (see caveats)
+  license_url: https://gpcrmd-docs.readthedocs.io/
+  access: open
+  provenance:
+    maintainer: GPCR Drug Discovery group, Barcelona (Selent lab) + consortium
+    key_refs:
+    - 10.1038/s41592-020-0884-y
+  last_updated: 2026 (rolling; new sims under review)
+  relevance:
+    programs:
+    - design
+    why: 'Membrane-protein conformational dynamics at scale — the hardest class for static predictors.
+      Useful for conformation/allostery modeling of integral-membrane targets relevant to immuno-oncology
+      surface receptors.
+
+      '
+  agent_access: 'Per-simulation downloads via the DynaDB web interface; documented toolbox and scripts.
+    No single documented bulk-tarball API — iterate over dynamics IDs. No auth.
+
+    '
+  caveats: 'No explicit CC/SPDX license surfaced; terms are open-academic by convention — confirm before
+    commercial training/redistribution. Download is per-entry (web-driven), so automation needs ID enumeration.
+
+    '
+- id: hla3db
+  name: HLA3DB (peptide/HLA class I structural database)
+  category: structure
+  species:
+  - human
+  description: 'Auto-curated database of peptide/HLA class I complex structures with comprehensive annotation
+    (peptide length, allele, backbone conformation classes), built to enable blind structure prediction
+    of T-cell epitopes. A dedicated pMHC-I structural resource distinct from the general archives.
+
+    '
+  scale: ~605 PDB entries with an HLA structure, 61 alleles, 106 backbone classes (live); 393 non-redundant
+    structures (15 octamer / 296 nonamer / 82 decamer) in the paper
+  modalities:
+  - pmhc
+  - complex-structure
+  - backbone-classification
+  formats:
+  - pdb
+  - csv
+  landing_url: https://hla3db.research.chop.edu/
+  download_url: https://hla3db.research.chop.edu/
+  api: null
+  license: unknown (associated modeling code on Zenodo; confirm DB terms on site)
+  license_url: https://hla3db.research.chop.edu/
+  access: open
+  provenance:
+    maintainer: Sgourakis Lab, Children's Hospital of Philadelphia (CHOP) / UPenn
+    key_refs:
+    - 10.1038/s41467-023-42163-z
+    - 10.5281/zenodo.8372875
+  last_updated: 2023 paper; site auto-updates
+  relevance:
+    programs:
+    - design
+    - presentation
+    - recognition
+    why: 'The most focused public catalog of pMHC-I structures with backbone conformation classes — directly
+      supports peptide-MHC binder design, template selection, and pMHC structure prediction benchmarking.
+
+      '
+  agent_access: 'Open web download of structure collections and statistics; modeling code archived on
+    Zenodo (10.5281/zenodo.8372875). Coordinates derive from PDB.
+
+    '
+  caveats: 'Explicit DB data license not posted (marked unknown). pMHC-I only (no TCR, limited class II).
+    Dedup against PDB/IMGT by PDB ID.
+
+    '
+- id: iedb-3d
+  name: IEDB-3D (structural data within the Immune Epitope Database)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The structural component of IEDB: B- and T-cell epitopes and MHC ligands for which 3D
+    structures of complexes with antibodies, TCRs or MHC molecules exist in the PDB, with computed intermolecular
+    contacts, interface areas and an epitope-to-antigen-structure mapping (v2.0). Links immune epitopes
+    to pMHC / TCR-pMHC / antibody-antigen structures.
+
+    '
+  scale: Structural subset of IEDB (thousands of epitope-mapped complexes); exact count via the 3D browse
+    interface
+  modalities:
+  - complex-structure
+  - pmhc
+  - tcr-pmhc
+  - antibody-antigen
+  - epitope
+  - contact-analysis
+  formats:
+  - pdb
+  - csv
+  - api
+  landing_url: https://www.iedb.org/
+  download_url: https://www.iedb.org/database_export_v3.php
+  api: https://query-api.iedb.org/
+  license: free public use (non-commercial attribution; confirm current terms)
+  license_url: https://www.iedb.org/
+  access: open
+  provenance:
+    maintainer: La Jolla Institute for Immunology (NIH/NIAID funded)
+    key_refs:
+    - 10.1093/nar/gkq888
+    - 10.1093/nar/gkad1092
+  last_updated: 2023 (IEDB-3D 2.0); IEDB releases ongoing
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    - design
+    why: 'Connects experimentally validated epitopes to their pMHC and TCR-pMHC structures with precomputed
+      interface contacts — directly bridges the presentation/recognition datasets to the structural design
+      program.
+
+      '
+  agent_access: 'Browse-by-3D-structure web interface plus IEDB bulk export and REST query API (query-api.iedb.org);
+    structural subset reachable programmatically.
+
+    '
+  caveats: 'License marked as free-use attribution pending confirmation of exact current terms. Structural
+    subset must be isolated from the full IEDB export; dedup against STCRDab/TCR3d/IMGT by PDB ID. Coordinates
+    themselves are PDB (CC0).
+
+    '
+- id: imgt-3dstructure-db
+  name: IMGT/3Dstructure-DB
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'IMGT''s structural database for immunoglobulins/antibodies, T-cell receptors, MHC (MH)
+    and other IgSF/MhcSF/RPI proteins, with standardized IMGT numbering, IMGT Colliers de Perles, paratope/epitope
+    contact analysis and pMHC contact site annotation. Provides consistent immunogenetic annotation of
+    pMHC and TCR-pMHC complexes.
+
+    '
+  scale: ~9,431 structural entries (IG, TR, MH, RPI); historically ~294 pMHC complexes and ~920 antigen-receptor/antigen
+    complexes
+  modalities:
+  - complex-structure
+  - tcr-pmhc
+  - pmhc
+  - antibody
+  - contact-analysis
+  formats:
+  - pdb
+  - mmcif
+  - html
+  - api
+  landing_url: https://www.imgt.org/3Dstructure-DB/
+  download_url: https://www.imgt.org/download/3Dstructure-DB/
+  api: https://www.imgt.org/
+  license: CC BY 4.0
+  license_url: https://www.imgt.org/
+  access: open
+  provenance:
+    maintainer: IMGT / LIGM (CNRS, Montpellier, France); ELIXIR Core Data Resource (from 2026-07)
+    key_refs:
+    - 10.1093/nar/gkp946
+  last_updated: 2026 (continuous)
+  relevance:
+    programs:
+    - recognition
+    - design
+    - presentation
+    why: 'Uniform IMGT numbering and contact-site annotation of pMHC and TCR-pMHC complexes makes it the
+      reference for consistent interface definitions across TCR/MHC structures used in design and recognition
+      models.
+
+      '
+  agent_access: 'Web query interface and download area; structured annotations downloadable. Programmatic
+    access feasible but IMGT historically discourages heavy automated scraping — respect rate limits and
+    robots.
+
+    '
+  caveats: 'Current data is CC BY 4.0 per the IMGT homepage (older 2010 article showed CC BY-NC — now
+    superseded). Attribution required. Annotation-heavy; overlaps STCRDab/TCR3d for TCR-pMHC — dedup by
+    PDB ID.
+
+    '
+- id: irrmc
+  name: Integrated Resource for Reproducibility in Macromolecular Crystallography (IRRMC / proteindiffraction.org)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Archive of RAW X-ray diffraction images and metadata from macromolecular crystallography
+    experiments, most tied to deposited PDB structures. The diffraction- "scan" counterpart to the PDB''s
+    processed structure factors — the primary detector data from which coordinates were refined.
+
+    '
+  scale: 11,223 indexed diffraction datasets across 7,007 projects (2026)
+  modalities:
+  - xray-diffraction-images
+  - metadata
+  formats:
+  - cbf
+  - img
+  - mccd
+  - h5
+  - tar
+  landing_url: https://proteindiffraction.org/
+  download_url: https://proteindiffraction.org/
+  api: https://proteindiffraction.org/api/docs/
+  license: CC0 1.0 (public domain dedication; citation/DOI requested)
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/
+  access: open
+  provenance:
+    maintainer: Minor Lab, University of Virginia (orig. NIH BD2K U01 HG008424)
+    key_refs:
+    - 10.1107/S2059798316014716
+  last_updated: 2024+ (v2.0 rewrite)
+  relevance:
+    programs:
+    - design
+    why: 'Raw diffraction data let models learn (or be validated on) the full experiment-to- structure
+      pipeline, and expose refinement-quality and multi-conformer signal that the final deposited coordinates
+      hide.
+
+      '
+  agent_access: 'Public browse/search by PDB ID, beamline, resolution; per-dataset downloads with DOIs;
+    REST API documented at /api/docs. Datasets are large (GBs of images each). Automatable but bandwidth-heavy.
+
+    '
+  caveats: 'CC0, but each dataset has its own DOI the authors ask you to cite. Image formats vary by detector;
+    converting to usable form needs crystallography tooling. Related: SBGrid Data Bank (data.sbgrid.org)
+    hosts additional raw structural datasets.
+
+    '
+- id: mdcath
+  name: mdCATH
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Large-scale all-atom molecular-dynamics dataset spanning 5,398 CATH protein domains, each
+    simulated in 5 replicas at 5 temperatures (320–450 K) to sample folding/unfolding and thermal conformational
+    landscapes. Purpose-built as ML training data for dynamics- and generative-structure models.
+
+    '
+  scale: 5,398 domains, 134,950 trajectories, avg 464 ns/traj, 62.6 ms aggregate; 3.3–3.6 TB
+  size_bytes: 3610000000000
+  modalities:
+  - md-trajectory
+  - multi-temperature
+  - coordinates
+  - forces
+  formats:
+  - hdf5
+  landing_url: https://huggingface.co/datasets/compsciencelab/mdCATH
+  download_url: https://huggingface.co/datasets/compsciencelab/mdCATH/tree/main
+  api: https://huggingface.co/datasets/compsciencelab/mdCATH
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Compute Sciences Lab / Acellera / Giorgino & De Fabritiis
+    key_refs:
+    - 10.1038/s41597-024-04140-z
+  last_updated: '2024'
+  relevance:
+    programs:
+    - design
+    why: 'Directly trains sequence/structure-to-conformational-ensemble and dynamics models; the multi-temperature
+      design exposes flexibility and (un)folding signal that static PDB entries lack. Already a standard
+      ML-for-dynamics benchmark.
+
+      '
+  agent_access: 'HuggingFace datasets: huggingface-cli / datasets library streaming, no auth. Per-domain
+    HDF5 files; torchmd-net dataloader and GitHub scripts provided. Fully agent-friendly (stream chunks
+    rather than pulling all 3.6 TB).
+
+    '
+  caveats: 'CC BY 4.0 — redistributable with attribution. 3.6 TB total; stream per-domain. Single force
+    field; high-temperature replicas are deliberately out-of-equilibrium.
+
+    '
+- id: mdrepo
+  name: MDRepo
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Open data warehouse for community-contributed all-atom MD simulations of proteins, with
+    standardized ingestion, metadata and search — an actively maintained successor- style resource to
+    the legacy MoDEL library and complementary to BioExcel MDDB/ MDposit for depositing and querying trajectories.
+
+    '
+  scale: Community warehouse (thousands of contributed protein MD simulations; growing)
+  modalities:
+  - md-trajectory
+  - topology
+  - metadata
+  formats:
+  - xtc
+  - dcd
+  - pdb
+  - gro
+  - nc
+  landing_url: https://mdrepo.org/
+  download_url: https://mdrepo.org/
+  api: https://mdrepo.org/
+  license: open (verify per-deposit; warehouse terms on site)
+  license_url: https://mdrepo.org/
+  access: open
+  provenance:
+    maintainer: MDRepo consortium (open data warehouse)
+    key_refs:
+    - 10.1093/nar/gkae1084
+  last_updated: '2025'
+  relevance:
+    programs:
+    - design
+    why: 'Standardized, queryable protein MD at warehouse scale for pretraining and benchmarking dynamics/ensemble
+      models — curated enough to use directly, unlike a raw aggregator.
+
+      '
+  agent_access: 'Web warehouse with search and per-simulation download; programmatic access via the site.
+    No auth for public deposits. Related systems: BioExcel MDDB / MDposit (mdposit.mddbr.eu) and the legacy
+    MoDEL (mmb.irbbarcelona.org, no longer updated).
+
+    '
+  caveats: 'Deposit-level licenses vary — check per simulation before redistribution/training. Younger
+    resource; coverage and metadata consistency still maturing.
+
+    '
+- id: mdverse
+  name: MDverse
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'A search/indexing layer over the "dark matter" of public molecular-dynamics data: ~250,000
+    files and ~2,000 datasets harvested and indexed from Zenodo, Figshare and OSF (focused on GROMACS
+    output). Not a single curated archive but a discovery engine plus metadata/API over dispersed MD deposits.
+
+    '
+  scale: ~2,000 datasets, ~250,000 indexed files (2024)
+  modalities:
+  - md-trajectory
+  - topology
+  - index-metadata
+  formats:
+  - gro
+  - xtc
+  - tpr
+  - mdp
+  - json
+  landing_url: https://mdverse.org/
+  download_url: https://mdverse.org/
+  api: https://mdverse-data.streamlit.app/
+  license: aggregator; per-dataset licenses vary (data from Zenodo/Figshare/OSF). Paper CC BY 4.0.
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Tiemann, Barnoud, Reddy, Fuchs et al. (academic consortium)
+    key_refs:
+    - 10.7554/eLife.90061
+  last_updated: '2024'
+  relevance:
+    programs:
+    - design
+    why: 'Lets an agent discover and pull large volumes of heterogeneous public MD for pretraining dynamics
+      models — far more data than any single curated set, if you accept variable provenance.
+
+      '
+  agent_access: 'Searchable index + downloadable metadata; actual trajectories live on the host repositories
+    (Zenodo/Figshare/OSF) and are fetched from there. Scriptable via the index, but you must resolve and
+    download each dataset separately.
+
+    '
+  caveats: 'Per-dataset licenses are heterogeneous and often unstated — you MUST check each source dataset''s
+    terms before training/redistribution. Quality, force fields and completeness vary wildly; strong dedup/curation
+    needed.
+
+    '
+- id: misato
+  name: MISATO (protein–ligand MD + QM dataset)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'ML dataset of protein–ligand complexes with 10 ns MD per complex (restart + topology files)
+    and semi-empirical QM-refined ligand properties/electronic densities. Built for structure-based drug
+    discovery and binding/dynamics ML.
+
+    '
+  scale: 16,972 MD-simulated complexes (10 ns each) + 19,443 QM-curated ligands; ~194 GiB
+  size_bytes: 208305000000
+  modalities:
+  - md-trajectory
+  - protein-ligand
+  - qm-properties
+  - electron-density
+  formats:
+  - hdf5
+  landing_url: https://github.com/t7morgen/misato-dataset
+  download_url: https://zenodo.org/record/7711953
+  api: https://zenodo.org/record/7711953
+  license: code LGPL-2.1; dataset on Zenodo (open access) — verify dataset-specific terms
+  license_url: https://github.com/t7morgen/misato-dataset/blob/master/LICENSE
+  access: open
+  provenance:
+    maintainer: Siebenmorgen et al. (community project)
+    key_refs:
+    - 10.1038/s43588-024-00627-2
+  last_updated: '2024'
+  relevance:
+    programs:
+    - design
+    why: 'Pairs complex dynamics with QM-level ligand chemistry — useful for binding-mode, affinity and
+      ligand-conformation models that need movement, not just a docked pose. Relevant where peptide/small-molecule
+      binders are designed.
+
+      '
+  agent_access: 'Zenodo wget of MD.hdf5 / QM.hdf5; PyTorch dataloaders and Lightning datamodules in the
+    repo. No auth. ~194 GiB, easily scripted.
+
+    '
+  caveats: 'Repo code is LGPL-2.1; the dataset license on Zenodo is "open access" but a precise SPDX license
+    is not clearly stated — confirm before redistribution. 10 ns is short sampling. Protein–ligand focus
+    (not peptide-specific).
+
+    '
+- id: openproteinset
+  name: OpenProteinSet (OpenFold training data)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The open reconstruction of AlphaFold2''s training inputs, released with OpenFold: precomputed
+    MSAs and template hits for PDB chains plus large UniClust30 cluster MSAs, and self-distillation AlphaFold
+    predictions. The canonical ready-to-train sequence->structure(+MSA) corpus for folding models.
+
+    '
+  scale: MSAs for ~140k unique PDB chains + ~16M UniClust30 clusters; ~270k AF2 self-distillation structures
+  modalities:
+  - msa
+  - template-hits
+  - mmcif
+  - predicted-structure
+  formats:
+  - a3m
+  - mmcif
+  - fasta
+  landing_url: https://registry.opendata.aws/openfold/
+  download_url: s3://openfold/
+  license: CC BY 4.0 (data); OpenFold code Apache-2.0
+  license_url: https://registry.opendata.aws/openfold/
+  access: open
+  provenance:
+    maintainer: AQLab / OpenFold consortium (Columbia & collaborators)
+    key_refs:
+    - 10.48550/arXiv.2308.05326
+    - 10.1038/s41592-024-02272-z
+  last_updated: '2023'
+  relevance:
+    programs:
+    - design
+    - presentation
+    - recognition
+    why: 'Directly ML-training-ready: the exact paired sequence/MSA/structure inputs for training AlphaFold-style
+      models without recomputing MSAs. Explicitly built for ML training and commercially usable (CC BY
+      4.0).
+
+      '
+  agent_access: 'AWS Registry of Open Data, bucket s3://openfold (us-east-1); list/copy with `aws s3 ...
+    --no-sign-request` (no AWS account needed). Large (TB-scale); download scripts in the OpenFold GitHub
+    repo. Fully agent-downloadable.
+
+    '
+  caveats: 'Very large; plan storage/bandwidth. Some postprocessing (sequence clustering) must be regenerated.
+    Built on UniClust30/PDB snapshots of its era — may need refresh for newest structures.
+
+    '
+- id: pandora-templates
+  name: PANDORA template database + reverse-peptide templates (Xue lab)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Data releases for PANDORA, an anchor-restrained MODELLER-based pMHC modeling pipeline:
+    the pMHCI/pMHCII template structure database (plus reversed-pMHCII templates) deposited on Zenodo,
+    used to generate 3D peptide-MHC models at scale.
+
+    '
+  scale: pMHCI + pMHCII + reversed-pMHCII template structures (Zenodo, periodically updated)
+  modalities:
+  - pmhc
+  - complex-structure
+  - template-set
+  formats:
+  - pdb
+  - scripts
+  landing_url: https://github.com/X-lab-3D/PANDORA
+  download_url: https://doi.org/10.5281/zenodo.15495898
+  api: null
+  license: CC BY 4.0 (Zenodo deposits); code Apache-2.0
+  license_url: https://doi.org/10.5281/zenodo.15495898
+  access: open
+  provenance:
+    maintainer: Xue Lab (Radboud University / DTL), Nijmegen, NL
+    key_refs:
+    - 10.3389/fimmu.2022.878762
+    - 10.3389/fimmu.2023.1285899
+    - 10.5281/zenodo.6373630
+  last_updated: 2025 (latest template DB on Zenodo)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - recognition
+    why: 'Curated pMHC-I/II template sets enable fast generation of peptide-MHC models (incl. class II
+      and reverse-bound peptides) for design targets and for building training data where no crystal structure
+      exists.
+
+      '
+  agent_access: 'Open Zenodo downloads (DB 10.5281/zenodo.15495898; reverse templates 10.5281/zenodo.6373630);
+    PANDORA installable via Conda/pip (X-lab-3D/PANDORA).
+
+    '
+  caveats: 'Templates derive from PDB; generated models are predictions. Class II modeling accuracy is
+    lower than class I. Verify current template DB version.
+
+    '
+- id: pdb-redo
+  name: PDB-REDO databank
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Re-refined, re-built and optimised versions of (nearly) every crystallographic PDB entry,
+    produced by a uniform automated pipeline. Improves model quality and consistency relative to the deposited
+    coordinates — a cleaner, homogenised sequence->structure training source for crystal structures, with
+    per-entry validation metrics.
+
+    '
+  scale: ~140k+ entries (112,385 reported Feb 2018; grows with PDB)
+  modalities:
+  - coordinates
+  - electron-density
+  - validation
+  formats:
+  - pdb
+  - mmcif
+  - json
+  landing_url: https://pdb-redo.eu/
+  download_url: https://pdb-redo.eu/download
+  api: https://pdb-redo.eu/db
+  license: Public domain (no copyright restrictions; attribution requested)
+  license_url: https://pdb-redo.eu/license
+  access: open
+  provenance:
+    maintainer: Joana Pereira / Robbie Joosten, NKI & Utrecht/SURF
+    key_refs:
+    - 10.1107/S2052252514009324
+    - 10.1107/S2059798318002061
+  last_updated: 2025 (rolling)
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Quality-normalised structures reduce label noise for structure prediction and structure-based
+      representation learning; validation JSON supports confidence-weighted training.
+
+      '
+  agent_access: 'Per-entry download by wget and whole-databank via rsync; no auth. Agent can bulk-mirror.
+    Each entry ships re-refined/rebuilt PDB+mmCIF plus JSON validation.
+
+    '
+  caveats: 'X-ray only (no cryo-EM/NMR). Data are copyright-free but credit PDB-REDO and original authors.
+    Models are optimised predictions of the true structure, not independent experiments — keep that provenance
+    in mind for benchmarking.
+
+    '
+- id: pdbbind
+  name: PDBbind
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Curated collection of experimental binding affinities (Kd/Ki/IC50) for biomolecular complexes
+    with known 3D structures in the PDB — predominantly protein-ligand, plus protein-protein and protein-nucleic-acid
+    subsets. Paired with the CASF scoring benchmarks. Relevant for structure-based affinity scoring methodology
+    transferable to pMHC binders.
+
+    '
+  scale: ~19,000 complexes with affinity labels (v2020); CASF-2016 benchmark = 285 complexes
+  modalities:
+  - complex-structure
+  - protein-ligand
+  - protein-protein
+  - binding-affinity
+  formats:
+  - pdb
+  - mol2
+  - sdf
+  - index-files
+  landing_url: http://www.pdbbind.org.cn/
+  download_url: http://www.pdbbind.org.cn/download.php
+  api: null
+  license: custom (free for academic/non-commercial use; registration required)
+  license_url: http://www.pdbbind.org.cn/
+  access: registration
+  provenance:
+    maintainer: Wang Lab (originally U. Michigan / Shanghai Institute of Organic Chemistry)
+    key_refs:
+    - 10.1021/jm030580l
+  last_updated: '~annual (latest widely used: v2020); access/mirroring has varied'
+  relevance:
+    programs:
+    - design
+    why: 'Benchmark that defined structure-based affinity scoring; its protein-protein subset and CASF
+      methodology inform scoring/ranking of designed peptide-MHC binders even though its core is small-molecule.
+
+      '
+  agent_access: 'Requires free registration to download; bundled as archives (general/refined/ core sets)
+    + CASF packages. Automatable after login, but gated — not anonymous.
+
+    '
+  caveats: 'Registration gate and terms restrict redistribution (academic/non-commercial). Documented
+    train/test leakage with CASF (prompting LP-PDBbind, CC BY 4.0). Mostly small-molecule — tangential
+    to pMHC except for scoring methodology.
+
+    '
+- id: pdbe
+  name: Protein Data Bank in Europe (PDBe) / PDBe-KB
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'EMBL-EBI wwPDB member: a full mirror of the PDB archive plus value-added derived data.
+    SIFTS provides residue-level mappings between PDB structures and UniProt, Pfam, InterPro, CATH, SCOP
+    and Ensembl — the authoritative crosswalk between sequence databases and structure. PDBe-KB aggregates
+    functional/ structural annotations on top.
+
+    '
+  scale: Same global archive (~262k experimental structures); PDBe-KB aggregates annotations from ~40
+    partner resources
+  modalities:
+  - x-ray
+  - cryo-em
+  - nmr
+  - complex-structure
+  - annotation
+  - coordinates
+  - seqres
+  - sequence-structure-mapping
+  - annotations
+  formats:
+  - mmcif
+  - binarycif
+  - pdb
+  - json
+  - api
+  - xml
+  - csv
+  - tsv
+  landing_url: https://www.ebi.ac.uk/pdbe/
+  download_url: https://ftp.ebi.ac.uk/pub/databases/pdb/
+  api: https://www.ebi.ac.uk/pdbe/api/doc/
+  license: CC0 1.0 (wwPDB structure data); PDBe-KB aggregated annotations CC BY 4.0
+  license_url: https://www.ebi.ac.uk/pdbe/about/termsofuse
+  access: open
+  provenance:
+    maintainer: EMBL-EBI (Hinxton, UK), member of wwPDB
+    key_refs:
+    - 10.1093/nar/gkx1070
+    - 10.1093/nar/gkz990
+    - 10.1093/nar/gky1114
+  last_updated: 2026-11 (weekly, synced with wwPDB)
+  relevance:
+    programs:
+    - design
+    - recognition
+    - presentation
+    why: 'SIFTS is the key resource for building sequence->structure training labels: it aligns PDB coordinate
+      residues to canonical UniProt sequences, essential for assembling clean paired corpora and for transferring
+      structure to sequence-only datasets.
+
+      '
+  agent_access: 'Open REST API (ebi.ac.uk/pdbe/api) returning JSON, PDBe-KB graph API, coordinate service
+    for mmCIF/binaryCIF, plus FTP/rsync mirror of the full archive and SIFTS files. No auth; well-suited
+    to automation.
+
+    '
+  caveats: 'Structure data is CC0; separate PDBe-KB aggregated-annotation terms (CC BY 4.0) apply to derived
+    annotations. Redundant with RCSB for raw coordinates — use for its annotations/API ergonomics, not
+    as a second copy of the archive.
+
+    '
+- id: ped
+  name: Protein Ensemble Database (PED)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Primary deposition database for structural ensembles of intrinsically disordered proteins/regions
+    (IDPs/IDRs) and flexible multidomain proteins — experimentally and computationally derived conformer
+    sets with optional per-conformer weights. The reference resource for "proteins that have no single
+    structure."
+
+    '
+  scale: 461 entries / 538 ensembles (2024 release; growing, with predicted-ensemble integration planned)
+  modalities:
+  - conformational-ensemble
+  - multi-model-pdb
+  - conformer-weights
+  formats:
+  - pdb-multimodel
+  - csv
+  - json
+  landing_url: https://proteinensemble.org/
+  download_url: https://proteinensemble.org/
+  api: https://proteinensemble.org/api
+  license: CC BY 4.0 (per bio.tools/ELIXIR listings; some PED papers cite CC BY-NC 4.0 — see caveats)
+  license_url: https://proteinensemble.org/
+  access: open
+  provenance:
+    maintainer: ELIXIR-Italy / consortium (Tompa, Tosatto, Lazar et al.)
+    key_refs:
+    - 10.1093/nar/gkad947
+    - 10.1093/nar/gkaa1021
+  last_updated: 2024 (PED in 2024)
+  relevance:
+    programs:
+    - design
+    why: 'Ground-truth conformational ensembles for IDPs/IDRs — essential for any model that predicts
+      distributions rather than single structures, a known failure mode of AlphaFold-style tools on disorder.
+
+      '
+  agent_access: 'Multi-model PDB per entry; REST API (Django REST + OpenAPI/Swagger) at /api for metadata
+    and selective download; Python SDK noted in the 2027 update. No auth. Small enough to mirror fully.
+
+    '
+  caveats: 'License is reported inconsistently (CC BY 4.0 in ELIXIR/bio.tools vs CC BY-NC 4.0 in some
+    papers) — verify current site terms before commercial use. Small (hundreds of entries); ensembles
+    differ in method/quality, so weighting and provenance matter.
+
+    '
+- id: pepbdb
+  name: PepBDB (Peptide–Protein Interaction Structure Database)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Comprehensive structural database of biological peptide–protein complexes derived from
+    the PDB (peptide ligands up to ~50 residues), with cleaned coordinates, interface residues, binding
+    data and per-complex annotation. A focused training set for peptide-binding and peptide-docking models.
+
+    '
+  scale: ~13,299 peptide–protein complexes (2020 release; monthly updates intended)
+  modalities:
+  - peptide-protein-complex
+  - interface
+  - coordinates
+  formats:
+  - pdb
+  - txt
+  - tar.gz
+  landing_url: http://huanglab.phys.hust.edu.cn/pepbdb/
+  download_url: http://huanglab.phys.hust.edu.cn/pepbdb/db/download/
+  api: http://huanglab.phys.hust.edu.cn/pepbdb/
+  license: derived from PDB (CC0 underlying); no explicit DB license stated — see caveats
+  license_url: http://huanglab.phys.hust.edu.cn/pepbdb/
+  access: open
+  provenance:
+    maintainer: Huang Lab, Huazhong University of Science and Technology
+    key_refs:
+    - 10.1093/bioinformatics/bty579
+  last_updated: 2020 (last confirmed; site intermittently reachable)
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Core peptide-in-complex structure set for learning peptide primary-sequence-to- bound-3D and
+      peptide docking/design — directly on-domain for peptide binder work.
+
+      '
+  agent_access: 'Bulk tarball of cleaned PDB files plus per-complex pages; no auth. Site hosted in CN
+    and intermittently returns 5xx — retry / mirror. Scriptable once reachable.
+
+    '
+  caveats: 'Underlying coordinates are PDB-derived (CC0); the database adds no explicit license — attribute
+    PepBDB + original PDB entries. Count is a 2020 figure; site availability is flaky. Overlaps the PDB
+    (domain-6) — dedup against rcsb-pdb.
+
+    '
+- id: peptipedia
+  name: Peptipedia
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Comprehensive peptide database and ML web app aggregating bioactive/therapeutic peptide
+    sequences (antimicrobial, anticancer, hormonal, etc.) from 70+ sources, with activity annotations
+    and sequence-analysis tooling. Primarily sequence+activity (not 3D), included here as the peptide-sequence
+    backbone that pairs with peptide structure sets.
+
+    '
+  scale: 'v2.0: >3.8M peptide sequences from >70 sources (v1: ~92,055)'
+  modalities:
+  - peptide-sequence
+  - bioactivity-annotation
+  formats:
+  - csv
+  - fasta
+  - json
+  landing_url: https://peptipedia.cl/
+  download_url: https://github.com/ProteinEngineering-PESB2/peptipedia
+  api: https://peptipedia.cl/
+  license: GPL-3.0 (software, per original paper); dataset terms not separately stated — see caveats
+  license_url: https://github.com/ProteinEngineering-PESB2/peptipedia
+  access: open
+  provenance:
+    maintainer: ProteinEngineering-PESB2 group (Chile; Medina-Ortiz, Olivera-Nappa et al.)
+    key_refs:
+    - 10.1093/database/baab055
+  last_updated: 2024 (v2.0)
+  relevance:
+    programs:
+    - design
+    why: 'Massive labeled peptide-sequence corpus for peptide property/activity models and for selecting
+      sequences whose 3D/conformation is then learned from the structure sets in this domain.
+
+      '
+  agent_access: 'Web app + GitHub repo with source and sample data; download via repo. No auth. Full-
+    DB bulk export is not clearly documented — may require the app or repo rather than a single dump.
+
+    '
+  caveats: 'Software is GPL-3.0; the aggregated dataset''s reuse license is not clearly separated from
+    its 70+ heterogeneous sources — check source terms before redistribution. Sequence/activity data,
+    not structures.
+
+    '
+- id: pmhc-structure-subsets
+  name: pMHC / peptide-in-groove structure subsets (cross-reference)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Cross-reference, not a new dataset. The structures of peptides bound in the MHC groove
+    (pMHC) and in TCR–pMHC complexes are the single most on-mission peptide- structure resource for Veritope,
+    but they live in the main structure catalog (domain-6) and the presentation/recognition catalogs —
+    not re-extracted here to avoid duplication.
+
+    '
+  scale: ~thousands of pMHC + hundreds of TCR–pMHC structures across PDB/IEDB-3D/STCRDab/TCR3d
+  modalities:
+  - pmhc-structure
+  - tcr-pmhc-complex
+  - peptide-in-groove
+  formats:
+  - pdb
+  - mmcif
+  - api
+  landing_url: https://www.iedb.org/
+  download_url: https://www.rcsb.org/
+  api: https://data.rcsb.org/
+  license: CC0 (PDB coordinates); IEDB-3D CC BY 4.0 — see domain-6
+  license_url: https://www.rcsb.org/pages/policies
+  access: open
+  provenance:
+    maintainer: 'See domain-6: rcsb-pdb, pdbe, iedb-3d, stcrdab, tcr3d, atlas-tcr-pmhc'
+    key_refs:
+    - 10.1093/nar/gky1006
+  last_updated: 2026 (tracks PDB)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'The peptide-conformation-in-context data most central to presentation and TCR recognition. Use
+      the domain-6 entries for extraction; this pointer prevents double-counting.
+
+      '
+  agent_access: 'Via the referenced domain-6 resources: PDB/PDBe programmatic APIs and bulk mmCIF, IEDB-3D
+    exports, STCRDab/TCR3d structural downloads. No auth. See those entries for exact endpoints.
+
+    '
+  caveats: 'DO NOT deep-duplicate: extract pMHC/TCR-pMHC from the domain-6 structure catalog and the presentation/recognition
+    catalogs. Dedup across PDB, IEDB-3D, STCRDab and TCR3d, which overlap heavily.
+
+    '
+- id: propedia
+  name: Propedia (peptide–protein complex database)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Large PDB-derived database of peptide–protein complexes with graph-based structural signatures,
+    clustered interfaces, and separate downloadable sets of complexes, peptides, receptors, interfaces
+    and sequences. Broader coverage than PepBDB and richer interface representations (v2.3; a later "Propedia
+    26" release exists).
+
+    '
+  scale: ~49,300 complexes, 28,581 peptides, 35,478 receptors (v2.3)
+  size_bytes: 2400000000
+  modalities:
+  - peptide-protein-complex
+  - interface
+  - structural-signature
+  - sequence
+  formats:
+  - pdb
+  - csv
+  - fasta
+  - zip
+  landing_url: https://bioinfo.dcc.ufmg.br/propedia2/
+  download_url: https://bioinfo.dcc.ufmg.br/propedia2/index.php/download
+  api: https://bioinfo.dcc.ufmg.br/propedia2/
+  license: annotations CC BY 4.0 (Propedia 26 Zenodo); underlying PDB data CC0 — verify v2.3 page
+  license_url: https://zenodo.org/records/21558188
+  access: open
+  provenance:
+    maintainer: Bioinformatics group, DCC/UFMG (Martins, de Melo et al.)
+    key_refs:
+    - 10.3389/fbinf.2023.1103103
+    - 10.1186/s12859-020-03881-z
+  last_updated: 2023 (v2.3); later Propedia 26 on Zenodo
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'The largest curated peptide–protein structural collection with ready-made interface/signature
+      features — strong supervision for peptide-binding, interface and peptide-design models.
+
+      '
+  agent_access: 'Direct zip downloads (e.g. complex2_3.zip ~2.4 GB) for each data class; web browse/ search.
+    No auth. Fully scriptable. A versioned Zenodo release ("Propedia 26") gives a DOI''d, clearly-licensed
+    snapshot.
+
+    '
+  caveats: 'v2.3 download page does not state its own license; the Zenodo "Propedia 26" record clarifies
+    CC BY 4.0 annotations over CC0 PDB data — prefer the Zenodo release for clean terms. Heavy overlap
+    with PDB/PepBDB — dedup.
+
+    '
+- id: rcsb-pdb
+  name: RCSB Protein Data Bank (PDB archive)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The primary worldwide archive of experimentally determined 3D structures of proteins,
+    nucleic acids and complexes (X-ray, cryo-EM, NMR). The canonical ground-truth sequence->structure
+    pairing: every entry carries SEQRES records and atomic coordinates. RCSB is the US wwPDB member and
+    the most common bulk source. The archive is the foundation on which AlphaFold/ESMFold/OpenFold etc.
+    were trained.
+
+    '
+  scale: ~262,786 experimental structures + ~1,062,058 computed models (Nov 2026); ~17,588 new structures
+    in 2025
+  modalities:
+  - x-ray
+  - cryo-em
+  - nmr
+  - complex-structure
+  - computed-model
+  - xray
+  - coordinates
+  - seqres
+  formats:
+  - pdb
+  - mmcif
+  - binarycif
+  - json
+  - api
+  - pdbml
+  - fasta
+  - bcif
+  landing_url: https://www.rcsb.org/
+  download_url: https://files.rcsb.org/
+  api: https://data.rcsb.org/
+  license: CC0 1.0 Universal (Public Domain Dedication)
+  license_url: https://www.rcsb.org/pages/usage-policy
+  access: open
+  provenance:
+    maintainer: RCSB PDB (Rutgers / UCSD-SDSC / UCSF), member of wwPDB, NSF/NIH/DOE funded
+    key_refs:
+    - 10.1093/nar/gky1004
+    - 10.1002/pro.70731
+    - 10.1093/nar/28.1.235
+    - 10.1093/nar/gkae1067
+  last_updated: 2026-11 (weekly releases)
+  relevance:
+    programs:
+    - design
+    - recognition
+    - presentation
+    why: 'Ground-truth experimental structures for pretraining and representation learning; SEQRES<->coordinate
+      pairs are the core supervised signal for any structure-prediction or structure-aware design model.
+
+      '
+  agent_access: 'Fully bulk-downloadable, no auth. HTTPS (files.rcsb.org), rsync, FTP, and AWS S3 Open
+    Data (annual snapshots, s3://pdbsnapshots / Registry of Open Data). REST data API (data.rcsb.org)
+    and search API (search.rcsb.org). Agent-friendly.
+
+    '
+  caveats: 'CC0 removes copyright restrictions; attribution to original authors is encouraged not required.
+    mmCIF is the canonical format (legacy PDB format is frozen/capped at 99,999 atoms). Needs dedup/clustering
+    for ML splits to avoid train/test leakage (use sequence/structure clustering, e.g. by CATH/SCOPe).
+
+    '
+- id: sabdab
+  name: SAbDab / SAbDab-nano (Structural Antibody Database)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Oxford OPIG database collecting and annotating all experimentally determined antibody
+    structures in the PDB (now served as SAbDab2), weekly-updated, with numbering, CDR definitions, antigen
+    annotation and antibody-antigen complex identification. SAbDab-nano is the companion tracker for nanobodies
+    / single-domain antibodies. Thera-SAbDab tracks therapeutic antibodies.
+
+    '
+  scale: Thousands of antibody structures (weekly from PDB); SAbDab-nano ~2,246 single-domain structures
+    (live stats; 823 as of Sept 2021)
+  modalities:
+  - complex-structure
+  - antibody
+  - nanobody
+  - antibody-antigen
+  formats:
+  - pdb
+  - mmcif
+  - csv
+  - tsv
+  landing_url: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/
+  download_url: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/
+  api: https://sabdab.opig.stats.ox.ac.uk/
+  license: CC BY 4.0
+  license_url: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/about
+  access: open
+  provenance:
+    maintainer: Oxford Protein Informatics Group (OPIG), University of Oxford
+    key_refs:
+    - 10.1093/nar/gkt1043
+    - 10.1093/nar/gkab1050
+  last_updated: 2026 (weekly from PDB); SAbDab2 UI 2.1.x; ML splits refreshed ~6-monthly on Zenodo
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Benchmark for antibody/nanobody binder design and the antibody-pMHC precedent for peptide-MHC
+      binders; curated non-redundant sets and standardised train/test splits reduce leakage in design/affinity
+      models.
+
+      '
+  agent_access: 'Open web search + bulk downloads; curated ML training sets with train/test splits hosted
+    on Zenodo. Python API bundled in SAbBox (free academic license). Programmatic filtering/download feasible.
+
+    '
+  caveats: 'Derived annotations under CC BY 4.0 (attribution required). Counts shift weekly as PDB grows.
+    Antibody-centric: covers TCR only via its sibling STCRDab, not here. Verify current CC BY 4.0 terms
+    for any redistribution.
+
+    '
+- id: sasbdb
+  name: Small Angle Scattering Biological Data Bank (SASBDB)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Curated, free repository of small-angle X-ray and neutron scattering (SAXS/SANS) experimental
+    data and the derived models (ab initio bead models, rigid-body and ensemble fits). SAS reports overall
+    shape, size and flexibility in solution — a low-resolution but conformation-sensitive complement to
+    crystallography and cryo-EM.
+
+    '
+  scale: 5,716 experimental datasets + 6,804 models (2026; plus ~570 datasets / ~900 models on hold)
+  modalities:
+  - saxs-curve
+  - sans-curve
+  - bead-model
+  - ensemble-fit
+  formats:
+  - dat
+  - pdb
+  - xml
+  - json
+  landing_url: https://www.sasbdb.org/
+  download_url: https://www.sasbdb.org/download/
+  api: https://www.sasbdb.org/rest-api/
+  license: custom (free access, attribution via citation) — no explicit SPDX license stated
+  license_url: https://www.sasbdb.org/about/
+  access: open
+  provenance:
+    maintainer: EMBL Hamburg (Svergun group lineage) / SASBDB consortium
+    key_refs:
+    - 10.1002/pro.3731
+  last_updated: 2026 (continuous deposition)
+  relevance:
+    programs:
+    - design
+    why: 'Solution-scattering curves constrain overall conformation and flexibility, especially for multidomain
+      and partially disordered proteins — useful ground truth for conformational-ensemble models where
+      a single crystal structure is misleading.
+
+      '
+  agent_access: 'Freely downloadable per entry; REST API for programmatic metadata/data retrieval and
+    search. No auth. Automatable, though there is no single one-click full-archive tarball documented
+    — iterate over accession codes via the API.
+
+    '
+  caveats: 'No explicit SPDX/CC license on the site; terms are "freely accessible and downloadable" with
+    citation requested. Treat redistribution conservatively and attribute. Data are curve+model, not atomic
+    coordinates.
+
+    '
+- id: skempi2
+  name: SKEMPI 2.0
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Manually curated benchmark of experimentally measured changes in protein-protein binding
+    affinity (and kinetics/thermodynamics) upon mutation, each mapped to a PDB complex structure. Includes
+    antibody-antigen and TCR-pMHC complexes relevant to interface-mutation effect prediction.
+
+    '
+  scale: 7,085 mutations with binding affinity data; 1,844 with kinetics; 443 with enthalpy/entropy; 440
+    binding-abolishing
+  modalities:
+  - complex-structure
+  - binding-affinity
+  - kinetics
+  - mutant
+  - ddg
+  formats:
+  - csv
+  - pdb
+  landing_url: https://life.bsc.es/pid/skempi2/
+  download_url: https://life.bsc.es/pid/skempi2/database/index
+  api: null
+  license: unknown (paper CC BY-NC-ND 4.0; database terms not explicitly stated)
+  license_url: https://life.bsc.es/pid/skempi2/
+  access: open
+  provenance:
+    maintainer: Barcelona Supercomputing Center (BSC) / Moal & Fernandez-Recio
+    key_refs:
+    - 10.1093/bioinformatics/bty635
+  last_updated: 2018 (v2.0)
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Gold-standard ddG-on-mutation labels mapped to structures, including immune complexes — core
+      training/benchmark data for affinity-maturation and binder-optimization models used in peptide-MHC
+      binder design.
+
+      '
+  agent_access: 'Single CSV download of the full table plus the associated PDB structures; trivially scriptable.
+    No API needed.
+
+    '
+  caveats: 'Database redistribution license not clearly posted (marked unknown); the paper is CC BY-NC-ND.
+    Known duplicate/measurement-condition heterogeneity — deduplicate and normalize by pH/temperature.
+    Cleaned subsets (e.g. DACUM, Apache-2.0) exist but do not relicense SKEMPI itself.
+
+    '
+- id: stag-tcr-pmhc-dataset
+  name: STAG structure-based TCR-pMHC binding dataset (Kavraki Lab)
+  category: structure
+  species:
+  - human
+  description: 'Data for STAG, a structure-based TCR-pMHC binding predictor that generalizes to unseen
+    peptides: a large labeled sample set plus deposited Rosetta-relaxed and TCRmodel2-generated TCR-pMHC
+    structures used for training/evaluation.
+
+    '
+  scale: 19,282 labeled TCR-pMHC samples (GitHub); Rosetta-relaxed + TCRmodel2 structures (Zenodo)
+  modalities:
+  - tcr-pmhc
+  - complex-structure
+  - computed-model
+  - binding-label
+  formats:
+  - pdb
+  - csv
+  - scripts
+  landing_url: https://github.com/KavrakiLab/STAG_public
+  download_url: https://doi.org/10.5281/zenodo.18344673
+  api: null
+  license: unknown (check repo + Zenodo record)
+  license_url: https://github.com/KavrakiLab/STAG_public
+  access: open
+  provenance:
+    maintainer: Kavraki Lab, Rice University
+    key_refs:
+    - 10.1038/s44386-026-00064-3
+    - 10.5281/zenodo.18344673
+  last_updated: '2026'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Couples a large labeled TCR-pMHC binding set with modeled 3D structures and an unseen-peptide
+      generalization split — directly supports structure-based affinity/specificity prediction for binder
+      design.
+
+      '
+  agent_access: 'GitHub repo (KavrakiLab/STAG_public) for samples/code; modeled structures on Zenodo (10.5281/zenodo.18344673).
+    Scriptable.
+
+    '
+  caveats: 'Licenses not confirmed (marked unknown). Structures are modeled (Rosetta/ TCRmodel2), not
+    experimental. Human-focused.
+
+    '
+- id: stcrdab
+  name: STCRDab (Structural T-Cell Receptor Database)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'OPIG''s automated, weekly-updated database of all experimentally determined TCR structures
+    in the PDB, annotated with IMGT numbering, CDR loops, chain pairing and (where present) peptide-MHC
+    partners. The TCR analogue of SAbDab; directly supplies TCR and TCR-pMHC complex structures.
+
+    '
+  scale: Hundreds of TCR structures incl. alpha-beta and gamma-delta; subset are TCR-pMHC complexes (weekly
+    from PDB)
+  modalities:
+  - complex-structure
+  - tcr
+  - tcr-pmhc
+  formats:
+  - pdb
+  - mmcif
+  - csv
+  - tsv
+  landing_url: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/stcrdab/
+  download_url: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/stcrdab/
+  api: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/stcrdab/
+  license: unknown
+  license_url: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/stcrdab/
+  access: open
+  provenance:
+    maintainer: Oxford Protein Informatics Group (OPIG), University of Oxford
+    key_refs:
+    - 10.1093/nar/gkx971
+  last_updated: 2026 (weekly from PDB)
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Primary curated source of TCR and TCR-pMHC complex structures with consistent IMGT numbering
+      — a core training/benchmark set for TCR-pMHC recognition models and for engineering binders against
+      peptide-MHC.
+
+      '
+  agent_access: 'Open web interface with filtered bulk download of annotated TCR structures; same OPIG
+    tooling as SAbDab. Scriptable via the download endpoints.
+
+    '
+  caveats: 'Original paper states open-access but an explicit data license is not clearly posted (marked
+    unknown) — confirm terms before redistribution. Coordinates themselves derive from PDB (CC0). Counts
+    grow weekly.
+
+    '
+- id: swiftmhc-dataset
+  name: SwiftMHC pMHC-I training & structure dataset
+  category: structure
+  species:
+  - human
+  description: 'Supplementary data for SwiftMHC (attention network for MHC-bound peptide identification
+    + 3D modeling): a large set of HLA-A*02:01 9-mer peptide-MHC complexes from IEDB and a curated set
+    of X-ray pMHC-I structures used for training and evaluation.
+
+    '
+  scale: 7,726 IEDB 9-mer HLA-A*02:01 pMHC complexes + 202 X-ray HLA-A*02:01 9-mer pMHC structures
+  size_bytes: 10500000000
+  modalities:
+  - pmhc
+  - complex-structure
+  - computed-model
+  - binding-data
+  formats:
+  - pdb
+  - tar-xz
+  landing_url: https://zenodo.org/records/14968656
+  download_url: https://doi.org/10.5281/zenodo.14968656
+  api: null
+  license: CC BY 4.0
+  license_url: https://zenodo.org/records/14968656
+  access: open
+  provenance:
+    maintainer: SwiftMHC authors (Xue lab collaboration)
+    key_refs:
+    - 10.1101/2025.01.20.633893
+    - 10.5281/zenodo.14968656
+  last_updated: 2025 (Zenodo v1)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Pairs thousands of pMHC-I models with 202 experimental structures for a single allele — a ready
+      training/benchmark corpus for structure-based peptide-MHC modeling and binder design on HLA-A*02:01.
+
+      '
+  agent_access: 'Single CC BY 4.0 Zenodo archive (swiftmhc-supplementary-data-8k-v1.tar.xz, ~10.5 GB).
+    Direct download, scriptable.
+
+    '
+  caveats: 'Single allele (HLA-A*02:01), 9-mers only — narrow. Most entries are PANDORA/ IEDB-derived
+    models, not experimental (only the 202 X-ray are experimental).
+
+    '
+- id: swiss-model-repository
+  name: SWISS-MODEL Repository (SMR)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Database of annotated 3D homology (template-based) models for UniProtKB target sequences,
+    generated continuously by the SWISS-MODEL pipeline, with per-model QMEAN/QMEANDisCo quality estimates
+    and PDB->UniProt mappings. A pre-AlphaFold predicted sequence->structure corpus still useful for comparison.
+
+    '
+  scale: ~3.32M models + ~214k PDB structures mapped to UniProtKB
+  modalities:
+  - homology-model
+  - quality-estimate
+  - coordinates
+  formats:
+  - pdb
+  - mmcif
+  - json
+  - api
+  landing_url: https://swissmodel.expasy.org/repository
+  download_url: https://swissmodel.expasy.org/repository
+  api: https://swissmodel.expasy.org/docs/smr_openapi
+  license: CC BY-SA 4.0
+  license_url: https://swissmodel.expasy.org/docs/terms_of_use
+  access: open
+  provenance:
+    maintainer: Schwede group, SIB / Biozentrum Basel
+    key_refs:
+    - 10.1093/nar/gkw1132
+    - 10.1093/nar/gkab1061
+  last_updated: 2025 (models regenerated every ~15 min)
+  relevance:
+    programs:
+    - design
+    - presentation
+    why: 'Template-based models with calibrated quality scores provide an alternative predicted-structure
+      signal and a benchmark against learned folding; QMEANDisCo is a reference for confidence calibration.
+
+      '
+  agent_access: 'REST API gives programmatic model coordinates (bulk download feasible); per- proteome
+    coordinate archives (e.g. ~5.5 GB for human). Large bulk pulls: contact maintainers. No auth for individual/API
+    access.
+
+    '
+  caveats: 'RED FLAG: CC BY-SA 4.0 is share-alike — derivative datasets may need to carry the same license;
+    check compatibility before combining with CC0/CC BY corpora. Homology models, not experiments.
+
+    '
+- id: tcr-pmhc-folding-benchmark
+  name: TCR-pMHC structure prediction benchmark (unified evaluation)
+  category: structure
+  species:
+  - human
+  - mouse
+  description: 'A non-redundant TCR-pMHC benchmark released with a unified evaluation of modern folding
+    models (AlphaFold, Boltz, Protenix, OpenFold-3, RoseTTAFold2, TCRmodel2, AlphaRED, ColabFold, ESM/OmegaFold),
+    plus a ddG mutation subset, with code for reproducible scoring.
+
+    '
+  scale: 70 non-redundant TCR-pMHC complexes (56 class I, 14 class II) from TCR3d; 21-mutation ddG subset
+    from SKEMPI v2
+  modalities:
+  - tcr-pmhc
+  - complex-structure
+  - benchmark
+  - ddg
+  formats:
+  - pdb
+  - csv
+  - scripts
+  landing_url: https://github.com/Jiadong001/TCR-pMHC-folding-benchmark
+  download_url: https://github.com/Jiadong001/TCR-pMHC-folding-benchmark
+  api: null
+  license: unknown (check repo LICENSE)
+  license_url: https://github.com/Jiadong001/TCR-pMHC-folding-benchmark
+  access: open
+  provenance:
+    maintainer: Benchmark authors (academic); structures from TCR3d / PDB
+    key_refs:
+    - 10.1093/bib/bbag289
+  last_updated: 2025-2026 (Brief. Bioinform.)
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'A clean, non-redundant, class-I/II-split TCR-pMHC benchmark with a unified scoring protocol
+      across current folding tools — the standard yardstick for choosing a modeling engine for the design
+      pipeline.
+
+      '
+  agent_access: 'Code + benchmark lists on GitHub; structures fetched from PDB; ddG from SKEMPI v2. Fully
+    scriptable.
+
+    '
+  caveats: 'Repo license not confirmed (marked unknown). Structures derive from PDB (CC0); the benchmark''s
+    value is the curated non-redundant split + scoring code.
+
+    '
+- id: tcr3d
+  name: TCR3d 2.0 (T-Cell Receptor Structural Repertoire Database)
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Curated, annotated database of all experimentally determined TCR structures from the PDB,
+    organized around TCR-pMHC complexes (class I and class II), unbound TCRs, and now also includes modeling
+    tools and interaction mapping. Links each structure to binding affinities imported from ATLAS.
+
+    '
+  scale: ~250 TCR-pMHC complexes (241 class I + 90 class II in v2.0, vs 153/62 in 2019); plus unbound
+    TCR structures
+  modalities:
+  - tcr-pmhc-structure
+  - unbound-tcr
+  - interactions
+  - complex-structure
+  - tcr-pmhc
+  - pmhc
+  - binding-affinity
+  formats:
+  - web
+  - pdb
+  - csv
+  - api
+  landing_url: https://tcr3d.ibbr.umd.edu/
+  download_url: https://tcr3d.ibbr.umd.edu/complexes
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Pierce Lab (IBBR, University of Maryland)
+    key_refs:
+    - 10.1093/nar/gkz1095
+    - 10.1093/nar/gkae1247
+    - 10.1093/bioinformatics/btz517
+    - 10.1093/nar/gkae840
+  last_updated: 2024 (v2.0); regularly updated from PDB
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'The most purpose-built catalog of TCR-pMHC complex structures, with class I/II split and affinity
+      cross-links — a key benchmark set for TCR-pMHC recognition and for peptide-MHC binder design.
+
+      '
+  agent_access: 'Open web tables (complexes, class I/II pMHC) with per-structure links to PDB; downloadable
+    listings. No explicit documented REST API; feasible to scrape curated tables and fetch coordinates
+    from PDB.
+
+    '
+  caveats: 'Explicit data license not clearly stated (marked unknown) — coordinates come from PDB (CC0),
+    annotations curated by the group. Affinities are re-exports from ATLAS/literature; dedup against STCRDab/IMGT
+    before combining.
+
+    '
+  api: https://tcr3d.ibbr.umd.edu/
+  license_url: https://tcr3d.ibbr.umd.edu/
+- id: tcrbuilder2-ots
+  name: TCRBuilder2+ predicted TCR structures (OTS) + weights (OPIG)
+  category: structure
+  species:
+  - human
+  - mouse
+  description: 'Data releases from the TCRBuilder2+ / ImmuneBuilder TCR work: a large set of predicted
+    structures for the Observed T-cell receptor Space (OTS) and the trained model weights, with training
+    on experimentally resolved TCR structures from STCRDab.
+
+    '
+  scale: 'OTS: large-scale predicted TCR structures (Zenodo); trained on 704 experimentally resolved TCR
+    structures from STCRDab'
+  modalities:
+  - tcr
+  - computed-model
+  - weights
+  formats:
+  - pdb
+  - pytorch-weights
+  landing_url: https://github.com/oxpig/ImmuneBuilder
+  download_url: https://doi.org/10.5281/zenodo.10854757
+  api: null
+  license: CC BY 4.0 (Zenodo deposits); code BSD-3-Clause
+  license_url: https://doi.org/10.5281/zenodo.10854757
+  access: open
+  provenance:
+    maintainer: Oxford Protein Informatics Group (OPIG), University of Oxford
+    key_refs:
+    - 10.1038/s42003-025-07708-6
+    - 10.5281/zenodo.10854757
+    - 10.5281/zenodo.10892159
+  last_updated: 2024 (Zenodo); 2025 (Commun Biol)
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Large predicted TCR structural space plus open weights enable rapid modeling of TCR V-domains
+      for docking against peptide-MHC and for enriching training sets in the recognition/design pipeline.
+
+      '
+  agent_access: 'Open Zenodo downloads (OTS predictions 10.5281/zenodo.10854757; weights 10.5281/zenodo.10892159);
+    code pip-installable (oxpig/ImmuneBuilder). Scriptable.
+
+    '
+  caveats: 'OTS entries are predictions, not experimental. A DOI discrepancy exists for the v1.2 code
+    release (14727164 vs 14727165) — verify before citing.
+
+    '
+- id: tcrdock-benchmark
+  name: TCRdock benchmark + ternary template set (Bradley)
+  category: structure
+  species:
+  - human
+  - mouse
+  description: 'Data released with TCRdock, a TCR-specialized AlphaFold pipeline for TCR-pMHC modeling:
+    a curated ternary-complex template database, a human ternary fine-tuning set, and benchmark test sets,
+    distributed via the GitHub repo and paper supplementary data.
+
+    '
+  scale: ~220 ternary TCR-pMHC template structures (ternary_templates_v2.tsv); 93 human ternary structures
+    (279 fine-tuning examples); benchmark test cases in supplement
+  modalities:
+  - tcr-pmhc
+  - complex-structure
+  - template-set
+  - benchmark
+  formats:
+  - pdb
+  - tsv
+  - scripts
+  landing_url: https://github.com/phbradley/TCRdock
+  download_url: https://github.com/phbradley/TCRdock
+  api: null
+  license: unknown (check repo LICENSE)
+  license_url: https://github.com/phbradley/TCRdock
+  access: open
+  provenance:
+    maintainer: Philip Bradley, Fred Hutchinson Cancer Center
+    key_refs:
+    - 10.7554/eLife.82813
+  last_updated: 2023 (eLife); repo maintained (v2.x)
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Provides a curated TCR-pMHC ternary template set and reproducible benchmark for docking-geometry
+      and complex-prediction accuracy — core inputs/eval for TCR-pMHC structure prediction feeding binder
+      design.
+
+      '
+  agent_access: 'Public GitHub clone; TSV template index + PDB templates + benchmark TSVs. Fully scriptable;
+    fine-tuning code in separate alphafold_finetune repo.
+
+    '
+  caveats: 'Repo license not confirmed (marked unknown). Templates derive from PDB (CC0). Small curated
+    sets; dedup ternary templates against STCRDab/TCR3d.
+
+    '
+- id: tcrmodel2-benchmark
+  name: TCRmodel2 TCR-pMHC modeling server & benchmark (Pierce Lab)
+  category: structure
+  species:
+  - human
+  - mouse
+  description: 'TCRmodel2, a deep-learning (AlphaFold-based) method for high-resolution TCR and TCR-pMHC
+    modeling, with a public server and code and a non-redundant time-split benchmark of recent TCR-pMHC
+    complexes used to assess accuracy.
+
+    '
+  scale: Non-redundant TCR-pMHC benchmark (~20 test cases released after a cutoff date) drawn from TCR3d;
+    web server + code
+  modalities:
+  - tcr-pmhc
+  - complex-structure
+  - computed-model
+  - benchmark
+  formats:
+  - pdb
+  - scripts
+  landing_url: https://tcrmodel.ibbr.umd.edu/
+  download_url: https://github.com/piercelab/tcrmodel2
+  api: https://tcrmodel.ibbr.umd.edu/
+  license: unknown (check repo LICENSE)
+  license_url: https://github.com/piercelab/tcrmodel2
+  access: open
+  provenance:
+    maintainer: Pierce Lab, University of Maryland IBBR
+    key_refs:
+    - 10.1093/nar/gkad356
+  last_updated: 2023 (NAR Web Server issue)
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'A high-accuracy, openly available TCR-pMHC modeling engine plus its benchmark — a candidate
+      production modeler and an accuracy reference for the recognition/design pipeline.
+
+      '
+  agent_access: 'Public web server (tcrmodel.ibbr.umd.edu) and code (piercelab/tcrmodel2); benchmark complexes
+    from TCR3d/PDB. Local runs scriptable.
+
+    '
+  caveats: 'Repo license not confirmed (marked unknown). Benchmark is small and sourced from TCR3d (dedup
+    accordingly). Outputs are predictions.
+
+    '
+- id: tfold-tcr-tcrstructdb
+  name: tFold-TCR / TCRStructDB + STCRDab-22 benchmark (Tencent)
+  category: structure
+  species:
+  - human
+  - mouse
+  description: 'Releases accompanying tFold-TCR (fast TCR-peptide-MHC complex modeling): TCRStructDB,
+    a large database of predicted TCR/TCR-pMHC structures, plus a held-out structural benchmark (STCRDab-22-TCR_pMHC)
+    and model weights.
+
+    '
+  scale: TCRStructDB (large set of predicted TCR-pMHC structures); benchmark STCRDab-22-TCR_pMHC = 18
+    TCR-pMHC complexes (+6 unpublished); trained on STCRDab pre-2022
+  modalities:
+  - tcr-pmhc
+  - complex-structure
+  - computed-model
+  - benchmark
+  - weights
+  formats:
+  - pdb
+  - scripts
+  - pytorch-weights
+  landing_url: https://ai4s.tencent.com/tcr
+  download_url: https://github.com/TencentAI4S/tfold
+  api: null
+  license: unknown (check repo + TCRStructDB terms)
+  license_url: https://github.com/TencentAI4S/tfold
+  access: open
+  provenance:
+    maintainer: Tencent AI4S
+    key_refs:
+    - 10.1101/2025.01.12.632367
+  last_updated: 2025 (bioRxiv)
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'A large predicted TCR-pMHC structure database plus a clean held-out benchmark — scale useful
+      for pretraining/structure mining and for evaluating TCR-pMHC modeling that underpins binder design.
+
+      '
+  agent_access: 'Code + weights on GitHub (TencentAI4S/tfold); dataset files via Tencent Weiyun Drive
+    and ai4s.tencent.com/tcr portal. Predicted structures are models.
+
+    '
+  caveats: 'License/terms for TCRStructDB not confirmed (marked unknown). TCRStructDB is predictions,
+    not experiments. Benchmark is small (18 complexes).
+
+    '

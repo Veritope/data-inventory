@@ -1,0 +1,853 @@
+- id: bassani-2016-melanoma-neoepitopes
+  name: Bassani-Sternberg 2016 native melanoma immunopeptidome + neoepitopes
+  category: neoantigen
+  species:
+  - human
+  description: 'HLA-I immunopeptidomes directly from native human melanoma tissue, including mutation-derived
+    (neoepitope) ligands validated as T-cell targets - a benchmark for tissue-level and neoantigen presentation.
+
+    '
+  scale: ~95,500 patient-presented peptides across ~25 melanoma patients; 11 mutated ligands (4 immunogenic)
+  modalities:
+  - mhc-ligand-elution
+  - neoantigen
+  formats:
+  - raw-ms
+  - mzML
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD004894
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/04/PXD004894/
+  license: CC0 1.0 (PRIDE default; verify per-file)
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: TUM / MPI Biochemistry (Krackhardt/Mann); PRIDE
+    key_refs:
+    - 10.1038/ncomms13404
+  last_updated: '2017'
+  relevance:
+    programs:
+    - presentation
+    - design
+    - recognition
+    why: 'Native-tissue (not cell-line) presentation plus validated neoepitopes - directly relevant to
+      real tumor target discovery and presentation-model realism.
+
+      '
+  agent_access: 'PRIDE PXD004894 via API/FTP; bulk-downloadable, no auth.
+
+    '
+  caveats: 'Tumor tissue immunopeptidomes are noisier/lower-yield than cell lines. Neoepitope calling
+    needs matched patient genomics. Human only.
+
+    '
+- id: cad
+  name: CAD v1.0 (Cancer Antigens Database)
+  category: neoantigen
+  species:
+  - human
+  description: 'Cancer antigen database platform aimed at supporting cancer-antigen algorithm development
+    and information exploration — aggregates cancer antigen/peptide information for benchmarking and tool
+    development. Listed as a supplementary/aggregator resource; validation status mixed (curated + predicted).
+
+    '
+  scale: unknown
+  modalities:
+  - validated-neoantigen
+  - predicted-neoantigen
+  formats:
+  - web
+  landing_url: unknown
+  download_url: unknown
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: CAD authors (see 2022 paper)
+    key_refs:
+    - 10.3389/fimmu.2022.882462
+  last_updated: '2022'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Potential aggregator for algorithm-development benchmarking; low priority until site/URL and
+      counts are confirmed. Catalogued for completeness.
+
+      '
+  agent_access: 'UNVERIFIED: landing URL not resolved at catalog time — needs a site check before any
+    automated access.
+
+    '
+  caveats: 'LOW CONFIDENCE ENTRY: discovered via search only; landing URL, counts, DOI and license all
+    unverified (marked unknown). Confirm the resource resolves and is distinct from TumorAgDB/Neodb before
+    ingesting — do not rely on it until verified.
+
+    '
+- id: caped
+  name: CAPED — Cancer Antigenic Peptide Database (T cell-defined tumor antigens)
+  category: neoantigen
+  species:
+  - human
+  description: 'The de Vigneron/Van den Eynde (Ludwig Institute, UCLouvain) database of human antigenic
+    peptides recognized by T cells that meet strict tumor/tissue-specificity criteria — the long-standing
+    "T cell-defined human tumor antigens" resource (formerly at cancerimmunity.org/peptide). Entries are
+    experimentally VALIDATED T-cell epitopes with HLA restriction, antigen/gene, and references. High-purity,
+    low-volume gold-standard set.
+
+    '
+  scale: ~403 tumor antigenic peptides (2013 update baseline); CAPED web version adds curation
+  modalities:
+  - validated-neoantigen
+  - tcr-epitope
+  formats:
+  - web
+  landing_url: https://caped.icp.ucl.ac.be/
+  download_url: unknown
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: de Duve Institute / Ludwig Institute for Cancer Research, UCLouvain (van der Bruggen,
+      Vigneron, Van den Eynde)
+    key_refs:
+    - 10.1158/2326-6066.cir-13-15
+  last_updated: 2013 update; CAPED web port current
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Gold-standard, strictly-curated set of genuinely T-cell-defined human tumor antigens — high-precision
+      positive controls for recognition/immunogenicity work and vaccine/TCR design validation.
+
+      '
+  agent_access: 'AT RISK for automation: caped.icp.ucl.ac.be returned connection failure (000) via curl
+    and 403 via WebFetch — the site is up for browsers but blocks automated/headless requests. No API.
+    Expect to need a real browser session; bulk download not confirmed.
+
+    '
+  caveats: 'Bot-blocked (403/000 to automated clients) — resolves for humans, not scrapers; flag for manual
+    export. Old location cancerimmunity.org/peptide also 403s. No data license stated — license: unknown.
+    Small (~hundreds) but very high quality; attribution expected.
+
+    '
+- id: cedar
+  name: CEDAR (Cancer Epitope Database and Analysis Resource)
+  category: neoantigen
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Cancer-focused sibling of the IEDB, built and curated by the IEDB/LJI team. Comprehensive
+    manual curation of experimentally characterized cancer epitopes from the literature — T-cell assays,
+    B-cell assays, MHC ligand-elution/binding, and a dedicated neoantigen-assay class. Includes germline/tumor-associated
+    antigens and neoantigens, with receptor (TCR/BCR) data. Same query/analysis tooling as IEDB.
+
+    '
+  scale: '~445,931 epitopes, ~1.5M assays, ~60,104 receptors, 26 cancer types, ~6,203 publications (2026
+    paper); ~45,132 neoantigen assays. Launch (2022): ~224,355 epitopes / ~317k assays'
+  modalities:
+  - validated-neoantigen
+  - tcr-epitope
+  - bcr-epitope
+  - mhc-ligand-elution
+  - binding-assay
+  formats:
+  - csv
+  - json
+  - api
+  - web
+  landing_url: https://cedar.iedb.org/
+  download_url: https://cedar.iedb.org/database_export.php
+  api: https://query-api.iedb.org/
+  license: CC BY 4.0 (per IEDB/CEDAR data policy; confirm on export page)
+  license_url: https://www.iedb.org/
+  access: open
+  provenance:
+    maintainer: La Jolla Institute for Immunology (IEDB team; NIH/NIAID-funded)
+    key_refs:
+    - 10.1093/nar/gkac902
+  last_updated: 2026 (actively curated, continuous updates)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'Highest-quality, continuously curated cancer-epitope source with explicit neoantigen assays
+      and receptor data, shared infrastructure/API with IEDB. A backbone reference for both presentation
+      and recognition programs.
+
+      '
+  agent_access: 'Web portal (HTTP 200), bulk export page, and the shared IEDB query REST API (query-api.iedb.org)
+    with rate limits. No auth for public data. Best automated-access profile of any resource in this domain.
+
+    '
+  caveats: 'Data license not separately stated on-page distinct from IEDB''s CC BY 4.0 policy — treat
+    as CC BY (attribution) but confirm on the export page before redistribution. Cancer-restricted subset
+    of the broader IEDB universe; dedup against IEDB tumor subset needed if both are ingested.
+
+    '
+- id: dbpepneo2
+  name: dbPepNeo2.0 (incl. dbPepNeo v1)
+  category: neoantigen
+  species:
+  - human
+  description: 'Manually curated human tumor neoantigen peptide database. v2.0 adds mass-spectrometry
+    immunopeptidome evidence and neoantigen-reactive TCRβ sequences. Entries are stratified by confidence:
+    high-confidence (HC) validated neoantigens vs low-confidence (LC) MS-derived HLA immunopeptidomes.
+    Fields include mutant/wild-type peptide, length, mutation position, HLA allele, gene, cancer type,
+    verification method, PubMed ID.
+
+    '
+  scale: 'v2.0: ~801 class-I HC neoantigens + ~842,289 LC HLA immunopeptidomes + ~55 class-II HC + ~630
+    neoantigen-reactive TCRβ. v1 (2020): 295 HC / 247 MC / ~407,794 LC'
+  modalities:
+  - validated-neoantigen
+  - mhc-ligand-elution
+  - predicted-neoantigen
+  - tcr-epitope
+  formats:
+  - csv
+  - xlsx
+  - pdf
+  - web
+  landing_url: http://www.biostatistics.online/dbPepNeo2
+  download_url: http://www.biostatistics.online/dbPepNeo2
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Guangzhou Medical University / collaborators (Lu et al.)
+    key_refs:
+    - 10.3389/fimmu.2022.855976
+    - 10.1093/database/baaa004
+  last_updated: 2022 (v2.0)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Couples MS-validated HLA immunopeptidomes (LC) with HC validated neoantigens and reactive TCRs
+      — spans presentation evidence and recognition in one curated resource with explicit confidence tiers.
+
+      '
+  agent_access: 'Web portal (HTTP 200). v1 offered CSV/Excel/PDF export via a Download button; v2.0 download
+    options not individually verified but portal is live. Expect per-table export rather than one API.
+    No login.
+
+    '
+  caveats: 'No explicit data license found — license: unknown. Hosted on biostatistics.online (small academic
+    host) — at-risk for longevity. HC/LC confidence tiers must not be conflated: LC = MS immunopeptidome,
+    not validated neoantigens.
+
+    '
+- id: gnifdb
+  name: GNIFdb (glioma neoantigen intrinsic feature database)
+  category: neoantigen
+  species:
+  - human
+  description: 'Glioma-focused database of computationally PREDICTED HLA class-I neoantigens with intrinsic
+    features (associated mutations, gene expression, HLA binding affinity) plus tooling for feature calculation
+    and survival prediction. Also covers four other cancer types (lung, melanoma, bladder, HNSCC). Predicted,
+    not T-cell-validated.
+
+    '
+  scale: unknown
+  modalities:
+  - predicted-neoantigen
+  - mhc-binding
+  formats:
+  - web
+  landing_url: http://www.oncoimmunobank.cn/index.php
+  download_url: http://www.oncoimmunobank.cn/index.php
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Beihang University / collaborators (Li, Sun et al.)
+    key_refs:
+    - 10.1093/database/baac004
+  last_updated: '2022'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Disease-specific (glioma) predicted-neoantigen set with intrinsic-feature annotation — narrow
+      but useful for a glioma-focused presentation/target program; otherwise predicted-only supplementary
+      data.
+
+      '
+  agent_access: 'Web portal (HTTP 200 at oncoimmunobank.cn/index.php; apex https:// fails, use the index.php
+    URL). Search/browse with stated download capability; no API. Expect table export/scrape.
+
+    '
+  caveats: 'No data license found — license: unknown. Entirely predicted neoantigens (no T-cell validation).
+    Single-host (.cn) site on only the index.php path — fragile. Glioma-centric; limited breadth.
+
+    '
+- id: iedb-tumor
+  name: IEDB — tumor/cancer subset
+  category: neoantigen
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The Immune Epitope Database filtered to cancer/tumor disease context. Experimentally measured
+    epitopes: T-cell assays, B-cell assays, and MHC ligand-elution/binding. Overlaps heavily with CEDAR
+    (same team) but IEDB is the broader superset; the cancer slice is reachable via disease filters and
+    bulk export.
+
+    '
+  scale: IEDB overall ~1.6M+ epitopes / ~1M+ assays; tumor subset is a filtered fraction (see CEDAR for
+    the curated cancer counts)
+  modalities:
+  - validated-neoantigen
+  - tcr-epitope
+  - bcr-epitope
+  - mhc-ligand-elution
+  - binding-assay
+  formats:
+  - csv
+  - json
+  - api
+  - web
+  landing_url: https://www.iedb.org/
+  download_url: https://www.iedb.org/database_export_v3.php
+  api: https://query-api.iedb.org/
+  license: CC BY 4.0
+  license_url: https://www.iedb.org/
+  access: open
+  provenance:
+    maintainer: La Jolla Institute for Immunology (NIH/NIAID-funded)
+    key_refs:
+    - 10.1093/nar/gky1006
+  last_updated: 2026 (continuous)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Canonical, well-licensed epitope reference; the tumor slice anchors validated cancer epitopes
+      and feeds dedup/cross-referencing for every other neoantigen DB here.
+
+      '
+  agent_access: 'Bulk CSV/JSON export + REST query API (rate-limited), no auth. Fully automatable. Filter
+    on disease = cancer/neoplasm to isolate the tumor subset.
+
+    '
+  caveats: 'CC BY 4.0 — redistribution OK with attribution (good). Heavy overlap with CEDAR; ingest one
+    as canonical and treat the other as supplement to avoid double-counting. Tumor subset requires disease-field
+    filtering, not a prebuilt file.
+
+    '
+- id: neodb
+  name: Neodb (comprehensive neoantigen database & discovery platform)
+  category: neoantigen
+  species:
+  - human
+  description: 'R/Shiny platform combining a curated VALIDATED-neoantigen module, a driver-mutation candidate
+    module (Driver-Neo), prediction tools, and an immunogenicity GNN (Immuno-GNN). Validated set curated
+    from literature with assay types (ELISpot, multimer staining, etc.) and HLA-I/II restriction; Driver-Neo
+    is predicted candidates.
+
+    '
+  scale: ~1,463 validated neoantigen instances (1,277 HLA-I, 186 HLA-II); Driver-Neo ~20,971 candidate
+    neoantigens
+  modalities:
+  - validated-neoantigen
+  - predicted-neoantigen
+  - functional-assay
+  formats:
+  - web
+  - vcf
+  - maf
+  - pep
+  landing_url: https://liuxslab.com/Neodb
+  download_url: https://github.com/XSLiuLab/Neodb
+  license: MIT (code; per bio.tools listing)
+  license_url: https://bio.tools/neodb
+  access: open
+  provenance:
+    maintainer: 'Xue-Song Liu lab (ShanghaiTech); code: github.com/XSLiuLab/Neodb'
+    key_refs:
+    - 10.1093/database/baad041
+  last_updated: '2023'
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    - design
+    why: 'Validated set with assay-type metadata plus a driver-mutation-focused candidate set and an immunogenicity
+      model — good for recognition training and driver-neoantigen target prioritization.
+
+      '
+  agent_access: 'AT RISK: web host liuxslab.com/Neodb failed to connect (000) at check time. However code
+    + validated-neoantigen data are on GitHub (XSLiuLab/Neodb) under MIT — the robust automated route
+    is the repo, not the Shiny app. Example inputs (VCF/MAF/PEP) and validated data documented on the
+    About page.
+
+    '
+  caveats: 'Live web platform appears down (000) — rely on the GitHub repo instead. MIT applies to the
+    code per bio.tools; confirm whether curated data inherit MIT or carry source-paper terms. Driver-Neo
+    is predicted, not validated.
+
+    '
+- id: neopeptide
+  name: NeoPeptide (immunoinformatic database of T-cell-defined neoantigens)
+  category: neoantigen
+  species:
+  - human
+  description: 'Web database of literature-curated neoantigens with mutation site, subunit sequence and
+    MHC restriction, drawn from published papers and other immunological resources, with links out for
+    further characterization. Focus on T-cell-defined (validated) neoantigens.
+
+    '
+  scale: unknown
+  modalities:
+  - validated-neoantigen
+  - mhc-binding
+  formats:
+  - web
+  landing_url: http://www.neopeptide.cn/
+  download_url: http://www.neopeptide.cn/
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: 'NeoPeptide authors (code: github.com/lyotvincent/NeoPeptide)'
+    key_refs:
+    - 10.1093/database/baz128
+  last_updated: '2019'
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'Additional literature-curated T-cell-defined neoantigen set for cross-referencing/dedup against
+      NEPdb, dbPepNeo and CAPED; small supplementary source.
+
+      '
+  agent_access: 'Web portal (HTTP 200). Browse/search UI; code mirror on GitHub (lyotvincent/NeoPeptide)
+    which may contain the underlying data for bulk access. No documented API.
+
+    '
+  caveats: 'No explicit data license — license: unknown. Last updated 2019 (stale). Heavily overlaps other
+    curated sets; low incremental volume. Check the GitHub repo for a bulk data copy before scraping the
+    site.
+
+    '
+- id: neotcr
+  name: NeoTCR — neoantigen-specific functional TCR database
+  category: neoantigen
+  species:
+  - human
+  description: 'Curated database of experimentally-supported, functional neoantigen-specific TCR sequences,
+    each linked to its neoantigen/neoepitope, HLA restriction, tissue of origin and source publication.
+    Focused specifically on tumor neoantigen reactivity.
+
+    '
+  scale: ~988 entries from 52 publications, 17-18 cancer types
+  modalities:
+  - tcr-neoantigen
+  - hla-restriction
+  formats:
+  - csv
+  - web
+  landing_url: https://neotcrdb.bioxai.cn/
+  download_url: https://neotcrdb.bioxai.cn/
+  license: unknown (verify on site)
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: bioXAI / academic (Gao et al.)
+    key_refs:
+    - 10.1093/gpbjnl/qzae010
+  last_updated: '2024'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'The most directly on-target TCR label set for tumor neoantigen recognition — high-value despite
+      small size for neoantigen-focused design/recognition.
+
+      '
+  agent_access: 'Web interface with downloadable curated table. No documented REST API; scripted table
+    fetch. Small dataset, easily ingested.
+
+    '
+  caveats: 'Data license not located — treat as unknown, confirm before reuse. Small (hundreds of entries)
+    but functionally validated. Verify landing URL resolves (newer .cn host).
+
+    '
+- id: nepdb
+  name: NEPdb (NEoPeptide database)
+  category: neoantigen
+  species:
+  - human
+  description: 'Manually curated database of T-cell-experimentally-validated neoantigens plus pan-cancer
+    predicted neoepitopes. Both IMMUNOGENIC (''P'') and non-immunogenic/ineffective (''N'') human neopeptides
+    are recorded with HLA class I/II alleles, T-cell activation data, TCR sequences and clinical outcome
+    where available — the negative set is a notable feature for training. A separate module provides predicted
+    HLA-I neoepitopes from shared somatic mutations.
+
+    '
+  scale: ~17,549 validated entries (site reports ~173 immunogenic + ~17,376 non-immunogenic from 41 papers);
+    predicted set from ~16,745 shared somatic mutations
+  modalities:
+  - validated-neoantigen
+  - predicted-neoantigen
+  - tcr-epitope
+  - mhc-binding
+  formats:
+  - web
+  landing_url: http://nep.whu.edu.cn/
+  download_url: http://nep.whu.edu.cn/
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Wuhan University (Xia et al.)
+    key_refs:
+    - 10.3389/fimmu.2021.644637
+  last_updated: '2021'
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'One of few sources with explicit negative (non-immunogenic) neoantigen data alongside positives
+      plus TCRs — directly useful for immunogenicity/recognition classifier training and benchmarking.
+
+      '
+  agent_access: 'Web portal (HTTP 200). Browse/search UI; no documented REST API or clearly-labeled bulk
+    file found — expect scraping of result tables. No login.
+
+    '
+  caveats: 'No explicit data license found — license: unknown. Headline count (~17.5k) is dominated by
+    negatives; true immunogenic count is small (~173). Last updated 2021 — stale. Single-institution host;
+    monitor for drift.
+
+    '
+- id: tantigen
+  name: TANTIGEN 2.0
+  category: neoantigen
+  species:
+  - human
+  description: 'A curated knowledge base of tumor T-cell antigens, including HLA ligands, T-cell epitopes,
+    neoantigens, naturally processed (MS-eluted) peptides, cognate TCR sequences, and expression data.
+    Bridges presentation and tumor-antigen target lists.
+
+    '
+  scale: ~4,296 antigen variants from 403 tumor antigens; >1,500 epitopes/HLA ligands
+  modalities:
+  - tcr-epitope
+  - mhc-ligand-elution
+  - neoantigen
+  formats:
+  - html
+  - download tables
+  landing_url: http://projects.met-hilab.org/tadb
+  download_url: http://projects.met-hilab.org/tadb
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Zhang/Brusic groups (Dana-Farber / collaborators)
+    key_refs:
+    - 10.1186/s12859-021-04004-y
+  last_updated: 2021 (2.0)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - recognition
+    why: 'A ready list of known tumor antigens/epitopes with presentation and TCR annotations - useful
+      for target triage and positive-control construction.
+
+      '
+  agent_access: 'Web interface with downloadable tables; small enough to fetch fully. No formal API.
+
+    '
+  caveats: 'No explicit data license found - unknown; confirm before reuse. Smaller, curated (not comprehensive).
+    Human only.
+
+    '
+- id: tantigen2
+  name: TANTIGEN 2.0 (Tumor T-cell Antigen database)
+  category: neoantigen
+  species:
+  - human
+  description: 'Knowledge base of tumor T-cell antigens and epitopes: tumor antigen proteins and their
+    sequence variants, experimentally validated T-cell epitopes and HLA ligands, and validated TCR sequences
+    for cognate epitopes. Mix of validated epitopes/ligands and antigen-variant annotation. Update of
+    the original Dana-Farber TANTIGEN.
+
+    '
+  scale: ~4,296 antigen variants from 403 unique tumor antigens; >1,500 T-cell epitopes and HLA ligands;
+    plus validated TCRs
+  modalities:
+  - validated-neoantigen
+  - tcr-epitope
+  - mhc-binding
+  formats:
+  - web
+  landing_url: http://projects.met-hilab.org/tadb
+  download_url: unknown
+  license: open-access (stated 'interactive open-access database'; no SPDX license found)
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: 'Met-hilab (Olsen/Brusic; Keskin, Dana-Farber co-author). Legacy host: cvc.dfci.harvard.edu/tadb'
+    key_refs:
+    - 10.1186/s12859-021-03962-7
+  last_updated: '2021'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Antigen-variant-centric view (403 tumor antigens, thousands of variants) plus validated epitopes/TCRs
+      — useful for antigen-level target mapping and recognition datasets.
+
+      '
+  agent_access: 'AT RISK: projects.met-hilab.org/tadb returns HTTP 503 (service unavailable) at check
+    time — may be transient or decommissioned. Legacy Dana-Farber host (cvc.dfci.harvard.edu/tadb) also
+    unreliable. No API. Monitor/retry.
+
+    '
+  caveats: 'Host down (503) at catalog time — verify before relying on it; single-lab hosting is fragile.
+    License called "open-access" in the paper but no formal SPDX terms found. Dana-Farber is a co-author
+    affiliation, not the current host.
+
+    '
+- id: tcia-immunome
+  name: The Cancer Immunome Atlas (TCIA) / Immunophenoscore
+  category: neoantigen
+  species:
+  - human
+  description: 'Pan-cancer immunogenomic portal (Charoentong et al. 2017) providing, per TCGA tumor, predicted
+    neoantigens, cancer-germline antigens, HLA types, immune-cell deconvolution and the Immunophenoscore
+    (IPS) as a predictor of checkpoint-blockade response.
+
+    '
+  scale: ~20 TCGA solid-tumor types (pan-cancer, ~8,000+ samples)
+  modalities:
+  - neoantigen
+  - hla-typing
+  - immune-deconvolution
+  - immunophenoscore
+  - cancer-germline-antigen
+  formats:
+  - tsv
+  - web-portal
+  landing_url: https://tcia.at
+  download_url: https://tcia.at
+  license: unknown (portal terms not stated; data derived from TCGA)
+  license_url: https://tcia.at
+  access: open
+  provenance:
+    maintainer: Institute of Bioinformatics, Medical University of Innsbruck
+    key_refs:
+    - 10.1016/j.celrep.2016.12.019
+  last_updated: 2017 (portal under redesign as of 2026)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Pre-computed neoantigen and cancer-germline-antigen predictions plus HLA calls across TCGA —
+      a direct shortcut to candidate shared/private antigen lists and an IPS response prior.
+
+      '
+  agent_access: 'Normally a web portal with downloadable per-tumor tables (no auth). As of 2026 the portal
+    is paused for redesign; urgent dataset/validation-file requests go to icbi@i-med.ac.at. Supplementary
+    data also distributed with the Cell Reports paper.
+
+    '
+  caveats: 'Portal currently offline — availability intermittent; cannot be relied on for an automated
+    pipeline until restored. License/terms not explicitly stated (mark unknown). Predictions are tool-dependent;
+    re-derive with current callers for production use.
+
+    '
+- id: tesla-neoantigen-benchmark
+  name: TESLA — Tumor nEoantigen SeLection Alliance benchmark
+  category: neoantigen
+  species:
+  - human
+  description: 'Consortium benchmark (Wells et al. 2020) in which many teams predicted neoantigens from
+    shared WES+RNA-seq of 6 tumors (3 melanoma, 3 NSCLC); 608 peptides were then experimentally tested
+    for MHC binding and T-cell recognition, yielding validated immunogenicity labels and key parameters
+    of epitope immunogenicity.
+
+    '
+  scale: 6 tumors; 608 peptides with experimental immunogenicity readouts
+  modalities:
+  - wxs
+  - rna-seq
+  - neoantigen
+  - mhc-binding
+  - tcr-epitope
+  - functional-validation
+  formats:
+  - tsv
+  - synapse
+  landing_url: https://www.cell.com/cell/fulltext/S0092-8674(20)31156-9
+  download_url: https://www.synapse.org/#!Synapse:syn21048999
+  license: Synapse data-use terms (open benchmark; registration)
+  license_url: https://www.synapse.org/#!Synapse:syn21048999
+  access: registration
+  provenance:
+    maintainer: Parker Institute for Cancer Immunotherapy / Sage Bionetworks
+    key_refs:
+    - 10.1016/j.cell.2020.09.015
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    - design
+    - recognition
+    why: 'The gold-standard labeled benchmark for neoantigen prediction — validated positives and negatives
+      for training/evaluating presentation and immunogenicity models end to end.
+
+      '
+  agent_access: 'Downloadable from Synapse (syn21048999) via the synapseclient Python/R API with a free
+    account + token — scriptable. Open benchmark intended for reuse.
+
+    '
+  caveats: 'Tiny number of tumors (depth, not breadth). Synapse registration + terms acceptance required.
+    Immunogenicity assays have their own sensitivity limits (document assay type).
+
+    '
+- id: tsnadb-v1
+  name: TSNAdb v1.0 (legacy)
+  category: neoantigen
+  species:
+  - human
+  description: 'Original 2018 TSNAdb: predicted tumor-specific neoantigens from TCGA and ICGC SNVs using
+    NetMHCpan v2.8/v4.0 across common HLA alleles. Superseded by v2.0. Catalogued only to note the dead
+    legacy host.
+
+    '
+  scale: ~3.7M predicted (NetMHCpan 2.8) / ~1.15M (NetMHCpan 4.0) shared-neoantigen predictions (ICGC/TCGA)
+  modalities:
+  - predicted-neoantigen
+  - mhc-binding
+  formats:
+  - web
+  landing_url: http://biopharm.zju.edu.cn/tsnadb/
+  download_url: unknown
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Zhejiang University (Zhan Zhou group)
+    key_refs:
+    - 10.1158/2326-6066.CIR-17-0535
+  last_updated: '2018'
+  relevance:
+    programs:
+    - presentation
+    why: 'Historical reference only; v2.0 supersedes it. Listed so the broken legacy URL is documented,
+      not re-chased.
+
+      '
+  agent_access: 'DEAD: biopharm.zju.edu.cn/tsnadb returns HTTP 502. Not fetchable. Use TSNAdb v2.0 instead.
+
+    '
+  caveats: 'Legacy host down (502). Entirely predicted data. Redundant with v2 — kept for provenance/dead-link
+    tracking.
+
+    '
+- id: tsnadb-v2
+  name: TSNAdb v2.0 (Tumor-Specific NeoAntigen database)
+  category: neoantigen
+  species:
+  - human
+  description: 'Updated version of TSNAdb from the Zhan Zhou group (Zhejiang University). Predominantly
+    a PREDICTED neoantigen resource derived from TCGA: predictions now cover SNVs, INDELs and gene fusions
+    (v1 was SNV-only). It also curates a smaller set of literature-collected neoantigens graded by evidence
+    tier (tier 1 = validated immunogenic AND presented; tier 2 = immunogenic only; tier 3 = presented
+    only). Predictions use NetMHCpan / MHCflurry-class tools. Browsable by cancer type and HLA.
+
+    '
+  scale: 'Predicted: ~372,273 SNV-derived + ~137,130 INDEL-derived + ~11,093 fusion-derived (TCGA). Curated/validated:
+    ~1,557-1,856 neoantigens (source counts vary)'
+  modalities:
+  - predicted-neoantigen
+  - validated-neoantigen
+  - mhc-binding
+  formats:
+  - web
+  - csv
+  landing_url: https://pgx.zju.edu.cn/tsnadb/
+  download_url: https://pgx.zju.edu.cn/tsnadb/
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Zhan Zhou group, College of Pharmaceutical Sciences, Zhejiang University
+    key_refs:
+    - 10.1016/j.gpb.2022.09.012
+    - 10.1158/2326-6066.CIR-17-0535
+  last_updated: 2023 (v2.0 paper); site live as of 2026-11
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Large pan-cancer predicted-neoantigen set tied to TCGA mutations, plus a tiered validated set,
+      useful as a predicted-vs-validated contrast for presentation modeling and shared-neoantigen target
+      triage.
+
+      '
+  agent_access: 'Web portal (HTTP 200). Per-cancer-type and per-HLA tables downloadable from the Download
+    page; no documented API or single bulk dump. Automated retrieval likely needs page/table scraping.
+    No login.
+
+    '
+  caveats: 'No explicit data license found on the site — license: unknown; do not assume reuse/ML-training
+    rights. v1.0 host (biopharm.zju.edu.cn/tsnadb) returns 502 and should be treated as dead/superseded
+    — use v2 at pgx.zju.edu.cn. Validated-neoantigen count differs between the preprint and published
+    abstracts (1,557 vs 1,856); verify on-site. Overwhelmingly predicted data — do not read predictions
+    as validated.
+
+    '
+- id: tumoragdb
+  name: TumorAgDB (tumor neoantigen database platform, v1/v2)
+  category: neoantigen
+  species:
+  - human
+  - mouse
+  description: 'Recent (2025) tumor neoantigen platform aggregating published literature and public resources
+    (NCI database, IEDB, TESLA alliance ~608 sequences) plus simulated/affinity-derived neoantigen data;
+    v2.0 integrates two more years of public data across human and mouse. Includes immunogenicity-prediction
+    tooling. Mixes validated, mouse-model-validated, and simulated/predicted data.
+
+    '
+  scale: 'v2.0: ~187,223 total entries across 15 cancer types/cell lines; ~1,106 experimentally validated
+    neoantigens'
+  modalities:
+  - validated-neoantigen
+  - predicted-neoantigen
+  - mhc-binding
+  formats:
+  - web
+  landing_url: https://tumoragdb.com.cn/
+  download_url: https://tumoragdb.com.cn/
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: TumorAgDB authors (China; see Database 2025 paper)
+    key_refs:
+    - 10.1093/database/baaf010
+  last_updated: '2025'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'Newest/largest aggregate with human+mouse coverage and a modest validated core — useful as a
+      recency sweep and for mouse-model cross-species comparison, but heavily predicted/simulated.
+
+      '
+  agent_access: 'Web portal (HTTP 200). Browse/search; no documented API or confirmed bulk file — expect
+    scraping. No login.
+
+    '
+  caveats: 'No data license found — license: unknown. Large total count (~187k) is mostly predicted/simulated/mouse-model
+    data; validated core is ~1,106 — separate carefully. Chinese single-host site; longevity unproven.
+    Count discrepancies between v1/v2 in sources — verify on-site.
+
+    '

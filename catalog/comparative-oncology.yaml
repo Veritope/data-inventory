@@ -1,0 +1,699 @@
+- id: canine-dla-dr-classII-motifs
+  name: Canine DLA-DR15/DR12 class II immunopeptidomics
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'First immunopeptidomics-derived MHC class II binding motifs for two common canine DR alleles
+    (DLA-DRB1*015:01 / DR15 and DLA-DRB1*012:01 / DR12), the only direct canine class II ligand data available.
+
+    '
+  scale: 838 DLA-DR15-associated + 644 DLA-DR12-associated peptides
+  modalities:
+  - mhc-ligand-elution
+  - binding-motif
+  formats:
+  - supplementary tables
+  - raw-ms (PRIDE, accession to confirm)
+  landing_url: https://academic.oup.com/jimmunol/article-abstract/215/9/vkag243/8812665
+  download_url: unknown
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Academic (canine immunology group); J Immunol
+    key_refs:
+    - 10.1093/jimmun/vkag243
+  last_updated: '2025'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'The only canine class II presentation data - essential and currently almost unique for any DLA
+      class II modeling.
+
+      '
+  agent_access: 'Peptide lists in paper supplementary files; raw MS likely in PRIDE (accession not confirmed
+    at catalog time - search PRIDE for "DLA-DR" / Canis familiaris). Partly publisher-gated.
+
+    '
+  caveats: 'PRIDE accession and data license UNCONFIRMED - verify in the paper''s data availability statement.
+    Only two alleles. Extremely sparse (the canine class II gap).
+
+    '
+- id: canine-dla-immunopeptidomics
+  name: Canine DLA immunopeptidomics (primary studies)
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'The small set of primary studies that experimentally define canine MHC (DLA) peptide-binding
+    motifs via MS elution - essentially the only direct canine immunopeptidomics data available. Includes
+    class I (DLA-88*50101) and the first class II motifs (DLA-DRB1*015:01, DLA-DRB1*012:01), plus a canine
+    tumor-antigen presentation set deposited in PRIDE.
+
+    '
+  scale: 'DLA-88*50101: ~3,720 eluted peptides (~2,436 nonamers); DLA-DR15: 838; DLA-DR12: 644; tumor
+    set under PXD074485'
+  modalities:
+  - mhc-ligand-elution
+  - binding-motif
+  formats:
+  - supplementary tables (xlsx/csv)
+  - raw-ms (PRIDE)
+  landing_url: https://proteomecentral.proteomexchange.org/dataset/PXD074485
+  download_url: https://proteomecentral.proteomexchange.org/dataset/PXD074485
+  license: CC0 (PRIDE default; per-paper supplements vary)
+  license_url: https://www.proteomexchange.org/
+  access: open
+  provenance:
+    maintainer: Multiple academic labs; raw data via PRIDE/ProteomeXchange
+    key_refs:
+    - 10.3389/fimmu.2016.00558
+    - 10.1093/jimmun/vkag243
+  last_updated: 2016-2025
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    - design
+    why: 'The core experimental substrate for canine presentation modeling. Directly enables (and bounds)
+      Veritope''s dog immuno-oncology work; everything else canine is sequence-only.
+
+      '
+  agent_access: 'Raw MS via PRIDE (bulk, CC0); motif/peptide lists via paper supplementary files (per-publisher
+    access). Fetchable but scattered across papers - requires assembly.
+
+    '
+  caveats: 'SPARSE by design: only a handful of DLA alleles characterized, mostly class I and a couple
+    class II. No consolidated canine atlas exists. This gap is the key comparative-oncology constraint
+    - likely a build-it-ourselves opportunity.
+
+    '
+- id: canine-mzl-2025-gse343505
+  name: Canine marginal zone lymphoma single-cell + spatial atlas (GSE343505)
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'Longitudinal single-cell and spatial transcriptomics of canine marginal zone lymphoma
+    presented as a comparative-oncology model; deposited in GEO. TCR V(D)J content not confirmed from
+    metadata.
+
+    '
+  scale: longitudinal scRNA + spatial cohort (GSE343505)
+  modalities:
+  - scrna-seq
+  - spatial
+  - tumor
+  formats:
+  - geo
+  - matrix
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE343505
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE343505
+  license: NCBI GEO terms (open)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: (see GSE343505 / PMC13596568)
+    key_refs:
+    - GSE343505
+  last_updated: '2025'
+  relevance:
+    programs:
+    - comparative
+    why: 'Adds canine tumor immune single-cell data for the dog comparative arm; candidate source if it
+      includes V(D)J reads.
+
+      '
+  agent_access: 'Open GEO series GSE343505; matrices via GEO FTP/HTTPS, automatable.
+
+    '
+  caveats: 'TCR V(D)J inclusion NOT confirmed — verify in the GEO record before relying on it for TCR
+    work. DOI not located. Dog.
+
+    '
+- id: canine-sctcr-2024-prjna742469
+  name: Hoang/Griffith 2024 single-cell canine TCR repertoire (PRJNA742469)
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'First dedicated single-cell (10x) canine TRA/TRB V(D)J + scRNA profiling, covering healthy
+    PBMC, healthy lymph node, melanoma PBMC and lymphoma lymph node — the strongest purpose-built public
+    canine TCR dataset found.
+
+    '
+  scale: 16 samples / 11 dogs; 77,809 V(D)J-expressing cells; 5 samples with scRNA-seq
+  modalities:
+  - paired-chain
+  - scrna-seq
+  - repertoire
+  - tumor
+  formats:
+  - fastq
+  - sra
+  - cellranger
+  landing_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11035579/
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA742469
+  license: NCBI SRA terms (open)
+  license_url: https://www.ncbi.nlm.nih.gov/sra/docs/
+  access: open
+  provenance:
+    maintainer: Griffith labs, Washington University / University of Missouri
+    key_refs:
+    - 10.1038/s42003-024-06174-w
+  last_updated: '2024'
+  relevance:
+    programs:
+    - comparative
+    - recognition
+    why: 'THE key public canine TCR resource for a comparative-oncology (dog) arm — includes canine melanoma
+      and lymphoma samples and custom CanFam3.1 10x references.
+
+      '
+  agent_access: 'Raw scRNA/scTCR FASTQs open in SRA (SRP326193) under BioProject PRJNA742469; SRA Toolkit/ENA
+    for programmatic bulk download. Custom canine reference at genomedata.org/10X_canine_ref/.
+
+    '
+  caveats: 'Not antigen-labeled (no canine epitope specificity). Small cohort. No canine VDJdb/McPAS equivalent
+    exists; this plus SRA RNA-seq reanalysis is essentially the entire public canine TCR landscape.
+
+    '
+- id: canine-tcr-rnaseq
+  name: Canine TCR repertoires from public RNA-seq (SRA)
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'Canine TCR repertoires reconstructed from public dog RNA-seq in the SRA using TRUST4/MiXCR
+    with IMGT canine references, spanning blood, lymphoid, solid tissue and tumor samples; plus companion
+    single-cell canine TCR V(D)J atlases of healthy dogs.
+
+    '
+  scale: ~1,808 RNA-seq samples (1,361 PE + 447 SE) from ~1,063 dogs; 613 tumor samples
+  modalities:
+  - cdr3-beta
+  - repertoire
+  - single-cell
+  - tumor
+  formats:
+  - sra
+  - derived-tables
+  landing_url: https://www.biorxiv.org/content/10.1101/2024.02.14.580390v1.full
+  download_url: https://www.ncbi.nlm.nih.gov/sra
+  license: source SRA data terms (study-dependent)
+  license_url: https://www.ncbi.nlm.nih.gov/sra/docs/
+  access: open
+  provenance:
+    maintainer: various (reanalysis preprint 2024; Frontiers scRNA atlas 2023)
+    key_refs:
+    - 10.1101/2024.02.14.580390
+    - 10.3389/fimmu.2023.1123366
+  last_updated: '2024'
+  relevance:
+    programs:
+    - comparative
+    - recognition
+    why: 'The only meaningful public canine TCR coverage found — essential for any comparative-oncology
+      (dog) arm; raw reads are reprocessable with canine IMGT references.
+
+      '
+  agent_access: 'Underlying reads are public in SRA (programmatic via SRA Toolkit/ENA); derived repertoire
+    tables depend on authors'' supplements. Reprocessing is compute-heavy but fully automatable.
+
+    '
+  caveats: 'No single curated canine TCR database — this is reanalysis of scattered RNA-seq, so quality
+    and annotation vary. NOT antigen-labeled. No canine equivalent of VDJdb/McPAS exists; canine coverage
+    across all other resources in this domain is effectively zero. This is the key comparative-oncology
+    gap.
+
+    '
+- id: canine-tcr-rnaseq-sra-2024
+  name: Canine TCR repertoires reconstructed from public RNA-seq (SRA reanalysis)
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'Computational reconstruction of canine TCR repertoires from existing public dog RNA-seq
+    in the SRA using TRUST4/MiXCR with IMGT canine references, across blood, lymphoid, solid tissue and
+    tumors — the broadest (if indirect) canine TCR coverage.
+
+    '
+  scale: ~1,808 RNA-seq samples (1,361 PE + 447 SE) from ~1,063 dogs; 613 tumor samples
+  modalities:
+  - cdr3-beta
+  - repertoire
+  - tumor
+  - derived
+  formats:
+  - sra
+  - derived-tables
+  landing_url: https://www.biorxiv.org/content/10.1101/2024.02.14.580390v1.full
+  download_url: https://www.ncbi.nlm.nih.gov/sra
+  license: source SRA terms (per-study)
+  license_url: https://www.ncbi.nlm.nih.gov/sra/docs/
+  access: open
+  provenance:
+    maintainer: (bioRxiv 2024 reanalysis)
+    key_refs:
+    - 10.1101/2024.02.14.580390
+  last_updated: '2024'
+  relevance:
+    programs:
+    - comparative
+    why: 'Largest-breadth canine TCR coverage (incl. 613 tumor samples) for the dog comparative arm; reprocessable
+      from open reads with canine IMGT refs.
+
+      '
+  agent_access: 'Underlying reads open in SRA/ENA (programmatic via SRA Toolkit); derived repertoire tables
+    depend on the preprint''s supplements. Reprocessing is compute-heavy but automatable.
+
+    '
+  caveats: 'Preprint (verify peer-review status). Reconstructed from bulk RNA-seq (not targeted TCR-seq);
+    quality/annotation varies. Not antigen-labeled. Dog.
+
+    '
+- id: cotc-copprogram
+  name: NCI Comparative Oncology Program (COP) / COTC Trials
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'NIH/NCI Center for Cancer Research program running clinical trials in pet dogs with spontaneous
+    cancer across a ~19-site academic network (COTC). NCI provides trial design, oversight and data management
+    (C3D real-time capture); public correlative data flow into ICDC.
+
+    '
+  scale: ~19 sites; ~10 completed studies; ~450 dogs enrolled across recent trials
+  modalities:
+  - clinical-trial
+  - pk-pd
+  - correlative-genomics
+  formats:
+  - via-icdc
+  landing_url: https://ccr.cancer.gov/comparative-oncology-program
+  download_url: https://caninecommons.cancer.gov/
+  license: custom (data ownership often with drug sponsor; public subset via ICDC)
+  license_url: https://ccr.cancer.gov/comparative-oncology-program/agreements
+  access: request
+  provenance:
+    maintainer: NCI CCR Comparative Oncology Program
+    key_refs:
+    - 10.1371/journal.pone.0004972
+  last_updated: '2026'
+  relevance:
+    programs:
+    - comparative
+    why: 'The institutional backbone of U.S. comparative oncology; a partnership/data channel, not a bulk
+      dataset. Public outputs are already in ICDC.
+
+      '
+  agent_access: 'Program is not itself a downloadable dataset; raw trial data ownership often sits with
+    the drug sponsor. Access public correlatives through ICDC; trial-level data by agreement.
+
+    '
+  caveats: 'Sponsor-owned data not redistributable; public access is the ICDC subset only.
+
+    '
+- id: icdc
+  name: NCI Integrated Canine Data Commons (ICDC)
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'NCI Cancer Research Data Commons (CRDC) node aggregating harmonized canine cancer data
+    — clinical/biospecimen metadata, bulk RNA-seq, WGS, WES, genotyping arrays and DNA methylation — across
+    spontaneous companion-dog tumors. Data come from the Comparative Oncology Program/COTC, PRECINCT,
+    and individual canine researchers, structured to the ICDC data model and queryable by cohort. Current
+    studies (12): COTC007B, COTC022 (appendicular osteosarcoma SOC), GLIOMA01 (comparative glioma), MGT01
+    (mammary/breast), NCATS-COP01 (canine-human transcriptomics), ORGANOIDS01 (urothelial organoids),
+    OSA01 (osteosarcoma multi-platform), OSA03 (human+canine osteosarcoma WGBS), TCL01 (canine cancer
+    cell-line WES), UBC01 (vemurafenib in BRAF-mutant bladder cancer), UBC02 (urothelial subtypes + immune
+    signatures), UC01 (urothelial WES, BRAF-V595E-negative).
+
+    '
+  scale: ~35 TB; ~11-12 studies, ~678 cases, ~937 samples (figures vary by release)
+  modalities:
+  - rna-seq
+  - wgs
+  - wes
+  - methylation
+  - genotyping-array
+  - clinical-metadata
+  - imaging
+  formats:
+  - bam
+  - vcf
+  - txt
+  - json
+  - api
+  landing_url: https://caninecommons.cancer.gov/
+  download_url: https://caninecommons.cancer.gov/#/explore
+  api: https://caninecommons-api.datacommons.cancer.gov/
+  license: custom (open access; use with attribution; no named SPDX license)
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI Center for Biomedical Informatics & Information Technology (CBIIT) / CRDC
+    key_refs:
+    - 10.1158/0008-5472.CAN-23-2730
+  last_updated: '2026-06 (CRDC update: +44 COTC022 files, Data Model Navigator refresh)'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    - recognition
+    why: 'Primary open canine oncology multi-omics resource; anchors Veritope''s comparative strategy.
+      Rich on genomics/transcriptomics but carries NO MHC-ligand, immunopeptidome or TCR data — a gap
+      we must fill from elsewhere or generate ourselves.
+
+      '
+  agent_access: 'REST API + web portal; cohort building then analysis in CRDC Cloud (Seven Bridges Cancer
+    Genomics Cloud). Metadata queryable programmatically; large sequence files (BAM/VCF) are cloud-hosted.
+    No login for open data; no documented hard rate limits but prefer the API over scraping the Angular
+    SPA (the HTML is JS-rendered and returns no content to plain fetchers).
+
+    '
+  caveats: 'No explicit SPDX license — "open access with attribution" only; confirm redistribution terms
+    per study. Per-study case/sample counts not exposed on static pages (need API/portal). Portal is a
+    single-page app, so direct curl of /#/explore yields no data — use the API.
+
+    '
+- id: icdc-cotc007b
+  name: ICDC COTC007B
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'COTC preclinical trial comparing three indenoisoquinoline (topoisomerase-I inhibitor)
+    drug candidates in tumor-bearing dogs, with pharmacodynamic/correlative data. Early ICDC clinical-trial
+    study.
+
+    '
+  scale: small trial cohort (tumor-bearing dogs)
+  modalities:
+  - clinical-trial
+  - pk-pd
+  formats:
+  - txt
+  - json
+  landing_url: https://caninecommons.cancer.gov/#/study/COTC007B
+  download_url: https://caninecommons.cancer.gov/#/explore
+  license: custom (ICDC open access, attribution)
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI Comparative Oncology Program / CRDC
+    key_refs:
+    - 10.1158/1078-0432.CCR-09-1707
+  last_updated: unknown
+  relevance:
+    programs:
+    - comparative
+    why: 'Demonstrates the COTC->ICDC data pipeline for PK/PD; no omics presentation layer.
+
+      '
+  agent_access: 'ICDC API / portal; open, no auth.
+
+    '
+  caveats: 'Clinical/PK only; no genomics or immune data.
+
+    '
+- id: icdc-cotc022
+  name: ICDC COTC022 — Appendicular Osteosarcoma Standard-of-Care
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'Prospective COTC trial of standard-of-care in dogs with appendicular osteosarcoma; genomics
+    + transcriptomics correlatives. Transcriptomes mirrored in GEO GSE238110 (see below). Actively updated.
+
+    '
+  scale: trial cohort (dozens of dogs); +44 files added 2026-06
+  modalities:
+  - rna-seq
+  - wes
+  - clinical-metadata
+  formats:
+  - bam
+  - vcf
+  - txt
+  - json
+  landing_url: https://caninecommons.cancer.gov/#/study/COTC022
+  download_url: https://caninecommons.cancer.gov/#/explore
+  license: custom (ICDC open access, attribution)
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI Comparative Oncology Program / CRDC
+    key_refs:
+    - 10.1158/1078-0432.CCR-24-0872
+  last_updated: 2026-06
+  relevance:
+    programs:
+    - comparative
+    why: 'Osteosarcoma is a flagship comparative (dog<->pediatric human) indication; clean trial-linked
+      genomics for modeling tumor genetics, though no antigen-presentation layer.
+
+      '
+  agent_access: 'Via ICDC API / CGC; same access model as parent ICDC.
+
+    '
+  caveats: 'No immune/MHC data. Counts only via API.
+
+    '
+- id: icdc-glioma01
+  name: ICDC GLIOMA01 — Comparative Canine/Human Glioma Genomics
+  category: comparative-oncology
+  species:
+  - dog
+  - human
+  description: 'Multi-omic molecular life-history study of spontaneous canine (and matched human) gliomas;
+    the TCIA companion collection (ICDC-Glioma) holds imaging for the same subjects.
+
+    '
+  scale: ~81 subjects (multi-omic)
+  modalities:
+  - wgs
+  - wes
+  - rna-seq
+  - methylation
+  - imaging
+  formats:
+  - bam
+  - vcf
+  - txt
+  - dicom
+  landing_url: https://caninecommons.cancer.gov/#/study/GLIOMA01
+  download_url: https://www.cancerimagingarchive.net/collection/icdc-glioma/
+  license: custom (ICDC open access); TCIA imaging CC BY 4.0
+  license_url: https://www.cancerimagingarchive.net/collection/icdc-glioma/
+  access: open
+  provenance:
+    maintainer: NCI CRDC / The Cancer Imaging Archive (TCIA)
+    key_refs:
+    - 10.1016/j.ccell.2020.01.004
+  last_updated: 2020-2021
+  relevance:
+    programs:
+    - comparative
+    why: 'Paired cross-species omics + imaging; strong template for comparative tumor-biology modeling.
+
+      '
+  agent_access: 'Genomics via ICDC API; imaging via TCIA REST API (NBIA) — bulk DICOM download supported.
+
+    '
+  caveats: 'No MHC/immunopeptidome/TCR layer; glioma is immunologically cold.
+
+    '
+- id: icdc-mgt01
+  name: ICDC MGT01
+  category: comparative-oncology
+  species:
+  - dog
+  - human
+  description: 'Molecular comparison of canine mammary gland tumors and human breast cancer (genomics).
+
+    '
+  scale: genomics cohort (count via API)
+  modalities:
+  - wgs
+  - wes
+  - rna-seq
+  formats:
+  - bam
+  - vcf
+  - txt
+  landing_url: https://caninecommons.cancer.gov/#/study/MGT01
+  download_url: https://caninecommons.cancer.gov/#/explore
+  license: custom (ICDC open access, attribution)
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI CRDC
+    key_refs:
+    - 10.1038/s41597-019-0149-8
+  last_updated: unknown
+  relevance:
+    programs:
+    - comparative
+    why: 'Breast/mammary cross-species comparison; hormone-driven tumor biology.
+
+      '
+  agent_access: 'ICDC API; open.
+
+    '
+  caveats: 'No immune/MHC data. Counts only via API.
+
+    '
+- id: icdc-ncats-cop01
+  name: ICDC NCATS-COP01
+  category: comparative-oncology
+  species:
+  - dog
+  - human
+  description: 'NCATS/Comparative Oncology Program canine-human transcriptomics study for diagnosing/treating
+    cancers.
+
+    '
+  scale: transcriptomics cohort (count via API)
+  modalities:
+  - rna-seq
+  formats:
+  - bam
+  - txt
+  landing_url: https://caninecommons.cancer.gov/#/study/NCATS-COP01
+  download_url: https://caninecommons.cancer.gov/#/explore
+  license: custom (ICDC open access, attribution)
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI CRDC / NCATS
+    key_refs: []
+  last_updated: unknown
+  relevance:
+    programs:
+    - comparative
+    why: 'Cross-species transcriptomic reference for drug repurposing.
+
+      '
+  agent_access: 'ICDC API; open.
+
+    '
+  caveats: 'No MHC/immune layer; counts via API.
+
+    '
+- id: icdc-organoids01
+  name: ICDC ORGANOIDS01
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'Healthy and urothelial-carcinoma canine organoids for personalized-medicine modeling (genomics).
+
+    '
+  scale: organoid panel (count via API)
+  modalities:
+  - wgs
+  - wes
+  - rna-seq
+  formats:
+  - bam
+  - vcf
+  - txt
+  landing_url: https://caninecommons.cancer.gov/#/study/ORGANOIDS01
+  download_url: https://caninecommons.cancer.gov/#/explore
+  license: custom (ICDC open access, attribution)
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI CRDC
+    key_refs: []
+  last_updated: unknown
+  relevance:
+    programs:
+    - comparative
+    why: 'Organoids are candidate substrates for functional presentation assays.
+
+      '
+  agent_access: 'ICDC API; open.
+
+    '
+  caveats: 'No native immune data; counts via API.
+
+    '
+- id: icdc-ubc01
+  name: ICDC UBC01
+  category: comparative-oncology
+  species:
+  - dog
+  description: 'Clinical trial of vemurafenib activity in dogs with BRAF-mutant bladder (urothelial) carcinoma.
+
+    '
+  scale: trial cohort (count via API)
+  modalities:
+  - clinical-trial
+  - correlative-genomics
+  formats:
+  - txt
+  - vcf
+  - json
+  landing_url: https://caninecommons.cancer.gov/#/study/UBC01
+  download_url: https://caninecommons.cancer.gov/#/explore
+  license: custom (ICDC open access, attribution)
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI CRDC
+    key_refs: []
+  last_updated: unknown
+  relevance:
+    programs:
+    - comparative
+    why: 'BRAF-targeted therapy response in dogs; translational to human BRAF cancers.
+
+      '
+  agent_access: 'ICDC API; open.
+
+    '
+  caveats: 'Counts via API; no immune layer.
+
+    '
+- id: kaabinejadian-2026-canine-tumor-dla
+  name: Kaabinejadian/Yari 2026 canine & human tumor DLA/HLA immunopeptidome
+  category: comparative-oncology
+  species:
+  - dog
+  - human
+  description: 'The most substantial canine (DLA) class I immunopeptidomics release to date: DLA-bound
+    peptides eluted from canine tumors (osteosarcoma, anal sac carcinoma, oral melanoma) and DLA-transduced
+    mono-allelic cells, with matched human HLA data showing shared tumor antigen peptides across species.
+
+    '
+  scale: 'Canine tumors: e.g. 7,520 (oral melanoma, DLA-88*003:02/*006:01/*017:01), 1,335 (anal sac, DLA-88*004:02),
+    plus DLA-88*501:01/*501:02; mono-allelic DLA cells'
+  modalities:
+  - mhc-ligand-elution
+  - transcriptomics
+  formats:
+  - raw-ms
+  - mzML
+  - rna-seq (SRA)
+  landing_url: https://proteomecentral.proteomexchange.org/dataset/PXD074485
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD074485
+  license: 'MS: CC0 1.0 (PRIDE default); RNA-seq: SRA BioProject terms'
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: University of Oklahoma HSC (Hildebrand lab); PRIDE + SRA
+    key_refs:
+    - 10.1016/j.isci.2026.115975
+  last_updated: 2026-04
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    - design
+    why: 'THE anchor canine presentation dataset for Veritope: real DLA-eluted tumor peptides across multiple
+      DLA-88 allotypes, and direct evidence of canine/human shared tumor antigens - the cross-species
+      bridge the thesis depends on.
+
+      '
+  agent_access: 'MS: PRIDE/ProteomeXchange PXD074485 (open, bulk-downloadable). Canine tumor RNA-seq:
+    SRA BioProject PRJNA1428288. No auth.
+
+    '
+  caveats: 'Still only a handful of DLA-88 allotypes and almost entirely class I; DLA class II barely
+    covered. Raw MS needs reprocessing. Nonetheless the richest canine source - directly addresses the
+    canine data gap flagged across this domain.
+
+    '

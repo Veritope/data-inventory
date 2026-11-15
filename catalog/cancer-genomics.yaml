@@ -1,0 +1,3139 @@
+- id: aacr-genie
+  name: AACR Project GENIE (public releases)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'International registry pooling real-world targeted tumor-panel sequencing from dozens
+    of centers, with twice-yearly public releases of mutation, copy-number and fusion data plus limited
+    clinical variables. The BPC (Biopharma Collaborative) adds deeply curated outcome data for selected
+    cancer types.
+
+    '
+  scale: ~242,000 patients / ~290,000 samples (release ~20.0, mid-2026)
+  modalities:
+  - targeted-panel
+  - mutation-calls
+  - copy-number
+  - fusions
+  - clinical
+  formats:
+  - tsv
+  - maf
+  - api
+  - zip
+  landing_url: https://www.aacr.org/professionals/research/aacr-project-genie/
+  download_url: https://genie.synapse.org/
+  api: https://www.cbioportal.org/api
+  license: Custom GENIE terms of use — NO redistribution without AACR written permission; free registration
+  license_url: https://www.aacr.org/professionals/research/aacr-project-genie/aacr-project-genie-data/
+  access: registration
+  provenance:
+    maintainer: AACR + Sage Bionetworks (Synapse); mirrored on cBioPortal
+    key_refs:
+    - 10.1158/2159-8290.CD-17-0151
+    - 10.1158/2159-8290.CD-21-1547
+  last_updated: 2026 (release ~20.0-public)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Largest real-world panel-sequencing corpus; strong for mutation-frequency/recurrence priors
+      and for population-level validation of shared/actionable antigen targets.
+
+      '
+  agent_access: 'Download requires a free Synapse account and acceptance of terms; fetch via the Synapse
+    Python/R client or command line (token auth), or query the public mirror on cBioPortal''s API. Automatable
+    with stored Synapse credentials.
+
+    '
+  caveats: 'REDISTRIBUTION PROHIBITED without AACR written permission — flag for any derived product.
+    Targeted panels only (not WES/WGS); heterogeneous gene coverage across centers and releases; retractions
+    occur between releases (track version).
+
+    '
+- id: braun-2020-rcc-checkmate
+  name: Braun et al. 2020 — advanced RCC nivolumab (CheckMate 009/010/025)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Integrated WES + RNA-seq of advanced renal-cell carcinoma from the CheckMate nivolumab
+    trials with clinical outcome; dissected genomic and transcriptomic correlates of PD-1 blockade response
+    in RCC.
+
+    '
+  scale: ~311 patients across CheckMate 009/010/025 (WES; RNA-seq subset)
+  modalities:
+  - wxs
+  - rna-seq
+  - mutation-calls
+  - clinical
+  formats:
+  - bam
+  - fastq
+  - tsv
+  landing_url: https://www.nature.com/articles/s41591-020-0839-y
+  download_url: https://ega-archive.org/studies/EGAS00001004290
+  license: EGA controlled-access Data Access Agreement
+  license_url: https://ega-archive.org/studies/EGAS00001004290
+  access: controlled-access
+  provenance:
+    maintainer: Choueiri / Wu labs, Dana-Farber; Bristol Myers Squibb trials
+    key_refs:
+    - 10.1038/s41591-020-0839-y
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Trial-grade RCC cohort with matched expression and outcome — strong for validating antigen/expression
+      response models in a non-melanoma, low-TMB setting.
+
+      '
+  agent_access: 'Raw data controlled in EGA (three study accessions); access via EGA DAC approval + EGA
+    download client (pyega3) with credentials. Processed tables/clinical in supplement.
+
+    '
+  caveats: 'EGA accessions sourced from a secondary re-analysis paper — confirm against the Nature Medicine
+    data-availability statement. EGA access is per-dataset and can take days.
+
+    '
+- id: canine-cancer-wes-cohorts
+  name: Canine Tumor WES/WGS Cohorts (lymphoma, melanoma, hemangiosarcoma)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Collection of public canine tumor exome/genome cohorts in SRA/ENA: lymphoma exomes across
+    three breeds (Broad-sequenced), oral melanoma (ENA PRJEB12081), hemangiosarcoma/angiosarcoma comparative
+    WGS/WES, glioma (PRJNA579792), mammary (PRJNA489159), and pan-tumor TMB/TP53 reanalyses (~600-710
+    cases).
+
+    '
+  scale: hundreds of tumor-normal pairs aggregated across studies
+  modalities:
+  - wes
+  - wgs
+  formats:
+  - fastq
+  - bam
+  - vcf
+  - maf
+  landing_url: https://www.ncbi.nlm.nih.gov/sra
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJEB12081
+  license: public (SRA/ENA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA / ENA (various depositing labs incl. Broad, UPenn, UMN)
+    key_refs:
+    - 10.1101/gr.194449.115
+    - 10.1371/journal.pone.0188667
+    - 10.1101/2020.07.15.205286
+  last_updated: 2015-2021
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Somatic mutation landscapes across canine tumor types — raw material for canine neoantigen prediction
+      (mutation calls -> candidate peptides), to be paired with DLA presentation models.
+
+      '
+  agent_access: 'SRA/ENA FASTQ/BAM (prefetch, no auth). Mixed references (CanFam3.1 mostly) — re-align/liftover.
+
+    '
+  caveats: 'Heterogeneous references, capture kits and metadata; many lack breed/germline detail. No MHC
+    typing. Neoantigen calling blocked downstream by the DLA-prediction gap.
+
+    '
+- id: cristescu-2018-keynote
+  name: Cristescu et al. 2018 — pan-tumor PD-1 biomarkers (KEYNOTE trials)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Retrospective analysis across four KEYNOTE pembrolizumab trials (>300 samples, ~22 tumor
+    types) jointly evaluating TMB and a T-cell-inflamed gene-expression profile (GEP) as predictors of
+    PD-1-blockade response.
+
+    '
+  scale: '>300 samples across ~22 tumor types (4 KEYNOTE trials)'
+  modalities:
+  - wes
+  - rna-seq
+  - gene-expression-signature
+  - clinical
+  formats:
+  - tsv
+  landing_url: https://www.science.org/doi/10.1126/science.aar3593
+  download_url: https://www.science.org/doi/10.1126/science.aar3593
+  license: unknown
+  license_url: https://www.science.org/doi/10.1126/science.aar3593
+  access: request
+  provenance:
+    maintainer: Merck & Co. / Dana-Farber
+    key_refs:
+    - 10.1126/science.aar3593
+  last_updated: '2018'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Defines the operational T-cell-inflamed GEP and its interplay with TMB across many tumor types
+      — a reference for combining expression context with antigen burden.
+
+      '
+  agent_access: 'No open individual-level repository; signature definitions and aggregate results are
+    in the paper/supplement. Patient-level trial data require sponsor (Merck) data-sharing request (e.g.
+    via a clinical-trial data-request platform).
+
+    '
+  caveats: 'Sponsor-controlled; not an automated-fetch resource. Useful mainly for the published GEP gene
+    set and thresholds. License for supplementary content not explicitly stated.
+
+    '
+- id: dbgap-phs000452-melanoma-icb
+  name: Melanoma checkpoint-blockade WES/RNA cohort (dbGaP phs000452; Van Allen 2015 + Liu 2019)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Whole-exome (and later RNA-seq) of metastatic melanoma treated with checkpoint blockade,
+    with response/survival outcomes — a core resource for neoantigen-load vs response modeling. Van Allen
+    2015 (anti-CTLA-4) deposited as v2.p1; Liu 2019 (anti-PD-1, integrative) extended it as v3.p1.
+
+    '
+  scale: 'Van Allen: ~110 WES tumor/normal pairs (anti-CTLA-4); Liu 2019: larger integrative anti-PD-1
+    melanoma cohort (WES+RNA)'
+  modalities:
+  - cancer-genomics
+  - predicted-neoantigen
+  formats:
+  - bam
+  - fastq
+  - vcf
+  - maf
+  landing_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000452
+  download_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000452.v3.p1
+  license: dbGaP Data Use Agreement (controlled)
+  license_url: https://dbgap.ncbi.nlm.nih.gov/
+  access: controlled-access
+  provenance:
+    maintainer: Van Allen / Liu et al., Dana-Farber / Broad Institute (dbGaP)
+    key_refs:
+    - 10.1126/science.aad0095
+    - 10.1038/s41591-019-0654-5
+  last_updated: 2015 (v2), 2019 (v3)
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Response-annotated melanoma exomes/transcriptomes to relate neoantigen load/quality to ICB outcome
+      — a benchmark cohort for Veritope''s presentation/immunogenicity signals.
+
+      '
+  agent_access: 'CONTROLLED: dbGaP DAR/DUA approval + eRA Commons required. Not agent-fetchable. Note
+    version split (v2 = Van Allen, v3 = Liu); confirm the version a given analysis needs.
+
+    '
+  caveats: 'Controlled-access; no redistribution. Processed MAF/mutation tables for these cohorts are
+    often re-published openly via cBioPortal (study ''skcm_dfci_2015'' etc.) — prefer those for open reuse.
+
+    '
+- id: depmap-ccle
+  name: DepMap / CCLE (Cancer Cell Line Encyclopedia + Dependency Map)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Broad Institute''s cell-line multi-omics: whole-exome/WGS, RNA-seq expression, fusions,
+    copy-number, methylation and metabolomics for ~1,800 cancer cell lines, alongside CRISPR and RNAi
+    dependency and drug-sensitivity screens. The reference resource for cancer cell-line genotype-to-phenotype.
+
+    '
+  scale: ~1,800 cell lines (omics); ~1,000+ with deep multi-omic profiles
+  modalities:
+  - wxs
+  - wgs
+  - rna-seq
+  - fusions
+  - copy-number
+  - methylation
+  - crispr-screen
+  - drug-sensitivity
+  formats:
+  - csv
+  - tsv
+  - api
+  - parquet
+  landing_url: https://depmap.org/portal/
+  download_url: https://depmap.org/portal/download/
+  api: https://registry.opendata.aws/depmap-omics-ccle/
+  license: DepMap Terms and Conditions (usage agreement; attribution); some metadata CC BY 4.0
+  license_url: https://depmap.org/portal/terms/
+  access: open
+  provenance:
+    maintainer: Broad Institute (DepMap) + Novartis (original CCLE)
+    key_refs:
+    - 10.1038/s41586-019-1186-3
+    - 10.1038/nature11003
+  last_updated: 2026 (quarterly releases, e.g. 26Qx)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - recognition
+    why: 'Cell lines are the experimental substrate for testing predicted antigens (expression + HLA +
+      presentation). DepMap links a line''s mutations/expression to its genotype, so predicted neoantigens
+      can be matched to validatable in-vitro models.
+
+      '
+  agent_access: 'Fully automatable: CSV/parquet from the download page, an open AWS bucket (s3://depmap-omics-ccle/,
+    no account), and a portal API. No DUA. Click-through terms ask for attribution only.
+
+    '
+  caveats: 'License is a usage agreement, not a standard open license — attribution required, verify before
+    redistribution. Cell lines are not patients (no germline/tumor-microenvironment context); HLA types
+    must be inferred from the omics or from the companion lines.
+
+    '
+- id: fidocure-clinicogenomics
+  name: FidoCure / One Health Company Canine Clinico-Genomics
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Real-world canine precision-oncology platform: targeted panel sequencing (coding exons
+    of oncogenes/tumor suppressors) plus treatment outcomes. Published analyses cover 2,119 dogs (genomics
+    for ~1,108) across >19 tumor types, and a 508-dog splenic hemangiosarcoma study.
+
+    '
+  scale: ~2,119 dogs (genomics ~1,108); company claims >5,500 dogs
+  modalities:
+  - targeted-panel-seq
+  - clinical-outcomes
+  formats:
+  - supplementary-tables
+  landing_url: https://fidocure.com/
+  download_url: https://www.nature.com/articles/s41698-023-00346-3
+  license: article CC BY (2023 npj Precis Oncol); raw data not public
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: request
+  provenance:
+    maintainer: One Health Company (FidoCure)
+    key_refs:
+    - 10.1038/s41698-023-00346-3
+    - 10.1038/s41598-025-89862-9
+  last_updated: 2023-2025
+  relevance:
+    programs:
+    - comparative
+    why: 'Largest real-world canine clinico-genomic outcome linkage; valuable aggregate statistics, but
+      not an open dataset.
+
+      '
+  agent_access: 'Only summary/supplementary tables are public; patient-level data "upon reasonable request".
+    No bulk download, no API.
+
+    '
+  caveats: 'Proprietary; targeted panel (not WES/WGS); company scale claims unverified. NOT redistributable
+    — treat as reference/collaboration target, not a fetchable corpus.
+
+    '
+- id: gdc
+  name: NCI Genomic Data Commons (GDC)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'NCI''s harmonized cancer genomics repository and the canonical home of TCGA, TARGET, CPTAC,
+    HCMI, Foundation Medicine, MMRF and dozens of other projects. All data are reprocessed against a common
+    reference (GRCh38) with uniform pipelines, so mutation, copy-number, expression and clinical files
+    are directly comparable across projects. Data are split into an open tier (reprocessed somatic mutation
+    calls, gene expression, copy-number, clinical/biospecimen) and a controlled tier (BAM/CRAM reads,
+    germline, raw genotypes) gated by dbGaP.
+
+    '
+  scale: ~50,000+ cases across ~90+ projects (portal current count; ~44k cases at v39)
+  modalities:
+  - wxs
+  - wgs
+  - rna-seq
+  - mirna-seq
+  - methylation
+  - mutation-calls
+  - copy-number
+  - clinical
+  formats:
+  - tsv
+  - maf
+  - bam
+  - vcf
+  - bcr-xml
+  - api
+  landing_url: https://portal.gdc.cancer.gov/
+  download_url: https://api.gdc.cancer.gov/
+  api: https://docs.gdc.cancer.gov/API/Users_Guide/Getting_Started/
+  license: NIH Genomic Data Sharing Policy (data-use terms; no single SPDX license)
+  license_url: https://gdc.cancer.gov/access-data/data-access-processes-and-tools
+  access: controlled-access
+  provenance:
+    maintainer: National Cancer Institute (NCI), Center for Cancer Genomics; operated by U. Chicago
+    key_refs:
+    - 10.1056/NEJMp1607591
+    - 10.1182/blood-2017-03-735654
+  last_updated: 2026 (rolling releases; v4x+)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Primary open source of somatic mutation calls (MAF) and RNA-seq expression across tumor types
+      — the raw material for enumerating candidate neoantigens and confirming that the mutated gene is
+      expressed. Controlled tier gives read-level evidence for variant/allele-specific-expression validation.
+
+      '
+  agent_access: 'Open-tier files via a documented REST API and the gdc-client download tool — no auth,
+    scriptable, bulk manifests supported. Controlled-tier files require a GDC token minted after dbGaP
+    authorization (Authorization header / token file); the token expires and must be refreshed. No scraping
+    needed; everything is API-addressable.
+
+    '
+  caveats: 'Controlled tier (reads, germline) needs an approved dbGaP Data Access Request tied to a specific
+    study (e.g. phs000178 for TCGA) — per-study, renewable, institution-signed. Open-tier redistribution
+    is governed by NIH GDS/data-use certification, not an open license; cite and respect publication-embargo
+    norms. GRCh38 harmonization means legacy hg19-based calls differ from current ones.
+
+    '
+- id: genomics-england-100k
+  name: Genomics England 100,000 Genomes Project (Cancer Programme)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'UK national WGS programme; the cancer arm provides matched tumor/germline whole genomes
+    with linked NHS clinical and cancer-registry data. Data never leave a secure Research Environment
+    (NGRL) — no bulk export; approved researchers analyze in situ.
+
+    '
+  scale: ~15,600 cancer-programme participants (germline+somatic WGS); ~13,880 tumors analyzed
+  modalities:
+  - wgs
+  - somatic-variants
+  - germline
+  - clinical
+  - registry-linkage
+  formats:
+  - vcf
+  - bam
+  - in-environment-only
+  landing_url: https://www.genomicsengland.co.uk/
+  download_url: https://re-docs.genomicsengland.co.uk/data_overview/
+  license: Genomics England Research Network / Discovery Forum access agreement (no redistribution; no
+    download)
+  license_url: https://www.genomicsengland.co.uk/research/academic
+  access: controlled-access
+  provenance:
+    maintainer: Genomics England Ltd (UK Department of Health)
+    key_refs:
+    - 10.1038/s41591-023-02682-0
+  last_updated: 2024 (Research Environment release v19)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Population-scale WGS with deep real-world clinical linkage; valuable for validating antigen/driver
+      findings in an independent national cohort and for outcome association.
+
+      '
+  agent_access: 'NO data download. Analysis only inside the secure Research Environment after joining
+    the Research Network or a Discovery Forum (industry) partnership. Pipelines must run inside the walled
+    garden; results export is reviewed. Not compatible with an external automated fetch pipeline — the
+    compute goes to the data.
+
+    '
+  caveats: 'Membership application + (for industry) paid access; airlock review on any results taken out.
+    UK-governed, consent/registry-linked. Hardest fit for an automated external pipeline.
+
+    '
+- id: geo-gse238110-canine-osa-rnaseq
+  name: Canine Osteosarcoma Bulk RNA-seq — GSE238110 (DOG^2 cohort)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Bulk mRNA-seq of 186 canine primary osteosarcoma tumors (DOG^2 cohort), reused by multiple
+    comparative canine/human osteosarcoma and tumor-microenvironment studies.
+
+    '
+  scale: 186 primary tumors
+  modalities:
+  - rna-seq
+  formats:
+  - counts-txt
+  - fastq
+  - bam
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE238110
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE238110
+  license: public (NCBI GEO; no explicit license, US-gov public-domain norms)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: NCBI GEO (depositing lab)
+    key_refs:
+    - 10.1158/1078-0432.CCR-24-0872
+  last_updated: 2023-08
+  relevance:
+    programs:
+    - comparative
+    why: 'Largest single canine osteosarcoma transcriptome series; TME deconvolution and expression context
+      for antigen candidates.
+
+      '
+  agent_access: 'GEO supplementary counts + SRA FASTQ (prefetch); no auth; FTP bulk.
+
+    '
+  caveats: 'Expression only — no HLA/DLA typing, no immunopeptidome. Align to a fixed reference.
+
+    '
+- id: gide-2019-melanoma
+  name: Gide et al. 2019 — melanoma anti-PD-1 +/- anti-CTLA-4 (WES/RNA-seq)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Metastatic melanoma treated with anti-PD-1 monotherapy or combined anti-PD-1/anti-CTLA-4,
+    with WES and RNA-seq and response/survival; emphasized on-treatment biopsies as stronger predictors
+    than baseline.
+
+    '
+  scale: ~73-91 patients (WES and/or RNA-seq across pre/on-treatment)
+  modalities:
+  - wxs
+  - rna-seq
+  - mutation-calls
+  - clinical
+  formats:
+  - fastq
+  - bam
+  - tsv
+  landing_url: https://www.cell.com/cancer-cell/fulltext/S1535-6108(19)30006-8
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB23709
+  license: ENA/EGA submission terms (RNA-seq open on ENA; WES controlled on EGA)
+  license_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB23709
+  access: controlled-access
+  provenance:
+    maintainer: Wilmott / Scolyer / Long labs, Melanoma Institute Australia
+    key_refs:
+    - 10.1016/j.ccell.2019.01.003
+  last_updated: '2019'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Combination-therapy melanoma cohort with on-treatment transcriptomes — complements Hugo/Riaz
+      for antigen/expression dynamics under single vs dual blockade.
+
+      '
+  agent_access: 'RNA-seq openly retrievable from ENA PRJEB23709 (no auth). WES controlled in EGA EGAD00001005738
+    (DAC + pyega3).
+
+    '
+  caveats: 'Accessions sourced from re-analysis papers — confirm against the Cancer Cell data statement.
+    Mixed open/controlled by modality.
+
+    '
+- id: gse238110
+  name: GSE238110 — Canine Osteosarcoma Bulk RNA-seq (DOG^2 / COTC022)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Bulk mRNA-seq of 186 canine primary osteosarcoma tumors (DOG^2 cohort / COTC022), NovaSeq
+    6000 (GPL25760). Widely reused by comparative OSA studies. Raw count matrix provided.
+
+    '
+  scale: 186 primary tumors
+  modalities:
+  - rna-seq
+  formats:
+  - counts-txt
+  - fastq
+  - bam
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE238110
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE238110
+  license: public (NCBI GEO; no explicit license, US-gov public-domain norms)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: NCBI GEO
+    key_refs:
+    - 10.1158/1078-0432.CCR-24-0872
+  last_updated: '2023-08-01'
+  relevance:
+    programs:
+    - comparative
+    why: 'Largest single canine OSA transcriptome; TME deconvolution + expression context for antigens.
+
+      '
+  agent_access: 'GEO supplementary counts + SRA FASTQ (prefetch); no auth; FTP bulk.
+
+    '
+  caveats: 'Expression only; no DLA typing or immunopeptidome. Pin a reference for alignment.
+
+    '
+- id: gse295311
+  name: GSE295311 — Canine Osteosarcoma GeoMx Spatial Transcriptomics
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'NanoString GeoMx digital spatial profiling of osteosarcoma-bearing pet dogs enrolled in
+    a clinical trial; companion spatial layer to the bulk GSE238110 cohort.
+
+    '
+  scale: spatial ROIs across trial dogs
+  modalities:
+  - spatial-transcriptomics
+  formats:
+  - dcc
+  - txt
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE295311
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE295311
+  license: public (NCBI GEO)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: NCBI GEO
+    key_refs:
+    - 10.1158/1078-0432.CCR-24-3916
+  last_updated: '2025'
+  relevance:
+    programs:
+    - comparative
+    - recognition
+    why: 'Spatially resolved immune/tumor compartments — rare canine spatial dataset for microenvironment
+      work.
+
+      '
+  agent_access: 'GEO download; no auth.
+
+    '
+  caveats: 'Targeted panel (not whole-transcriptome spatial); small ROI count.
+
+    '
+- id: hartwig
+  name: Hartwig Medical Foundation database
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Dutch non-profit hosting uniformly processed whole-genome sequences of metastatic (and
+    increasingly primary) tumors with matched normals and clinical/treatment-response data. A leading
+    resource for metastatic cancer genomics and mutational landscapes under treatment.
+
+    '
+  scale: ~8,000+ patients WGS (metastatic solid tumors)
+  modalities:
+  - wgs
+  - rna-seq
+  - somatic-variants
+  - structural-variants
+  - clinical
+  formats:
+  - vcf
+  - bam
+  - tsv
+  landing_url: https://www.hartwigmedicalfoundation.nl/en/data/database/
+  download_url: https://www.hartwigmedicalfoundation.nl/en/data/data-request/
+  license: Hartwig license agreement per data request (DR-xxx); no redistribution
+  license_url: https://www.hartwigmedicalfoundation.nl/en/data/research-and-science/datarequests/
+  access: request
+  provenance:
+    maintainer: Hartwig Medical Foundation (Netherlands)
+    key_refs:
+    - 10.1038/s41586-019-1689-y
+  last_updated: 2026 (rolling)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Metastatic-tumor WGS captures the antigen landscape at the disease stage therapy actually targets,
+      including treatment-driven evolution — complementary to primary-tumor cohorts like TCGA.
+
+      '
+  agent_access: 'Submit a data request; a Data Access Board reviews it and you sign a license agreement.
+    On approval, data are delivered (typically cloud bucket/transfer), after which access is programmatic.
+    No anonymous or API-first access; application-gated.
+
+    '
+  caveats: 'Request is project-scoped and license-bound with publication rules; no redistribution. Each
+    project gets a DR-number. Turnaround is weeks.
+
+    '
+- id: htan
+  name: Human Tumor Atlas Network (HTAN) Data Portal
+  category: cancer-genomics
+  species:
+  - human
+  description: 'NCI-funded multi-institution atlas of human tumors across the pre-cancer-to-advanced continuum,
+    with single-cell, spatial, imaging, bulk and clinical data under a common data model. Open-access
+    derived/Level-3+ data plus controlled-access lower-level and identifiable data.
+
+    '
+  scale: 20+ atlases, millions of cells + spatial/imaging across cancer types
+  modalities:
+  - scrna-seq
+  - scatac-seq
+  - spatial
+  - imaging
+  - bulk-omics
+  - clinical
+  formats:
+  - h5ad
+  - csv
+  - imaging
+  - bam
+  - fastq
+  landing_url: https://humantumoratlas.org/
+  download_url: https://data.humantumoratlas.org/explore
+  api: https://www.synapse.org/
+  license: 'mixed: open-access (varies) + dbGaP controlled (phs002371)'
+  license_url: https://docs.humantumoratlas.org/data_access/db_gap/
+  access: controlled-access
+  provenance:
+    maintainer: NCI Human Tumor Atlas Network / Sage Bionetworks (Synapse)
+    key_refs:
+    - 10.1038/s41592-025-02643-0
+    - 10.1016/j.cell.2020.03.053
+  last_updated: continuous
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'Multi-modal, deeply clinically annotated human tumor data spanning single-cell and spatial —
+      high-value for linking antigen-presentation state to tumor progression.
+
+      '
+  agent_access: 'Open-access files downloadable (free Synapse account for Synapse-hosted files). Programmatic
+    access via Synapse REST API / CLI / R client, and ISB-CGC BigQuery for clinical/metadata queries;
+    portal generates DRS manifests for cloud (SB-CGC). Controlled files require approved dbGaP application
+    (phs002371) — not agent-automatable.
+
+    '
+  caveats: 'Controlled tier needs institutional dbGaP DUA; cannot be auto-ingested. Explicit reuse license
+    for open-access files not clearly stated per-file — check portal terms. Third-party `htan` PyPI wrapper
+    exists (MIT) but is unofficial.
+
+    '
+- id: hugo-2016-pd1
+  name: Hugo et al. 2016 — anti-PD-1 melanoma (WES/RNA-seq + response)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Metastatic melanoma treated with anti-PD-1 (pembrolizumab/nivolumab); whole-exome and
+    transcriptome of pretreatment tumors with response annotation. Defined the "IPRES" innate anti-PD-1
+    resistance transcriptional signature.
+
+    '
+  scale: ~38 patients (WES); 28 RNA-seq (GSE78220)
+  modalities:
+  - wxs
+  - rna-seq
+  - mutation-calls
+  - clinical
+  formats:
+  - fastq
+  - tsv
+  landing_url: https://www.cell.com/cell/fulltext/S0092-8674(16)30215-X
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE78220
+  license: GEO/SRA public submission (open); cite source paper
+  license_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE78220
+  access: open
+  provenance:
+    maintainer: Lo / Ribas labs, UCLA
+    key_refs:
+    - 10.1016/j.cell.2016.02.065
+  last_updated: '2016'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Open anti-PD-1 melanoma expression + mutation cohort for benchmarking expression-based and neoantigen-based
+      response models.
+
+      '
+  agent_access: 'RNA-seq openly downloadable from GEO GSE78220; raw reads in SRA SRP067938 (UCLA) and
+    SRP090294 (Vanderbilt) via fasterq-dump — no auth, fully automatable.
+
+    '
+  caveats: 'Small, melanoma-only. WES access route less uniform than the RNA-seq; confirm per-sample.
+
+    '
+- id: hugo-2016-pd1-melanoma
+  name: Hugo 2016 anti-PD-1 melanoma (GEO GSE78220 + SRA SRP067938/SRP090294)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Genomic + transcriptomic profiling of metastatic melanoma on anti-PD-1 therapy, with response
+    annotation. RNA-seq in GEO (GSE78220); whole-exome in SRA. Widely reused for response/neoantigen and
+    expression-signature modeling.
+
+    '
+  scale: 38 WES samples; 28 with RNA-seq (15 responders / 13 non-responders, pre-treatment)
+  modalities:
+  - cancer-genomics
+  formats:
+  - fastq
+  - txt
+  - csv
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE78220
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE78220
+  license: NCBI GEO/SRA open (public domain-style)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Hugo/Ribas/Lo labs, UCLA
+    key_refs:
+    - 10.1016/j.cell.2016.02.065
+  last_updated: '2016'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'OPENLY accessible response-annotated melanoma RNA-seq (GEO) — rare for ICB cohorts (most are
+      dbGaP); good for expression/neoantigen-context modeling without a DUA.
+
+      '
+  agent_access: 'GEO RNA-seq (GSE78220) openly downloadable, no auth; WES in SRA (SRP067938 UCLA, SRP090294
+    Vanderbilt) openly accessible. Fully automatable.
+
+    '
+  caveats: 'Open, but SRA raw WES is large. Small cohort. GEO processed data = FPKM tables; raw reads
+    via SRA.
+
+    '
+- id: icdc-osa01
+  name: ICDC OSA01
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Multi-platform sequencing (WGS/WES/RNA-seq) of canine appendicular osteosarcoma.
+
+    '
+  scale: osteosarcoma cohort (count via API)
+  modalities:
+  - wgs
+  - wes
+  - rna-seq
+  formats:
+  - bam
+  - vcf
+  - txt
+  landing_url: https://caninecommons.cancer.gov/#/study/OSA01
+  download_url: https://caninecommons.cancer.gov/#/explore
+  license: custom (ICDC open access, attribution)
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI CRDC
+    key_refs: []
+  last_updated: unknown
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Osteosarcoma somatic landscape for neoantigen candidate generation.
+
+      '
+  agent_access: 'ICDC API; open.
+
+    '
+  caveats: 'No MHC typing/immunopeptidome; counts via API.
+
+    '
+- id: icdc-osa03
+  name: ICDC OSA03
+  category: cancer-genomics
+  species:
+  - dog
+  - human
+  description: 'Whole-genome bisulfite sequencing (methylation) of human and canine osteosarcoma — rare
+    public canine tumor methylome.
+
+    '
+  scale: human + canine OSA WGBS (count via API)
+  modalities:
+  - methylation
+  - wgbs
+  formats:
+  - bam
+  - txt
+  landing_url: https://caninecommons.cancer.gov/#/study/OSA03
+  download_url: https://caninecommons.cancer.gov/#/explore
+  license: custom (ICDC open access, attribution)
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI CRDC
+    key_refs: []
+  last_updated: unknown
+  relevance:
+    programs:
+    - comparative
+    why: 'One of the few public canine tumor methylomes; epigenetic context for antigen expression.
+
+      '
+  agent_access: 'ICDC API; open.
+
+    '
+  caveats: 'Methylation only; counts via API.
+
+    '
+- id: icdc-tcl01
+  name: ICDC TCL01
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Whole-exome sequencing of canine cancer cell lines (multi-tumor). Overlaps SRA PRJNA503864.
+
+    '
+  scale: ~33 canine cancer cell lines
+  modalities:
+  - wes
+  formats:
+  - bam
+  - vcf
+  - fastq
+  landing_url: https://caninecommons.cancer.gov/#/study/TCL01
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA503864
+  license: custom (ICDC open) / SRA public-domain norms
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI CRDC
+    key_refs:
+    - 10.1158/1535-7163.MCT-18-0637
+  last_updated: '2019'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'Candidate substrate for in-house DLA-restricted immunopeptidomics.
+
+      '
+  agent_access: 'ICDC API + SRA FASTQ; open.
+
+    '
+  caveats: 'No MHC typing; see PRJNA503864/503860.
+
+    '
+- id: icdc-tcl01-celllines
+  name: ICDC TCL01 — Canine Cancer Cell-Line WES
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Whole-exome sequencing of canine cancer cell lines (osteosarcoma, lymphoma, melanoma,
+    hemangiosarcoma and others) for druggable-target discovery. Overlaps SRA BioProject PRJNA503864 (33
+    canine cancer cell lines).
+
+    '
+  scale: ~33 canine cancer cell lines
+  modalities:
+  - wes
+  formats:
+  - bam
+  - vcf
+  - fastq
+  landing_url: https://caninecommons.cancer.gov/#/study/TCL01
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA503864
+  license: custom (ICDC open) / SRA public-domain norms
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: 'NCI CRDC; original: Das et al.'
+    key_refs:
+    - 10.1158/1535-7163.MCT-18-0637
+  last_updated: '2019'
+  relevance:
+    programs:
+    - comparative
+    - recognition
+    why: 'Cell lines are candidate substrates for in-house DLA-restricted immunopeptidomics (MHC-I elution)
+      to begin closing the canine presentation gap.
+
+      '
+  agent_access: 'FASTQ/BAM via SRA (prefetch/fasterq-dump, no auth); calls via ICDC.
+
+    '
+  caveats: 'No native MHC-ligand data; DLA typing of lines not standardized.
+
+    '
+- id: icdc-ubc02
+  name: ICDC UBC02
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Molecular subtypes of canine urothelial carcinoma with tumor immune signatures (genomics/transcriptomics).
+    One of the few ICDC studies with an explicit immune-signature focus.
+
+    '
+  scale: urothelial cohort (count via API)
+  modalities:
+  - rna-seq
+  - wes
+  formats:
+  - bam
+  - vcf
+  - txt
+  landing_url: https://caninecommons.cancer.gov/#/study/UBC02
+  download_url: https://caninecommons.cancer.gov/#/explore
+  license: custom (ICDC open access, attribution)
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI CRDC
+    key_refs:
+    - 10.1186/s12885-020-06737-0
+  last_updated: unknown
+  relevance:
+    programs:
+    - comparative
+    - recognition
+    why: 'Tumor immune-signature transcriptomics — closest ICDC study to immune context, but still no
+      MHC-ligand/TCR data.
+
+      '
+  agent_access: 'ICDC API; open.
+
+    '
+  caveats: 'Immune "signatures" are expression deconvolution only, not antigen-level data.
+
+    '
+- id: icdc-uc01
+  name: ICDC UC01
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Whole-exome sequencing of canine urothelial carcinomas lacking BRAF V595E; identifies
+    in-frame BRAF/MAP2K1 deletions as alternative MAPK activation.
+
+    '
+  scale: WES cohort (BRAF V595E-negative)
+  modalities:
+  - wes
+  formats:
+  - bam
+  - vcf
+  landing_url: https://caninecommons.cancer.gov/#/study/UC01
+  download_url: https://caninecommons.cancer.gov/#/explore
+  license: custom (ICDC open access, attribution)
+  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
+  access: open
+  provenance:
+    maintainer: NCI CRDC
+    key_refs:
+    - 10.1371/journal.pgen.1010575
+  last_updated: '2023'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Somatic variants for neoantigen candidate generation in bladder cancer.
+
+      '
+  agent_access: 'ICDC API; open.
+
+    '
+  caveats: 'Exome variants only; no MHC data.
+
+    '
+- id: icgc-25k
+  name: ICGC 25K (legacy International Cancer Genome Consortium)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'The original ICGC data release: ~24,000 donors across ~80 projects and 20+ tumor types.
+    Simple somatic mutations, structural variants, expression and methylation are available in two tiers
+    — open-access aggregated/somatic summaries, and controlled-access raw and germline data in EGA.
+
+    '
+  scale: 24,289 donors (22,330 with molecular data), ~80 projects
+  modalities:
+  - wgs
+  - wxs
+  - rna-seq
+  - methylation
+  - mutation-calls
+  - copy-number
+  - structural-variants
+  - clinical
+  formats:
+  - tsv
+  - vcf
+  - bam
+  - api
+  landing_url: https://dcc.icgc.org/
+  download_url: https://docs.icgc-argo.org/docs/data-access/icgc-25k-data
+  license: ICGC data-access policy (open tier) / DACO + EGA DUA (controlled tier)
+  license_url: https://docs.icgc-argo.org/docs/data-access/icgc-25k-data
+  access: controlled-access
+  provenance:
+    maintainer: ICGC / OICR (legacy DCC, partially migrated to AWS/Collaboratory and EGA)
+    key_refs:
+    - 10.1038/nature08987
+  last_updated: final release 2019; archived
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Large, diverse open somatic mutation corpus for neoantigen enumeration without a DUA, spanning
+      tumor types and populations complementary to TCGA.
+
+      '
+  agent_access: 'Open somatic/aggregated files downloadable programmatically from the legacy DCC/mirrors
+    (no auth). Raw and germline data require DACO approval plus EGA dataset-level access and the EGA download
+    client (ega-fuse / pyega3) with credentials.
+
+    '
+  caveats: 'Legacy portal partially deprecated; some endpoints moved to AWS Collaboratory / EGA. Controlled
+    tier is doubly gated (DACO then EGA). Build-hg19 calls predominate.
+
+    '
+- id: icgc-argo
+  name: ICGC ARGO (Accelerating Research in Genomic Oncology)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Successor to ICGC, aiming to uniformly analyze tumor genomes with harmonized, deep clinical
+    data across international programs. Clinical data on the ARGO Data Platform are open to any registered
+    user; molecular (sequence/variant) data are controlled and gated by the ICGC Data Access Compliance
+    Office (DACO).
+
+    '
+  scale: ~7,000+ donors, 9 programs, ~180,000 files (Release 15)
+  modalities:
+  - wgs
+  - rna-seq
+  - mutation-calls
+  - clinical
+  formats:
+  - tsv
+  - vcf
+  - bam
+  - api
+  landing_url: https://platform.icgc-argo.org/
+  download_url: https://docs.icgc-argo.org/docs/data-access/data-download
+  api: https://docs.icgc-argo.org/docs/data-access/data-download
+  license: ICGC ARGO data-use / DACO terms (not an open license)
+  license_url: https://docs.icgc-argo.org/docs/data-access/daco/applying
+  access: controlled-access
+  provenance:
+    maintainer: ICGC ARGO (OICR-hosted Data Coordination Centre)
+    key_refs:
+    - 10.1038/s41586-020-1969-6
+  last_updated: 2026 (Release 14/15)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'International, prospectively collected tumors with uniform processing extend antigen-discovery
+      beyond US cohorts and add populations/cancer types underrepresented in TCGA.
+
+      '
+  agent_access: 'Clinical data downloadable by any registered platform user (programmatic via platform
+    API). Controlled molecular data require DACO approval (2-year term), after which a download client
+    / API token is issued. Not scrape-able; auth-gated end to end for molecular files.
+
+    '
+  caveats: 'DACO application is institution-signed and project-scoped; approval can take weeks. Some raw
+    data mirrored in EGA with separate per-dataset access (up to 48h provisioning).
+
+    '
+- id: kids-first
+  name: Gabriella Miller Kids First Data Resource
+  category: cancer-genomics
+  species:
+  - human
+  description: 'NIH Common Fund pediatric resource spanning childhood cancers and structural birth defects,
+    with WGS/WES and RNA-seq plus clinical data. Summary data are browsable in the Portal; individual-level
+    genomic data are controlled via dbGaP and analyzed through the integrated CAVATICA cloud platform.
+
+    '
+  scale: ~30,000+ participants with WGS or RNA data (cancer + congenital)
+  modalities:
+  - wgs
+  - wxs
+  - rna-seq
+  - mutation-calls
+  - clinical
+  formats:
+  - vcf
+  - bam
+  - cram
+  - tsv
+  - api
+  landing_url: https://kidsfirstdrc.org/
+  download_url: https://portal.kidsfirstdrc.org/
+  api: https://kidsfirstdrc.org/
+  license: NIH Genomic Data Sharing Policy; dbGaP DUA via Kids First Data Access Committee
+  license_url: https://commonfund.nih.gov/kidsfirst/faq
+  access: controlled-access
+  provenance:
+    maintainer: Children's Hospital of Philadelphia (DRC) + NIH Common Fund
+    key_refs:
+    - 10.1016/j.ajhg.2026.xx.xxx
+  last_updated: '2026'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    - design
+    why: 'Pediatric tumors (fusion-driven, low-TMB) stress-test antigen pipelines built on adult cancers
+      and add fusion-neoantigen and germline-predisposition context.
+
+      '
+  agent_access: 'Summary/metadata browsable openly via the Portal (and its API). Individual-level data
+    require a dbGaP Data Access Request approved by the Kids First DAC; approved data are pushed to CAVATICA
+    (Seven Bridges) for in-cloud analysis rather than local download.
+
+    '
+  caveats: 'Controlled tier under pediatric dbGaP DUA; analysis is cloud-native (CAVATICA), not a simple
+    download. Separate proposal/submission step beyond the dbGaP request.
+
+    '
+- id: liu-2019-melanoma-pd1
+  name: Liu et al. 2019 — metastatic melanoma anti-PD-1 integrative (WES/RNA-seq)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Large integrative anti-PD-1 melanoma cohort (including prior-CTLA-4-treated patients)
+    with WES and RNA-seq and clinical modeling; showed TMB''s predictive value is confounded by melanoma
+    subtype and prior therapy.
+
+    '
+  scale: 144 patients WES; 121 RNA-seq
+  modalities:
+  - wxs
+  - rna-seq
+  - mutation-calls
+  - clinical
+  formats:
+  - bam
+  - fastq
+  - tsv
+  landing_url: https://www.nature.com/articles/s41591-019-0654-5
+  download_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000452.v3.p1
+  license: NIH Genomic Data Sharing Policy (dbGaP DUA)
+  license_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000452.v3.p1
+  access: controlled-access
+  provenance:
+    maintainer: Van Allen lab, Dana-Farber / Broad; Schadendorf (Essen)
+    key_refs:
+    - 10.1038/s41591-019-0654-5
+  last_updated: '2019'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'One of the larger single anti-PD-1 melanoma cohorts with matched WES+RNA — good power for antigen/expression
+      response modeling and for studying TMB confounders.
+
+      '
+  agent_access: 'Reads controlled via dbGaP phs000452.v3.p1; supplementary clinical/mutation tables and
+    a companion GitHub repo (vanallenlab/schadendorf-pd1) hold processed data and code (open).
+
+    '
+  caveats: 'Shares the phs000452 accession with Van Allen 2015 — overlapping patients; dedupe before pooling.
+    Controlled DUA for reads.
+
+    '
+- id: lymphoma-3breeds-exome
+  name: Canine Lymphoma Exomes, 3 Breeds (Elvers 2015)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Matched tumor-normal exome sequencing of lymphomas from boxer (T-cell), cocker spaniel
+    (B-cell), and golden retriever (mixed); Roche custom 50 Mb canine exome; Broad-sequenced. Showed breed-specific
+    somatic patterns.
+
+    '
+  scale: tumor-normal exomes across 3 breeds
+  modalities:
+  - wes
+  formats:
+  - fastq
+  - bam
+  - vcf
+  landing_url: https://genome.cshlp.org/content/25/11/1634
+  download_url: https://www.ncbi.nlm.nih.gov/sra
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA (Broad/UMN)
+    key_refs:
+    - 10.1101/gr.194449.115
+  last_updated: '2015'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Breed-stratified lymphoma mutation sets; germline-background effect on somatic patterns.
+
+      '
+  agent_access: 'SRA; accession in paper supplement (not surfaced in search — VERIFY exact PRJNA).
+
+    '
+  caveats: 'Accession VERIFY (check supp http://genome.cshlp.org/content/suppl/2015/09/16/gr.194449.115.DC1).
+    CanFam3.1-era.
+
+    '
+- id: mariathasan-2018-imvigor210
+  name: Mariathasan et al. 2018 — IMvigor210 urothelial atezolizumab (RNA-seq/WES)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Metastatic urothelial carcinoma treated with atezolizumab (anti-PD-L1) in the IMvigor210
+    trial, with RNA-seq, mutation data and response; linked TGF-beta signaling in fibroblasts to immune
+    exclusion and non-response.
+
+    '
+  scale: ~348 patients with RNA-seq (298-348 depending on modality)
+  modalities:
+  - rna-seq
+  - wes
+  - mutation-calls
+  - clinical
+  formats:
+  - tsv
+  - r-package
+  - bam
+  landing_url: https://www.nature.com/articles/nature25501
+  download_url: http://research-pub.gene.com/IMvigor210CoreBiologies/
+  license: 'Processed data: Genentech IMvigor210CoreBiologies R package (custom terms); raw: EGA DUA'
+  license_url: http://research-pub.gene.com/IMvigor210CoreBiologies/
+  access: controlled-access
+  provenance:
+    maintainer: Genentech
+    key_refs:
+    - 10.1038/nature25501
+  last_updated: '2018'
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Widely used urothelial ICI benchmark; the processed expression+clinical R package is a near-open
+      resource for validating response/expression models outside melanoma.
+
+      '
+  agent_access: 'Processed gene-expression + clinical data distributed as the IMvigor210CoreBiologies
+    R package (download + install, scriptable). Raw sequence data controlled in EGA EGAS00001002556 (DAC
+    approval + pyega3).
+
+    '
+  caveats: 'R-package terms are custom (academic reuse widely practiced). EGA accession appears with some
+    variation across re-analyses (EGAS00001002556 vs others) — verify the intended modality/accession.
+
+    '
+- id: miao-2018-ccrcc-icb
+  name: Miao 2018 clear-cell renal carcinoma ICB cohort
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Whole-exome (+ clinical) profiling of metastatic clear-cell RCC treated with immune checkpoint
+    inhibitors, linking PBRM1 loss and genomic features to response. Response-annotated; processed data
+    mirrored on cBioPortal.
+
+    '
+  scale: WES; validation cohort ~63 ccRCC patients on PD-1/PD-L1 +/- CTLA-4 blockade
+  modalities:
+  - cancer-genomics
+  formats:
+  - maf
+  - csv
+  - bam
+  landing_url: https://www.science.org/doi/10.1126/science.aan5951
+  download_url: https://github.com/cBioPortal/datahub
+  license: 'cBioPortal data: open (ODC-ODbL / free reuse); dbGaP raw: controlled'
+  license_url: https://www.cbioportal.org/
+  access: controlled-access
+  provenance:
+    maintainer: Miao/Van Allen et al., Dana-Farber / Broad
+    key_refs:
+    - 10.1126/science.aan5951
+  last_updated: '2018'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Non-melanoma (RCC) ICB response cohort broadens tumor-type coverage for neoantigen/response
+      modeling.
+
+      '
+  agent_access: 'Processed mutations/clinical openly on cBioPortal datahub (GitHub) — agent-fetchable,
+    no auth. Raw sequence via dbGaP (controlled). Prefer cBioPortal for open reuse.
+
+    '
+  caveats: 'Raw reads controlled; cBioPortal copy is processed-level and openly reusable. Confirm the
+    exact cBioPortal study id.
+
+    '
+- id: miao-2018-rcc
+  name: Miao et al. 2018 — immune checkpoint response in clear-cell RCC (WES)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Whole-exome sequencing of clear-cell (and other) renal-cell carcinoma treated with PD-1/
+    PD-L1 or CTLA-4 blockade, with response annotation; identified truncating PBRM1 mutations associated
+    with ICI benefit in ccRCC.
+
+    '
+  scale: ~35 ccRCC (plus additional non-ccRCC); WES + matched normal
+  modalities:
+  - wxs
+  - mutation-calls
+  - clinical
+  formats:
+  - bam
+  - fastq
+  - maf
+  landing_url: https://www.science.org/doi/10.1126/science.aan5951
+  download_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001493.v3.p1
+  license: NIH Genomic Data Sharing Policy (dbGaP DUA)
+  license_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001493.v3.p1
+  access: controlled-access
+  provenance:
+    maintainer: Van Allen lab, Dana-Farber / Broad
+    key_refs:
+    - 10.1126/science.aan5951
+  last_updated: 2018 (phs001493; current v3.p1)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Extends antigen/response modeling to a low-TMB cancer (RCC) where response is driven more by
+      specific driver loss than by bulk neoantigen load.
+
+      '
+  agent_access: 'Reads controlled via dbGaP phs001493 (approved DAR + token). Summary MAF/clinical in
+    supplement. Cite v3.p1 for the live record.
+
+    '
+  caveats: 'Controlled DUA. Low-TMB disease — a useful negative/edge case for TMB-centric predictors.
+
+    '
+- id: msk-impact
+  name: MSK-IMPACT Clinical Sequencing Cohort (public release)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Public, de-identified release of Memorial Sloan Kettering''s targeted panel sequencing
+    of >10,000 advanced-cancer patients (Zehir et al. 2017), with mutation, copy-number and structural-variant
+    calls plus clinical annotation. Hosted openly on cBioPortal (msk_impact_2017); larger MSK-MET and
+    later releases also public.
+
+    '
+  scale: 10,336 patients / 10,945 tumors (2017 release); larger in later MSK releases
+  modalities:
+  - targeted-panel
+  - mutation-calls
+  - copy-number
+  - structural-variants
+  - clinical
+  formats:
+  - tsv
+  - maf
+  - api
+  landing_url: https://www.cbioportal.org/study/summary?id=msk_impact_2017
+  download_url: https://www.cbioportal.org/study/summary?id=msk_impact_2017
+  api: https://www.cbioportal.org/api
+  license: Open for scientific use via cBioPortal (ODbL-governed hosting); cite Zehir et al.
+  license_url: https://docs.cbioportal.org/user-guide/faq/
+  access: open
+  provenance:
+    maintainer: Memorial Sloan Kettering Cancer Center; hosted on cBioPortal
+    key_refs:
+    - 10.1038/nm.4333
+  last_updated: 2017 (base); later MSK releases ongoing
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Very large real-world advanced/metastatic cohort with hotspot-focused calls — good for recurrence
+      priors on actionable/shared antigens, though panel-limited for exome-wide neoantigen discovery.
+
+      '
+  agent_access: 'Fully open via the cBioPortal API and study ZIP — no auth. Programmatic and bulk-friendly.
+
+    '
+  caveats: 'Targeted panel (341–505 genes), NOT whole-exome — captures only panel-covered variants, so
+    it under-counts the neoantigen space. De-identified; redistribution follows cBioPortal (ODbL) + citation
+    of the source paper.
+
+    '
+- id: msk-met-2021
+  name: MSK-MET (Nguyen et al. 2022) — pan-cancer metastasis genomics
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Very large pan-cancer cohort (~25,000 patients) integrating MSK-IMPACT tumor genomics
+    with detailed metastatic-site annotation to map organotropism and genomic correlates of metastatic
+    spread; de-identified data released publicly on cBioPortal.
+
+    '
+  scale: ~25,000 patients across 50+ cancer types (targeted panel)
+  modalities:
+  - targeted-panel
+  - mutation-calls
+  - copy-number
+  - clinical
+  - metastasis-annotation
+  formats:
+  - tsv
+  - maf
+  - api
+  landing_url: https://www.cell.com/cell/fulltext/S0092-8674(22)00003-1
+  download_url: https://www.cbioportal.org/datasets
+  api: https://www.cbioportal.org/api
+  license: Open via cBioPortal (ODbL-governed hosting); cite source paper
+  license_url: https://docs.cbioportal.org/user-guide/faq/
+  access: open
+  provenance:
+    maintainer: Memorial Sloan Kettering; hosted on cBioPortal
+    key_refs:
+    - 10.1016/j.cell.2022.01.003
+  last_updated: '2022'
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Massive real-world cohort tying tumor genotype to metastatic behavior — useful for recurrence
+      priors on actionable/shared antigens and for stage/site-aware target prioritization.
+
+      '
+  agent_access: 'Open via cBioPortal (API + study ZIP), no auth, automatable.
+
+    '
+  caveats: 'Targeted panel (not WES/WGS) — no neoantigen-level or expression data. Confirm the exact cBioPortal
+    study id (expected msk_met_2021) on the datasets page before scripting.
+
+    '
+- id: opentargets
+  name: Open Targets Platform
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Not a neoantigen DB per se: a target-identification/prioritization platform integrating
+    genetics, genomics, expression, and cancer evidence (e.g. Project Score CRISPR screens, Cancer Gene
+    Census, Cancer Genome Interpreter). Relevant to this domain for antigen/target gene prioritization
+    (tumor-associated antigen genes, expression specificity) rather than peptide-level neoantigens.
+
+    '
+  scale: Whole-genome target-disease evidence; quarterly releases (tens of GB bulk)
+  modalities:
+  - cancer-genomics
+  - target-evidence
+  formats:
+  - parquet
+  - json
+  - api
+  - bigquery
+  landing_url: https://platform.opentargets.org/
+  download_url: https://platform.opentargets.org/downloads
+  api: https://api.platform.opentargets.org/api/v4/graphql
+  license: CC0 1.0 (platform data); code Apache-2.0; some source datasets carry own terms
+  license_url: https://platform-docs.opentargets.org/licence
+  access: open
+  provenance:
+    maintainer: Open Targets consortium (EMBL-EBI, Wellcome Sanger, GSK, et al.)
+    key_refs:
+    - 10.1093/nar/gkaa1027
+  last_updated: 2026 (quarterly)
+  relevance:
+    programs:
+    - design
+    - comparative
+    why: 'Best-licensed (CC0) route to tumor-antigen TARGET prioritization — expression specificity, tractability
+      and cancer evidence to rank candidate antigen genes before descending to peptide level.
+
+      '
+  agent_access: 'Fully automatable: GraphQL + REST API, EMBL-EBI FTP, Google Cloud/BigQuery, and an AWS
+    S3 bucket (open-targets-public-data-releases) listable without an account. No auth for public data.
+
+    '
+  caveats: 'Platform data are CC0 (excellent for reuse/ML), but the licence page notes individual source
+    datasets have their own terms — e.g. Cancer Gene Census is "commercial use for Open Targets" (NOT
+    free commercial reuse); check per-source terms before commercial use. Gene/target level, not peptide/neoantigen
+    level.
+
+    '
+- id: pcawg
+  name: PCAWG (Pan-Cancer Analysis of Whole Genomes)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Uniform whole-genome analysis of 2,658 cancers (tumor + matched normal) across 38 tumor
+    types, jointly from ICGC and TCGA. Deep catalog of coding and non-coding somatic drivers, structural
+    variants, mutational signatures and whole-genome expression. Most molecular, clinical and specimen
+    summaries are open; identifying data (germline alleles, raw reads) are controlled via both TCGA (dbGaP)
+    and ICGC (DACO).
+
+    '
+  scale: 2,658 donors / whole genomes, 38 tumor types
+  modalities:
+  - wgs
+  - rna-seq
+  - mutation-calls
+  - structural-variants
+  - mutational-signatures
+  - clinical
+  formats:
+  - vcf
+  - maf
+  - tsv
+  - bam
+  - api
+  landing_url: https://dcc.icgc.org/pcawg
+  download_url: https://docs.icgc.org/pcawg/data/
+  license: ICGC/TCGA data-access policy; pipelines GPL-3.0 (Dockstore)
+  license_url: https://docs.icgc.org/pcawg/data/
+  access: controlled-access
+  provenance:
+    maintainer: ICGC/TCGA PCAWG Consortium (DCC at OICR/EBI)
+    key_refs:
+    - 10.1038/s41586-020-1969-6
+  last_updated: 2020 (Nature marker paper)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Only large uniform WGS cohort covering non-coding and structural variants — essential for antigens
+      arising outside the exome (SV junctions, non-coding drivers, retained introns) that WES-only cohorts
+      miss.
+
+      '
+  agent_access: 'Open molecular/consensus files (VCF/MAF) via ICGC DCC and mirrors (UCSC Xena PCAWG hub
+    is fully open, no auth). Controlled germline/reads need dbGaP (TCGA portion) AND DACO (ICGC portion)
+    plus token/EGA clients.
+
+    '
+  caveats: 'Somatic SNVs from TCGA donors require separate dbGaP authorization even within the open workflow.
+    Dual-consortium access is the main automation barrier for read-level data.
+
+    '
+- id: petdx-oncok9
+  name: PetDx OncoK9 — Canine cfDNA Liquid Biopsy (NOT public)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Commercial multi-cancer early-detection liquid biopsy using plasma cell-free DNA NGS in
+    dogs (CLASSiC prospective screening study; >1,100-dog clinical validation). Catalogued for completeness;
+    underlying data are proprietary and there is conflicting evidence the product/company may have wound
+    down in 2024.
+
+    '
+  scale: '>1,100 dogs (validation); CLASSiC prospective cohort'
+  modalities:
+  - cfdna-wgs
+  - liquid-biopsy
+  formats:
+  - none-public
+  landing_url: https://petdx.com/
+  download_url: https://www.biorxiv.org/content/10.1101/2024.04.01.587600v1
+  license: proprietary
+  license_url: https://petdx.com/
+  access: controlled-access
+  provenance:
+    maintainer: PetDx, Inc.
+    key_refs:
+    - 10.1101/2024.04.01.587600
+  last_updated: 2024-2026 (status uncertain)
+  relevance:
+    programs:
+    - comparative
+    why: 'Demonstrates canine cfDNA feasibility; relevant to monitoring, not to presentation/recognition
+      modeling. No usable public data.
+
+      '
+  agent_access: 'No public dataset, no API. Publications only.
+
+    '
+  caveats: 'Proprietary and NOT redistributable; reports of 2024 discontinuation conflict with 2026 pubs
+    — verify company status before relying on it. Included only to mark the boundary of what is public.
+
+    '
+- id: prjeb12081-oral-melanoma
+  name: PRJEB12081 — Canine Oral Melanoma (ENA; Hendricks)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'ENA-hosted canine oral melanoma sequencing used in pan-tumor TMB/TP53 reanalyses; part
+    of the canonical reusable canine WES/WGS set.
+
+    '
+  scale: oral melanoma cohort
+  modalities:
+  - wes
+  - wgs
+  formats:
+  - fastq
+  - bam
+  landing_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB12081
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB12081
+  license: public (ENA / INSDC)
+  license_url: https://www.ebi.ac.uk/ena/browser/about/policies
+  access: open
+  provenance:
+    maintainer: EMBL-EBI ENA
+    key_refs:
+    - 10.1038/s41467-021-24836-9
+  last_updated: '2016'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Reusable melanoma WES/WGS for mutation/neoantigen pipelines.
+
+      '
+  agent_access: 'ENA bulk FASTQ (Aspera/FTP); no auth.
+
+    '
+  caveats: 'Reanalysis paper notes missing patient info (breed). Older reference build.
+
+    '
+- id: prjna1090544-oral-melanoma-wes
+  name: PRJNA1090544 — Canine Oral Mucosal Melanoma Exomes
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Exome sequencing of canine oral mucosal melanomas compared with human melanoma mutation
+    spectra.
+
+    '
+  scale: oral mucosal melanoma exome cohort
+  modalities:
+  - wes
+  formats:
+  - fastq
+  - bam
+  - vcf
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1090544
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1090544
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - PMC11480479
+  last_updated: '2024'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Melanoma mutation landscape; canine oral melanoma is a lead immunotherapy indication (cf. Oncept
+      vaccine) — high-value for presentation/neoantigen work.
+
+      '
+  agent_access: 'SRA FASTQ; no auth.
+
+    '
+  caveats: 'VERIFY accession; mucosal (not UV-driven) melanoma — lower TMB than human cutaneous.
+
+    '
+- id: prjna1154710-oral-osa
+  name: PRJNA1154710 — Canine Oral Osteosarcoma Genomics
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Genomic landscape of canine oral osteosarcoma; confirms SETD2 and DMD among genes mutated
+    in ~half of samples, paralleling appendicular OSA (Gardner et al.).
+
+    '
+  scale: oral OSA tumor-normal set
+  modalities:
+  - wgs
+  - wes
+  formats:
+  - fastq
+  - bam
+  - vcf
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1154710
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1154710
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - 10.1371/journal.pone.0325181
+    - 10.1038/s42003-019-0487-2
+  last_updated: '2024'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Somatic OSA variants for neoantigen candidates; recurrent SETD2/DMD biology.
+
+      '
+  agent_access: 'SRA FASTQ (prefetch); no auth.
+
+    '
+  caveats: 'Gardner et al. (2019) SETD2/DMD appendicular-OSA genome accession not confirmed here — check
+    that paper''s data-availability directly.
+
+    '
+- id: prjna1399620-hsa-organoid
+  name: PRJNA1399620 — Canine Hemangiosarcoma Organoid RNA-seq
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'RNA-seq of 5 HSA and 5 nodular-hyperplasia patient-derived 2.5D organoid lines (orthotopic
+    xenograft study).
+
+    '
+  scale: 10 organoid lines (RNA-seq)
+  modalities:
+  - rna-seq
+  formats:
+  - fastq
+  - counts
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1399620
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1399620
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - PMC13611867
+  last_updated: '2025'
+  relevance:
+    programs:
+    - comparative
+    why: 'Organoid models as functional antigen-presentation substrates.
+
+      '
+  agent_access: 'SRA; no auth. BioSamples SAMN54501156+.
+
+    '
+  caveats: 'Organoid (not primary tumor) expression. VERIFY.
+
+    '
+- id: prjna268531-traf3-lymphoma
+  name: PRJNA268531 / SRP050276 — TRAF3 in Canine+Human B-cell Lymphoma
+  category: cancer-genomics
+  species:
+  - dog
+  - human
+  description: 'Sequencing from a study of TRAF3 genetic inactivation in canine and human B-cell lymphoma.
+
+    '
+  scale: canine + human lymphoma samples
+  modalities:
+  - wes
+  - targeted-seq
+  formats:
+  - fastq
+  - bam
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA268531
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA268531
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - 10.1186/s12864-015-1595-0
+  last_updated: '2015'
+  relevance:
+    programs:
+    - comparative
+    why: 'Cross-species shared driver (TRAF3) evidence.
+
+      '
+  agent_access: 'SRA; no auth.
+
+    '
+  caveats: 'DOI VERIFY; older CanFam3.1-era data.
+
+    '
+- id: prjna376380-hsa-rnaseq
+  name: PRJNA376380 / PRJNA562916 / GSE95183 — Canine HSA RNA-seq Subtypes
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'RNA-seq/microarray defining canine hemangiosarcoma molecular subtypes (angiogenic, inflammatory,
+    adipogenic); basis for ML gene-signature work.
+
+    '
+  scale: multi-cohort HSA transcriptomes
+  modalities:
+  - rna-seq
+  - microarray
+  formats:
+  - fastq
+  - cel
+  - counts
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE95183
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA376380
+  license: public (GEO/SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: NCBI GEO/SRA
+    key_refs:
+    - 10.1093/bib/bbaa252
+  last_updated: 2017-2019
+  relevance:
+    programs:
+    - comparative
+    why: 'Subtype-resolved HSA expression; immune (inflammatory) subtype relevant to recognition.
+
+      '
+  agent_access: 'GEO + SRA; no auth.
+
+    '
+  caveats: 'Mixed platforms; batch effects. VERIFY per-accession mapping.
+
+    '
+- id: prjna421895-oral-melanoma-rnaseq
+  name: PRJNA421895 — Canine Oral Melanoma Whole-Transcriptome
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'RNA-seq whole-transcriptome profiling of canine oral melanoma (radiotherapy effect + outcome
+    gene signature).
+
+    '
+  scale: oral melanoma RNA-seq cohort
+  modalities:
+  - rna-seq
+  formats:
+  - fastq
+  - bam
+  - counts
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA421895
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA421895
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - 10.3390/genes15081065
+  last_updated: '2024'
+  relevance:
+    programs:
+    - comparative
+    why: 'Expression context for melanoma antigens and immune signatures.
+
+      '
+  agent_access: 'SRA FASTQ; no auth.
+
+    '
+  caveats: 'Expression only. VERIFY accession.
+
+    '
+- id: prjna448733-iuc-wgs
+  name: PRJNA448733 / PRJNA685036 / PRJNA1007700 — Shetland Sheepdog iUC Genomes
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Whole-genome (PRJNA448733, PRJNA685036) and whole-tumor (PRJNA1007700) sequencing from
+    the Shetland-sheepdog invasive urothelial carcinoma GWAS/NIPAL1 study; arrays GSE241367, ChIP-seq
+    GSE254079.
+
+    '
+  scale: iUC WGS + arrays + ChIP-seq
+  modalities:
+  - wgs
+  - genotyping-array
+  - chip-seq
+  formats:
+  - fastq
+  - bam
+  - vcf
+  - idat
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA448733
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1007700
+  license: public (SRA/GEO; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA/GEO (NC State)
+    key_refs:
+    - 10.1038/s41698-024-00591-0
+  last_updated: 2023-2024
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Germline + somatic + regulatory layers for bladder cancer; breed-predisposition genetics.
+
+      '
+  agent_access: 'SRA + GEO; no auth.
+
+    '
+  caveats: 'Spread across multiple accessions; join carefully.
+
+    '
+- id: prjna489159-mammary
+  name: PRJNA489159 / SRP159481 — Canine Mammary Tumor WES + WTS
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Whole-exome (197 dogs) and whole-transcriptome (158 dogs) sequencing of canine mammary
+    gland tumors with matched controls (185/197 WES and 64/158 WTS matched). Scientific Data resource.
+
+    '
+  scale: WES 197 dogs; WTS 158 dogs
+  modalities:
+  - wes
+  - rna-seq
+  formats:
+  - fastq
+  - bam
+  - vcf
+  - counts
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA489159
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA489159
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - 10.1038/s41597-019-0149-8
+  last_updated: '2019'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Large matched WES+RNA-seq mammary resource; strong substrate for neoantigen + expression pipelines.
+
+      '
+  agent_access: 'SRA FASTQ; no auth. Single-sample example SRX4636206.
+
+    '
+  caveats: 'WES and RNA-seq sample sets differ; partial matched normals.
+
+    '
+- id: prjna503864-celllines-wes
+  name: PRJNA503864 / PRJNA503860 — Canine Cancer Cell-Line WES
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Whole-exome sequencing of ~33 canine cancer cell lines (osteosarcoma, lymphoma, melanoma,
+    hemangiosarcoma, others) for druggable-target discovery; matched normal/stroma under PRJNA503860.
+    Underlies ICDC TCL01.
+
+    '
+  scale: ~33 cell lines (WES)
+  modalities:
+  - wes
+  formats:
+  - fastq
+  - bam
+  - vcf
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA503864
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA503864
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - 10.1158/1535-7163.MCT-18-0637
+  last_updated: '2019'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'Cell lines are the most practical substrate for generating canine immunopeptidome data in-house.
+
+      '
+  agent_access: 'SRA FASTQ; no auth.
+
+    '
+  caveats: 'No DLA typing; cell-line genotypes drift.
+
+    '
+- id: prjna552034-hsa-exome
+  name: PRJNA552034 — Canine Hemangiosarcoma Exome (Megquier, 47 GR)
+  category: cancer-genomics
+  species:
+  - dog
+  - human
+  description: 'WES of 47 golden retriever hemangiosarcomas (+ RNA-seq of 74 multi-breed HSA) showing
+    shared mutational landscape with human angiosarcoma (TP53, PIK3CA/PIK3R1). BioSamples SAMN12173468-561.
+
+    '
+  scale: 47 WES (GR); 74 RNA-seq (multi-breed)
+  modalities:
+  - wes
+  - rna-seq
+  formats:
+  - fastq
+  - bam
+  - vcf
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA552034
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA552034
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA (Broad/UMN)
+    key_refs:
+    - 10.1158/1541-7786.MCR-19-0221
+  last_updated: '2019'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Strong dog<->human (angiosarcoma) comparative mutation set for neoantigen modeling.
+
+      '
+  agent_access: 'SRA FASTQ; no auth.
+
+    '
+  caveats: 'Separate RNA-seq accession may exist — check paper data-availability. VERIFY.
+
+    '
+- id: prjna559406-iuc-rnaseq
+  name: PRJNA559406 / PRJNA308949 — Canine Invasive Urothelial Carcinoma RNA-seq
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'RNA-seq of 15 canine iUC tumors defining two expression clusters by BRAF V595E status
+    (PRJNA559406); earlier iUC RNA-seq under PRJNA308949.
+
+    '
+  scale: 15 iUC tumors (+ earlier cohort)
+  modalities:
+  - rna-seq
+  formats:
+  - fastq
+  - bam
+  - counts
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA559406
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA559406
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - 10.1186/s12885-020-06737-0
+  last_updated: '2020'
+  relevance:
+    programs:
+    - comparative
+    why: 'Bladder-cancer expression clusters; BRAF-driven biology shared with human.
+
+      '
+  agent_access: 'SRA FASTQ; no auth.
+
+    '
+  caveats: 'Small n; expression only.
+
+    '
+- id: prjna579792-glioma
+  name: PRJNA579792 — Canine Glioma WES/WGS
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Canine glioma WES/WGS deposited in SRA; part of the reusable canine tumor sequence set
+    (distinct from ICDC GLIOMA01''s integrated multi-omic release).
+
+    '
+  scale: glioma tumor-normal set (count VERIFY)
+  modalities:
+  - wes
+  - wgs
+  formats:
+  - fastq
+  - bam
+  - vcf
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA579792
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA579792
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - 10.1038/s41467-021-24836-9
+  last_updated: 2019-2020
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Glioma somatic variants; cross-reference with ICDC GLIOMA01.
+
+      '
+  agent_access: 'SRA; no auth.
+
+    '
+  caveats: 'Study details/sample counts VERIFY at NCBI.
+
+    '
+- id: prjna648932-lymphoma-wgs
+  name: PRJNA648932 — Canine Multicentric B-cell Lymphoma WGS (Sparks 2020)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Whole-genome sequencing of six dogs with multicentric B-cell lymphoma treated with CHOP
+    — first canine lymphoma WGS cohort.
+
+    '
+  scale: 6 cases (WGS)
+  modalities:
+  - wgs
+  formats:
+  - fastq
+  - bam
+  - vcf
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA648932
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA648932
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - 10.1371/journal.pone.0238183
+  last_updated: '2020'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Genome-wide somatic variant discovery for B-cell lymphoma neoantigens.
+
+      '
+  agent_access: 'SRA FASTQ; no auth.
+
+    '
+  caveats: 'Only 6 cases. VERIFY accession at NCBI.
+
+    '
+- id: prjna677995-hsa-splenic-exome
+  name: PRJNA677995 / PRJNA417727 — Canine Splenic HSA Exome (heterogeneity + actionable mutations)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Exome/deep sequencing of canine splenic hemangiosarcoma documenting extensive intra/inter-patient
+    heterogeneity (PRJNA677995) and actionable mutations (PRJNA417727; PIK3CA, TP53, NRAS etc.).
+
+    '
+  scale: splenic HSA tumor sets
+  modalities:
+  - wes
+  - deep-targeted-seq
+  formats:
+  - fastq
+  - bam
+  - vcf
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA677995
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA677995
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - 10.1371/journal.pone.0264986
+    - 10.1371/journal.pone.0188667
+  last_updated: 2017-2021
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Druggable/actionable HSA mutations; heterogeneity caution for neoantigen calling.
+
+      '
+  agent_access: 'SRA; no auth.
+
+    '
+  caveats: 'High heterogeneity complicates clonal neoantigen inference. VERIFY accessions.
+
+    '
+- id: prjna805123-dlbcl-wgs
+  name: PRJNA805123 — Canine DLBCL WGS (Fanelli 2025)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Whole-genome sequencing of 10 canine DLBCL cases expanding the aberration spectrum.
+
+    '
+  scale: 10 cases (WGS)
+  modalities:
+  - wgs
+  formats:
+  - fastq
+  - bam
+  - vcf
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA805123
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA805123
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - 10.1111/vco.13059
+  last_updated: '2025'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Recent canine DLBCL genomes for variant/neoantigen work.
+
+      '
+  agent_access: 'SRA FASTQ; no auth.
+
+    '
+  caveats: 'Methods noted a publication-tied embargo — confirm current release status at NCBI before use.
+
+    '
+- id: prjna808112-gr-lymphoma-methylome
+  name: PRJNA808112 — Golden Retriever B-cell Lymphoma Methylome
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Genome-wide methylome of aggressive B-cell lymphoma in golden retrievers; reveals a conserved
+    hypermethylome. Rare canine tumor methylation dataset.
+
+    '
+  scale: golden retriever DLBCL methylome cohort
+  modalities:
+  - methylation
+  - rrbs-or-wgbs
+  formats:
+  - fastq
+  - bam
+  - txt
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA808112
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA808112
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - PMC9665123
+  last_updated: '2022'
+  relevance:
+    programs:
+    - comparative
+    why: 'Epigenetic context for antigen/gene expression in lymphoma.
+
+      '
+  agent_access: 'SRA; no auth.
+
+    '
+  caveats: 'Methylation only. VERIFY accession.
+
+    '
+- id: riaz-2017-nivolumab
+  name: Riaz et al. 2017 — nivolumab melanoma (pre/on-treatment WES/RNA-seq)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Melanoma treated with nivolumab, with paired pre- and on-treatment whole-exome and RNA-seq,
+    enabling analysis of mutational/neoantigen dynamics and transcriptional change under PD-1 blockade.
+
+    '
+  scale: ~65-68 patients; 49 with RNA-seq (GSE91061)
+  modalities:
+  - wxs
+  - rna-seq
+  - mutation-calls
+  - neoantigen
+  - clinical
+  formats:
+  - fastq
+  - tsv
+  landing_url: https://www.cell.com/cell/fulltext/S0092-8674(17)31122-4
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE91061
+  license: GEO/SRA public submission (open); cite source paper
+  license_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE91061
+  access: open
+  provenance:
+    maintainer: Chan / Wolchok labs, Memorial Sloan Kettering
+    key_refs:
+    - 10.1016/j.cell.2017.09.028
+  last_updated: '2017'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'On-treatment timepoints capture immune-editing of the antigen landscape — valuable for modeling
+      which presented antigens are under selection during therapy.
+
+      '
+  agent_access: 'RNA-seq via GEO GSE91061 (open); raw reads via the linked SRA project (SRA Run Selector),
+    scriptable with no auth. Mutation/neoantigen tables in supplement.
+
+    '
+  caveats: 'Melanoma-only, modest size. SRP project ID not stated in-paper — resolve via the GEO series''
+    SRA link.
+
+    '
+- id: riaz-2017-nivolumab-melanoma
+  name: Riaz 2017 nivolumab melanoma (GEO GSE91061)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Pre- and on-treatment tumor RNA-seq (and exome) of melanoma treated with nivolumab (anti-PD-1),
+    response-annotated. Captures treatment-induced transcriptional change; a standard ICB response benchmark.
+
+    '
+  scale: 'RNA-seq: ~51 pre-treatment + ~58 on-treatment samples from ~65 patients on nivolumab'
+  modalities:
+  - cancer-genomics
+  formats:
+  - txt
+  - csv
+  - fastq
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE91061
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE91061
+  license: NCBI GEO/SRA open
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Riaz/Chan/Wolchok et al., Memorial Sloan Kettering
+    key_refs:
+    - 10.1016/j.cell.2017.09.028
+  last_updated: '2017'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Openly accessible paired pre/on-treatment ICB transcriptomes — useful for modeling response
+      dynamics and neoantigen context without controlled access.
+
+      '
+  agent_access: 'GEO openly downloadable (GSE91061), no auth; raw reads via linked SRA. Automatable.
+
+    '
+  caveats: 'Open. Exome component may require SRA/dbGaP — verify if WES raw is needed. Count-per-patient
+    vs sample differs (paired samples).
+
+    '
+- id: rizvi-2015-nsclc
+  name: Rizvi et al. 2015 — NSCLC pembrolizumab (WES + neoantigen/response)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Non-small-cell lung cancer treated with pembrolizumab; whole-exome sequencing linking
+    nonsynonymous mutation burden and candidate neoantigens to durable clinical benefit. One of the first
+    demonstrations of TMB as a checkpoint-response biomarker.
+
+    '
+  scale: ~34 patients (two independent cohorts; WES)
+  modalities:
+  - wxs
+  - mutation-calls
+  - neoantigen
+  - clinical
+  formats:
+  - tsv
+  - maf
+  landing_url: https://www.science.org/doi/10.1126/science.aaa1348
+  download_url: https://www.science.org/doi/10.1126/science.aaa1348
+  license: unknown
+  license_url: https://www.science.org/doi/10.1126/science.aaa1348
+  access: open
+  provenance:
+    maintainer: Chan / Rizvi labs, Memorial Sloan Kettering
+    key_refs:
+    - 10.1126/science.aaa1348
+  last_updated: '2015'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Canonical TMB/neoantigen-vs-response NSCLC dataset for benchmarking neoantigen callers against
+      clinical benefit outside melanoma.
+
+      '
+  agent_access: 'Mutation annotation files (MAF), clinical and neoantigen tables are in the paper''s supplementary
+    materials (downloadable). No confirmed raw-read repository deposit.
+
+    '
+  caveats: 'Very small. License for the supplementary data is not explicitly stated (mark unknown); reuse
+    likely requires citing the paper. Confirm whether raw reads were later deposited to dbGaP before relying
+    on read-level data.
+
+    '
+- id: rizvi-2015-nsclc-pd1
+  name: Rizvi 2015 NSCLC anti-PD-1 mutational landscape
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Whole-exome sequencing of non-small-cell lung cancer treated with pembrolizumab across
+    two cohorts, establishing nonsynonymous TMB / neoantigen burden as a correlate of PD-1 blockade benefit.
+    Response-annotated tumor exomes.
+
+    '
+  scale: WES, discovery n=16 + validation n=18 NSCLC; nonsyn-TMB threshold ~178
+  modalities:
+  - cancer-genomics
+  - predicted-neoantigen
+  formats:
+  - bam
+  - fastq
+  - vcf
+  landing_url: https://www.science.org/doi/10.1126/science.aaa1348
+  download_url: unknown
+  license: unknown
+  license_url: unknown
+  access: controlled-access
+  provenance:
+    maintainer: Rizvi/Chan et al., Memorial Sloan Kettering
+    key_refs:
+    - 10.1126/science.aaa1348
+  last_updated: '2015'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Landmark TMB/neoantigen-vs-ICB-response dataset in NSCLC — a key cross-tumor-type benchmark
+      beyond melanoma.
+
+      '
+  agent_access: 'UNRESOLVED: no public repository accession located in the Data Availability (dbGaP/ENA
+    not confirmed). Likely controlled or on-request. Mutation tables are in the paper''s supplement (openly
+    readable).
+
+    '
+  caveats: 'download_url + license unknown; raw-data location unverified — treat as controlled/on-request
+    until confirmed. Small cohort. Use the supplementary mutation tables for open reuse.
+
+    '
+- id: samstein-2019-msk-impact-tmb
+  name: Samstein 2019 MSK-IMPACT pan-cancer TMB/ICB cohort (cBioPortal)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Targeted-panel (MSK-IMPACT) mutation + TMB + survival data across many cancer types, including
+    ~1,661 checkpoint-inhibitor-treated patients, establishing TMB as a pan-cancer survival correlate
+    after ICB. Openly released via cBioPortal / MSK data catalog.
+
+    '
+  scale: ~1,661 ICB-treated patients (+ untreated comparators); genomic + TMB + survival (MSK-IMPACT panel)
+  modalities:
+  - cancer-genomics
+  formats:
+  - csv
+  - maf
+  - tsv
+  landing_url: https://www.nature.com/articles/s41588-018-0312-8
+  download_url: https://datacatalog.mskcc.org/dataset/10452
+  license: cBioPortal/MSK open release (free reuse; verify terms)
+  license_url: https://www.cbioportal.org/
+  access: open
+  provenance:
+    maintainer: Samstein/Morris/Chan et al., Memorial Sloan Kettering
+    key_refs:
+    - 10.1038/s41588-018-0312-8
+  last_updated: '2019'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'Large OPEN pan-cancer TMB-vs-ICB-survival dataset — benchmark for TMB/neoantigen-burden signals
+      across tumor types without controlled access.
+
+      '
+  agent_access: 'Open via cBioPortal (study id ~''tmb_mskcc_2018'') and MSK data catalog (dataset 10452):
+    download or REST/API. Agent-fetchable, no auth.
+
+    '
+  caveats: 'Panel (not WES) — TMB is panel-estimated, not full neoantigen calls. Confirm the exact cBioPortal
+    study id before programmatic pull. License is an open release; verify specific reuse terms.
+
+    '
+- id: samstein-2019-tmb-pancancer
+  name: Samstein et al. 2019 — pan-cancer TMB & ICI survival (MSK-IMPACT)
+  category: cancer-genomics
+  species:
+  - human
+  description: '~1,660 ICI-treated patients across multiple cancer types profiled with the MSK-IMPACT
+    targeted panel, with overall survival; established cancer-type-specific TMB cut-points for checkpoint-blockade
+    benefit.
+
+    '
+  scale: ~1,661-1,662 ICI-treated tumors (targeted panel)
+  modalities:
+  - targeted-panel
+  - mutation-calls
+  - clinical
+  formats:
+  - tsv
+  - maf
+  - api
+  landing_url: https://www.nature.com/articles/s41588-018-0312-8
+  download_url: https://www.cbioportal.org/study/summary?id=tmb_mskcc_2018
+  api: https://www.cbioportal.org/api
+  license: Open via cBioPortal (ODbL-governed hosting); cite source paper
+  license_url: https://docs.cbioportal.org/user-guide/faq/
+  access: open
+  provenance:
+    maintainer: Memorial Sloan Kettering; hosted on cBioPortal
+    key_refs:
+    - 10.1038/s41588-018-0312-8
+  last_updated: '2019'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Large real-world ICI outcome cohort for TMB priors and for calibrating per-cancer-type antigen-burden
+      thresholds — fully open via cBioPortal API.
+
+      '
+  agent_access: 'Open via cBioPortal study tmb_mskcc_2018 (API + ZIP), no auth. Fully automatable.
+
+    '
+  caveats: 'Targeted panel (MSK-IMPACT), not WES — TMB is panel-derived; no neoantigen-level or expression
+    data. A companion NSCLC study (nsclc_pd1_msk_2018) is separate.
+
+    '
+- id: snyder-2014-ctla4-melanoma
+  name: Snyder 2014 CTLA-4 melanoma neoantigen exomes
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Whole-exome sequencing of melanoma treated with CTLA-4 blockade, one of the first studies
+    linking neoantigen landscape to checkpoint response. Response-annotated tumor exomes; neoantigen predictions
+    in the paper.
+
+    '
+  scale: WES of melanoma from 64 CTLA-4-treated patients (discovery + validation)
+  modalities:
+  - cancer-genomics
+  - predicted-neoantigen
+  formats:
+  - bam
+  - fastq
+  - vcf
+  landing_url: https://www.nejm.org/doi/full/10.1056/NEJMoa1406498
+  download_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000452
+  license: dbGaP Data Use Agreement (controlled)
+  license_url: https://dbgap.ncbi.nlm.nih.gov/
+  access: controlled-access
+  provenance:
+    maintainer: Chan/Snyder et al., Memorial Sloan Kettering
+    key_refs:
+    - 10.1056/NEJMoa1406498
+  last_updated: '2014'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Early response-annotated neoantigen cohort for CTLA-4 blockade; cross-reference with Van Allen
+      for anti-CTLA-4 neoantigen-vs-response modeling.
+
+      '
+  agent_access: 'CONTROLLED: raw sequence via dbGaP (secondary sources report phs000452.v2.p1 — VERIFY
+    the exact Snyder accession on dbGaP/NEJM supplement, as phs000452 is primarily the Van Allen study).
+    DAR/DUA required.
+
+    '
+  caveats: 'Accession attribution uncertain (reported phs000452.v2.p1 from a secondary source) — confirm
+    before relying. Controlled-access. Mutation/neoantigen summary tables are in the NEJM supplement (openly
+    readable).
+
+    '
+- id: snyder-2017-urothelial
+  name: Snyder et al. 2017 — urothelial anti-PD-L1 multi-omic (WES/RNA-seq/TCR)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Exploratory multi-omic analysis of metastatic urothelial carcinoma treated with atezolizumab
+    (anti-PD-L1): WES, RNA-seq and TCR sequencing with clinical response; examined systemic and somatic
+    factors in PD-L1-blockade response/resistance.
+
+    '
+  scale: ~29-30 patients (multi-omic)
+  modalities:
+  - wxs
+  - rna-seq
+  - mutation-calls
+  - tcr-seq
+  - clinical
+  formats:
+  - bam
+  - fastq
+  - tsv
+  landing_url: https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002309
+  download_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001783.v4.p1
+  license: dbGaP DUA (reads); cBioPortal open (processed calls); Adaptive immuneACCESS (TCR)
+  license_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001783.v4.p1
+  access: controlled-access
+  provenance:
+    maintainer: Chan / Hellmann labs, Memorial Sloan Kettering
+    key_refs:
+    - 10.1371/journal.pmed.1002309
+  last_updated: 2017 (phs001783 current v4.p1)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'Rare cohort pairing tumor genomics with TCR repertoire and ICI outcome — bridges antigen presentation
+      to T-cell recognition in a non-melanoma cancer.
+
+      '
+  agent_access: 'Reads controlled via dbGaP phs001783. Somatic calls + CNA + clinical open on cBioPortal
+    (blca_cmo_06155_2016, API). TCR data on Adaptive Biotechnologies immuneACCESS (snyder-2017-plosmedicine),
+    free registration.
+
+    '
+  caveats: 'Accession/study-id from a secondary source — verify against the PLoS Medicine statement. Very
+    small cohort. TCR data under Adaptive''s immuneACCESS terms.
+
+    '
+- id: srp137798-dlbcl-landscape
+  name: SRP137798 — Canine DLBCL Genomic Landscape (77 cases)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Genomic landscape of canine diffuse large B-cell lymphoma: RNA-seq + exome + genome across
+    ~77 cases, defining clinically relevant subtypes.
+
+    '
+  scale: ~77 cases (multi-modal)
+  modalities:
+  - rna-seq
+  - wes
+  - wgs
+  formats:
+  - fastq
+  - bam
+  - vcf
+  landing_url: https://www.ncbi.nlm.nih.gov/sra/?term=SRP137798
+  download_url: https://www.ncbi.nlm.nih.gov/sra/?term=SRP137798
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA
+    key_refs:
+    - 10.1182/bloodadvances.2021005311
+  last_updated: '2021'
+  relevance:
+    programs:
+    - comparative
+    - design
+    why: 'Largest multi-modal canine DLBCL resource; subtype-resolved mutations and expression.
+
+      '
+  agent_access: 'SRA; no auth. Reused by lncRNA follow-up studies.
+
+    '
+  caveats: 'DOI VERIFY; mixed data types need demultiplexing by sample.
+
+    '
+- id: stjude-cloud
+  name: St. Jude Cloud (pediatric cancer genomics)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Pediatric cancer genomic data-sharing ecosystem (PCGP, RTCG, Clinical Pilot and more)
+    hosting paired tumor/normal WGS, WES and RNA-seq with clinical data, plus analysis apps. The largest
+    public pediatric cancer genomics resource; raw sequence data are controlled behind a signed agreement
+    and DACO-style committee.
+
+    '
+  scale: ~12,000 WGS, ~7,700 WES, ~2,200 RNA-seq samples (2020); ~12,000 total in portal
+  modalities:
+  - wgs
+  - wxs
+  - rna-seq
+  - mutation-calls
+  - structural-variants
+  - clinical
+  formats:
+  - bam
+  - cram
+  - vcf
+  - tsv
+  - cloud-platform
+  landing_url: https://platform.stjude.cloud/
+  download_url: https://docs.stjude.cloud/genomics-platform/about-our-data/data-sets-and-data-access-units
+  license: St. Jude Cloud Data Access Agreement (committee-reviewed; no redistribution)
+  license_url: https://docs.stjude.cloud/genomics-platform/accessing-data/
+  access: controlled-access
+  provenance:
+    maintainer: St. Jude Children's Research Hospital (DNAnexus-hosted)
+    key_refs:
+    - 10.1158/2159-8290.CD-20-1230
+  last_updated: 2026 (rolling)
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    - design
+    why: 'Deep paired tumor/normal pediatric WGS+RNA — ideal for fusion- and SV-derived neoantigens and
+      for validating that antigen pipelines hold in low-TMB childhood cancers.
+
+      '
+  agent_access: 'Browse/metadata open; raw data require a signed Data Access Agreement reviewed by a data
+    access committee, after which data are accessed inside the DNAnexus-based cloud platform (compute-to-data)
+    rather than bulk-downloaded locally.
+
+    '
+  caveats: 'Signed agreement + committee review; cloud-native analysis model. Portal and docs report slightly
+    different sample totals — confirm current counts in the live Data Browser.
+
+    '
+- id: target
+  name: TARGET (Therapeutically Applicable Research to Generate Effective Treatments)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'NCI pediatric cancer genomics program covering high-risk childhood malignancies (ALL,
+    AML, neuroblastoma, Wilms tumor, osteosarcoma, kidney tumors). Multi-omic tumor/normal profiling with
+    clinical outcomes, served through the GDC alongside TCGA.
+
+    '
+  scale: ~5,000 cases across ~6 pediatric cancer types
+  modalities:
+  - wxs
+  - wgs
+  - rna-seq
+  - mirna-seq
+  - methylation
+  - mutation-calls
+  - copy-number
+  - clinical
+  formats:
+  - maf
+  - tsv
+  - bam
+  - vcf
+  - api
+  landing_url: https://www.cancer.gov/ccg/research/genome-sequencing/target
+  download_url: https://portal.gdc.cancer.gov/projects
+  license: NIH Genomic Data Sharing Policy (dbGaP phs000218 for controlled data)
+  license_url: https://www.cancer.gov/ccg/research/genome-sequencing/target/using-target-data
+  access: controlled-access
+  provenance:
+    maintainer: NCI Office of Cancer Genomics; served via GDC
+    key_refs:
+    - 10.1038/s41586-018-0436-0
+  last_updated: harmonized releases ongoing via GDC
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    - design
+    why: 'Pediatric tumors have low mutational burden and distinct driver landscapes; useful for testing
+      whether antigen-discovery pipelines generalize beyond adult, high-TMB cancers and for fusion-derived
+      neoantigen work (fusion-rich pediatric sarcomas).
+
+      '
+  agent_access: 'Same mechanics as TCGA via the GDC API: open derivatives tokenless; controlled reads
+    via dbGaP phs000218 + GDC token.
+
+    '
+  caveats: 'Controlled data under pediatric dbGaP DUA; additional privacy sensitivity for minors. Smaller
+    per-disease cohorts limit statistical power.
+
+    '
+- id: tcga
+  name: The Cancer Genome Atlas (TCGA)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Landmark multi-omic atlas of ~11,000 patients across 33 cancer types, jointly run by NCI
+    and NHGRI. Provides matched tumor/normal WXS, WGS (subset), RNA-seq, miRNA-seq, DNA methylation, copy-number
+    and reverse-phase protein arrays with clinical follow-up. Now served through the GDC (harmonized)
+    and the legacy portal; summary derivatives are openly downloadable, read-level and germline data are
+    controlled.
+
+    '
+  scale: ~11,315 cases, 33 tumor types
+  modalities:
+  - wxs
+  - wgs
+  - rna-seq
+  - mirna-seq
+  - methylation
+  - rppa
+  - mutation-calls
+  - copy-number
+  - clinical
+  formats:
+  - maf
+  - tsv
+  - bam
+  - vcf
+  - api
+  landing_url: https://www.cancer.gov/ccg/research/genome-sequencing/tcga
+  download_url: https://portal.gdc.cancer.gov/projects
+  license: NIH Genomic Data Sharing Policy (dbGaP phs000178 for controlled data)
+  license_url: https://www.cancer.gov/ccg/research/genome-sequencing/tcga/using-tcga-data/citing
+  access: controlled-access
+  provenance:
+    maintainer: NCI/NHGRI; served via GDC
+    key_refs:
+    - 10.1038/ng.2764
+  last_updated: project complete 2018; harmonized releases ongoing via GDC
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'The best-characterized pan-cancer cohort for linking somatic variants to expression and immune
+      context — foundational for antigen-discovery benchmarks and for training expression/immunogenicity
+      models on diverse tumor types.
+
+      '
+  agent_access: 'Open derivatives (MAF, expression matrices, clinical) via GDC API, no auth. Controlled
+    reads/germline need dbGaP phs000178 approval + GDC token. UCSC Xena / cBioPortal mirror processed
+    subsets with simpler bulk access (see those entries).
+
+    '
+  caveats: 'Must cite per TCGA publication guidelines; controlled data under dbGaP DUA with institutional
+    signing authority and study-specific terms. Batch effects across tissue source sites are documented
+    and need correction.
+
+    '
+- id: tcga-mc3
+  name: TCGA MC3 somatic mutation calls (Multi-Center Mutation Calling)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'The consensus, reproducible somatic-mutation call set for TCGA, produced by an ensemble
+    of seven callers with artifact filtering (~3.5M variants across ~10,000 exomes). The de facto standard
+    TCGA mutation table for pan-cancer analyses.
+
+    '
+  scale: ~3.5M somatic variants, ~10,000 tumor exomes (33 cancer types)
+  modalities:
+  - mutation-calls
+  - maf
+  formats:
+  - maf
+  landing_url: https://gdc.cancer.gov/about-data/publications/mc3-2017
+  download_url: https://api.gdc.cancer.gov/data/1c8cfe5f-e52d-41ba-94da-f15ea1337efc
+  license: NIH GDS Policy; PUBLIC MAF open, CONTROLLED MAF via dbGaP (phs000178)
+  license_url: https://gdc.cancer.gov/about-data/publications/mc3-2017
+  access: controlled-access
+  provenance:
+    maintainer: TCGA MC3 working group / GDC; Ellrott et al.
+    key_refs:
+    - 10.1016/j.cels.2018.03.002
+  last_updated: 2018 (v0.2.8 public; v0.2.9 controlled)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'The cleanest open pan-cancer somatic-variant table for enumerating candidate neoantigens across
+      all 33 TCGA cancer types in one harmonized file.
+
+      '
+  agent_access: 'Public MAF (mc3.v0.2.8.PUBLIC.maf.gz) is a single open download from the GDC publication
+    page / GDC API — trivially automatable. CONTROLLED and validation MAFs need dbGaP phs000178 + token.
+
+    '
+  caveats: 'Public MAF is filtered (some low-confidence/germline-risk calls removed) — the CONTROLLED
+    MAF has the full set. hg19-based. Confirm the exact GDC file UUID at download time.
+
+    '
+- id: tcga-pancanatlas
+  name: TCGA PanCanAtlas harmonized derived data
+  category: cancer-genomics
+  species:
+  - human
+  description: 'The curated bundle of batch-corrected pan-cancer matrices released with the 2018 PanCanAtlas
+    papers: RNA-seq expression (EB++ adjusted), RPPA protein, 27K/450K methylation, miRNA, SNP6 copy-number
+    segments, ABSOLUTE purity/ploidy and segmented CN, PARADIGM pathway activities, and the TCGA Clinical
+    Data Resource (CDR) survival endpoints.
+
+    '
+  scale: ~11,000 tumors, 33 cancer types (multi-omic matrices)
+  modalities:
+  - rna-seq
+  - rppa
+  - methylation
+  - mirna
+  - copy-number
+  - purity-ploidy
+  - pathway-activity
+  - clinical
+  formats:
+  - tsv
+  - csv
+  - seg
+  - xlsx
+  landing_url: https://gdc.cancer.gov/about-data/publications/pancanatlas
+  download_url: https://gdc.cancer.gov/about-data/publications/pancanatlas
+  license: NIH GDS Policy; listed derived files open, ABSOLUTE MAF controlled
+  license_url: https://gdc.cancer.gov/about-data/publications/pancanatlas
+  access: open
+  provenance:
+    maintainer: TCGA PanCanAtlas consortium / GDC
+    key_refs:
+    - 10.1016/j.cell.2018.03.022
+    - 10.1016/j.cell.2018.02.052
+  last_updated: '2018'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'One-stop harmonized expression + copy-number + purity + survival for all TCGA tumors — the substrate
+      for antigen-expression filtering and outcome association without per-study wrangling.
+
+      '
+  agent_access: 'Individual files downloadable via direct GDC API links from the publication page (no
+    auth) plus an ISB-CGC BigQuery mirror for SQL access. The ABSOLUTE somatic MAF is controlled (dbGaP).
+    Fully automatable except that one file.
+
+    '
+  caveats: 'Files are release-frozen (2018); expression is EB++ batch-adjusted (document the normalization
+    when combining with GDC current releases). Purity correction matters for variant-allele-frequency
+    / expression interpretation.
+
+    '
+- id: tcia-cancer-immunome-atlas
+  name: The Cancer Immunome Atlas (TCIA)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Pan-cancer immunogenomic resource derived from TCGA (>8,000 samples, 20 solid cancers):
+    precomputed immune infiltrates, immune-subset expression, cancer-germline antigens, HLA alleles, PREDICTED
+    neoantigens, tumor heterogeneity, immunophenoscore (IPS), and clinical data. Free download. Predicted/derived,
+    not experimentally validated.
+
+    '
+  scale: '>8,000 TCGA samples across 20 solid cancers; per-sample HLA, neoantigen, IPS, infiltrate tables'
+  modalities:
+  - cancer-genomics
+  - predicted-neoantigen
+  formats:
+  - csv
+  - web
+  landing_url: https://tcia.at/
+  download_url: https://tcia.at/
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Trajanoski lab, Medical University of Innsbruck
+    key_refs:
+    - 10.1016/j.celrep.2016.12.019
+  last_updated: '2017'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    - design
+    why: 'Ready-made pan-cancer predicted-neoantigen + HLA + immune-context tables tied to TCGA outcomes
+      — fast substrate for target triage and immune-context modeling without running the pipeline.
+
+      '
+  agent_access: 'Web portal with free download of the precomputed tables; no documented API. Automatable
+    via table download. Underlying TCGA raw data are controlled (GDC/dbGaP) but these derived summaries
+    are open.
+
+    '
+  caveats: 'license: unknown — no explicit data license stated; underlying TCGA data governed by NIH GDC
+    terms. Neoantigens are PREDICTED (NetMHC-class), not validated. 2017 vintage — predictions reflect
+    that era''s tools/references.
+
+    '
+- id: thorsson-immune-landscape
+  name: Thorsson et al. 2018 — The Immune Landscape of Cancer (TCGA PanImmune)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Immunogenomic characterization of >10,000 TCGA tumors across 33 cancer types, defining
+    six immune subtypes and releasing a large per-sample immune feature matrix (immune cell fractions,
+    cytolytic activity, TCR/BCR diversity, neoantigen load, signatures).
+
+    '
+  scale: '>10,000 tumors, 33 cancer types; ~160 immune features per sample'
+  modalities:
+  - immune-signatures
+  - immune-deconvolution
+  - tcr-bcr-diversity
+  - neoantigen
+  - clinical
+  formats:
+  - tsv
+  - xlsx
+  landing_url: https://gdc.cancer.gov/about-data/publications/panimmune
+  download_url: https://gdc.cancer.gov/about-data/publications/panimmune
+  license: NIH GDS Policy; feature matrix open (derived); underlying controlled data via dbGaP
+  license_url: https://gdc.cancer.gov/about-data/publications/panimmune
+  access: open
+  provenance:
+    maintainer: TCGA PanImmune working group / GDC; Thorsson et al.
+    key_refs:
+    - 10.1016/j.immuni.2018.03.023
+  last_updated: '2018'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'Directly provides per-tumor neoantigen load, immune-cell composition and TCR/BCR diversity alongside
+      subtype labels — a ready-made immune context layer for prioritizing antigen targets and for recognition
+      modeling.
+
+      '
+  agent_access: 'The per-sample immune feature matrix is an open download (GDC PanImmune page) and is
+    mirrored/queryable via CRI iAtlas; no auth. Automatable.
+
+    '
+  caveats: 'Features are derived (deconvolution/signature estimates), not direct measurements — document
+    the methods. Raw inputs remain under TCGA access tiers.
+
+    '
+- id: van-allen-2015-ctla4
+  name: Van Allen et al. 2015 — anti-CTLA-4 melanoma (WES/RNA-seq + response)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Pretreatment metastatic melanoma biopsies with matched germline from 110 patients treated
+    with ipilimumab (anti-CTLA-4), with whole-exome and RNA-seq and annotated clinical benefit. A foundational
+    cohort linking mutational/neoantigen load to checkpoint-blockade response.
+
+    '
+  scale: 110 patients (pretreatment tumor + germline WES; RNA-seq subset)
+  modalities:
+  - wxs
+  - rna-seq
+  - mutation-calls
+  - neoantigen
+  - clinical
+  formats:
+  - bam
+  - fastq
+  - vcf
+  landing_url: https://www.science.org/doi/10.1126/science.aad0095
+  download_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000452.v2.p1
+  license: NIH Genomic Data Sharing Policy (dbGaP DUA)
+  license_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000452.v2.p1
+  access: controlled-access
+  provenance:
+    maintainer: Van Allen / Garraway labs, Dana-Farber / Broad
+    key_refs:
+    - 10.1126/science.aad0095
+  last_updated: 2015 (phs000452; later extended by Liu 2019 to v3.p1)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Ground-truth cohort for training/validating neoantigen-based response predictors: somatic variants
+      + expression paired with real checkpoint-blockade outcomes.
+
+      '
+  agent_access: 'Raw reads (WES SAM/BAM, RNA-seq FASTQ) controlled via dbGaP phs000452; needs an approved
+    DAR + download token. Mutation/neoantigen summary tables are in the paper''s supplement (open, directly
+    downloadable).
+
+    '
+  caveats: 'Controlled DUA for reads. Small cohort; melanoma-only. v2.p1 vs v3.p1 (Liu 2019) overlap —
+    dedupe patients if combining with Liu.
+
+    '

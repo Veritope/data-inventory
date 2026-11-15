@@ -1,0 +1,11 @@
+Veritope data inventory — licensing
+
+The CATALOG METADATA in this repository (the dataset descriptions, categorizations,
+and the index/build files generated from them) is made available by Veritope under
+the Creative Commons Attribution 4.0 International License (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+This license covers ONLY Veritope's catalog metadata. It does NOT cover the external
+datasets described here. Each listed dataset is governed by its own license and access
+terms, recorded per entry in the `license`, `license_url`, and `access` fields. Consult
+and honor those terms before downloading, redistributing, or training on any dataset.

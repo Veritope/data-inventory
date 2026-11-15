@@ -1,0 +1,1538 @@
+- id: airr-data-commons
+  name: AIRR Data Commons (ADC) + iReceptor
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Federated network of repositories serving AIRR-standard adaptive immune receptor repertoire
+    (TCR/BCR-seq) data through a common query API; iReceptor is a gateway over it. A standardized programmatic
+    layer for pulling repertoire data across many studies.
+
+    '
+  scale: billions of annotated sequences across federated repositories
+  modalities:
+  - tcr-seq
+  - bcr-seq
+  - repertoire
+  - airr-rearrangement
+  formats:
+  - airr-tsv
+  - json
+  - api
+  landing_url: https://docs.airr-community.org/en/stable/api/adc.html
+  download_url: https://gateway.ireceptor.org/
+  api: https://docs.airr-community.org/en/stable/api/adc_api.html
+  license: API spec CC BY 4.0; per-repository/study data terms vary
+  license_url: https://docs.airr-community.org/
+  access: open
+  provenance:
+    maintainer: AIRR Community (AInBev/iReceptor; multiple hosts)
+    key_refs:
+    - 10.3389/fdata.2020.00022
+  last_updated: ADC API v1 (2020), ongoing
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Standardized cross-repository access to large repertoire datasets — background/negative TCR
+      distributions and disease-associated repertoires for recognition modeling.
+
+      '
+  agent_access: 'PROGRAMMATIC: ADC API (uniform JSON query/download) across all member repositories; iReceptor
+    gateway exports sequences/clones/cells in AIRR TSV. One query spans many repositories. Highly automatable,
+    no auth for public data.
+
+    '
+  caveats: 'API spec is CC BY 4.0 but underlying per-study data licenses are not centralized — check per
+    repository/study before redistribution/ML use. Repertoire data is mostly specificity- agnostic (bulk)
+    — pair with VDJdb/MIRA for labels.
+
+    '
+- id: birnbaum-pmhc-yeast-display
+  name: pMHC yeast-display library screens (Birnbaum/Garcia lineage)
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  description: 'Deep-sequencing outputs of yeast-displayed peptide-MHC library selections against defined
+    TCRs: large sets of peptides recovered (and depleted) over affinity-selection rounds, used to map
+    TCR cross-reactivity landscapes. Method family includes YAMTAD and newer pMHC-pseudotyped-virus variants
+    (e.g. VelociRAPTR).
+
+    '
+  scale: 'per-TCR: 10^6-10^9 library members screened; thousands of recovered peptides/TCR'
+  modalities:
+  - pmhc-library
+  - deep-sequencing-selection
+  - tcr-crossreactivity
+  formats:
+  - fastq
+  - csv
+  - supplementary-tables
+  landing_url: https://www.cell.com/fulltext/S0092-8674(14)00476-0
+  download_url: https://www.ncbi.nlm.nih.gov/geo/
+  license: per-publication (supplementary data / journal terms); varies
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Birnbaum / K.C. Garcia labs (and successors)
+    key_refs:
+    - 10.1016/j.cell.2014.03.047
+    - 10.1038/s41421-022-00386-2
+    - 10.1101/2025.08.25.671738
+  last_updated: 2014-2025 (multiple studies)
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Exhaustive per-TCR cross-reactivity maps are uniquely informative for modeling TCR specificity
+      breadth and for de novo antigen/TCR design.
+
+      '
+  agent_access: 'No single portal — data live as journal supplementary tables and per-study GEO/SRA deposits
+    (fetch via GEO/SRA APIs using accessions cited in each paper). Requires per-paper discovery; not a
+    unified API.
+
+    '
+  caveats: 'Fragmented across publications; accessions and licenses vary per paper and some have no explicit
+    data license — treat license as unknown and check each source. Selection-based read counts are enrichment
+    signals, not calibrated affinities. Deduplicate/normalize across studies.
+
+    '
+- id: canine-tcr-repertoire
+  name: Canine TCR Repertoire Resources (single-cell + bulk + RNA-seq-derived)
+  category: tcr-recognition
+  species:
+  - dog
+  description: 'The emerging but sparse canine T-cell-receptor repertoire landscape: validated single-cell
+    TRA/TRB profiling on 10x Chromium; bulk TRB NGS protocols; and TCR CDR3 mining from public canine
+    RNA-seq (>200k CDR3s assembled from ~2,000 samples via TRUST4/MiXCR).
+
+    '
+  scale: '>200,000 CDR3 sequences (RNA-seq-mined); small primary single-cell/bulk cohorts'
+  modalities:
+  - tcr-seq
+  - single-cell-vdj
+  - rna-seq-derived-tcr
+  formats:
+  - airr-tsv
+  - fastq
+  - clonotype-tables
+  landing_url: https://www.nature.com/articles/s42003-024-06174-w
+  download_url: https://www.biorxiv.org/content/10.1101/2024.02.14.580390v1.full
+  license: mixed (articles CC BY; raw reads via SRA public norms)
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: multiple academic groups; data in SRA/GEO + article supplements
+    key_refs:
+    - 10.1038/s42003-024-06174-w
+    - 10.1101/2024.02.14.580390
+    - PMC10872364
+    pmc: PMC12743510
+  last_updated: 2024-2025
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'The core of canine RECOGNITION data — and it is thin. No paired TCR-pMHC specificity data for
+      dogs exist publicly; what exists is repertoire composition, not antigen-labeled pairs.
+
+      '
+  agent_access: 'Article supplements (clonotype tables) + SRA FASTQ; reanalysis pipelines (TRUST4, MiXCR,
+    SatTCR) on public canine RNA-seq. No auth.
+
+    '
+  caveats: 'MAJOR GAP: no canine equivalent of VDJdb/McPAS (no epitope-labeled TCRs); no canine germline
+    V/D/J reference as mature as IMGT human. Repertoire only; specificity must be inferred or generated.
+
+    '
+- id: canine-tcr-rnaseq-mining
+  name: Canine TCR CDR3 Mining from Public RNA-seq (>200k CDR3)
+  category: tcr-recognition
+  species:
+  - dog
+  description: '>200,000 complete TCR CDR3 sequences assembled from ~2,000 public canine RNA-seq samples
+    via TRUST4/MiXCR; plus bulk TRB NGS protocols and the SatTCR depth-analysis pipeline (2.5-3M reads
+    to capture the canine repertoire).
+
+    '
+  scale: '>200,000 CDR3s from ~2,000 RNA-seq samples'
+  modalities:
+  - rna-seq-derived-tcr
+  - bulk-tcr
+  formats:
+  - airr-tsv
+  - clonotype-tables
+  landing_url: https://www.biorxiv.org/content/10.1101/2024.02.14.580390v1.full
+  download_url: https://www.biorxiv.org/content/10.1101/2024.02.14.580390v1.full
+  license: preprint CC BY; source reads via SRA public norms
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: academic (preprint + pipelines)
+    key_refs:
+    - 10.1101/2024.02.14.580390
+    - PMC10872364
+    - PMC12743510
+  last_updated: 2024-2025
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Largest canine repertoire resource, assembled from existing RNA-seq; demonstrates reuse path
+      for building canine TCR references without new wet-lab data.
+
+      '
+  agent_access: 'Reanalyze public canine RNA-seq with TRUST4/MiXCR; clonotype tables in supplements. No
+    auth.
+
+    '
+  caveats: 'MAJOR GAP: repertoire composition only — NO epitope-labeled canine TCRs (no VDJdb/McPAS equivalent);
+    no mature IMGT-grade canine germline V/D/J. Specificity must be generated.
+
+    '
+- id: chu-2023-pancancer-tcell-stress
+  name: Chu et al. 2023 — pan-cancer T-cell atlas (MD Anderson)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Pan-cancer single-cell T-cell atlas integrating many datasets, linking a cellular stress-response
+    T-cell state to immunotherapy resistance. Provides an integrated reference and metadata across cancer
+    types.
+
+    '
+  scale: integrated pan-cancer T cells (multi-study meta-atlas)
+  modalities:
+  - scrna-seq
+  - cell-state-annotation
+  formats:
+  - h5ad
+  - matrix
+  - web-portal
+  landing_url: https://www.nature.com/articles/s41591-023-02371-y
+  download_url: https://www.nature.com/articles/s41591-023-02371-y#data-availability
+  license: per-paper / per-source dataset terms
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: MD Anderson (Chu Y./ Nfeng/Wang L.)
+    key_refs:
+    - 10.1038/s41591-023-02371-y
+  last_updated: '2023'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Integrated T-cell meta-atlas with an ICB-resistance-linked state; useful as a harmonized recognition
+      reference and for label transfer.
+
+      '
+  agent_access: 'Processed atlas via the paper''s portal/Zenodo (per Data Availability). Specific accession
+    not verified in this pass — read the Data Availability section before scripting.
+
+    '
+  caveats: 'Meta-atlas built from many source datasets with their own licenses — check provenance of any
+    slice before reuse. Accession not pinned here.
+
+    '
+- id: dash-2017-paired
+  name: Dash et al. 2017 epitope-specific paired TCRab dataset
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  description: 'Single-cell-derived, in-frame paired TCR alpha/beta sequences spanning ten epitope-specific
+    CD8+ repertoires from mice and humans — the foundational paired-chain, known-specificity set underlying
+    TCRdist and many downstream specificity models.
+
+    '
+  scale: ~4,635 paired in-frame TCRab sequences; 10 epitope-specific repertoires; 110 subjects
+  modalities:
+  - paired-chain
+  - tcr-epitope
+  - cdr3-alpha
+  - cdr3-beta
+  formats:
+  - csv
+  - supplementary
+  - tcrdist-bundle
+  landing_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5616171/
+  download_url: https://www.nature.com/articles/nature22383#Sec19
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Thomas/Bradley labs (St. Jude / Fred Hutch)
+    key_refs:
+    - 10.1038/nature22383
+  last_updated: '2017'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Gold-standard paired-chain specificity data; the reference training/eval set for distance-based
+      (TCRdist) and ML recognition methods, and a clean benchmark subset.
+
+      '
+  agent_access: 'Distributed as paper supplementary tables and bundled inside tcrdist/tcrdist3 example
+    data on GitHub; small, trivially downloadable. CAVD DataSpace copy requires sign-in.
+
+    '
+  caveats: 'No explicit license on the supplementary data — verify. Small and epitope-biased (10 epitopes).
+    No dog.
+
+    '
+- id: dash-2017-tcrdist
+  name: Dash et al. 2017 — epitope-specific TCR repertoires (TCRdist)
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  description: 'Paired single-cell TCRalpha/beta sequences for epitope-specific T cells (human and mouse,
+    several immunodominant epitopes), released with the TCRdist method to show quantifiable, predictive
+    features of epitope-specific repertoires.
+
+    '
+  scale: thousands of paired alpha/beta TCRs across multiple epitopes (human + mouse)
+  modalities:
+  - paired-tcr
+  - tcr-epitope
+  formats:
+  - supplementary-tables
+  - repo-data
+  landing_url: https://www.nature.com/articles/nature22383
+  download_url: https://www.nature.com/articles/nature22383#Sec21
+  license: per-journal supplementary terms
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: St. Jude / Fred Hutch (Dash/Thomas/Fiore-Gartland)
+    key_refs:
+    - 10.1038/nature22383
+  last_updated: '2017'
+  relevance:
+    programs:
+    - recognition
+    why: 'Benchmark paired alpha/beta epitope-specific TCR sets; the reference dataset for the widely-used
+      TCRdist distance metric.
+
+      '
+  agent_access: 'Supplementary tables plus data bundled with the tcrdist/tcrdist3 repositories. No API;
+    fetch supplements/repo. Automatable once located.
+
+    '
+  caveats: 'Supplementary-table license not explicitly stated — treat as unknown. Limited epitope set;
+    small per-epitope counts. Paired chains are a key strength.
+
+    '
+- id: glanville-2017-gliph
+  name: Glanville et al. 2017 (GLIPH) TCR specificity & naive reference data
+  category: tcr-recognition
+  species:
+  - human
+  description: 'TCR specificity-group reference from the GLIPH paper: antigen-specific CD4/CD8 TCR sets
+    (e.g. tetramer-sorted and pathogen-specific repertoires) plus reference repertoires used to define
+    141 specificity groups via shared CDR3 motifs/global similarity.
+
+    '
+  scale: ~2,068 unique known-specificity TCRs; naive reference ~162,165 CDR3b sequences; 141 specificity
+    groups
+  modalities:
+  - cdr3-beta
+  - tcr-epitope
+  - reference-repertoire
+  - tcr-beta
+  - specificity-groups
+  formats:
+  - supplementary
+  - txt
+  - supplementary-tables
+  - r-package-data
+  landing_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5794212/
+  download_url: https://www.nature.com/articles/nature22976#Sec22
+  license: per-journal supplementary terms
+  access: open
+  provenance:
+    maintainer: Davis lab (Stanford) / Glanville
+    key_refs:
+    - 10.1038/nature22976
+  last_updated: '2017'
+  relevance:
+    programs:
+    - recognition
+    why: 'Motif-based TCR specificity grouping and its reference repertoires underpin many TCR-clustering/specificity
+      methods; a standard benchmark input.
+
+      '
+  agent_access: 'Data as journal supplementary tables; reference repertoires redistributed via the immGLIPH
+    / GLIPH tool packages ("human_v1.0_CD4/CD8/CD48"). No API; fetch supplements + package data.
+
+    '
+  caveats: 'Supplementary-table license not explicitly stated — treat as unknown. TCRbeta-centric. Pair
+    with VDJdb/IEDB for broader epitope coverage.
+
+    '
+  license_url: unknown
+- id: gse108989-zhang-crc-tcells
+  name: Zhang et al. 2018 — colorectal cancer T-cell scRNA+TCR (GSE108989)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Smart-seq2 single-cell RNA-seq with paired TCR of T cells from colorectal cancer tumor,
+    adjacent normal and blood (12 patients), characterizing T-cell subsets and clonal dynamics.
+
+    '
+  scale: ~11,138 T cells, 12 CRC patients (Smart-seq2 + TCR)
+  modalities:
+  - scrna-seq
+  - paired-tcr
+  - cell-state-annotation
+  formats:
+  - txt
+  - matrix
+  - tcr-table
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE108989
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE108nnn/GSE108989/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Peking University (Zhang L./Zhang Zemin)
+    key_refs:
+    - 10.1038/s41586-018-0694-x
+  last_updated: '2018'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'CRC TIL transcriptome+TCR reference completing the lung/liver/CRC trio from the Zhang lab for
+      exhaustion-program modeling.
+
+      '
+  agent_access: 'GEO supplementary matrices + TCR tables via FTP. Automatable.
+
+    '
+  caveats: 'Smart-seq2; cell count approximate (confirm on series page). A companion 10x CRC dataset (GSE146771)
+    exists from the same lab — separate accession.
+
+    '
+- id: gse156728-zheng-pancancer-tcells
+  name: Zheng et al. 2021 — pan-cancer T-cell atlas (GSE156728)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Pan-cancer single-cell landscape of tumor-infiltrating T cells: scRNA-seq (with TCR for
+    many) across 316 donors / 21 cancer types, defining shared T-cell meta-clusters and exhaustion/activation
+    programs. A major cross-cancer T-cell reference.
+
+    '
+  scale: ~397k+ T cells, 316 donors, 21 cancer types
+  modalities:
+  - scrna-seq
+  - paired-tcr
+  - cell-state-annotation
+  formats:
+  - h5
+  - matrix
+  - tcr-table
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE156728
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE156nnn/GSE156728/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Peking University / BIOPIC (Zheng L./Zhang Zemin)
+    key_refs:
+    - 10.1126/science.abe6474
+  last_updated: 2021-12
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'The pan-cancer T-cell reference for harmonizing tumor T-cell states and clonality across cancers
+      — anchor dataset for recognition-oriented modeling.
+
+      '
+  agent_access: 'GEO matrices + TCR tables via FTP; interactive browser also provided. Automatable.
+
+    '
+  caveats: 'Large, multi-batch; apply the authors'' meta-clustering for cross-cancer harmonization. GEO
+    sample count differs from donor count — read series metadata carefully.
+
+    '
+- id: gse98638-zheng-hcc-tcells
+  name: Zheng et al. 2017 — HCC T-cell scRNA+TCR (GSE98638)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Smart-seq2 single-cell RNA-seq with paired TCR of ~5,063 T cells from hepatocellular carcinoma
+    (tumor, adjacent normal, blood), mapping exhausted/regulatory T-cell states and clonal relationships.
+    Early paired scRNA+TCR tumor dataset.
+
+    '
+  scale: ~5,063 T cells, 6 HCC patients (Smart-seq2 + TCR)
+  modalities:
+  - scrna-seq
+  - paired-tcr
+  - cell-state-annotation
+  formats:
+  - txt
+  - matrix
+  - tcr-table
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE98638
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE98nnn/GSE98638/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Peking University (Zheng C./Zhang Zemin)
+    key_refs:
+    - 10.1016/j.cell.2017.05.035
+  last_updated: '2017'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Paired transcriptome+TCR of tumor T cells links exhaustion state to clonality — a template for
+      recognition-oriented tumor T-cell analysis.
+
+      '
+  agent_access: 'GEO supplementary matrices + TCR tables via FTP; metadata via E-utilities. Automatable.
+
+    '
+  caveats: 'Small cohort; Smart-seq2 (no UMI). TCR data is paired but low-throughput vs 10x.
+
+    '
+- id: gse99254-guo-nsclc-tcells
+  name: Guo et al. 2018 — NSCLC T-cell scRNA+TCR (GSE99254)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Smart-seq2 single-cell RNA-seq with paired TCR of ~12,346 T cells from tumor, adjacent
+    normal and blood of 14 treatment-naive non-small-cell lung cancer patients; defines T-cell states
+    and clonal migration across compartments.
+
+    '
+  scale: ~12,346 T cells, 14 NSCLC patients (Smart-seq2 + TCR)
+  modalities:
+  - scrna-seq
+  - paired-tcr
+  - cell-state-annotation
+  formats:
+  - txt
+  - matrix
+  - tcr-table
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE99254
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE99nnn/GSE99254/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Peking University (Guo X./Zhang Zemin)
+    key_refs:
+    - 10.1038/s41591-018-0045-3
+  last_updated: '2018'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Lung TIL transcriptome+TCR reference for exhaustion/clonality modeling.
+
+      '
+  agent_access: 'GEO supplementary matrices + TCR tables via FTP. Verified NSCLC per GEO series record.
+    Automatable.
+
+    '
+  caveats: 'Smart-seq2. Note a secondary paper mislabeled tissue for this accession; GEO record confirms
+    NSCLC.
+
+    '
+- id: iedb-tcell-assays
+  name: IEDB — T-cell assay / MHC-multimer export (cross-ref)
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The Immune Epitope Database''s T-cell assay records, including positive/negative peptide-MHC
+    tetramer/multimer and functional readouts with TCR and MHC-restriction annotations. A very large labeled
+    epitope/assay resource; catalogued deeply by the presentation agent — included here as the primary
+    antigen-recognition label source.
+
+    '
+  scale: ~1M+ T-cell assay records; ~1.6M epitopes (whole IEDB)
+  modalities:
+  - tcr-epitope
+  - mhc-multimer
+  - binding-assay
+  - functional-assay
+  formats:
+  - csv
+  - json
+  - api
+  landing_url: https://www.iedb.org/
+  download_url: https://www.iedb.org/database_export_v3.php
+  api: https://query-api.iedb.org/
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: La Jolla Institute for Immunology (NIAID-funded)
+    key_refs:
+    - 10.1093/nar/gky1006
+  last_updated: continuous
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'Broadest curated source of TCR-epitope and multimer assay labels for building and benchmarking
+      recognition models.
+
+      '
+  agent_access: 'PROGRAMMATIC: bulk CSV/JSON export (no auth) + REST query API (query-api.iedb.org). Fully
+    automatable. CC BY 4.0.
+
+    '
+  caveats: 'CROSS-REFERENCE ONLY — the presentation agent catalogs IEDB and MHC/HLA depth; do not duplicate
+    here. Heterogeneous assay quality; filter by assay type/qualitative measure.
+
+    '
+- id: iedb-tcr
+  name: IEDB — Receptor/TCR records
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The TCR/receptor portion of the Immune Epitope Database: curated T-cell assays with receptor
+    sequences (CDR3, V/J) and their epitope + MHC context, plus the Receptor (IEDB-RF) tables. Large aggregate
+    of published T-cell reactivity data.
+
+    '
+  scale: part of IEDB (~1.6M epitopes, >1M assays overall); hundreds of thousands of receptor rows
+  modalities:
+  - tcr-epitope
+  - binding-assay
+  - cdr3-beta
+  - cdr3-alpha
+  formats:
+  - csv
+  - json
+  - api
+  landing_url: https://www.iedb.org/
+  download_url: https://www.iedb.org/database_export_v3.php
+  api: https://query-api.iedb.org/
+  license: custom (free to use; citation requested)
+  license_url: https://www.iedb.org/
+  access: open
+  provenance:
+    maintainer: La Jolla Institute for Immunology (NIH/NIAID funded)
+    key_refs:
+    - 10.1093/nar/gky1006
+  last_updated: '2025'
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'Authoritative, deeply curated source of TCR-epitope assays; a backbone input for most TCR specificity
+      training sets (NetTCR, TChard etc. draw from it).
+
+      '
+  agent_access: 'Bulk CSV/JSON export (database_export) plus a documented REST query API with rate limits.
+    No auth; well suited to automated ingestion.
+
+    '
+  caveats: 'No SPDX license; terms are "free to use with citation" — confirm redistribution scope. Extracting
+    clean TCR-epitope pairs needs schema-aware parsing. Non-human species present but dog TCR coverage
+    is negligible.
+
+    '
+- id: immrep22-benchmark
+  name: IMMREP22 TCR-epitope specificity benchmark
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Standardized community benchmark for TCR-epitope prediction: VDJdb-derived train/test
+    data organized into peptide-specific buckets with defined negatives and evaluation files, used to
+    compare 23 prediction models.
+
+    '
+  scale: 17 peptide-specific data buckets; VDJdb snapshot 2022-06-23
+  modalities:
+  - tcr-epitope
+  - cdr3-beta
+  - cdr3-alpha
+  - benchmark-splits
+  formats:
+  - csv
+  - github
+  landing_url: https://github.com/viragbioinfo/IMMREP_2022_TCRSpecificity
+  download_url: https://github.com/viragbioinfo/IMMREP_2022_TCRSpecificity
+  license: unknown
+  access: open
+  provenance:
+    maintainer: IMMREP workshop (Meysman, Nielsen et al.)
+    key_refs:
+    - 10.1016/j.immuno.2023.100024
+  last_updated: '2023'
+  relevance:
+    programs:
+    - recognition
+    why: 'The de-facto standardized evaluation harness for TCR specificity models; use it to benchmark
+      our models against published methods on identical splits.
+
+      '
+  agent_access: 'Flat CSVs + evaluation scripts in GitHub; clone/download, no auth. Fully automatable.
+
+    '
+  caveats: 'Repo license not stated — verify (data derived from VDJdb, so CC BY-ND redistribution limits
+    may propagate). Peptide-restricted buckets; human only.
+
+    '
+- id: immuneaccess
+  name: Adaptive Biotechnologies immuneACCESS / immunoSEQ public projects
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  description: 'Portal of published TCR-beta (immunoSEQ) bulk repertoire projects released alongside papers,
+    spanning cancer, infection, autoimmunity and healthy cohorts. Very large collection of deeply sequenced
+    human TCRB repertoires.
+
+    '
+  scale: hundreds of projects; billions of TCRB rearrangements aggregate
+  modalities:
+  - cdr3-beta
+  - repertoire
+  - bulk-tcrseq
+  formats:
+  - tsv
+  landing_url: https://clients.adaptivebiotech.com/immuneaccess
+  download_url: https://clients.adaptivebiotech.com/immuneaccess
+  license: custom — 'For Research Use Only' (immuneACCESS Terms of Use)
+  license_url: https://clients.adaptivebiotech.com/terms-of-use
+  access: registration
+  provenance:
+    maintainer: Adaptive Biotechnologies
+    key_refs:
+    - 10.1038/ng.2664
+  last_updated: ongoing
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Deepest public human TCRB repertoires; valuable for background/negative modeling and disease-cohort
+      context, but terms constrain how we may reuse/redistribute.
+
+      '
+  agent_access: 'Account/registration required to download; data pulled per-project as TSV via the portal
+    (no open API). Scriptable only after login and per-project EULA acceptance.
+
+    '
+  caveats: 'RED FLAG — bespoke "For Research Use Only" Terms of Use; redistribution, commercial use and
+    ML/model-training permissions are not openly stated and are likely restricted. Could not retrieve
+    the full clause text (JS-rendered terms page) — must be reviewed manually before any reuse/republication.
+    TCRB only (no paired chains), not antigen-labeled. No dog.
+
+    '
+- id: immunecode
+  name: ImmuneCODE / ImmuneRACE (Adaptive COVID release + MIRA)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Large open release of SARS-CoV-2-associated TCR-beta sequences and binding associations
+    from natural and synthetic (MIRA antigen-stimulation) exposure, from the Adaptive/Microsoft ImmuneRACE
+    study. Includes TCR-antigen association tables (MIRA) and raw repertoires.
+
+    '
+  scale: millions of TCRB sequences; thousands of subjects; MIRA antigen-association tables
+  modalities:
+  - cdr3-beta
+  - repertoire
+  - tcr-antigen-association
+  formats:
+  - tsv
+  - csv
+  landing_url: https://clients.adaptivebiotech.com/pub/covid-2020
+  download_url: https://clients.adaptivebiotech.com/pub/covid-2020
+  license: custom — stated freely downloadable; governed by Adaptive terms
+  license_url: https://clients.adaptivebiotech.com/terms-of-use
+  access: registration
+  provenance:
+    maintainer: Adaptive Biotechnologies + Microsoft
+    key_refs:
+    - 10.21417/ADPT2020COVID
+    - 10.21203/rs.3.rs-51964/v1
+  last_updated: 2020 (continues to grow)
+  relevance:
+    programs:
+    - recognition
+    why: 'One of very few large public TCR-antigen association sets (MIRA) usable for recognition modeling;
+      a benchmark for epitope-specific TCR prediction.
+
+      '
+  agent_access: 'Stated downloadable online/offline, but the download path sits behind the Adaptive portal
+    (registration). Bulk TSV; scriptable after login. Has a DOI/release tag.
+
+    '
+  caveats: 'Governed by the same Adaptive Terms of Use red flag as immuneACCESS — confirm redistribution/
+    ML terms. MIRA uses antigen pools (peptide groups), not single-peptide resolution. TCRB only, human
+    only.
+
+    '
+- id: immunecode-mira
+  name: ImmuneCODE / MIRA (immuneACCESS, Adaptive Biotechnologies)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Large-scale Multiplex Identification of T-cell Receptor Antigen (MIRA) assay data: SARS-CoV-2-specific
+    TCRbeta sequences mapped to peptide/ORF antigen groups, plus deep TCR repertoire files from infected/exposed
+    subjects. MIRA callsets provide experimentally associated TCR-to-antigen pairings (predominantly CD8/MHC-I).
+
+    '
+  scale: '>160,000 high-confidence SARS-CoV-2-specific TCRs; repertoires from 1,414 subjects'
+  size_bytes: 3700000
+  modalities:
+  - tcr-beta
+  - tcr-antigen-association
+  - bulk-repertoire
+  formats:
+  - csv
+  - tsv
+  - zip
+  - tgz
+  landing_url: https://clients.adaptivebiotech.com/pub/covid-2020
+  download_url: https://clients.adaptivebiotech.com/pub/covid-2020
+  license: immuneACCESS Terms of Use (custom)
+  license_url: https://clients.adaptivebiotech.com/immuneaccess
+  access: registration
+  provenance:
+    maintainer: Adaptive Biotechnologies (ImmuneRACE / ImmuneCODE)
+    key_refs:
+    - 10.21417/ADPT2020COVID
+    - 10.21203/rs.3.rs-51964/v1
+  last_updated: Release 002.1
+  relevance:
+    programs:
+    - recognition
+    why: 'The largest public experimentally-grounded TCR-to-antigen mapping (MIRA) — anchor training/benchmark
+      set for TCR specificity models, even if single-antigen and TCRbeta-only.
+
+      '
+  agent_access: 'Download from immuneACCESS after accepting Terms of Use (account/click-through); MIRA
+    callset zip is small (~3.7 MB), repertoire tgz is large (~23.8 GB). No open REST API; scripted download
+    after auth.
+
+    '
+  caveats: 'Governed by immuneACCESS Terms of Use (custom) — review redistribution/commercial terms. TCR-antigen
+    pairings are assay-associated, not individually functionally validated. TCRbeta-only (no paired alpha).
+    SARS-CoV-2-centric.
+
+    '
+- id: ireceptor-adc
+  name: iReceptor Gateway / AIRR Data Commons
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Federated network of distributed AIRR-seq repositories queried through a common ADC API
+    and the iReceptor Gateway. Hosts bulk and single-cell TCR (and BCR) repertoires from many studies
+    under AIRR Community metadata standards.
+
+    '
+  scale: ~5.2B sequence annotations, >10,000 repertoires, >90 studies across ~9 repositories
+  modalities:
+  - repertoire
+  - bulk-tcrseq
+  - cdr3-beta
+  - cdr3-alpha
+  - single-cell
+  formats:
+  - airr-tsv
+  - json
+  - api
+  landing_url: https://gateway.ireceptor.org/
+  download_url: https://gateway.ireceptor.org/
+  api: https://docs.airr-community.org/en/stable/api/adc_api.html
+  license: varies per study/repository (CC BY 4.0 common in metadata)
+  license_url: https://docs.airr-community.org/en/stable/api/adc_api.html
+  access: open
+  provenance:
+    maintainer: iReceptor (Breden/Corrie, SFU) + AIRR Community
+    key_refs:
+    - 10.3389/fdata.2020.00022
+    - 10.3389/fimmu.2018.02197
+  last_updated: '2025'
+  relevance:
+    programs:
+    - recognition
+    - design
+    - comparative
+    why: 'Largest standardized source of raw repertoires for background modeling, V/J priors, and negative
+      sampling; AIRR schema makes cross-study integration tractable.
+
+      '
+  agent_access: 'Read-only ADC REST API (JSON over HTTP POST), per-repository endpoints, no auth defined
+    yet (controlled access planned). Supports programmatic bulk query/download; large pulls (TB-scale)
+    are feasible but heavy.
+
+    '
+  caveats: 'Per-study licenses vary — the CC BY 4.0 seen in API metadata does not govern every dataset;
+    check each study. Mostly unlabeled repertoires (no antigen specificity). Scale figures differ across
+    sources. Some non-human species; dog coverage not confirmed.
+
+    '
+- id: mcpas-tcr
+  name: McPAS-TCR — pathology-associated TCR database
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  description: 'Manually curated catalogue of TCR sequences associated with pathological conditions (cancer,
+    infection, autoimmunity) in human and mouse, each linked to antigen/epitope, MHC and disease context.
+    A labeled TCR-antigen reference distinct from VDJdb.
+
+    '
+  scale: '>5,000 sequences (2017 paper); grown since via manual curation'
+  modalities:
+  - tcr-epitope
+  - cdr3-alpha
+  - cdr3-beta
+  - disease-association
+  - tcr-alpha
+  - tcr-beta
+  formats:
+  - csv
+  landing_url: https://friedmanlab.weizmann.ac.il/McPAS-TCR/
+  download_url: https://friedmanlab.weizmann.ac.il/McPAS-TCR/
+  license: unknown (no explicit license on site)
+  access: open
+  provenance:
+    maintainer: Friedman Lab, Weizmann Institute of Science
+    key_refs:
+    - 10.1093/bioinformatics/btx286
+  last_updated: '2022-09-10'
+  relevance:
+    programs:
+    - recognition
+    why: 'Disease-stratified TCR-antigen pairs (incl. cancer) complement VDJdb for recognition training
+      and for benchmarking on oncology-relevant epitopes.
+
+      '
+  agent_access: 'Full database + filtered CSV exports downloadable directly over HTTP, no auth. No REST
+    API; scripted file fetch. immunarch wraps it.
+
+    '
+  caveats: 'No explicit license stated (site asks only for citation) — treat redistribution as uncertain;
+    verify before republishing. Manual curation means occasional inaccuracies (site disclaims this). Overlaps
+    VDJdb/IEDB; dedup required. No dog coverage.
+
+    '
+  license_url: unknown
+- id: mixtcrpred-data
+  name: MixTCRpred training data & models
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  description: 'Training data (paired TCRs spanning many pMHCs) and pre-trained transformer models for
+    MixTCRpred, predicting TCR binding to a panel of pMHCs including class I and II.
+
+    '
+  scale: ~17,715 TCRs across 146 pMHCs
+  modalities:
+  - tcr-epitope
+  - paired-chain
+  - mhc-class-i
+  - mhc-class-ii
+  - models
+  formats:
+  - csv
+  - github
+  - zenodo
+  landing_url: https://github.com/GfellerLab/MixTCRpred
+  download_url: https://zenodo.org/record/7930623
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Gfeller lab, University of Lausanne / Ludwig Institute
+    key_refs:
+    - 10.1038/s41467-024-47461-8
+    - 10.5281/zenodo.10806391
+  last_updated: '2024'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Multi-pMHC paired-chain training set with class II and mouse coverage; strong recognition baseline
+      and a reusable curated corpus.
+
+      '
+  agent_access: 'Training data in GitHub; pre-trained models on Zenodo; Colab notebook. No auth, automatable.
+
+    '
+  caveats: 'Data license not explicitly stated — verify. Restricted to the 146 pMHCs with enough data.
+    No dog.
+
+    '
+- id: nettcr-data
+  name: NetTCR-2.0 training/evaluation data
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Data released with NetTCR-2.0 for paired alpha/beta TCR-peptide binding prediction: positive
+    TCR-peptide pairs from IEDB+VDJdb, negatives derived from 10x single-cell data, with similarity-partitioned
+    CDR3b training sets and MIRA/paired external evaluation files.
+
+    '
+  scale: ~2,744 unique paired positive pairs; ~387,598 10x-derived negatives
+  modalities:
+  - tcr-epitope
+  - paired-chain
+  - cdr3-beta
+  - benchmark-splits
+  formats:
+  - csv
+  landing_url: https://github.com/mnielLab/NetTCR-2.0
+  download_url: https://github.com/mnielLab/NetTCR-2.0
+  license: non-commercial (academic use)
+  license_url: https://github.com/mnielLab/NetTCR-2.0
+  access: open
+  provenance:
+    maintainer: Nielsen Lab, DTU
+    key_refs:
+    - 10.1038/s42003-021-02610-3
+  last_updated: '2021'
+  relevance:
+    programs:
+    - recognition
+    why: 'Widely used, pre-partitioned paired-chain benchmark with a principled negative set — a standard
+      comparison point for any recognition model we build.
+
+      '
+  agent_access: 'Flat CSVs in the GitHub repo data folder; git clone / direct download, no auth. Fully
+    automatable.
+
+    '
+  caveats: 'Stated academic/non-commercial only — red flag for commercial ML; confirm. Negatives inherit
+    10x dextramer assumptions; small positive set. Human only.
+
+    '
+- id: panpep-data
+  name: PanPep meta-learning TCR-antigen dataset
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Curated TCR-peptide binding data and a large control (negative) dataset released with
+    PanPep, a meta-learning model for zero-/few-shot TCR-antigen recognition across unseen peptides.
+
+    '
+  scale: control dataset ~927 MB; code package small
+  size_bytes: 928278114
+  modalities:
+  - tcr-epitope
+  - cdr3-beta
+  - benchmark-splits
+  formats:
+  - txt
+  - zenodo
+  - github
+  landing_url: https://github.com/bm2-lab/PanPep
+  download_url: https://zenodo.org/record/7544387
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Li lab, Tongji University (bm2-lab)
+    key_refs:
+    - 10.1038/s42256-023-00619-3
+    - 10.5281/zenodo.7544387
+  last_updated: '2023'
+  relevance:
+    programs:
+    - recognition
+    why: 'Few-shot/zero-shot framing matches the real problem of unseen tumor neoepitopes; its control
+      set is a sizeable negative pool.
+
+      '
+  agent_access: 'Zenodo direct download (~928 MB control file + code zip); no auth. A later reusability-report
+    deposit (10.5281/zenodo.16943691) adds re-curated data.
+
+    '
+  caveats: 'Zenodo record names no explicit license (open access right only) — verify reuse terms. Human
+    only.
+
+    '
+- id: pird-tbadb
+  name: PIRD / TBAdb (Pan Immune Repertoire Database)
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  - other
+  description: 'CNGB-hosted pan immune repertoire database collecting annotated TCR and BCR sequencing
+    data across species and conditions. TBAdb is its manually curated sub-database of TCRs/BCRs targeting
+    known antigens.
+
+    '
+  scale: 'TBAdb: curated antigen-specific TCR/BCR records; PIRD: many repertoire datasets'
+  modalities:
+  - tcr-epitope
+  - repertoire
+  - cdr3-beta
+  - cdr3-alpha
+  - bcr
+  formats:
+  - csv
+  landing_url: https://db.cngb.org/pird
+  download_url: https://db.cngb.org/pird
+  license: unknown
+  access: registration
+  provenance:
+    maintainer: China National GeneBank (CNGB) / BGI
+    key_refs:
+    - 10.1093/bioinformatics/btz614
+  last_updated: '2020'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'TBAdb is a third curated antigen-specific TCR set (alongside VDJdb/McPAS) for recognition training;
+      PIRD adds repertoire breadth and some non-human species.
+
+      '
+  agent_access: 'Web portal on db.cngb.org; download may require a CNGB account. No documented open API;
+    likely scripted/portal download. Confirm access gating.
+
+    '
+  caveats: 'No explicit license located — verify terms. Overlaps VDJdb/McPAS; dedup needed. Dog coverage
+    not confirmed (PIRD claims multi-species but canine content unverified).
+
+    '
+- id: pmtnet-datasets
+  name: pMTnet / pMTnet-Omni training & validation datasets
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  description: 'Data accompanying the pMTnet family of TCR-pMHC affinity predictors. pMTnet-Omni covers
+    Va/Vb/CDR3a/CDR3b + peptide + MHC (class I and II, human and mouse); the package ships reference databases
+    and 5 validation datasets, with training data described in the papers.
+
+    '
+  scale: 'validation: 5 datasets; training: large aggregated pairs (see papers)'
+  modalities:
+  - tcr-epitope
+  - paired-chain
+  - mhc-class-i
+  - mhc-class-ii
+  formats:
+  - csv
+  - pickle
+  - pypi
+  landing_url: https://dbai.biohpc.swmed.edu/
+  download_url: https://pypi.org/project/pMTnet-Omni-Document/
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Wang Lab, UT Southwestern (DBAI)
+    key_refs:
+    - 10.1038/s42256-021-00383-2
+  last_updated: '2023'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Paired-chain + class II coverage (incl. mouse) is rare; useful both as a baseline predictor
+      and for its curated reference/validation pairs.
+
+      '
+  agent_access: 'Validation data and reference DB bundled with the pip package (pMTnet_Omni_Document);
+    full prediction runs through the DBAI website (upload). Validation data auto-fetchable; training corpus
+    must be assembled from the data-availability statement.
+
+    '
+  caveats: 'No explicit dataset license located — verify. Validation sets are formatting examples, not
+    the full training data. Model drops records whose TCR names are not in its reference DB. No dog.
+
+    '
+- id: prjna742469-sctcr
+  name: PRJNA742469 / SRP326193 — Canine Single-cell TCR + scRNA (Hoang 2024)
+  category: tcr-recognition
+  species:
+  - dog
+  description: 'Validated single-cell TRA/TRB (paired alpha/beta) + scRNA profiling on 10x Chromium across
+    16 samples from 11 companion dogs — the reference canine single-cell TCR dataset.
+
+    '
+  scale: 16 samples, 11 dogs (paired scTCR+scRNA)
+  modalities:
+  - single-cell-vdj
+  - scrna-seq
+  - tcr-seq
+  formats:
+  - fastq
+  - h5
+  - airr
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA742469
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA742469
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI SRA (WashU)
+    key_refs:
+    - 10.1038/s42003-024-06174-w
+  last_updated: '2024'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'The core public canine paired-chain TCR resource; substrate for canine TCR modeling and for
+      a canine V/D/J reference.
+
+      '
+  agent_access: 'SRA FASTQ (prefetch) + 10x outputs; no auth.
+
+    '
+  caveats: 'No antigen specificity (no pMHC-labeled TCRs). Small donor n.
+
+    '
+- id: tchard
+  name: TChard
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Aggregated benchmark dataset for TCR-peptide/pMHC binding prediction, built to be the
+    largest such collection at publication by merging IEDB, VDJdb, McPAS-TCR and the NetTCR-2.0 data,
+    with controlled negative generation and hard (unseen-peptide) evaluation splits.
+
+    '
+  scale: '>500,000 samples'
+  modalities:
+  - tcr-epitope
+  - cdr3-beta
+  - benchmark-splits
+  formats:
+  - csv
+  - zenodo
+  - pytdc
+  landing_url: https://github.com/nec-research/tc-hard
+  download_url: https://doi.org/10.5281/zenodo.6962043
+  license: non-commercial use
+  license_url: https://zenodo.org/record/6962043
+  access: open
+  provenance:
+    maintainer: NEC Laboratories Europe (Grazioli et al.)
+    key_refs:
+    - 10.3389/fimmu.2022.1014256
+    - 10.5281/zenodo.6962043
+  last_updated: '2022'
+  relevance:
+    programs:
+    - recognition
+    why: 'Ready-made, pre-split benchmark for honest unseen-peptide generalization testing — directly
+      reusable for evaluating our recognition models.
+
+      '
+  agent_access: 'Direct Zenodo download (no auth) and loadable via PyTDC DataLoader(name="tchard"). Fully
+    automatable.
+
+    '
+  caveats: 'Non-commercial license — a red flag for any commercial/productized ML use; confirm before
+    use. Aggregated from upstream DBs so inherits their biases and overlaps; human only, no dog.
+
+    '
+- id: tcrdb
+  name: TCRdb (HUST / TCRdb2.0)
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  description: 'Large aggregated database of TCR sequences from reprocessed public TCR-seq/RNA-seq projects
+    with a search function; TCRdb 2.0 (2025/26) massively expands it and adds a very large healthy-control
+    reference. Mostly specificity-agnostic bulk repertoires.
+
+    '
+  scale: ~277M sequences / 130 studies (v1); ~700M sequences / 19,701 samples (v2.0)
+  modalities:
+  - cdr3-beta
+  - repertoire
+  - bulk-tcrseq
+  - tcr-beta
+  formats:
+  - tsv
+  landing_url: http://bioinfo.life.hust.edu.cn/TCRdb/
+  download_url: http://bioinfo.life.hust.edu.cn/TCRdb/#/download
+  license: CC BY-NC 4.0 (paper; data terms per site)
+  access: open
+  provenance:
+    maintainer: Guo Lab (HUST / West China Hospital, SCU)
+    key_refs:
+    - 10.1093/nar/gkaa796
+    - 10.1093/nar/gkaf1053
+  last_updated: 2.0 (2025/2026)
+  relevance:
+    programs:
+    - recognition
+    - design
+    - comparative
+    why: 'Scale repertoire background for negative sampling, V/J usage priors and clonotype frequency
+      modeling — not antigen-labeled, but foundational for repertoire context.
+
+      '
+  agent_access: 'Per-sample/per-project download via the web portal; no documented programmatic API or
+    bulk tarball, so automated retrieval likely means scripted page-driven downloads.
+
+    '
+  caveats: 'Paper is CC BY-NC 4.0 (non-commercial) — flag for commercial use; confirm data terms on site.
+    TCRdb 2.0 DOI should be verified on the site (listed here as best-effort). Specificity-agnostic (no
+    antigen labels) — pair with labeled sets.
+
+    '
+  license_url: https://creativecommons.org/licenses/by-nc/4.0/
+- id: tenx-cd8-healthy-donors-1to4
+  name: 10x Genomics CD8+ T cells of Healthy Donors 1-4 (dextramer release)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Four public 10x single-cell datasets (one per healthy donor) pairing 5'' gene expression,
+    TotalSeq-C surface protein, paired TCR, and ~50 dCODE Dextramer (pMHC multimer) readouts (44 antigen
+    + 6 negative controls). Each donor is a separate downloadable dataset with a per-cell binarized specificity
+    matrix. The canonical large single-cell TCR-to-pMHC release.
+
+    '
+  scale: '>150,000 CD8+ T cells total across 4 donors; ~50 pMHC multimers each'
+  modalities:
+  - scrna-seq
+  - cite-seq
+  - paired-tcr
+  - pmhc-dextramer
+  formats:
+  - csv
+  - h5
+  - mtx
+  - vdj-json
+  landing_url: https://www.10xgenomics.com/datasets/cd-8-plus-t-cells-of-healthy-donor-4-1-standard-3-0-2
+  download_url: https://www.10xgenomics.com/datasets?query=CD8%2B%20T%20cells%20of%20Healthy%20Donor
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: 10x Genomics
+    key_refs:
+    - 10.1126/sciadv.abf5835
+  last_updated: '2019'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'The most-used public single-cell dataset with paired TCR + pMHC specificity labels — core training/benchmark
+      data for TCR-antigen recognition models.
+
+      '
+  agent_access: 'Four separate dataset pages (Donor 1-4); each offers direct file download (binarized
+    matrix CSV, filtered feature matrices, VDJ), no auth (CC BY 4.0). Scriptable per donor.
+
+    '
+  caveats: 'Raw dextramer calls are noisy; specificity call = binding UMI >10 AND >5x max negative control,
+    excluding cells with >4 specificities. Prefer the ICON-curated subset (~53,062 cells, Zhang et al.
+    2021) for clean labels. pMHC/HLA nomenclature: cross-ref presentation agent.
+
+    '
+- id: tenx-dextramer-cd8
+  name: 10x Genomics "A New Way of Exploring Immunity" — CD8 dextramer dataset
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Public 10x single-cell immune-profiling dataset pairing gene expression, cell-surface
+    protein (feature barcoding) and paired TCR sequence with ~44 dextramer (pMHC multimer) readouts per
+    cell across four healthy donors — i.e. single-cell TCR-to-pMHC specificity labels from barcoded multimer
+    binding.
+
+    '
+  scale: '>150,000 CD8+ T cells across 4 donors, ~44 dextramers each'
+  modalities:
+  - scrna-seq
+  - cite-seq
+  - paired-tcr
+  - pmhc-dextramer
+  formats:
+  - mtx
+  - csv
+  - h5
+  - vdj-json
+  landing_url: https://www.10xgenomics.com/datasets
+  download_url: https://support.10xgenomics.com/single-cell-vdj/datasets
+  license: CC BY (10x dataset terms)
+  license_url: https://www.10xgenomics.com/legal
+  access: open
+  provenance:
+    maintainer: 10x Genomics
+    key_refs:
+    - 10.1126/sciadv.abf5835
+  last_updated: 2019 (release); 2021 curated subset
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'One of the largest public single-cell datasets with paired TCR + pMHC specificity labels — core
+      training data for TCR-antigen recognition models.
+
+      '
+  agent_access: 'Direct file download from the 10x datasets/support site, no auth (CC BY). Scriptable
+    per-donor. Multiple files (GEX, protein, VDJ, dextramer counts) per donor.
+
+    '
+  caveats: 'Raw dextramer calls are noisy (high background); most downstream work uses the ICON- curated
+    subset (~53k cells, Zhang et al. 2021) with corrected pMHC/TCR annotations — prefer that for labels.
+    pMHC/HLA nomenclature: cross-ref the presentation agent.
+
+    '
+- id: titan-data
+  name: TITAN TCR-epitope dataset (VDJdb + ImmuneCODE)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Training/eval data for TITAN bimodal-attention TCR specificity model, assembled from VDJdb
+    plus the Adaptive ImmuneCODE COVID release, filtered to single-epitope productive sequences with generated
+    negatives. ESM-1b embedding copy also released for the TDC task.
+
+    '
+  scale: large VDJdb+ImmuneCODE TCR-epitope set (incl. COVID expansion)
+  modalities:
+  - tcr-epitope
+  - cdr3-beta
+  - benchmark-splits
+  - embeddings
+  formats:
+  - csv
+  - github
+  - zenodo
+  landing_url: https://github.com/PaccMann/TITAN
+  download_url: https://github.com/PaccMann/TITAN
+  api: https://zenodo.org/records/7504846
+  license: unknown
+  access: open
+  provenance:
+    maintainer: IBM Research / PaccMann
+    key_refs:
+    - 10.1093/bioinformatics/btab294
+    - 10.5281/zenodo.7504846
+  last_updated: 2021 (embeddings 2023)
+  relevance:
+    programs:
+    - recognition
+    why: 'Demonstrates the VDJdb+ImmuneCODE combination we would likely use; TDC embedding copy is a ready
+      feature set.
+
+      '
+  agent_access: 'Data via GitHub repo + Zenodo (ESM embeddings); no auth. Note ImmuneCODE-derived rows
+    inherit Adaptive terms.
+
+    '
+  caveats: 'Incorporates ImmuneCODE (Adaptive "Research Use Only" terms — redistribution/ML red flag).
+    Repo data license unspecified. Human only.
+
+    '
+- id: vdjdb
+  name: VDJdb
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Manually curated database of TCR sequences (CDR3 alpha/beta plus V/J) with known antigen
+    (epitope + restricting MHC) specificity, aggregated from the literature and from paired single-cell
+    studies. Each record carries a confidence score and, in recent releases, paratope embeddings, noise
+    filtering and predicted 3D structures.
+
+    '
+  scale: tens of thousands of TCR-epitope records across many epitopes (growing)
+  modalities:
+  - tcr-epitope
+  - cdr3-alpha
+  - cdr3-beta
+  - paired-chain
+  - tcr-alpha
+  - tcr-beta
+  - paired-tcr
+  formats:
+  - tsv
+  - api
+  - zenodo
+  - json
+  landing_url: https://vdjdb.cdr3.net/
+  download_url: https://github.com/antigenomics/vdjdb-db/releases
+  api: https://vdjdb-web.readthedocs.io/
+  license: CC BY 4.0 (database records; verify current repo LICENSE)
+  license_url: https://github.com/antigenomics/vdjdb-db/blob/master/LICENSE
+  access: open
+  provenance:
+    maintainer: Shugay/Chudakov groups (antigenomics)
+    key_refs:
+    - 10.1093/nar/gkx760
+    - 10.5281/zenodo.22104776
+    - 10.1093/nar/gkz874
+  last_updated: 2026-06-03 (Zenodo snapshot vdjdb-2026-06-03)
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Standardized, confidence-scored TCR-epitope ground truth — a backbone training/eval set for
+      antigen-recognition models and for harmonizing other assay sources.
+
+      '
+  agent_access: 'GitHub release tarballs (vdjdb-db) and Zenodo DOI snapshots for reproducible pinning;
+    REST API (POST /api/database/search) via vdjdb-web; vdjmatch (GPL-3) and immunarch for programmatic
+    querying. Fully automatable, no auth.
+
+    '
+  caveats: 'CC BY-ND forbids distributing modified versions, a redistribution/ML red flag — our derived
+    training files cannot be republished verbatim. License metadata is inconsistent across sources (one
+    GitHub listing showed AGPL-3.0); verify the LICENSE file per release. Heavy overlap with IEDB/McPAS
+    requires dedup. No dog coverage.
+
+    '
+- id: vdjdb-highconf
+  name: VDJdb high-confidence subset
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  description: 'Filtered view of VDJdb restricted to records with higher confidence scores (legacy 0-3
+    score >= 1, or the newer v3.2a assay-validation / v3.2b cross-study probabilities). Not a separate
+    database — a quality-gated slice of VDJdb used by most benchmark pipelines to reduce false positives.
+
+    '
+  scale: subset of VDJdb; size depends on score threshold (tens of thousands)
+  modalities:
+  - tcr-epitope
+  - paired-chain
+  formats:
+  - tsv
+  landing_url: https://vdjdb.cdr3.net/
+  download_url: https://github.com/antigenomics/vdjdb-db/releases
+  license: CC BY-ND 4.0 (inherits VDJdb)
+  license_url: https://github.com/antigenomics/vdjdb-db/blob/master/LICENSE
+  access: open
+  provenance:
+    maintainer: Shugay/Chudakov groups (antigenomics)
+    key_refs:
+    - 10.1093/nar/gkx760
+  last_updated: 2026-06
+  relevance:
+    programs:
+    - recognition
+    why: 'The cleaner slice we would actually train/evaluate recognition models on; filtering is done
+      client-side after download.
+
+      '
+  agent_access: 'Same as VDJdb; apply score filter locally after bulk download or via the web filter params.
+
+    '
+  caveats: 'Thresholds are not standardized across papers — document the exact filter. Same CC BY-ND redistribution
+    limit as VDJdb.
+
+    '

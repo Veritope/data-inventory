@@ -1,0 +1,1009 @@
+- id: bakerlab-pmhci-binder-design
+  name: Baker lab de novo pMHC-I binder design (code + designed structure)
+  category: tooling
+  species:
+  - human
+  description: 'Release accompanying "Design of high-specificity binders for peptide-MHC-I complexes":
+    RFdiffusion+ProteinMPNN design code and examples for building proteins that read out disease-linked
+    peptides on MHC-I, plus a deposited experimental structure of a designed binder-antigen complex.
+
+    '
+  scale: Design code + examples (Zenodo v1.0.0); specific binders identified for 11 target pMHC-I; MART-1
+    binder-antigen complex in PDB (9O5S)
+  modalities:
+  - pmhc
+  - de-novo-binder
+  - design-model
+  - complex-structure
+  - scripts
+  formats:
+  - pdb
+  - scripts
+  landing_url: https://www.science.org/doi/10.1126/science.adv0185
+  download_url: https://doi.org/10.5281/zenodo.15169815
+  api: null
+  license: unknown (check Zenodo record); PDB entry 9O5S is CC0
+  license_url: https://doi.org/10.5281/zenodo.15169815
+  access: open
+  provenance:
+    maintainer: Baker Lab / Institute for Protein Design, University of Washington
+    key_refs:
+    - 10.1126/science.adv0185
+    - 10.5281/zenodo.15169815
+  last_updated: 2025 (Science 389:386-391)
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'The flagship public demonstration and code for de novo peptide-MHC-I binder design — the most
+      directly applicable methodology and worked example for Veritope''s pMHC binder program.
+
+      '
+  agent_access: 'Code + examples archived on Zenodo (10.5281/zenodo.15169815); designed structure retrievable
+    from PDB (9O5S). Scriptable.
+
+    '
+  caveats: 'Zenodo license not confirmed (marked unknown). Only one designed complex is deposited (9O5S);
+    full design sets live in supplements. Companion NY-ESO-1 minibinder paper (10.1126/science.adv0422)
+    reuses prior RFdiffusion releases.
+
+    '
+- id: canine-cd-antibody-reagents
+  name: Canine Immunology Reagents / CD-Marker Antibody Resources
+  category: tooling
+  species:
+  - dog
+  description: 'The practical reagent layer for canine immunology: commercial anti-dog CD-marker monoclonal
+    antibodies (CD3/CD4/CD5/CD8/CD21 etc., with clones + RRIDs) from Bio-Rad and others, rooted in the
+    International Canine Leukocyte Antigen Workshop (CLAW) homolog assignments. No central curated public
+    database — a scattered vendor/literature landscape.
+
+    '
+  scale: dozens of validated clones across core CD markers; no unified count
+  modalities:
+  - antibody-reagent
+  - rrid
+  formats:
+  - catalog
+  - datasheet-pdf
+  landing_url: https://www.bio-rad-antibodies.com/canine-cd-marker-antibodies.html
+  download_url: https://www.bio-rad-antibodies.com/canine-cd-marker-antibodies.html
+  license: n/a (vendor catalogs; RRIDs via SciCrunch)
+  license_url: https://scicrunch.org/resources
+  access: open
+  provenance:
+    maintainer: Bio-Rad, LSBio, BioVenic (vendors); RRID registry (SciCrunch)
+    key_refs:
+    - PMC4387071
+  last_updated: ongoing
+  relevance:
+    programs:
+    - recognition
+    why: 'Reagent availability constrains any wet-lab canine immunology (sorting DLA+ cells, validating
+      T-cell subsets); documents the tooling gap relative to human/mouse.
+
+      '
+  agent_access: 'Vendor catalogs scrapeable; RRIDs queryable via SciCrunch API. No research dataset to
+    download.
+
+    '
+  caveats: 'GAP ALERT: canine immune reagents are scarce and fragmented vs human/mouse; many rely on cross-reactive
+    anti-human/anti-bovine clones. No open, curated reagent database.
+
+    '
+- id: cbioportal
+  name: cBioPortal for Cancer Genomics
+  category: tooling
+  species:
+  - human
+  description: 'Aggregation, query and visualization platform hosting hundreds of published cancer genomics
+    studies (TCGA, MSK-IMPACT, GENIE public, metastatic cohorts, and more) as harmonized mutation, copy-number,
+    fusion, expression and clinical matrices. The public instance exposes everything through a documented
+    REST API and downloadable per-study archives; private deployments can host controlled data.
+
+    '
+  scale: hundreds of studies (public instance); counts vary by release
+  modalities:
+  - mutation-calls
+  - copy-number
+  - structural-variants
+  - rna-seq
+  - clinical
+  formats:
+  - tsv
+  - api
+  - zip
+  landing_url: https://www.cbioportal.org/
+  download_url: https://www.cbioportal.org/datasets
+  api: https://www.cbioportal.org/api
+  license: ODC Open Database License (ODbL) for data unless noted; software Apache-2.0 (AGPL-3.0 pre-2026)
+  license_url: https://docs.cbioportal.org/user-guide/faq/
+  access: open
+  provenance:
+    maintainer: Memorial Sloan Kettering (cBio Center) + consortium
+    key_refs:
+    - 10.1158/2159-8290.CD-12-0095
+    - 10.1126/scisignal.2004088
+  last_updated: 2026 (rolling)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Fastest programmatic route to harmonized somatic mutation + expression across many cohorts without
+      per-study DUAs — ideal for assembling neoantigen candidate sets and recurrence/frequency priors.
+
+      '
+  agent_access: 'Public REST API (Swagger), R (cBioPortalData, cbioportalR) and Python clients, plus per-study
+    ZIP archives and a Data Hub for bulk. No auth on the public instance; rate limits apply to the API.
+    Fully automatable.
+
+    '
+  caveats: 'Data under ODbL (attribution + share-alike of derived databases) unless a study notes otherwise
+    — check per-study. Processed/derived data only (no raw reads). Hosts public GENIE, which still carries
+    GENIE''s no-redistribution terms (see aacr-genie).
+
+    '
+- id: cellxgene-discover
+  name: CZ CELLxGENE Discover (+ Census)
+  category: tooling
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Chan Zuckerberg Initiative portal aggregating standardized, cell-typed single-cell datasets
+    (incl. Tabula Sapiens, HLCA, heart/gut atlases, HCA collections) with a programmatic Census for querying
+    tens of millions of normal cells in a harmonized schema. The primary access layer for normal single-cell
+    references.
+
+    '
+  scale: '>100M cells across standardized collections; Census spans the corpus'
+  modalities:
+  - single-cell-rna-seq
+  - cell-type-annotation
+  formats:
+  - h5ad
+  - soma
+  - rds
+  - api
+  landing_url: https://cellxgene.cziscience.com/
+  download_url: https://cellxgene.cziscience.com/datasets
+  api: https://chanzuckerberg.github.io/cellxgene-census/
+  license: CC BY 4.0
+  license_url: https://cellxgene.cziscience.com/
+  access: open
+  provenance:
+    maintainer: Chan Zuckerberg Initiative
+    key_refs:
+    - 10.1101/2023.10.30.563174
+  last_updated: 2025 (continuous)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Single harmonized interface + API to most normal single-cell references — the efficient way
+      to query "which cell types express target X across normal tissues" at scale.
+
+      '
+  agent_access: 'cellxgene-census (Python/R, SOMA/TileDB) for programmatic slicing without downloading
+    whole datasets; per-dataset .h5ad download via HTTPS. No auth.
+
+    '
+  caveats: 'Aggregator: each underlying dataset keeps its own license/consent — check per collection before
+    redistribution. Schema standardization can lose study-specific detail.
+
+    '
+- id: cri-iatlas
+  name: CRI iAtlas (Cancer Research Institute iAtlas)
+  category: tooling
+  species:
+  - human
+  description: 'Interactive analysis platform and open data resource built on the TCGA immune-landscape
+    (Thorsson) features plus ICI trial cohorts, exposing immune subtypes, cell composition, neoantigen/TCR
+    metrics and immunomodulator expression through a web app and programmatic data packages/API.
+
+    '
+  scale: TCGA pan-cancer (>10,000 tumors) + multiple ICI cohorts
+  modalities:
+  - immune-signatures
+  - immune-deconvolution
+  - neoantigen
+  - tcr-metrics
+  - clinical
+  formats:
+  - tsv
+  - api
+  - r-package
+  landing_url: https://www.cri-iatlas.org/
+  download_url: https://www.cri-iatlas.org/
+  api: https://api.cri-iatlas.org/
+  license: Open (code/data open; built on TCGA-derived features)
+  license_url: https://github.com/CRI-iAtlas
+  access: open
+  provenance:
+    maintainer: Cancer Research Institute + Sage Bionetworks / ISB
+    key_refs:
+    - 10.12688/f1000research.25141.1
+  last_updated: 2024 (rolling)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'Convenient programmatic access to harmonized immune features and ICI cohorts — a fast layer
+      for pulling neoantigen/immune-context covariates without recomputing them.
+
+      '
+  agent_access: 'Web app plus an open API and R data packages (iatlas-data on GitHub) — no auth, scriptable.
+
+    '
+  caveats: 'Aggregates/derives from upstream sources (TCGA + published ICI cohorts); for read-level or
+    controlled upstream data you still hit the original access tiers. Feature values are method-dependent.
+
+    '
+- id: ebi-biostudies-arrayexpress
+  name: EMBL-EBI BioStudies / ArrayExpress
+  category: tooling
+  species:
+  - human
+  - mouse
+  - other
+  description: 'EMBL-EBI''s study archive; ArrayExpress (functional genomics, incl. single-cell) now runs
+    as a BioStudies collection. European counterpart to GEO for discovering and retrieving deposited expression/single-cell
+    studies.
+
+    '
+  scale: 'ArrayExpress: >70k experiments; BioStudies: hundreds of thousands of studies'
+  modalities:
+  - scrna-seq
+  - bulk-rnaseq
+  - microarray
+  - metadata
+  - supplementary-files
+  formats:
+  - json
+  - txt
+  - mtx
+  - supplementary
+  landing_url: https://www.ebi.ac.uk/biostudies/arrayexpress
+  download_url: https://www.ebi.ac.uk/biostudies/
+  api: https://www.ebi.ac.uk/biostudies/help
+  license: EMBL-EBI Terms of Use; per-study terms vary
+  license_url: https://www.ebi.ac.uk/about/terms-of-use
+  access: open
+  provenance:
+    maintainer: EMBL-EBI
+    key_refs:
+    - 10.1093/nar/gkab1023
+  last_updated: continuous
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'Complementary discovery/retrieval layer to GEO (some EU studies are here first/only), widening
+      coverage for an ingestion pipeline.
+
+      '
+  agent_access: 'PROGRAMMATIC: BioStudies REST API returns JSON (search + per-study); files via BioStudies
+    FTP organized by accession prefix. Legacy ArrayExpress v3 XML API is deprecated. bioservices (Python)
+    and ArrayExpress Bioconductor wrap it. Automatable, no auth.
+
+    '
+  caveats: 'No single data license (EMBL-EBI Terms of Use + per-study terms) — check each study. ArrayExpress
+    migrated onto BioStudies (2021); use BioStudies endpoints, not legacy API.
+
+    '
+- id: ega
+  name: European Genome-phenome Archive (EGA)
+  category: tooling
+  species:
+  - human
+  description: 'Archive for personally identifiable / consented human genetic and phenotypic data under
+    controlled access governed by per-dataset Data Access Committees (DACs). Holds many tumor genomics
+    and some single-cell datasets not releasable openly.
+
+    '
+  scale: thousands of controlled-access datasets/studies
+  modalities:
+  - raw-reads
+  - genotypes
+  - phenotypes
+  - omics
+  formats:
+  - encrypted-bam
+  - fastq
+  - vcf
+  landing_url: https://ega-archive.org/
+  download_url: https://ega-archive.org/access/download/
+  api: https://ega-archive.org/discovery/metadata/
+  license: per-dataset Data Access Agreement (DAA, custom)
+  license_url: https://ega-archive.org/access/data-access-agreement/
+  access: controlled-access
+  provenance:
+    maintainer: EMBL-EBI + CRG (Barcelona)
+    key_refs:
+    - 10.1093/nar/gkab1059
+  last_updated: continuous
+  relevance:
+    programs:
+    - comparative
+    - recognition
+    why: 'Source for high-value controlled human tumor datasets (e.g. the one 3CA study held only on EGA)
+      that are unavailable in open repositories.
+
+      '
+  agent_access: 'Public Metadata API for discovery (open); Permissions API lists datasets a requester
+    may access. Downloads via EGA Secure Download Client / pyEGA3 over SFTP, files encrypted and decrypted
+    client-side. Actual data retrieval requires DAC approval — NOT agent-automatable end-to-end; metadata
+    discovery is.
+
+    '
+  caveats: 'Controlled access: each person/dataset needs individual DAC approval under a custom DAA; EGA
+    does not enforce the agreement. Cannot be bulk-ingested without institutional approval. Factor approval
+    lead time into any pipeline relying on it.
+
+    '
+- id: epitcr-data
+  name: epiTCR training data
+  category: tooling
+  species:
+  - human
+  description: 'Large TCR-peptide binding training set (with/without MHC) released with epiTCR, a random-forest
+    predictor, including categorized full-training files and negative construction.
+
+    '
+  scale: large (>3M rows across categories per repo); full-training file zipped in repo
+  modalities:
+  - tcr-epitope
+  - cdr3-beta
+  - benchmark-splits
+  formats:
+  - csv
+  - github
+  landing_url: https://github.com/ddiem-ri-4D/epiTCR
+  download_url: https://github.com/ddiem-ri-4D/epiTCR/tree/main/data
+  license: unknown
+  access: open
+  provenance:
+    maintainer: My Diem Pham et al.
+    key_refs:
+    - 10.1093/bioinformatics/btad284
+  last_updated: '2023'
+  relevance:
+    programs:
+    - recognition
+    why: 'One of the larger aggregated TCR-peptide training corpora; useful for scale experiments and
+      as a comparison baseline.
+
+      '
+  agent_access: 'CSV (zipped) in GitHub repo data/ folder; clone/download, no auth. Automatable.
+
+    '
+  caveats: 'Repo license not confirmed — verify. Aggregated from public DBs (inherits biases/overlaps).
+    Human only, no dog.
+
+    '
+- id: ergo-data
+  name: ERGO / ERGO-II training sets
+  category: tooling
+  species:
+  - human
+  - mouse
+  description: 'Training/evaluation data bundled with the ERGO and ERGO-II TCR-peptide binding predictors.
+    Users select McPAS-TCR or VDJdb as the training database; repos include preprocessed pairs and negative-sampling
+    scripts.
+
+    '
+  scale: derived from VDJdb + McPAS-TCR (tens of thousands of pairs)
+  modalities:
+  - tcr-epitope
+  - cdr3-beta
+  - cdr3-alpha
+  formats:
+  - csv
+  landing_url: https://tcr2.cs.biu.ac.il/
+  download_url: https://github.com/IdoSpringer/ERGO-II
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Louzoun Lab, Bar-Ilan University (Springer et al.)
+    key_refs:
+    - 10.3389/fimmu.2020.01803
+  last_updated: '2021'
+  relevance:
+    programs:
+    - recognition
+    why: 'Reference preprocessing + negative-sampling pipeline over VDJdb/McPAS; useful as a baseline
+      and for reproducing standard splits.
+
+      '
+  agent_access: 'Code + data in GitHub (ERGO, ERGO-II); web predictor at tcr2.cs.biu.ac.il. Clone/download,
+    no auth.
+
+    '
+  caveats: 'Data is downstream of VDJdb/McPAS (inherits their licenses/biases, incl. VDJdb CC BY-ND).
+    Repo-level license unclear — verify. No dog.
+
+    '
+- id: figshare
+  name: figshare
+  category: tooling
+  species:
+  - human
+  - mouse
+  - other
+  description: 'General-purpose research data repository (Digital Science) that mints DOIs for datasets
+    and files. Hosts major single-cell releases (e.g. Tabula Sapiens figshare archives) and much supplementary
+    data.
+
+    '
+  scale: millions of items; ~20 GB per-file free limit
+  modalities:
+  - arbitrary-datasets
+  - code
+  - supplementary
+  formats:
+  - any
+  landing_url: https://figshare.com/
+  download_url: https://docs.figshare.com/
+  api: https://docs.figshare.com/
+  license: per-item (CC0 default for data; MIT/GPL/Apache for code; CC-BY on some)
+  license_url: https://help.figshare.com/article/copyright-and-license-policy
+  access: open
+  provenance:
+    maintainer: Digital Science (figshare)
+    key_refs:
+    - 10.25504/FAIRsharing.drtwnh
+  last_updated: continuous
+  relevance:
+    programs:
+    - comparative
+    - recognition
+    - design
+    why: 'Primary host for several key single-cell atlas releases and supplementary datasets a pipeline
+      must fetch by DOI/article id.
+
+      '
+  agent_access: 'PROGRAMMATIC: REST API (articles, files, search) + OAI-PMH; direct file download by article
+    id. No auth for public items. Automatable.
+
+    '
+  caveats: 'Per-item license varies (data often CC0, but confirm) — read it per record. Very large single-file
+    archives (tens of GB) need resumable download handling. Self-deposit, so curation varies.
+
+    '
+- id: geo-ncbi
+  name: NCBI Gene Expression Omnibus (GEO) + ArrayExpress/BioStudies
+  category: tooling
+  species:
+  - human
+  - mouse
+  - dog
+  - other
+  description: 'Primary public repositories for functional genomics (bulk + single-cell RNA-seq, arrays):
+    NCBI GEO and EMBL-EBI ArrayExpress/BioStudies. Host the raw/processed matrices for most expression-based
+    normal references here (e.g. GSE201333, GSE134355, GSE107011; E-MTAB-9543).
+
+    '
+  scale: '>200k GEO series; millions of samples'
+  modalities:
+  - bulk-rna-seq
+  - single-cell-rna-seq
+  - microarray
+  formats:
+  - txt
+  - tsv
+  - mtx
+  - h5
+  - api
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/
+  api: https://www.ncbi.nlm.nih.gov/datasets/docs/v2/
+  license: custom
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: NCBI/NLM (GEO); EMBL-EBI (ArrayExpress/BioStudies)
+    key_refs:
+    - 10.1093/nar/30.1.207
+  last_updated: 2025 (continuous)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Retrieval layer for the expression accessions cited across this catalog; enables scripted bulk
+      fetch of normal transcriptome datasets (human and dog).
+
+      '
+  agent_access: 'GEO: E-utilities / NCBI Datasets API + FTP (supplementary matrices); raw reads via SRA.
+    ArrayExpress/BioStudies: REST API + FTP. No auth for public records; NCBI API key raises limits.
+
+    '
+  caveats: 'GEO metadata is author-supplied (variable quality); raw reads live in SRA/ENA (large, separate
+    fetch). Processed-matrix availability varies per series.
+
+    '
+- id: hca-data-portal
+  name: Human Cell Atlas (HCA) Data Portal
+  category: tooling
+  species:
+  - human
+  description: 'The Human Cell Atlas Data Coordination Platform: standardized ingestion, processing and
+    distribution of HCA single-cell/spatial projects of (mostly healthy) human tissues, with metadata
+    and bulk access (ERP/EGA accessions for raw data).
+
+    '
+  scale: Hundreds of HCA projects across organs; millions of cells
+  modalities:
+  - single-cell-rna-seq
+  - spatial-transcriptomics
+  - cell-type-annotation
+  formats:
+  - loom
+  - h5ad
+  - fastq
+  - api
+  landing_url: https://data.humancellatlas.org/
+  download_url: https://data.humancellatlas.org/explore/projects
+  api: https://data.humancellatlas.org/apis
+  license: custom
+  license_url: https://data.humancellatlas.org/about
+  access: controlled-access
+  provenance:
+    maintainer: Human Cell Atlas consortium / HCA DCP (EMBL-EBI, UCSC, Broad)
+    key_refs:
+    - 10.7554/eLife.27041
+  last_updated: 2025 (continuous)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Canonical source and metadata backbone for normal human tissue single-cell atlases; resolves
+      raw-data accessions (e.g. ERP123138 for the heart atlas) feeding the self references above.
+
+      '
+  agent_access: 'REST/Azul APIs + bulk matrix download; raw sequence via linked ERP/EGA accessions. Open
+    metadata; some raw data managed-access.
+
+    '
+  caveats: 'Per-project licensing/consent varies; some raw data behind EGA/managed access. Processed matrices
+    often more accessible on CELLxGENE.
+
+    '
+- id: imrex-data
+  name: ImRex TCR-epitope training data & models
+  category: tooling
+  species:
+  - human
+  description: 'Raw/preprocessed VDJdb-derived TCRb-epitope data (human TRB, 10x excluded, CDR3 10-20aa,
+    epitope 8-11aa, shuffled negatives) plus trained CNN models and decoy/downsampled variants, from the
+    ImMunoinformatics image-classification approach.
+
+    '
+  scale: VDJdb 2019-08 derived; data.zip ~34 MB; full record ~10 GB incl. models/comparisons
+  size_bytes: 33824041
+  modalities:
+  - tcr-epitope
+  - cdr3-beta
+  - benchmark-splits
+  - models
+  formats:
+  - csv
+  - zip
+  - zenodo
+  - github
+  landing_url: https://github.com/pmoris/ImRex
+  download_url: https://zenodo.org/records/3973547
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Meysman lab, University of Antwerp (Moris et al.)
+    key_refs:
+    - 10.1093/bib/bbaa318
+    - 10.5281/zenodo.3973547
+  last_updated: 2020-09
+  relevance:
+    programs:
+    - recognition
+    why: 'Clean, reproducible VDJdb preprocessing + negative-generation recipe and a CNN baseline for
+      recognition; CC BY data is reusable.
+
+      '
+  agent_access: 'Zenodo direct download (data.zip ~34 MB is the useful part; full record ~10 GB with models);
+    GitHub code. No auth, automatable.
+
+    '
+  caveats: 'Negatives are shuffle-generated (known to inflate performance vs real negatives). Underlying
+    pairs from VDJdb. Human only, no dog.
+
+    '
+- id: ncbi-geo
+  name: NCBI GEO (Gene Expression Omnibus)
+  category: tooling
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Primary public archive for functional genomics data including the majority of published
+    single-cell and bulk tumor/immune studies (processed matrices + links to raw in SRA). The canonical
+    first stop for discovering and retrieving deposited datasets by accession.
+
+    '
+  scale: millions of samples (GSM) across >200k series (GSE)
+  modalities:
+  - scrna-seq
+  - bulk-rnaseq
+  - microarray
+  - processed-matrices
+  - metadata
+  formats:
+  - soft
+  - miniml
+  - txt
+  - tar
+  - supplementary
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/
+  download_url: https://www.ncbi.nlm.nih.gov/geo/info/download.html
+  api: https://www.ncbi.nlm.nih.gov/books/NBK25501/
+  license: NCBI public-domain terms (no blanket license; submitter-dependent)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI / NIH
+    key_refs:
+    - 10.1093/nar/gks1193
+  last_updated: continuous
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    - design
+    why: 'The main discovery+retrieval layer for nearly all deposited tumor-immune single-cell and functional-assay
+      data — foundational to any ingestion pipeline.
+
+      '
+  agent_access: 'PROGRAMMATIC: Entrez E-utilities (esearch/esummary/efetch) for metadata discovery (set
+    tool+email; API key raises limits to 10 req/s). Bulk raw/processed files over FTP/HTTPS by accession
+    path (GSEnnn/GSExxx/suppl). GEOparse/GEOquery wrap both. Robust for automation.
+
+    '
+  caveats: 'No single data license — reuse terms depend on the submitting study; GEO itself places no
+    restriction but downstream terms vary. E-utilities does not serve all file bodies — use FTP for raw/supplementary.
+    Rate-limit without an API key (3 req/s).
+
+    '
+- id: ncbi-sra
+  name: NCBI SRA (Sequence Read Archive)
+  category: tooling
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Primary archive for raw high-throughput sequencing reads underlying GEO and many other
+    submissions (FASTQ/BAM-level data for scRNA-seq, TCR-seq, etc.). Where raw reads are retrieved for
+    reprocessing when processed matrices are insufficient.
+
+    '
+  scale: petabase-scale; tens of millions of runs (SRR)
+  modalities:
+  - raw-reads
+  - fastq
+  - aligned-reads
+  formats:
+  - sra
+  - fastq
+  - bam
+  landing_url: https://www.ncbi.nlm.nih.gov/sra
+  download_url: https://github.com/ncbi/sra-tools
+  api: https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud-based-examples/
+  license: NCBI public-domain terms (open) + dbGaP controlled tier
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: NCBI / NIH (INSDC)
+    key_refs:
+    - 10.1093/nar/gkq1019
+  last_updated: continuous
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    - design
+    why: 'Raw-read source for reprocessing single-cell/TCR studies to a uniform pipeline and for recovering
+      data not released as processed matrices.
+
+      '
+  agent_access: 'PROGRAMMATIC: SRA Toolkit (prefetch/fasterq-dump) reads directly from AWS/GCP buckets;
+    full corpus mirrored on AWS + GCP Open Data; metadata queryable via BigQuery (GCP) and Athena (AWS)
+    for SQL-style discovery. Cloud Data Delivery Service copies originals to your bucket. Highly automatable.
+
+    '
+  caveats: 'Egress/compute costs when pulling from cloud outside the hosting region. Controlled human
+    data (dbGaP) needs approval — not auto-ingestible. Large volumes; plan storage. Toolkit cannot deliver
+    every original submitted file (use Cloud Data Delivery Service).
+
+    '
+- id: proteinmpnn-rfdiffusion
+  name: ProteinMPNN / RFdiffusion (design models, weights & training data)
+  category: tooling
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Open-source protein-design toolchain: RFdiffusion (backbone generation / de novo binder
+    design, incl. target-conditioned binders) and ProteinMPNN (sequence design given backbone). Models
+    and weights are public; training data is PDB-derived (multi-chain assemblies). No single packaged
+    "benchmark dataset" is released — benchmarks live in the papers'' supplements.
+
+    '
+  scale: Model weights + inference code; trained on PDB assemblies (RFdiffusion up to ~2020; RFD3/foundry
+    reports PDB through Dec 2024)
+  modalities:
+  - design-model
+  - weights
+  - benchmark
+  - de-novo-binder
+  formats:
+  - pytorch-weights
+  - pdb
+  - scripts
+  landing_url: https://github.com/dauparas/ProteinMPNN
+  download_url: https://github.com/RosettaCommons/RFdiffusion
+  api: null
+  license: 'ProteinMPNN: MIT; RFdiffusion: BSD (code + weights); RFantibody: MIT'
+  license_url: https://github.com/RosettaCommons/RFdiffusion/blob/main/LICENSE
+  access: open
+  provenance:
+    maintainer: Baker Lab / Institute for Protein Design (UW); RosettaCommons
+    key_refs:
+    - 10.1038/s41586-023-06415-8
+    - 10.1126/science.add2187
+  last_updated: 2024-2026 (RFantibody; RFdiffusion3/foundry)
+  relevance:
+    programs:
+    - design
+    why: 'The core generative + sequence-design stack for building de novo binders, including against
+      peptide-MHC. Public weights make it directly usable in the binder-design pipeline; benchmarks guide
+      validation.
+
+      '
+  agent_access: 'Public GitHub repos; weights fetched via README wget (IPD file server for RFdiffusion)
+    or Hugging Face mirrors for ProteinMPNN. Fully scriptable.
+
+    '
+  caveats: 'No standalone released benchmark dataset — reconstruct benchmarks from paper supplements.
+    Mind license differences (MIT vs BSD) per component and whether weights are covered. Training sets
+    are PDB-derived, not separately distributed.
+
+    '
+- id: proteomexchange-pride
+  name: ProteomeXchange / PRIDE (+ MassIVE)
+  category: tooling
+  species:
+  - human
+  - mouse
+  - dog
+  - other
+  description: 'Central federated infrastructure for mass-spectrometry proteomics and immunopeptidomics
+    data. PRIDE (EMBL-EBI) and MassIVE (UCSD) are the main repositories; nearly all normal-proteome and
+    normal-immunopeptidome accessions in this catalog (PXD*/MSV*) resolve here.
+
+    '
+  scale: '>20,000 PXD datasets; petabyte-scale raw MS'
+  modalities:
+  - proteomics-ms
+  - immunopeptidomics
+  formats:
+  - raw
+  - mzml
+  - mzid
+  - mztab
+  - api
+  landing_url: https://www.proteomexchange.org/
+  download_url: https://www.ebi.ac.uk/pride/archive/
+  api: https://www.ebi.ac.uk/pride/ws/archive/v2/
+  license: custom
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/license
+  access: open
+  provenance:
+    maintainer: ProteomeXchange Consortium (PRIDE@EMBL-EBI; MassIVE@UCSD; jPOST; iProX)
+    key_refs:
+    - 10.1093/nar/gkab1038
+  last_updated: 2025 (continuous)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'The retrieval layer for every normal-proteome / normal-immunopeptidome PXD accession here (PXD016999,
+      PXD010154, PXD000561, PXD000865, PXD020186/PXD024837); enables automated bulk fetch.
+
+      '
+  agent_access: 'PRIDE Archive REST API (ws/archive/v2) for metadata + file lists (JSON); download via
+    FTP, Aspera, or Globus. No auth for public datasets. Large raw files.
+
+    '
+  caveats: 'Each deposit sets its own license (CC0/CC BY common but not universal) — resolve per PXD record.
+    Raw MS usually needs reprocessing to usable tables.
+
+    '
+- id: stapler-data
+  name: STAPLER fine-tuning dataset
+  category: tooling
+  species:
+  - human
+  description: 'Data for STAPLER, a joint TCRab-peptide language model for specificity prediction. The
+    model is fine-tuned on labeled full-length CD8+ alpha/beta TCR paired with 9-mer MHC-I peptides; the
+    repo documents the training/evaluation data and negative construction.
+
+    '
+  scale: ~23,544 labeled TCRab-peptide pairs (fine-tuning set)
+  modalities:
+  - tcr-epitope
+  - paired-chain
+  - full-length-tcr
+  formats:
+  - csv
+  landing_url: https://github.com/schumacherlab/STAPLER
+  download_url: https://github.com/schumacherlab/STAPLER
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Schumacher Lab, NKI
+    key_refs:
+    - 10.1101/2023.04.25.538237
+  last_updated: '2023'
+  relevance:
+    programs:
+    - recognition
+    why: 'Full-length paired-chain labeled set (rarer than CDR3-only) for recognition modeling and as
+      a strong transformer baseline.
+
+      '
+  agent_access: 'Data/code via GitHub; direct download/clone, no auth. Automatable.
+
+    '
+  caveats: 'Repo license not confirmed — verify before reuse. Underlying pairs drawn from public DBs (inherits
+    their terms). MHC-I 9-mer scope only; human only, no dog.
+
+    '
+- id: ucsc-xena
+  name: UCSC Xena (public cancer genomics hubs)
+  category: tooling
+  species:
+  - human
+  description: 'Open visualization and bulk-download platform mirroring processed cancer genomics data
+    from TCGA, PCAWG, GDC, TARGET, CCLE and others as tidy expression, mutation, copy-number, methylation
+    and clinical matrices. The simplest no-auth route to many major cohorts'' derived data.
+
+    '
+  scale: ~1,500+ datasets across public hubs (TCGA, PCAWG, GDC, TARGET, CCLE)
+  modalities:
+  - rna-seq
+  - mutation-calls
+  - copy-number
+  - methylation
+  - clinical
+  formats:
+  - tsv
+  - api
+  landing_url: https://xenabrowser.net/
+  download_url: https://xenabrowser.net/datapages/
+  api: https://ucscpublic.xenahubs.net/
+  license: Software Apache-2.0; underlying data follow each source's policy (TCGA/PCAWG/GDC)
+  license_url: https://xenabrowser.net/datapages/
+  access: open
+  provenance:
+    maintainer: UCSC (Haussler/Zhu labs)
+    key_refs:
+    - 10.1038/s41587-020-0546-8
+  last_updated: 2026 (rolling)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Lowest-friction way to pull harmonized expression + mutation matrices across TCGA/PCAWG for
+      building and benchmarking antigen-expression models without DUAs.
+
+      '
+  agent_access: 'Fully open: direct file URLs per hub (e.g. tcga.xenahubs.net/download/...), the UCSCXenaTools
+    R client, and a query interface — no account, bulk-friendly, scriptable.
+
+    '
+  caveats: 'Processed/derived data only (no raw reads); these are mirrors, so the ORIGINAL source''s use
+    terms still govern (open-tier TCGA/PCAWG summaries are fine; raw/germline remain controlled upstream).
+    No formal documented REST API beyond hub endpoints.
+
+    '
+- id: wilhelm-2021-prosit-proteometools
+  name: Wilhelm 2021 Prosit / ProteomeTools synthetic immunopeptidome
+  category: tooling
+  species:
+  - human
+  description: '~305,000 SYNTHETIC non-tryptic (HLA class I/II) peptides measured in ProteomeTools to
+    train the Prosit deep-learning spectrum/retention-time predictor, boosting immunopeptidomics identification
+    sensitivity. Ground-truth spectra, not elution data.
+
+    '
+  scale: ~305,000 synthetic non-tryptic peptides (HLA-I/II + AspN/LysN)
+  modalities:
+  - spectral-library
+  - synthetic-reference
+  formats:
+  - raw-ms
+  - spectral-library
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD021398
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/
+  api: https://www.proteomicsdb.org/prosit/
+  license: CC0 1.0 (PRIDE default; verify per-file)
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: TUM (Kuster/Wilhelm); PRIDE + Prosit/ProteomicsDB
+    key_refs:
+    - 10.1038/s41467-021-23713-9
+  last_updated: '2021'
+  relevance:
+    programs:
+    - presentation
+    why: 'Rescoring immunopeptidomics searches with Prosit substantially increases peptide IDs - a force-multiplier
+      for any in-house reprocessing of raw HLA-elution data.
+
+      '
+  agent_access: 'PRIDE PXD021398 (API/FTP); Prosit served via ProteomicsDB/Koina. Bulk-downloadable.
+
+    '
+  caveats: 'Synthetic reference (for rescoring), not a ligand set. Paper also argues ~87% of proposed
+    spliced peptides are likely wrong - relevant QC caution. Human sequences.
+
+    '
+- id: zenodo
+  name: Zenodo
+  category: tooling
+  species:
+  - human
+  - mouse
+  - other
+  description: 'CERN/EU-backed general-purpose research data repository that mints DOIs (concept + versioned)
+    for datasets, code and supplementary files. Common host for immunology/ single-cell dataset snapshots
+    (e.g. dated VDJdb releases) for reproducible pinning.
+
+    '
+  scale: millions of records; 50 GB per record free tier
+  modalities:
+  - arbitrary-datasets
+  - code
+  - supplementary
+  formats:
+  - any
+  landing_url: https://zenodo.org/
+  download_url: https://developers.zenodo.org/
+  api: https://developers.zenodo.org/
+  license: per-record (depositor-chosen); must be set for public records
+  license_url: https://help.zenodo.org/docs/share/
+  access: open
+  provenance:
+    maintainer: CERN / OpenAIRE (EU)
+    key_refs:
+    - 10.25495/7GXK-RD71
+  last_updated: continuous
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    - design
+    why: 'Reproducible, DOI-pinned snapshots of community datasets and model inputs; a stable place to
+      resolve versioned dependencies in a pipeline.
+
+      '
+  agent_access: 'PROGRAMMATIC: REST API (records search, metadata, file download) + OAI-PMH harvesting;
+    DOIs resolve to files. No auth for public records (token needed only to deposit). Fully automatable.
+
+    '
+  caveats: 'License is per-record and must be read programmatically — ranges from CC0 to restrictive;
+    never assume. Quality/curation varies (self-deposit). Prefer concept DOI''s latest or pin a specific
+    version.
+
+    '

@@ -1,0 +1,1109 @@
+- id: cellxgene-census
+  name: CZ CELLxGENE Discover + Census
+  category: healthy-baseline
+  species:
+  - human
+  - mouse
+  description: 'CZ CELLxGENE Discover aggregates standardized, Cell-Ontology-annotated single-cell datasets
+    (including many tumor/immune collections) into a single queryable corpus. The Census is a versioned,
+    deduplicated API layer over that corpus for slicing cells by tissue, disease, cell type and more without
+    downloading whole datasets.
+
+    '
+  scale: 'Census LTS 2025-11: ~99.6M unique human cells, tens of M mouse; Discover >93M unique'
+  modalities:
+  - scrna-seq
+  - cell-ontology-annotation
+  - embeddings
+  formats:
+  - h5ad
+  - soma/tiledb
+  - api
+  landing_url: https://cellxgene.cziscience.com/
+  download_url: https://cellxgene.cziscience.com/datasets
+  api: https://chanzuckerberg.github.io/cellxgene-census/
+  license: CC BY 4.0 (platform); per-dataset collection licenses vary
+  license_url: https://cellxgene.cziscience.com/
+  access: open
+  provenance:
+    maintainer: Chan Zuckerberg Initiative
+    key_refs:
+    - 10.1093/nar/gkae1142
+  last_updated: 2025-11-08 (Census LTS)
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    - recognition
+    why: 'The single best programmatic entry point for cross-study human single-cell slices: pull immune/tumor
+      cell populations by ontology term at scale for reference building and model training.
+
+      '
+  agent_access: 'First-class Python and R APIs (cellxgene-census) over a TileDB-SOMA backend: query by
+    metadata, stream matrices, fetch precomputed embeddings; no auth; versioned/reproducible releases
+    (pin a Census version). Also per-dataset H5AD download. Excellent for automation.
+
+    '
+  caveats: 'Deduplicate with is_primary_data=TRUE to avoid double-counting cells shared across collections.
+    Platform metadata is CC BY 4.0 but individual source collections may carry their own license — check
+    collection-level terms before redistribution.
+
+    '
+- id: dice
+  name: DICE (Database of Immune Cell Expression, eQTLs and Epigenomics)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'Bulk RNA-seq expression (TPM) and eQTLs across ~15 sorted human immune cell types/states
+    from healthy donors, plus epigenomic layers. Reference normal expression for immune cell subsets.
+
+    '
+  scale: 1561 RNA-seq samples; ~13-15 immune cell types/activation states; eQTL VCFs
+  modalities:
+  - bulk-rna-seq
+  - eqtl
+  - epigenomics
+  formats:
+  - csv
+  - tsv
+  - vcf
+  landing_url: https://dice-database.org/
+  download_url: https://dice-database.org/downloads
+  license: unknown
+  license_url: https://dice-database.org/help
+  access: controlled-access
+  provenance:
+    maintainer: La Jolla Institute for Immunology (Vijayanand lab)
+    key_refs:
+    - 10.1016/j.cell.2018.10.022
+  accessions:
+  - 'dbGaP: phs001703 (genotypes/eQTL controlled)'
+  - 'downloads: dice-database.org/downloads'
+  last_updated: 2018+ (ongoing)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'Immune-cell-specific normal expression and eQTLs — important because many tumor-associated antigens
+      are shared with immune cells; helps avoid targets expressed in normal immune subsets and informs
+      immune-context interpretation.
+
+      '
+  agent_access: 'Per-cell-type TPM tables + eQTL VCFs download from the site (HTTPS, no auth); no public
+    API yet. Individual-level genotypes under dbGaP controlled access.
+
+    '
+  caveats: 'LICENSE CONFLICT (CC BY 4.0 vs CC BY-SA 4.0) — verify on the downloads License tab. No API.
+    Individual genotype/eQTL data controlled (dbGaP). Blood immune cells only.
+
+    '
+- id: ebi-expression-atlas
+  name: EMBL-EBI Expression Atlas
+  category: healthy-baseline
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Curated, re-analyzed database of gene and protein expression across studies and organisms,
+    with a Baseline component (tissue/cell-type expression, incl. reprocessed GTEx, HPA, FANTOM5) and
+    a Differential component. Single-cell Expression Atlas adds cell-type resolution. A FAIR, harmonized
+    normal-expression lookup across many reference datasets.
+
+    '
+  scale: Thousands of studies; baseline tissue atlases for human/mouse + many species
+  modalities:
+  - bulk-rna-seq
+  - single-cell-rna-seq
+  - proteomics
+  - baseline-expression
+  formats:
+  - tsv
+  - mtx
+  - json
+  - api
+  landing_url: https://www.ebi.ac.uk/gxa/home
+  download_url: https://www.ebi.ac.uk/gxa/download.html
+  api: https://www.ebi.ac.uk/gxa/help/r-data-objects.html
+  license: CC BY 4.0
+  license_url: https://www.ebi.ac.uk/licencing
+  access: open
+  provenance:
+    maintainer: EMBL-EBI Gene Expression Team
+    key_refs:
+    - 10.1093/nar/gkaf1046
+    - 10.1093/nar/gkab1030
+  last_updated: 2025/2026 update
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'One harmonized interface to normal baseline expression across GTEx/HPA/FANTOM5 and more, reducing
+      per-source parsing. Fast first-pass "where is this gene normally expressed" filter.
+
+      '
+  agent_access: 'Per-experiment TSV/MTX downloads over HTTPS/FTP; RNAseq-er API; Bioconductor ExpressionAtlas
+    R package pulls datasets programmatically. No auth.
+
+    '
+  caveats: 'EBI terms of use are CC BY 4.0 for EBI-generated content, but imported datasets retain their
+    source licenses (and the citation should credit the original study) — check per-experiment. Derived/reprocessed
+    values (not raw). Confirm the exact 2026 NAR DOI before citing.
+
+    '
+- id: encode
+  name: ENCODE (Encyclopedia of DNA Elements)
+  category: healthy-baseline
+  species:
+  - human
+  - mouse
+  description: 'Comprehensive maps of functional genomic elements — transcription (RNA-seq, CAGE), chromatin
+    accessibility (DNase/ATAC), histone marks and TF binding (ChIP-seq), methylation — across many human
+    cell lines, primary cells, and tissues. Relevant here for baseline expression and regulatory context
+    of candidate target genes.
+
+    '
+  scale: '>650k experiments/files across human + mouse biosamples'
+  modalities:
+  - bulk-rna-seq
+  - chip-seq
+  - atac-seq
+  - dnase-seq
+  - cage
+  - methylation
+  formats:
+  - bam
+  - bigwig
+  - bed
+  - tsv
+  - fastq
+  - api
+  landing_url: https://www.encodeproject.org/
+  download_url: https://www.encodeproject.org/help/batch-download/
+  api: https://www.encodeproject.org/help/rest-api/
+  license: custom
+  license_url: https://www.encodeproject.org/about/data-access/
+  access: open
+  provenance:
+    maintainer: ENCODE Data Coordination Center (Stanford), NHGRI-funded
+    key_refs:
+    - 10.1038/s41586-020-2493-4
+    - 10.1093/nar/gkx1081
+  last_updated: 2024 (ongoing)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Baseline expression plus regulatory activity (promoter/enhancer usage, accessibility) in normal
+      cells helps interpret whether/where a target gene is active and regulated, supporting self vs. tumor-specific
+      discrimination and antigen-source reasoning.
+
+      '
+  agent_access: 'Full metadata + file download via REST API (JSON) and batch-download endpoint; also mirrored
+    on AWS Open Data (S3, no account). No auth. Rate limit ~10 GET/s per user/lab.
+
+    '
+  caveats: 'Terms allow free use incl. commercial, but cite per ENCODE policy. Not CC0 (the CC0 label
+    in some registries refers to catalog metadata, not the data). Mostly cell lines; tissue coverage narrower
+    than GTEx. No canine data.
+
+    '
+- id: fantom5
+  name: FANTOM5 Promoter/Enhancer Expression Atlas (CAGE)
+  category: healthy-baseline
+  species:
+  - human
+  - mouse
+  - dog
+  - other
+  description: 'CAGE (Cap Analysis of Gene Expression) atlas of transcription-start-site and enhancer
+    activity across a very broad panel of primary cells, tissues, and cell lines. Defines promoter-level
+    and enhancer-level expression — useful for isoform/TSS-aware "is this promoter active in normal tissue"
+    questions that gene-level RNA-seq can miss.
+
+    '
+  scale: ~1800 human + ~1000 mouse CAGE libraries; ~200k human CAGE peaks; ~65k enhancers
+  modalities:
+  - cage
+  - tss-expression
+  - enhancer-expression
+  - coexpression-clusters
+  formats:
+  - bed
+  - tsv
+  - bigwig
+  - osc
+  landing_url: https://fantom.gsc.riken.jp/5/
+  download_url: https://fantom.gsc.riken.jp/5/data/
+  license: CC BY 4.0
+  license_url: https://fantom.gsc.riken.jp/
+  access: open
+  provenance:
+    maintainer: RIKEN (Omics Science Center / consortium)
+    key_refs:
+    - 10.1038/nature13182
+    - 10.1038/nature12787
+  last_updated: 2017 (FANTOM5 phase 2.x; archive maintained)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'TSS/promoter- and enhancer-level resolution complements GTEx for detecting alternative promoters
+      that could generate tumor-specific transcript variants vs. normal. Includes a dog CAGE component,
+      aiding the comparative-oncology (canine) program.
+
+      '
+  agent_access: 'Bulk download over HTTP or lftp from datafiles/latest/ on fantom.gsc.riken.jp; BED/TSV
+    expression tables, no auth. Reprocessed mirror at dbarchive.biosciencedbc.jp.
+
+    '
+  caveats: 'Dataset is stable/legacy (not actively re-released). Coordinates mostly hg19/mm9/mm10 — may
+    need liftOver to GRCh38. Attribution: "FANTOM5 (c) RIKEN, CC BY 4.0".
+
+    '
+- id: gtex
+  name: Genotype-Tissue Expression Project (GTEx)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'Reference of gene and isoform expression (bulk RNA-seq) across ~54 non-diseased tissue
+    sites from nearly 1000 post-mortem donors, with matched genotype for eQTL/sQTL analysis. The flagship
+    normal-tissue transcriptome baseline for defining where a gene is and is not expressed across the
+    healthy human body. V10 is the current release; V11 re-annotates V10 against GENCODE 47 without new
+    samples.
+
+    '
+  scale: ~17,000 samples, ~948 donors, 54 tissue sites (V8); V10 current
+  modalities:
+  - bulk-rna-seq
+  - eqtl
+  - sqtl
+  - gene-tpm
+  - transcript-tpm
+  formats:
+  - gct
+  - txt
+  - tsv
+  - vcf
+  - parquet
+  - api
+  landing_url: https://www.gtexportal.org/home/
+  download_url: https://www.gtexportal.org/home/downloads/adult-gtex/bulk_tissue_expression
+  api: https://gtexportal.org/api/v2/
+  license: custom
+  license_url: https://www.gtexportal.org/home/aboutAdultGtex
+  access: open
+  provenance:
+    maintainer: NIH Common Fund GTEx Consortium (Broad Institute LDACC; portal hosted by Broad)
+    key_refs:
+    - 10.1126/science.aaz1776
+    - 10.1038/ng.2653
+  last_updated: 2024-11 (V10 open-access release)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Primary "where is this expressed in normal tissue" filter. A candidate tumor antigen whose gene
+      is broadly expressed across vital tissues in GTEx is a specificity/safety liability; low/absent
+      normal expression supports tumor-selectivity.
+
+      '
+  agent_access: 'Open-access gene/transcript TPM and read-count matrices download directly from the portal
+    over HTTPS, no auth. REST API v2 (gtexportal.org/api/v2) serves median and per-sample expression as
+    JSON. Protected raw sequence + full donor metadata require an approved dbGaP application (phs000424.v10.p1),
+    hosted on AnVIL/Terra (egress fees apply).
+
+    '
+  caveats: 'Post-mortem tissue (RIN/ischemia effects). Only summary expression is open; raw reads and
+    genotypes are controlled-access via dbGaP — do not assume bulk fetch of individual-level data. No
+    canine data. Portal terms, not a named CC license; cite the consortium.
+
+    '
+- id: hca-dcp
+  name: Human Cell Atlas (HCA) Data Portal / DCP
+  category: healthy-baseline
+  species:
+  - human
+  description: 'The Human Cell Atlas Data Coordination Platform: a large, standardized archive of primarily
+    healthy human single-cell datasets with harmonized metadata and portal-generated count matrices. Core
+    reference for normal-tissue baselines that tumor single-cell data is contrasted against.
+
+    '
+  scale: tens of millions of cells across hundreds of projects
+  modalities:
+  - scrna-seq
+  - scatac-seq
+  - spatial
+  - metadata
+  formats:
+  - h5ad
+  - loom
+  - mtx
+  - csv
+  landing_url: https://data.humancellatlas.org/
+  download_url: https://data.humancellatlas.org/guides/consumer-vignettes/matrices
+  api: https://service.azul.data.humancellatlas.org/
+  license: CC BY 4.0 (HCA Data Release Policy)
+  license_url: https://data.humancellatlas.org/about/data-use-agreement
+  access: open
+  provenance:
+    maintainer: Human Cell Atlas consortium / CZI / EBI / UCSC
+    key_refs:
+    - 10.7554/eLife.27041
+  last_updated: continuous
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'Healthy-tissue single-cell baselines are essential to define tumor-specific deviations in antigen-presentation
+      and immune composition.
+
+      '
+  agent_access: 'Azul REST web service for programmatic query; Data Browser bulk download via curl-style
+    manifests; anonymous S3 (AWS Open Data) access to the bucket. No auth for open data. Preferred path
+    is the Azul/Data Browser API, not direct data-store calls.
+
+    '
+  caveats: 'Portal homepage carries a CC BY-NC-ND notice for site content, distinct from the CC BY 4.0
+    that governs the datasets — confirm per-project page. Mostly healthy, not tumor, tissue. HCA-CLI being
+    retired in favor of Data Browser bulk download.
+
+    '
+- id: hla-ligand-atlas
+  name: HLA Ligand Atlas
+  category: healthy-baseline
+  species:
+  - human
+  description: 'A reference immunopeptidome of HLA class I and class II ligands eluted from benign (non-malignant)
+    human tissues collected at autopsy/surgery, spanning many organs and subjects. Designed as a "normal
+    tissue" baseline to subtract self-peptides when nominating tumor-specific targets.
+
+    '
+  scale: ~90,000 HLA-I and ~140,000 HLA-II ligands; 225+ samples; ~29 tissues; 21+ subjects; 51 HLA-I
+    / 86 HLA-II allotypes
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - csv
+  - tsv
+  - sqlite/db dump
+  landing_url: https://hla-ligand-atlas.org/
+  download_url: https://hla-ligand-atlas.org/data
+  license: CC BY 4.0 (to verify on download page)
+  license_url: https://hla-ligand-atlas.org/
+  access: open
+  provenance:
+    maintainer: University of Tübingen (Rammensee/Walz groups), Germany
+    key_refs:
+    - 10.1136/jitc-2020-002071
+  last_updated: 2021 (ongoing)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Critical negative/benign reference: a candidate tumor antigen presented on normal tissue here
+      is a safety flag. Directly informs target triage for presentation and design programs.
+
+      '
+  agent_access: 'Flat-file downloads (peptide tables + metadata) directly fetchable, no auth. Site occasionally
+    returns 503 under load; retry. Bulk-downloadable.
+
+    '
+  caveats: 'Data license not explicitly surfaced on landing page at fetch time (preprint/paper are CC
+    BY 4.0) - verify on the data page before redistribution. Human only; no canine equivalent (a known
+    gap for comparative-oncology baselines).
+
+    '
+- id: hla-ligand-atlas-normal
+  name: HLA Ligand Atlas (benign / normal-tissue immunopeptidome)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'Reference of naturally presented HLA class I and class II ligands eluted from benign (non-malignant)
+    human tissues across many organs and multiple donors, with paired HLA typing. The key normal-tissue
+    immunopeptidomics "self-presentation" reference for filtering candidate presented antigens. (Note:
+    an immunopeptidomics resource — cross-references the presentation agent.)
+
+    '
+  scale: ~227 benign tissue samples; tens of thousands of HLA-I/II ligands; DIA extension added
+  modalities:
+  - mhc-ligand-elution
+  - immunopeptidomics
+  - hla-typing
+  formats:
+  - tsv
+  - csv
+  - raw
+  - web
+  landing_url: https://hla-ligand-atlas.org/
+  download_url: https://hla-ligand-atlas.org/data
+  api: https://www.ebi.ac.uk/pride/archive/projects/PXD020186
+  license: CC0 1.0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/
+  access: open
+  provenance:
+    maintainer: University of Tübingen (Rammensee/Walz groups) and collaborators
+    key_refs:
+    - 10.1136/jitc-2020-001566
+  last_updated: 2024 (DIA extension); orig. 2021
+  relevance:
+    programs:
+    - presentation
+    - design
+    - recognition
+    why: 'Directly answers "is this peptide presented on NORMAL tissue?" — the most specific self-filter
+      for target/epitope selection, removing candidates whose HLA ligands appear on benign tissue.
+
+      '
+  agent_access: 'Downloadable tables from hla-ligand-atlas.org; raw MS data mirrored on PRIDE (PXD020186)
+    and MassIVE (MSV000096271) via FTP/Globus. No auth.
+
+    '
+  caveats: 'Data is CC0 (public domain) — unusually permissive; the paper text is CC BY 4.0 (don''t conflate).
+    Sample/ligand counts differ between preprint/published versions — note version. OVERLAPS the presentation
+    agent''s catalog; cross-reference rather than deep-duplicate. Donor HLA coverage is finite (not all
+    alleles represented).
+
+    '
+- id: hpa
+  name: Human Protein Atlas (HPA)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'Multi-section atlas mapping human protein expression across tissues (IHC), single cells,
+    subcellular location, blood, brain, pathology (cancer), and immune cells, integrating antibody-based
+    imaging with RNA-seq (incl. GTEx/FANTOM5 consensus). Gives both protein-level and transcript-level
+    normal-tissue distribution per gene.
+
+    '
+  scale: '>10M IHC images; ~20,000 genes; 40+ normal tissues; single-cell + blood atlases'
+  modalities:
+  - ihc-imaging
+  - bulk-rna-seq
+  - single-cell-rna-seq
+  - subcellular-imaging
+  - pathology
+  formats:
+  - tsv
+  - json
+  - xml
+  - fasta
+  - api
+  landing_url: https://www.proteinatlas.org/
+  download_url: https://www.proteinatlas.org/about/download
+  api: https://www.proteinatlas.org/help/api
+  license: CC BY 4.0
+  license_url: https://www.proteinatlas.org/about/licence
+  access: open
+  provenance:
+    maintainer: Human Protein Atlas project (KTH Royal Institute of Technology, Sweden; Knut & Alice Wallenberg
+      Fdn)
+    key_refs:
+    - 10.1126/science.1260419
+    - 10.1126/science.aan2507
+  last_updated: 2025-10 (v24.1)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Protein- and cell-type-level normal expression and subcellular localization — directly informs
+      whether a target is tumor-restricted and whether it is surface/presented. Pathology section links
+      normal vs tumor expression for the same gene.
+
+      '
+  agent_access: 'Per-gene JSON/XML/TSV via query API (proteinatlas.org/ENSG...xml), plus bulk downloadable
+    TSV files (normal tissue, pathology, subcellular, RNA consensus). No auth. Older versions at v##.proteinatlas.org
+    for reproducible pinning.
+
+    '
+  caveats: 'Current license is CC BY 4.0 (older versions were CC BY-SA 3.0 / CC BY-NC-ND 4.0 — pin the
+    version you cite). A few embedded third-party datasets carry their own terms (e.g. CC BY-SA). Antibody-based
+    IHC has specificity caveats; use reliability scores. Images are large.
+
+    '
+- id: hubmap
+  name: Human BioMolecular Atlas Program (HuBMAP)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'NIH program building 3D, single-cell-resolution maps of healthy human tissue using multimodal
+    spatial and single-cell assays (scRNA-seq, snRNA-seq, CODEX/multiplexed imaging, spatial transcriptomics,
+    imaging/MS). A reference for normal cell-type composition and spatial organization across organs.
+
+    '
+  scale: Thousands of datasets across ~20+ organs; multimodal, continually growing
+  modalities:
+  - single-cell-rna-seq
+  - snrna-seq
+  - spatial-transcriptomics
+  - multiplexed-imaging
+  - imaging-ms
+  formats:
+  - h5ad
+  - csv
+  - ome-tiff
+  - fastq
+  - api
+  landing_url: https://portal.hubmapconsortium.org/
+  download_url: https://portal.hubmapconsortium.org/apis
+  api: https://portal.hubmapconsortium.org/apis
+  license: CC BY 4.0
+  license_url: https://hubmapconsortium.org/policies/external-data-sharing-policy/
+  access: registration
+  provenance:
+    maintainer: NIH Common Fund HuBMAP Consortium (HIVE / Pittsburgh HuBMAP IEC)
+    key_refs:
+    - 10.1038/s41586-019-1629-x
+  last_updated: 2025 (ongoing releases)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Spatial, cell-type-resolved normal reference helps localize whether a target''s expression in
+      normal tissue sits in vulnerable cell types (e.g. vasculature, neurons), sharpening on-target/off-tumor
+      risk assessment beyond bulk tissue averages.
+
+      '
+  agent_access: 'RESTful search/entity APIs (registered at SmartAPI); bulk download via manifest + HuBMAP
+    CLT and Globus Transfer API/endpoints. Portal viewing open; downloading requires free HuBMAP registration;
+    external API access may need a Helpdesk request. Protected raw seq on dbGaP.
+
+    '
+  caveats: 'Download (not viewing) needs registration — note the auth step for any pipeline. Protected
+    tier (PHI-bearing raw sequence) is controlled via an NIH Data Access Committee. File formats heterogeneous
+    across assay types.
+
+    '
+- id: human-proteome-map
+  name: Human Proteome Map (HPM)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'Draft map of the normal human proteome from high-resolution Fourier-transform MS of 30
+    histologically normal human tissues and primary cells (adult + fetal), reporting protein abundance
+    across tissues. Web resource plus deposited raw data (PRIDE PXD000561).
+
+    '
+  scale: 30 normal tissues/cell types; ~17,000 genes with protein evidence; >290k peptides
+  modalities:
+  - proteomics-ms
+  - protein-expression
+  - tissue-proteome
+  formats:
+  - xlsx
+  - tsv
+  - raw
+  - web
+  landing_url: https://www.humanproteomemap.org/
+  download_url: https://www.humanproteomemap.org/download.php
+  api: https://www.ebi.ac.uk/pride/archive/projects/PXD000561
+  license: unknown
+  license_url: https://www.humanproteomemap.org/
+  access: open
+  provenance:
+    maintainer: Pandey Lab (Johns Hopkins / Institute of Bioinformatics, Bangalore)
+    key_refs:
+    - 10.1038/nature13302
+  last_updated: 2014 (static)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Direct MS evidence of protein presence/abundance across normal tissues — a protein-level self
+      reference to check whether a candidate antigen''s protein is detectable in normal tissue.
+
+      '
+  agent_access: 'Browse/download tables from the portal; underlying raw MS data as bulk download from
+    PRIDE (PXD000561) over FTP/Globus. Portal download is simple; raw files are large.
+
+    '
+  caveats: 'No explicit license on the portal; the PRIDE record notes the authors ask that anyone considering
+    COMMERCIAL use contact the PI (pandey@jhmi.edu) — treat as a redistribution/commercial-use flag for
+    a company. Static 2014 dataset. Overlaps ProteomicsDB/HPA; dedup by gene/peptide.
+
+    '
+- id: jiang-proteome-map
+  name: A Quantitative Proteome Map of the Human Body (GTEx proteome)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'Quantitative mass-spectrometry proteome across 32 normal human tissue types using GTEx-project
+    samples, enabling protein-vs-mRNA comparison across the body. Protein-level normal-tissue abundance
+    reference tied to GTEx donors.
+
+    '
+  scale: 32 normal tissue types, ~12,627 genes quantified, 201 samples (GTEx donors)
+  modalities:
+  - proteomics-ms
+  - protein-expression
+  - tissue-proteome
+  formats:
+  - raw
+  - txt
+  - tsv
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD016999
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD016999
+  license: custom
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/submitdatapage
+  access: open
+  provenance:
+    maintainer: Snyder lab (Stanford) with GTEx Consortium
+    key_refs:
+    - 10.1016/j.cell.2020.08.036
+  accessions:
+  - 'PRIDE/ProteomeXchange: PXD016999'
+  - 'MassIVE: MSV000086387'
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Protein-level normal abundance across 32 tissues in the GTEx framework — directly checks whether
+      a candidate antigen''s protein is present (and at what level) in normal tissues, complementing transcript
+      baselines.
+
+      '
+  agent_access: 'Bulk raw + processed files via PRIDE (PXD016999) over FTP/Aspera/Globus; MassIVE mirror
+    (MSV000086387). No auth. Raw MS files are large.
+
+    '
+  caveats: 'Raw MS requires reprocessing for peptide/protein tables (processed supplements in the paper).
+    Deposit-level terms, not a named CC license.
+
+    '
+- id: kim-draft-proteome
+  name: Draft map of the human proteome — raw deposit (Kim 2014)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'Raw mass-spectrometry deposit underlying the Human Proteome Map: 30 histologically normal
+    adult and fetal human tissues/primary cells profiled by high-resolution FT-MS. The raw-data accession
+    behind the HPM portal (cataloged separately in domain-5).
+
+    '
+  scale: 30 normal tissues/cell types; proteomic evidence for ~17,000 genes
+  modalities:
+  - proteomics-ms
+  - tissue-proteome
+  formats:
+  - raw
+  - mgf
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD000561
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD000561
+  license: unknown
+  license_url: https://www.ebi.ac.uk/pride/archive/projects/PXD000561
+  access: open
+  provenance:
+    maintainer: Pandey lab (Johns Hopkins / IOB Bangalore)
+    key_refs:
+    - 10.1038/nature13302
+  accessions:
+  - 'PRIDE/ProteomeXchange: PXD000561'
+  - 'MassIVE: MSV000079514'
+  last_updated: '2014'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Raw-data provenance for the Human Proteome Map normal-tissue protein evidence; reprocessable
+      for custom peptide-level self references.
+
+      '
+  agent_access: 'Bulk raw via PRIDE (PXD000561) / MassIVE (MSV000079514) FTP/Aspera. No auth. Large.
+
+    '
+  caveats: 'Commercial-use contact request attaches to the HPM resource (see domain-5 human-proteome-map).
+    Raw only — reprocessing required. Overlaps Wilhelm/ProteomicsDB draft (dedup by peptide).
+
+    '
+- id: marcu-2021-hla-ligand-atlas-raw
+  name: Marcu 2021 HLA Ligand Atlas raw data (PXD019643)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'The raw MS deposition behind the HLA Ligand Atlas benign-tissue reference, plus a companion
+    glioblastoma deposition that used the atlas as reference. The primary-data layer under the atlas portal
+    cataloged in domain-1.
+
+    '
+  scale: 90,428 HLA-I + 142,625 HLA-II ligands; ~227 samples; 51 HLA-I / 86 HLA-II allotypes
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw-ms
+  - mzML
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD019643
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2021/04/PXD019643/
+  license: CC0 1.0 (PRIDE default; verify per-file)
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: University of Tübingen (Marcu/Rammensee); PRIDE (MassIVE mirror MSV000096271)
+    key_refs:
+    - 10.1136/jitc-2020-002071
+  last_updated: '2021'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Raw benign-tissue reference for building a self-peptide subtraction baseline from spectra rather
+      than trusting the portal''s processed lists.
+
+      '
+  agent_access: 'PRIDE PXD019643 (+ MassIVE MSV000096271); companion glioblastoma set PXD020186. Bulk-downloadable,
+    no auth.
+
+    '
+  caveats: 'Companion glioblastoma samples are a SEPARATE accession (PXD020186). Human only; no canine
+    benign reference exists anywhere (key gap).
+
+    '
+- id: monaco-immune-rnaseq
+  name: Monaco immune cell RNA-seq reference (29 PBMC cell types)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'RNA-seq profiles of 29 sorted immune cell types from healthy-donor PBMCs, with matched
+    flow cytometry, designed as an absolute-deconvolution reference (ABIS). Clean normal immune-subset
+    transcriptome reference.
+
+    '
+  scale: 29 immune cell types; 4 donors (S4 cohort) + PBMCs (S13 cohort)
+  modalities:
+  - bulk-rna-seq
+  - cell-type-signature
+  formats:
+  - txt
+  - tsv
+  landing_url: https://github.com/giannimonaco/ABIS
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE107011
+  license: custom
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Monaco et al. (SIgN/A*STAR, Singapore)
+    key_refs:
+    - 10.1016/j.celrep.2019.01.041
+  accessions:
+  - 'GEO: GSE107011'
+  - 'tool: github.com/giannimonaco/ABIS'
+  last_updated: '2019'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'Well-defined normal immune-subset expression signatures; a compact self reference to flag candidate
+      targets expressed in resting/activated immune cells.
+
+      '
+  agent_access: 'Download count matrices from GEO (GSE107011) over HTTPS/FTP; no auth. Signatures via
+    ABIS repo.
+
+    '
+  caveats: 'Blood immune cells only; small donor number. GEO deposit terms (effectively open, cite paper).
+
+    '
+- id: panglaodb
+  name: PanglaoDB
+  category: healthy-baseline
+  species:
+  - human
+  - mouse
+  description: 'Secondary database of uniformly reprocessed public scRNA-seq samples (mostly from SRA)
+    with cell clusters and cell-type annotations, plus a large curated cell-type marker gene resource.
+    Useful reference for cell-type marker calibration and baseline composition.
+
+    '
+  scale: ~1,368 samples (1,063 mouse / 305 human), ~5.6M cells (site, 2026)
+  size_bytes: 22000000000
+  modalities:
+  - scrna-seq
+  - cell-type-markers
+  - cluster-annotation
+  formats:
+  - rdata
+  - tsv
+  - tab-archive
+  landing_url: https://panglaodb.se/
+  download_url: https://panglaodb.se/bulk.html
+  license: CC BY 4.0 (reported; unverified on-site)
+  license_url: https://panglaodb.se/
+  access: open
+  provenance:
+    maintainer: Oscar Franzén et al. (Karolinska)
+    key_refs:
+    - 10.1093/database/baz046
+  last_updated: site live 2026; last major update ~2020
+  relevance:
+    programs:
+    - comparative
+    why: 'Marker-gene reference and reprocessed baseline samples for cell-type annotation QC in tumor-immune
+      pipelines.
+
+      '
+  agent_access: 'Bulk download of all samples as a single tar archive + per-sample RData; marker gene
+    table downloadable. rPanglaoDB R package (GPL-3) programmatically lists/downloads samples keyed by
+    SRA (SRS) accession. No REST API.
+
+    '
+  caveats: 'License listed as CC BY 4.0 by a third-party catalog but not clearly stated on-site — mark
+    license as reported, confirm with maintainer before redistribution. Static/largely unmaintained since
+    ~2020; derived (reprocessed) data.
+
+    '
+- id: peptideatlas
+  name: PeptideAtlas
+  category: healthy-baseline
+  species:
+  - human
+  - other
+  description: 'Compendium of peptides identified by tandem MS across many experiments, reprocessed through
+    a uniform pipeline into annotated builds (incl. a comprehensive Human build and Human Plasma), mapped
+    to the genome. Provides observed-peptide evidence of the normal proteome and of which protein regions
+    are reliably detectable by MS.
+
+    '
+  scale: Human build (2026-01) at very low PSM FDR; millions of PSMs; multi-GB files
+  size_bytes: 17000000000
+  modalities:
+  - proteomics-ms
+  - peptide-evidence
+  - srm-library
+  formats:
+  - fasta
+  - tsv
+  - mysql
+  - api
+  landing_url: https://peptideatlas.org/
+  download_url: https://peptideatlas.org/builds/human/
+  api: https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/
+  license: CC BY-NC 4.0
+  license_url: https://peptideatlas.org/
+  access: open
+  provenance:
+    maintainer: Institute for Systems Biology (Moritz lab) + collaborators
+    key_refs:
+    - 10.1038/msb4100024
+  last_updated: 2026-01 (latest Human build)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Observed-peptide atlas of the normal proteome helps judge MS detectability of a candidate antigen
+      region and provides a self peptide/SRM reference; SRMAtlas aids targeted validation.
+
+      '
+  agent_access: 'Per-build bulk download (FASTA, TSV, MySQL dumps, coordinate files) over HTTPS; also
+    query interfaces/APIs. No auth. Files can be large (coordinate file ~17 GB).
+
+    '
+  caveats: 'CC BY-NC 4.0 — NON-COMMERCIAL license; a flag for a commercial entity (check whether internal
+    research use qualifies / seek permission for commercial use). Build-versioned; not all files carry
+    all fields. Overlaps Human Proteome Map / ProteomicsDB.
+
+    '
+- id: proteomicsdb
+  name: ProteomicsDB
+  category: healthy-baseline
+  species:
+  - human
+  - other
+  description: 'Mass-spectrometry-based protein expression resource quantifying protein abundance across
+    human tissues, cell lines, and body fluids, with a draft human proteome, drug-sensitivity and kinobead
+    data, and expression visualizations. Useful as a protein-level normal-tissue expression baseline complementing
+    transcriptomics.
+
+    '
+  scale: '>15,000 human proteins; tissues, fluids, cell lines; multi-omics layers'
+  modalities:
+  - proteomics-ms
+  - protein-expression
+  - drug-response
+  formats:
+  - json
+  - xml
+  - csv
+  - api
+  landing_url: https://www.proteomicsdb.org/
+  download_url: https://www.proteomicsdb.org/apiv2
+  api: https://www.proteomicsdb.org/apiv2
+  license: unknown
+  license_url: https://www.proteomicsdb.org/
+  access: open
+  provenance:
+    maintainer: Technical University of Munich (Kuster lab) with SAP
+    key_refs:
+    - 10.1038/nature13319
+    - 10.1093/nar/gkab1026
+  last_updated: 2022+ (ongoing)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Protein-abundance-across-normal-tissues view to cross-check transcript-based expression and
+      assess whether a target protein is present in normal tissues — specificity/safety evidence.
+
+      '
+  agent_access: 'OData v2 API (apiv2) returning JSON/XML via GET, no registration; legacy v1.1 API also
+    public. Scriptable record-level access.
+
+    '
+  caveats: 'LICENSE AMBIGUOUS — some sources cite CC BY-NC 4.0 (no commercial use), others CC BY 4.0;
+    confirm current terms on proteomicsdb.org before any commercial pipeline. API is per-query (not a
+    single bulk dump). Overlaps HPM/HPA.
+
+    '
+- id: tabula-sapiens
+  name: Tabula Sapiens (v1)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'Multi-organ single-cell transcriptomic atlas built from individual human donors, spanning
+    24 tissues/organs with harmonized cell-type annotations. A benchmark normal reference for which cell
+    types across the body express a given gene.
+
+    '
+  scale: 'v1: ~483k cells, 24 tissues/donors; v2 (2026): ~2x cells, 28 tissues, 24 donors'
+  modalities:
+  - single-cell-rna-seq
+  - cell-type-annotation
+  - scrna-seq
+  - cell-ontology-annotation
+  formats:
+  - h5ad
+  - csv
+  - figshare-archive
+  landing_url: https://tabula-sapiens-portal.ds.czbiohub.org/
+  download_url: https://figshare.com/articles/dataset/Tabula_Sapiens_release_1_0/14267219
+  api: https://cellxgene.cziscience.com/collections/e5f58829-1a66-40b5-a624-9046778e74f5
+  license: CC BY 4.0 (figshare v2); code BSD-3-Clause
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Chan Zuckerberg Biohub / Tabula Sapiens Consortium
+    key_refs:
+    - 10.1126/science.abl4896
+    - 10.1016/j.cell.2026.08.xxx
+  accessions:
+  - 'GEO: GSE201333'
+  - 'figshare: 10.6084/m9.figshare.14267219'
+  - CZ CELLxGENE Discover collection
+  last_updated: 2026 (v2.0)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Cell-type-resolved normal expression lets you ask not just whether a target is expressed in
+      a tissue but in which cell types (e.g. essential vs. regenerable), sharpening on-target/ off-tumor
+      safety assessment beyond bulk GTEx averages.
+
+      '
+  agent_access: 'Processed H5AD via figshare (direct download) and CELLxGENE collection (Census/API accessible);
+    also GEO (GSE306755) and AWS Open Data. No auth for processed data. Raw sequence data requires a data
+    sharing agreement.
+
+    '
+  caveats: 'Processed/annotated objects (not raw reads) are the easy download. Donor count small; not
+    every tissue equally deep. Dedup against Tabula Sapiens 2.0 (supersedes for many tissues).
+
+    '
+  size_bytes: 53210000000
+- id: wang-29-tissues-proteome
+  name: Deep proteome & transcriptome abundance atlas of 29 healthy human tissues
+  category: healthy-baseline
+  species:
+  - human
+  description: 'Paired label-free quantitative proteomics + RNA-seq across 29 histologically healthy human
+    tissues (from HPA project material), reporting protein and transcript abundance per gene. Protein-level
+    normal-tissue reference with matched transcriptome.
+
+    '
+  scale: 29 healthy tissues; 13,640 proteins; 18,072 transcripts
+  modalities:
+  - proteomics-ms
+  - bulk-rna-seq
+  - protein-expression
+  formats:
+  - raw
+  - txt
+  - tsv
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD010154
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD010154
+  license: CC0 1.0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/
+  access: open
+  provenance:
+    maintainer: Küster lab, Technical University of Munich
+    key_refs:
+    - 10.15252/msb.20188503
+  accessions:
+  - 'PRIDE/ProteomeXchange: PXD010154'
+  - 'MassIVE: MSV000083508 (CC0 1.0)'
+  last_updated: '2019'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Matched protein+mRNA normal baselines across 29 tissues — protein-presence self check and a
+      resource to calibrate mRNA-to-protein inference for target prioritization.
+
+      '
+  agent_access: 'Bulk via PRIDE (PXD010154) / MassIVE (MSV000083508) FTP; data underlies ProteomicsDB.
+    No auth.
+
+    '
+  caveats: 'MassIVE copy labels CC0 (very permissive) — confirm the PRIDE record''s terms. Feeds ProteomicsDB
+    (dedup). Raw needs reprocessing.
+
+    '
+- id: wilhelm-draft-proteome
+  name: Mass-spectrometry-based draft of the human proteome — raw deposit (Wilhelm 2014)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'Raw MS deposit behind the ProteomicsDB human draft proteome: a "human body map" of 36
+    tissues and body fluids plus a "missing proteins" collection, from 16,857 LC-MS/MS experiments. The
+    raw accession behind ProteomicsDB (cataloged separately in domain-5).
+
+    '
+  scale: 36 tissues/body fluids; >16,800 LC-MS/MS experiments
+  modalities:
+  - proteomics-ms
+  - tissue-proteome
+  formats:
+  - raw
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD000865
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD000865
+  license: unknown
+  license_url: https://www.ebi.ac.uk/pride/archive/projects/PXD000865
+  access: open
+  provenance:
+    maintainer: Küster lab, Technical University of Munich (with SAP/ProteomicsDB)
+    key_refs:
+    - 10.1038/nature13319
+  accessions:
+  - 'PRIDE/ProteomeXchange: PXD000865'
+  - 'MassIVE: MSV000079526'
+  - 'resource: ProteomicsDB'
+  last_updated: '2014'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Raw-data provenance for ProteomicsDB normal-tissue protein evidence; reprocessable for self-proteome
+      peptide sets.
+
+      '
+  agent_access: 'Bulk raw via PRIDE (PXD000865) / MassIVE (MSV000079526) FTP. No auth. Large.
+
+    '
+  caveats: 'Terms tie to ProteomicsDB (license ambiguous — see domain-5). Raw only. Overlaps Kim draft
+    map.
+
+    '

@@ -1,0 +1,1262 @@
+- id: abelin-2017-monoallelic
+  name: Abelin 2017 mono-allelic HLA-I immunopeptidome (MassIVE MSV000080527)
+  category: presentation
+  species:
+  - human
+  description: 'Earlier mono-allelic HLA class I immunopeptidome (16 datasets) establishing the mono-allelic
+    profiling approach and improving neoepitope prediction. Experimentally measured eluted ligands; a
+    predecessor/companion to the Sarkizova 2020 expansion.
+
+    '
+  scale: 16 mono-allelic HLA-I datasets
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw
+  - mzML
+  landing_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000080527
+  download_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000080527
+  license: unknown
+  license_url: https://massive.ucsd.edu/
+  access: open
+  provenance:
+    maintainer: Abelin/Carr et al., Broad Institute; MassIVE/ProteomeXchange
+    key_refs:
+    - 10.1016/j.immuni.2017.02.007
+  last_updated: '2017'
+  relevance:
+    programs:
+    - presentation
+    why: 'Foundational mono-allelic training data for HLA-I presentation prediction; combine with Sarkizova
+      2020 for a broader allele panel.
+
+      '
+  agent_access: 'MassIVE open download, no auth. Automatable.
+
+    '
+  caveats: 'license: unknown (MassIVE open policy). Smaller/older than Sarkizova 2020; dedup allele overlap
+    if merging.
+
+    '
+- id: abelin-2017-monoallelic-hla1
+  name: Abelin 2017 mono-allelic HLA-I immunopeptidome
+  category: presentation
+  species:
+  - human
+  description: 'The foundational mono-allelic HLA class I immunopeptidomics dataset: peptides eluted from
+    single-HLA-allele cell lines, which established mono-allelic profiling as the gold standard for clean
+    per-allele motifs and launched MS-trained predictors.
+
+    '
+  scale: ~24,000 peptides across 16 HLA class I alleles
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw-ms
+  - mzML
+  - search-results
+  landing_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000080527
+  download_url: ftp://massive.ucsd.edu/MSV000080527/
+  license: CC0 1.0
+  license_url: https://massive.ucsd.edu/
+  access: open
+  provenance:
+    maintainer: Broad Institute (Carr/Wu labs); deposited in MassIVE
+    key_refs:
+    - 10.1016/j.immuni.2017.02.007
+  last_updated: '2017'
+  relevance:
+    programs:
+    - presentation
+    why: 'Clean mono-allelic positives for HLA-I presentation model training/benchmarking; the dataset
+      that showed MS-trained predictors beat affinity-trained ones.
+
+      '
+  agent_access: 'MassIVE FTP (MSV000080527) + GEO GSE93315; bulk-downloadable, no auth, CC0. Raw files
+    are large (Q Exactive). Use ppx/pridepy or direct FTP.
+
+    '
+  caveats: 'Raw MS requires reprocessing (search engine + FDR) to get peptide lists. Only 16 alleles.
+    Human only.
+
+    '
+- id: abelin-2019-monoallelic-hla2
+  name: Abelin 2019 mono-allelic HLA-II immunopeptidome
+  category: presentation
+  species:
+  - human
+  description: 'Mono-allelic HLA class II immunopeptidomics defining HLA-II ligand processing and binding
+    rules - the class II analogue of the 2017 mono-allelic work, enabling cleaner HLA-II presentation
+    prediction.
+
+    '
+  scale: '>200,000 unique peptides across 41 HLA-II heterodimers'
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw-ms
+  - mzML
+  - search-results
+  landing_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000083991
+  download_url: ftp://massive.ucsd.edu/MSV000083991/
+  license: CC0 1.0
+  license_url: https://massive.ucsd.edu/
+  access: open
+  provenance:
+    maintainer: Broad Institute (Abelin/Carr/Rooney); MassIVE (secondary PXD014293)
+    key_refs:
+    - 10.1016/j.immuni.2019.08.012
+  last_updated: '2019'
+  relevance:
+    programs:
+    - presentation
+    why: 'Core mono-allelic HLA-II training/benchmark set; class II is historically data-poor, so this
+      is disproportionately valuable.
+
+      '
+  agent_access: 'MassIVE MSV000083991 / ProteomeXchange PXD014293; bulk-downloadable, CC0, no auth.
+
+    '
+  caveats: 'Raw MS needs reprocessing. Class II deconvolution is harder (open binding register). Human
+    only.
+
+    '
+- id: bassani-2015-hla1-abundance
+  name: Bassani-Sternberg 2015 HLA-I peptidome (abundance/turnover)
+  category: presentation
+  species:
+  - human
+  description: 'Deep multi-allelic HLA class I immunopeptidome across seven cell lines plus primary cells,
+    showing presentation tracks protein abundance and turnover. An early large-scale, widely-reused HLA-I
+    ligand set.
+
+    '
+  scale: 22,244 unique HLA-I peptides at 1% FDR; 7 cell lines + primary cells
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw-ms
+  - mzML
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD000394
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2015/02/PXD000394/
+  license: CC0 1.0 (PRIDE default; verify per-file)
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: Max Planck Institute of Biochemistry (Mann lab); PRIDE (MSV000079539 mirror)
+    key_refs:
+    - 10.1074/mcp.M114.042812
+  last_updated: '2015'
+  relevance:
+    programs:
+    - presentation
+    why: 'Classic multi-allelic positive set; the abundance/turnover findings inform processing features
+      used in presentation models.
+
+      '
+  agent_access: 'PRIDE PXD000394 (REST API + FTP) and MassIVE mirror MSV000079539; bulk-downloadable.
+
+    '
+  caveats: 'Multi-allelic (needs deconvolution to assign alleles). Older acquisition. Human only.
+
+    '
+- id: bassani-sternberg-2016-melanoma
+  name: Bassani-Sternberg 2016 melanoma neoepitope immunopeptidome (PXD004894)
+  category: presentation
+  species:
+  - human
+  description: 'Direct MS identification of HLA-presented peptides (incl. neoepitopes) from native human
+    melanoma tissue — one of the foundational tumor immunopeptidome datasets. Experimentally measured
+    eluted ligands across a melanoma cohort; frequently reused to train/benchmark presentation and neoepitope
+    prediction.
+
+    '
+  scale: Melanoma-associated immunopeptidome to ~95,500 peptides; tumor tissue from 25 melanoma patients
+  size_bytes: 176281451607
+  modalities:
+  - mhc-ligand-elution
+  - validated-neoantigen
+  formats:
+  - raw
+  - mzML
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD004894
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD004894
+  license: unknown
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/license
+  access: open
+  provenance:
+    maintainer: Bassani-Sternberg / Mann lab (MPI Biochemistry); PRIDE/ProteomeXchange
+    key_refs:
+    - 10.1038/ncomms13404
+  last_updated: '2016'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Gold-standard tumor-tissue ligandome with directly-detected neoepitopes — direct presentation
+      evidence for melanoma neoantigens and a core training/benchmark set.
+
+      '
+  agent_access: 'PRIDE bulk download, no auth (~176 GB). Automatable.
+
+    '
+  caveats: 'license: unknown (ProteomeXchange open policy). MS presentation evidence; immunogenicity not
+    established here. Large raw volume; most reuse starts from the paper''s peptide tables, not raw.
+
+    '
+- id: caatlas
+  name: caAtlas (immunopeptidome atlas of human cancer)
+  category: presentation
+  species:
+  - human
+  description: 'MS-based immunopeptidome atlas (Zhang lab) reprocessing 43 published HLA immunopeptidomic
+    datasets with an open (modification-tolerant) search engine over ~81.6M MS/MS spectra. Records HLA-presented
+    peptides with cancer type, dataset/spectrum IDs, HLA allele, predicted binding affinity and annotated
+    spectra. Presentation evidence (MS-eluted ligands), including some neoantigen/aberrant-peptide annotation
+    — not T-cell-validated.
+
+    '
+  scale: ~81.6M MS/MS spectra; 311 cancer samples (9 cancer types) + 707 non-cancer samples (43 datasets)
+  modalities:
+  - mhc-ligand-elution
+  - predicted-neoantigen
+  formats:
+  - web
+  - download
+  landing_url: https://www.zhang-lab.org/caatlas/
+  download_url: https://www.zhang-lab.org/caatlas/
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Bing Zhang lab (Baylor College of Medicine)
+    key_refs:
+    - 10.1016/j.isci.2021.103107
+  last_updated: '2021'
+  relevance:
+    programs:
+    - presentation
+    why: 'Large harmonized MS immunopeptidome across cancers — direct experimental presentation evidence
+      (ligandome) for training/benchmarking presentation predictors; complements binding-only predictions.
+
+      '
+  agent_access: 'Web portal (HTTP 200) with on-site download. No documented API; expect bulk file(s)/table
+    export. No login.
+
+    '
+  caveats: 'No explicit data license found — license: unknown; underlying 43 source datasets each carry
+    their own terms (check PRIDE/MassIVE originals before redistribution/ML use). MS-presentation evidence
+    only — not immunogenicity-validated.
+
+    '
+- id: canine-dla88-50101-motif
+  name: DLA-88*50101 Peptide-Binding Motif Dataset
+  category: presentation
+  species:
+  - dog
+  description: 'Early immunoaffinity MS characterization of the DLA-88*50101 peptide-binding motif (and
+    later DLA-88*508:01 self + canine-distemper-virus peptides), the first experimental canine MHC-I ligand
+    sets published.
+
+    '
+  scale: ~3,720 DLA-88*50101 peptides (plus DLA-88*508:01 self/viral peptides)
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - peptide-tables
+  landing_url: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0167017
+  download_url: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0167017
+  license: CC BY 4.0 (PLOS ONE)
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: academic (PLOS ONE); structural follow-ups in J Immunol/PMC
+    key_refs:
+    - 10.1371/journal.pone.0167017
+    - 10.4049/jimmunol.1701542
+  last_updated: 2016-2018
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Historical anchor points / positive controls for DLA-88 motif modeling; combine with the 2026
+      atlas for allele coverage.
+
+      '
+  agent_access: 'Peptide lists in article supplements (CC BY); downloadable.
+
+    '
+  caveats: 'DLA-88*50101 data were generated in transfected human cells (not native dog cells). Few alleles.
+
+    '
+- id: canine-dla88-immunopeptidome-atlas
+  name: Monoallelic Canine DLA-88 Immunopeptidome Atlas
+  category: presentation
+  species:
+  - dog
+  description: 'Monoallelic LC-MS/MS immunopeptidomics atlas across 10 prevalent canine DLA-88 alleles
+    — the first systematic, allele-resolved map of naturally processed canine MHC-I ligands and their
+    binding motifs. Directly addresses the canine presentation data void.
+
+    '
+  scale: ~32,702 naturally processed peptides (7-15 aa) across 10 DLA-88 alleles
+  modalities:
+  - mhc-ligand-elution
+  - mono-allelic-immunopeptidomics
+  formats:
+  - raw-ms
+  - maxquant-output
+  - peptide-tables
+  landing_url: https://www.biorxiv.org/content/10.64898/2026.10.06.756904v1
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD074485
+  license: preprint content CC BY; PRIDE data CC0/public (verify on PRIDE record)
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: academic group (immunopeptidomics); deposited at PRIDE/ProteomeXchange
+    key_refs:
+    - 10.64898/2026.10.06.756904
+  last_updated: 2026-10 (preprint)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'The single most valuable public resource for canine MHC-I presentation: enough mono-allelic
+      ligands to train/benchmark DLA-88 binding/presentation predictors. This is exactly the data type
+      Veritope needs and that almost nothing else supplies.
+
+      '
+  agent_access: 'Peptide tables from supp.; raw MS from PRIDE/ProteomeXchange (FTP, no auth). Confirm
+    association with PXD074485 vs a separate PXD on the PRIDE record.
+
+    '
+  caveats: 'PREPRINT, not yet peer-reviewed. Covers only DLA-88 class I (10 alleles) — other class I loci
+    (DLA-12/64/79) and all class II remain uncharacterized. Still tiny vs human MS atlases.
+
+    '
+- id: canine-peptideatlas
+  name: Canine PeptideAtlas (build 573, 2024-01; Kusebauch Sci Data 2026)
+  category: presentation
+  species:
+  - dog
+  description: 'Community canine proteome build in PeptideAtlas: 149,546 peptides across 18 samples (528,272
+    PSM counts), ~1,009,420 peptide-to-protein locations, 17,795 protein identifications (16,959 map 1:1
+    to Ensembl 110). A tryptic PROTEOME reference (not an MHC-ligand immunopeptidome), but the backbone
+    for canine proteogenomics and for mapping eluted ligands to proteins.
+
+    '
+  scale: 149,546 peptides; 18 samples; ~1.01M peptide-protein locations; 17,795 proteins
+  modalities:
+  - proteome
+  - ms-ms
+  formats:
+  - tsv
+  - peptideatlas-export
+  landing_url: https://peptideatlas.org/
+  download_url: https://peptideatlas.org/builds/
+  license: unknown (PeptideAtlas states no license)
+  license_url: https://peptideatlas.org/
+  access: open
+  provenance:
+    maintainer: Institute for Systems Biology (PeptideAtlas; Kusebauch et al.)
+    key_refs:
+    - 10.1038/s41597-026-05xxx
+  last_updated: 2024-01 (build 573)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Essential protein-level reference to annotate canine eluted peptides and run proteogenomic neoantigen
+      validation; complements the DLA-88 ligand atlases.
+
+      '
+  agent_access: 'PeptideAtlas web export + bulk build download; openvax/orfdata builds it locally (`peptideatlas-dog-peptides`)
+    rather than redistributing (no stated license).
+
+    '
+  caveats: 'NO explicit license — flagged for redistribution/ML-training. Tryptic proteome, NOT HLA/DLA-ligand
+    data. DOI VERIFY.
+
+    '
+- id: chong-2020-noncanonical
+  name: Chong 2020 non-canonical tumor immunopeptidome (NewAnce)
+  category: presentation
+  species:
+  - human
+  description: 'Proteogenomic immunopeptidomics of melanoma and lung cancer identifying non-canonical
+    (non-coding-derived) HLA-I peptides, with the NewAnce FDR pipeline. Includes matched sequencing under
+    controlled access.
+
+    '
+  scale: 7 melanoma cell lines + 2 lung tumor/normal pairs; canonical + non-canonical HLA-I peptides
+  modalities:
+  - mhc-ligand-elution
+  - proteogenomics
+  formats:
+  - raw-ms
+  - fasta
+  - NewAnce outputs
+  - sequencing (EGA)
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD013649
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/
+  license: 'MS: CC0 1.0 (PRIDE); sequencing: controlled (EGA DUA)'
+  license_url: https://www.ebi.ac.uk/pride/
+  access: controlled-access
+  provenance:
+    maintainer: Ludwig Institute / UNIL (Bassani-Sternberg); PRIDE + EGA + GitHub
+    key_refs:
+    - 10.1038/s41467-020-14968-9
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    why: 'Non-canonical antigens are a frontier target class; NewAnce is a reusable noncanonical-HLAp
+      discovery pipeline.
+
+      '
+  agent_access: 'MS + NewAnce jar: PRIDE PXD013649 (open, bulk). Code: github.com/bassanilab/NewAnce.
+    Matched sequence data: EGA EGAS00001003723 / EGAS00001003724 - CONTROLLED (requires Data Access Committee
+    approval; not agent-fetchable without a DUA).
+
+    '
+  caveats: 'RED FLAG (access): the paired sequencing is EGA controlled-access (DUA, human subjects). The
+    immunopeptidomics (PXD013649) itself is open CC0. Human only.
+
+    '
+- id: dla88-monoallelic-atlas
+  name: Monoallelic DLA-88 Immunopeptidome Atlas (10 alleles, preprint)
+  category: presentation
+  species:
+  - dog
+  description: 'Monoallelic LC-MS/MS atlas across 10 prevalent canine DLA-88 alleles using melanoma-derived
+    cell lines each expressing one functional DLA-88 allele; ~32,702 naturally processed peptides (7-15
+    aa); reports allele binding motifs and ligand sharing vs binding-site distance.
+
+    '
+  scale: ~32,702 peptides; 10 DLA-88 alleles
+  modalities:
+  - mono-allelic-immunopeptidomics
+  - mhc-ligand-elution
+  formats:
+  - raw-ms
+  - peptide-tables
+  landing_url: https://www.biorxiv.org/content/10.64898/2026.10.06.756904v1
+  download_url: https://www.ebi.ac.uk/pride/archive/
+  license: preprint CC BY; data accession per preprint (VERIFY)
+  license_url: https://www.biorxiv.org/content/10.64898/2026.10.06.756904v1
+  access: open
+  provenance:
+    maintainer: academic group (immunopeptidomics)
+    key_refs:
+    - 10.64898/2026.10.06.756904
+  last_updated: 2026-10
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'The single largest allele-resolved canine MHC-I ligand set — enough to train/benchmark DLA-88
+      presentation predictors. Core to closing the canine presentation gap.
+
+      '
+  agent_access: 'Peptide tables in supplement; raw MS via PRIDE/ProteomeXchange — confirm the PXD accession
+    in the preprint''s data-availability (NOT independently verified; may differ from PXD074485).
+
+    '
+  caveats: 'PREPRINT, not peer-reviewed. DLA-88 class I only (10 alleles); other loci + all class II absent.
+    Data accession UNVERIFIED here.
+
+    '
+- id: gfeller-2018-meningioma-hla1
+  name: Gfeller 2018 meningioma HLA-I peptidome (length/multiple specificity)
+  category: presentation
+  species:
+  - human
+  description: 'Newly generated HLA-I immunopeptidomes from human meningioma samples used to study peptide
+    length distributions and multiple specificity, extending MixMHCp/MixMHCpred.
+
+    '
+  scale: 31,896 unique peptides across 84 HLA-I alleles (12 peptidomes)
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw-ms
+  - mzML
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD009925
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2018/
+  license: CC0 1.0 (PRIDE default; verify per-file)
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: Ludwig Institute / CHUV Lausanne (Bassani-Sternberg/Gfeller); PRIDE
+    key_refs:
+    - 10.4049/jimmunol.1800504
+  last_updated: '2018'
+  relevance:
+    programs:
+    - presentation
+    why: 'Length-distribution modeling feeds MixMHCpred allele coverage; useful HLA-I positives from a
+      tissue type under-represented elsewhere.
+
+      '
+  agent_access: 'PRIDE PXD009925 via API/FTP; bulk-downloadable.
+
+    '
+  caveats: 'Source-paper DOI (10.4049/jimmunol.1800504) inferred from search, not opened at catalog time
+    - verify. Human only.
+
+    '
+- id: hla-ligand-atlas-dda
+  name: HLA Ligand Atlas (DDA main deposition, PXD019643)
+  category: presentation
+  species:
+  - human
+  description: 'Benign (non-tumor) human HLA class I and II immunopeptidome — a negative/self reference
+    for picking truly tumor-restricted targets. Data-dependent acquisition (DDA) LC-MS/MS of HLA-eluted
+    peptides from paired autopsy tissues. Experimentally MEASURED presented ligands (not predicted). Portal:
+    hla-ligand-atlas.org.
+
+    '
+  scale: ~227 ligandomes (198 HLA-I + 220 HLA-II) across 29 benign tissue types from 21 subjects; raw+processed
+    MS
+  size_bytes: 1393178404881
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - mzML
+  - mzid
+  - raw
+  - fasta
+  landing_url: https://hla-ligand-atlas.org/
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD019643
+  license: unknown
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/license
+  access: open
+  provenance:
+    maintainer: Rammensee/Walz groups, University of Tübingen (deposited to PRIDE/ProteomeXchange)
+    key_refs:
+    - 10.1136/jitc-2020-002071
+  last_updated: 2021 (DDA); portal ongoing
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'The key benign-tissue "what NOT to target" reference: subtracting self-ligands presented on
+      normal tissue is essential for safe tumor-antigen/neoantigen target selection and for calibrating
+      presentation models.
+
+      '
+  agent_access: 'Fully automatable via PRIDE/ProteomeXchange: HTTP/FTP/Aspera bulk download, no auth.
+    Very large (~1.4 TB) — plan storage/bandwidth. Portal also serves a queryable peptide table.
+
+    '
+  caveats: 'PRIDE attaches no SPDX license (license: unknown) but ProteomeXchange policy is open download/reuse
+    — confirm before redistribution. Massive volume. Benign reference, not cancer peptides — use as negative
+    set/filter.
+
+    '
+- id: hla-ligand-atlas-dia
+  name: HLA Ligand Atlas — DIA-SWATH benign immunopeptidome extension
+  category: presentation
+  species:
+  - human
+  description: 'Data-independent acquisition (DIA-SWATH) extension of the HLA Ligand Atlas: matched DIA
+    LC-MS/MS runs over the same benign tissues/subjects as the original DDA atlas, increasing sensitivity
+    and depth of the normal-tissue HLA-I/II presentation reference. (Cross-references presentation agent.)
+
+    '
+  scale: Extends to ~30 benign tissues, 51 HLA-I and 86 HLA-II alleles; 1,274 DDA runs referenced, DIA
+    runs here
+  size_bytes: 871327190051
+  modalities:
+  - mhc-ligand-elution
+  - immunopeptidomics
+  - dia-ms
+  formats:
+  - mzML
+  - raw
+  - tsv
+  landing_url: https://hla-ligand-atlas.org/
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD024837
+  license: unknown
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/
+  access: open
+  provenance:
+    maintainer: University of Tübingen (PRIDE/ProteomeXchange)
+    key_refs:
+    - 10.1136/jitc-2020-002071
+    - 10.1093/nar/gkaf365
+    - 10.1136/jitc-2020-001566
+    - 10.1093/nar/...
+  last_updated: 2021-2025 (DIA)
+  relevance:
+    programs:
+    - presentation
+    - design
+    - recognition
+    why: 'Deeper, more sensitive normal-tissue presentation reference than DDA alone — strengthens the
+      self-presentation filter (removing candidate epitopes presented on benign tissue).
+
+      '
+  agent_access: 'Bulk DIA raw + results via PRIDE (PXD024837) FTP/Globus; query/download via hla-ligand-atlas.org.
+    No auth.
+
+    '
+  caveats: 'Accession attribution between DDA/DIA records is inconsistent across the paper''s text — verify
+    PXD024837 vs PXD020186/PXD019643 on PRIDE before use. OVERLAPS presentation agent and the domain-5
+    hla-ligand-atlas-normal entry — cross-reference, do not deep-duplicate. Confirm the DIA paper''s exact
+    DOI.
+
+    '
+  accessions:
+  - 'PRIDE/ProteomeXchange: PXD024837 (DIA-SWATH)'
+  - 'related DDA: PXD020186, PXD019643; dynamic-range: PXD024809'
+  cross_listed: true
+- id: hla-ligand-atlas-usecase
+  name: HLA Ligand Atlas — glioblastoma use-case subset (PXD020186)
+  category: presentation
+  species:
+  - human
+  description: 'Companion PRIDE deposition under the HLA Ligand Atlas title, focused on glioblastoma samples
+    used to illustrate tumor-associated target prioritization against the benign reference. Measured HLA-eluted
+    ligands.
+
+    '
+  scale: 3 glioblastoma samples (illustrative subset); 43 files
+  size_bytes: 18378262486
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - mzML
+  - mzid
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD020186
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD020186
+  license: unknown
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/license
+  access: open
+  provenance:
+    maintainer: University of Tübingen (PRIDE/ProteomeXchange)
+    key_refs:
+    - 10.1136/jitc-2020-002071
+  last_updated: '2021-04-16'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Concrete tumor-vs-benign target-prioritization example (GBM) directly relevant to presentation-based
+      target nomination workflows.
+
+      '
+  agent_access: 'PRIDE bulk download, no auth, modest size (~18 GB). Fully automatable.
+
+    '
+  caveats: 'license: unknown (PRIDE open policy). Small illustrative subset, not a cohort.
+
+    '
+- id: iedb
+  name: Immune Epitope Database (IEDB)
+  category: presentation
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The largest curated resource of experimentally characterized immune epitopes (B-cell,
+    T-cell, MHC binding, and MHC-ligand elution), manually extracted from the published literature plus
+    direct submissions. Covers class I and class II, infectious disease, allergy, autoimmunity, and cancer.
+    Includes the full assay context (host, MHC restriction, assay type, qualitative/quantitative result).
+
+    '
+  scale: ~1.6M-2.2M epitopes, ~6.8M assays from >25,000 publications (2024/2025 update)
+  modalities:
+  - mhc-ligand-elution
+  - binding-assay
+  - tcr-epitope
+  - bcell-epitope
+  formats:
+  - csv
+  - tsv
+  - xlsx
+  - xml
+  - json
+  - sql
+  - api
+  landing_url: https://www.iedb.org/
+  download_url: https://www.iedb.org/database_export_v3.php
+  api: https://query-api.iedb.org/
+  license: CC BY 4.0
+  license_url: https://www.iedb.org/citation_v3.php
+  access: open
+  provenance:
+    maintainer: La Jolla Institute for Immunology (NIH/NIAID funded, contract 75N93019C00001)
+    key_refs:
+    - 10.1093/nar/gkae1092
+    - 10.1093/nar/gky1006
+  last_updated: 2025-09 (weekly full exports)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Foundational training/validation corpus for both presentation (MHC-ligand elution, binding)
+      and recognition (TCR-epitope) models. The benchmark most MHC predictors cite.
+
+      '
+  agent_access: 'Full weekly bulk exports (XML/MySQL/CSV/TSV/XLSX/JSON), no auth, directly wget-able from
+    database_export_v3.php. Public REST query API at query-api.iedb.org (PostgREST-style) for subset pulls.
+    Fully bulk-downloadable by an automated agent.
+
+    '
+  caveats: 'License statements conflict across IEDB pages: the citation page states CC BY 4.0 while the
+    older terms_of_use_v3 page describes NIAID/government data as effectively public domain, and a third-party
+    data.gov record lists ODbL. Treat as CC BY 4.0 and attribute both IEDB and original data authors.
+    Heavy dedup/normalization needed (same epitope across many assays/papers; mixed qualitative + quantitative).
+    Canine (DLA) coverage is sparse.
+
+    '
+- id: pearson-2016-maps
+  name: Pearson 2016 MHC-I-associated peptides (MAPs) from B-LCLs
+  category: presentation
+  species:
+  - human
+  description: 'HLA-I MAPs from B lymphocytes of 18 individuals with paired RNA-seq, used to model which
+    genomic regions generate presented peptides. Pairs immunopeptidome with transcriptome.
+
+    '
+  scale: 25,270 MAPs; 18 individuals; 27 HLA-A/B allotypes
+  modalities:
+  - mhc-ligand-elution
+  - transcriptomics
+  formats:
+  - raw-ms
+  - rna-seq (fastq)
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD004023
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2016/11/PXD004023/
+  license: CC0 1.0 (PRIDE default); RNA-seq via SRA BioProject terms
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: IRIC / Université de Montréal (Perreault lab); PRIDE + SRA + IEDB
+    key_refs:
+    - 10.1172/JCI88590
+  last_updated: '2016'
+  relevance:
+    programs:
+    - presentation
+    why: 'Paired peptidome + transcriptome supports expression-aware presentation features; MAP list also
+      submitted to IEDB (ref 1000704).
+
+      '
+  agent_access: 'MS: PRIDE PXD004023 (API/FTP). RNA-seq: SRA BioProject PRJNA286122. Peptide list also
+    in IEDB (reference 1000704). Bulk-downloadable.
+
+    '
+  caveats: 'RNA-seq is controlled only by SRA/BioProject norms (open). Human only.
+
+    '
+- id: proteomexchange-pride-massive
+  name: ProteomeXchange (PRIDE / MassIVE / jPOST / iProX)
+  category: presentation
+  species:
+  - human
+  - mouse
+  - dog
+  - other
+  description: 'The federated primary repositories for raw mass-spec proteomics, including the bulk of
+    raw immunopeptidomics (HLA-elution) datasets underlying every reprocessed atlas. ProteomeXchange assigns
+    PXD accessions; PRIDE and MassIVE host the files. The source layer if you want to reprocess raw spectra
+    yourself.
+
+    '
+  scale: Tens of thousands of PXD datasets; hundreds are immunopeptidomics; TB-scale raw files
+  modalities:
+  - raw-ms
+  - mhc-ligand-elution
+  - spectral-library
+  formats:
+  - raw
+  - mzML
+  - mzIdentML
+  - mzTab
+  - FASTA
+  - api
+  landing_url: https://www.proteomexchange.org/
+  download_url: https://proteomecentral.proteomexchange.org/
+  api: https://www.ebi.ac.uk/pride/ws/archive/v2/
+  license: CC0 1.0 (PX default since 2020; Panorama Public / iProX default CC BY)
+  license_url: https://www.proteomexchange.org/
+  access: open
+  provenance:
+    maintainer: ProteomeXchange consortium (EBI-PRIDE, UCSD-MassIVE, jPOST, iProX, Panorama)
+    key_refs:
+    - 10.1093/nar/gkab1038
+    - 10.1093/nar/gkw936
+  last_updated: continuous
+  relevance:
+    programs:
+    - presentation
+    why: 'The ground-truth raw-data source for building our own uniformly reprocessed immunopeptidome.
+      Reprocessing raw files (vs. trusting others'' peptide lists) controls FDR and label quality end-to-end.
+
+      '
+  agent_access: 'PRIDE REST API (ws/archive/v2) + pridepy client; MassIVE FTP; the `ppx` Python package
+    resolves PXD accessions across repositories and downloads files. Fully bulk-downloadable but TB-scale
+    - plan storage/compute. No auth for public datasets.
+
+    '
+  caveats: 'CC0 is the default but PER-DATASET terms vary (some older sets, Panorama/iProX use CC BY;
+    a few are embargoed/private until publication) - check each PXD record. Finding immunopeptidomics
+    subsets requires keyword/metadata filtering. Canine sets exist but are rare (e.g. PXD074485, canine
+    tumor antigen presentation).
+
+    '
+- id: pxd074485
+  name: PXD074485 — Identical Tumor Antigen Peptides by Canine & Human MHC-I (Kaabinejadian, iScience
+    2026)
+  category: presentation
+  species:
+  - dog
+  - human
+  description: 'ProteomeXchange/PRIDE immunopeptidomics: DLA-bound peptides purified from 4 dog tumors
+    (osteosarcoma, two anal sac adenocarcinomas, oral melanoma) and 3 human HCT116 lines each transduced
+    with one DLA-88 allele (DLA-88*012:01 named). Shows 30-55% of canine tumor peptides are identical
+    to human HLA-I peptides in IEDB. Instruments TripleTOF 5600 / ZenoTOF 7600. PEAKS tables = 76,550
+    rows.
+
+    '
+  scale: 4 dog tumors + 3 monoallelic human lines; 76,550 PEAKS rows
+  size_bytes: 25800000
+  modalities:
+  - mhc-ligand-elution
+  - immunopeptidomics
+  formats:
+  - raw-ms
+  - peaks-csv
+  - peptide-tables
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD074485
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2026/
+  api: https://www.ebi.ac.uk/pride/ws/archive/v2/
+  license: CC0 / public (ProteomeXchange via PRIDE)
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/license
+  access: open
+  provenance:
+    maintainer: PRIDE/ProteomeXchange (Kaabinejadian et al.)
+    key_refs:
+    - 10.1016/j.isci.2026.115975
+    pmc: PMC13200046
+  last_updated: '2026-02-14'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'THE empirical dog<->human presentation-overlap dataset and native canine tumor MHC-I ligands.
+      Top-priority raw data for Veritope''s canine presentation models.
+
+      '
+  agent_access: 'PRIDE REST API v2 + FTP bulk (RAW + result files); no auth. Derived PEAKS tables also
+    packaged in openvax/orfdata (`kaabinejadian-dog-dla-ligands`, CC0).
+
+    '
+  caveats: 'submissionType=PARTIAL (not all raw runs deposited; ~1,695 rows lack deposited RAW). Only
+    DLA-88; small allele set. Unique 8-14mer monoallelic counts ~591 and ~1,465 per line.
+
+    '
+- id: pxd074485-canine-tumor-peptides
+  name: Identical Tumor Antigen Peptides by Canine & Human MHC-I (PXD074485)
+  category: presentation
+  species:
+  - dog
+  - human
+  description: 'Immunopeptidomics purifying DLA-bound peptides from canine tumors and DLA-transduced monoallelic
+    cell lines (e.g., DLA-88*003:02, *012:01 in HCT116), showing 30-55% of canine tumor peptides are identical
+    to human HLA-I peptides reported in IEDB — direct evidence for cross-species shared presentation.
+
+    '
+  scale: canine tumor + monoallelic cell-line runs (ProteomeXchange deposit)
+  modalities:
+  - mhc-ligand-elution
+  - immunopeptidomics
+  formats:
+  - raw-ms
+  - peptide-tables
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD074485
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD074485
+  api: https://www.ebi.ac.uk/pride/ws/archive/v2/
+  license: public (PRIDE/ProteomeXchange; verify CC0 on record)
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/license
+  access: open
+  provenance:
+    maintainer: PRIDE/ProteomeXchange deposit
+    key_refs:
+    - PXD074485
+    pmc: PMC13200046
+  last_updated: 2026-04
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'Quantifies dog<->human presentation overlap — the empirical basis for transferring human immunology
+      knowledge to the dog. High-priority raw data for our presentation models.
+
+      '
+  agent_access: 'PRIDE REST API + FTP bulk download of RAW/result files; no auth.
+
+    '
+  caveats: 'Small and tumor/line-specific; may be from the same group as the DLA-88 atlas (possible overlap).
+    Verify exact allele coverage and dedup against the atlas.
+
+    '
+- id: racle-2019-hla2-deconvolution
+  name: Racle 2019 HLA-II immunopeptidome (MixMHC2pred)
+  category: presentation
+  species:
+  - human
+  description: 'HLA class II immunopeptidomes with motif deconvolution used to build MixMHC2pred, one
+    of the leading class II predictors.
+
+    '
+  scale: 99,265 unique HLA-II ligands
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw-ms
+  - supplementary tables
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD012308
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2019/
+  license: CC0 1.0 (PRIDE default; verify per-file)
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: Ludwig Institute / UNIL Lausanne (Gfeller/Bassani-Sternberg); PRIDE
+    key_refs:
+    - 10.1038/s41587-019-0289-6
+  last_updated: '2019'
+  relevance:
+    programs:
+    - presentation
+    why: 'Class II positive set + deconvolved motifs; benchmark for HLA-II presentation.
+
+      '
+  agent_access: 'PRIDE PXD012308 (API/FTP) + Supplementary Data peptide tables. Bulk-downloadable.
+
+    '
+  caveats: 'Associated MixMHC2pred tool carries the Gfeller for-profit-license restriction (see domain-1
+    mixmhcpred); the deposited raw data itself is CC0 via PRIDE. Human only.
+
+    '
+- id: racle-2023-hla2-627k
+  name: Racle 2023 pan-species MHC-II ligandome (627K)
+  category: presentation
+  species:
+  - human
+  - mouse
+  - other
+  description: 'A large curated MHC class II ligand dataset across human, mouse, cattle and chicken, with
+    motifs for 88 alleles and an alternative class II binding mode - the largest MHC-II immunopeptidome
+    corpus to date.
+
+    '
+  scale: 627,013 unique MHC-II ligands; motifs for 88 alleles
+  modalities:
+  - mhc-ligand-elution
+  - binding-motif
+  formats:
+  - raw-ms
+  - supplementary tables
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD034773
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/
+  license: CC0 1.0 (PRIDE default; verify per-file)
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: Ludwig Institute / UNIL + CHUV (Racle/Bassani-Sternberg/Gfeller); PRIDE
+    key_refs:
+    - 10.1016/j.immuni.2023.03.009
+  last_updated: '2023'
+  relevance:
+    programs:
+    - presentation
+    - design
+    - comparative
+    why: 'Largest HLA-II positive set AND multi-species (cattle, chicken) - directly useful for cross-species
+      presentation modeling, a stepping stone toward canine.
+
+      '
+  agent_access: 'PRIDE PXD034773 (API/FTP) + supplementary tables. Bulk-downloadable, CC0.
+
+    '
+  caveats: 'Underpins MixMHC2pred 2.0 (tool has for-profit-license clause); raw data CC0. No dog.
+
+    '
+- id: sarkizova-2020-monoallelic
+  name: Sarkizova/HLAthena mono-allelic immunopeptidome (MassIVE MSV000084172 + MSV000084442)
+  category: presentation
+  species:
+  - human
+  description: 'Large mono-allelic HLA class I immunopeptidome generated by expressing single HLA alleles
+    in cell lines and eluting/sequencing their ligands — the training data behind the HLAthena presentation
+    predictor. Experimentally measured ligands; mono-allelic design gives clean per-allele motifs. Patient-sample
+    data in a companion accession.
+
+    '
+  scale: '>185,000 peptides from 95 mono-allelic HLA-A/-B/-C/-G cell lines'
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw
+  - mzML
+  landing_url: http://hlathena.tools/
+  download_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000084172
+  license: unknown
+  license_url: https://massive.ucsd.edu/
+  access: open
+  provenance:
+    maintainer: Keskin/Carr/Wu labs, Broad Institute & DFCI; MassIVE/ProteomeXchange
+    key_refs:
+    - 10.1038/s41587-019-0322-9
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    why: 'Per-allele mono-allelic ligand data is the cleanest substrate for training HLA-I presentation/binding
+      models (powering HLAthena) — high-value for a presentation program.
+
+      '
+  agent_access: 'MassIVE open download (MSV000084172 cell lines; MSV000084442 patient samples), no auth.
+    Automatable via FTP.
+
+    '
+  caveats: 'license: unknown (MassIVE/ProteomeXchange open). Companion mono-allelic sets in MSV000080527
+    (see abelin-2017). Cell-line mono-allelic motifs may not fully capture tissue co-regulation.
+
+    '
+- id: sarkizova-2020-monoallelic-hlathena
+  name: Sarkizova 2020 95-allele mono-allelic HLA-I (HLAthena)
+  category: presentation
+  species:
+  - human
+  description: 'The largest mono-allelic HLA class I immunopeptidome at publication: peptides from 95
+    HLA-A/B/C/G mono-allelic cell lines, underpinning the HLAthena predictor. The reference mono-allelic
+    corpus for pan-allele HLA-I presentation modeling.
+
+    '
+  scale: ~185,000 peptides across 95 HLA-A/B/C/G alleles (raw spectra for 79/95 deposited)
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw-ms
+  - PSM tables
+  - fasta
+  landing_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000084172
+  download_url: ftp://massive.ucsd.edu/MSV000084172/
+  api: http://hlathena.tools/
+  license: CC0 1.0
+  license_url: https://massive.ucsd.edu/
+  access: open
+  provenance:
+    maintainer: Broad Institute (Keskin/Carr/Wu); MassIVE + GEO
+    key_refs:
+    - 10.1038/s41587-019-0322-9
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Broad allele coverage makes it the backbone positive set for pan-allele presentation predictors
+      and for validating allele-specific motifs.
+
+      '
+  agent_access: 'MassIVE MSV000084172 (PSM tables for all 95 alleles + raw spectra for 79) and a companion
+    MSV000084442; GEO GSE131267. HLAthena predictions via hlathena.tools. Bulk-downloadable, CC0.
+
+    '
+  caveats: 'Raw spectra incomplete (79/95); PSM tables cover all 95. Confirm which accession (MSV000084172
+    vs MSV000084442) holds the files you need. Human only.
+
+    '
+- id: schuster-2017-ovarian
+  name: Schuster 2017 ovarian carcinoma immunopeptidome
+  category: presentation
+  species:
+  - human
+  description: 'HLA class I/II ligandome of epithelial ovarian carcinomas compared to benign tissue to
+    nominate tumor-associated antigens - a tumor-vs-normal presentation dataset.
+
+    '
+  scale: Large-scale HLA ligandome across ovarian tumor and benign tissues
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw-ms
+  - mzML
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD007635
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2017/11/PXD007635/
+  license: CC0 1.0 (PRIDE default; verify per-file)
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: University of Tübingen (Rammensee/Stevanović); PRIDE
+    key_refs:
+    - 10.1073/pnas.1707658114
+  last_updated: '2017'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Tumor-vs-benign comparison is the exact triage logic for target nomination; complements the
+      HLA Ligand Atlas benign reference.
+
+      '
+  agent_access: 'PRIDE PXD007635 via API/FTP; bulk-downloadable.
+
+    '
+  caveats: 'Multi-allelic tissue data (deconvolution needed). Human only.
+
+    '
+- id: systemhc-atlas
+  name: SysteMHC Atlas (v2.0)
+  category: presentation
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Curated repository of mass-spectrometry immunopeptidomics datasets reprocessed through
+    a uniform pipeline into HLA/MHC peptide spectral libraries across many allotypes and studies (incl.
+    normal and non-normal sources). A one-stop harmonized immunopeptidome resource; filter for normal-tissue
+    datasets. (Cross-references presentation agent.)
+
+    '
+  scale: 'v2.0: ~1.0M unique class I + ~1.1M class II peptides; 7,190 MS files; 303 allotypes; 471K modified
+    peptides'
+  modalities:
+  - mhc-ligand-elution
+  - spectral-library
+  - ptm
+  - immunopeptidomics
+  formats:
+  - csv
+  - tsv
+  - fasta
+  - spectral-library (.sptxt/.blib)
+  - mzxml
+  - spectral-library
+  landing_url: https://systemhc.sjtu.edu.cn/
+  download_url: https://systemhc.sjtu.edu.cn/download
+  license: ODbL 1.0
+  access: open
+  provenance:
+    maintainer: Shanghai Jiao Tong University (formerly ETH Zurich / Aebersold lab); current host systemhc.sjtu.edu.cn
+    key_refs:
+    - 10.1093/nar/gkad1068
+    - 10.1038/sdata.2017.137
+    - 10.1093/nar/gkx664
+  last_updated: 2024 (v2.0)
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Harmonized immunopeptidome libraries let you check whether a peptide has been observed as an
+      HLA ligand (and in what context); normal-source subsets contribute to the self-presentation filter.
+
+      '
+  agent_access: 'Bulk download of spectral libraries + reprocessed files from the portal (HTTPS); pipeline
+    on Zenodo. No auth. (Original systemhcatlas.org superseded by systemhc.sjtu.edu.cn.)
+
+    '
+  caveats: 'No explicit data license found on the site (v1.0 paper CC BY-NC covers the article only, not
+    the data) - marked unknown; confirm terms before redistribution/ML use. Built from public raw data
+    so re-use may inherit per-dataset ProteomeXchange terms. Canine coverage: none known.
+
+    '
+  license_url: https://opendatacommons.org/licenses/odbl/1-0/
+  accessions:
+  - 'portal: systemhc.sjtu.edu.cn'
+  - 'pipeline: Zenodo 10011925'
+  cross_listed: true
+- id: systemhc-atlas-murine
+  name: SysteMHC Atlas — murine MHC-I draft map (SYSMHC00018 / PXD008733)
+  category: presentation
+  species:
+  - mouse
+  description: 'Tissue-based draft map of the murine MHC class I immunopeptidome, a flagship SysteMHC
+    Atlas deposition. Experimentally measured eluted ligands, reprocessed through the SysteMHC pipeline.
+    The broader SysteMHC Atlas v2.0 portal (systemhc.sjtu.edu.cn) aggregates 7,190 MS files / 303 allotypes
+    with allele- and PTM-specific spectral libraries; pipeline on Zenodo (record 10011925).
+
+    '
+  scale: 'Murine MHC-I draft map; SysteMHC v2.0 overall: 7,190 MS files, 303 allotypes, +280,126 peptides
+    in 2024-06 release'
+  size_bytes: 251000939863
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw
+  - mzXML
+  - fasta
+  - spectral-library
+  landing_url: https://systemhc.sjtu.edu.cn/
+  download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD008733
+  license: unknown
+  license_url: https://www.ebi.ac.uk/pride/markdownpage/license
+  access: open
+  provenance:
+    maintainer: Shao/Aebersold et al.; portal at Shanghai Jiao Tong University
+    key_refs:
+    - 10.1093/nar/gkad1068
+    - 10.1093/nar/gkx664
+    - 10.1038/sdata.2018.157
+  last_updated: 2024-06 (v2.0 release)
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Harmonized MS immunopeptidome spectral libraries (incl. mouse) for training/benchmarking presentation
+      predictors; mouse data support cross-species comparative work.
+
+      '
+  agent_access: 'Portal Download section (allele/PTM spectral libraries); raw in PRIDE (PXD008733, ~251
+    GB) + repo; pipeline on Zenodo (10011925). Automatable; no auth.
+
+    '
+  caveats: 'license: unknown across portal/PRIDE (ProteomeXchange open policy). This entry''s size_bytes
+    is the murine deposition only, not the whole v2.0 atlas. Reprocessed data carry source-study provenance.
+
+    '
+- id: yari-netmhciipan43-hladp
+  name: NetMHCIIpan-4.3 targeted HLA-DP/DQ immunopeptidome (PXD044810)
+  category: presentation
+  species:
+  - human
+  description: 'Targeted HLA class II immunopeptidomics (notably HLA-DP) generated to close the cross-loci
+    prediction gap for NetMHCIIpan 4.3, improving DR/DQ/DP coverage.
+
+    '
+  scale: New targeted DP/DQ/DR eluted-ligand data (multi-sample)
+  modalities:
+  - mhc-ligand-elution
+  formats:
+  - raw-ms
+  - mzML
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD044810
+  download_url: https://ftp.pride.ebi.ac.uk/pride/data/archive/2025/07/PXD044810/
+  license: CC0 1.0 (PRIDE default; verify per-file)
+  license_url: https://www.ebi.ac.uk/pride/
+  access: open
+  provenance:
+    maintainer: University of Oklahoma HSC (Hildebrand/Yari) + DTU (NetMHCIIpan); PRIDE
+    key_refs:
+    - 10.1093/nar/gkaa379
+  last_updated: 2025-07
+  relevance:
+    programs:
+    - presentation
+    why: 'HLA-DP/DQ are under-modeled relative to DR; this fills a real class II gap for presentation
+      prediction.
+
+      '
+  agent_access: 'PRIDE PXD044810 via API/FTP; bulk-downloadable, no auth.
+
+    '
+  caveats: 'Exact 4.3 publication DOI not confirmed at catalog time (dataset predates/accompanies the
+    method update) - verify. Human only.
+
+    '

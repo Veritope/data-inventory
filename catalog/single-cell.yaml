@@ -1,0 +1,1705 @@
+- id: 10x-tcr-pmhc-dextramer
+  name: 10x Genomics TCR-pMHC dextramer datasets ("A New Way of Exploring Immunity")
+  category: single-cell
+  species:
+  - human
+  description: 'Single-cell 5'' immune profiling of CD8+ T cells from four healthy donors, each labeled
+    with ~44-50 dCODE Dextramer (pMHC) reagents plus TotalSeq-C surface-protein antibodies, giving paired
+    alpha/beta TCR sequences with per-cell pMHC binding calls and gene expression.
+
+    '
+  scale: ~62,858 cells, ~14,320 distinct pMHC-specific paired TCRs (application note); 4 donors
+  modalities:
+  - paired-chain
+  - pmhc-dextramer
+  - scrna-seq
+  - cite-seq
+  formats:
+  - csv
+  - cellranger
+  - h5
+  landing_url: https://www.10xgenomics.com/resources/datasets/cd-8-plus-t-cells-of-healthy-donor-1-1-standard-3-0-2
+  download_url: https://www.10xgenomics.com/resources/datasets/cd-8-plus-t-cells-of-healthy-donor-1-1-standard-3-0-2
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: registration
+  provenance:
+    maintainer: 10x Genomics
+    key_refs:
+    - 10x Genomics Application Note AN047
+  last_updated: '2019'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'The canonical paired-chain, single-cell pMHC-binding dataset underpinning modern TCR specificity
+      models and most published negative/positive splits (NetTCR, pMTnet).
+
+      '
+  agent_access: 'Per-donor dataset pages host binarized CSV matrices and Cell Ranger outputs behind a
+    short registration/EULA click-through; direct file URLs are fetchable once accepted.
+
+    '
+  caveats: 'Dextramer binding has nonspecific background; standard practice applies UMI>10 and >5x negative-control
+    filters and drops cells with >4 specificities. CC BY 4.0 is ML/redistribution friendly (cite). Human
+    only.
+
+    '
+- id: adult-human-brain-atlas
+  name: Transcriptomic atlas of the adult human brain (Siletti/Linnarsson)
+  category: single-cell
+  species:
+  - human
+  description: 'Deep single-nucleus transcriptomic census of the adult human brain across ~100+ dissections
+    spanning forebrain, midbrain and hindbrain, defining hundreds of cell-type clusters. The reference
+    normal human brain cellular baseline.
+
+    '
+  scale: ~3.37M nuclei, ~105 dissections, 3 donors, 461 clusters
+  modalities:
+  - snrna-seq
+  - cell-type-annotation
+  formats:
+  - h5ad
+  - loom
+  landing_url: https://github.com/linnarsson-lab/adult-human-brain
+  download_url: https://nemoarchive.org/
+  api: https://cellxgene.cziscience.com/
+  license: custom
+  license_url: https://nemoarchive.org/resources/data-use.php
+  access: open
+  provenance:
+    maintainer: Linnarsson lab / BRAIN Initiative Cell Census Network (BICCN)
+    key_refs:
+    - 10.1126/science.add7046
+  accessions:
+  - 'NeMO Archive: biccn/grant/u01_lein/linnarsson/transcriptome/sncell/10x_v3/human/raw/'
+  - CZ CELLxGENE Discover collection
+  - 'code: github.com/linnarsson-lab/adult-human-brain (Zenodo rev20230123)'
+  last_updated: '2023'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Brain/neuronal expression is a severe off-tumor toxicity concern (non-regenerable tissue); a
+      deep normal brain cell-type atlas is essential for neuro-safety screening of targets.
+
+      '
+  agent_access: 'Raw from NeMO Archive (HTTPS, BICCN data-use terms); processed .h5ad via CZ CELLxGENE.
+    No auth for open files.
+
+    '
+  caveats: 'Only 3 donors (deep but not population-scale). NeMO/BICCN has its own data-use/attribution
+    terms (not a standard CC license) — review before redistribution.
+
+    '
+- id: broad-scp
+  name: Broad Institute Single Cell Portal (SCP)
+  category: single-cell
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Hosting and interactive-visualization portal for single-cell studies, many with tumor/immune
+    content. Each study carries expression matrices, cluster/metadata files and per-study access controls
+    set by the submitter. A host for primary author-deposited single-cell data rather than a reprocessed
+    atlas.
+
+    '
+  scale: '>1000 public studies, ~90M cells (portal homepage, 2026)'
+  modalities:
+  - scrna-seq
+  - scatac-seq
+  - spatial
+  - cite-seq
+  - metadata
+  formats:
+  - mtx
+  - tsv
+  - h5ad
+  - csv
+  landing_url: https://singlecell.broadinstitute.org/single_cell
+  download_url: https://singlecell.broadinstitute.org/single_cell/app/studies
+  api: https://singlecell.broadinstitute.org/single_cell/api/v1/
+  license: per-study (submitter-set); code BSD-3-Clause
+  license_url: https://github.com/broadinstitute/single_cell_portal
+  access: open
+  provenance:
+    maintainer: Broad Institute of MIT and Harvard
+    key_refs:
+    - 10.1101/2023.07.13.548886
+  last_updated: continuous
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'A large pool of primary tumor-immune single-cell studies with accession-level download, useful
+      as raw inputs for reprocessing pipelines.
+
+      '
+  agent_access: 'REST API (v1) with OpenAPI docs; bulk download via portal or scripted. Some studies require
+    sign-in / Terra authorization; download requires a Google-linked account token for protected studies.
+    Per-study access gating must be handled programmatically.
+
+    '
+  caveats: 'No single data license — each study sets its own terms (some restrict redistribution). Must
+    check each study''s terms before ML training/redistribution. Code is BSD-3-Clause, not the data.
+
+    '
+- id: cancersea
+  name: CancerSEA — Cancer Single-cell State Atlas
+  category: single-cell
+  species:
+  - human
+  description: 'Atlas of 14 manually curated functional states (e.g. proliferation, invasion, stemness,
+    hypoxia, EMT, angiogenesis) scored at single-cell resolution across cancer scRNA-seq datasets, with
+    per-gene state-association queries and downloadable functional-state profiles and 14 state signature
+    gene sets.
+
+    '
+  scale: ~41,900 cancer single cells, 25 cancer types, 14 functional states
+  modalities:
+  - scrna-seq
+  - functional-state-scores
+  - gene-signatures
+  formats:
+  - txt
+  - csv
+  - web-viewer
+  landing_url: http://biocc.hrbmu.edu.cn/CancerSEA/
+  download_url: http://biocc.hrbmu.edu.cn/CancerSEA/goDownload
+  license: CC BY-NC
+  license_url: http://biocc.hrbmu.edu.cn/CancerSEA/goHelp
+  access: open
+  provenance:
+    maintainer: Harbin Medical University (Xia Li / Juan Xu labs)
+    key_refs:
+    - 10.1093/nar/gky939
+  last_updated: 2019 (successor CancerSEA-X 2025)
+  relevance:
+    programs:
+    - comparative
+    - recognition
+    why: 'Functional-state signatures provide an interpretable axis (stemness, EMT, hypoxia) to stratify
+      tumor cells and correlate antigen-presentation state with malignant cell programs.
+
+      '
+  agent_access: 'Bulk download of state profiles, expression matrices and signatures via HTTP, no auth.
+    No REST API. Signature gene sets are small and script-ingestible.
+
+    '
+  caveats: 'Site Help page states CC BY-NC (non-commercial); an NBDC catalog record lists CC0 but that
+    applies to the catalog metadata, not the data — treat CC BY-NC as governing. Successor CancerSEA-X
+    (http://biocc.hrbmu.edu.cn/CancerState, 2025) is broader but its license was not located; verify before
+    use.
+
+    '
+- id: canine-immune-scrna-additional
+  name: Additional Canine Immune scRNA Datasets (leishmaniosis, lung, canFam4, TNBC)
+  category: single-cell
+  species:
+  - dog
+  description: 'Cluster of further canine immune single-cell datasets: progressive-leishmaniosis PBMC
+    atlas (~68,323 cells, 47 populations, iScience 2026), healthy-lung scRNA atlas, canFam4-based healthy-dog
+    immune-subset atlas with checkpoint programs (2025 preprint), and triple-negative canine breast cancer
+    scRNA (immune-suppressive interactions).
+
+    '
+  scale: multiple studies; tens of thousands of cells each
+  modalities:
+  - scrna-seq
+  - cite-seq
+  formats:
+  - fastq
+  - h5
+  - mtx
+  landing_url: https://www.cell.com/iscience/fulltext/S2589-0042(26)02248-0
+  download_url: https://www.ncbi.nlm.nih.gov/geo/
+  license: articles CC BY; data GEO/SRA public norms
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: multiple academic groups (GEO/SRA/ArrayExpress)
+    key_refs:
+    - 10.1016/j.isci.2026.xxxxx
+    - 10.3389/fvets.2024.1434617
+    - 10.1101/2025.09.06.674668
+  last_updated: 2024-2026
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Expands canine immune cell-type references across tissues/diseases for infiltrate annotation.
+
+      '
+  agent_access: 'Per-paper GEO/SRA accessions in data-availability; no auth. Some preprints.
+
+    '
+  caveats: 'Fragmented (no unified canine immune atlas); some preprints; accessions VERIFY per paper.
+    No DLA typing or antigen specificity.
+
+    '
+- id: canine-immune-scrna-atlases
+  name: Canine Immune / PBMC Single-cell Atlases
+  category: single-cell
+  species:
+  - dog
+  description: 'Reference single-cell transcriptomic atlases of canine immune cells: circulating leukocytes
+    in healthy and osteosarcoma dogs (~36 populations), a peripheral-blood TCRab+ T-cell atlas (incl.
+    MAIT-like cells), a healthy-lung atlas, and a progressive-leishmaniosis PBMC atlas (~68,323 cells,
+    47 populations).
+
+    '
+  scale: multiple studies; tens of thousands of cells each
+  modalities:
+  - scrna-seq
+  - cite-seq
+  - repertoire
+  formats:
+  - h5
+  - mtx
+  - seurat
+  - counts
+  landing_url: https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2023.1162700/full
+  download_url: https://www.ncbi.nlm.nih.gov/geo/
+  license: articles CC BY; data via GEO/SRA public norms
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: multiple academic groups (GEO/SRA/ArrayExpress)
+    key_refs:
+    - 10.3389/fimmu.2023.1162700
+    - 10.3389/fimmu.2023.1123366
+    - 10.1038/s41598-025-89862-9
+  last_updated: 2023-2026
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Cell-type references for annotating canine tumor immune infiltrates and deconvolving bulk RNA-seq;
+      building blocks for mapping the dog immune system.
+
+      '
+  agent_access: 'GEO/SRA/ArrayExpress bulk downloads; no auth. Accessions in each paper''s data-availability.
+
+    '
+  caveats: 'Fragmented across papers/accessions (no unified canine immune cell atlas); donor numbers small;
+    DLA typing and antigen specificity absent.
+
+    '
+- id: combat-2022-blood-atlas
+  name: COMBAT COVID-19 Multi-Omic Blood Atlas (CITE-seq TCR)
+  category: single-cell
+  species:
+  - human
+  description: 'Multi-omic blood atlas of COVID-19 including CITE-seq single-cell TCR chain composition
+    alongside transcriptomics, proteomics, epigenomics and cytometry; served via COMBATdb with Zenodo
+    deposits.
+
+    '
+  scale: 26 associated datasets; large CITE-seq cohort (COMBATdb)
+  modalities:
+  - scrna-seq
+  - cite-seq
+  - repertoire
+  - multi-omic
+  formats:
+  - h5ad
+  - zenodo
+  - portal
+  landing_url: https://db.combat.ox.ac.uk/
+  download_url: https://zenodo.org/record/6120249
+  api: https://zenodo.org/record/5139561
+  license: mixed (Zenodo open deposits; genetic/clinical via EGA DUA)
+  access: controlled-access
+  provenance:
+    maintainer: COMBAT Consortium, University of Oxford
+    key_refs:
+    - 10.1016/j.cell.2022.01.012
+    - 10.1093/nar/gkac1019
+  last_updated: '2022'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Deep multi-omic immune repertoire context; CITE-seq TCR composition complements paired scTCR
+      cohorts for disease-state modeling.
+
+      '
+  agent_access: 'Open processed datasets on Zenodo + COMBATdb portal; genetic data via EGA (EGAS00001005493,
+    DUA), proteomics via PRIDE (PXD023175). Mixed open/controlled access.
+
+    '
+  caveats: 'Repertoire resolution is CITE-seq chain composition (not deep paired clonotypes). Controlled
+    tiers need a DUA. Human only.
+
+    '
+- id: geo-canine-osa-scrna
+  name: Canine Osteosarcoma Single-cell RNA-seq Reference
+  category: single-cell
+  species:
+  - dog
+  description: 'Treatment-naive primary canine osteosarcoma scRNA-seq reference (tumor + microenvironment
+    / immune compartments) with processed data and an interactive cell browser; GEO GSE252470 plus a Zenodo
+    code/data release.
+
+    '
+  scale: ~6 dogs; tens of thousands of cells
+  modalities:
+  - scrna-seq
+  formats:
+  - h5
+  - mtx
+  - seurat
+  - counts
+  landing_url: https://www.nature.com/articles/s42003-024-06182-w
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE252470
+  license: public (GEO) + Zenodo (CC BY, verify)
+  license_url: https://zenodo.org/records/10891255
+  access: open
+  provenance:
+    maintainer: NCBI GEO + Zenodo
+    key_refs:
+    - 10.1038/s42003-024-06182-w
+  last_updated: '2024'
+  relevance:
+    programs:
+    - comparative
+    - recognition
+    why: 'Resolves tumor-infiltrating lymphocyte / myeloid compartments in dog tumors — substrate for
+      understanding the canine recognition landscape at single-cell resolution.
+
+      '
+  agent_access: 'GEO + Zenodo bulk downloads; no auth.
+
+    '
+  caveats: 'Small donor number; gene-expression TCR inference only (no paired VDJ unless separately noted).
+
+    '
+- id: gse103322-puram-hnscc
+  name: Puram et al. 2017 — HNSCC scRNA-seq (GSE103322)
+  category: single-cell
+  species:
+  - human
+  description: 'Smart-seq2 single-cell RNA-seq of ~5,902 cells from 18 oral-cavity head and neck squamous
+    cell carcinoma patients, covering malignant, immune, fibroblast and endothelial compartments with
+    a partial-EMT malignant program.
+
+    '
+  scale: ~5,902 cells, 18 HNSCC patients (Smart-seq2)
+  modalities:
+  - scrna-seq
+  - cell-type-annotation
+  formats:
+  - txt
+  - tpm-matrix
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE103322
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE103nnn/GSE103322/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Broad Institute (Puram/Tirosh/Bernstein)
+    key_refs:
+    - 10.1016/j.cell.2017.10.044
+  last_updated: '2017'
+  relevance:
+    programs:
+    - comparative
+    why: 'Reference HNSCC TME dataset; useful for malignant-program and stromal baselines in a comparative
+      pipeline.
+
+      '
+  agent_access: 'Single supplementary matrix via GEO FTP; metadata via E-utilities. Automatable.
+
+    '
+  caveats: 'Smart-seq2, modest cell count. Matrix carries non-expression annotation header rows.
+
+    '
+- id: gse114725-azizi-breast-immune
+  name: Azizi et al. 2018 — breast tumor immune scRNA-seq (GSE114725)
+  category: single-cell
+  species:
+  - human
+  description: 'Single-cell RNA-seq map of ~45k immune cells (inDrop + 10x) across breast tumor, normal
+    breast, blood and lymph node from 8 patients, describing a continuum of immune phenotypic states in
+    the TME. Companion accession GSE114727 holds related samples.
+
+    '
+  scale: ~45,000 immune cells, 8 breast cancer patients (56 samples)
+  modalities:
+  - scrna-seq
+  - immune-phenotype-annotation
+  formats:
+  - csv
+  - matrix
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114725
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE114nnn/GSE114725/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: MSKCC (Azizi/Pe'er)
+    key_refs:
+    - 10.1016/j.cell.2018.05.060
+  last_updated: '2018'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'Breast TME immune reference emphasizing phenotypic continuity rather than discrete states —
+      useful for immune-composition baselines.
+
+      '
+  agent_access: 'GEO supplementary matrices via FTP; mirrored in the MSKCC data catalog. Automatable.
+    Companion accession GSE114727 should be fetched for full sample set.
+
+    '
+  caveats: 'Two related accessions (GSE114725 + GSE114727) — ingest both to avoid partial cohort. Mixed
+    chemistries (inDrop/10x).
+
+    '
+- id: gse115978-jerbyarnon-melanoma
+  name: Jerby-Arnon et al. 2018 — melanoma ICI-resistance scRNA-seq (GSE115978)
+  category: single-cell
+  species:
+  - human
+  description: 'Smart-seq2 single-cell RNA-seq of malignant and immune cells across melanoma tumors, used
+    to define a malignant-cell immune-evasion / ICI-resistance program (and a T-cell exclusion signature).
+    Includes CD4/CD8 T-cell annotations.
+
+    '
+  scale: ~7,186 cells, 31 melanoma tumors (Smart-seq2)
+  modalities:
+  - scrna-seq
+  - cell-type-annotation
+  formats:
+  - csv
+  - matrix
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE115978
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE115nnn/GSE115978/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Broad Institute (Jerby-Arnon/Regev)
+    key_refs:
+    - 10.1016/j.cell.2018.09.006
+  last_updated: '2018'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    - recognition
+    why: 'Malignant immune-evasion program directly relevant to antigen presentation and T-cell exclusion
+      — high-value for presentation-focused analysis.
+
+      '
+  agent_access: 'GEO supplementary matrices via FTP; metadata via E-utilities. Automatable.
+
+    '
+  caveats: 'Smart-seq2. Overlaps/extends GSE72056 melanoma cohort — dedup if pooling melanoma cells.
+
+    '
+- id: gse120575-sadefeldman-melanoma-icb
+  name: Sade-Feldman et al. 2018 — melanoma checkpoint-response T cells (GSE120575)
+  category: single-cell
+  species:
+  - human
+  description: 'Smart-seq2 single-cell RNA-seq of ~16,291 CD45+ immune cells from 48 melanoma biopsies
+    (pre- and on-treatment, responder vs non-responder to checkpoint blockade), defining T-cell states
+    associated with ICB response (TCF7+ CD8 memory-like vs dysfunctional).
+
+    '
+  scale: ~16,291 immune cells, 48 biopsies / 32 patients (Smart-seq2)
+  modalities:
+  - scrna-seq
+  - cell-state-annotation
+  - clinical-response
+  formats:
+  - txt
+  - tpm-matrix
+  - metadata
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120575
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE120nnn/GSE120575/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: MGH/Broad (Sade-Feldman/Hacohen)
+    key_refs:
+    - 10.1016/j.cell.2018.10.038
+  last_updated: '2018'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Rare public dataset linking single-cell T-cell states to checkpoint-blockade response — a key
+      label source for immunotherapy-response modeling.
+
+      '
+  agent_access: 'TPM matrix + responder/pre-on-treatment metadata via GEO FTP. Automatable. Response labels
+    per biopsy included.
+
+    '
+  caveats: 'Smart-seq2. Response labels at biopsy level; align carefully with cell barcodes.
+
+    '
+- id: gse123139-li-melanoma-dysfunction
+  name: Li et al. 2019 — melanoma dysfunctional CD8 T cells (GSE123139)
+  category: single-cell
+  species:
+  - human
+  description: 'MARS-seq single-cell RNA-seq of T cells from ~25 melanoma patients, resolving a proliferative,
+    dynamically regulated dysfunctional CD8 compartment (naive-like → transitional → dysfunctional trajectory)
+    in the TME.
+
+    '
+  scale: T cells from ~25 melanoma patients (MARS-seq)
+  modalities:
+  - scrna-seq
+  - cell-state-annotation
+  formats:
+  - txt
+  - matrix
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123139
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE123nnn/GSE123139/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Weizmann Institute (Li H./Amit/Yosef)
+    key_refs:
+    - 10.1016/j.cell.2018.11.043
+  last_updated: '2019'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Defines the CD8 dysfunction trajectory central to antitumor T-cell biology and to recognition/engineering
+      targets.
+
+      '
+  agent_access: 'GEO supplementary matrices via FTP. Automatable. Data-availability statement wording
+    not directly verified in this pass — accession appears consistently across reuse.
+
+    '
+  caveats: 'MARS-seq (UMI, plate-based). Cell count not pinned here — confirm on series page.
+
+    '
+- id: gse154763-cheng-pancancer-myeloid
+  name: Cheng et al. 2021 — pan-cancer myeloid atlas (GSE154763)
+  category: single-cell
+  species:
+  - human
+  description: 'Pan-cancer single-cell transcriptional atlas of tumor-infiltrating myeloid cells across
+    multiple cancer types, defining conserved macrophage/DC/monocyte states (incl. LAMP3+ DC, SPP1+/C1QC+
+    TAMs) relevant to antigen presentation.
+
+    '
+  scale: ~389k myeloid cells across 15+ cancer types
+  modalities:
+  - scrna-seq
+  - cell-state-annotation
+  formats:
+  - csv
+  - matrix
+  - h5
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE154763
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE154nnn/GSE154763/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Peking University (Cheng S./Zhang Zemin)
+    key_refs:
+    - 10.1016/j.cell.2021.01.010
+  last_updated: '2021'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Myeloid/DC states are the professional antigen-presenting compartment — directly relevant to
+      the presentation program across cancers.
+
+      '
+  agent_access: 'GEO normalized-expression CSVs via FTP; a Zenodo-derived h5 count matrix also exists.
+    Raw data under GSA may be controlled — check. Automatable for processed data.
+
+    '
+  caveats: 'Processed matrices open on GEO; some raw data may sit in GSA (China) with its own access.
+    Large; harmonize with other Zhang-lab pan-cancer atlases (T/NK/B/myeloid share design).
+
+    '
+- id: gse176078-wu-breast-atlas
+  name: Wu et al. 2021 — breast cancer single-cell + spatial atlas (GSE176078)
+  category: single-cell
+  species:
+  - human
+  description: 'Single-cell (10x) atlas of 26 primary breast tumors (ER+/HER2+/TNBC) with ~100k cells,
+    plus companion spatial (Visium) data, defining gene modules and recurrent malignant/ stromal/immune
+    states. Processed scRNA on GEO; raw reads controlled on EGA.
+
+    '
+  scale: ~99,876 cells, 26 primary tumors (10x 3' v2)
+  modalities:
+  - scrna-seq
+  - spatial-visium
+  - cell-state-annotation
+  formats:
+  - mtx
+  - csv
+  - h5ad
+  - visium
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE176078
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE176nnn/GSE176078/suppl/
+  license: GEO terms (processed); EGA DAA for raw (controlled)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Garvan Institute (Wu S.Z./Swarbrick)
+    key_refs:
+    - 10.1038/s41588-021-00911-1
+  last_updated: '2021'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'Deep breast-cancer single-cell+spatial reference across subtypes; strong for malignant and TME
+      program discovery.
+
+      '
+  agent_access: 'Processed scRNA via GEO FTP; also on Broad SCP (SCP1039), CELLxGENE, and Zenodo (spatial,
+    DOI 10.5281/zenodo.4739739). Raw sequence reads require EGA DAC approval (EGAS00001005173) — not auto-ingestible.
+
+    '
+  caveats: 'Three deposits (GEO processed / EGA raw / Zenodo spatial) — pick the layer you need. Raw is
+    controlled.
+
+    '
+- id: gse212890-tang-pancancer-nk
+  name: Tang et al. 2023 — pan-cancer NK-cell atlas (GSE212890)
+  category: single-cell
+  species:
+  - human
+  description: 'Pan-cancer single-cell panorama of human natural killer cells across cancer types, defining
+    conserved NK subsets and tumor-associated NK states. Part of the Zhang-lab pan-cancer immune atlas
+    series.
+
+    '
+  scale: NK cells across many cancer types (pan-cancer)
+  modalities:
+  - scrna-seq
+  - cell-state-annotation
+  formats:
+  - csv
+  - matrix
+  - h5
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE212890
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE212nnn/GSE212890/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Peking University (Tang F./Zhang Zemin)
+    key_refs:
+    - 10.1016/j.cell.2023.07.034
+  last_updated: '2023'
+  relevance:
+    programs:
+    - comparative
+    why: 'NK compartment reference complementing T/myeloid/B pan-cancer atlases for full innate+adaptive
+      immune baselines.
+
+      '
+  agent_access: 'GEO matrices via FTP. Some raw may be in GSA — check. Automatable for processed.
+
+    '
+  caveats: 'Accession from Zhang-lab atlas series; confirm tissue/cell counts on series page. Raw-data
+    location may differ from processed.
+
+    '
+- id: gse218355-tcrab-atlas
+  name: GSE218355 — Canine Peripheral Blood TCRab T-cell Atlas (+ MAIT-like)
+  category: single-cell
+  species:
+  - dog
+  description: 'Combined scRNA + V(D)J atlas of peripheral-blood TCRab T cells from healthy dogs; first
+    evidence of canine MAIT-like cells plus innate-effector and iNKT-like FCER1G+ CD8A+ populations (~19,796
+    T cells).
+
+    '
+  scale: ~19,796 T cells (healthy dogs)
+  modalities:
+  - scrna-seq
+  - single-cell-vdj
+  formats:
+  - fastq
+  - h5
+  - airr
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218355
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE218355
+  license: public (NCBI GEO)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: NCBI GEO (Eschke et al.)
+    key_refs:
+    - 10.3389/fimmu.2023.1123366
+  last_updated: '2023'
+  relevance:
+    programs:
+    - recognition
+    why: 'Paired transcriptome + repertoire of canine T cells; MAIT/iNKT identification informs the canine
+      recognition landscape.
+
+      '
+  agent_access: 'GEO FASTQ + processed; no auth.
+
+    '
+  caveats: 'Healthy blood only; no antigen-specific pairing.
+
+    '
+- id: gse225599-leukocyte-atlas
+  name: GSE225599 — Canine Circulating Leukocyte scRNA Atlas (healthy + OSA)
+  category: single-cell
+  species:
+  - dog
+  description: 'scRNA-seq atlas of circulating leukocytes from 7 healthy and 10 osteosarcoma dogs; 36
+    cell populations with fine CD4 T-cell resolution. Processed data on UCSC Cell Browser (canine-leukocyte-atlas).
+
+    '
+  scale: 17 dogs; 36 populations
+  modalities:
+  - scrna-seq
+  formats:
+  - fastq
+  - h5
+  - mtx
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE225599
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE225599
+  license: public (NCBI GEO)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: NCBI GEO (Ammons/Dow, CSU)
+    key_refs:
+    - 10.3389/fimmu.2023.1162700
+  last_updated: '2023-04-25'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Reference for annotating canine immune infiltrates and deconvolving bulk RNA-seq.
+
+      '
+  agent_access: 'GEO FASTQ + UCSC Cell Browser; no auth.
+
+    '
+  caveats: 'Blood (not tumor) leukocytes; no antigen specificity.
+
+    '
+- id: gse233236-ma-pancancer-bcell
+  name: Ma et al. 2024 — pan-cancer B-cell atlas (GSE233236)
+  category: single-cell
+  species:
+  - human
+  description: 'Pan-cancer single-cell dissection of B-cell subtypes across cancers, defining phenotypically
+    distinct B/plasma states and their tumor associations. Completes the Zhang-lab pan-cancer immune atlas
+    quartet (T/myeloid/NK/B).
+
+    '
+  scale: B cells across many cancer types (pan-cancer)
+  modalities:
+  - scrna-seq
+  - cell-state-annotation
+  formats:
+  - csv
+  - matrix
+  - h5
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE233236
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE233nnn/GSE233236/suppl/
+  license: GEO terms (submitter)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Peking University (Ma M./Zhang Zemin)
+    key_refs:
+    - 10.1016/j.cell.2024.06.038
+  last_updated: '2024'
+  relevance:
+    programs:
+    - comparative
+    why: 'B/plasma reference; relevant to tertiary lymphoid structures and humoral components of antitumor
+      immunity.
+
+      '
+  agent_access: 'GEO matrices via FTP. Raw may be in GSA — check. Automatable for processed.
+
+    '
+  caveats: 'Accession from Zhang-lab series; verify counts on series page. Raw-data location may differ.
+
+    '
+- id: gse252470
+  name: GSE252470 — Canine Osteosarcoma scRNA-seq (treatment-naive)
+  category: single-cell
+  species:
+  - dog
+  description: 'Single-cell RNA-seq reference of treatment-naive primary canine osteosarcoma (tumor +
+    immune/stromal compartments), ~6 dogs; interactive cell browser; Zenodo code/processed-data companion.
+
+    '
+  scale: ~6 dogs; tens of thousands of cells
+  modalities:
+  - scrna-seq
+  formats:
+  - h5
+  - mtx
+  - counts
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE252470
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE252470
+  license: public (NCBI GEO)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: NCBI GEO
+    key_refs:
+    - 10.1038/s42003-024-06182-w
+  last_updated: '2024'
+  relevance:
+    programs:
+    - comparative
+    - recognition
+    why: 'Resolves TILs/myeloid in dog OSA; single-cell substrate for recognition landscape.
+
+      '
+  agent_access: 'GEO + Zenodo bulk; no auth.
+
+    '
+  caveats: 'Small donor n; no paired VDJ.
+
+    '
+- id: gse72056-tirosh-melanoma
+  name: Tirosh et al. 2016 — melanoma scRNA-seq (GSE72056)
+  category: single-cell
+  species:
+  - human
+  description: 'Smart-seq2 single-cell RNA-seq of ~4,645 malignant, immune and stromal cells from 19 melanoma
+    tumors; a foundational tumor scRNA-seq dataset with per-cell malignant/immune flags. One of the first
+    to resolve malignant vs. microenvironment programs at single-cell resolution.
+
+    '
+  scale: ~4,645 cells, 19 melanoma patients (Smart-seq2)
+  modalities:
+  - scrna-seq
+  - cell-type-annotation
+  formats:
+  - txt
+  - tpm-matrix
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE72056
+  download_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE72nnn/GSE72056/suppl/
+  license: GEO terms (submitter; no redistribution restriction stated)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Broad Institute (Tirosh/Regev/Garraway)
+    key_refs:
+    - 10.1126/science.aad0501
+  last_updated: '2016'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    why: 'Benchmark melanoma reference for malignant-vs-immune deconvolution and for testing presentation-machinery
+      expression in tumor cells.
+
+      '
+  agent_access: 'Processed TPM matrix as a single GEO supplementary .txt (fetch via GEO FTP by accession).
+    Metadata via Entrez E-utilities. Fully automatable, no auth.
+
+    '
+  caveats: 'Small by modern standards; Smart-seq2 (full-length, not UMI). Known gene-symbol/format quirks
+    in the matrix (header rows for malignant/immune flags) — handle on ingest.
+
+    '
+- id: gtex-snrnaseq
+  name: GTEx single-nucleus cross-tissue atlas (snRNA-seq)
+  category: single-cell
+  species:
+  - human
+  description: 'Single-nucleus RNA-seq reference maps across multiple frozen GTEx tissues, linking cell-type
+    composition to GTEx bulk expression and genetic regulation. Bridges GTEx bulk baselines to cell-type
+    resolution in the same donor framework.
+
+    '
+  scale: 209,126 snRNA-seq profiles, 8 tissue types, 16 donors (25 samples)
+  modalities:
+  - snrna-seq
+  - cell-type-annotation
+  formats:
+  - h5ad
+  - loom
+  - txt
+  landing_url: https://gtexportal.org/home/singleCellOverviewPage
+  download_url: https://gtexportal.org/home/downloads/adult-gtex/single_cell
+  api: https://singlecell.broadinstitute.org/single_cell/study/SCP1479
+  license: custom
+  license_url: https://www.gtexportal.org/home/aboutAdultGtex
+  access: open
+  provenance:
+    maintainer: GTEx Consortium (Broad Institute; Regev/Aguet et al.)
+    key_refs:
+    - 10.1126/science.abl4290
+  accessions:
+  - GTEx Portal single-cell downloads
+  - Broad Single Cell Portal SCP1479
+  - 'code: Zenodo 10.5281/zenodo.5775379'
+  last_updated: '2022'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Adds cell-type resolution to the GTEx normal baseline in the same donor/tissue framework, helping
+      localize normal expression of a candidate target to specific cell types.
+
+      '
+  agent_access: 'Download .h5ad/loom from the GTEx portal and Broad Single Cell Portal (SCP1479); no auth
+    for open files. A confirmed standalone GEO GSE was not located — use the portal downloads as the authoritative
+    source.
+
+    '
+  caveats: 'Only 8 tissues / 16 donors (not whole-body). Frozen-nuclei (nuclear transcriptome) differs
+    from whole-cell. Portal terms, not a CC license.
+
+    '
+- id: gut-cell-atlas
+  name: Gut Cell Atlas (Cells of the human intestinal tract)
+  category: single-cell
+  species:
+  - human
+  description: 'Single-cell atlas of the human intestinal tract across space (regions) and developmental
+    time, integrating fetal, pediatric and adult samples. Reference normal gastrointestinal cellular baseline.
+
+    '
+  scale: ~428,000 cells across intestinal regions and ages
+  modalities:
+  - single-cell-rna-seq
+  - cell-type-annotation
+  formats:
+  - h5ad
+  landing_url: https://www.gutcellatlas.org/
+  download_url: https://cellxgene.cziscience.com/collections/e33ffcd3-7cbf-4b8c-b0f4-85587ad5019a
+  api: https://cellxgene.cziscience.com/
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Human Cell Atlas (Teichmann/Zilbauer labs)
+    key_refs:
+    - 10.1038/s41586-021-03852-1
+  accessions:
+  - 'ArrayExpress: E-MTAB-9543, E-MTAB-9536'
+  - CZ CELLxGENE Discover collection e33ffcd3-7cbf-4b8c-b0f4-85587ad5019a
+  - 'portal: gutcellatlas.org'
+  last_updated: '2021'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'GI epithelium is a frequent on-target/off-tumor toxicity site; normal intestinal cell-type expression
+      helps assess target safety.
+
+      '
+  agent_access: 'Processed .h5ad from gutcellatlas.org and CELLxGENE (no auth); raw via ArrayExpress/BioStudies
+    (E-MTAB-9543, E-MTAB-9536) over FTP.
+
+    '
+  caveats: 'Mixes developmental stages — filter to adult for a "self" reference. Processed objects easiest.
+
+    '
+- id: heart-cell-atlas
+  name: Heart Cell Atlas (Cells of the adult human heart)
+  category: single-cell
+  species:
+  - human
+  description: 'Single-cell/single-nucleus atlas of the healthy adult human heart across six anatomical
+    regions, with cell-type and spatial (Visium) data. Reference normal cardiac cellular baseline.
+
+    '
+  scale: ~486,000 cells, 6 cardiac regions, 14 donors
+  modalities:
+  - single-cell-rna-seq
+  - snrna-seq
+  - spatial-transcriptomics
+  - cell-type-annotation
+  formats:
+  - h5ad
+  landing_url: https://www.heartcellatlas.org/
+  download_url: https://cellxgene.cziscience.com/collections/b52eb423-5d0d-4645-b217-e1c6d38b2e72
+  api: https://cellxgene.cziscience.com/
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: controlled-access
+  provenance:
+    maintainer: Human Cell Atlas (Teichmann/Noseda/Seidman labs)
+    key_refs:
+    - 10.1038/s41586-020-2797-4
+  accessions:
+  - 'HCA DCP / ArrayExpress: ERP123138'
+  - CZ CELLxGENE Discover collection b52eb423-5d0d-4645-b217-e1c6d38b2e72
+  - 'portal: heartcellatlas.org'
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Heart is a critical off-tumor toxicity organ (cardiotoxicity); a normal cardiac cell-type reference
+      flags targets expressed in cardiomyocytes/vasculature.
+
+      '
+  agent_access: 'Processed .h5ad open via heartcellatlas.org and CELLxGENE (no auth). Raw sequence via
+    the HCA Data Coordination Platform under ERP123138.
+
+    '
+  caveats: 'Processed objects open; raw reads via HCA DCP (ERP123138). Confirm per-dataset license on
+    CELLxGENE.
+
+    '
+- id: hlca
+  name: Human Lung Cell Atlas (HLCA, integrated)
+  category: single-cell
+  species:
+  - human
+  description: 'Integrated single-cell reference of the human respiratory system combining 49 datasets,
+    with a healthy "core" atlas and an extended health-and-disease atlas, harmonized cell types. The reference
+    normal lung cellular baseline.
+
+    '
+  scale: ~2.4M cells, 486 individuals (full); core = 584,944 normal cells
+  modalities:
+  - single-cell-rna-seq
+  - cell-type-annotation
+  formats:
+  - h5ad
+  landing_url: https://cellxgene.cziscience.com/collections/6f6d381a-7701-4781-935c-db10d30de293
+  download_url: https://cellxgene.cziscience.com/collections/6f6d381a-7701-4781-935c-db10d30de293
+  api: https://cellxgene.cziscience.com/
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Human Cell Atlas Lung Biological Network (Theis/Teichmann et al.)
+    key_refs:
+    - 10.1038/s41591-023-02327-2
+  accessions:
+  - CZ CELLxGENE Discover collection 6f6d381a-7701-4781-935c-db10d30de293
+  - 'code: github.com/LungCellAtlas/HLCA'
+  last_updated: '2023'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Lung is a common on-target/off-tumor toxicity site; a deep normal lung cell-type reference helps
+      flag targets expressed in vulnerable respiratory epithelium/endothelium.
+
+      '
+  agent_access: '.h5ad download from CZ CELLxGENE; programmatic via CELLxGENE Census. No auth. Use "core"
+    (normal-only) subset for a clean self reference.
+
+    '
+  caveats: 'Full atlas mixes health + disease — select the normal core. Integrated embedding is batch-corrected;
+    raw per-study counts also provided. Confirm CELLxGENE per-dataset license.
+
+    '
+- id: human-cell-landscape
+  name: Human Cell Landscape (HCL)
+  category: single-cell
+  species:
+  - human
+  description: 'Microwell-seq single-cell atlas covering adult and fetal human tissues and some cultured
+    cell types, one of the first whole-body human single-cell references. Broad tissue coverage for normal
+    cell-type expression.
+
+    '
+  scale: ~700,000 single cells; ~60 tissue types + cultured cells (adult + fetal)
+  modalities:
+  - single-cell-rna-seq
+  - cell-type-annotation
+  formats:
+  - txt
+  - rds
+  - h5
+  landing_url: https://bis.zju.edu.cn/HCL/
+  download_url: https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA001227
+  license: unknown
+  license_url: https://bis.zju.edu.cn/HCL/
+  access: open
+  provenance:
+    maintainer: Guo/Han lab, Zhejiang University
+    key_refs:
+    - 10.1038/s41586-020-2157-4
+  accessions:
+  - 'GEO: GSE134355'
+  - 'CNGB Nucleotide Sequence Archive: CNP0000325'
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Very broad (incl. many tissues not in Western atlases) normal cell-type reference; useful cross-check
+      for target expression in cell types underrepresented elsewhere.
+
+      '
+  agent_access: 'Processed matrices from the HCL portal and GEO (GSE134355); raw sequence via CNGB (CNP0000325).
+    HTTPS/FTP, no auth for open records.
+
+    '
+  caveats: 'No explicit data license found — cite the paper and verify terms before redistribution. Microwell-seq
+    depth differs from 10x; mixes adult + fetal (filter for adult "self").
+
+    '
+- id: lowery-2022-neotcr
+  name: Lowery et al. 2022 neoantigen-reactive TCR (NeoTCR) signatures
+  category: single-cell
+  species:
+  - human
+  description: 'Molecular/transcriptomic signatures and sequences of neoantigen-specific TCR clonotypes
+    isolated from metastatic human tumors, enabling prospective identification of neoTCRs.
+
+    '
+  scale: 55 neoantigen-specific TCR clonotypes mapped across 10 metastatic tumors
+  modalities:
+  - paired-chain
+  - scrna-seq
+  - tcr-epitope
+  - neoantigen
+  - tumor
+  formats:
+  - supplementary
+  - controlled-raw
+  landing_url: https://www.science.org/doi/10.1126/science.abl5447
+  download_url: https://www.science.org/doi/10.1126/science.abl5447
+  license: unknown
+  access: controlled-access
+  provenance:
+    maintainer: Rosenberg lab, NCI Surgery Branch (Lowery et al.)
+    key_refs:
+    - 10.1126/science.abl5447
+  last_updated: '2022'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Directly defines what tumor-neoantigen-reactive TCRs look like transcriptionally — a template
+      for recognition/design targeting private neoepitopes.
+
+      '
+  agent_access: 'NeoTCR sequences in supplementary materials; raw single-cell data under controlled access
+    (dbGaP likely). Confirm accession in the Science data-and-materials-availability section.
+
+    '
+  caveats: 'Accession not confirmed in search — verify; raw data likely controlled. Small, high-value
+    curated set. Human only.
+
+    '
+- id: minervina-covid-10x
+  name: Minervina et al. 2022 SARS-CoV-2 epitope-specific memory CD8 10x dataset
+  category: single-cell
+  species:
+  - human
+  description: 'Aggregated CellRanger output from six 10x 5''GEX + paired abTCR + Feature-barcoding (dextramer)
+    experiments profiling SARS-CoV-2 epitope-specific memory CD8 T cells across exposure histories.
+
+    '
+  scale: '>4,000 epitope-specific paired TCRs; 6 10x experiments'
+  size_bytes: 224528161
+  modalities:
+  - paired-chain
+  - pmhc-dextramer
+  - scrna-seq
+  - cite-seq
+  - tcr-epitope
+  formats:
+  - cellranger
+  - zip
+  landing_url: https://zenodo.org/record/6232103
+  download_url: https://zenodo.org/record/6232103/files/libs_aggregate_rev.zip
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Thomas lab (St. Jude Children's Research Hospital)
+    key_refs:
+    - 10.1038/s41590-022-01184-4
+    - 10.5281/zenodo.6232103
+  last_updated: 2022-02
+  relevance:
+    programs:
+    - recognition
+    why: 'High-quality paired-chain, dextramer-validated epitope-specific TCRs with phenotype — strong
+      positives for recognition training/benchmarks.
+
+      '
+  agent_access: 'Single 224 MB zip on Zenodo, no auth; direct URL download. Processing scripts on linked
+    GitHub.
+
+    '
+  caveats: 'CellRanger output needs parsing to extract clean TCR-epitope pairs. SARS-CoV-2 epitope-focused.
+    No dog.
+
+    '
+- id: oliveira-2021-melanoma
+  name: Oliveira et al. 2021 melanoma antitumor CD8 TCR specificity/avidity
+  category: single-cell
+  species:
+  - human
+  description: 'Single-cell linkage of TCR antigenic specificity (neoantigen/tumor) with phenotype and
+    functional avidity in melanoma-infiltrating lymphocytes.
+
+    '
+  scale: melanoma TIL cohort; neoantigen- and tumor-reactive TCRs at single-cell resolution
+  modalities:
+  - paired-chain
+  - scrna-seq
+  - tcr-epitope
+  - tumor
+  - neoantigen
+  formats:
+  - supplementary
+  - controlled-raw
+  landing_url: https://www.nature.com/articles/s41586-021-03704-y
+  download_url: https://www.nature.com/articles/s41586-021-03704-y#Sec38
+  license: unknown
+  access: controlled-access
+  provenance:
+    maintainer: Wu lab (Dana-Farber; Oliveira et al.)
+    key_refs:
+    - 10.1038/s41586-021-03704-y
+  last_updated: '2021'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Rare link of neoantigen specificity to avidity/phenotype — directly on-target for designing
+      and ranking tumor-reactive TCRs.
+
+      '
+  agent_access: 'Neoantigen-reactive TCR sequences in supplementary tables (downloadable); raw sequencing
+    under controlled access (dbGaP/EGA). Confirm accession in the article data-availability section.
+
+    '
+  caveats: 'Raw data controlled-access; exact accession to verify. Curated TCRs are in supplements. Human
+    only.
+
+    '
+- id: qian-2020-pancancer-blueprint
+  name: Qian et al. 2020 — pan-cancer TME blueprint (Lambrechts lab)
+  category: single-cell
+  species:
+  - human
+  description: 'Single-cell blueprint of the heterogeneous tumor microenvironment across breast, colorectal,
+    ovarian and lung cancers (~230k cells), with a stromal/immune cell-type classifier and an interactive
+    download portal.
+
+    '
+  scale: ~233,000 cells across 4 cancer types
+  modalities:
+  - scrna-seq
+  - cell-type-annotation
+  formats:
+  - matrix
+  - web-portal
+  landing_url: https://www.nature.com/articles/s41422-020-0355-0
+  download_url: http://blueprint.lambrechtslab.org/
+  license: per-paper / portal terms (not explicitly stated)
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: VIB-KU Leuven (Qian J./Lambrechts)
+    key_refs:
+    - 10.1038/s41422-020-0355-0
+  last_updated: '2020'
+  relevance:
+    programs:
+    - comparative
+    why: 'Cross-cancer stromal+immune classifier and reference for TME cell-type assignment.
+
+      '
+  agent_access: 'Download via the Lambrechts-lab blueprint web portal. ArrayExpress accessions are cited
+    in the paper''s Data Availability (e.g. lung subsets from the 2018 Lambrechts NSCLC study) but the
+    specific pan-cancer accession was NOT verified in this pass — confirm in the paper before scripting.
+    Portal download is the confirmed route.
+
+    '
+  caveats: 'Explicit data license not stated — treat as unknown, verify before redistribution. Accession
+    not pinned here (portal-first); read the paper''s Data Availability for ArrayExpress E-MTAB IDs.
+
+    '
+- id: stephenson-2021-covid-emtab10026
+  name: Stephenson et al. 2021 COVID-19 single-cell multi-omics atlas (E-MTAB-10026)
+  category: single-cell
+  species:
+  - human
+  description: 'Single-cell transcriptome + surface proteome + paired TCR/BCR V(D)J of >780,000 PBMCs
+    from 130 COVID-19 patients and controls; a very large paired scTCR immune-profiling release.
+
+    '
+  scale: '>780,000 PBMCs; 130 patients (E-MTAB-10026)'
+  modalities:
+  - paired-chain
+  - scrna-seq
+  - cite-seq
+  - repertoire
+  - bcr
+  formats:
+  - h5ad
+  - matrix
+  - arrayexpress
+  landing_url: https://covid19cellatlas.org/
+  download_url: https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-10026
+  license: open (ArrayExpress / cell atlas terms)
+  license_url: https://www.ebi.ac.uk/licencing
+  access: open
+  provenance:
+    maintainer: Haniffa/Teichmann labs (Newcastle / Sanger)
+    key_refs:
+    - 10.1038/s41591-021-01329-2
+  last_updated: '2021'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Large paired scTCR/BCR immune-profiling cohort for background modeling, V/J priors and disease
+      repertoire context.
+
+      '
+  agent_access: 'Processed data (incl. h5ad) open via ArrayExpress E-MTAB-10026 and covid19cellatlas.org
+    portal; programmatically downloadable. VDJ tables bundled in the objects/portal.
+
+    '
+  caveats: 'Not antigen-labeled. Confirm VDJ-specific files within E-MTAB-10026 / portal. Human only.
+
+    '
+- id: tabula-sapiens-2
+  name: Tabula Sapiens 2.0
+  category: single-cell
+  species:
+  - human
+  description: 'Expanded, comprehensive transcriptomic atlas of human cell types extending Tabula Sapiens
+    with many more cells, donors, and tissues and refined cell-type definitions. Current best single-donor-resolved
+    pan-body normal reference from this consortium.
+
+    '
+  scale: Millions of cells across expanded tissue/donor panel (see paper)
+  modalities:
+  - single-cell-rna-seq
+  - cell-type-annotation
+  formats:
+  - h5ad
+  - csv
+  landing_url: https://cellxgene.cziscience.com/collections/e5f58829-1a66-40b5-a624-9046778e74f5
+  download_url: https://figshare.com/articles/dataset/_/27921984
+  api: https://cellxgene.cziscience.com/
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Chan Zuckerberg Biohub / Tabula Sapiens Consortium
+    key_refs:
+    - 10.1016/j.cell.2026.08.937
+  accessions:
+  - 'figshare: 27921984'
+  - CZ CELLxGENE Discover collection e5f58829-1a66-40b5-a624-9046778e74f5
+  - AWS Open Data registry
+  last_updated: '2026'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Deeper, broader normal cell-type reference than v1 — the preferred pan-body self map for cell-type-level
+      expression filtering of candidate targets.
+
+      '
+  agent_access: '.h5ad via figshare/AWS Open Data; CZ CELLxGENE Census API for programmatic slicing. No
+    auth.
+
+    '
+  caveats: 'Confirm the exact Cell DOI and final cell/donor counts against the published article (2026).
+    Supersedes much of v1 — prefer for new work but note version in provenance.
+
+    '
+- id: tisch2
+  name: TISCH2 — Tumor Immune Single-cell Hub 2
+  category: single-cell
+  species:
+  - human
+  - mouse
+  description: 'Curated, uniformly reprocessed collection of tumor single-cell RNA-seq datasets with a
+    consistent immune-cell-type annotation layer across the tumor microenvironment. Supports gene-level
+    visualization, per-dataset expression matrices, differential expression, transcription-factor and
+    cell-cell interaction results. Built to compare immune cell states across cancer types rather than
+    host primary raw data.
+
+    '
+  scale: ~6.3M cells, 190 datasets, 50 cancer types, 20 tissues
+  modalities:
+  - scrna-seq
+  - cell-type-annotation
+  - differential-expression
+  - cell-cell-interaction
+  formats:
+  - h5
+  - txt
+  - csv
+  - web-viewer
+  landing_url: http://tisch.comp-genomics.org/
+  download_url: http://tisch.comp-genomics.org/download/
+  license: CC BY-NC 4.0
+  license_url: https://creativecommons.org/licenses/by-nc/4.0/
+  access: open
+  provenance:
+    maintainer: Wang Lab, Tongji University / Shirley Liu Lab (originated)
+    key_refs:
+    - 10.1093/nar/gkac959
+    - 10.1093/nar/gkaa1020
+  last_updated: 2022 (TISCH2 release)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'A ready-made, harmonized pan-cancer immune single-cell reference for defining tumor T-cell/myeloid
+      states and for benchmarking expression of presentation and recognition machinery across cancer types
+      without reprocessing raw data.
+
+      '
+  agent_access: 'Per-dataset bulk downloads (expression matrices, metadata, DE tables) over HTTP, no auth.
+    No documented REST API; ingestion is by scripted per-dataset file fetch. Landing returned a transient
+    HTTP 503 at check time (2026-11-15) — retry; URL is the one cited in the NAR 2023 paper.
+
+    '
+  caveats: 'License is non-commercial (CC BY-NC 4.0) — flag for any commercial/for-profit use and clarify
+    before building a product on it. Secondary resource: cells are reprocessed, so re-derive raw where
+    provenance matters. No stable programmatic API.
+
+    '
+- id: weizmann-3ca
+  name: Weizmann 3CA — Curated Cancer Cell Atlas
+  category: single-cell
+  species:
+  - human
+  description: 'Expertly curated collection of published tumor single-cell datasets with harmonized cell-type
+    annotations, malignant-cell programs, copy-number calls and cell-cycle/state layers, downloadable
+    per study. Focus on consistent re-annotation of malignant and TME cells across many studies.
+
+    '
+  scale: ~40+ studies, millions of cells across cancer types (growing)
+  modalities:
+  - scrna-seq
+  - cell-type-annotation
+  - cnv
+  - cell-state-programs
+  formats:
+  - csv
+  - mtx
+  - rds
+  landing_url: https://www.weizmann.ac.il/sites/3CA/
+  download_url: https://www.weizmann.ac.il/sites/3CA/study-data
+  license: unknown (site has no explicit data license; paper is CC BY-NC-ND 4.0)
+  license_url: https://www.nature.com/articles/s43018-025-00957-8
+  access: open
+  provenance:
+    maintainer: Tirosh Lab, Weizmann Institute of Science
+    key_refs:
+    - 10.1038/s43018-025-00957-8
+    - 10.1101/2024.10.11.617836
+  last_updated: 2025 (ongoing curation)
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    - recognition
+    why: 'High-quality, consistently re-annotated malignant + TME single-cell data; a strong curated backbone
+      for comparative tumor-immune analysis and program discovery.
+
+      '
+  agent_access: 'Per-study "download" links over HTTP, no auth; files are matrices + annotation tables.
+    No REST API; scripted per-study fetch. Code at github.com/tiroshlab/3ca.
+
+    '
+  caveats: 'No explicit license on the download pages — associated paper is CC BY-NC-ND 4.0 (non-commercial,
+    no derivatives), which is restrictive; treat data license as unknown and confirm with the lab before
+    redistribution/ML training. One dataset is EGA-only (controlled), not on the site.
+
+    '
+- id: wu-2020-tcell-gse139555
+  name: Wu et al. 2020 peripheral/tumor T cell expansion scTCR (GSE139555)
+  category: single-cell
+  species:
+  - human
+  description: 'Paired scRNA-seq + scTCR-seq of tumor, normal-adjacent tissue and blood across several
+    cancer indications, characterizing clonotypic effector expansion linking periphery to tumor.
+
+    '
+  scale: multiple cancer indications; thousands of clonotypes (GSE139555)
+  modalities:
+  - paired-chain
+  - scrna-seq
+  - repertoire
+  - tumor
+  formats:
+  - geo
+  - matrix
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE139555
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE139555
+  license: NCBI GEO terms (open)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Genentech (Wu et al.)
+    key_refs:
+    - 10.1038/s41586-020-2056-8
+  last_updated: '2020'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Paired tumor/periphery scTCR with clonal tracking — directly relevant to tumor-reactive TCR
+      identification and repertoire context.
+
+      '
+  agent_access: 'Open GEO series GSE139555 (matrices via FTP/HTTPS); a matched EGA set (EGAS00001003993)
+    holds controlled raw data. GEO portion programmatically downloadable.
+
+    '
+  caveats: 'Not antigen-labeled. Raw reads partly on EGA (controlled). Human only.
+
+    '
+- id: yost-2019-bcc-gse123813
+  name: Yost et al. 2019 BCC/SCC anti-PD-1 scTCR (GSE123813)
+  category: single-cell
+  species:
+  - human
+  description: 'Paired 5'' scRNA- and scTCR-seq from site-matched basal/squamous cell carcinoma tumors
+    before and after anti-PD-1, demonstrating clonal replacement of tumor-specific T cells.
+
+    '
+  scale: 11 BCC patients (pre/post anti-PD-1); paired scRNA+scTCR (GSE123813)
+  modalities:
+  - paired-chain
+  - scrna-seq
+  - repertoire
+  - tumor
+  formats:
+  - geo
+  - matrix
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123813
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123813
+  license: NCBI GEO terms (open)
+  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
+  access: open
+  provenance:
+    maintainer: Satpathy/Chang labs (Stanford; Yost et al.)
+    key_refs:
+    - 10.1038/s41591-019-0522-3
+  last_updated: '2019'
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Classic checkpoint-response tumor scTCR dataset; useful for tumor-reactive clonotype dynamics
+      and as a recognition-context cohort.
+
+      '
+  agent_access: 'Open GEO series GSE123813 (bulk companion GSE123812); matrices via GEO FTP/HTTPS, automatable.
+
+    '
+  caveats: 'Not antigen-labeled. Small patient count. Human only.
+
+    '
+- id: zenodo-10891255
+  name: Zenodo 10891255 — Canine OSA scRNA Reference (code + processed data)
+  category: single-cell
+  species:
+  - dog
+  description: 'Processed Seurat objects + analysis code for the canine osteosarcoma scRNA reference (companion
+    to GSE252470).
+
+    '
+  scale: processed objects + scripts
+  modalities:
+  - scrna-seq
+  - code
+  formats:
+  - rds
+  - r
+  - h5
+  landing_url: https://zenodo.org/records/10891255
+  download_url: https://zenodo.org/records/10891255
+  license: CC BY 4.0 (verify on record)
+  license_url: https://zenodo.org/records/10891255
+  access: open
+  provenance:
+    maintainer: Zenodo (depositing lab)
+    key_refs:
+    - 10.1038/s42003-024-06182-w
+  last_updated: '2024'
+  relevance:
+    programs:
+    - recognition
+    why: 'Ready-to-use processed canine OSA single-cell objects.
+
+      '
+  agent_access: 'Zenodo direct download + REST API; no auth.
+
+    '
+  caveats: 'Derived/processed only.
+
+    '
+- id: zheng-pancancer-til
+  name: Zheng et al. 2021 pan-cancer tumor-infiltrating T cell atlas (scRNA + scTCR)
+  category: single-cell
+  species:
+  - human
+  description: 'Pan-cancer single-cell atlas of tumor-infiltrating T cells combining gene expression with
+    paired TCR sequences across 21 cancer types; a very large tumor-context scTCR resource (new + pooled
+    published data).
+
+    '
+  scale: 316 patients, 21 cancer types; ~397k T cells (meta-cohort larger)
+  modalities:
+  - paired-chain
+  - scrna-seq
+  - repertoire
+  - tumor
+  formats:
+  - h5
+  - txt
+  - portal
+  landing_url: https://www.science.org/doi/10.1126/science.abe6474
+  download_url: http://cancer-pku.cn/
+  license: unknown
+  access: controlled-access
+  provenance:
+    maintainer: Zhang Zemin lab, Peking University (BIOPIC/ICG)
+    key_refs:
+    - 10.1126/science.abe6474
+  last_updated: 2021-12
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'The largest tumor-infiltrating paired scTCR atlas — essential tumor-context repertoire data
+      for recognition and for clonal-expansion phenotyping.
+
+      '
+  agent_access: 'Processed data via lab portal (cancer-pku.cn); raw sequencing is under China GSA/HRA
+    controlled access (data access agreement). Confirm exact accession (HRA/GSA) in the Science data-availability
+    section before use.
+
+    '
+  caveats: 'Raw data controlled-access (GSA/HRA); exact accession to verify. Not antigen-labeled (tumor
+    reactivity inferred). Human only.
+
+    '

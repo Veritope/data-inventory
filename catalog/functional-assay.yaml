@@ -1,0 +1,379 @@
+- id: ccle-proteomics
+  name: CCLE Quantitative Proteomics (Nusinow/Gygi)
+  category: functional-assay
+  species:
+  - human
+  description: 'Deep TMT mass-spectrometry proteomes of 375 CCLE cancer cell lines (>9,000 proteins per
+    experiment across 42 multiplexes), complementing the CCLE transcriptomes. Lets predicted antigen source
+    proteins be checked at the protein (not just mRNA) level.
+
+    '
+  scale: 375 cell lines; ~12,000 proteins quantified
+  modalities:
+  - proteomics
+  - mass-spec
+  formats:
+  - csv
+  - xlsx
+  - raw-ms
+  landing_url: https://gygi.hms.harvard.edu/publications/ccle.html
+  download_url: https://gygi.hms.harvard.edu/publications/ccle.html
+  api: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=02cd1b6a7c674f3ebdbed300b5d9aa57
+  license: 'Processed tables: with paper/DepMap (verify); raw files on MassIVE CC0 1.0'
+  license_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=02cd1b6a7c674f3ebdbed300b5d9aa57
+  access: open
+  provenance:
+    maintainer: Gygi Lab, Harvard Medical School; distributed via DepMap and MassIVE
+    key_refs:
+    - 10.1016/j.cell.2019.12.023
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Antigen presentation requires the source protein to actually be expressed and degraded; protein-level
+      evidence across cell lines strengthens candidate-antigen prioritization beyond RNA, and ties directly
+      to DepMap-matched lines for validation.
+
+      '
+  agent_access: 'Normalized protein-abundance CSV/supplemental tables are directly downloadable (no auth)
+    from the Gygi lab page and DepMap. Raw MS (MassIVE MSV000085836) is CC0 but distributed via a Globus
+    transfer that currently requires emailing the authors — not fully anonymous.
+
+    '
+  caveats: 'Values are ratios relative to internal bridge channels (not absolute) — normalize before cross-line
+    comparison. Confirm the exact license on the normalized tables (CC0 is stated only for the MassIVE
+    raw deposit).
+
+    '
+- id: cptac
+  name: CPTAC Proteogenomics (Proteomic Data Commons)
+  category: functional-assay
+  species:
+  - human
+  description: 'NCI Clinical Proteomic Tumor Analysis Consortium: matched proteome, phosphoproteome, whole-exome,
+    whole-genome, transcriptome and clinical data across ~10 cancer types. Genomic files live in the GDC;
+    proteomic (mass-spec) files live in the open-access Proteomic Data Commons (PDC).
+
+    '
+  scale: ~10 cancer types; thousands of samples (pan-cancer harmonized)
+  modalities:
+  - proteomics
+  - phosphoproteomics
+  - wxs
+  - wgs
+  - rna-seq
+  - clinical
+  formats:
+  - tsv
+  - raw-ms
+  - mzml
+  - api
+  landing_url: https://proteomic.datacommons.cancer.gov/pdc/
+  download_url: https://proteomic.datacommons.cancer.gov/pdc/cptac-pancancer
+  api: https://proteomic.datacommons.cancer.gov/pdc/publicapi-documentation
+  license: PDC data-use terms (open access; attribution)
+  license_url: https://proteomic.datacommons.cancer.gov/pdc/faq/Data_Download
+  access: open
+  provenance:
+    maintainer: NCI CPTAC; proteomics via PDC, genomics via GDC
+    key_refs:
+    - 10.1016/j.ccell.2023.06.009
+  last_updated: 2023 (pan-cancer); rolling
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Proteogenomics directly links the genome/transcriptome to the expressed, degradable proteome
+      — the strongest evidence that a candidate neoantigen''s source protein is actually made in the tumor;
+      some studies also include direct MHC-ligandome data.
+
+      '
+  agent_access: 'PDC proteomics are open-access with a GraphQL/REST public API and per-file downloads
+    — no login. Matched genomic reads sit in the GDC and may be controlled (dbGaP). Largely automatable
+    for the proteomic/processed layer.
+
+    '
+  caveats: 'A Data Use Agreement is referenced for some content; raw-read genomic counterparts in GDC
+    can be controlled. Proteomics is a few cancer types, not pan-cancer at TCGA scale.
+
+    '
+- id: keskin-2019-neovax-gbm
+  name: Keskin 2019 personal neoantigen vaccine (glioblastoma; dbGaP phs001519)
+  category: functional-assay
+  species:
+  - human
+  description: 'Phase Ib personalized neoantigen vaccine trial in newly diagnosed glioblastoma; intratumoral
+    neoantigen-specific T-cell responses measured. Tumor WES + bulk RNA-seq deposited in dbGaP; design
+    used HLA-I-predicted peptides.
+
+    '
+  scale: Phase Ib GBM cohort; 7-20 predicted HLA-I-binding peptides/patient; WES + bulk RNA-seq
+  modalities:
+  - validated-neoantigen
+  - cancer-genomics
+  - functional-assay
+  formats:
+  - bam
+  - fastq
+  - vcf
+  landing_url: https://www.nature.com/articles/s41586-018-0792-9
+  download_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001519.v1.p1
+  license: dbGaP Data Use Agreement (controlled)
+  license_url: https://dbgap.ncbi.nlm.nih.gov/
+  access: controlled-access
+  provenance:
+    maintainer: Keskin/Wu lab, Dana-Farber / Broad Institute
+    key_refs:
+    - 10.1038/s41586-018-0792-9
+  last_updated: '2019'
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Personalized-vaccine evidence in a ''cold'', low-TMB tumor (GBM) — stress-tests neoantigen design
+      where antigen load is limiting; high value for a design program.
+
+      '
+  agent_access: 'CONTROLLED: WES + bulk RNA-seq via dbGaP phs001519.v1.p1 (DAR/DUA). Immunogenicity data
+    in paper openly readable.
+
+    '
+  caveats: 'Controlled-access. Small phase-Ib cohort. Low-TMB setting limits neoantigen counts.
+
+    '
+- id: nci-neoantigen-reactive-tcells
+  name: NCI Surgery Branch neoantigen-reactive T-cell depositions (dbGaP phs003064 / phs002792)
+  category: functional-assay
+  species:
+  - human
+  description: 'Single-cell transcriptomic/VDJ (and CITE-seq) data of neoantigen-reactive T cells from
+    metastatic human cancers, from the Rosenberg lab''s neoantigen screening program. Experimentally VALIDATED
+    tumor-reactive / neoantigen-reactive T cells with paired TCRs — recognition-focused. Multiple papers
+    deposit under separate dbGaP studies.
+
+    '
+  scale: scRNA-seq + scVDJ / CITE-seq of neoantigen-reactive T cells across metastatic cancers (per-study
+    cohorts)
+  modalities:
+  - tcr-epitope
+  - validated-neoantigen
+  - single-cell
+  - functional-assay
+  formats:
+  - fastq
+  - bam
+  - h5
+  landing_url: https://www.ncbi.nlm.nih.gov/gap/
+  download_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003064.v1.p1
+  license: dbGaP Data Use Agreement (controlled)
+  license_url: https://dbgap.ncbi.nlm.nih.gov/
+  access: controlled-access
+  provenance:
+    maintainer: Steven Rosenberg lab, NCI Surgery Branch (NIH)
+    key_refs:
+    - 10.1126/science.abl5447
+  last_updated: 2022-2024
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Real neoantigen-reactive TCR/transcriptome data for training recognition models and designing
+      TCR-based therapeutics; gold-standard functional validation.
+
+      '
+  agent_access: 'CONTROLLED: dbGaP requires an approved Data Access Request / DUA and a PI with an eRA
+    Commons account — NOT agent-fetchable without institutional approval. Related accessions: phs003064.v1.p1,
+    phs002792.v1.p1.
+
+    '
+  caveats: 'Controlled-access (DUA) — redistribution forbidden; access gated. Verify each paper''s specific
+    accession; some supplementary summary data (TCR tables) are in the papers themselves and openly usable.
+
+    '
+- id: nfat-tcr-activation-screens
+  name: NFAT-reporter TCR-activation functional screen datasets
+  category: functional-assay
+  species:
+  - human
+  description: 'Datasets from reporter-based functional TCR-antigen screens (Jurkat/engineered lines with
+    NFAT/NFkB/CD69 reporters, e.g. ACDC, TPR-KO, pMHC-pseudotyped-lentivirus library screens) that assign
+    binder/non-binder or activation calls to TCR x pMHC pairs at scale. Functional (signaling) specificity
+    labels rather than binding-only.
+
+    '
+  scale: 'study-dependent: e.g. ~7,173 binders / 17,020 non-binders (ACDC); 30k+ TCRs screened'
+  modalities:
+  - tcr-pmhc-activation
+  - reporter-readout
+  - deep-sequencing
+  formats:
+  - csv
+  - fastq
+  - supplementary-tables
+  landing_url: https://www.biorxiv.org/content/10.1101/2025.07.23.666264v1
+  download_url: https://www.ncbi.nlm.nih.gov/geo/
+  license: per-publication; varies (often CC BY on bioRxiv preprints)
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: multiple academic labs (various)
+    key_refs:
+    - 10.1101/2025.07.23.666264
+    - 10.1002/cti2.1216
+    - 10.1101/2025.04.24.649726
+  last_updated: 2020-2025
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Functional activation calls (not just binding) give physiologically-grounded positive and negative
+      TCR-pMHC labels — valuable complements to multimer/display data for recognition models.
+
+      '
+  agent_access: 'Data via journal/preprint supplementary tables + GEO/SRA deposits (fetch with GEO/SRA
+    APIs per accession). No unified portal or API; per-paper harvesting.
+
+    '
+  caveats: 'Emerging/heterogeneous; many are preprints — accessions and licenses vary and some are unstated
+    (mark unknown, verify per source). Reporter thresholds differ across platforms, so harmonize activation
+    calls before pooling. Mostly MHC-I/CD8-focused.
+
+    '
+- id: ott-2017-neovax-melanoma
+  name: Ott 2017 personal neoantigen vaccine (melanoma; dbGaP phs001451)
+  category: functional-assay
+  species:
+  - human
+  description: 'Phase I personalized neoantigen (long-peptide) vaccine trial in melanoma with immunogenicity
+    readouts; the tumor WES + RNA-seq used to design the vaccines are deposited in dbGaP (accession added
+    by a 2018 corrigendum). Links genomics to experimentally measured vaccine-induced T-cell responses.
+
+    '
+  scale: Phase I melanoma cohort; WES + RNA-seq (vaccine design) + T-cell immunogenicity readouts
+  modalities:
+  - validated-neoantigen
+  - cancer-genomics
+  - functional-assay
+  formats:
+  - bam
+  - fastq
+  - vcf
+  landing_url: https://www.nature.com/articles/nature22991
+  download_url: https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001451.v1.p1
+  license: dbGaP Data Use Agreement (controlled)
+  license_url: https://dbgap.ncbi.nlm.nih.gov/
+  access: controlled-access
+  provenance:
+    maintainer: Ott/Wu lab, Dana-Farber / Broad Institute
+    key_refs:
+    - 10.1038/nature22991
+  last_updated: 2017 (accession via 2018 corrigendum)
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'End-to-end personalized-vaccine evidence (design genomics -> validated immunogenicity) — a template/benchmark
+      for Veritope''s design program.
+
+      '
+  agent_access: 'CONTROLLED: WES/RNA-seq via dbGaP phs001451.v1.p1 (DAR/DUA + eRA Commons). Immunogenicity
+    tables in the paper are openly readable.
+
+    '
+  caveats: 'Controlled-access raw data. Original paper said "on request"; corrigendum added the dbGaP
+    accession — cite the corrigendum. Small phase-I cohort.
+
+    '
+- id: sahin-2017-rna-mutanome-vaccine
+  name: Sahin 2017 personalized RNA mutanome vaccine (melanoma)
+  category: functional-assay
+  species:
+  - human
+  description: 'Phase I personalized RNA (mutanome) neoantigen vaccine trial in melanoma with poly-specific
+    T-cell immunogenicity readouts — the BioNTech RNA-vaccine proof of concept. Design genomics + immunogenicity
+    outcomes.
+
+    '
+  scale: Phase I melanoma cohort; per-patient RNA vaccines targeting up to ~10 mutations each
+  modalities:
+  - validated-neoantigen
+  - functional-assay
+  - cancer-genomics
+  formats:
+  - unknown
+  landing_url: https://www.nature.com/articles/nature23003
+  download_url: unknown
+  license: unknown
+  license_url: unknown
+  access: request
+  provenance:
+    maintainer: Sahin/Türeci et al., BioNTech / University of Mainz (TRON)
+    key_refs:
+    - 10.1038/nature23003
+  last_updated: '2017'
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Companion to Ott 2017 for the RNA-vaccine modality; immunogenicity data inform neoantigen selection/design.
+
+      '
+  agent_access: 'UNRESOLVED: no public repository accession located in the Data Availability — likely
+    data-on-request from the authors (industry sponsor). Verify on nature.com/articles/nature23003.
+
+    '
+  caveats: 'download_url + license unknown; sequencing data may not be openly deposited (industry sponsor).
+    Immunogenicity results in the paper are readable but raw data access uncertain.
+
+    '
+- id: tesla-benchmark
+  name: TESLA (Tumor nEoantigen SeLection Alliance) benchmark (Synapse syn21048999)
+  category: functional-assay
+  species:
+  - human
+  description: 'Consortium benchmark pairing patient tumor WES, tumor RNA-seq, and clinical-grade HLA
+    typing with experimental T-cell validation of predicted epitopes — the reference dataset for benchmarking
+    neoantigen prediction pipelines. Contains BOTH predicted candidates and experimentally VALIDATED immunogenicity
+    (binding/immunogenicity outcomes).
+
+    '
+  scale: 6 subjects (3 metastatic melanoma, 3 NSCLC); 608 predicted epitopes experimentally assessed for
+    T-cell binding
+  modalities:
+  - validated-neoantigen
+  - predicted-neoantigen
+  - functional-assay
+  - mhc-binding
+  formats:
+  - vcf
+  - fastq
+  - bam
+  - csv
+  landing_url: https://www.synapse.org/#!Synapse:syn21048999
+  download_url: https://www.synapse.org/#!Synapse:syn21048999
+  license: unknown
+  license_url: https://www.synapse.org/
+  access: registration
+  provenance:
+    maintainer: Parker Institute for Cancer Immunotherapy & Cancer Research Institute (Sage Bionetworks/Synapse)
+    key_refs:
+    - 10.1016/j.cell.2020.09.015
+  last_updated: '2020'
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    - design
+    why: 'The canonical open benchmark tying predictions to experimental immunogenicity — directly usable
+      to validate and compare Veritope''s neoantigen ranking/recognition models.
+
+      '
+  agent_access: 'Synapse requires a (free) registered account and acceptance of governance/conditions-of-use
+    before download; programmatic access via synapseclient. Not anonymous bulk.
+
+    '
+  caveats: 'access: registration + Synapse governance/terms (not fully open); check conditions of use
+    / any restriction. Only 6 subjects — small but deeply validated; a benchmark, not a volume source.
+
+    '

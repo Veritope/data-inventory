@@ -1,0 +1,622 @@
+- id: anthem
+  name: Anthem (HLA-I binding predictor + curated set)
+  category: mhc-binding
+  species:
+  - human
+  description: 'An HLA class I presentation/binding predictor and web server that also supports training
+    custom models on user data. Its curated training set aggregates binders from IEDB, EPIMHC, MHCBN,
+    and SYFPEITHI.
+
+    '
+  scale: Curated class I binder set aggregated from IEDB + legacy DBs
+  modalities:
+  - binding-assay
+  formats:
+  - html
+  - web-server I/O
+  landing_url: https://anthem.erc.monash.edu/
+  download_url: https://anthem.erc.monash.edu/
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Monash University (Song lab), Australia
+    key_refs:
+    - 10.1093/bib/bbaa415
+  last_updated: '2021'
+  relevance:
+    programs:
+    - presentation
+    why: 'A benchmark predictor; mainly of interest as a comparison point rather than a data source (its
+      corpus is largely re-derived from IEDB et al.).
+
+      '
+  agent_access: 'Web server; no documented bulk training-data download or API. Low agent utility as a
+    data source.
+
+    '
+  caveats: 'No clear standalone training-data download or license - unknown. Underlying data overlaps
+    heavily with IEDB; limited independent value.
+
+    '
+- id: bigmhc-training-data
+  name: BigMHC training & evaluation data
+  category: mhc-binding
+  species:
+  - human
+  description: 'Training/evaluation splits for BigMHC (deep-learning HLA-I eluted-ligand and immunogenicity
+    predictor), including el_train / im_train sets and MANAFEST immunogenicity data.
+
+    '
+  scale: EL + immunogenicity training/eval CSVs
+  modalities:
+  - mhc-ligand-elution
+  - functional-assay
+  formats:
+  - csv
+  landing_url: https://data.mendeley.com/datasets/dvmz6pkzvb/4
+  download_url: https://data.mendeley.com/datasets/dvmz6pkzvb/4
+  license: CC BY 4.0 (Mendeley); code MIT + Zenodo archive
+  license_url: https://data.mendeley.com/datasets/dvmz6pkzvb/4
+  access: open
+  provenance:
+    maintainer: Johns Hopkins (Karchin/Griffith labs); Mendeley + Zenodo + GitHub
+    key_refs:
+    - 10.1038/s42256-023-00694-6
+    - 10.17632/dvmz6pkzvb.4
+    - 10.5281/zenodo.8023523
+  last_updated: '2023'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Combines EL presentation with immunogenicity labels - useful for the presentation->immunogenicity
+      step and as a modern DL benchmark.
+
+      '
+  agent_access: 'Mendeley (DOI 10.17632/dvmz6pkzvb.4) CSVs; code github.com/KarchinLab/bigmhc (Zenodo
+    10.5281/zenodo.8023523). Bulk-downloadable, no auth.
+
+    '
+  caveats: 'Verify current Mendeley version. Human only. Derived from public EL data (dedup).
+
+    '
+- id: dla88-ngs-genotyping
+  name: Canine DLA-88 NGS Genotyping / Novel-Allele Discovery
+  category: mhc-binding
+  species:
+  - dog
+  description: 'Sequence-based / next-generation DLA-88 typing studies reporting high rates of new-allele
+    discovery and gene duplication (incl. 13 novel DLA-88 alleles), feeding IPD-MHC curation. Population-level
+    DLA-88 allele content for dogs.
+
+    '
+  scale: dozens of DLA-88 alleles (ongoing discovery)
+  modalities:
+  - mhc-typing
+  - allele-sequence
+  formats:
+  - fasta
+  - tables
+  landing_url: https://www.ebi.ac.uk/ipd/mhc/group/DLA
+  download_url: https://www.ebi.ac.uk/ipd/mhc/group/DLA
+  license: custom (EMBL-EBI/IPD terms; article refs CC BY)
+  license_url: https://www.ebi.ac.uk/licencing/
+  access: open
+  provenance:
+    maintainer: EMBL-EBI IPD-MHC + academic typing labs
+    key_refs:
+    - PMC9563979
+    - PMC5551428
+  last_updated: 2017-2022
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Defines which DLA-88 alleles actually circulate in dogs — essential for prioritizing alleles
+      for immunopeptidomics and for population-aware presentation prediction.
+
+      '
+  agent_access: 'Allele FASTA via IPD-MHC; study tables in article supplements. Small, bulk-downloadable.
+
+    '
+  caveats: 'GAP: DLA-88 gene duplication/copy-number complicates typing; no breed allele-frequency database;
+    non-DLA-88 class I and all class II far less characterized.
+
+    '
+- id: ipd-mhc-dla
+  name: IPD-MHC Dog (DLA) Section + ISAG DLA Nomenclature
+  category: mhc-binding
+  species:
+  - dog
+  description: 'The official curated repository and nomenclature authority for canine MHC (DLA) sequences,
+    hosted at EMBL-EBI. Loci include DLA-88, DLA-12, DLA-64, DLA-79 (class I) and DLA-DRA, DLA-DRB1, DLA-DQA1,
+    DLA-DQB1 (class II). Allele names assigned by the ISAG/Comparative MHC committee.
+
+    '
+  scale: 'class I: DLA-88 ~130+ alleles; class II loci tens-to-low-hundreds each (dog-specific counts
+    not published as a single figure)'
+  modalities:
+  - mhc-allele-sequence
+  - nomenclature
+  formats:
+  - fasta
+  - xml
+  - flat-file
+  landing_url: https://www.ebi.ac.uk/ipd/mhc/group/DLA
+  download_url: https://www.ebi.ac.uk/ipd/mhc/group/DLA/
+  license: custom (EMBL-EBI terms of use; free for research)
+  license_url: https://www.ebi.ac.uk/licencing/
+  access: open
+  provenance:
+    maintainer: EMBL-EBI (IPD) + ISAG/IUIS Comparative MHC Nomenclature Committee
+    key_refs:
+    - 10.1007/s00251-018-1072-4
+    - 10.1093/nar/gkw1050
+  last_updated: release 3.x (2024)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    why: 'THE canonical DLA allele reference — the backbone for any canine MHC-binding predictor, immunopeptidome
+      allele assignment, and vaccine/epitope design. Central to Veritope''s work.
+
+      '
+  agent_access: 'FASTA/flat-file downloads + EBI API; no auth. Small, fully bulk-downloadable.
+
+    '
+  caveats: 'GAP ALERT: DLA allele set is orders of magnitude smaller and less population-characterized
+    than HLA/IMGT; DLA-88 dominates class I curation while other loci are thin. No allele frequencies
+    by breed, and binding data are near-absent (see immunopeptidome entries). This sparsity is a core
+    constraint for canine presentation prediction.
+
+    '
+- id: legacy-mhc-databases
+  name: Legacy MHC databases (MHCBN, EPIMHC, dbMHC)
+  category: mhc-binding
+  species:
+  - human
+  - other
+  description: 'Historical MHC-binding/epitope databases that predate IEDB''s dominance. MHCBN (binders/non-binders),
+    EPIMHC (MHC-binding peptides/epitopes in real proteins), and NCBI dbMHC (HLA typing/allele + anthropology
+    data). Catalogued for provenance and because older predictors trained on them.
+
+    '
+  scale: 'MHCBN: ~19,777 entries (17,129 binders + 2,648 non-binders), >400 MHC molecules; EPIMHC: thousands'
+  modalities:
+  - binding-assay
+  - mhc-ligand-elution
+  formats:
+  - html
+  - flat-file (historical)
+  landing_url: https://www.ncbi.nlm.nih.gov/gv/mhc/
+  download_url: unknown
+  license: unknown
+  access: request
+  provenance:
+    maintainer: 'MHCBN: IMTECH (Raghava); EPIMHC: academic; dbMHC: NCBI (retired)'
+    key_refs:
+    - 10.1093/bioinformatics/btg413
+    - 10.1093/nar/gki008
+  last_updated: mostly pre-2010; several defunct
+  relevance:
+    programs:
+    - presentation
+    why: 'Mostly superseded by IEDB; relevant only for understanding legacy predictor training provenance
+      and avoiding double-counting the same source peptides.
+
+      '
+  agent_access: 'Largely unavailable: NCBI dbMHC was retired; MHCBN/EPIMHC URLs may be dead or unmaintained.
+    Not reliable for automated fetch - treat as historical.
+
+    '
+  caveats: 'Several of these are DEFUNCT or unmaintained (dbMHC retired by NCBI; MHCBN/EPIMHC frequently
+    offline). No clear licenses. Content now subsumed by IEDB; verify each URL resolves before relying
+    on any of them.
+
+    '
+- id: mhc-motif-atlas
+  name: MHC Motif Atlas (binding specificities & ligands)
+  category: mhc-binding
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Curated database of MHC-I and MHC-II binding motifs, peptide length distributions, phospho-ligand
+    motifs, multiple specificities, and links to X-ray structures, plus downloadable curated MHC ligand
+    datasets. Derived largely from mono-allelic/deconvolved immunopeptidomics. Mix of curated experimental
+    ligands and motif models.
+
+    '
+  scale: Thousands of class I and class II MHC molecules; curated ligand lists + motifs + PDB links
+  modalities:
+  - binding-motif
+  - mhc-ligand-elution
+  - structure-link
+  - mhc-binding
+  formats:
+  - txt
+  - csv
+  - web
+  landing_url: http://mhcmotifatlas.org/
+  download_url: http://mhcmotifatlas.org/
+  license: CC BY-NC 4.0
+  license_url: http://mhcmotifatlas.org/
+  access: open
+  provenance:
+    maintainer: David Gfeller lab, University of Lausanne / Ludwig Institute, Switzerland
+    key_refs:
+    - 10.1093/nar/gkac965
+  last_updated: '2023'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Clean per-allele motifs and curated ligand lists (human, mouse, cattle, chicken) useful for
+      benchmarking presentation models and sanity-checking allele motifs.
+
+      '
+  agent_access: 'Direct text/CSV downloads of all_peptides.txt and sequence files (paths observed via
+    third-party tooling; confirm on site). No auth; bulk-downloadable.
+
+    '
+  caveats: 'CC BY-NC (non-commercial) per the Lausanne repository record - RED FLAG for a commercial company:
+    non-commercial clause likely restricts commercial ML use. Confirm exact license text before training
+    production models. No canine.
+
+    '
+  cross_listed: true
+- id: mhcflurry
+  name: MHCflurry 2.0 (OpenVax) + training data
+  category: mhc-binding
+  species:
+  - human
+  description: 'Open-source MHC class I binding-affinity and antigen-processing/presentation predictor.
+    Unlike DTU tools, both the code and the full training data (BA, presentation, and antigen-processing
+    CSVs) are openly released, making it the most agent-friendly trainable baseline.
+
+    '
+  scale: 'Training CSVs: ~hundreds of thousands of BA measurements + large MS presentation set'
+  modalities:
+  - binding-assay
+  - mhc-ligand-elution
+  formats:
+  - csv
+  landing_url: https://github.com/openvax/mhcflurry
+  download_url: https://data.mendeley.com/datasets/zx3kjzc3yx
+  license: 'code: Apache-2.0; data: CC BY 4.0 (verify current Mendeley version)'
+  license_url: https://github.com/openvax/mhcflurry/blob/master/LICENSE
+  access: open
+  provenance:
+    maintainer: OpenVax (Hammerbacher/O'Donnell), Mount Sinai
+    key_refs:
+    - 10.1016/j.cels.2020.06.010
+  last_updated: 2.x (ongoing; PyTorch backend from 2.2)
+  relevance:
+    programs:
+    - presentation
+    why: 'Permissively licensed code + data: the cleanest starting point for a reproducible in-house presentation
+      model and the easiest legal baseline to build on commercially.
+
+      '
+  agent_access: '`mhcflurry-downloads fetch` pulls models/data; data also on Mendeley (direct CSV download)
+    and GitHub. Fully bulk-downloadable, no auth. Most agent-friendly entry in this domain.
+
+    '
+  caveats: 'Class I only. Confirm the current Mendeley version''s license field (v2 shows CC BY 4.0).
+    Underlying MS data ultimately derives from public immunopeptidomics studies.
+
+    '
+- id: mhcflurry2-training-data
+  name: MHCflurry 2.0 training & evaluation data (Mendeley)
+  category: mhc-binding
+  species:
+  - human
+  description: 'The openly-licensed CSV training data behind MHCflurry 2.0: separate binding-affinity,
+    antigen-processing, and presentation-score training sets plus benchmark sets. The most permissively
+    licensed ready-to-train HLA-I corpus.
+
+    '
+  scale: BA + AP + PS training CSVs (hundreds of thousands of measurements) + benchmarks
+  modalities:
+  - binding-assay
+  - mhc-ligand-elution
+  formats:
+  - csv
+  landing_url: https://data.mendeley.com/datasets/zx3kjzc3yx/3
+  download_url: https://data.mendeley.com/datasets/zx3kjzc3yx/3
+  license: CC BY 4.0
+  license_url: https://data.mendeley.com/datasets/zx3kjzc3yx/3
+  access: open
+  provenance:
+    maintainer: OpenVax / Mount Sinai (O'Donnell, Hammerbacher); Mendeley Data
+    key_refs:
+    - 10.1016/j.cels.2020.06.010
+    - 10.17632/zx3kjzc3yx.3
+  last_updated: 2020-07 (v3)
+  relevance:
+    programs:
+    - presentation
+    why: 'CC BY data + Apache-2.0 code = the cleanest legal foundation for a commercial in-house HLA-I
+      presentation model.
+
+      '
+  agent_access: 'Direct CSV download from Mendeley (DOI 10.17632/zx3kjzc3yx.3) or `mhcflurry-downloads
+    fetch`. Bulk-downloadable, no auth.
+
+    '
+  caveats: 'Class I only. Confirm current Mendeley version''s license field. Underlying MS data derives
+    from public immunopeptidomics studies.
+
+    '
+- id: mixmhcpred
+  name: MixMHCpred / MixMHC2pred (+ bundled data)
+  category: mhc-binding
+  species:
+  - human
+  - other
+  description: 'Motif-based MHC-I (MixMHCpred) and MHC-II (MixMHC2pred) predictors from the Gfeller lab,
+    shipping with allele motif/definition files and an expanded multi-species training set bundled in
+    the releases.
+
+    '
+  scale: MixMHC2pred built from >600,000 curated MHC-II ligands; bundled allele definition files
+  modalities:
+  - binding-motif
+  - mhc-ligand-elution
+  formats:
+  - txt
+  - zip
+  landing_url: https://github.com/GfellerLab/MixMHCpred
+  download_url: https://github.com/GfellerLab/MixMHC2pred/releases
+  license: custom (free for academic; for-profit use requires a separate license)
+  license_url: https://github.com/GfellerLab/MixMHCpred/blob/master/MixMHCpred_license.pdf
+  access: open
+  provenance:
+    maintainer: David Gfeller lab, University of Lausanne, Switzerland
+    key_refs:
+    - 10.1016/j.immuni.2023.03.009
+  last_updated: MixMHCpred 3.0 / MixMHC2pred 2.0
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Strong class II motif modeling and multi-species data; a useful benchmark and motif source for
+      presentation/design.
+
+      '
+  agent_access: 'Code + bundled data downloadable from GitHub releases (no auth); bulk-fetchable.
+
+    '
+  caveats: 'RED FLAG: license explicitly states for-profit use of the tool OR "any data provided with
+    the script" requires a SEPARATE license from the authors. A commercial entity should not use the bundled
+    data in production without that license. The curated ligand training set proper is not clearly offered
+    as a standalone download.
+
+    '
+- id: netmhcpan
+  name: NetMHCpan / NetMHCIIpan (DTU) + training data
+  category: mhc-binding
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The most widely used pan-allele MHC-I (NetMHCpan) and MHC-II (NetMHCIIpan) binding/eluted-ligand
+    predictors from DTU. Critically, DTU publishes the partitioned training datasets (binding affinity
+    + eluted ligand, with CV folds), which are a reusable curated corpus in their own right.
+
+    '
+  scale: 'Training sets: millions of peptide-allele BA+EL measurements, cross-validation partitioned'
+  modalities:
+  - binding-assay
+  - mhc-ligand-elution
+  formats:
+  - tar.gz (text tables)
+  landing_url: https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/
+  download_url: https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/
+  license: custom (academic/non-profit; commercial requires separate license)
+  license_url: https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/
+  access: registration
+  provenance:
+    maintainer: DTU Health Tech (Nielsen lab), Denmark
+    key_refs:
+    - 10.1093/nar/gkaa379
+  last_updated: NetMHCpan 4.1 / NetMHCIIpan 4.1
+  relevance:
+    programs:
+    - presentation
+    why: 'The de-facto benchmark predictors and, more usefully, their curated BA+EL training partitions
+      are a high-quality labeled corpus for our own presentation models and for apples-to-apples benchmarking.
+
+      '
+  agent_access: 'Training-data tar.gz archives are directly downloadable from the suppl/ URL (no login).
+    The SOFTWARE itself requires an academic download form; non-academic users must email health-software@dtu.dk.
+    Data archive: bulk-fetchable; software: gated.
+
+    '
+  caveats: 'Software license is non-commercial/academic - RED FLAG for a for-profit: running the DTU binaries
+    commercially requires a separate license (contact DTU). The training DATA tables are downloadable
+    but their re-use/redistribution terms are not clearly licensed - treat cautiously and attribute. NetMHCIIpan
+    training archive on the suppl page is labeled v4.0.
+
+    '
+- id: netmhcpan41-training-set
+  name: NetMHCpan-4.1 / NetMHCIIpan-4.0 training sets (DTU)
+  category: mhc-binding
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The partitioned (cross-validation-ready) training corpora released with the DTU predictors:
+    combined binding-affinity (BA) and eluted-ligand (EL) measurements for MHC-I and MHC-II, aggregated
+    from the public domain + IEDB. A ready-made labeled benchmark substrate.
+
+    '
+  scale: 'MHC-I: 13,245,212 data points / 250 molecules; MHC-II: 4,086,230 / 116 molecules (BA+EL)'
+  modalities:
+  - binding-assay
+  - mhc-ligand-elution
+  formats:
+  - tar.gz (text tables)
+  landing_url: https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/
+  download_url: https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/
+  license: unknown
+  access: open
+  provenance:
+    maintainer: DTU Health Tech (Nielsen lab); supplementary data site
+    key_refs:
+    - 10.1093/nar/gkaa379
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    why: 'Pre-partitioned BA+EL labels (incl. MHC pseudo-sequences) are the standard benchmark split;
+      reusing their folds gives directly comparable model numbers.
+
+      '
+  agent_access: 'Direct download of NetMHCpan_train.tar.gz and NetMHCIIpan_train.tar.gz (no auth, old
+    unix ''compress'' format - decompress with `cat x | uncompress | tar xvf -`). Evaluation sets (CD8_benchmark,
+    per-allele MS ligand files) also hosted. The SOFTWARE is separately gated (academic form; commercial
+    needs DTU license).
+
+    '
+  caveats: 'The training-data tables carry no explicit license on the suppl page - marked unknown; attribute
+    and confirm reuse terms. Includes some non-human alleles (e.g. BoLA integrated in 4.1). Dedup vs IEDB/SysteMHC
+    needed (overlapping sources).
+
+    '
+- id: syfpeithi
+  name: SYFPEITHI
+  category: mhc-binding
+  species:
+  - human
+  - other
+  description: 'One of the oldest curated databases of MHC class I and II ligands and peptide motifs,
+    drawn exclusively from published reports, with anchor positions, MHC restriction, source protein,
+    and a classic motif-matrix prediction method.
+
+    '
+  scale: '>7,000 peptide entries; many class I and II alleles'
+  modalities:
+  - binding-motif
+  - mhc-ligand-elution
+  formats:
+  - html
+  landing_url: https://www.syfpeithi.de/
+  download_url: https://www.syfpeithi.de/
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Rammensee group, University of Tübingen, Germany
+    key_refs:
+    - 10.1007/s002510050595
+  last_updated: periodic
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'A clean, literature-curated motif/ligand reference useful for cross-checking motifs and historical
+      epitope recall; small but high-confidence.
+
+      '
+  agent_access: 'Query-driven HTML interface only; no bulk download or API - scrape-only and low-throughput.
+    Largely superseded by IEDB for bulk needs.
+
+    '
+  caveats: 'No explicit license surfaced - marked unknown; confirm before any redistribution. Not designed
+    for bulk programmatic access. Dated but still cited.
+
+    '
+- id: tadros-2025-mixmhcpred3-multispecies
+  name: Tadros/Racle/Gfeller 2025 MixMHCpred 3.0 multi-species MHC-I corpus
+  category: mhc-binding
+  species:
+  - human
+  - mouse
+  - dog
+  - other
+  description: 'The aggregated MHC-I ligand corpus behind MixMHCpred 3.0, spanning >250 samples across
+    human, mouse, cattle, CANID (dog), and non-human primate - the key benchmark assessing how far cross-species
+    MHC-I prediction can go, explicitly including canine.
+
+    '
+  scale: '>250 immunopeptidomics samples across human, mouse, cattle, canid, non-human primate'
+  modalities:
+  - mhc-ligand-elution
+  - binding-motif
+  formats:
+  - bundled definition/data files
+  - supplementary tables
+  landing_url: https://github.com/GfellerLab/MixMHCpred
+  download_url: https://github.com/GfellerLab/MixMHCpred
+  license: custom (free academic; for-profit use of tool or bundled data needs separate license)
+  license_url: https://github.com/GfellerLab/MixMHCpred/blob/master/MixMHCpred_license.pdf
+  access: open
+  provenance:
+    maintainer: Gfeller lab, UNIL Lausanne; GitHub + Genome Medicine supplement
+    key_refs:
+    - 10.1186/s13073-025-01450-8
+  last_updated: '2025'
+  relevance:
+    programs:
+    - comparative
+    - presentation
+    - design
+    why: 'Directly answers Veritope''s core question (cross-species, incl. canine, MHC-I prediction) and
+      aggregates the multi-species training data, including canid, in one place - a shortcut to the canine-relevant
+      literature and data.
+
+      '
+  agent_access: 'Tool + bundled data on GitHub (GfellerLab/MixMHCpred); per-source accessions in the paper
+    supplement (aggregates public PXD/MSV datasets). Bulk via git clone / releases.
+
+    '
+  caveats: 'RED FLAG: Gfeller for-profit-license clause covers the tool AND "any data provided with the
+    script" - a commercial entity must license before using bundled data in production. Canid coverage
+    present but modest. Re-fetch per-source accessions from the Genome Medicine supplementary (the preprint
+    PDF, 10.1101/2024.05.08.593183, was rate-limited/erroring at catalog time - verify the full source
+    table there).
+
+    '
+- id: transphla-data
+  name: TransPHLA-AOMP peptide-HLA binding dataset
+  category: mhc-binding
+  species:
+  - human
+  description: 'Training, independent, and external test sets for TransPHLA (transformer pHLA-I binding
+    predictor) plus 112 common HLA sequences; released via GitHub and a Zenodo archive.
+
+    '
+  scale: ~ training + independent + external + neoantigen pHLA-I test sets (~1.1 GB archive)
+  modalities:
+  - binding-assay
+  - mhc-ligand-elution
+  formats:
+  - csv
+  - zip
+  landing_url: https://zenodo.org/records/5715479
+  download_url: https://zenodo.org/records/5715479
+  license: unknown (check Zenodo/GitHub record)
+  license_url: https://zenodo.org/records/5715479
+  access: open
+  provenance:
+    maintainer: Chu et al.; GitHub a96123155/TransPHLA-AOMP + Zenodo
+    key_refs:
+    - 10.1038/s42256-022-00459-7
+  last_updated: '2022'
+  relevance:
+    programs:
+    - presentation
+    why: 'A modern transformer baseline with a packaged pHLA-I dataset for benchmarking; includes a neoantigen
+      test set.
+
+      '
+  agent_access: 'GitHub Dataset folder + Zenodo archive (record 5715479) + a lab download page. Bulk-downloadable,
+    no auth.
+
+    '
+  caveats: 'License not explicit on the archive - mark unknown; confirm before reuse. Source DOI to verify.
+    Dataset largely re-derived from IEDB/public EL (dedup needed). Do not confuse with TransHLA (different,
+    later model). Human only.
+
+    '
