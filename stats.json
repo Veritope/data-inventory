@@ -1,46 +1,46 @@
 {
-  "total": 538,
-  "agent_automatable": 473,
-  "open_access": 473,
-  "commercial_use_ok": 162,
-  "commercial_use_restricted": 31,
-  "commercial_use_unknown": 345,
-  "total_size_bytes": 12285977607293244,
-  "total_size_human": "10.9 PB",
-  "entries_with_known_size": 52,
-  "entries_with_unknown_size": 486,
+  "total": 576,
+  "agent_automatable": 509,
+  "open_access": 509,
+  "commercial_use_ok": 183,
+  "commercial_use_restricted": 40,
+  "commercial_use_unknown": 353,
+  "total_size_bytes": 12374229087293244,
+  "total_size_human": "11.0 PB",
+  "entries_with_known_size": 57,
+  "entries_with_unknown_size": 519,
   "by_category": {
-    "cancer-genomics": 118,
+    "cancer-genomics": 121,
     "comparative-oncology": 35,
     "functional-assay": 31,
     "healthy-baseline": 25,
     "mhc-binding": 23,
-    "neoantigen": 33,
-    "presentation": 31,
-    "reference": 64,
+    "neoantigen": 31,
+    "presentation": 35,
+    "reference": 75,
     "single-cell": 60,
-    "structure": 53,
-    "tcr-recognition": 40,
-    "tooling": 25
+    "structure": 52,
+    "tcr-recognition": 48,
+    "tooling": 40
   },
   "by_access": {
-    "registration": 21,
-    "open": 452,
-    "controlled-access": 53,
-    "request": 12
+    "registration": 30,
+    "open": 479,
+    "controlled-access": 54,
+    "request": 13
   },
   "by_program": {
-    "presentation": 254,
+    "presentation": 288,
     "design": 293,
-    "comparative": 227,
-    "recognition": 216
+    "comparative": 256,
+    "recognition": 247
   },
   "species": {
-    "human": 382,
-    "dog": 148,
+    "human": 425,
+    "dog": 144,
     "horse": 3,
     "cat": 7,
-    "other": 129,
-    "mouse": 133
+    "other": 143,
+    "mouse": 146
   }
 }

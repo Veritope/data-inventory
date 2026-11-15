@@ -1,45 +1,49 @@
-- id: abelin-2017-monoallelic
-  name: Abelin 2017 mono-allelic HLA-I immunopeptidome (MassIVE MSV000080527)
+- id: aagatlas
+  name: AAgAtlas — Human Autoantigen Database
   category: presentation
   species:
   - human
-  description: 'Earlier mono-allelic HLA class I immunopeptidome (16 datasets) establishing the mono-allelic
-    profiling approach and improving neoepitope prediction. Experimentally measured eluted ligands; a
-    predecessor/companion to the Sarkizova 2020 expansion.
+  description: 'Systematically curated atlas of human autoantigens (proteins targeted by autoantibodies),
+    built by text-mining >1M PubMed abstracts and cross-linking to disease associations and supporting
+    evidence. Later portal expands coverage substantially and adds functional annotation; distinguishes
+    true autoantigens from the broader proteome.
 
     '
-  scale: 16 mono-allelic HLA-I datasets
+  scale: 1,126 autoantigen genes / 1,071 diseases (v1.0, 2017); ~8,045 autoantigens (newer portal)
   modalities:
-  - mhc-ligand-elution
+  - self-antigen
+  - protein-annotation
+  - disease-association
   formats:
-  - raw
-  - mzML
-  landing_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000080527
-  download_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000080527
+  - tsv
+  - web
+  landing_url: http://biokb.ncpsb.org.cn/aagatlas/
+  download_url: http://biokb.ncpsb.org.cn/aagatlas_portal/
   license: unknown
-  license_url: https://massive.ucsd.edu/
   access: open
   provenance:
-    maintainer: Abelin/Carr et al., Broad Institute; MassIVE/ProteomeXchange
+    maintainer: National Center for Protein Sciences (Beijing) — Wang, Yang, Qin et al.
     key_refs:
-    - 10.1016/j.immuni.2017.02.007
-  last_updated: '2017'
+    - 10.1093/nar/gkw946
+  last_updated: 2017 (v1.0); portal update later
   relevance:
     programs:
     - presentation
-    why: 'Foundational mono-allelic training data for HLA-I presentation prediction; combine with Sarkizova
-      2020 for a broader allele panel.
+    - recognition
+    why: 'Autoantigens are the self-proteins a safe TCR/pMHC model must NOT flag as foreign — a principled
+      source of self-antigen examples for self vs non-self discrimination and for negative/decoy construction.
 
       '
-  agent_access: 'MassIVE open download, no auth. Automatable.
+  agent_access: 'Browse-and-download tables from the portal; no documented API. On 2026-11-15 the host
+    returned HTTP 503 intermittently — retry or cache; verify liveness before automated runs.
 
     '
-  caveats: 'license: unknown (MassIVE open policy). Smaller/older than Sarkizova 2020; dedup allele overlap
-    if merging.
+  caveats: 'Gene/protein-level (not epitope-level) — needs mapping to sequences/peptides. No explicit
+    license (flag unknown). China-hosted site with intermittent availability.
 
     '
-- id: abelin-2017-monoallelic-hla1
-  name: Abelin 2017 mono-allelic HLA-I immunopeptidome
+- id: abelin-2017-monoallelic
+  name: Abelin 2017 mono-allelic HLA-I immunopeptidome (MassIVE MSV000080527)
   category: presentation
   species:
   - human
@@ -55,8 +59,9 @@
   - raw-ms
   - mzML
   - search-results
+  - raw
   landing_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000080527
-  download_url: ftp://massive.ucsd.edu/MSV000080527/
+  download_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000080527
   license: CC0 1.0
   license_url: https://massive.ucsd.edu/
   access: open
@@ -76,10 +81,11 @@
     are large (Q Exactive). Use ppx/pridepy or direct FTP.
 
     '
-  caveats: 'Raw MS requires reprocessing (search engine + FDR) to get peptide lists. Only 16 alleles.
-    Human only.
+  caveats: 'license: unknown (MassIVE open policy). Smaller/older than Sarkizova 2020; dedup allele overlap
+    if merging.
 
     '
+  cross_listed: true
 - id: abelin-2019-monoallelic-hla2
   name: Abelin 2019 mono-allelic HLA-II immunopeptidome
   category: presentation
@@ -119,6 +125,95 @@
     '
   caveats: 'Raw MS needs reprocessing. Class II deconvolution is harder (open binding register). Human
     only.
+
+    '
+- id: allergenonline
+  name: AllergenOnline (FARRP Allergen Protein Database)
+  category: presentation
+  species:
+  - human
+  - other
+  description: 'Peer-reviewed database of allergenic and celiac protein sequences maintained for food-safety
+    allergenicity assessment of novel proteins, with an expert-curated inclusion process and a companion
+    celiac dataset. Supports FASTA-based sequence-similarity screening against known allergens.
+
+    '
+  scale: 'v24 (2026): 2,372 sequences across 986 taxonomic-protein groups'
+  modalities:
+  - allergen-antigen
+  - protein-sequence
+  formats:
+  - pdf
+  - fasta-search
+  - web
+  landing_url: https://www.allergenonline.org/
+  download_url: https://www.allergenonline.org/
+  license: unknown
+  access: registration
+  provenance:
+    maintainer: Food Allergy Research & Resource Program (FARRP), University of Nebraska-Lincoln
+    key_refs:
+    - 10.1111/all.13841
+  last_updated: 2026-01
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'A clean, curated allergen sequence set to derive environmental-antigen peptides and to broaden
+      the non-self repertoire beyond pathogen/tumor sources.
+
+      '
+  agent_access: 'FASTA database is used via the on-site similarity search; the public bulk artifact listed
+    is a version PDF, and sequence download requires site registration/agreement. Not a clean programmatic
+    bulk endpoint.
+
+    '
+  caveats: 'No explicit open license (flag unknown) and bulk sequence access is gated by registration
+    — redistribution terms unclear. Protein-level; join to IEDB for T/B-cell epitopes.
+
+    '
+- id: allergome
+  name: Allergome — A Database of Allergenic Molecules
+  category: presentation
+  species:
+  - human
+  - other
+  description: 'Large manually maintained catalogue of allergenic molecules and isoforms with IgE sensitization
+    data, grouping allergens into families and linking sequences, routes and clinical reactivity. One
+    of the most comprehensive allergen resources but with gated access.
+
+    '
+  scale: ~995+ allergenic molecules across 186 families (help page); larger with isoforms
+  modalities:
+  - allergen-antigen
+  - protein-annotation
+  - ige-reactivity
+  formats:
+  - web
+  - archive
+  landing_url: https://www.allergome.org/
+  download_url: https://www.allergome.org/
+  license: unknown
+  access: registration
+  provenance:
+    maintainer: Allergome / Allergy Data Laboratories (Mari et al.)
+    key_refs:
+    - 10.1016/j.cccn.2005.12.016
+  last_updated: 2024 (ongoing; yearly archive copies)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Deepest allergen annotation available; useful for allergen-derived peptide construction and
+      as an orthogonal non-self antigen class.
+
+      '
+  agent_access: 'Bulk/archive downloads require user registration ("free-authorized"); no open API. Automated
+    ingestion blocked without an account — treat as registration-gated.
+
+    '
+  caveats: 'Registration-gated and no explicit redistribution license (flag unknown). Historical-copy
+    availability is inconsistent. Best used to enrich annotation, not as a free bulk corpus.
 
     '
 - id: bassani-2015-hla1-abundance
@@ -290,13 +385,13 @@
 
     '
 - id: canine-dla88-immunopeptidome-atlas
-  name: Monoallelic Canine DLA-88 Immunopeptidome Atlas
+  name: Monoallelic DLA-88 Immunopeptidome Atlas (10 alleles, preprint)
   category: presentation
   species:
   - dog
-  description: 'Monoallelic LC-MS/MS immunopeptidomics atlas across 10 prevalent canine DLA-88 alleles
-    — the first systematic, allele-resolved map of naturally processed canine MHC-I ligands and their
-    binding motifs. Directly addresses the canine presentation data void.
+  description: 'Monoallelic LC-MS/MS atlas across 10 prevalent canine DLA-88 alleles using melanoma-derived
+    cell lines each expressing one functional DLA-88 allele; ~32,702 naturally processed peptides (7-15
+    aa); reports allele binding motifs and ligand sharing vs binding-site distance.
 
     '
   scale: ~32,702 naturally processed peptides (7-15 aa) across 10 DLA-88 alleles
@@ -310,7 +405,7 @@
   landing_url: https://www.biorxiv.org/content/10.64898/2026.10.06.756904v1
   download_url: https://www.ebi.ac.uk/pride/archive/projects/PXD074485
   license: preprint content CC BY; PRIDE data CC0/public (verify on PRIDE record)
-  license_url: https://www.ebi.ac.uk/pride/
+  license_url: https://www.biorxiv.org/content/10.64898/2026.10.06.756904v1
   access: open
   provenance:
     maintainer: academic group (immunopeptidomics); deposited at PRIDE/ProteomeXchange
@@ -326,8 +421,8 @@
       Veritope needs and that almost nothing else supplies.
 
       '
-  agent_access: 'Peptide tables from supp.; raw MS from PRIDE/ProteomeXchange (FTP, no auth). Confirm
-    association with PXD074485 vs a separate PXD on the PRIDE record.
+  agent_access: 'Peptide tables in supplement; raw MS via PRIDE/ProteomeXchange — confirm the PXD accession
+    in the preprint''s data-availability (NOT independently verified; may differ from PXD074485).
 
     '
   caveats: 'PREPRINT, not yet peer-reviewed. Covers only DLA-88 class I (10 alleles) — other class I loci
@@ -423,47 +518,48 @@
     immunopeptidomics (PXD013649) itself is open CC0. Human only.
 
     '
-- id: dla88-monoallelic-atlas
-  name: Monoallelic DLA-88 Immunopeptidome Atlas (10 alleles, preprint)
+- id: compare-allergen-db
+  name: COMPARE — COMprehensive Protein Allergen REsource
   category: presentation
   species:
-  - dog
-  description: 'Monoallelic LC-MS/MS atlas across 10 prevalent canine DLA-88 alleles using melanoma-derived
-    cell lines each expressing one functional DLA-88 allele; ~32,702 naturally processed peptides (7-15
-    aa); reports allele binding motifs and ligand sharing vs binding-site distance.
+  - human
+  - other
+  description: 'Annually curated public allergen protein-sequence database built by an independent international
+    panel for allergenicity risk assessment, distributed as a FASTA sequence file plus an Excel metadata
+    table (accessions, species, references), with companion COMPASS comparison tools.
 
     '
-  scale: ~32,702 peptides; 10 DLA-88 alleles
+  scale: thousands of curated allergen sequences (grows annually)
   modalities:
-  - mono-allelic-immunopeptidomics
-  - mhc-ligand-elution
+  - allergen-antigen
+  - protein-sequence
   formats:
-  - raw-ms
-  - peptide-tables
-  landing_url: https://www.biorxiv.org/content/10.64898/2026.10.06.756904v1
-  download_url: https://www.ebi.ac.uk/pride/archive/
-  license: preprint CC BY; data accession per preprint (VERIFY)
-  license_url: https://www.biorxiv.org/content/10.64898/2026.10.06.756904v1
-  access: open
+  - fasta
+  - xlsx
+  landing_url: https://comparedatabase.org/
+  download_url: https://hesiglobal.org/compare-2026-download/
+  license: custom
+  access: request
   provenance:
-    maintainer: academic group (immunopeptidomics)
+    maintainer: HESI Protein Allergens, Toxins and Bioinformatics (PATB) Committee
     key_refs:
-    - 10.64898/2026.10.06.756904
-  last_updated: 2026-10
+    - 10.3389/falgy.2021.700533
+  last_updated: '2026'
   relevance:
     programs:
     - presentation
-    - design
-    why: 'The single largest allele-resolved canine MHC-I ligand set — enough to train/benchmark DLA-88
-      presentation predictors. Core to closing the canine presentation gap.
+    - recognition
+    why: 'A clean, versioned FASTA of curated allergens — the most ML-friendly allergen sequence source
+      here for building allergen-derived peptide sets and non-self negatives.
 
       '
-  agent_access: 'Peptide tables in supplement; raw MS via PRIDE/ProteomeXchange — confirm the PXD accession
-    in the preprint''s data-availability (NOT independently verified; may differ from PXD074485).
+  agent_access: 'Access via a request form; files emailed to the submitter. Not a direct programmatic
+    URL — a human request step is required before automated reuse.
 
     '
-  caveats: 'PREPRINT, not peer-reviewed. DLA-88 class I only (10 alleles); other loci + all class II absent.
-    Data accession UNVERIFIED here.
+  caveats: 'Access is request-gated: free for academic/government users, but a ~USD 1,000 fee applies
+    to industry/NGO/consultant users per the 2026 terms (access/redistribution red flag for commercial
+    use). Protein-level; join to IEDB for epitopes.
 
     '
 - id: faridi-2018-spliced-peptides
@@ -693,6 +789,54 @@
 
     '
   caveats: 'license: unknown (PRIDE open policy). Small illustrative subset, not a cohort.
+
+    '
+- id: hpvdb
+  name: HPVdb — Human Papillomavirus T-cell Antigen Database
+  category: presentation
+  species:
+  - human
+  description: 'Curated knowledge base of HPV antigens with experimentally verified HLA ligands and CD8/CD4
+    T-cell epitopes, assembled by PubMed literature mining cross-referenced to IEDB, plus antigen variability
+    analysis across HPV genotypes. Built to support HPV-directed vaccine and immunotherapy target discovery;
+    packages antigen, T-cell-epitope and HLA-ligand records as structured XML.
+
+    '
+  scale: 191 verified T-cell epitopes, 45 verified HLA ligands (2014 paper)
+  modalities:
+  - tcr-epitope
+  - mhc-ligand
+  - viral-antigen
+  formats:
+  - xml
+  - web
+  landing_url: http://cvc.dfci.harvard.edu/hpv/
+  download_url: http://cvc.dfci.harvard.edu/hpv/
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Cancer Vaccine Center, Dana-Farber Cancer Institute / Harvard (Zhang, Keskin, Brusic et
+      al.)
+    key_refs:
+    - 10.1093/database/bau031
+  last_updated: 2015-03
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Adds a focused set of virally-encoded HLA ligands and T-cell epitopes (HPV) that broaden pMHC
+      training coverage beyond self/tumor antigens and help the model learn pathogen-derived presentation
+      and recognition features.
+
+      '
+  agent_access: 'Static academic site; three XML files (antigens, T-cell epitopes, HLA ligands) plus a
+    web query UI. No auth. On 2026-11-15 the host intermittently returned errors — verify liveness and
+    consider the met-hilab.org mirror before relying on automated fetch.
+
+    '
+  caveats: 'No explicit license — treat redistribution terms as unknown (flag). Small (hundreds of records)
+    and last updated ~2015, so stale relative to current IEDB; heavy overlap with IEDB requires dedup.
+    Server availability is unreliable.
 
     '
 - id: iedb
@@ -1142,47 +1286,6 @@
     data in a companion accession.
 
     '
-  scale: '>185,000 peptides from 95 mono-allelic HLA-A/-B/-C/-G cell lines'
-  modalities:
-  - mhc-ligand-elution
-  formats:
-  - raw
-  - mzML
-  landing_url: http://hlathena.tools/
-  download_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000084172
-  license: unknown
-  license_url: https://massive.ucsd.edu/
-  access: open
-  provenance:
-    maintainer: Keskin/Carr/Wu labs, Broad Institute & DFCI; MassIVE/ProteomeXchange
-    key_refs:
-    - 10.1038/s41587-019-0322-9
-  last_updated: '2020'
-  relevance:
-    programs:
-    - presentation
-    why: 'Per-allele mono-allelic ligand data is the cleanest substrate for training HLA-I presentation/binding
-      models (powering HLAthena) — high-value for a presentation program.
-
-      '
-  agent_access: 'MassIVE open download (MSV000084172 cell lines; MSV000084442 patient samples), no auth.
-    Automatable via FTP.
-
-    '
-  caveats: 'license: unknown (MassIVE/ProteomeXchange open). Companion mono-allelic sets in MSV000080527
-    (see abelin-2017). Cell-line mono-allelic motifs may not fully capture tissue co-regulation.
-
-    '
-- id: sarkizova-2020-monoallelic-hlathena
-  name: Sarkizova 2020 95-allele mono-allelic HLA-I (HLAthena)
-  category: presentation
-  species:
-  - human
-  description: 'The largest mono-allelic HLA class I immunopeptidome at publication: peptides from 95
-    HLA-A/B/C/G mono-allelic cell lines, underpinning the HLAthena predictor. The reference mono-allelic
-    corpus for pan-allele HLA-I presentation modeling.
-
-    '
   scale: ~185,000 peptides across 95 HLA-A/B/C/G alleles (raw spectra for 79/95 deposited)
   modalities:
   - mhc-ligand-elution
@@ -1190,8 +1293,10 @@
   - raw-ms
   - PSM tables
   - fasta
+  - raw
+  - mzML
   landing_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000084172
-  download_url: ftp://massive.ucsd.edu/MSV000084172/
+  download_url: https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000084172
   api: http://hlathena.tools/
   license: CC0 1.0
   license_url: https://massive.ucsd.edu/
@@ -1205,18 +1310,19 @@
     programs:
     - presentation
     - design
-    why: 'Broad allele coverage makes it the backbone positive set for pan-allele presentation predictors
-      and for validating allele-specific motifs.
+    why: 'Per-allele mono-allelic ligand data is the cleanest substrate for training HLA-I presentation/binding
+      models (powering HLAthena) — high-value for a presentation program.
 
       '
   agent_access: 'MassIVE MSV000084172 (PSM tables for all 95 alleles + raw spectra for 79) and a companion
     MSV000084442; GEO GSE131267. HLAthena predictions via hlathena.tools. Bulk-downloadable, CC0.
 
     '
-  caveats: 'Raw spectra incomplete (79/95); PSM tables cover all 95. Confirm which accession (MSV000084172
-    vs MSV000084442) holds the files you need. Human only.
+  caveats: 'license: unknown (MassIVE/ProteomeXchange open). Companion mono-allelic sets in MSV000080527
+    (see abelin-2017). Cell-line mono-allelic motifs may not fully capture tissue co-regulation.
 
     '
+  cross_listed: true
 - id: schuster-2017-ovarian
   name: Schuster 2017 ovarian carcinoma immunopeptidome
   category: presentation
@@ -1254,6 +1360,53 @@
 
     '
   caveats: 'Multi-allelic tissue data (deconvolution needed). Human only.
+
+    '
+- id: sdap2
+  name: SDAP 2.0 — Structural Database of Allergenic Proteins
+  category: presentation
+  species:
+  - human
+  - other
+  description: 'Curated allergen resource pairing sequences (including all IUIS allergens) with experimental
+    3D structures and homology models, plus tools for IgE-epitope and cross-reactivity analysis. Adds
+    a structural dimension to allergen antigen modeling.
+
+    '
+  scale: 1,657 curated sequences; 334 experimental X-ray/NMR structures; 1,565 3-D models (2023)
+  modalities:
+  - allergen-antigen
+  - protein-sequence
+  - protein-structure
+  formats:
+  - web
+  - pdb-models
+  - fasta
+  landing_url: https://fermi.utmb.edu/SDAP/
+  download_url: https://fermi.utmb.edu/SDAP/
+  license: custom — free for academic/non-commercial with citation; commercial use requires permission
+  license_url: https://fermi.utmb.edu/SDAP/sdap_aut.html
+  access: open
+  provenance:
+    maintainer: Braun & Schein labs, University of Texas Medical Branch (UTMB)
+    key_refs:
+    - 10.1016/j.jacig.2023.100163
+    - 10.1093/nar/gkg010
+  last_updated: '2023'
+  relevance:
+    programs:
+    - presentation
+    - design
+    why: 'Allergen sequences with structures/models support structure-aware presentation features and
+      give a non-self antigen class with 3D context for pMHC/epitope modeling.
+
+      '
+  agent_access: '3D models are freely downloadable with citation from the web interface; no documented
+    bulk API — per-entry retrieval. Verify host liveness (academic site).
+
+    '
+  caveats: 'Commercial use requires explicit permission from the maintainers (ML/commercial red flag).
+    Not a one-click bulk corpus; models are per-entry. Cite the SDAP 2.0 paper.
 
     '
 - id: systemhc-atlas
@@ -1363,6 +1516,49 @@
     '
   caveats: 'license: unknown across portal/PRIDE (ProteomeXchange open policy). This entry''s size_bytes
     is the murine deposition only, not the whole v2.0 atlas. Reprocessed data carry source-study provenance.
+
+    '
+- id: who-iuis-allergen-nomenclature
+  name: WHO/IUIS Allergen Nomenclature Database (allergen.org)
+  category: presentation
+  species:
+  - human
+  - other
+  description: 'The official, committee-approved systematic nomenclature of recognised allergens and their
+    isoforms (e.g. Bet v 1, Der p 2), with source organism, biochemical name, route of exposure and linked
+    sequence/structure accessions. The authoritative reference list of bona fide allergenic proteins.
+
+    '
+  scale: ~2,000+ allergens and isoforms (grows continuously)
+  modalities:
+  - allergen-antigen
+  - protein-annotation
+  formats:
+  - web
+  - pdf
+  landing_url: https://allergen.org/
+  download_url: https://allergen.org/
+  license: unknown
+  access: open
+  provenance:
+    maintainer: WHO/IUIS Allergen Nomenclature Sub-Committee
+    key_refs:
+    - 10.1111/all.13841
+  last_updated: 2026 (continuously updated)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    why: 'Canonical allergen protein list; a curated self-adjacent / environmental-antigen axis for building
+      allergen-derived peptide sets and for discrimination tasks distinct from pathogen and tumor antigens.
+
+      '
+  agent_access: 'Searchable web table plus downloadable PDF list; no structured bulk export or API, so
+    scraping the HTML table or parsing the PDF is required. No auth.
+
+    '
+  caveats: 'No machine-friendly bulk download and no explicit license (flag unknown). Protein-level nomenclature
+    only — epitope data must be joined from IEDB/SDAP/AllergenOnline.
 
     '
 - id: yari-netmhciipan43-hladp

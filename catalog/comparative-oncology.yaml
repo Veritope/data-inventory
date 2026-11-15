@@ -219,7 +219,7 @@
 
     '
 - id: canine-sctcr-2024-prjna742469
-  name: Hoang/Griffith 2024 single-cell canine TCR repertoire (PRJNA742469)
+  name: PRJNA742469 / SRP326193 — Canine Single-cell TCR + scRNA (Hoang 2024)
   category: comparative-oncology
   species:
   - dog
@@ -234,14 +234,18 @@
   - scrna-seq
   - repertoire
   - tumor
+  - single-cell-vdj
+  - tcr-seq
   formats:
   - fastq
   - sra
   - cellranger
-  landing_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11035579/
+  - h5
+  - airr
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA742469
   download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA742469
-  license: NCBI SRA terms (open)
-  license_url: https://www.ncbi.nlm.nih.gov/sra/docs/
+  license: public (SRA; no explicit license)
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
   access: open
   provenance:
     maintainer: Griffith labs, Washington University / University of Missouri
@@ -252,6 +256,7 @@
     programs:
     - comparative
     - recognition
+    - design
     why: 'THE key public canine TCR resource for a comparative-oncology (dog) arm — includes canine melanoma
       and lymphoma samples and custom CanFam3.1 10x references.
 

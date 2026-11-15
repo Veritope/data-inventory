@@ -1250,7 +1250,7 @@
     Immunogenicity results in the paper are readable but raw data access uncertain.
 
     '
-- id: skempi2-xref
+- id: skempi2
   name: SKEMPI 2.0 (cross-reference — already catalogued)
   category: functional-assay
   species:
@@ -1263,18 +1263,21 @@
     domain.
 
     '
-  scale: ~7,000+ mutations across ~345 complexes (antibody-antigen subset is large)
+  scale: 7,085 mutations with binding affinity data; 1,844 with kinetics; 443 with enthalpy/entropy; 440
+    binding-abolishing
   modalities:
   - binding-affinity
   - ddg
   - kinetics
   - mutation
   - complex-structure
+  - mutant
   formats:
   - csv
+  - pdb
   landing_url: https://life.bsc.es/pid/skempi2/
   download_url: https://life.bsc.es/pid/skempi2/database/index
-  license: custom (academic; see site)
+  license: unknown (paper CC BY-NC-ND 4.0; database terms not explicitly stated)
   license_url: https://life.bsc.es/pid/skempi2/
   access: open
   provenance:
@@ -1286,17 +1289,22 @@
     programs:
     - design
     - recognition
-    why: 'Already fully catalogued as `skempi2` in domain-6. Listed here only so the antibody-binding
-      domain is self-describing; do not double-count.
+    why: 'Gold-standard ddG-on-mutation labels mapped to structures, including immune complexes — core
+      training/benchmark data for affinity-maturation and binder-optimization models used in peptide-MHC
+      binder design.
 
       '
-  agent_access: 'Bulk CSV download, no auth. See the primary `skempi2` entry for details.
+  agent_access: 'Single CSV download of the full table plus the associated PDB structures; trivially scriptable.
+    No API needed.
 
     '
-  caveats: 'DUPLICATE of the existing `skempi2` entry — reference only, exclude from any deduplicated
-    master count.
+  caveats: 'Database redistribution license not clearly posted (marked unknown); the paper is CC BY-NC-ND.
+    Known duplicate/measurement-condition heterogeneity — deduplicate and normalize by pH/temperature.
+    Cleaned subsets (e.g. DACUM, Apache-2.0) exist but do not relicense SKEMPI itself.
 
     '
+  api: null
+  cross_listed: true
 - id: specht-2020-proteasome-peptide-db
   name: Proteasome spliced/non-spliced peptide generation database (Specht et al. 2020, Mishto/Liepe)
   category: functional-assay
@@ -1363,15 +1371,22 @@
   - predicted-neoantigen
   - functional-assay
   - mhc-binding
+  - wxs
+  - rna-seq
+  - neoantigen
+  - tcr-epitope
+  - functional-validation
   formats:
   - vcf
   - fastq
   - bam
   - csv
-  landing_url: https://www.synapse.org/#!Synapse:syn21048999
+  - tsv
+  - synapse
+  landing_url: https://www.cell.com/cell/fulltext/S0092-8674(20)31156-9
   download_url: https://www.synapse.org/#!Synapse:syn21048999
-  license: unknown
-  license_url: https://www.synapse.org/
+  license: Synapse data-use terms (open benchmark; registration)
+  license_url: https://www.synapse.org/#!Synapse:syn21048999
   access: registration
   provenance:
     maintainer: Parker Institute for Cancer Immunotherapy & Cancer Research Institute (Sage Bionetworks/Synapse)
@@ -1383,8 +1398,8 @@
     - recognition
     - presentation
     - design
-    why: 'The canonical open benchmark tying predictions to experimental immunogenicity — directly usable
-      to validate and compare Veritope''s neoantigen ranking/recognition models.
+    why: 'The gold-standard labeled benchmark for neoantigen prediction — validated positives and negatives
+      for training/evaluating presentation and immunogenicity models end to end.
 
       '
   agent_access: 'Synapse requires a (free) registered account and acceptance of governance/conditions-of-use
@@ -1395,6 +1410,7 @@
     / any restriction. Only 6 subjects — small but deeply validated; a benchmark, not a volume source.
 
     '
+  cross_listed: true
 - id: urothelial-organoid-biobank
   name: GSE306810 / GSE306811 — Canine Urothelial Carcinoma Organoid Biobank (2026)
   category: functional-assay

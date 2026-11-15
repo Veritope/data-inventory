@@ -371,6 +371,92 @@
     small per-epitope counts. Paired chains are a key strength.
 
     '
+- id: deepimmuno-dataset
+  name: DeepImmuno immunogenicity dataset
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Training/validation data accompanying DeepImmuno, a CNN for CD8 T-cell immunogenicity
+    of 9-10mer peptides. Comprises IEDB-derived immunogenic/non-immunogenic peptide-HLA pairs plus tumor-neoantigen
+    validation cases, released with code for reproducibility.
+
+    '
+  scale: ~thousands of peptide-HLA immunogenicity labels; 35-neoantigen validation set
+  modalities:
+  - pmhc-immunogenicity
+  - peptide-mhc
+  formats:
+  - csv
+  - code
+  landing_url: https://github.com/frankligy/DeepImmuno
+  download_url: https://github.com/frankligy/DeepImmuno
+  license: code per repo; data IEDB-derived
+  access: open
+  provenance:
+    maintainer: Frank (Guangyuan) Li et al., Cincinnati Children's Hospital
+    key_refs:
+    - 10.1093/bib/bbab160
+  last_updated: '2021'
+  relevance:
+    programs:
+    - recognition
+    why: 'A modern, well-documented immunogenicity benchmark with a neoantigen validation split — useful
+      to benchmark recognition/immunogenicity heads and to compare against a published deep baseline.
+
+      '
+  agent_access: 'CSV data files and code in GitHub (no auth); web portal at deepimmuno.research.cchmc.org.
+    Bulk-friendly.
+
+    '
+  caveats: 'IEDB-derived — dedup against iedb and calis-2013. Independent benchmarks report weaker generalization
+    (low PR-AUC on some tumor sets), so treat as a baseline, not ground truth.
+
+    '
+- id: francis-2022-sarscov2-cd8-tcr
+  name: Francis et al. 2022 — HLA-restricted SARS-CoV-2 CD8 epitopes & cross-reactive TCRs
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Combines genome-wide pMHC-multimer epitope discovery across common HLA-I alleles with
+    paired TCR sequencing, mapping how HLA allotype shapes repertoire breadth and cross-reactive memory
+    to SARS-CoV-2, including pre-pandemic cross-reactivity. Provides epitope lists plus epitope-annotated
+    TCR sequences across multiple HLA restrictions.
+
+    '
+  scale: ~1,355 immunoreactive peptides and multi-HLA epitope-specific TCR repertoires (paper)
+  modalities:
+  - tcr-epitope
+  - mhc-multimer
+  - cdr3-beta
+  - viral-antigen
+  formats:
+  - supplementary-tables
+  - csv
+  landing_url: https://www.science.org/doi/10.1126/sciimmunol.abk3070
+  download_url: https://www.science.org/doi/10.1126/sciimmunol.abk3070
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Peakman / Wooldridge / Sette-adjacent consortium (Francis et al.)
+    key_refs:
+    - 10.1126/sciimmunol.abk3070
+  last_updated: 2022-01
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'Multi-allele epitope + TCR data expands HLA diversity in viral recognition training and directly
+      probes cross-reactivity, a key generalization axis for TCR-pMHC models.
+
+      '
+  agent_access: 'Epitope and TCR tables in publisher supplementary materials; some TCR deposits may be
+    in IEDB/VDJdb. No bulk API. Verify Data Availability for any ImmPort/INSDC accession.
+
+    '
+  caveats: 'Supplementary-file distribution, license unstated (flag unknown). Overlaps VDJdb SARS-CoV-2
+    records; dedup. HLA coverage still skewed to common Caucasian alleles.
+
+    '
 - id: glanville-2017-gliph
   name: Glanville et al. 2017 (GLIPH) TCR specificity & naive reference data
   category: tcr-recognition
@@ -593,6 +679,49 @@
     NSCLC.
 
     '
+- id: iedb-immunogenicity-calis2013
+  name: Calis et al. 2013 — IEDB class-I immunogenicity training set
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  description: 'The labeled immunogenic vs non-immunogenic peptide-MHC-I dataset underlying the IEDB class-I
+    T-cell immunogenicity predictor, derived by contrasting IEDB peptides of similar MHC binding that
+    are or are not T-cell-recognised, isolating recognition-driving residue properties. The canonical
+    reference benchmark for pMHC-I immunogenicity.
+
+    '
+  scale: thousands of immunogenic/non-immunogenic pMHC-I pairs (Datasets S1/S2)
+  modalities:
+  - pmhc-immunogenicity
+  - peptide-mhc
+  formats:
+  - supplementary-tables
+  - csv
+  landing_url: https://tools.iedb.org/immunogenicity/
+  download_url: https://tools.iedb.org/static/pdf/calis_2013_plos.pdf
+  license: paper CC BY (PLoS); check supplementary dataset terms
+  access: open
+  provenance:
+    maintainer: Calis, Peters et al. (La Jolla Institute / IEDB)
+    key_refs:
+    - 10.1371/journal.pcbi.1003266
+  last_updated: '2013'
+  relevance:
+    programs:
+    - recognition
+    why: 'The de-facto baseline immunogenicity benchmark; needed to position any recognition model against
+      the standard IEDB immunogenicity score and to reuse its curated negatives.
+
+      '
+  agent_access: 'Immunogenic/non-immunogenic sets are in the PLoS Comput Biol supporting information (Dataset
+    S1/S2); the live scorer is at tools.iedb.org/immunogenicity. Supplementary extraction is manual.
+
+    '
+  caveats: 'Small, dated (2013) and class-I only; overlaps current IEDB (cross-ref iedb / idc-immunogenicity).
+    "Non-immunogenic" means not observed to induce response in the assays used, not proven negative.
+
+    '
 - id: iedb-tcell-assays
   name: IEDB — T-cell assay / MHC-multimer export (cross-ref)
   category: tcr-recognition
@@ -733,6 +862,52 @@
     '
   caveats: 'Repo license not stated — verify (data derived from VDJdb, so CC BY-ND redistribution limits
     may propagate). Peptide-restricted buckets; human only.
+
+    '
+- id: immrep23-benchmark
+  name: IMMREP23 TCR-epitope specificity prediction benchmark
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Community benchmark dataset from the 2023 IMMREP TCR-specificity challenge: VDJdb-derived
+    positive TCR-epitope pairs with held-out test/solution splits, framing recognition as binary classification
+    across a fixed panel of peptide-HLA complexes, with standardized alpha/beta V/J and CDR fields (Stitchr/ANARCI-annotated).
+
+    '
+  scale: 21 peptide-HLA complexes across 6 HLA molecules; train/test/solution CSVs
+  modalities:
+  - tcr-epitope
+  - cdr3-alpha
+  - cdr3-beta
+  - paired-chain
+  formats:
+  - csv
+  landing_url: https://github.com/justin-barton/IMMREP23/
+  download_url: https://github.com/justin-barton/IMMREP23/
+  license: MIT (repo)
+  license_url: https://github.com/justin-barton/IMMREP23/blob/main/LICENSE
+  access: open
+  provenance:
+    maintainer: IMMREP organizers (Barton, Nielsen, Eugster et al.)
+    key_refs:
+    - 10.1038/s41592-022-01578-0
+    - 10.1093/nar/gkac190
+    note: challenge manuscript pending at time of cataloguing
+  last_updated: 2023-12
+  relevance:
+    programs:
+    - recognition
+    why: 'A fixed, leakage-controlled evaluation split — the current standard harness for comparing TCR-epitope
+      recognition models, and the successor to immrep22-benchmark.
+
+      '
+  agent_access: 'All CSVs (train/test/sample_submission/solutions) in the GitHub repo under MIT; also
+    a Kaggle mirror. Bulk-friendly, no auth.
+
+    '
+  caveats: 'Positives are VDJdb-derived (upstream CC BY-ND 4.0 applies to those records despite the repo''s
+    MIT wrapper — verify before redistribution); negatives are synthesized, so benchmark results are sensitive
+    to negative-sampling choices. Dedup against vdjdb and immrep22-benchmark.
 
     '
 - id: immuneaccess
@@ -1202,6 +1377,57 @@
     the full training data. Model drops records whose TCR names are not in its reference DB. No dog.
 
     '
+- id: prime2-immunogenicity
+  name: PRIME2.0 / MixMHCpred2.2 immunogenicity & presentation training data
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Training and benchmark data for the Gfeller-lab PRIME2.0 (TCR-recognition / immunogenicity)
+    and MixMHCpred2.2 (presentation) predictors: curated HLA-I ligand sets and neo-epitope immunogenicity
+    data with position-specific TCR-contact features, applied to reveal cross-reactive SARS-CoV-2 CD8
+    epitopes. Distinct release from PRIME v1.
+
+    '
+  scale: HLA-I ligand + neo-epitope immunogenicity sets (Datasets S2/S3) with decoy negatives
+  modalities:
+  - pmhc-immunogenicity
+  - mhc-ligand
+  - peptide-mhc
+  formats:
+  - supplementary-tables
+  - csv
+  - code
+  landing_url: http://prime.gfellerlab.org/
+  download_url: https://github.com/GfellerLab/PRIME
+  license: CC BY-NC 4.0 (paper/data); code per GfellerLab repos
+  license_url: https://github.com/GfellerLab/PRIME/blob/master/LICENSE
+  access: open
+  provenance:
+    maintainer: Gfeller lab, Ludwig Institute / University of Lausanne
+    key_refs:
+    - 10.1016/j.cels.2022.12.002
+    zenodo: 10.5281/zenodo.7375740
+  last_updated: 2023-01
+  accessions:
+  - Zenodo 7375740
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'State-of-the-art immunogenicity/presentation training data with explicit TCR-contact position
+      features and decoy negatives — a strong complement to prime-immunogenicity (v1) and a benchmark
+      for both presentation and recognition.
+
+      '
+  agent_access: 'Datasets in the Cell Systems supplementary files and the Zenodo archive (10.5281/zenodo.7375740);
+    predictors on GitHub (GfellerLab). No auth.
+
+    '
+  caveats: 'CC BY-NC 4.0 — NON-COMMERCIAL only (ML/commercial redistribution red flag). Distinct from
+    prime-immunogenicity (v1) already catalogued; dedup overlapping neo-epitopes. Negatives are same-protein
+    decoys, not experimentally confirmed non-immunogenic.
+
+    '
 - id: prjna476127-canine-igh-repertoire
   name: PRJNA476127 — Canine IGH Repertoire, 3 Healthy Dogs x 3 Lymphoid Organs (Guelph; Vet Immunol Immunopathol
     2018)
@@ -1242,48 +1468,6 @@
   caveats: 'The paper-to-BioProject link is inferred: submitter (Guelph), registration date (2018-06,
     paper 2018-07) and design (3 dogs x 3 organs, 5''-RACE MiSeq) all match, but the paywalled article''s
     data statement was not read. Heavy chain only. No explicit reuse license.
-
-    '
-- id: prjna742469-sctcr
-  name: PRJNA742469 / SRP326193 — Canine Single-cell TCR + scRNA (Hoang 2024)
-  category: tcr-recognition
-  species:
-  - dog
-  description: 'Validated single-cell TRA/TRB (paired alpha/beta) + scRNA profiling on 10x Chromium across
-    16 samples from 11 companion dogs — the reference canine single-cell TCR dataset.
-
-    '
-  scale: 16 samples, 11 dogs (paired scTCR+scRNA)
-  modalities:
-  - single-cell-vdj
-  - scrna-seq
-  - tcr-seq
-  formats:
-  - fastq
-  - h5
-  - airr
-  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA742469
-  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA742469
-  license: public (SRA; no explicit license)
-  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
-  access: open
-  provenance:
-    maintainer: NCBI SRA (WashU)
-    key_refs:
-    - 10.1038/s42003-024-06174-w
-  last_updated: '2024'
-  relevance:
-    programs:
-    - recognition
-    - design
-    why: 'The core public canine paired-chain TCR resource; substrate for canine TCR modeling and for
-      a canine V/D/J reference.
-
-      '
-  agent_access: 'SRA FASTQ (prefetch) + 10x outputs; no auth.
-
-    '
-  caveats: 'No antigen specificity (no pMHC-labeled TCRs). Small donor n.
 
     '
 - id: prjna790470-canine-ig-repertoire
@@ -1403,6 +1587,151 @@
     why: The only canine tumour-infiltrating BCR repertoire data we found, from the tumour bed rather
       than blood.
   caveats: No linked publication found; runs became public 2026-06. Small n. No explicit reuse license.
+- id: repitope
+  name: Repitope — curated T-cell epitope immunogenicity datasets
+  category: tcr-recognition
+  species:
+  - human
+  - mouse
+  - other
+  description: 'R package and compiled dataset for quantitative epitope immunogenicity prediction via
+    repertoire-wide TCR-peptide contact profiling. Bundles harmonised MHC-I and MHC-II immunogenicity
+    tables (Human/Rodent/Primate) assembled from IEDB plus Calis, Chowell, EPIMHC, MHCBN, TANTIGEN, HCV/HIV
+    and IMMA2 source sets, with a public TCR CDR3b set.
+
+    '
+  scale: tens of thousands of immunogenicity-labeled peptides across MHC-I and MHC-II
+  modalities:
+  - pmhc-immunogenicity
+  - peptide-mhc
+  - tcr-cdr3
+  formats:
+  - csv
+  - fst
+  - rds
+  - gzip
+  landing_url: https://github.com/masato-ogishi/Repitope
+  download_url: https://data.mendeley.com/datasets/sydw5xnxpt/1
+  license: code MIT; bundled data inherit source-DB licenses (mixed)
+  license_url: https://github.com/masato-ogishi/Repitope/blob/master/LICENSE
+  access: open
+  provenance:
+    maintainer: Masato Ogishi (University of Tokyo)
+    key_refs:
+    - 10.3389/fimmu.2019.00827
+  last_updated: '2019'
+  accessions:
+  - Mendeley Data sydw5xnxpt
+  - DDBJ SRA DRA005827 (TCR sequences)
+  relevance:
+    programs:
+    - recognition
+    why: 'A ready, de-duplicated multi-source immunogenicity corpus spanning MHC-I and MHC-II and multiple
+      species — directly usable as training/benchmark for immunogenicity and as a consolidated set of
+      hard negatives.
+
+      '
+  agent_access: 'Package + raw CSVs on GitHub; large feature/fragment tables and immunogenicity scores
+    on Mendeley Data; TCR reads in DDBJ SRA (DRA005827). No auth; bulk-friendly.
+
+    '
+  caveats: 'Code is MIT but the bundled data carry the licenses of their SOURCE databases (IEDB open;
+    others e.g. EPIMHC/MHCBN/TANTIGEN vary) — verify per-source redistribution before republishing (mixed-license
+    flag). Some sources are legacy/defunct DBs.
+
+    '
+- id: saini-2021-sarscov2-genomewide-cd8
+  name: Saini et al. 2021 — genome-wide SARS-CoV-2 CD8 epitope map (DNA-barcoded multimers)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Genome-wide screen of SARS-CoV-2 CD8 T-cell recognition using DNA-barcoded peptide-MHC
+    multimers against 3,141 predicted MHC-I binders, yielding a ranked list of immunogenic and immunodominant
+    epitopes with donor-level recognition data in COVID-19 patients and healthy donors. A labeled immunogenic-vs-non-immunogenic
+    pMHC resource at proteome scale for one virus.
+
+    '
+  scale: 3,141 peptides screened; 122 immunogenic epitopes reported (paper)
+  modalities:
+  - mhc-multimer
+  - pmhc-immunogenicity
+  - viral-antigen
+  formats:
+  - supplementary-tables
+  - xlsx
+  landing_url: https://www.science.org/doi/10.1126/sciimmunol.abf7550
+  download_url: https://www.science.org/doi/10.1126/sciimmunol.abf7550
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Hadrup lab, DTU (Saini, Hersby, Tamhane et al.)
+    key_refs:
+    - 10.1126/sciimmunol.abf7550
+  last_updated: 2021-04
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'Rare proteome-wide positive/negative immunogenicity labeling for a single pathogen — the non-recognised-but-bound
+      peptides are high-value hard negatives for pMHC immunogenicity models that most databases lack.
+
+      '
+  agent_access: 'Epitope and screening tables are in the paper''s supplementary materials (publisher site).
+    No bulk API; barcode count matrices, if deposited, are referenced in Data Availability.
+
+    '
+  caveats: 'Data live in journal supplementary files (license not separately stated — flag as unknown);
+    extraction is manual. Negatives are assay-specific (binding-predicted but multimer-negative), not
+    validated non-binders.
+
+    '
+- id: shomuradova-2020-sarscov2-tcr
+  name: Shomuradova et al. 2020 — SARS-CoV-2 public CD8/CD4 TCR repertoire
+  category: tcr-recognition
+  species:
+  - human
+  description: 'Primary study deposit of SARS-CoV-2 epitope-specific TCRs, dominated by the HLA-A*02:01
+    spike epitope YLQPRTFLL, with tetramer-sorted alpha/beta sequences from convalescent and vaccinated
+    donors showing a public, convergent repertoire. Underlying sequencing and analysis notebooks are released
+    openly; curated specificity records fed into VDJdb.
+
+    '
+  scale: hundreds of epitope-specific TCR clonotypes across ~50 donors (paper)
+  modalities:
+  - tcr-epitope
+  - cdr3-alpha
+  - cdr3-beta
+  - repertoire
+  - viral-antigen
+  formats:
+  - tsv
+  - csv
+  - code
+  landing_url: https://github.com/antigenomics/covid19-tcr-analysis
+  download_url: https://github.com/antigenomics/covid19-tcr-analysis
+  license: code MIT/Apache per repo; curated records via VDJdb (CC BY-ND 4.0)
+  access: open
+  provenance:
+    maintainer: Efimov & Shugay groups (data mirrored into VDJdb)
+    key_refs:
+    - 10.1016/j.immuni.2020.11.004
+  last_updated: 2020-11
+  relevance:
+    programs:
+    - recognition
+    why: 'A clean, deeply characterised single-epitope (YLQ/A2) TCR set — a canonical positive bucket
+      for public-repertoire and cross-reactivity modeling in TCR-epitope prediction.
+
+      '
+  agent_access: 'Processed tables and R notebooks on GitHub (no auth); extended-data tables in the paper.
+    Curated specificity also retrievable via the VDJdb SARS-CoV-2 filter.
+
+    '
+  caveats: 'Single study, epitope-skewed (YLQ-heavy) — not a balanced benchmark. Overlaps the VDJdb SARS-CoV-2
+    compendium; dedup. Raw-read deposit not confirmed in an INSDC archive from public sources — verify
+    the paper''s Data Availability for any ENA/SRA accession.
+
+    '
 - id: tchard
   name: TChard
   category: tcr-recognition
@@ -1834,5 +2163,57 @@
     '
   caveats: 'Thresholds are not standardized across papers — document the exact filter. Same CC BY-ND redistribution
     limit as VDJdb.
+
+    '
+- id: vdjdb-sarscov2-compendium
+  name: VDJdb SARS-CoV-2 TCR compendium ("pandemic-era" release)
+  category: tcr-recognition
+  species:
+  - human
+  description: 'A dedicated SARS-CoV-2 slice of VDJdb curated during the pandemic, aggregating TCRs with
+    confirmed specificity to SARS-CoV-2 epitopes from many deposited studies (tetramer, MIRA, single-cell).
+    Distributed as part of the normal VDJdb release rather than a separate file, but described and versioned
+    in its own Nature Methods report.
+
+    '
+  scale: ~3,187 unique TCR-specificity records across 46 SARS-CoV-2 epitopes (2022 paper)
+  modalities:
+  - tcr-epitope
+  - cdr3-alpha
+  - cdr3-beta
+  - paired-chain
+  - viral-antigen
+  formats:
+  - tsv
+  - api
+  landing_url: https://vdjdb.cdr3.net/
+  download_url: https://github.com/antigenomics/vdjdb-db/releases
+  api: https://vdjdb.cdr3.net/
+  license: CC BY-ND 4.0 (inherits VDJdb data license)
+  license_url: https://github.com/antigenomics/vdjdb-db/blob/master/LICENSE
+  access: open
+  provenance:
+    maintainer: Shugay/Chudakov groups (antigenomics)
+    key_refs:
+    - 10.1038/s41592-022-01578-0
+    - 10.1093/nar/gkx760
+  last_updated: 2026-06
+  accessions:
+  - 'VDJdb release (filter: SARS-CoV-2)'
+  relevance:
+    programs:
+    - recognition
+    why: 'The single largest curated set of SARS-CoV-2-specific TCRs; a ready viral benchmark and training
+      supplement for TCR-epitope recognition, complementing ImmuneCODE''s bulk-TCR MIRA data with paired/annotated
+      specificities.
+
+      '
+  agent_access: 'Filter the standard VDJdb TSV release on antigen.species == SARS-CoV-2 after bulk download,
+    or query the REST API. No auth.
+
+    '
+  caveats: 'NOT a distinct deposit — it is a subset inside VDJdb (already catalogued as vdjdb); dedup
+    against vdjdb and immunecode-mira. CC BY-ND 4.0 forbids distributing modified versions (redistribution/ML
+    red flag). Aggregates heterogeneous source assays of uneven quality.
 
     '

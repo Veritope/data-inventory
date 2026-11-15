@@ -25,6 +25,20 @@ CATALOG = ROOT / "catalog"
 
 LIST_FIELDS = ["species", "modalities", "formats", "accessions"]
 
+# Same dataset catalogued under two slugs by different passes -> collapse to one.
+ID_ALIASES = {
+    "abelin-2017-monoallelic-hla1": "abelin-2017-monoallelic",
+    "indi-nanobody": "indi",
+    "skempi2-xref": "skempi2",
+    "tesla-neoantigen-benchmark": "tesla-benchmark",
+    "tcia-immunome": "tcia-cancer-immunome-atlas",
+    "icdc-tcl01-celllines": "icdc-tcl01",
+    "sarkizova-2020-monoallelic-hlathena": "sarkizova-2020-monoallelic",
+    "gse238110": "geo-gse238110-canine-osa-rnaseq",
+    "prjna742469-sctcr": "canine-sctcr-2024-prjna742469",
+    "dla88-monoallelic-atlas": "canine-dla88-immunopeptidome-atlas",
+}
+
 VALID_PROGRAMS = {"presentation", "recognition", "design", "comparative"}
 PROGRAM_ALIASES = {
     "neoantigen": "presentation", "mhc-binding": "presentation", "binding": "presentation",
@@ -122,6 +136,8 @@ def main() -> int:
         for e in data:
             raw += 1
             e["_source_file"] = f.name
+            if e.get("id") in ID_ALIASES:
+                e["id"] = ID_ALIASES[e["id"]]
             normalize(e)
             eid = e.get("id")
             if not eid:

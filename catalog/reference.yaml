@@ -184,6 +184,62 @@
     if redistributing derivatives. Clusters with <3 sequences removed.
 
     '
+- id: biogrid
+  name: BioGRID (Biological General Repository for Interaction Datasets)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Manually curated database of physical and genetic protein/gene interactions, plus chemical
+    and post-translational-modification interactions, drawn from the primary literature and high-throughput
+    datasets. Interactions are evidence-typed and experiment- attributed.
+
+    '
+  scale: '>2.9M protein/genetic interactions, >1M chemical interactions, ~80k publications'
+  modalities:
+  - physical-interaction
+  - genetic-interaction
+  - ptm
+  - chemical-interaction
+  formats:
+  - tab
+  - tab2
+  - mitab
+  - biogrid-json
+  - psi-mi-xml
+  landing_url: https://thebiogrid.org/
+  download_url: https://downloads.thebiogrid.org/BioGRID
+  api: https://wiki.thebiogrid.org/doku.php/biogridrest
+  license: MIT
+  license_url: https://downloads.thebiogrid.org/BioGRID
+  access: open
+  provenance:
+    maintainer: BioGRID team (Princeton, Mount Sinai Toronto, others)
+    key_refs:
+    - 10.1002/pro.3978
+    - 10.1093/nar/gkj109
+  last_updated: 2025 (monthly releases, e.g. 4.4.x)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    - comparative
+    why: 'MIT-licensed (commercially usable) curated physical/genetic interaction edges for building interaction
+      features around antigen-processing and immune-signaling proteins; PTM interactions add regulatory
+      detail.
+
+      '
+  agent_access: 'Open bulk downloads (TAB2/MITAB/PSI-MI, monthly archives) under MIT; REST API with a
+    free access key. Fully automatable and redistributable with attribution.
+
+    '
+  caveats: 'Data are MIT (free for commercial + academic, cite Stark 2006 + Oughtred 2021); the article
+    text is CC BY 4.0 — keep separate. Curation is literature-driven, so coverage is biased toward well-studied
+    proteins; dog interactions are sparse.
+
+    '
 - id: bv-brc-epitopes
   name: BV-BRC viral/bacterial epitope features (ex-ViPR / ex-IRD)
   category: reference
@@ -620,6 +676,58 @@
     whether the panel files inherit that restriction before commercial deployment. Panels cover only 5
     classical loci (no DPB1/DRB3-5). Built on 1000 Genomes sample sizes (modest per-population counts
     for rare alleles).
+
+    '
+- id: corum
+  name: CORUM (Comprehensive Resource of Mammalian protein complexes)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Manually curated database of experimentally characterized mammalian protein complexes,
+    with subunit composition, function, and literature evidence. The reference resource for known stable
+    protein-complex membership (including immune-relevant complexes such as the immunoproteasome and MHC-associated
+    assemblies).
+
+    '
+  scale: ~7,200 complexes (CORUM 5.0, Sep 2024); later 5.2 (2025), 5.3 (2026)
+  modalities:
+  - protein-complexes
+  - subunit-composition
+  formats:
+  - txt
+  - csv
+  - json
+  landing_url: https://mips.helmholtz-muenchen.de/corum/
+  download_url: https://mips.helmholtz-muenchen.de/corum/download
+  license: custom — CC BY-NC 4.0 per site; CC BY 4.0 per 2022/2024 papers (CONFLICT)
+  license_url: https://mips.helmholtz-muenchen.de/corum/
+  access: open
+  provenance:
+    maintainer: Helmholtz Munich (Ruepp / Institute for Bioinformatics and Systems Biology)
+    key_refs:
+    - 10.1093/nar/gkae1033
+    - 10.1093/nar/gkac1015
+  last_updated: 2026 (CORUM 5.3, Apr 2026; 5.0 Sep 2024)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'Ground-truth protein-complex membership for features and interpretation — e.g. grouping proteasome/immunoproteasome
+      and antigen-processing machinery subunits as functional units rather than isolated proteins.
+
+      '
+  agent_access: 'Open bulk download (complete complex table as TXT/CSV/JSON), no auth. Small, fully script-ingestible.
+    No formal REST API.
+
+    '
+  caveats: 'LICENSE RED FLAG / CONFLICT. The Helmholtz CORUM site states CC BY-NC 4.0 (NON- COMMERCIAL)
+    for copyrightable parts, while the 2022 and 2024 NAR papers describe downloads as CC BY 4.0, and one
+    older note mentions CC0. Treat the most restrictive (CC BY-NC 4.0, non-commercial) as governing until
+    confirmed with the maintainer before any commercial/product use. Mammalian-focused; mostly human/mouse
+    evidence.
 
     '
 - id: cosmic
@@ -1170,6 +1278,64 @@
     release number (annotation changes between releases).
 
     '
+- id: gene-ontology
+  name: Gene Ontology (GO) & GO Annotations (GOA)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The authoritative structured vocabulary of gene/gene-product function across three aspects
+    (molecular function, biological process, cellular component), plus the GO Annotation (GOA) corpus
+    that links specific gene products to GO terms with evidence codes. The de facto standard for functional
+    annotation and gene-set / enrichment analysis. Dog (Canis familiaris) annotations are available through
+    GOA and Ensembl orthology projection.
+
+    '
+  scale: ~43,000 GO terms; hundreds of millions of annotations across species (GOA)
+  modalities:
+  - ontology
+  - gene-function-annotation
+  - evidence-coded-annotations
+  formats:
+  - obo
+  - owl
+  - gaf
+  - gpad
+  - json
+  landing_url: https://geneontology.org/
+  download_url: https://geneontology.org/docs/downloads/
+  api: https://api.geneontology.org/
+  license: CC BY 4.0
+  license_url: https://geneontology.org/docs/go-citation-policy/
+  access: open
+  provenance:
+    maintainer: Gene Ontology Consortium (EMBL-EBI, others; NIH/NHGRI funded)
+    key_refs:
+    - 10.1093/genetics/iyad031
+    - 10.1038/75556
+  last_updated: 2026 (monthly releases; GO knowledgebase in 2026 paper published)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    - comparative
+    why: 'Core annotation layer for turning gene/protein identifiers into interpretable functional features
+      (e.g. tagging antigen-processing, MHC, cytokine-signaling genes) and for enrichment interpretation
+      of model outputs across human and canine programs.
+
+      '
+  agent_access: 'Open bulk download (OBO/OWL ontology + GAF/GPAD annotation files) over HTTPS, no auth.
+    REST API (api.geneontology.org) and the GOlr Solr endpoint for programmatic queries. Fully automatable;
+    pin a release date for reproducibility.
+
+    '
+  caveats: 'GO ontology/annotation data are CC BY 4.0; GO software is BSD-3-Clause (keep separate). Evidence
+    codes vary in reliability (IEA electronic vs. experimental) — filter by evidence for high-confidence
+    features. Canine annotations are sparser and partly orthology-projected; verify per gene.
+
+    '
 - id: gtdb
   name: Genome Taxonomy Database (GTDB)
   category: reference
@@ -1503,6 +1669,111 @@
     before any commercial use. Scraping discouraged; prefer the provided reference files.
 
     '
+- id: immport
+  name: ImmPort (Immunology Database and Analysis Portal)
+  category: reference
+  species:
+  - human
+  - mouse
+  description: 'NIAID/DAIT-funded repository of curated immunology research data from clinical and mechanistic
+    studies (flow/CyTOF, ELISA, gene expression, HAI, clinical metadata), plus reference gene lists (e.g.
+    ImmPort immune gene categories) and analysis tools. The ''Shared Data'' tier is open to any registered
+    researcher.
+
+    '
+  scale: Hundreds of curated studies; standardized immunology assay + clinical data
+  modalities:
+  - flow-cytometry
+  - cytof
+  - elisa
+  - gene-expression
+  - clinical-metadata
+  - gene-lists
+  formats:
+  - csv
+  - tsv
+  - mysql-dump
+  - api
+  landing_url: https://www.immport.org/
+  download_url: https://www.immport.org/shared/dataDownload
+  api: https://docs.immport.org/
+  license: custom (NIAID-DAIT Data Sharing Use Agreement; cite study accessions)
+  license_url: https://www.immport.org/agreement
+  access: registration
+  provenance:
+    maintainer: ImmPort (NIAID/DAIT; UCSF, University at Buffalo, Northrop Grumman)
+    key_refs:
+    - 10.1038/sdata.2018.15
+  last_updated: 2025 (ongoing study releases)
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    why: 'Standardized human immunology assay data and the ImmPort immune gene category lists provide
+      immune-feature annotations and real immune-cell/clinical datasets for grounding and benchmarking
+      immune models.
+
+      '
+  agent_access: 'Shared Data downloadable via web and Aspera/API after a one-step free registration (DSUA
+    acceptance). Private Data tier is provider-controlled (not open). Automatable after obtaining credentials;
+    cite study accession + title per use.
+
+    '
+  caveats: 'Not pure open-access: requires registration and acceptance of the NIAID-DAIT Data Sharing
+    Use Agreement; redistribution of raw study data is constrained by the DSUA and per-study citation
+    requirements. Human-focused (plus some mouse); no dog.
+
+    '
+- id: immunesigdb
+  name: ImmuneSigDB (MSigDB C7 immunologic signatures)
+  category: reference
+  species:
+  - human
+  - mouse
+  description: 'The immunologic-signature collection within MSigDB (collection C7): thousands of gene
+    sets derived from manually curated comparisons of immune-cell states, perturbations and conditions
+    (activation, differentiation, infection, vaccination). Purpose-built for scoring and interpreting
+    immune transcriptional programs.
+
+    '
+  scale: ~5,200 immunologic gene sets (ImmuneSigDB subset of C7)
+  modalities:
+  - immune-gene-sets
+  - signatures
+  formats:
+  - gmt
+  - gmx
+  - xml
+  - json
+  landing_url: https://www.gsea-msigdb.org/gsea/msigdb/human/collections.jsp#C7
+  download_url: https://www.gsea-msigdb.org/gsea/downloads.jsp
+  license: CC BY 4.0 (per MSigDB terms)
+  license_url: https://www.gsea-msigdb.org/gsea/msigdb_license_terms.jsp
+  access: registration
+  provenance:
+    maintainer: Broad Institute (Godec, Haining et al.) within MSigDB
+    key_refs:
+    - 10.1016/j.immuni.2016.08.009
+  last_updated: 2024 (tracks MSigDB v2024.1 releases)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'The most immune-specific curated gene-set resource for Veritope — directly provides features
+      for immune-cell-state and immune-program scoring in antigen/immune modeling, and interpretable labels
+      for recognition-program signatures.
+
+      '
+  agent_access: 'Delivered as the C7 collection within the MSigDB GMT/XML bulk downloads (email registration
+    requested). Script-ingestible.
+
+    '
+  caveats: 'Subset of MSigDB; dedup against the parent ''msigdb'' entry (do not double-count). Under the
+    CC BY 4.0 portion of MSigDB terms, but confirm when bundling with other MSigDB collections that may
+    carry third-party restrictions. Human/mouse only (no dog).
+
+    '
 - id: indi
   name: INDI — Integrated Nanobody Database for Immunoinformatics
   category: reference
@@ -1520,19 +1791,22 @@
   - vhh
   - antibody-sequence
   - single-domain
+  - nanobody
+  - patent
+  - literature-annotation
   formats:
   - csv
   - fasta
   landing_url: https://research.naturalantibody.com/nanobodies
   download_url: https://research.naturalantibody.com/nanobodies
   license: unknown
-  license_url: unknown
+  license_url: https://research.naturalantibody.com/nanobodies
   access: open
   provenance:
     maintainer: NaturalAntibody (Poland), with Harvard Medical School, Abterra Biosciences, Alector
     key_refs:
     - 10.1093/nar/gkab1021
-  last_updated: '2022'
+  last_updated: 2022 (NAR 2022 database issue)
   relevance:
     programs:
     - design
@@ -1552,50 +1826,57 @@
     dedup needed. Camelid single-domain only.
 
     '
-- id: indi-nanobody
-  name: INDI — Integrated Nanobody Database for Immunoinformatics
+- id: intact
+  name: IntAct Molecular Interaction Database
   category: reference
   species:
+  - human
+  - mouse
   - other
-  description: 'Aggregated nanobody (single-domain antibody / VHH) sequence database collating public
-    repositories, patents and the literature into a single numbered, searchable resource. The nanobody
-    analogue of OAS for the single-domain binder modality.
+  description: 'EMBL-EBI''s open database of molecular interaction data (primarily protein-protein), curated
+    to deep detail from the literature and direct depositions, and the common curation platform for the
+    IMEx consortium (MIntAct). Interactions carry PSI-MI controlled-vocabulary evidence and confidence
+    scoring.
 
     '
-  scale: '>11 million nanobody sequences'
+  scale: '>1.1M binary interactions, >20k publications curated'
   modalities:
-  - nanobody
-  - antibody-sequence
-  - patent
-  - literature-annotation
+  - protein-protein-interaction
+  - psi-mi-evidence
+  - confidence-score
   formats:
-  - csv
-  - fasta
-  landing_url: https://research.naturalantibody.com/nanobodies
-  download_url: https://research.naturalantibody.com/nanobodies
-  license: unknown
-  license_url: https://research.naturalantibody.com/nanobodies
+  - mitab
+  - psi-mi-xml
+  - json
+  landing_url: https://www.ebi.ac.uk/intact/
+  download_url: https://www.ebi.ac.uk/intact/download
+  api: https://www.ebi.ac.uk/intact/ws/interaction/
+  license: CC BY 4.0 (data); Apache-2.0 (software)
+  license_url: https://www.ebi.ac.uk/intact/about
   access: open
   provenance:
-    maintainer: NaturalAntibody (Krawczyk et al.)
+    maintainer: EMBL-EBI (Orchard/Hermjakob) / IMEx Consortium
     key_refs:
-    - 10.1093/nar/gkab1021
-  last_updated: 2022 (NAR 2022 database issue)
+    - 10.1093/nar/gkt1115
+  last_updated: 2025 (continuous curation releases)
   relevance:
     programs:
-    - design
+    - presentation
     - recognition
-    why: 'Nanobodies are a prime small, single-domain binder scaffold; INDI is the broadest public VHH
-      sequence prior for nanobody binder design.
+    - design
+    - comparative
+    why: 'Deeply curated, PSI-MI-detailed protein interaction evidence (binding regions, methods, confidence)
+      for high-quality interaction features and for grounding antigen/immune protein complexes and binding
+      partners.
 
       '
-  agent_access: 'Web search/browse and downloads on the NaturalAntibody research portal; the paper is
-    CC BY 4.0 but the database is company-hosted. Programmatic bulk access/terms are not clearly documented.
+  agent_access: 'Open bulk downloads (MITAB, PSI-MI XML) and PSICQUIC/REST web services, no auth. CC BY
+    4.0 — redistributable with attribution. Automatable.
 
     '
-  caveats: 'RED FLAG: hosted by a commercial entity (NaturalAntibody); no explicit data license for the
-    database contents (paper license does not cover the data). Confirm bulk-download rights and redistribution/ML-training
-    terms before use.
+  caveats: 'Data are CC BY 4.0 and software Apache-2.0 (do not conflate; CC0 appears only on third-party
+    registry metadata, not on IntAct data). Human-heavy; dog interactions limited. Deduplicate against
+    BioGRID/STRING (shared IMEx curation overlaps).
 
     '
 - id: interpro
@@ -1856,6 +2137,62 @@
     use. Large, heterogeneous holdings need careful dedup.
 
     '
+- id: kegg
+  name: KEGG (Kyoto Encyclopedia of Genes and Genomes)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Reference knowledgebase of molecular pathways (KEGG PATHWAY), functional orthology (KEGG
+    ORTHOLOGY/KO), modules, diseases and drugs. Widely used as a pathway-membership and ortholog-grouping
+    annotation source. Includes immune-system and signaling maps.
+
+    '
+  scale: ~570 reference pathway maps; ~26,000 KO groups; thousands of organisms
+  modalities:
+  - pathways
+  - orthology-groups
+  - modules
+  - pathway-maps
+  formats:
+  - kgml
+  - flat-file
+  - api
+  landing_url: https://www.kegg.jp/
+  download_url: https://www.kegg.jp/kegg/download/
+  api: https://rest.kegg.jp/
+  license: custom (proprietary — Kanehisa Laboratories / Pathway Solutions)
+  license_url: https://www.kegg.jp/kegg/legal.html
+  access: registration
+  provenance:
+    maintainer: Kanehisa Laboratories; licensing via Pathway Solutions Inc.
+    key_refs:
+    - 10.1093/nar/gkae909
+    - 10.1093/nar/28.1.27
+  last_updated: 2025 (KEGG 2025 NAR update; continuous releases)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'KEGG pathway and KO annotations are a standard feature source for pathway membership and cross-species
+      ortholog grouping — but licensing severely constrains programmatic and commercial use (see caveats).
+
+      '
+  agent_access: 'Free KEGG REST API (rest.kegg.jp) for academic use with rate limits; free website. BULK
+    download (FTP) requires a PAID academic FTP subscription; the API is not intended for mass harvesting.
+    Agent-scale ingestion effectively needs a subscription.
+
+    '
+  caveats: 'MAJOR LICENSE RED FLAG. KEGG is NOT a free/open database. Academic WEB and limited REST use
+    is free, but bulk FTP download requires a paid academic subscription and ANY commercial use (including
+    for-profit research or embedding in a product/service) requires a commercial End-User or Service-Provider
+    license from Pathway Solutions. Redistribution and large-scale extraction are prohibited under the
+    FTP terms. Do NOT treat KEGG data as redistributable or ML-trainable without an appropriate license.
+    Prefer Reactome/WikiPathways (CC0) or KEGG-MEDICUS-derived MSigDB sets where possible.
+
+    '
 - id: kirimp
   name: KIR*IMP — KIR gene-content imputation reference panel
   category: reference
@@ -2036,6 +2373,62 @@
   caveats: 'CC0 applies to the protein database specifically; broader MGnify content falls under EMBL-EBI
     terms — do not generalize CC0. Huge scale; heavy dedup vs UniRef recommended. Note ESM Metagenomic
     Atlas (structures over MGnify90) is catalogued separately in domain-9 (esm-atlas).
+
+    '
+- id: msigdb
+  name: MSigDB (Molecular Signatures Database)
+  category: reference
+  species:
+  - human
+  - mouse
+  description: 'Curated collections of annotated gene sets for enrichment analysis (GSEA): hallmark (H)
+    gene sets, curated pathways (C2: Reactome, KEGG-MEDICUS, BioCarta, WikiPathways), GO (C5), oncogenic
+    (C6), immunologic (C7, incl. ImmuneSigDB), and cell-type (C8) collections. The standard gene-set resource
+    for interpreting expression signatures.
+
+    '
+  scale: ~34,000 gene sets (v2024.1), human + mouse orthology collections
+  modalities:
+  - gene-sets
+  - pathway-signatures
+  - hallmark-signatures
+  formats:
+  - gmt
+  - gmx
+  - xml
+  - sqlite
+  - json
+  landing_url: https://www.gsea-msigdb.org/gsea/msigdb/
+  download_url: https://www.gsea-msigdb.org/gsea/downloads.jsp
+  api: https://www.gsea-msigdb.org/gsea/msigdb/
+  license: CC BY 4.0 (most sets); some subsets under separate/restrictive terms — see caveats
+  license_url: https://www.gsea-msigdb.org/gsea/msigdb_license_terms.jsp
+  access: registration
+  provenance:
+    maintainer: Broad Institute / UC San Diego (Mesirov, Tamayo labs)
+    key_refs:
+    - 10.1073/pnas.0506580102
+    - 10.1016/j.cels.2015.12.004
+  last_updated: 2024 (v2024.1 Hs/Mm)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'Hallmark and curated gene sets are the workhorse feature/annotation layer for scoring immune
+      and oncogenic programs in expression data and for interpreting model-derived signatures across programs.
+
+      '
+  agent_access: 'Bulk GMT/GMX/XML/SQLite downloads over HTTPS; email registration requested on the download
+    page. Fully script-ingestible once downloaded.
+
+    '
+  caveats: 'LICENSE RED FLAG (mixed). Core gene sets are CC BY 4.0 (v6.0-v7.5.1 and v2022.1+), but sub-collections
+    carry third-party terms: KEGG-MEDICUS sets are CC BY-SA 4.0 (share-alike); legacy KEGG sets defer
+    to KEGG''s restrictive policy (commercial license needed); BioCarta and Database-of-Cell-Signaling
+    (ST_) sets are under separate license to the Broad with disclaimer-retention requirements. Older (pre-v6)
+    releases had non-commercial language. Audit the specific collections used before any commercial/redistribution
+    use.
 
     '
 - id: multiethnic-hla-panel-luo
@@ -2503,6 +2896,59 @@
     CC BY 3.0 — verify current terms. v11 counts not confirmed here.
 
     '
+- id: panther
+  name: PANTHER (Protein ANalysis THrough Evolutionary Relationships)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Classification of proteins into evolutionarily related families/subfamilies with associated
+    GO annotations, PANTHER protein-class terms, and curated PANTHER pathways. Underlies the GO Consortium''s
+    phylogenetic annotation (PAINT) and provides a protein- family and pathway feature layer and an enrichment
+    service.
+
+    '
+  scale: ~15,000 protein families, ~180 curated pathways; ~140+ genomes
+  modalities:
+  - protein-families
+  - go-annotation
+  - protein-class
+  - pathways
+  formats:
+  - flat-file
+  - obo
+  - sbgn
+  - api
+  landing_url: https://www.pantherdb.org/
+  download_url: https://www.pantherdb.org/downloads/
+  api: https://pantherdb.org/services/openAPISpec.jsp
+  license: custom (free academic & commercial reuse; GNU LGPL for some components)
+  license_url: https://www.pantherdb.org/tools/index.jsp
+  access: open
+  provenance:
+    maintainer: Thomas lab (USC) / GO Consortium
+    key_refs:
+    - 10.1002/pro.4218
+  last_updated: 2024 (PANTHER 19.0); periodic releases tracking GO
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'Protein-family and protein-class assignments give a coarse, evolution-aware feature layer for
+      grouping antigen/immune-related proteins and projecting annotation across species including dog.
+
+      '
+  agent_access: 'Bulk download of family/annotation flat files and HMMs, no auth. REST API and enrichment
+    web services. Automatable; verify exact file-level terms before redistribution.
+
+    '
+  caveats: 'License terms are stated per-component rather than as a single SPDX id; confirm the specific
+    file''s terms before redistribution. Overlaps GO (PANTHER drives GO phylogenetic annotation) — use
+    for the family/protein-class layer, dedup GO terms by source.
+
+    '
 - id: pfam
   name: Pfam (protein families)
   category: reference
@@ -2712,6 +3158,61 @@
     common alleles.
 
     '
+- id: reactome
+  name: Reactome Pathway Knowledgebase
+  category: reference
+  species:
+  - human
+  - other
+  description: 'Manually curated, peer-reviewed knowledgebase of human biological pathways and reactions
+    (signal transduction, metabolism, immune system, etc.), with computationally inferred orthologous
+    pathways for additional species. Provides pathway hierarchies, reaction participants, and a pathway-analysis/enrichment
+    service.
+
+    '
+  scale: ~2,700 human pathways, ~15,000 reactions, ~11,000 proteins; orthology to ~15 species
+  modalities:
+  - pathways
+  - reactions
+  - protein-reaction-participation
+  - pathway-enrichment
+  formats:
+  - sbml
+  - biopax
+  - sbgn
+  - tsv
+  - json
+  - graph-database-dump
+  landing_url: https://reactome.org/
+  download_url: https://reactome.org/download-data
+  api: https://reactome.org/ContentService/
+  license: CC0 1.0 (data); CC BY 4.0 (pathway illustrations); Apache-2.0 (software)
+  license_url: https://reactome.org/license/
+  access: open
+  provenance:
+    maintainer: Reactome Consortium (OICR, EMBL-EBI, NYULMC, OHSU; NIH/EBI funded)
+    key_refs:
+    - 10.1093/nar/gkad1025
+  last_updated: 2026 (Reactome 2026 NAR paper, 10.1093/nar/gkaf1223; regular releases)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'CC0 immune and signaling pathway structure is an unrestricted source of pathway- membership
+      features and interpretable groupings for antigen-processing, interferon, and cytokine pathways —
+      freely usable including commercially.
+
+      '
+  agent_access: 'Open bulk downloads (BioPAX, SBML, SBGN, flat TSV mappings, Neo4j graph dump), no auth.
+    REST ContentService and AnalysisService APIs for programmatic pathway/enrichment queries.
+
+    '
+  caveats: 'Only pathway DATA are CC0; pathway illustration images are CC BY 4.0 and software is Apache-2.0
+    — do not conflate. Human-centric; non-human pathways are orthology-inferred (no manual curation) and
+    no dog-specific projection is guaranteed.
+
+    '
 - id: refseq
   name: NCBI RefSeq (Reference Sequence Collection)
   category: reference
@@ -2915,6 +3416,61 @@
     pulled from the SNP2HLA distribution over individual-level genotype privacy and is now controlled-access
     via NIDDK (DUA/request). No explicit SPDX license on the tool page. European-ancestry panel (ancestry
     bias). Only the Pan-Asian panel remains openly bundled.
+
+    '
+- id: string
+  name: STRING (Search Tool for the Retrieval of Interacting Genes/Proteins)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Database of known and predicted protein-protein associations (functional and physical),
+    scored and integrated from experiments, co-expression, text-mining, databases and genomic context,
+    with confidence scores. Includes a functional-enrichment service. Covers thousands of organisms including
+    dog.
+
+    '
+  scale: '>12,000 organisms, >59M proteins, >20B interactions (v12)'
+  modalities:
+  - protein-protein-association
+  - network-edges
+  - confidence-scores
+  - enrichment
+  formats:
+  - tsv
+  - flat-file
+  - api
+  - cytoscape
+  landing_url: https://string-db.org/
+  download_url: https://string-db.org/cgi/download
+  api: https://string-db.org/help/api/
+  license: CC BY 4.0
+  license_url: https://string-db.org/cgi/access
+  access: open
+  provenance:
+    maintainer: STRING Consortium (EMBL, SIB, UZH, NNF-CPR; Bork/von Mering/Jensen labs)
+    key_refs:
+    - 10.1093/nar/gkac1000
+  last_updated: 2026 (v12.5 current; v12.0 archived)
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - design
+    - comparative
+    why: 'Network features (association scores, neighbors) for propagating annotation, building protein-interaction
+      features around antigen/immune genes, and cross-species transfer via orthology — dog-genome coverage
+      supports the comparative program.
+
+      '
+  agent_access: 'Open bulk per-organism flat-file downloads (CC BY 4.0), no auth; REST API with rate limits
+    for targeted queries. Pin a version (per-version archived sites).
+
+    '
+  caveats: 'Associations are predicted/integrated (incl. text-mining) — not all edges are physical interactions;
+    filter by evidence channel and confidence score. Very large per-organism files. v12.0 is archived
+    at a versioned subdomain; current live is v12.5.
 
     '
 - id: uniparc
@@ -3169,5 +3725,56 @@
 
     '
   caveats: 'Not the same coordinates as CanFam3.1 or Tasha1.0 — standardize a reference across the program.
+
+    '
+- id: wikipathways
+  name: WikiPathways
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Open, community-curated pathway database covering metabolic, signaling, and disease pathways.
+    Content is released into the public domain (CC0), making it an unrestricted pathway-membership annotation
+    source and a clean complement to the more restrictive KEGG.
+
+    '
+  scale: ~3,000+ curated pathways across ~30 species
+  modalities:
+  - pathways
+  - pathway-maps
+  - gene-pathway-membership
+  formats:
+  - gpml
+  - gmt
+  - svg
+  - rdf
+  - json
+  landing_url: https://www.wikipathways.org/
+  download_url: https://www.wikipathways.org/download.html
+  api: https://webservice.wikipathways.org/
+  license: CC0 1.0
+  license_url: https://www.wikipathways.org/terms.html
+  access: open
+  provenance:
+    maintainer: WikiPathways team (Maastricht University, Gladstone Institutes, others)
+    key_refs:
+    - 10.1093/nar/gkad960
+  last_updated: 2024 (WikiPathways 2024 NAR); monthly versioned releases, each DOI-stamped
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'CC0 pathway content gives unrestricted pathway-membership features and GMT gene sets for enrichment
+      — safe for commercial product use, unlike KEGG. Good coverage of immune and signaling pathways.
+
+      '
+  agent_access: 'Open bulk download (GPML, GMT gene sets, RDF, monthly snapshots), no auth. Web service
+    API and SPARQL endpoint. Fully automatable; GMT files directly ingestible for enrichment.
+
+    '
+  caveats: 'Community curation means variable depth/quality per pathway versus manually peer-reviewed
+    Reactome. The CC0 waiver covers pathway content; cite releases by their monthly DOI for reproducibility.
 
     '

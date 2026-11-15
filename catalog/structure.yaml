@@ -2150,58 +2150,6 @@
     coordinates.
 
     '
-- id: skempi2
-  name: SKEMPI 2.0
-  category: structure
-  species:
-  - human
-  - mouse
-  - other
-  description: 'Manually curated benchmark of experimentally measured changes in protein-protein binding
-    affinity (and kinetics/thermodynamics) upon mutation, each mapped to a PDB complex structure. Includes
-    antibody-antigen and TCR-pMHC complexes relevant to interface-mutation effect prediction.
-
-    '
-  scale: 7,085 mutations with binding affinity data; 1,844 with kinetics; 443 with enthalpy/entropy; 440
-    binding-abolishing
-  modalities:
-  - complex-structure
-  - binding-affinity
-  - kinetics
-  - mutant
-  - ddg
-  formats:
-  - csv
-  - pdb
-  landing_url: https://life.bsc.es/pid/skempi2/
-  download_url: https://life.bsc.es/pid/skempi2/database/index
-  api: null
-  license: unknown (paper CC BY-NC-ND 4.0; database terms not explicitly stated)
-  license_url: https://life.bsc.es/pid/skempi2/
-  access: open
-  provenance:
-    maintainer: Barcelona Supercomputing Center (BSC) / Moal & Fernandez-Recio
-    key_refs:
-    - 10.1093/bioinformatics/bty635
-  last_updated: 2018 (v2.0)
-  relevance:
-    programs:
-    - design
-    - recognition
-    why: 'Gold-standard ddG-on-mutation labels mapped to structures, including immune complexes — core
-      training/benchmark data for affinity-maturation and binder-optimization models used in peptide-MHC
-      binder design.
-
-      '
-  agent_access: 'Single CSV download of the full table plus the associated PDB structures; trivially scriptable.
-    No API needed.
-
-    '
-  caveats: 'Database redistribution license not clearly posted (marked unknown); the paper is CC BY-NC-ND.
-    Known duplicate/measurement-condition heterogeneity — deduplicate and normalize by pH/temperature.
-    Cleaned subsets (e.g. DACUM, Apache-2.0) exist but do not relicense SKEMPI itself.
-
-    '
 - id: stag-tcr-pmhc-dataset
   name: STAG structure-based TCR-pMHC binding dataset (Kavraki Lab)
   category: structure

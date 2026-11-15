@@ -1,3 +1,52 @@
+- id: bach-iciar2018
+  name: BACH (ICIAR 2018) — breast cancer histology microscopy & WSIs
+  category: tooling
+  species:
+  - human
+  description: 'Breast-cancer histology challenge dataset: 400 training + 100 test H&E microscopy images
+    (2048x1536) labeled into four classes (normal, benign, in situ carcinoma, invasive carcinoma), plus
+    30 pixel-annotated whole-slide images (10 train / 10 test labeled + 10 unlabeled) with region masks.
+    A widely used benchmark for four-class breast histology classification/segmentation.
+
+    '
+  scale: 400 train + 100 test microscopy images (4-class); 30 WSIs with region annotations
+  modalities:
+  - histopathology-microscopy
+  - whole-slide-image
+  - patch-classification
+  - region-segmentation
+  formats:
+  - tiff
+  - svs
+  - csv
+  landing_url: https://iciar2018-challenge.grand-challenge.org/
+  download_url: https://zenodo.org/records/3632035
+  license: CC BY-NC-ND 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+  access: open
+  provenance:
+    maintainer: INESC TEC / i3S, University of Porto (Aresta, Araújo, Polónia et al.)
+    key_refs:
+    - 10.1016/j.media.2019.05.010
+    - 10.5281/zenodo.3632035
+  last_updated: '2019'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Four-class human breast histology benchmark (incl. in situ vs. invasive) for pretraining and
+      validating tissue-morphology classifiers that feed multimodal models.
+
+      '
+  agent_access: 'Bulk download from Zenodo (DOI), no auth; challenge portal mirror also exists. Scriptable
+    over HTTPS.
+
+    '
+  caveats: 'LICENSE RED FLAG — CC BY-NC-ND 4.0 is NON-COMMERCIAL and NO-DERIVATIVES (the most restrictive
+    CC combination; derivative/processed-data releases are not permitted under the license). A Kaggle
+    mirror lists license as Unknown — use the Zenodo record''s terms.
+
+    '
 - id: bakerlab-pmhci-binder-design
   name: Baker lab de novo pMHC-I binder design (code + designed structure)
   category: tooling
@@ -46,6 +95,161 @@
   caveats: 'Zenodo license not confirmed (marked unknown). Only one designed complex is deposited (9O5S);
     full design sets live in supplements. Companion NY-ESO-1 minibinder paper (10.1126/science.adv0422)
     reuses prior RFdiffusion releases.
+
+    '
+- id: breakhis
+  name: BreakHis — Breast Cancer Histopathological Database
+  category: tooling
+  species:
+  - human
+  description: 'Microscopy image database of breast tumor tissue from 82 patients, acquired from surgical
+    (excisional) biopsy at four magnifications (40x, 100x, 200x, 400x). 7,909 RGB images (2,480 benign,
+    5,429 malignant) across eight tumor subtypes. A long-standing benchmark for patch/image-level benign-vs-malignant
+    and subtype classification.
+
+    '
+  scale: 7,909 images, 82 patients, 4 magnifications, 8 tumor subtypes (~4 GB)
+  size_bytes: 3980000000
+  modalities:
+  - histopathology-microscopy
+  - patch-classification
+  formats:
+  - png
+  landing_url: https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database-breakhis/
+  download_url: http://www.inf.ufpr.br/vri/databases/BreaKHis_v1.tar.gz
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Laboratório Visão Robótica e Imagem (VRI), Universidade Federal do Paraná (UFPR)
+    key_refs:
+    - 10.1109/TBME.2015.2496264
+  last_updated: '2016'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Compact, cleanly licensed human breast tumor histology set for pretraining/benchmarking morphology
+      classifiers that feed multimodal tissue-molecular models.
+
+      '
+  agent_access: 'Single tar.gz over HTTP (~4 GB); no auth. Site requests (but does not require) a form
+    after download. IEEE DataPort (DOI 10.21227/mtd3-kx92) and Kaggle mirrors exist. Fully scriptable.
+
+    '
+  caveats: 'CC BY 4.0 confirmed on the UFPR page. Note intro text says 9,109 images but the table (authoritative)
+    lists 7,909. Magnification-specific folds require careful patient-level splitting to avoid leakage.
+
+    '
+- id: camelyon16-17
+  name: CAMELYON16 / CAMELYON17 — sentinel lymph node metastasis WSIs
+  category: tooling
+  species:
+  - human
+  description: 'Benchmark whole-slide-image datasets for automated detection of breast-cancer metastases
+    in H&E sentinel lymph node sections. CAMELYON16 (399 WSIs, 2 centers) targets slide-level metastasis
+    detection with lesion-level contour annotations for 209 slides; CAMELYON17 (1,000 WSIs, 5 centers)
+    adds patient-level pN-stage classification. Together the canonical computational-pathology benchmark.
+
+    '
+  scale: 1,399 WSIs (399 + 1,000), ~3 TB; detailed metastasis contours for 209 slides
+  size_bytes: 3000000000000
+  modalities:
+  - whole-slide-image
+  - histopathology
+  - lesion-annotations
+  formats:
+  - tif
+  - xml
+  - csv
+  landing_url: https://camelyon17.grand-challenge.org/
+  download_url: http://gigadb.org/dataset/100439
+  license: CC0 1.0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/
+  access: open
+  provenance:
+    maintainer: Diagnostic Image Analysis Group, Radboud UMC / Utrecht / GigaScience
+    key_refs:
+    - 10.1093/gigascience/giy065
+    - 10.1001/jama.2017.14585
+    - 10.5524/100439
+  last_updated: '2018'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Gold-standard human tumor-vs-immune (lymph node) WSI benchmark; useful for pretraining and validating
+      tissue-level tumor detection in multimodal pathology models.
+
+      '
+  agent_access: 'Bulk download from GigaDB (HTTP/FTP), with mirrors on Google Drive/Baidu; CAMELYON17
+    grand-challenge portal may require free registration. Large multi-GB pyramidal TIFFs; scriptable over
+    HTTPS/FTP.
+
+    '
+  caveats: 'CC0 per the GigaScience paper and GigaDB record (a ResearchGate copy mislabels it CC BY 4.0
+    — the publisher CC0 is authoritative). ~3 TB total; plan storage. Test-set labels for the challenge
+    leaderboards are partly sequestered.
+
+    '
+- id: cancer-imaging-archive
+  name: The Cancer Imaging Archive (TCIA)
+  category: tooling
+  species:
+  - human
+  description: 'The primary public repository of de-identified medical images of cancer (CT, MRI, PET,
+    mammography, digital pathology whole-slide images and more), organized into disease- and project-specific
+    Collections, many cross-linked to TCGA/CPTAC molecular data via shared subject barcodes. Serves raw
+    DICOM plus expert segmentations, radiomic features and clinical metadata. Underpins most public radiogenomics
+    and imaging-AI research.
+
+    '
+  scale: 200+ collections, millions of images, tens of millions of DICOM objects across many cancer types
+  modalities:
+  - ct
+  - mri
+  - pet
+  - mammography
+  - whole-slide-image
+  - dicom-segmentation
+  - radiomics
+  formats:
+  - dicom
+  - svs
+  - nifti
+  - csv
+  landing_url: https://www.cancerimagingarchive.net/
+  download_url: https://www.cancerimagingarchive.net/access-data/
+  api: https://services.cancerimagingarchive.net/nbia-api/
+  license: 'mixed: most collections CC BY 3.0 / CC BY 4.0; some TCIA Limited-Access / Restricted'
+  license_url: https://www.cancerimagingarchive.net/data-usage-policies-and-restrictions/
+  access: open
+  provenance:
+    maintainer: University of Arkansas for Medical Sciences / Frederick National Lab, funded by NCI Cancer
+      Imaging Program
+    key_refs:
+    - 10.1007/s10278-013-9622-7
+    - 10.1038/sdata.2017.124
+  last_updated: '2025'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Canonical source of human tumor imaging paired (via TCGA/CPTAC barcodes) with molecular profiles;
+      the substrate for multimodal models that relate radiology/histology phenotype to genomics and the
+      immune microenvironment.
+
+      '
+  agent_access: 'NBIA REST API and the TCIA/IDC Python clients allow programmatic query and bulk DICOM
+    download, no auth for open collections. Brain/head-neck and some others now require a signed Limited-Access
+    or Restricted License Agreement emailed to TCIA (not agent-fetchable).
+
+    '
+  caveats: 'LICENSE VARIES PER COLLECTION AND PER VERSION — do not assume CC BY. Effective 2022-01-06
+    all brain, head, and head/neck collections moved from Creative Commons to a TCIA Limited-Access License
+    (registration + agreement). Some older collection pages state CC BY 3.0 with a non-commercial note
+    that conflicts with the general policy; treat the collection landing page as authoritative and cite
+    the full data citation, not the wiki URL.
 
     '
 - id: canine-cd-antibody-reagents
@@ -190,6 +394,55 @@
     '
   caveats: 'Aggregator: each underlying dataset keeps its own license/consent — check per collection before
     redistribution. Schema standardization can lose study-specific detail.
+
+    '
+- id: cibersort-lm22
+  name: CIBERSORT / CIBERSORTx & the LM22 leukocyte signature matrix
+  category: tooling
+  species:
+  - human
+  description: 'Reference signature matrix (LM22: 547 genes distinguishing 22 human immune cell subsets)
+    and the associated deconvolution method for estimating immune-cell fractions from bulk expression.
+    LM22 is a widely used immune cell-type signature reference; CIBERSORTx extends to imputed cell-type-specific
+    expression.
+
+    '
+  scale: 'LM22: 547 genes x 22 immune cell subsets'
+  modalities:
+  - cell-type-signature-matrix
+  - deconvolution
+  formats:
+  - txt
+  - tsv
+  landing_url: https://cibersortx.stanford.edu/
+  download_url: https://cibersortx.stanford.edu/
+  license: custom (Stanford — free NON-COMMERCIAL only; commercial prohibited without license)
+  license_url: https://cibersortx.stanford.edu/
+  access: registration
+  provenance:
+    maintainer: Alizadeh & Newman labs, Stanford University
+    key_refs:
+    - 10.1038/nmeth.3337
+    - 10.1038/s41587-019-0114-2
+  last_updated: 2019 (CIBERSORTx); LM22 from 2015
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'LM22 is a standard immune cell-type signature reference for estimating tumor immune composition
+      from bulk expression — a feature source for immune-context modeling.
+
+      '
+  agent_access: 'LM22 matrix and tool require registration with an institutional (non-.com) email; terms
+    restrict access to non-commercial academic users. Not freely bulk-downloadable without accepting terms
+    — poor fit for unrestricted automated ingestion.
+
+    '
+  caveats: 'MAJOR LICENSE RED FLAG. Stanford provides CIBERSORT/CIBERSORTx and LM22 free for NON-COMMERCIAL
+    use ONLY; any use by a commercial entity for any purpose (including research) is PROHIBITED without
+    a license from Stanford OTL (docket S13-279). Registration rejects personal/.com emails. Do NOT embed
+    LM22 or the tool in a commercial product without a Stanford license. Human only. Consider GPL alternatives
+    (xCell, MCP-counter) where licensing matters.
 
     '
 - id: cri-iatlas
@@ -663,6 +916,60 @@
     often more accessible on CELLxGENE.
 
     '
+- id: imaging-data-commons
+  name: NCI Imaging Data Commons (IDC)
+  category: tooling
+  species:
+  - human
+  description: 'Cloud-based node of the NCI Cancer Research Data Commons that hosts cancer imaging as
+    standardized DICOM (radiology and DICOM-converted digital pathology), harmonized with genomic/proteomic
+    commons for cross-modal analysis. Data live in public Google Cloud and AWS buckets with free, no-egress-cost
+    access and co-located compute, plus web portal and viewers.
+
+    '
+  scale: '>85 TB, ~60k patients, imaging converted to DICOM from TCIA and other sources (growing)'
+  size_bytes: 85000000000000
+  modalities:
+  - ct
+  - mri
+  - pet
+  - whole-slide-image
+  - dicom-segmentation
+  - dicom-microscopy
+  formats:
+  - dicom
+  - parquet
+  landing_url: https://imaging.datacommons.cancer.gov/
+  download_url: https://console.cloud.google.com/storage/browser/public-datasets-idc
+  api: https://api.imaging.datacommons.cancer.gov/
+  license: 'mixed per collection: predominantly CC BY 4.0 / CC BY 3.0 / CC0; some restricted'
+  license_url: https://learn.canceridc.dev/introduction/licensing
+  access: open
+  provenance:
+    maintainer: NCI Cancer Research Data Commons; Brigham & Women's Hospital / Harvard (Fedorov, Kikinis
+      et al.)
+    key_refs:
+    - 10.1158/0008-5472.CAN-21-0950
+    - 10.1148/rg.230180
+  last_updated: '2025'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Cloud-native, DICOM-standardized imaging co-located with molecular commons; ideal substrate
+      for scalable multimodal tumor models without moving terabytes of data.
+
+      '
+  agent_access: '`idc-index` Python package resolves collections to GCS/AWS object paths; bulk download
+    via gsutil/s5cmd with no egress cost from the public buckets. BigQuery metadata tables are queryable.
+    Fully scriptable; no auth for open data.
+
+    '
+  caveats: 'Per-collection licenses vary (mostly CC BY, some CC0, some restricted inherited from TCIA)
+    — check the per-series license attribute before redistribution/training. IDC re-encodes source data
+    to DICOM; pixel content equals source but file identifiers differ.
+
+    '
 - id: imrex-data
   name: ImRex TCR-epitope training data & models
   category: tooling
@@ -709,6 +1016,101 @@
     '
   caveats: 'Negatives are shuffle-generated (known to inflate performance vs real negatives). Underlying
     pairs from VDJdb. Human only, no dog.
+
+    '
+- id: lizard-conic
+  name: Lizard / CoNIC — colonic nuclear instance segmentation & classification
+  category: tooling
+  species:
+  - human
+  description: 'The largest H&E colon-tissue nuclear instance dataset: 495,179 labeled nuclei across image
+    regions from multiple sources/centers, with instance masks and 6-class labels (epithelial, lymphocyte,
+    plasma, eosinophil, neutrophil, connective). Packaged for the CoNIC challenge as 4,981 non-overlapping
+    256x256 patches. Standard benchmark for colon nucleus detection/counting.
+
+    '
+  scale: 495,179 labeled nuclei; CoNIC patch set 4,981 patches (256x256), 6 classes
+  modalities:
+  - histopathology
+  - nuclei-instance-segmentation
+  - nuclei-classification
+  - nuclei-counting
+  formats:
+  - numpy
+  - png
+  - mat
+  - csv
+  landing_url: https://conic-challenge.grand-challenge.org/
+  download_url: https://warwick.ac.uk/fac/sci/dcs/research/tia/data/lizard
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  access: registration
+  provenance:
+    maintainer: Tissue Image Analytics (TIA) Centre, University of Warwick (Graham, Rajpoot et al.)
+    key_refs:
+    - 10.1109/ICCVW54120.2021.00082
+    - 10.48550/arXiv.2303.06274
+  last_updated: '2023'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'Labels immune cells (lymphocytes, plasma, eosinophils, neutrophils) alongside epithelial/ connective
+      nuclei in human colon tissue — fine-grained immune-microenvironment ground truth.
+
+      '
+  agent_access: 'Development/patch data via the CoNIC grand-challenge page (free registration) and the
+    Warwick TIA page; no fully anonymous bulk endpoint. Scriptable after registration.
+
+    '
+  caveats: 'LICENSE RED FLAG — CC BY-NC-SA 4.0 is NON-COMMERCIAL + SHARE-ALIKE. Source/center count is
+    reported inconsistently (6 vs. 16 across sources); verify from the Lizard paper. CoNIC test set is
+    sequestered.
+
+    '
+- id: mcp-counter
+  name: MCP-counter (Microenvironment Cell Populations counter)
+  category: tooling
+  species:
+  - human
+  description: 'Transcriptomic marker-gene signatures and method for producing abundance scores of eight
+    immune cell populations plus fibroblasts and endothelial cells from bulk expression. Marker lists
+    are small, curated, and directly reusable as immune-feature annotations.
+
+    '
+  scale: Marker-gene signatures for 10 cell populations (8 immune + fibroblast + endothelial)
+  modalities:
+  - cell-type-marker-signatures
+  - abundance-scores
+  formats:
+  - txt
+  - csv
+  - r-package
+  landing_url: https://github.com/ebecht/MCPcounter
+  download_url: https://github.com/ebecht/MCPcounter
+  license: GPL-3.0 (code); article CC BY 4.0
+  license_url: https://github.com/ebecht/MCPcounter
+  access: open
+  provenance:
+    maintainer: Etienne Becht et al. (Cordeliers Research Center, Paris)
+    key_refs:
+    - 10.1186/s13059-016-1070-5
+  last_updated: 2016 (method); maintained R package
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Compact, open marker-gene signatures for immune/stromal abundance estimation — a lightweight,
+      GPL-licensed feature source for immune microenvironment context.
+
+      '
+  agent_access: 'Open GitHub download of R package and marker-signature tables (GPL-3.0), no auth. Small
+    and fully script-ingestible.
+
+    '
+  caveats: 'Code is GPL-3.0 (copyleft); the paper is CC BY 4.0. Produces relative abundance scores (comparable
+    across samples, not absolute fractions). Human only.
 
     '
 - id: ncbi-geo
@@ -816,6 +1218,254 @@
   caveats: 'Egress/compute costs when pulling from cloud outside the hosting region. Controlled human
     data (dbGaP) needs approval — not auto-ingestible. Large volumes; plan storage. Toolkit cannot deliver
     every original submitted file (use Cloud Data Delivery Service).
+
+    '
+- id: nct-crc-he-100k
+  name: NCT-CRC-HE-100K — colorectal cancer tissue histology patches (Kather)
+  category: tooling
+  species:
+  - human
+  description: '100,000 non-overlapping 224x224 H&E image patches (0.5 µm/px) from 86 human colorectal
+    cancer whole-slide images, labeled into 9 tissue classes including tumor epithelium, cancer-associated
+    stroma, lymphocytes, mucus, muscle, adipose, debris, normal mucosa and background. Ships with an independent
+    7,180-patch validation set (CRC-VAL-HE-7K, 50 non-overlapping patients) and a non-color-normalized
+    variant. One of the most-used tissue-classification benchmarks in pathology.
+
+    '
+  scale: 100,000 patches (224x224) + 7,180 validation patches, 9 tissue classes, 86 WSIs
+  modalities:
+  - histopathology
+  - patch-classification
+  formats:
+  - tiff
+  landing_url: https://zenodo.org/records/1214456
+  download_url: https://doi.org/10.5281/zenodo.1214456
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Kather, Halama & Marx (NCT Heidelberg / Univ. Medical Center Mannheim)
+    key_refs:
+    - 10.1371/journal.pmed.1002730
+    - 10.5281/zenodo.1214456
+  last_updated: '2018'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'Includes an explicit lymphocyte tissue class alongside tumor/stroma in human colorectal cancer
+      — clean, openly licensed immune-microenvironment ground truth for tissue-classification pretraining.
+
+      '
+  agent_access: 'Bulk download from Zenodo (DOI), no auth; HF mirrors exist. Fully scriptable over HTTPS.
+
+    '
+  caveats: 'Images are Macenko color-normalized; use the NCT-CRC-HE-100K-NONORM variant to avoid baked-in
+    normalization. Patches (not WSIs); patient-level provenance limited. CC BY 4.0 confirmed on Zenodo.
+
+    '
+- id: nucls
+  name: NuCLS — crowdsourced nucleus annotations in breast cancer (TCGA)
+  category: tooling
+  species:
+  - human
+  description: 'Over 220,000 nucleus annotations (bounding boxes, segmentations, and class labels — tumor,
+    stromal, immune/TIL, and others) on H&E regions of TCGA breast-cancer whole-slide images, produced
+    by a scalable crowdsourcing + pathologist-review workflow. Provides single-rater (corrected and uncorrected)
+    and multi-rater subsets; shares source images with the BCSS dataset.
+
+    '
+  scale: '>220,000 nucleus annotations; single-rater (1,744 FOVs) and multi-rater (53) subsets; TCGA-BRCA'
+  modalities:
+  - histopathology
+  - nuclei-detection
+  - nuclei-segmentation
+  - nuclei-classification
+  formats:
+  - png
+  - csv
+  landing_url: https://sites.google.com/view/nucls
+  download_url: https://sites.google.com/view/nucls/home
+  license: CC0 1.0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/
+  access: open
+  provenance:
+    maintainer: Emory University PathologyDataScience group (Amgad, Cooper et al.); images from TCGA-BRCA
+    key_refs:
+    - 10.1093/gigascience/giac037
+    - 10.48550/arXiv.2102.09099
+  last_updated: '2022'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'Labels immune/TIL vs. tumor vs. stromal nuclei on human breast tumors (TCGA), enabling cell-level
+      immune-microenvironment features that can be joined to TCGA molecular data.
+
+      '
+  agent_access: 'Downloadable from the NuCLS site (Google Drive links) and GitHub; no auth. Underlying
+    FOVs are TCGA-derived. Scriptable.
+
+    '
+  caveats: 'License stated as CC0 by the authors on the project site; confirm the current statement on
+    the download page before redistribution. Multi-rater subset is small (53 FOVs). Shares images with
+    BCSS — deduplicate if combining.
+
+    '
+- id: omnipath
+  name: OmniPath (integrated intra- & intercellular signaling knowledge)
+  category: tooling
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Integrated, programmatically accessible knowledgebase aggregating signaling pathways,
+    protein interactions, enzyme-substrate/PTM relations, transcriptional regulation, ligand-receptor
+    (intercellular) interactions, and protein annotations from ~100 source resources, with a unified R/Python/web
+    API. Mouse/rat via orthology.
+
+    '
+  scale: Integrates ~100 resources; millions of interactions/annotations
+  modalities:
+  - signaling-interactions
+  - ligand-receptor
+  - enzyme-substrate
+  - tf-target
+  - annotations
+  formats:
+  - tsv
+  - json
+  - r-package
+  - python-package
+  - api
+  landing_url: https://omnipathdb.org/
+  download_url: https://omnipathdb.org/
+  api: https://omnipathdb.org/queries
+  license: custom — NO single license; each source resource's own license carries over
+  license_url: https://omnipathdb.org/info
+  access: open
+  provenance:
+    maintainer: Saez-Rodriguez lab (Heidelberg) & Türei et al.
+    key_refs:
+    - 10.15252/msb.20209923
+  last_updated: 2025 (ongoing; OmniPath 2025 preprint)
+  relevance:
+    programs:
+    - recognition
+    - presentation
+    - comparative
+    why: 'One-stop programmatic layer for signaling, ligand-receptor, and annotation features — especially
+      ligand-receptor/intercellular interactions useful for immune-cell communication features — without
+      integrating each source separately.
+
+      '
+  agent_access: 'Open web service plus OmnipathR (R) and omnipath (Python) clients, no auth; supports
+    a license=''commercial'' query parameter that returns only records whose source license permits commercial
+    use. Highly automatable.
+
+    '
+  caveats: 'MAJOR LICENSE RED FLAG (mixed/per-resource). The redistributed data have NO single license
+    — each original resource''s license applies, and several are NON-COMMERCIAL (e.g. KEGG-derived, some
+    text-mining and academic-only sources). Use the license=''commercial'' filter to restrict to commercially
+    usable records before any product use. Client code is GPLv3 (pypath) / MIT (OmnipathR, omnipath).
+    Always trace per-record provenance before redistribution or ML training.
+
+    '
+- id: panda-prostate
+  name: PANDA — Prostate cANcer graDe Assessment challenge WSIs
+  category: tooling
+  species:
+  - human
+  description: 'Largest public prostate histopathology dataset: ~10,600 digitized H&E core-needle biopsy
+    whole-slide images from two centers (Radboud UMC and Karolinska Institute), with ISUP grade and Gleason
+    pattern labels (and segmentation masks for most). Built for AI Gleason grading; validated against
+    expert uropathologists on US and European external sets.
+
+    '
+  scale: ~10,616 WSIs (development set), two centers; ISUP grade + Gleason masks
+  modalities:
+  - whole-slide-image
+  - histopathology
+  - segmentation-masks
+  formats:
+  - tiff
+  - png
+  - csv
+  landing_url: https://www.kaggle.com/c/prostate-cancer-grade-assessment
+  download_url: https://www.kaggle.com/c/prostate-cancer-grade-assessment/data
+  license: CC BY-SA-NC 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  access: registration
+  provenance:
+    maintainer: Radboud UMC & Karolinska Institute; challenge hosted on Kaggle
+    key_refs:
+    - 10.1038/s41591-021-01620-2
+  last_updated: '2022'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Massive graded human-tumor WSI corpus for pretraining pathology foundation models and benchmarking
+      grade/phenotype prediction that can be linked to molecular prostate cohorts.
+
+      '
+  agent_access: 'Download requires a (free) Kaggle account and accepting the competition rules; then bulk
+    download via the Kaggle API/CLI. Not anonymous; scriptable after auth.
+
+    '
+  caveats: 'LICENSE RED FLAG — CC BY-SA-NC 4.0 is NON-COMMERCIAL and SHARE-ALIKE: forbids commercial use
+    and requires derivative works (incl. some model/data releases) to carry the same license. Slide counts
+    vary by source (10,616 cited by the paper; some tallies ~12,625 for the full dev set).
+
+    '
+- id: pannuke
+  name: PanNuke — pan-cancer nuclei instance segmentation & classification
+  category: tooling
+  species:
+  - human
+  description: 'Semi-automatically curated H&E histology dataset spanning 19 tissue types with exhaustive
+    nucleus instance masks and 5-class labels (neoplastic, inflammatory, connective, dead, non-neoplastic
+    epithelial). ~189k–205k labeled nuclei packaged as 256x256 tiles across three folds. A standard benchmark
+    for nuclear segmentation/classification across cancers.
+
+    '
+  scale: ~7,901 tiles (256x256), 19 tissue types, ~189k–205k labeled nuclei, 5 classes
+  modalities:
+  - histopathology
+  - nuclei-instance-segmentation
+  - nuclei-classification
+  formats:
+  - numpy
+  - png
+  - mat
+  landing_url: https://warwick.ac.uk/fac/sci/dcs/research/tia/data/pannuke
+  download_url: https://warwick.ac.uk/fac/sci/dcs/research/tia/data/pannuke
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  access: open
+  provenance:
+    maintainer: Tissue Image Analytics (TIA) Centre, University of Warwick (Gamper, Rajpoot et al.)
+    key_refs:
+    - 10.1007/978-3-030-23937-4_2
+    - 10.48550/arXiv.2003.10778
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Pan-cancer nucleus-level labels (incl. inflammatory cells) give fine-grained cellular ground
+      truth for the tumor-immune microenvironment across human tissues.
+
+      '
+  agent_access: 'Direct download of fold archives (NumPy/images) from the Warwick TIA page, no auth; HF
+    mirror (RationAI/PanNuke) exists. Scriptable over HTTPS.
+
+    '
+  caveats: 'LICENSE RED FLAG — CC BY-NC-SA 4.0 is NON-COMMERCIAL and SHARE-ALIKE. Nuclei counts differ
+    by version/mirror (189,744 on HF; ~205,343 on Kaggle; paper cites ~216k pre-QC). Verify the exact
+    fold version when reporting counts.
 
     '
 - id: proteingym
@@ -1060,6 +1710,56 @@
     corpus inherits Pfam terms (CC0 for Pfam-produced data).
 
     '
+- id: tiger-tils-breast
+  name: TIGER — Tumor InfiltratinG lymphocytes in breast cancER WSIs
+  category: tooling
+  species:
+  - human
+  description: 'Public WSI dataset and challenge for automated scoring of tumor-infiltrating lymphocytes
+    (TILs) in HER2-positive and triple-negative breast cancer. Provides ROI-level cell/tissue annotations
+    (lymphocytes, plasma cells, tumor, stroma), whole-slide tumor-bulk masks, and slide-level visual TILs
+    scores, enabling detection + segmentation + TILs-score pipelines.
+
+    '
+  scale: ~195 ROI-annotated WSIs + 93 tumor-bulk + 82 TILs-scored WSIs (train); 707-WSI sequestered test
+  modalities:
+  - whole-slide-image
+  - histopathology
+  - cell-annotations
+  - tissue-segmentation
+  - tils-score
+  formats:
+  - tif
+  - xml
+  - json
+  - csv
+  landing_url: https://tiger.grand-challenge.org/
+  download_url: https://tiger-training.s3.us-west-2.amazonaws.com/
+  license: CC BY-NC 4.0
+  license_url: https://creativecommons.org/licenses/by-nc/4.0/
+  access: open
+  provenance:
+    maintainer: Radboud UMC Computational Pathology Group; hosted on AWS Open Data (bucket tiger-training)
+    key_refs:
+    - 10.1038/s41467-026-72956-x
+  last_updated: '2025'
+  relevance:
+    programs:
+    - presentation
+    - recognition
+    - comparative
+    why: 'Ground-truth lymphocyte localization and TILs quantification in human breast tumors — directly
+      relevant to modeling in-situ immune recognition and the tumor-immune microenvironment.
+
+      '
+  agent_access: 'Public AWS S3 bucket (arn:aws:s3:::tiger-training, us-west-2) — bulk download with s5cmd/aws
+    CLI, no auth; challenge evaluation on sequestered test set via grand-challenge. Fully scriptable.
+
+    '
+  caveats: 'LICENSE RED FLAG — CC BY-NC 4.0 is NON-COMMERCIAL. Total size not stated on the registry entry.
+    Leaderboard-2 test set (707 WSIs) is sequestered.
+
+    '
 - id: ucsc-xena
   name: UCSC Xena (public cancer genomics hubs)
   category: tooling
@@ -1148,6 +1848,51 @@
     '
   caveats: 'Synthetic reference (for rescoring), not a ligand set. Paper also argues ~87% of proposed
     spliced peptides are likely wrong - relevant QC caution. Human sequences.
+
+    '
+- id: xcell
+  name: xCell (cell-type enrichment signatures)
+  category: tooling
+  species:
+  - human
+  description: 'Gene-signature resource and method for scoring enrichment of 64 immune and stromal cell
+    types from bulk expression data, combining signatures derived from multiple reference datasets. Provides
+    the signature gene sets and an R package / web tool.
+
+    '
+  scale: Signatures for 64 immune & stromal cell types (~10,800 marker genes total)
+  modalities:
+  - cell-type-signatures
+  - enrichment-scores
+  - deconvolution
+  formats:
+  - rdata
+  - csv
+  - r-package
+  landing_url: https://xcell.ucsf.edu/
+  download_url: https://github.com/dviraran/xCell
+  license: GPL-3.0 (code/signatures); article CC BY 4.0
+  license_url: https://github.com/dviraran/xCell/blob/master/DESCRIPTION
+  access: open
+  provenance:
+    maintainer: Dvir Aran (Technion) / Butte lab (UCSF)
+    key_refs:
+    - 10.1186/s13059-017-1349-1
+  last_updated: 2020 (xCell 1.1.0; xCell2 in development)
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Open (GPL) cell-type enrichment signatures covering 64 immune/stromal types — a commercially-tolerant
+      alternative to LM22 for immune-context features from bulk expression.
+
+      '
+  agent_access: 'Open GitHub download of R package and signature objects (GPL-3.0), no auth. Signatures
+    are script-ingestible. Fully automatable.
+
+    '
+  caveats: 'Code and signatures are GPL-3.0 (copyleft — derivative software must also be GPL); the paper
+    is CC BY 4.0. Produces relative enrichment scores, not absolute fractions. Human only.
 
     '
 - id: zenodo

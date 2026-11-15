@@ -501,6 +501,66 @@
     Not redistributable at individual level.
 
     '
+- id: cptac-pathology-imaging
+  name: CPTAC pathology & radiology imaging (TCIA collections)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Per-cancer TCIA Collections holding CPTAC whole-slide tissue images (SVS) and, for most,
+    matched radiology (CT/MR/PET), linked by subject ID to CPTAC proteogenomics (genome, proteome, phosphoproteome)
+    in the Proteomic Data Commons and GDC. Covers GBM, LSCC, LUAD, PDA, CM (melanoma), STAD, BRCA, COAD,
+    OV, UCEC and others — a true radiology+pathology+proteogenomics triad.
+
+    '
+  scale: 'Dozens of GB per cancer type (e.g. CPTAC-GBM 195.5 GB: 41.1 GB radiology + 154.4 GB pathology)'
+  size_bytes: 195500000000
+  modalities:
+  - whole-slide-image
+  - histopathology
+  - ct
+  - mri
+  - pet
+  formats:
+  - svs
+  - dicom
+  landing_url: https://www.cancerimagingarchive.net/browse-collections/?collection-search=CPTAC
+  download_url: https://www.cancerimagingarchive.net/collection/cptac-gbm/
+  api: https://services.cancerimagingarchive.net/nbia-api/
+  license: Tissue slides CC BY 4.0 (older versions CC BY 3.0); CPTAC radiology often NIH Controlled Data
+    Access
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: NCI Clinical Proteomic Tumor Analysis Consortium (CPTAC); imaging hosted on TCIA
+    key_refs:
+    - 10.7937/K9/TCIA.2018.3RJE41Q1
+    - 10.7937/K9/TCIA.2018.6EMUB5L2
+    - 10.7937/TCIA.CAEM-YS80
+  accessions:
+  - CPTAC-GBM (10.7937/K9/TCIA.2018.3RJE41Q1)
+  - CPTAC-LSCC (10.7937/K9/TCIA.2018.6EMUB5L2)
+  - CPTAC-PDA (10.7937/K9/TCIA.2018.SC20FO18)
+  - CPTAC-CM (10.7937/K9/TCIA.2018.ODU24GZE)
+  - CPTAC-STAD (10.7937/jw9a-8k71)
+  - CPTAC-BRCA (10.7937/TCIA.CAEM-YS80)
+  last_updated: '2024'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Rare human cohorts with co-registered histology, radiology, AND deep proteogenomics — the richest
+      substrate for multimodal models tying tissue/imaging phenotype to protein/immune state.
+
+      '
+  agent_access: 'Tissue slides downloadable via TCIA NBIA API / idc-index, no auth (CC BY). CPTAC radiology
+    series are frequently under NIH Controlled Data Access and require authorization — not agent-fetchable.
+
+    '
+  caveats: 'MIXED ACCESS per data type: pathology slides are CC BY 4.0 (open); much CPTAC radiology is
+    under NIH Controlled Data Access (restricted). License differs across collection versions (CC BY 3.0
+    vs 4.0). Cite each collection DOI used.
+
+    '
 - id: cptac-pediatric-braintumor
   name: CPTAC Pediatric Brain Tumor Proteogenomics (Petralia et al.)
   category: cancer-genomics
@@ -1129,6 +1189,54 @@
     norms. GRCh38 harmonization means legacy hg19-based calls differ from current ones.
 
     '
+- id: gdc-tcga-diagnostic-slides
+  name: GDC / TCGA diagnostic & tissue whole-slide images
+  category: cancer-genomics
+  species:
+  - human
+  description: 'The pathology image layer of the NCI Genomic Data Commons: diagnostic (FFPE) and tissue
+    (frozen) H&E whole-slide images for ~11,000 TCGA cases across 33 cancer types, directly linked by
+    case barcode to GDC genomics/transcriptomics/methylation. The de facto corpus for tissue-to-molecular
+    multimodal learning on human cancer.
+
+    '
+  scale: ~30,000 WSIs (diagnostic + tissue) across 33 TCGA cancer types, ~11k cases (multi-TB)
+  modalities:
+  - whole-slide-image
+  - histopathology
+  formats:
+  - svs
+  landing_url: https://portal.gdc.cancer.gov/
+  download_url: https://portal.gdc.cancer.gov/analysis_page?app=Downloads
+  api: https://api.gdc.cancer.gov/
+  license: custom — NIH Genomic Data Sharing Policy (open-access, research use)
+  license_url: https://gdc.cancer.gov/access-data/data-access-policies
+  access: open
+  provenance:
+    maintainer: NCI Genomic Data Commons / The Cancer Genome Atlas (TCGA)
+    key_refs:
+    - 10.1056/NEJMp1607591
+    - 10.1038/ng.2764
+  last_updated: '2025'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'The largest barcode-linked human tumor histology + multi-omics resource; foundational for any
+      model that joins tissue morphology to genomic/transcriptomic/immune features.
+
+      '
+  agent_access: 'Filter files by data_category=Biospecimen, data_type="Slide Image" (format SVS); bulk
+    download via the GDC Data Transfer Tool or REST API, no auth for open data. Slides are large; download
+    programmatically. Images also mirrored in DICOM form via IDC.
+
+    '
+  caveats: 'Open-access but "for research purposes only" under the NIH GDS Policy (not a Creative Commons
+    license): users must not re-identify participants and must acknowledge accession numbers. Not a redistribution
+    license — share derived features, cite source. Multi-TB; frozen (tissue) slides are lower quality
+    than diagnostic (FFPE) slides.
+
+    '
 - id: genomics-england-100k
   name: Genomics England 100,000 Genomes Project (Cancer Programme)
   category: cancer-genomics
@@ -1181,12 +1289,12 @@
 
     '
 - id: geo-gse238110-canine-osa-rnaseq
-  name: Canine Osteosarcoma Bulk RNA-seq — GSE238110 (DOG^2 cohort)
+  name: GSE238110 — Canine Osteosarcoma Bulk RNA-seq (DOG^2 / COTC022)
   category: cancer-genomics
   species:
   - dog
-  description: 'Bulk mRNA-seq of 186 canine primary osteosarcoma tumors (DOG^2 cohort), reused by multiple
-    comparative canine/human osteosarcoma and tumor-microenvironment studies.
+  description: 'Bulk mRNA-seq of 186 canine primary osteosarcoma tumors (DOG^2 cohort / COTC022), NovaSeq
+    6000 (GPL25760). Widely reused by comparative OSA studies. Raw count matrix provided.
 
     '
   scale: 186 primary tumors
@@ -1205,7 +1313,7 @@
     maintainer: NCBI GEO (depositing lab)
     key_refs:
     - 10.1158/1078-0432.CCR-24-0872
-  last_updated: 2023-08
+  last_updated: '2023-08-01'
   relevance:
     programs:
     - comparative
@@ -1506,44 +1614,6 @@
 
       '
   caveats: No explicit reuse license (NCBI). Two tumours were excluded as PCA outliers in the paper.
-- id: gse238110
-  name: GSE238110 — Canine Osteosarcoma Bulk RNA-seq (DOG^2 / COTC022)
-  category: cancer-genomics
-  species:
-  - dog
-  description: 'Bulk mRNA-seq of 186 canine primary osteosarcoma tumors (DOG^2 cohort / COTC022), NovaSeq
-    6000 (GPL25760). Widely reused by comparative OSA studies. Raw count matrix provided.
-
-    '
-  scale: 186 primary tumors
-  modalities:
-  - rna-seq
-  formats:
-  - counts-txt
-  - fastq
-  - bam
-  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE238110
-  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE238110
-  license: public (NCBI GEO; no explicit license, US-gov public-domain norms)
-  license_url: https://www.ncbi.nlm.nih.gov/geo/info/disclaimer.html
-  access: open
-  provenance:
-    maintainer: NCBI GEO
-    key_refs:
-    - 10.1158/1078-0432.CCR-24-0872
-  last_updated: '2023-08-01'
-  relevance:
-    programs:
-    - comparative
-    why: 'Largest single canine OSA transcriptome; TME deconvolution + expression context for antigens.
-
-      '
-  agent_access: 'GEO supplementary counts + SRA FASTQ (prefetch); no auth; FTP bulk.
-
-    '
-  caveats: 'Expression only; no DLA typing or immunopeptidome. Pin a reference for alignment.
-
-    '
 - id: gse288068-histiocytic-sarcoma-rnaseq
   name: GSE288068 — Canine Histiocytic Sarcoma Tumour + Cell-Line Transcriptomes (Engleberg 2025)
   category: cancer-genomics
@@ -2108,44 +2178,6 @@
 
     '
 - id: icdc-tcl01
-  name: ICDC TCL01
-  category: cancer-genomics
-  species:
-  - dog
-  description: 'Whole-exome sequencing of canine cancer cell lines (multi-tumor). Overlaps SRA PRJNA503864.
-
-    '
-  scale: ~33 canine cancer cell lines
-  modalities:
-  - wes
-  formats:
-  - bam
-  - vcf
-  - fastq
-  landing_url: https://caninecommons.cancer.gov/#/study/TCL01
-  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA503864
-  license: custom (ICDC open) / SRA public-domain norms
-  license_url: https://datacommons.cancer.gov/repository/integrated-canine-data-commons
-  access: open
-  provenance:
-    maintainer: NCI CRDC
-    key_refs:
-    - 10.1158/1535-7163.MCT-18-0637
-  last_updated: '2019'
-  relevance:
-    programs:
-    - comparative
-    - presentation
-    why: 'Candidate substrate for in-house DLA-restricted immunopeptidomics.
-
-      '
-  agent_access: 'ICDC API + SRA FASTQ; open.
-
-    '
-  caveats: 'No MHC typing; see PRJNA503864/503860.
-
-    '
-- id: icdc-tcl01-celllines
   name: ICDC TCL01 — Canine Cancer Cell-Line WES
   category: cancer-genomics
   species:
@@ -2176,6 +2208,7 @@
     programs:
     - comparative
     - recognition
+    - presentation
     why: 'Cell lines are candidate substrates for in-house DLA-restricted immunopeptidomics (MHC-I elution)
       to begin closing the canine presentation gap.
 
@@ -5097,6 +5130,107 @@
     and need correction.
 
     '
+- id: tcga-breast-radiogenomics
+  name: TCGA Breast Phenotype Research Group — breast radiogenomics (TCIA)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Breast MRI (DCE-MRI) and mammography imaging for TCGA-BRCA subjects together with quantitative
+    computer-extracted image-phenotype features and their mappings to molecular/genomic data (the TCGA
+    Breast Phenotype Research Group datasets). A reference human breast imaging-genomics resource linking
+    radiology phenotype to transcriptomic/clinical subtype.
+
+    '
+  scale: ~84–139 TCGA-BRCA subjects with MR/MG; corresponding original DICOM ~52 GB; phenotype feature
+    tables
+  size_bytes: 52000000000
+  modalities:
+  - mri
+  - mammography
+  - radiomics
+  formats:
+  - dicom
+  - csv
+  - xls
+  landing_url: https://www.cancerimagingarchive.net/collection/tcga-brca/
+  download_url: https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=19039112
+  api: https://services.cancerimagingarchive.net/nbia-api/
+  license: CC BY 3.0 (corresponding original TCGA-BRCA images and feature tables)
+  license_url: https://creativecommons.org/licenses/by/3.0/
+  access: open
+  provenance:
+    maintainer: TCIA / TCGA Breast Phenotype Research Group (Giger, Gillies et al.)
+    key_refs:
+    - 10.1038/npjbcancer.2016.12
+    - 10.1148/radiol.2015142120
+  last_updated: '2019'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Human breast imaging phenotypes mapped to TCGA molecular subtype — a model problem for multimodal
+      radiology-to-molecular inference.
+
+      '
+  agent_access: 'Feature spreadsheets and corresponding original DICOM (CC BY 3.0, ~52 GB) downloadable
+    via the TCIA wiki/NBIA API, no auth. Scriptable.
+
+    '
+  caveats: 'Breast collections remain CC BY 3.0 (not restricted like brain). Subject counts vary by filter
+    (84 radiogenomics subset vs. 139 in the full TCGA-BRCA imaging collection); cite the specific subset
+    and DOI.
+
+    '
+- id: tcga-gbm-radiogenomics
+  name: TCGA-GBM / TCGA-LGG glioma radiogenomics (TCIA, incl. BraTS-TCGA)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Pre-operative brain MRI (T1, T1c, T2, FLAIR) for TCGA glioblastoma (TCGA-GBM) and lower-grade
+    glioma (TCGA-LGG) subjects, linked to TCGA molecular data, plus derived expert tumor-segmentation
+    labels and radiomic features (the BraTS-TCGA sets) and radiogenomic feature analyses. Core resource
+    for imaging-genomics of glioma.
+
+    '
+  scale: ~262 glioma subjects (135 GBM + 108 LGG) with multiparametric MRI; derived segmentations/radiomics
+  modalities:
+  - mri
+  - dicom-segmentation
+  - radiomics
+  formats:
+  - dicom
+  - nifti
+  - csv
+  landing_url: https://www.cancerimagingarchive.net/collection/tcga-gbm/
+  download_url: https://doi.org/10.7937/K9/TCIA.2017.KLXWJJ1Q
+  api: https://services.cancerimagingarchive.net/nbia-api/
+  license: Derived segmentations/radiomics CC BY 3.0; original TCGA-GBM/LGG DICOM now TCIA Restricted/Limited-Access
+  license_url: https://creativecommons.org/licenses/by/3.0/
+  access: controlled-access
+  provenance:
+    maintainer: TCIA / University of Pennsylvania (Bakas et al.); images from TCGA
+    key_refs:
+    - 10.1038/sdata.2017.117
+    - 10.7937/K9/TCIA.2017.KLXWJJ1Q
+    - 10.7937/K9/TCIA.2016.RNYFUYE9
+  last_updated: '2020'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Canonical imaging-genomics glioma cohort; template for relating radiology phenotype to molecular
+      subtype, extensible to immune-microenvironment modeling.
+
+      '
+  agent_access: 'Derived CC BY 3.0 segmentations/radiomics downloadable via DOI/NBIA, no auth. The original
+    TCGA-GBM/LGG DICOM images require a signed TCIA Restricted/Limited-Access License (brain collections
+    moved off Creative Commons on 2022-01-06) — not agent-fetchable.
+
+    '
+  caveats: 'ACCESS RED FLAG — raw brain-MRI DICOM is NOW RESTRICTED (TCIA Limited/Restricted License,
+    email agreement) even though derived labels remain CC BY 3.0. Do not assume open access to the images.
+
+    '
 - id: tcga-mc3
   name: TCGA MC3 somatic mutation calls (Multi-Center Mutation Calling)
   category: cancer-genomics
@@ -5195,7 +5329,7 @@
 
     '
 - id: tcia-cancer-immunome-atlas
-  name: The Cancer Immunome Atlas (TCIA)
+  name: The Cancer Immunome Atlas (TCIA) / Immunophenoscore
   category: cancer-genomics
   species:
   - human
@@ -5209,19 +5343,26 @@
   modalities:
   - cancer-genomics
   - predicted-neoantigen
+  - neoantigen
+  - hla-typing
+  - immune-deconvolution
+  - immunophenoscore
+  - cancer-germline-antigen
   formats:
   - csv
   - web
+  - tsv
+  - web-portal
   landing_url: https://tcia.at/
   download_url: https://tcia.at/
-  license: unknown
-  license_url: unknown
+  license: unknown (portal terms not stated; data derived from TCGA)
+  license_url: https://tcia.at
   access: open
   provenance:
     maintainer: Trajanoski lab, Medical University of Innsbruck
     key_refs:
     - 10.1016/j.celrep.2016.12.019
-  last_updated: '2017'
+  last_updated: 2017 (portal under redesign as of 2026)
   relevance:
     programs:
     - presentation
@@ -5231,16 +5372,17 @@
       — fast substrate for target triage and immune-context modeling without running the pipeline.
 
       '
-  agent_access: 'Web portal with free download of the precomputed tables; no documented API. Automatable
-    via table download. Underlying TCGA raw data are controlled (GDC/dbGaP) but these derived summaries
-    are open.
+  agent_access: 'Normally a web portal with downloadable per-tumor tables (no auth). As of 2026 the portal
+    is paused for redesign; urgent dataset/validation-file requests go to icbi@i-med.ac.at. Supplementary
+    data also distributed with the Cell Reports paper.
 
     '
-  caveats: 'license: unknown — no explicit data license stated; underlying TCGA data governed by NIH GDC
-    terms. Neoantigens are PREDICTED (NetMHC-class), not validated. 2017 vintage — predictions reflect
-    that era''s tools/references.
+  caveats: 'Portal currently offline — availability intermittent; cannot be relied on for an automated
+    pipeline until restored. License/terms not explicitly stated (mark unknown). Predictions are tool-dependent;
+    re-derive with current callers for production use.
 
     '
+  cross_listed: true
 - id: thorsson-immune-landscape
   name: Thorsson et al. 2018 — The Immune Landscape of Cancer (TCGA PanImmune)
   category: cancer-genomics
@@ -5287,6 +5429,53 @@
     '
   caveats: 'Features are derived (deconvolution/signature estimates), not direct measurements — document
     the methods. Raw inputs remain under TCGA access tiers.
+
+    '
+- id: tupac16
+  name: TUPAC16 — Tumor Proliferation Assessment Challenge (breast WSIs)
+  category: cancer-genomics
+  species:
+  - human
+  description: 'Breast-cancer whole-slide-image challenge for predicting tumor proliferation from histology.
+    821 TCGA H&E WSIs (500 train / 321 test) with molecular proliferation ground truth derived from PAM50/RNA
+    expression, plus auxiliary mitosis-detection and ROI tasks. A reference imaging-to-molecular (proliferation)
+    prediction benchmark.
+
+    '
+  scale: 821 TCGA breast WSIs (500 train / 321 test); molecular proliferation scores + mitosis ROIs
+  modalities:
+  - whole-slide-image
+  - histopathology
+  - mitosis-annotations
+  - molecular-proliferation-label
+  formats:
+  - svs
+  - csv
+  landing_url: https://tupac.grand-challenge.org/
+  download_url: https://tupac.grand-challenge.org/Dataset/
+  license: unknown
+  access: registration
+  provenance:
+    maintainer: Eindhoven Univ. of Technology / consortium (Veta et al.); images from TCGA
+    key_refs:
+    - 10.1016/j.media.2019.02.012
+    - 10.1016/j.media.2019.05.008
+  last_updated: '2019'
+  relevance:
+    programs:
+    - presentation
+    - comparative
+    why: 'Directly pairs human tumor histology with a molecular (proliferation) readout — a template task
+      for multimodal models linking tissue morphology to transcriptomic phenotype.
+
+      '
+  agent_access: 'Images are TCGA-derived WSIs; access via the grand-challenge portal (registration). Underlying
+    slides also retrievable from GDC under TCGA terms. Scriptable after registration.
+
+    '
+  caveats: 'No explicit dataset license located on the challenge site or journal page (marked unknown
+    per schema; do not guess). Underlying slides inherit TCGA/GDC open-access research-use terms. Test
+    proliferation labels are sequestered for scoring.
 
     '
 - id: van-allen-2015-ctla4
