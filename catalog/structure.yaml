@@ -2600,3 +2600,52 @@
     not experiments. Benchmark is small (18 complexes).
 
     '
+- id: thera-sabdab
+  name: Thera-SAbDab — Therapeutic Structural Antibody Database
+  category: structure
+  species:
+  - human
+  - mouse
+  - other
+  description: 'Tracks every antibody- and nanobody-derived therapeutic recognised by the WHO (INN-assigned),
+    recording sequence, format, target antigen, development status and links to matching experimental
+    structures in SAbDab. The curated reference for what clinically-relevant antibodies look like in sequence
+    and structure.
+
+    '
+  scale: All WHO-recognised antibody/nanobody therapeutics (461 unique molecules as of Aug 2019; grows
+    with each INN list)
+  modalities:
+  - antibody-sequence
+  - therapeutic-annotation
+  - structure-link
+  - paired-chain
+  formats:
+  - csv
+  landing_url: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/therasabdab
+  download_url: https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/therasabdab/search/
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Oxford Protein Informatics Group (OPIG), University of Oxford
+    key_refs:
+    - 10.1093/bioinformatics/btz827
+  last_updated: 2025 (updated with WHO INN lists)
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'The developability/clinical "gold set": sequences and structures of approved and clinical-stage
+      antibodies define the target region of sequence space a designed binder should land in to be developable.
+
+      '
+  agent_access: 'Searchable web app; sequences of all listed therapeutics plus metadata downloadable as
+    a single spreadsheet. No auth. Cross-links to SAbDab structures (which are CC BY 4.0).
+
+    '
+  caveats: 'The Thera-SAbDab page states no explicit license (license: unknown); its parent SAbDab is
+    CC BY 4.0, but do not assume the same for Thera-SAbDab — confirm before redistribution. Attribute
+    Raybould et al. 2020. Small, curated set (clinical molecules only), not a repertoire corpus.
+
+    '

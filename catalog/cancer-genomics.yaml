@@ -51,6 +51,58 @@
     occur between releases (track version).
 
     '
+- id: agasac-hga-rnaseq-ncounter
+  name: GSE302161 / GSE301538 — Canine Anal Sac Adenocarcinoma vs Hepatoid Gland Adenoma (PLoS ONE 2026)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'A hallmarks-of-cancer comparison between malignant apocrine gland anal sac adenocarcinoma
+    (AGASAC), including sublumbar nodal metastases, and benign hepatoid gland adenoma (HGA) from FFPE
+    archival tissue. The paper reports RNA-seq on 25 samples from 21 cases (15 AGASAC, of which 11 primaries
+    and 4 nodal metastases, plus 10 HGA), deposited as GEO GSE302161 (BioProject PRJNA1289115). A NanoString
+    nCounter panel is deposited as GSE301538 (PRJNA1285400, 45 samples). Analysis code is on figshare.
+
+    '
+  scale: 'RNA-seq: 25 samples per paper (6 public SRA runs); nCounter: 45 samples'
+  size_bytes: 1658717072
+  modalities:
+  - bulk-rna-seq
+  - nanostring
+  formats:
+  - fastq
+  - tsv
+  - rcc
+  - csv
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE302161
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE302161
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Institute of Veterinary Pathology, Freie Universität Berlin
+    key_refs:
+    - 10.1371/journal.pone.0351773
+    - 10.6084/m9.figshare.30763643
+  accessions:
+  - GSE302161
+  - PRJNA1289115
+  - GSE301538
+  - PRJNA1285400
+  last_updated: 2025-12
+  relevance:
+    programs:
+    - comparative
+    why: 'This is the first public transcriptome we have found for AGASAC, a common canine tumour that
+      was absent from the catalog. It includes paired primary and nodal-metastasis samples and a benign
+      comparator.
+
+      '
+  agent_access: GEO supplementary files and SRA runs, no auth.
+  caveats: 'Count mismatch: GEO/ENA list only 6 RNA-seq samples/runs, while the paper reports 25 RNA-seq
+    samples. Check whether the remaining samples are only in the GEO TSV count matrix. FFPE material.
+    No explicit reuse license (NCBI).
+
+    '
 - id: ameloblastoma-oscc-rnaseq
   name: GSE317244 / GSE317641 — Canine Acanthomatous Ameloblastoma & Oral SCC RNA-seq + snRNA-seq
   category: cancer-genomics
@@ -379,6 +431,220 @@
     must be inferred from the omics or from the companion lines.
 
     '
+- id: equine-sarcoid-methylome
+  name: Equine sarcoid DNA methylation (GSE208778 / GSE89859)
+  category: cancer-genomics
+  species:
+  - horse
+  description: 'DNA-methylation profiling of equine sarcoid versus normal skin: a reduced-representation
+    bisulfite (RRBS) dataset (GSE208778) paired with the transcriptome study, and an earlier array/methylation
+    profiling dataset (GSE89859). Characterizes aberrant methylation in papillomavirus-associated equine
+    sarcoids.
+
+    '
+  scale: paired sarcoid/skin methylation cohorts (RRBS + earlier profiling)
+  modalities:
+  - rrbs
+  - dna-methylation
+  formats:
+  - fastq
+  - methylation-tables
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE208778
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE208778
+  license: NCBI/GEO public-domain terms
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Semik-Gurgul et al. and earlier equine epigenetics groups; NCBI GEO
+    key_refs:
+    - 10.1038/s41598-023-39947-0
+    - 10.1186/s12864-017-3628-3
+  last_updated: 2022 (GSE208778); 2017 (GSE89859)
+  relevance:
+    programs:
+    - comparative
+    why: 'Equine tumor epigenetics complementing the sarcoid transcriptome; cross-species methylation
+      context for comparative oncology.
+
+      '
+  agent_access: 'Two GEO series (GSE208778, GSE89859); download via GEO FTP / SRA, no auth.
+
+    '
+  caveats: 'Two distinct studies/platforms bundled here — treat as separate records if granularity matters.
+    Confirm both accessions resolve.
+
+    '
+- id: equine-sarcoid-transcriptome
+  name: Equine sarcoid vs healthy skin transcriptome (GSE226986 / PRJNA942611)
+  category: cancer-genomics
+  species:
+  - horse
+  description: 'RNA-seq of equine sarcoid tumors versus matched/healthy equine skin (12 sarcoid and 12
+    healthy skin samples), used to characterize altered coding and long non-coding RNA expression in bovine
+    papillomavirus-associated equine sarcoids. Companion species (equine) tumor transcriptomics.
+
+    '
+  scale: 12 sarcoid + 12 healthy skin RNA-seq samples
+  modalities:
+  - rna-seq
+  - lncrna
+  formats:
+  - fastq
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE226986
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE226986
+  license: NCBI/GEO public-domain terms
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Semik-Gurgul et al. (National Research Institute of Animal Production, Poland); NCBI GEO/SRA;
+      OmicsDI PRJNA942611
+    key_refs:
+    - 10.1038/s41598-023-39947-0
+  last_updated: '2023'
+  relevance:
+    programs:
+    - comparative
+    why: 'Extends comparative tumor transcriptomics to horses; a virally-driven skin tumor contrasting
+      with canine/feline tumor biology for cross-species TME and oncogenesis comparison.
+
+      '
+  agent_access: 'GEO GSE226986 (also BioProject PRJNA942611 on OmicsDI); raw reads via SRA/ENA, no auth.
+
+    '
+  caveats: 'Sarcoid is a locally aggressive fibroblastic (papillomavirus-driven) tumor, not a classic
+    metastatic carcinoma — scope comparisons accordingly. Verify accession currency.
+
+    '
+- id: feline-oscc-wes-2023
+  name: Feline Oral Squamous Cell Carcinoma genomics (Rodrigues et al. 2023)
+  category: cancer-genomics
+  species:
+  - cat
+  description: 'Whole-exome sequencing of tumor and matched blood from six cats with feline oral squamous
+    cell carcinoma (FOSCC), plus RNA-seq of six tumors and normal oral mucosa from three healthy cats.
+    Characterizes the FOSCC genomic landscape and gene-expression profiles as a model of HPV-negative
+    human head and neck squamous cell carcinoma.
+
+    '
+  scale: 6 FOSCC tumors (WES + RNA-seq) + 3 normal mucosa (RNA-seq)
+  modalities:
+  - wes
+  - rna-seq
+  formats:
+  - fastq
+  - bam
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA844099
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA844099
+  license: NCBI/SRA public-domain terms
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Study authors (deposited in NCBI); see PMC10229771
+    key_refs:
+    - 10.3389/fvets.2023.1097067
+  last_updated: '2023'
+  relevance:
+    programs:
+    - comparative
+    why: 'Feline cancer genomics extending comparative oncology to cats; FOSCC as a spontaneous model
+      of HPV-negative human HNSCC for mutational and expression comparison.
+
+      '
+  agent_access: 'Exome data under BioProject PRJNA844099 (SRA); programmatic download via SRA Toolkit
+    / ENA. RNA-seq accession not explicitly stated in the data-availability text — check the paper/supplement.
+
+    '
+  caveats: 'Small n (6 tumors). RNA-seq accession must be confirmed from the paper. SRA data are raw reads
+    (no license per se; NCBI public-access terms).
+
+    '
+- id: feline-oscc-wes-2026
+  name: Feline Oral Squamous Cell Carcinoma exome (Chu et al. 2026)
+  category: cancer-genomics
+  species:
+  - cat
+  description: 'Whole-exome sequencing cohort of feline oral squamous cell carcinoma showing genomic parallels
+    with human head and neck SCC: TP53 as the most commonly mutated gene (consequential variants in 71%
+    of tumors) and a very low tumor mutational burden (0–1.6, mean 0.66).
+
+    '
+  scale: FOSCC tumor exomes (cohort); TMB 0–1.6
+  modalities:
+  - wes
+  formats:
+  - fastq
+  - bam
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1135178
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1135178
+  license: NCBI/SRA public-domain terms
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Chu et al. (deposited in NCBI SRA); see PMC13420018
+    key_refs:
+    - 10.1111/vco.70054
+  last_updated: '2026'
+  relevance:
+    programs:
+    - comparative
+    why: 'Second independent feline FOSCC exome resource; strengthens cross-species comparison of TP53-driven,
+      low-TMB squamous carcinomas between cats and humans.
+
+      '
+  agent_access: 'Openly available in SRA under BioProject PRJNA1135178; fetch via SRA Toolkit / ENA.
+
+    '
+  caveats: 'Raw reads; low TMB limits neoantigen yield but informs comparative mutational-signature work.
+
+    '
+- id: ffpe-3prime-rnaseq-vs-ncounter-berlin
+  name: GSE261790 / GSE261791 — Canine Archival-Tissue 3' RNA-seq vs nCounter Benchmark (Front Vet Sci
+    2025)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'A method benchmark comparing QuantSeq 3'' RNA-seq (GSE261790, PRJNA1089080, 25 samples)
+    with NanoString nCounter hybridisation (GSE261791, PRJNA1089079) on FFPE canine archival tumour tissue.
+    GEO sample records list AGASAC samples, and NCBI search also indexes the series under histiocytic
+    sarcoma.
+
+    '
+  scale: 25 FFPE samples (3' RNA-seq) + matched nCounter
+  size_bytes: 4929373526
+  modalities:
+  - bulk-rna-seq
+  - nanostring
+  formats:
+  - fastq
+  - txt
+  - rcc
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261790
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261790
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Institute of Veterinary Pathology, Freie Universität Berlin
+    key_refs:
+    - 10.3389/fvets.2025.1601306
+  accessions:
+  - GSE261790
+  - PRJNA1089080
+  - GSE261791
+  - PRJNA1089079
+  last_updated: 2024-03
+  relevance:
+    programs:
+    - comparative
+    why: 'Adds more AGASAC expression samples and tests how far FFPE archives can be used for canine transcriptomics,
+      which matters because most canine tumour material is FFPE.
+
+      '
+  caveats: 'Exact tumour-type composition was not verified sample by sample; read the GEO characteristics
+    before use. 3'' tag libraries give gene counts only, with no isoform or variant calling. No explicit
+    reuse license (NCBI).
+
+    '
 - id: fidocure-clinicogenomics
   name: FidoCure / One Health Company Canine Clinico-Genomics
   category: cancer-genomics
@@ -702,6 +968,46 @@
   caveats: 'No explicit reuse license (NCBI/INSDC open). Cell lines — not primary cohort.
 
     '
+- id: gse196108-adrenocortical-csact
+  name: GSE196108 — Canine Cortisol-Secreting Adrenocortical Tumour RNA-seq (Vet Comp Oncol 2023)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'RNA-seq of 48 canine cortisol-secreting adrenocortical tumours (csACTs) and 10 normal
+    adrenal cortices. The study defines two prognostic subtypes and nominates CYP26B1 as a therapeutic
+    target, cross-checked against a human cortisol-secreting ACC dataset. SRA SRP358249, BioProject PRJNA803356.
+
+    '
+  scale: 59 samples (48 csACT + 10 normal + 1); 118 runs
+  size_bytes: 16518344130
+  modalities:
+  - bulk-rna-seq
+  formats:
+  - fastq
+  - txt
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196108
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196108
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Utrecht University, Faculty of Veterinary Medicine
+    key_refs:
+    - 10.1111/vco.12871
+  accessions:
+  - GSE196108
+  - PRJNA803356
+  - SRP358249
+  last_updated: 2022-02
+  relevance:
+    programs:
+    - comparative
+    why: 'Adrenocortical tumours were absent from the catalog. This is a sizeable cohort with survival
+      data and an explicit cross-species (human ACC) comparison.
+
+      '
+  caveats: No explicit reuse license (NCBI). GEO lists 59 samples, while the paper describes 48 + 10;
+    check metadata.
 - id: gse208664-sts-3types
   name: GSE208664 — Canine Soft-Tissue Sarcoma, 3 Subtypes FFPE RNA-seq (PLoS ONE 2022)
   category: cancer-genomics
@@ -783,6 +1089,44 @@
     Heterogeneous STS subtypes within the cohort.
 
     '
+- id: gse223526-pheochromocytoma-ppgl
+  name: GSE223526 — Canine Pheochromocytoma / Paraganglioma RNA-seq (Front Vet Sci 2023)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Whole-transcriptome RNA-seq of 19 canine pheochromocytomas/paragangliomas (18 PCC, 1 PGL)
+    and 10 normal adrenal medullas. The study defines two transcriptional groups with significantly different
+    survival. BioProject PRJNA926644.
+
+    '
+  scale: 29 samples (19 tumours + 10 normal medulla); 58 runs
+  size_bytes: 31742248522
+  modalities:
+  - bulk-rna-seq
+  formats:
+  - fastq
+  - txt
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE223526
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE223526
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: (see paper — Frontiers in Veterinary Science 2023)
+    key_refs:
+    - 10.3389/fvets.2023.1155804
+  accessions:
+  - GSE223526
+  - PRJNA926644
+  last_updated: 2023-08
+  relevance:
+    programs:
+    - comparative
+    why: 'Adds a neuroendocrine tumour type with a matched normal-tissue baseline and a link between expression
+      subtype and survival.
+
+      '
+  caveats: No explicit reuse license (NCBI). Two tumours were excluded as PCA outliers in the paper.
 - id: gse238110
   name: GSE238110 — Canine Osteosarcoma Bulk RNA-seq (DOG^2 / COTC022)
   category: cancer-genomics
@@ -901,6 +1245,116 @@
   caveats: 'Targeted panel (not whole-transcriptome spatial); small ROI count.
 
     '
+- id: gse346824-oscc-spatial-geomx
+  name: GSE346824 — Canine Oral SCC Spatial Transcriptomics, Tumour and Lymph Node (Int J Mol Sci 2026)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'GeoMx digital spatial profiling (306 areas of illumination) of canine oral squamous cell
+    carcinoma and of regional lymph nodes with and without locoregional metastasis. Regions include subcapsular/medullary
+    sinus and paracortex. The aim is spatial signatures that detect occult nodal metastasis. BioProject
+    PRJNA1526669.
+
+    '
+  scale: 306 AOIs (GeoMx DCC/PKC)
+  modalities:
+  - spatial-transcriptomics
+  formats:
+  - dcc
+  - pkc
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE346824
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE346824
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: (see paper — International Journal of Molecular Sciences 2026)
+    key_refs:
+    - 10.3390/ijms27209163
+  accessions:
+  - GSE346824
+  - PRJNA1526669
+  last_updated: 2026-11
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Spatially resolved immune context of the tumour-draining lymph node in a canine HNSCC model;
+      complements the domain-14 ameloblastoma/OSCC snRNA atlas.
+
+      '
+  caveats: GeoMx probe-count data only, with no raw reads in SRA. Requires a canine-compatible GeoMx PKC.
+    No explicit reuse license (NCBI).
+- id: gse45832-fcr-hs-array
+  name: GSE45832 — Flat-Coated Retriever Histiocytic Sarcoma Expression Arrays (PLoS ONE 2013)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Two-colour expression microarrays of soft-tissue and visceral histiocytic sarcomas in
+    the highly predisposed Flat-coated Retriever breed (38 arrays). BioProject PRJNA196521.
+
+    '
+  scale: 38 arrays
+  modalities:
+  - expression-array
+  formats:
+  - txt
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE45832
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE45832
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: (see paper — PLoS ONE 2013)
+    key_refs:
+    - 10.1371/journal.pone.0071094
+  accessions:
+  - GSE45832
+  - PRJNA196521
+  last_updated: 2013-08
+  relevance:
+    programs:
+    - comparative
+    why: A breed-specific HS expression reference that separates the soft-tissue and visceral forms.
+  caveats: Legacy two-colour array against a reference design, so it is not directly comparable with RNA-seq.
+    No explicit reuse license.
+- id: gse95048-meningioma-ffpe
+  name: GSE95048 — Canine Meningioma FFPE RNA-seq (PLoS ONE 2017)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'RNA-seq of FFPE and flash-frozen canine meningiomas against normal meninges. The final
+    analysis kept 13 tumours (11 FFPE, 2 frozen) and 3 controls out of 24 tumours sequenced. BioProject
+    PRJNA375808.
+
+    '
+  scale: 16 samples deposited (13 tumours + 3 normal analysed)
+  size_bytes: 13236271069
+  modalities:
+  - bulk-rna-seq
+  formats:
+  - fastq
+  - txt
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE95048
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE95048
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: (see paper — PLoS ONE 2017)
+    key_refs:
+    - 10.1371/journal.pone.0187150
+  accessions:
+  - GSE95048
+  - PRJNA375808
+  last_updated: 2017-10
+  relevance:
+    programs:
+    - comparative
+    why: An early canine meningioma expression set with normal meninges; useful as an independent validation
+      set for GSE250310.
+  caveats: No explicit reuse license (NCBI). FFPE degradation; small n; 2 excluded samples were reclassified
+    as melanoma.
 - id: hartwig
   name: Hartwig Medical Foundation database
   category: cancer-genomics
@@ -1619,6 +2073,46 @@
     variation across re-analyses (EGAS00001002556 vs others) — verify the intended modality/accession.
 
     '
+- id: mct-expression-arrays
+  name: GSE122590 / GSE50433 — Canine Cutaneous MCT Expression Arrays (metastasis; prognosis)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Two MCT microarray cohorts. GSE122590 (PRJNA505684, 34 arrays, Affymetrix CEL) compares
+    primary cutaneous MCTs that later metastasised with those that did not. GSE50433 (PRJNA217482, 51
+    biopsies, Agilent Canine V2 4x44k) profiles MCT for classification and prognosis by differentiation
+    grade.
+
+    '
+  scale: 34 + 51 arrays
+  modalities:
+  - expression-array
+  formats:
+  - cel
+  - txt
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE122590
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE50433
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: (see papers — PLoS ONE 2018; PLoS ONE 2014)
+    key_refs:
+    - 10.1371/journal.pone.0208026
+    - 10.1371/journal.pone.0095481
+  accessions:
+  - GSE122590
+  - PRJNA505684
+  - GSE50433
+  - PRJNA217482
+  last_updated: 2018-12
+  relevance:
+    programs:
+    - comparative
+    why: Outcome-annotated MCT expression (metastasis, grade) that complements the domain-14 MCT exome
+      and LCM RNA-seq entries.
+  caveats: Array platforms differ from each other and from RNA-seq; batch-correct before combining. No
+    explicit reuse license.
 - id: mct-lcm-rnaseq-2026
   name: Canine MCT Laser-Capture-Microdissection RNA-seq (Sci Rep 2026)
   category: cancer-genomics
@@ -1988,6 +2482,50 @@
     — verify company status before relying on it. Included only to mark the boundary of what is public.
 
     '
+- id: prjdb10211-chs-wes-rnaseq
+  name: PRJDB10211 / PRJDB11462 — Canine Histiocytic Sarcoma WES + RNA-seq (Sci Rep 2023)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Whole-exome sequencing (SureSelect Canine All Exon V2) of 5 canine HS tumour/normal pairs
+    (PRJDB10211) and RNA-seq of 4 HS samples (PRJDB11462). The study shows ERK and Akt pathway activation.
+    The paper cites DRA runs DRA010452, DRA013421 and DRA013450.
+
+    '
+  scale: 'WES: 5 tumour + 5 normal (10 runs); RNA-seq: 4 runs'
+  size_bytes: 138110990544
+  modalities:
+  - whole-exome-seq
+  - bulk-rna-seq
+  formats:
+  - fastq
+  landing_url: https://ddbj.nig.ac.jp/search/entry/bioproject/PRJDB10211
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJDB10211
+  license: unknown
+  license_url: https://www.ddbj.nig.ac.jp/policies-e.html
+  access: open
+  provenance:
+    maintainer: Laboratory of Veterinary Internal Medicine, The University of Tokyo
+    key_refs:
+    - 10.1038/s41598-023-35813-1
+  accessions:
+  - PRJDB10211
+  - PRJDB11462
+  - DRA010452
+  - DRA013421
+  - DRA013450
+  last_updated: 2022-04
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: Matched tumour/normal exomes allow somatic calling in HS. The domain-14 HS entry (GSE288068)
+      is RNA-only.
+  caveats: 'The paper''s RNA comparator was CD14+ monocytes from one healthy beagle, whose data are not
+    in PRJDB11462 as far as we verified. Run-to-DRA mapping was inferred from run counts. Small n. No
+    explicit reuse license.
+
+    '
 - id: prjeb12081-oral-melanoma
   name: PRJEB12081 — Canine Oral Melanoma (ENA; Hendricks)
   category: cancer-genomics
@@ -2027,6 +2565,74 @@
   caveats: 'Reanalysis paper notes missing patient info (breed). Older reference build.
 
     '
+- id: prjeb24200-mct-sanger-arendt
+  name: PRJEB24200 — Canine Mast Cell Tumours Sequencing (Sanger, Arendt; 2019)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Fifty canine mast cell tumour libraries (ENA strategy WXS) deposited by the Wellcome Sanger
+    Institute. The project text frames the work around tumour behaviour and detecting metastatic versus
+    reactive mast cells.
+
+    '
+  scale: 50 runs / 50 samples
+  size_bytes: 166436360760
+  modalities:
+  - whole-exome-seq
+  formats:
+  - fastq
+  - cram
+  landing_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB24200
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB24200
+  license: unknown
+  license_url: https://www.ebi.ac.uk/ena/browser/about/policies
+  access: open
+  provenance:
+    maintainer: Wellcome Sanger Institute (with M. Arendt)
+    key_refs: []
+  accessions:
+  - PRJEB24200
+  last_updated: 2019-07
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: A further open MCT exome/capture cohort, roughly the size of PRJNA518003 (domain-14).
+  caveats: No linked publication found. Tumour/normal pairing and capture design are unverified. May overlap
+    PRJEB56233 (FUR MCT). No explicit reuse license.
+- id: prjeb36828-chs-rnaseq-rennes
+  name: PRJEB36828 — Canine Histiocytic Sarcoma RNA-seq vs Healthy Tissue (Univ Rennes/CNRS 2020)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'RNA-seq of canine histiocytic sarcoma compared with healthy tissue to identify dysregulated
+    pathways, deposited by the CNRS / University of Rennes canine genetics group (7 runs).
+
+    '
+  scale: 7 samples
+  size_bytes: 14173951720
+  modalities:
+  - bulk-rna-seq
+  formats:
+  - fastq
+  landing_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB36828
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB36828
+  license: unknown
+  license_url: https://www.ebi.ac.uk/ena/browser/about/policies
+  access: open
+  provenance:
+    maintainer: Université de Rennes / CNRS (BioProject submitter)
+    key_refs: []
+  accessions:
+  - PRJEB36828
+  last_updated: 2020-02
+  relevance:
+    programs:
+    - comparative
+    why: An independent European HS transcriptome for cross-cohort validation against the US (GSE288068)
+      and Japanese (PRJDB11462) sets.
+  caveats: No linked publication identified; this group's HS papers (e.g. PTPN11, Int J Cancer 2020) are
+    genetic, not this RNA-seq. No explicit reuse license (INSDC).
 - id: prjna1090544-oral-melanoma-wes
   name: PRJNA1090544 — Canine Oral Mucosal Melanoma Exomes
   category: cancer-genomics
@@ -2109,6 +2715,90 @@
     that paper''s data-availability directly.
 
     '
+- id: prjna1294405-cpac-genomic-landscape
+  name: PRJNA1294405 — Canine Pulmonary Adenocarcinoma WGS/WES/RNA-seq (Vet Comp Oncol 2026) — NOT YET
+    RELEASED
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'A genomic landscape study of 46 dogs with pulmonary adenocarcinoma (cPAC), a model for
+    never-smoker human NSCLC: WGS on 8 tumour/normal pairs, WES on 5, and tumour-only RNA-seq on 36. It
+    reports candidate targetable gene fusions and HER2 V659E. The paper states the data are in SRA under
+    BioProject PRJNA1294405.
+
+    '
+  scale: 46 dogs; WGS n=8, WES n=5, RNA-seq n=36 (per paper)
+  modalities:
+  - whole-genome-seq
+  - whole-exome-seq
+  - bulk-rna-seq
+  formats:
+  - fastq
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1294405
+  download_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1294405
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: request
+  provenance:
+    maintainer: (see paper — Veterinary and Comparative Oncology 2026)
+    key_refs:
+    - 10.1111/vco.70063
+    - 10.1158/1078-0432.CCR-19-1145
+  accessions:
+  - PRJNA1294405
+  last_updated: 2025-07
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'The only multi-modal canine lung cancer genomics cohort we found. Fusions and HER2 hotspot calls
+      would give canine lung neoantigen candidates once the data are released.
+
+      '
+  caveats: 'Not available yet: the BioProject is registered (2025-07-21), but on 2026-11-15 NCBI SRA had
+    0 experiments and ENA had 0 public runs under it, so the paper''s availability claim does not yet
+    match the archive. Re-check later or contact the authors. "access: request" reflects the current practical
+    state, not a stated policy.
+
+    '
+- id: prjna1354447-chs-lowpass-wgs-rennes
+  name: PRJNA1354447 / PRJNA1354253 — Canine Histiocytic Sarcoma Low-pass WGS + Cell Lines (Rennes 2025)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Two companion BioProjects from CNRS / University of Rennes. PRJNA1354447 holds low-pass
+    WGS of blood and tumour tissue from 10 dogs with HS (10 runs). PRJNA1354253 holds deeper WGS of 3
+    HS cell lines and matched blood from two affected dogs (3 runs, ~226 GB).
+
+    '
+  scale: 'PRJNA1354447: 10 runs; PRJNA1354253: 3 runs'
+  size_bytes: 239440998326
+  modalities:
+  - whole-genome-seq
+  - copy-number
+  formats:
+  - fastq
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1354447
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJNA1354253
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: CNRS / Université de Rennes
+    key_refs: []
+  accessions:
+  - PRJNA1354447
+  - PRJNA1354253
+  last_updated: 2025-10
+  relevance:
+    programs:
+    - comparative
+    why: Adds copy-number and structural genomic data to the HS cluster. Copy-number change is a known
+      hallmark of HS (e.g. CDKN2A loss).
+  caveats: 'No publication yet. size_bytes is the sum of ENA FASTQ sizes (13,241,806,713 + 226,199,191,613).
+    The low-pass data suit copy-number analysis, not SNV calling. No explicit reuse license.
+
+    '
 - id: prjna1399620-hsa-organoid
   name: PRJNA1399620 — Canine Hemangiosarcoma Organoid RNA-seq
   category: cancer-genomics
@@ -2146,6 +2836,39 @@
   caveats: 'Organoid (not primary tumor) expression. VERIFY.
 
     '
+- id: prjna1438806-cpac-smallrna-rnaseq
+  name: PRJNA1438806 — Canine Pulmonary Adenocarcinoma Small RNA-seq + RNA-seq (Kagoshima 2026)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Small RNA-seq (miRNA) and whole-transcriptome RNA-seq (mRNA and lncRNA) of lung tissue
+    from 5 dogs with pulmonary adenocarcinoma and 6 healthy control dogs, deposited as a comparative resource.
+
+    '
+  scale: 11 dogs; 22 runs (11 RNA-seq + 11 miRNA-seq)
+  size_bytes: 48836896538
+  modalities:
+  - bulk-rna-seq
+  - small-rna-seq
+  formats:
+  - fastq
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1438806
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJNA1438806
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Kagoshima University
+    key_refs: []
+  accessions:
+  - PRJNA1438806
+  last_updated: 2026-04
+  relevance:
+    programs:
+    - comparative
+    why: This is the only public canine lung adenocarcinoma expression data we found with healthy-lung
+      controls.
+  caveats: No linked publication found. Small n. No explicit reuse license (INSDC).
 - id: prjna268531-traf3-lymphoma
   name: PRJNA268531 / SRP050276 — TRAF3 in Canine+Human B-cell Lymphoma
   category: cancer-genomics
@@ -2221,6 +2944,47 @@
 
     '
   caveats: 'Mixed platforms; batch effects. VERIFY per-accession mapping.
+
+    '
+- id: prjna418842-intestinal-polyposis
+  name: PRJNA418842 — Canine Extreme Intestinal Polyposis WGS + RNA-seq (Oncotarget 2018)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Whole-genome sequencing (17 runs) and RNA-seq (28 runs) of canine intestinal tumours and
+    normal tissue from a case of extreme intestinal polyposis. The study integrated genomic, transcriptomic
+    and microbiome changes. A later canine colorectal adenoma-to-carcinoma transcriptome study (Front
+    Vet Sci 2023) re-analysed this project together with PRJNA396033 (Dog Genomics Resources normal tissue).
+
+    '
+  scale: 45 runs (17 WGS + 28 RNA-seq)
+  size_bytes: 233276848587
+  modalities:
+  - whole-genome-seq
+  - bulk-rna-seq
+  formats:
+  - fastq
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA418842
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJNA418842
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: (see paper — Oncotarget 2018)
+    key_refs:
+    - 10.18632/oncotarget.25646
+    - 10.3389/fvets.2023.1192525
+  accessions:
+  - PRJNA418842
+  last_updated: 2017-12
+  relevance:
+    programs:
+    - comparative
+    why: The only open canine intestinal-tumour WGS+RNA set we found; it gives a colorectal comparator
+      to human CRC.
+  caveats: 'Unusual phenotype (extreme polyposis), so it may not represent sporadic canine CRC. PRJNA396033
+    is a general dog genomics resource of normal tissues, not a tumour dataset. No explicit reuse license
+    (INSDC).
 
     '
 - id: prjna421895-oral-melanoma-rnaseq
@@ -2623,6 +3387,39 @@
   caveats: 'Only 6 cases. VERIFY accession at NCBI.
 
     '
+- id: prjna667767-mct-kit-amplicon
+  name: PRJNA667767 — Australian Canine MCT KIT Mutation Amplicon Survey (Univ. Adelaide 2020)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Ion AmpliSeq sequencing of KIT exons and non-coding regions (upstream, downstream, splice
+    sites, UTRs) in 67 cutaneous and 14 subcutaneous FFPE canine MCTs, linked to clinical and survival
+    data.
+
+    '
+  scale: 81 tumours (amplicon)
+  size_bytes: 113217138
+  modalities:
+  - targeted-panel-seq
+  formats:
+  - fastq
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA667767
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJNA667767
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: The University of Adelaide
+    key_refs: []
+  accessions:
+  - PRJNA667767
+  last_updated: 2020-10
+  relevance:
+    programs:
+    - comparative
+    why: A KIT variant prevalence reference, including non-coding variants, in an independent geographic
+      cohort.
+  caveats: Single-gene panel. Paper DOI not located via PubMed. No explicit reuse license.
 - id: prjna677995-hsa-splenic-exome
   name: PRJNA677995 / PRJNA417727 — Canine Splenic HSA Exome (heterogeneity + actionable mutations)
   category: cancer-genomics
@@ -3004,6 +3801,77 @@
     '
   caveats: 'Targeted panel (MSK-IMPACT), not WES — TMB is panel-derived; no neoantigen-level or expression
     data. A companion NSCLC study (nsclc_pd1_msk_2018) is separate.
+
+    '
+- id: sanger-fur-canine-tgs-programme
+  name: Wellcome Sanger "FUR" Canine Tumour/Germline Targeted-Sequencing Programme (16 ENA projects)
+  category: cancer-genomics
+  species:
+  - dog
+  description: 'Sixteen ENA projects deposited by the Wellcome Sanger Institute (2023-09 to 2024-05),
+    each titled "FUR__Canine_<tumour>_TGS", sequencing tumour/germline pairs of common canine cancers
+    with a targeted capture panel. The stated aim, modelled on MSK-IMPACT, is to define driver genes in
+    companion-animal cancers. Tumour types: pancreatic carcinoma, basal cell carcinoma, mast cell tumour,
+    thyroid carcinoma, osteosarcoma, cholangiocarcinoma, colorectal carcinoma, gastric carcinoma, lymphoma,
+    cutaneous melanoma, splenic haemangiosarcoma, histiocytic sarcoma, hepatocellular carcinoma, mammary
+    gland carcinoma, seminoma and Sertoli cell tumour.
+
+    '
+  scale: 3,010 runs / 1,851 samples across 16 tumour types (tumour + germline); ~3.80 TB FASTQ
+  size_bytes: 3801816628256
+  modalities:
+  - targeted-panel-seq
+  - tumour-normal-pairs
+  formats:
+  - fastq
+  - cram
+  landing_url: https://www.ebi.ac.uk/ena/browser/view/PRJEB48341
+  download_url: https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB48341&result=read_run&fields=run_accession,fastq_ftp
+  api: https://www.ebi.ac.uk/ena/portal/api/
+  license: unknown
+  license_url: https://www.ebi.ac.uk/ena/browser/about/policies
+  access: open
+  provenance:
+    maintainer: Wellcome Sanger Institute
+    key_refs: []
+  accessions:
+  - PRJEB56232
+  - PRJEB56647
+  - PRJEB56233
+  - PRJEB52323
+  - PRJEB52321
+  - PRJEB58094
+  - PRJEB56298
+  - PRJEB55860
+  - PRJEB55865
+  - PRJEB55864
+  - PRJEB55829
+  - PRJEB48343
+  - PRJEB48342
+  - PRJEB48341
+  - PRJEB48340
+  - PRJEB48339
+  last_updated: 2024-05
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'The largest open set of canine tumour/germline pairs we have found, covering several tumour
+      types that have no other public genomics (cholangiocarcinoma, pancreatic, basal cell, seminoma,
+      Sertoli, gastric, hepatocellular). Matched germline allows somatic calling, and therefore canine
+      neoantigen candidate generation, across tumour types.
+
+      '
+  agent_access: 'Public ENA FASTQ over FTP/HTTPS/Aspera, no auth; ENA portal filereport gives per-run
+    URLs and sizes. Bulk size is ~3.8 TB, so plan egress and storage.
+
+    '
+  caveats: 'We found no canine publication describing these projects. ENA library_strategy is "WXS", but
+    the project text describes targeted sequencing (TGS): panel content and gene list are unverified,
+    so do not assume whole-exome coverage. Tumour/normal pairing must be rebuilt from sample metadata.
+    No explicit reuse license (INSDC policy). Some samples may overlap with the earlier Sanger Arendt
+    MCT project (PRJEB24200); de-duplicate by biosample. Sample counts are ENA biosamples (tumour + normal),
+    not dogs.
 
     '
 - id: snyder-2014-ctla4-melanoma

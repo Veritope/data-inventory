@@ -429,6 +429,54 @@
     DLA typing and antigen specificity absent.
 
     '
+- id: canine-oscc-spatial-geomx
+  name: Spatial Transcriptomic Landscape of Canine Oral Squamous Cell Carcinoma (GSE292226)
+  category: single-cell
+  species:
+  - dog
+  description: 'Spatially resolved (NanoString GeoMx DSP) transcriptomic profiling of canine oral squamous
+    cell carcinoma with region-level distinction between surface tumor, deep invasive front, tumor microenvironment,
+    peritumoral dysplasia, and matched normal mucosa. Resolves region-specific programs (EGFR/EMT, KRAS/SPP1/KRT14),
+    M2-macrophage/IL-10 immunosuppression, and CD4+ T-cell stimulatory/inhibitory signaling (e.g., CTLA4)
+    in the TME.
+
+    '
+  scale: 6 dogs; multi-region GeoMx segments (surface/deep/TME/dysplasia/normal)
+  modalities:
+  - spatial-transcriptomics
+  - geomx-dsp
+  - tumor-microenvironment
+  formats:
+  - dcc
+  - pkc
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE292226
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE292226
+  license: NCBI/GEO public-domain terms
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Goldschmidt et al. (deposited in NCBI GEO)
+    key_refs:
+    - 10.1002/mc.23932
+  last_updated: 2025-06
+  relevance:
+    programs:
+    - comparative
+    - recognition
+    why: 'Region-resolved canine TME immune landscape (macrophage polarization, CD4+ T-cell checkpoint
+      signaling) directly relevant to immuno-oncology targets and antigen-recognition context in a spontaneous
+      large-animal cancer model.
+
+      '
+  agent_access: 'GEO series GSE292226, platform GPL35351; GeoMx DCC/PKC supplementary files downloadable
+    via GEO FTP, no auth. GEO web pages are reCAPTCHA-gated for scraping — use NCBI eutils/FTP for programmatic
+    access.
+
+    '
+  caveats: 'GeoMx DSP is region/segment-level (not single-cell resolution despite the single-cell category).
+    Small n (6 dogs).
+
+    '
 - id: caushi-2021-nsclc-mana-til
   name: Caushi et al. 2021 — Neoantigen-specific TIL in anti-PD-1 lung cancer (scRNA + TCR)
   category: single-cell
@@ -998,6 +1046,46 @@
   caveats: 'Healthy blood only; no antigen-specific pairing.
 
     '
+- id: gse224723-meningioma-scrna
+  name: GSE224723 — Canine Meningioma Single-cell RNA-seq (Cancer Discov 2024)
+  category: single-cell
+  species:
+  - dog
+  description: 'scRNA-seq of 54,607 cells from 3 canine meningiomas and 2 canine dura samples. It is a
+    sub-series of the human+dog SuperSeries GSE235998 for the study showing that perivascular NOTCH3+
+    stem cells drive meningioma tumorigenesis and radiotherapy resistance. BioProject PRJNA932291.
+
+    '
+  scale: 54,607 cells; 5 samples (3 tumour, 2 dura)
+  size_bytes: 123782608962
+  modalities:
+  - single-cell-rna-seq
+  formats:
+  - fastq
+  - tar
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE224723
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE224723
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: (see paper — Cancer Discovery 2024)
+    key_refs:
+    - 10.1158/2159-8290.CD-23-1459
+  accessions:
+  - GSE224723
+  - PRJNA932291
+  - GSE235998
+  last_updated: 2024-05
+  relevance:
+    programs:
+    - comparative
+    why: 'A canine brain-tumour single-cell atlas that includes immune and stromal compartments, with
+      a matched human companion series for direct cross-species comparison.
+
+      '
+  caveats: No explicit reuse license (NCBI). Only 3 tumours. The SuperSeries mixes human and canine samples;
+    filter by organism.
 - id: gse225599-leukocyte-atlas
   name: GSE225599 — Canine Circulating Leukocyte scRNA Atlas (healthy + OSA)
   category: single-cell
@@ -1115,6 +1203,49 @@
 
     '
   caveats: 'Small donor n; no paired VDJ.
+
+    '
+- id: gse298472-sinonasal-sbrt-scrna
+  name: GSE298472 — Canine Sinonasal Carcinoma Nasal-Lavage scRNA-seq Before/After SBRT (2026)
+  category: single-cell
+  species:
+  - dog
+  description: 'Serial scRNA-seq of nasal-lavage cells from dogs with sinonasal carcinoma, taken before
+    and after stereotactic body radiotherapy (day 0 vs day 14 or day 90; 4 dogs, 8 samples). Neutrophils
+    dominate the samples, and interferon-signature tumour-associated neutrophils increase after SBRT.
+    BioProject PRJNA1269512.
+
+    '
+  scale: 8 samples (4 dogs x pre/post)
+  size_bytes: 393241490157
+  modalities:
+  - single-cell-rna-seq
+  formats:
+  - fastq
+  - mtx
+  - tsv
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE298472
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE298472
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: (submitter of PRJNA1269512; publication not yet indexed)
+    key_refs: []
+  accessions:
+  - GSE298472
+  - PRJNA1269512
+  last_updated: 2026-10
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Fills the nasal-tumour gap with primary-tumour immune data. It is a longitudinal record of the
+      local immune response to radiotherapy in a spontaneous canine cancer, sampled minimally invasively.
+
+      '
+  caveats: 'Lavage cells, not tumour tissue. No PubMed-linked paper at verification. The raw data are
+    large (~393 GB FASTQ); GEO MTX/TSV processed matrices are the practical entry point.
 
     '
 - id: gse72056-tirosh-melanoma

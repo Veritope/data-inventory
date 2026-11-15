@@ -1,3 +1,58 @@
+- id: briney-2019-grp
+  name: Briney 2019 baseline human antibody repertoire (Great Repertoire Project)
+  category: healthy-baseline
+  species:
+  - human
+  description: 'The largest single-study collection of human antibody heavy-chain repertoire sequences:
+    UMI-corrected, deep NGS of circulating B cells from ten healthy adult donors, used to characterise
+    the baseline naive/memory repertoire and estimate its diversity. Provides raw reads, UMI-consensus
+    sequences and annotated consensus tables, plus synthetic (IGoR-generated) repertoires.
+
+    '
+  scale: ~3 billion raw heavy-chain reads; ~3.64e8 productive unique sequences after annotation/dedup;
+    10 donors
+  modalities:
+  - bcr-repertoire
+  - antibody-sequence
+  - heavy-chain
+  - synthetic-repertoire
+  formats:
+  - fastq
+  - fasta
+  - csv
+  - json
+  landing_url: https://github.com/brineylab/grp-paper
+  download_url: https://burtonlab.s3.amazonaws.com/
+  license: unknown
+  license_url: https://github.com/brineylab/grp-paper/blob/master/LICENSE
+  access: open
+  provenance:
+    maintainer: Briney lab / Burton lab, The Scripps Research Institute
+    key_refs:
+    - 10.1038/s41586-019-0879-y
+  last_updated: '2019'
+  accessions:
+  - PRJNA511481
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'A clean healthy-baseline human heavy-chain repertoire for defining germline usage, CDR-H3 length
+      distributions and "self-like" priors that a designed binder should respect to stay developable and
+      low-immunogenicity.
+
+      '
+  agent_access: 'Direct HTTP download from a public S3 bucket (burtonlab.s3.amazonaws.com), per-subject
+    links in the GitHub README. No auth. Very large: raw FASTQ ~100 GB/subject; annotated JSON up to ~1
+    TB uncompressed per subject — plan for selective download of consensus FASTA / annotated CSV rather
+    than raw.
+
+    '
+  caveats: 'Repository code is MIT-licensed, but the data files carry no explicit license — redistribution
+    terms unconfirmed (license: unknown); attribute Briney et al. 2019. Heavy chain only, unpaired. Enormous
+    footprint. PRJNA accession should be confirmed in the paper''s data-availability statement.
+
+    '
 - id: cellxgene-census
   name: CZ CELLxGENE Discover + Census
   category: healthy-baseline
@@ -1014,6 +1069,91 @@
 
     '
   size_bytes: 53210000000
+- id: vetcompass-cat-lifetables
+  name: VetCompass UK Cat Life Tables (figshare dataset)
+  category: healthy-baseline
+  species:
+  - cat
+  description: 'Open dataset behind the UK companion-cat life tables: annual life expectancy and risk
+    factors for mortality in cats under primary veterinary care, from the VetCompass Programme. Companion
+    feline population-mortality baseline analogous to the canine life tables.
+
+    '
+  scale: UK primary-care cat population sample (figshare dataset)
+  modalities:
+  - epidemiology
+  - life-tables
+  - mortality
+  formats:
+  - tabular
+  landing_url: https://doi.org/10.6084/m9.figshare.25006802
+  download_url: https://doi.org/10.6084/m9.figshare.25006802
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: VetCompass Programme, Royal Veterinary College (RVC)
+    key_refs:
+    - 10.1177/1098612X241234556
+  last_updated: '2024'
+  relevance:
+    programs:
+    - comparative
+    why: 'Feline population mortality baseline extending comparative work to cats; denominators for feline
+      cancer and comorbidity epidemiology.
+
+      '
+  agent_access: 'figshare record with a stated DOI; direct download, no auth (CC BY 4.0).
+
+    '
+  caveats: 'Confirm the figshare license field resolves to CC BY 4.0 for the specific files. Published
+    extract, not raw VetCompass records.
+
+    '
+- id: vetcompass-dog-lifetables
+  name: VetCompass UK Companion Dog Life Tables (open-access dataset)
+  category: healthy-baseline
+  species:
+  - dog
+  description: 'Open-access dataset underlying the first UK companion-dog life tables: annual life expectancy
+    and mortality derived from VetCompass primary-care veterinary records, stratified by sex, Kennel Club
+    breed group, and common breeds. Built from a random sample of dogs under veterinary care with recorded
+    deaths (2016–2020). Provides population mortality denominators for canine disease work.
+
+    '
+  scale: ~30,563 dog-death records (random sample of 29,865 dogs analyzed)
+  modalities:
+  - epidemiology
+  - life-tables
+  - mortality
+  formats:
+  - xlsx
+  landing_url: https://rvc-repository.worktribe.com/output/1558210
+  download_url: https://rvc-repository.worktribe.com/output/1558210
+  license: unknown
+  license_url: https://www.nature.com/articles/s41598-022-10341-6
+  access: open
+  provenance:
+    maintainer: VetCompass Programme, Royal Veterinary College (RVC), University of London
+    key_refs:
+    - 10.1038/s41598-022-10341-6
+  last_updated: '2022'
+  relevance:
+    programs:
+    - comparative
+    why: 'Primary-care (not referral-biased) UK population mortality baseline; the denominator layer for
+      canine cancer epidemiology and for contextualizing tumor-cohort survival.
+
+      '
+  agent_access: 'Open-access spreadsheet deposited in the RVC research repository (file "210624 VetCompass
+    Lifetable Open Access Data"); direct download, no auth. Full VetCompass database is not bulk-downloadable
+    — per-paper datasets are released individually (several via figshare under the RVC account).
+
+    '
+  caveats: 'No explicit SPDX license on the repository record (described as open access) — confirm terms
+    before redistribution. This is the published life-table extract, not the raw VetCompass clinical records.
+
+    '
 - id: wang-29-tissues-proteome
   name: Deep proteome & transcriptome abundance atlas of 29 healthy human tissues
   category: healthy-baseline

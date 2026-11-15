@@ -1,3 +1,105 @@
+- id: absolut
+  name: Absolut! in silico antibody-antigen binding database
+  category: functional-assay
+  species:
+  - human
+  - mouse
+  description: 'A large synthetic (in silico) antibody-antigen binding dataset: CDR-H3 sequences docked
+    against lattice representations of real PDB-derived antigens with an exhaustive, deterministic binding
+    energy for every pose. Designed to give unconstrained, fully-labelled ground truth for benchmarking
+    antibody specificity / binding-prediction ML without experimental noise.
+
+    '
+  scale: ~159 lattice antigens; ~6.9M murine CDR-H3 sequences; on the order of ~1 billion antibody-antigen
+    binding pairs
+  modalities:
+  - synthetic-binding
+  - antibody-antigen
+  - cdrh3
+  - binding-energy
+  formats:
+  - txt
+  - csv
+  landing_url: https://github.com/csi-greifflab/Absolut
+  download_url: https://ns9999k.webs.sigma2.no/10.11582_2021.00063/projects/NS9603K/pprobert/AbsolutOnline/
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Greiff lab (University of Oslo) and collaborators; hosted on Norstore/Sigma2
+    key_refs:
+    - 10.1038/s43588-022-00372-4
+  last_updated: '2022'
+  accessions:
+  - 10.11582/2021.00063
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Fully-labelled, noise-free antibody-antigen binding ground truth at scale — a controlled benchmark
+      for the recognition models and generative-design scoring that underpin the binder program, complementing
+      noisy real assays.
+
+      '
+  agent_access: 'Pre-generated files downloadable over HTTPS from the Sigma2/Norstore mirror (no auth);
+    the Absolut! C++ code (csi-greifflab/Absolut) can regenerate or extend data but generation can take
+    days. Large; pull selectively.
+
+    '
+  caveats: 'Explicit reuse license not clearly stated on the mirror (license: unknown) — confirm via the
+    Norstore DOI before redistribution; attribute Robert et al. 2022. SYNTHETIC/lattice data — a proxy
+    for real binding, useful for method development but not a substitute for experimental affinities.
+
+    '
+- id: alphaseq-sarscov2
+  name: AlphaSeq antibody-antigen binding dataset (SARS-CoV-2 peptide)
+  category: functional-assay
+  species:
+  - other
+  description: 'A large quantitative antibody-antigen binding dataset: ~105,000 scFv antibody variants
+    assayed by the AlphaSeq yeast mating-based platform against a SARS-CoV-2 spike HR2 peptide, giving
+    sequence-resolved, replicate, predicted affinity values. Built explicitly as a public ML benchmark
+    pairing antibody sequence, antigen sequence and quantitative binding.
+
+    '
+  scale: ~104,972 antibodies vs a SARS-CoV-2 peptide; affinities ~37 pM to ~22 mM; 3 phage-display seed
+    sequences with ~30k variants per library set
+  modalities:
+  - binding-affinity
+  - antibody-antigen
+  - scfv
+  - cdr-annotation
+  formats:
+  - csv
+  landing_url: https://www.ll.mit.edu/partner-us/available-technologies/alphaseq-dataset-antibody-antigen-interactions-sars-cov-2
+  download_url: https://www.ll.mit.edu/partner-us/available-technologies/alphaseq-dataset-antibody-antigen-interactions-sars-cov-2
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: MIT Lincoln Laboratory; data from A-Alpha Bio (Engelhart et al.)
+    key_refs:
+    - 10.1038/s41597-022-01779-4
+  last_updated: '2022'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'One of the largest public datasets with real quantitative antibody binding affinities tied to
+      sequence — a direct supervised benchmark for the recognition/affinity-prediction models behind binder
+      design.
+
+      '
+  agent_access: 'Two public releases hosted by MIT Lincoln Laboratory (Dataset 1: original AlphaSeq set;
+    Dataset 2: ML-designed antibodies measured experimentally). CSV with sequences, CDRs, replicate IDs
+    and log-scale nM affinity. Download via the MIT LL page.
+
+    '
+  caveats: 'Each release subdirectory carries its own license (overall license: unknown until checked
+    per subdir) — read before reuse; attribute Engelhart et al. 2022. Affinities are platform-predicted
+    (AlphaSeq), replicate-averaged; blanks denote poor/non-binders. Single antigen (SARS-CoV-2 HR2 peptide).
+
+    '
 - id: antijen
   name: AntiJen v2.0 — quantitative immunology database (TAP, proteasome, MHC)
   category: functional-assay
@@ -147,6 +249,59 @@
     can be controlled. Proteomics is a few cancer types, not pan-cancer at TCGA scale.
 
     '
+- id: flab
+  name: FLAb — Fitness Landscapes for Antibodies (developability benchmark)
+  category: functional-assay
+  species:
+  - human
+  - mouse
+  description: 'A living benchmark aggregating experimentally measured therapeutic-antibody "fitness"/developability
+    properties (e.g. binding affinity, thermostability, expression, aggregation, polyreactivity, viscosity,
+    immunogenicity) across many published studies, with scoring scripts to test whether protein/antibody
+    AI models can predict these properties.
+
+    '
+  scale: 'FLAb2 (2025): developability data for >4M antibodies across 32 studies, 7 properties (FLAb v1
+    covered 6 properties)'
+  modalities:
+  - developability
+  - binding-affinity
+  - thermostability
+  - expression
+  - polyreactivity
+  - antibody-sequence
+  formats:
+  - csv
+  landing_url: https://github.com/Graylab/FLAb
+  download_url: https://github.com/Graylab/FLAb
+  license: CC BY 4.0
+  license_url: https://registry.opendata.aws/flab/
+  access: open
+  provenance:
+    maintainer: Gray lab, Johns Hopkins University
+    key_refs:
+    - 10.1101/2024.01.13.575504
+    - 10.64898/2025.12.27.696706
+  last_updated: '2025'
+  relevance:
+    programs:
+    - design
+    why: 'Developability is the make-or-break constraint for the binder-design program. FLAb is the central
+      public benchmark of measured antibody properties for training and honestly evaluating developability
+      predictors.
+
+      '
+  agent_access: 'GitHub repo with datasets under data/ (organised by property) and scoring scripts under
+    models/; also mirrored on the AWS Open Data Registry. No auth; clone/download directly. Per-dataset
+    licenses listed in data/README.md.
+
+    '
+  caveats: 'Aggregate license given as CC BY 4.0 (AWS Open Data Registry), but individual constituent
+    datasets have their own licenses listed in data/README.md — check per dataset before redistribution.
+    Properties/assays are heterogeneous across source studies; FLAb2 itself reports current AI models
+    fail to predict most (~80%) developability datasets, so treat as a hard benchmark.
+
+    '
 - id: gse120272-mct-c2-rnaseq
   name: GSE120272 — Canine C2 Mast Cell Line Transcriptome (G-quadruplex study)
   category: functional-assay
@@ -187,6 +342,131 @@
     cohort. Small sample number.
 
     '
+- id: gse217028-hnscc-nodal-irradiation
+  name: GSE217028 — Canine Head-and-Neck Cancer Lymph Nodes after Elective Nodal Irradiation (Nat Commun
+    2022)
+  category: functional-assay
+  species:
+  - dog
+  description: 'NanoString gene expression of lymph nodes from canine head-and-neck cancer patients, used
+    to test how elective nodal irradiation affects the immunity generated by combined radiation and immunotherapy.
+    It is the canine translational arm of a mostly murine study. BioProject PRJNA896593.
+
+    '
+  scale: 12 samples (NanoString RCC)
+  modalities:
+  - nanostring
+  formats:
+  - rcc
+  - xlsx
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE217028
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE217028
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: (see paper — Nature Communications 2022)
+    key_refs:
+    - 10.1038/s41467-022-34676-w
+  accessions:
+  - GSE217028
+  - PRJNA896593
+  last_updated: 2022-11
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: A rare canine dataset on how the immune response in draining lymph nodes changes after radiation,
+      in a clinical (not experimental) setting.
+  caveats: Targeted panel, small n, and canine data are a minor part of the paper. No explicit reuse license
+    (NCBI).
+- id: gse261387-histiocytoma-regression
+  name: GSE261387 / GSE261395 — Spontaneously Regressing Canine Cutaneous Histiocytoma, Stage-resolved
+    (PeerJ 2024)
+  category: functional-assay
+  species:
+  - dog
+  description: 'QuantSeq 3'' RNA-seq (GSE261387, PRJNA1086830, 21 FFPE samples) and nCounter (GSE261395,
+    PRJNA1086843) of canine cutaneous histiocytoma, a Langerhans-cell tumour of young dogs that regresses
+    spontaneously. Samples span three regression stages. The study traces the anti-tumour immune dynamics
+    behind regression; proteomics is also reported in the paper.
+
+    '
+  scale: 21 FFPE tumours across 3 stages
+  size_bytes: 4429814126
+  modalities:
+  - bulk-rna-seq
+  - nanostring
+  formats:
+  - fastq
+  - tsv
+  - rcc
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261387
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261387
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Institute of Veterinary Pathology, Freie Universität Berlin
+    key_refs:
+    - 10.7717/peerj.18444
+  accessions:
+  - GSE261387
+  - PRJNA1086830
+  - GSE261395
+  - PRJNA1086843
+  last_updated: 2024-04
+  relevance:
+    programs:
+    - recognition
+    - comparative
+    why: 'Together with CTVT (domain-14), one of two canine models of immune-mediated tumour regression.
+      Stage-resolved expression shows which T-cell and antigen-presentation programmes accompany successful
+      rejection.
+
+      '
+  caveats: 3' tag FFPE data (gene-level only). nCounter is a targeted panel. No explicit reuse license
+    (NCBI).
+- id: gse76126-facc-celline-panel
+  name: GSE76126 / GSE76128 — Flint Animal Cancer Center (FACC) Canine Cancer Cell-Line Panel Expression
+  category: functional-assay
+  species:
+  - dog
+  description: 'Affymetrix Canine 2.0 expression profiles of a 29-line, multi-tumour canine cancer cell-line
+    panel assembled at Colorado State University as a canine counterpart to NCI-60/CCLE/GDSC (GSE76126).
+    GSE76128 (62 arrays) combines the panel with osteosarcoma primary tumours and was used to build cross-species
+    drug-response models.
+
+    '
+  scale: 29 cell lines (GSE76126); 62 arrays incl. OSA primaries (GSE76128)
+  modalities:
+  - expression-array
+  formats:
+  - cel
+  landing_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE76126
+  download_url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE76128
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: Colorado State University, Flint Animal Cancer Center (Gustafson lab)
+    key_refs:
+    - 10.1186/s12859-016-0942-8
+  accessions:
+  - GSE76126
+  - PRJNA306370
+  - GSE76128
+  - PRJNA306368
+  last_updated: 2015-12
+  relevance:
+    programs:
+    - comparative
+    why: 'An expression baseline for a widely used canine cell-line panel. It complements the domain-7
+      cell-line WES (PRJNA503864) so lines can be matched on expression and mutations.
+
+      '
+  caveats: Microarray, not RNA-seq. The drug-screen data were not verified as public. No explicit reuse
+    license.
 - id: keskin-2019-neovax-gbm
   name: Keskin 2019 personal neoantigen vaccine (glioblastoma; dbGaP phs001519)
   category: functional-assay
@@ -413,6 +693,80 @@
     accession — cite the corrigendum. Small phase-I cohort.
 
     '
+- id: prjdb17594-chs-celllines-rnaseq
+  name: PRJDB17594 — RNA-seq of 11 Canine Histiocytic Sarcoma Cell Lines (Vet Comp Oncol 2025)
+  category: functional-assay
+  species:
+  - dog
+  description: 'Poly(A) RNA-seq (NovaSeq, 150 bp PE, ~26.7 M reads per sample) of 11 canine histiocytic
+    sarcoma cell lines. The lines cluster into two molecular subtypes, separated by NF-kB activation and
+    inflammatory chemokines (CCL3/4/5/7, CLEC7A, TLR4), and differ in sensitivity to dasatinib and trametinib.
+    DDBJ Sequence Read Archive, as confirmed in the paper''s Data Availability statement.
+
+    '
+  scale: 11 cell lines; 13 runs / 12 biosamples
+  size_bytes: 34133739277
+  modalities:
+  - bulk-rna-seq
+  formats:
+  - fastq
+  landing_url: https://ddbj.nig.ac.jp/search/entry/bioproject/PRJDB17594
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJDB17594
+  license: unknown
+  license_url: https://www.ddbj.nig.ac.jp/policies-e.html
+  access: open
+  provenance:
+    maintainer: Laboratory of Veterinary Internal Medicine, The University of Tokyo
+    key_refs:
+    - 10.1111/vco.13071
+  accessions:
+  - PRJDB17594
+  last_updated: 2025-02
+  relevance:
+    programs:
+    - comparative
+    why: 'The largest open canine HS cell-line expression panel we found, with drug-response context.
+      It resolves the domain-14 gap for the HS cell-line classification study.
+
+      '
+  caveats: 'Cell lines only. Twelve biosamples for 11 lines: one may be replicated, so check metadata.
+    No explicit reuse license (INSDC/DDBJ).'
+- id: prjdb42258-apc-small-bowel-celllines
+  name: PRJDB42258 — Cell Lines from Hereditary Canine Small-Bowel Adenocarcinoma with Germline APC Variant
+    (Gifu 2026)
+  category: functional-assay
+  species:
+  - dog
+  description: 'WGS of cell lines established from liver, lung and pancreatic-lymph-node metastases of
+    a jejunal adenocarcinoma in a dog with germline APC variants. The study characterises the genetic
+    alterations behind tumour development and progression. Deposited in DDBJ.
+
+    '
+  scale: 3 cell lines (WGS)
+  size_bytes: 155708327376
+  modalities:
+  - whole-genome-seq
+  formats:
+  - fastq
+  landing_url: https://ddbj.nig.ac.jp/search/entry/bioproject/PRJDB42258
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJDB42258
+  license: unknown
+  license_url: https://www.ddbj.nig.ac.jp/policies-e.html
+  access: open
+  provenance:
+    maintainer: Laboratory of Veterinary Pathology, Gifu University
+    key_refs: []
+  accessions:
+  - PRJDB42258
+  last_updated: 2026-07
+  relevance:
+    programs:
+    - comparative
+    why: 'These are the first canine GI adenocarcinoma cell lines with open genomes we found, and an APC-driven
+      model analogous to human FAP/CRC. They fill the gap in GI cell-line coverage.
+
+      '
+  caveats: No linked publication found yet. One donor dog. No explicit reuse license (INSDC/DDBJ).
 - id: sahin-2017-rna-mutanome-vaccine
   name: Sahin 2017 personalized RNA mutanome vaccine (melanoma)
   category: functional-assay

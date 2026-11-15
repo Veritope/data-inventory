@@ -43,6 +43,52 @@
     the underlying frequencies.
 
     '
+- id: antiref
+  name: AntiRef (reference clusters of human antibody sequences)
+  category: reference
+  species:
+  - human
+  description: 'Non-redundant reference clusters of human antibody sequences derived by clustering large
+    public repertoire data at multiple identity thresholds, analogous to UniRef for antibodies. Provides
+    representative sequences that collapse the massive redundancy of raw repertoires into tractable, deduplicated
+    reference sets for search and model training.
+
+    '
+  scale: Clustered sets at several identity thresholds (e.g. 100/90/.../50% id); tens of millions of representatives
+    depending on threshold
+  modalities:
+  - bcr-repertoire
+  - antibody-sequence
+  - sequence-clusters
+  formats:
+  - fasta
+  landing_url: https://github.com/brineylab/antiref
+  download_url: https://github.com/brineylab/antiref
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Briney lab, The Scripps Research Institute
+    key_refs:
+    - 10.1093/bioadv/vbad109
+  last_updated: '2023'
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Deduplicated antibody reference sets give cleaner training/search corpora than raw repertoires,
+      reducing sampling bias when pretraining antibody models or searching for natural analogues of a
+      designed binder.
+
+      '
+  agent_access: 'Distributed via GitHub with downloadable FASTA cluster files (hosted on public object
+    storage per the repo). No auth. Scriptable.
+
+    '
+  caveats: 'No explicit data license surfaced — treat as unconfirmed (license: unknown) and attribute
+    Briney 2023. Human only; derived product (clustering choices affect downstream stats). Unpaired.
+
+    '
 - id: barkbase
   name: BarkBase — Canine Epigenomic Annotation
   category: reference
@@ -86,6 +132,52 @@
     '
   caveats: 'ATAC-seq quality limited (many samples FRiP <0.3, below ENCODE threshold); not ENCODE-depth.
     No MHC/immune-specific layer. License not explicitly stated.
+
+    '
+- id: cab-rep
+  name: cAb-Rep (Curated Antibody Repertoires)
+  category: reference
+  species:
+  - human
+  description: 'A curated database of full-length, IgBLAST-annotated human antibody variable (IGH, IGK,
+    IGL) repertoires assembled to study antibody diversity and to estimate the prevalence of a given antibody
+    lineage across donors. Each transcript carries V/D/J gene usage, isotype and somatic-hypermutation
+    annotation. Useful for asking how "public"/recurrent a designed or isolated antibody is.
+
+    '
+  scale: 306 Ig repertoires from 121 human donors; ~267.9M heavy-chain and ~72.9M light-chain transcripts
+  modalities:
+  - bcr-repertoire
+  - antibody-sequence
+  - unpaired-chain
+  formats:
+  - fasta
+  landing_url: https://cab-rep.c2b2.columbia.edu/
+  download_url: https://cab-rep.c2b2.columbia.edu/
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Shapiro lab, Columbia University (C2B2)
+    key_refs:
+    - 10.3389/fimmu.2019.02365
+  last_updated: '2019'
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Donor-resolved human repertoires let you score the natural prevalence and germline plausibility
+      of candidate antibody sequences, a useful prior for the design program and for interpreting recognition
+      breadth.
+
+      '
+  agent_access: 'Web resource; repertoires provided as FASTA. No documented API; expect to download per-donor/per-repertoire
+    FASTA files. No auth.
+
+    '
+  caveats: 'No explicit license found on the site/paper — treat redistribution as unconfirmed (license:
+    unknown) and attribute Guo et al. 2019. Human only; static (2019) and not updated. Unpaired chains
+    only.
 
     '
 - id: caid
@@ -382,6 +474,56 @@
   caveats: 'REDISTRIBUTION FORBIDDEN — COSMIC data may not be re-packaged or passed to third parties without
     a commercial licence; flag for any product that would ship derived COSMIC content. Academic licence
     is royalty-free but still a contract. Commercial pipelines need paid QIAGEN licensing.
+
+    '
+- id: cov-abdab
+  name: CoV-AbDab — Coronavirus Antibody Database
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'A curated database of antibodies and nanobodies known to bind coronaviruses (SARS-CoV-2,
+    SARS-CoV-1, MERS and others), each with heavy/light sequences where available, binding/neutralisation
+    evidence, epitope/antigen target, origin and links to source publications and any PDB structures.
+    A compact, antigen-labelled benchmark set for binder recognition.
+
+    '
+  scale: ~12,916 entries (site last updated 8 Feb 2024; may be higher now)
+  modalities:
+  - antibody-sequence
+  - nanobody-sequence
+  - binding-evidence
+  - neutralization
+  - epitope-annotation
+  formats:
+  - csv
+  landing_url: https://opig.stats.ox.ac.uk/webapps/covabdab/
+  download_url: https://opig.stats.ox.ac.uk/webapps/covabdab/
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Oxford Protein Informatics Group (OPIG), University of Oxford
+    key_refs:
+    - 10.1093/bioinformatics/btaa739
+  last_updated: 2024-02
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Sequence-paired, antigen- and epitope-labelled antibodies with binding and neutralisation outcomes
+      — a clean supervised set for antibody-antigen recognition models and for validating binder-design
+      pipelines against a well-characterised antigen family.
+
+      '
+  agent_access: 'Full database downloadable as CSV without registration; no auth. Community submissions
+    accepted by email. Trivially scriptable.
+
+    '
+  caveats: 'CC BY 4.0 (attribute Raybould et al. 2021 and original studies). Scope limited to coronaviruses;
+    update cadence is intermittent (last site update Feb 2024). Binding/neutralisation evidence is aggregated
+    from heterogeneous assays — read per-entry provenance before treating labels as uniform.
 
     '
 - id: ctdatabase
@@ -908,6 +1050,55 @@
     before any commercial use. Scraping discouraged; prefer the provided reference files.
 
     '
+- id: indi
+  name: INDI — Integrated Nanobody Database for Immunoinformatics
+  category: reference
+  species:
+  - other
+  description: 'An integrated database of camelid single-domain antibody (VHH / nanobody) sequences and
+    metadata aggregated from all major public outlets: patents, GenBank, next-generation sequencing repositories,
+    deposited structures and the scientific literature. Entries are filtered to contain all three CDRs
+    and only canonical amino acids, with provenance and annotation.
+
+    '
+  scale: '>11 million nanobody sequences (2021 preprint figure)'
+  modalities:
+  - nanobody-sequence
+  - vhh
+  - antibody-sequence
+  - single-domain
+  formats:
+  - csv
+  - fasta
+  landing_url: https://research.naturalantibody.com/nanobodies
+  download_url: https://research.naturalantibody.com/nanobodies
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: NaturalAntibody (Poland), with Harvard Medical School, Abterra Biosciences, Alector
+    key_refs:
+    - 10.1093/nar/gkab1021
+  last_updated: '2022'
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Nanobodies are a primary scaffold for the binder-design program (small, stable, single-domain).
+      INDI is the largest aggregation of natural VHH sequence space for pretraining and for sampling realistic
+      CDR-H3 loops.
+
+      '
+  agent_access: 'Web portal with sequence / CDR-H3 / text search. Bulk-download availability and any API
+    are not clearly documented — confirm on the portal before assuming programmatic bulk access; may require
+    contacting maintainers.
+
+    '
+  caveats: 'No explicit reuse license found (license: unknown) — confirm terms with NaturalAntibody before
+    redistribution or ML training. Aggregated from mixed sources (patents, NGS) with heterogeneous quality;
+    dedup needed. Camelid single-domain only.
+
+    '
 - id: interpro
   name: InterPro
   category: reference
@@ -1117,6 +1308,112 @@
     layer, dedup against UniProt by accession.
 
     '
+- id: oas
+  name: Observed Antibody Space (OAS)
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'The reference corpus of cleaned, numbered, annotated and translated antibody repertoire
+    sequences mined from published BCR/antibody next-generation sequencing studies. Contains both unpaired
+    heavy/light-chain sequences and natively paired heavy-light sequences, each annotated with chain type,
+    species, isotype, B-cell source, disease state and IMGT/ANARCI numbering. The de facto training set
+    for antibody language models and generative antibody design.
+
+    '
+  scale: '>1 billion unpaired sequences from >80 studies; paired subset on the order of ~1.5M+ heavy-light
+    pairs (growing). 2021 paper reported ~1.5B unpaired + ~121,838 pairs; site now larger.'
+  modalities:
+  - bcr-repertoire
+  - antibody-sequence
+  - paired-chain
+  - unpaired-chain
+  formats:
+  - csv
+  - json
+  - fasta
+  landing_url: https://opig.stats.ox.ac.uk/webapps/oas/
+  download_url: https://opig.stats.ox.ac.uk/webapps/oas/
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  access: open
+  provenance:
+    maintainer: Oxford Protein Informatics Group (OPIG), Dept of Statistics, University of Oxford
+    key_refs:
+    - 10.1002/pro.4205
+    - 10.4049/jimmunol.1800708
+  last_updated: 2025 (continuously updated as new studies are ingested)
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Primary sequence substrate for antibody design and antibody language-model pretraining. The
+      paired subset is the key resource for learning native heavy-light pairing, directly relevant to
+      designing developable binders.
+
+      '
+  agent_access: 'Bulk download of the whole dataset or of filtered subsets built from the search forms
+    (filter by chain type, species, isotype, disease, B-source). No auth. Downloads are per-study data
+    units (CSV/JSON) served over HTTPS; easily scripted. No documented hard rate limit but be polite on
+    bulk pulls.
+
+    '
+  caveats: 'Redistribution allowed under CC BY (attribute OPIG + original studies). Heavy study-to-study
+    redundancy and sampling bias toward human peripheral blood; dedup and clonal-collapse needed before
+    training. Paired data far smaller than unpaired. No canine repertoires — human/mouse dominate, so
+    not a source for the comparative-oncology program.
+
+    '
+- id: omia
+  name: Online Mendelian Inheritance in Animals (OMIA)
+  category: reference
+  species:
+  - dog
+  - cat
+  - horse
+  - other
+  description: 'Curated catalogue of inherited and single-locus traits, disorders, and causal variants
+    in animals (vertebrates), analogous to OMIM for humans. Includes many cancer-predisposition and tumor-related
+    phenes and variants across dogs, cats, horses and other species, with cross-references to breeds,
+    genes and literature. Full database is downloadable as a MySQL dump.
+
+    '
+  scale: thousands of phenes and likely-causal variants across >300 species
+  modalities:
+  - gene-disease-associations
+  - variants
+  - phene-catalogue
+  formats:
+  - sql
+  - xml
+  landing_url: https://omia.org/home/
+  download_url: https://omia.org/download/
+  api: ''
+  license: CC BY 4.0
+  license_url: https://omia.org/download/
+  access: open
+  provenance:
+    maintainer: University of Sydney (Sydney School of Veterinary Science) with ongoing community curation
+    key_refs:
+    - 10.1093/nar/gkae950
+  last_updated: 2024 (continuous updates)
+  relevance:
+    programs:
+    - comparative
+    why: 'Reference layer linking canine/feline/equine cancer phenotypes to genes and causal variants;
+      supports breed-risk interpretation and comparative cancer-genetics annotation.
+
+      '
+  agent_access: 'Full MySQL dump (zipped/gzipped SQL and XML) is freely downloadable, no auth; no public
+    API or SPARQL endpoint. A separate gene list maps OMIA internal gene IDs to NCBI gene IDs.
+
+    '
+  caveats: 'License is reported inconsistently across indexers (re3data: CC BY 4.0; Integbio: CC0; a Sydney
+    library record: all-rights-reserved) — treat as CC BY 4.0 but verify, and honor OMIA''s citation /
+    co-authorship-discussion request for dump-based work. Internal gene IDs need mapping.
+
+    '
 - id: pfam
   name: Pfam (protein families)
   category: reference
@@ -1165,6 +1462,109 @@
     '
   caveats: 'Standalone pfam.xfam.org was decommissioned; access is now via InterPro and the EBI FTP. Pfam-produced
     data is CC0, but downstream UniProt sequence content has its own (CC BY 4.0) terms.
+
+    '
+- id: plabdab
+  name: PLAbDab — Patent and Literature Antibody Database
+  category: reference
+  species:
+  - human
+  - mouse
+  - other
+  description: 'A curated, literature- and patent-annotated reference set of (mostly paired) antibody
+    sequences with functional context: each entry links back to the patent or paper it was scraped from,
+    and many are functionally characterised (antigen, therapeutic use). Searchable by keyword, sequence
+    and structure, with ABodyBuilder2 models attached to entries.
+
+    '
+  scale: ~150,000 paired antibody sequences from >10,000 small-scale studies/patents
+  modalities:
+  - antibody-sequence
+  - paired-chain
+  - structure-model
+  - functional-annotation
+  formats:
+  - csv
+  landing_url: https://opig.stats.ox.ac.uk/webapps/plabdab/
+  download_url: https://opig.stats.ox.ac.uk/webapps/plabdab/
+  api: https://github.com/oxpig/PLAbDab
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Oxford Protein Informatics Group (OPIG), University of Oxford
+    key_refs:
+    - 10.1093/nar/gkad1056
+  last_updated: '2024'
+  accessions:
+  - 10.5281/zenodo.7258553
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Unlike raw repertoires, PLAbDab entries carry antigen/function annotation and literature provenance,
+      making it a high-value, functionally grounded set of developed/paired antibodies to anchor design
+      and to find natural analogues of candidate binders.
+
+      '
+  agent_access: 'Web app with keyword/sequence/structure search and a Download link for all hits of a
+    query; precomputed structural models downloadable per entry. Python API via the oxpig/PLAbDab GitHub
+    repo (contact maintainers / open an issue for programmatic access). Structural models bulk-archived
+    on Zenodo.
+
+    '
+  caveats: 'The PLAbDab "about" page states no explicit license (license: unknown), even though sibling
+    OPIG resources OAS and CoV-AbDab are CC BY 4.0 — confirm terms before redistribution; patent-derived
+    sequences may carry IP considerations. Attribute Abanades et al. 2024.
+
+    '
+- id: plabdab-nano
+  name: PLAbDab-nano — nanobodies from patents and literature
+  category: reference
+  species:
+  - other
+  description: 'The single-domain (nanobody) companion to PLAbDab: camelid VHH and shark VNAR sequences
+    curated from patents and literature, each linked to its source and shipped with a precomputed NanoBodyBuilder2
+    structural model. Annotated with domain type (VHH/VNAR), CDR lengths and CDR sequences.
+
+    '
+  scale: ~4,913 entries (VHH + VNAR)
+  modalities:
+  - nanobody-sequence
+  - vhh
+  - vnar
+  - single-domain
+  - structure-model
+  formats:
+  - csv
+  landing_url: https://opig.stats.ox.ac.uk/webapps/plabdab-nano/
+  download_url: https://opig.stats.ox.ac.uk/webapps/plabdab-nano/
+  api: https://github.com/oxpig/PLAbDab_nano
+  license: unknown
+  license_url: unknown
+  access: open
+  provenance:
+    maintainer: Oxford Protein Informatics Group (OPIG), University of Oxford
+    key_refs:
+    - 10.1093/nar/gkae881
+  last_updated: '2025'
+  relevance:
+    programs:
+    - design
+    - recognition
+    why: 'Literature/patent-grounded single-domain antibodies with attached structural models — directly
+      useful for the nanobody binder-design program and for benchmarking generated VHH/VNAR loops against
+      real ones.
+
+      '
+  agent_access: 'Three gzipped CSV downloads (all / VHH-only / VNAR-only) plus a Python package (oxpig/PLAbDab_nano)
+    that reads the extracted database. Web app supports keyword/sequence/structure search. No auth; trivially
+    scriptable.
+
+    '
+  caveats: 'No explicit license on the page (license: unknown) — confirm before reuse; attribute Gordon
+    et al. 2025. The preprint warned that many patent/literature "nanobody" hits are false positives (VHH
+    count dropped from ~21k to <7k after curation) — trust the curated published counts, not raw scrapes.
 
     '
 - id: refseq

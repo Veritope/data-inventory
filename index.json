@@ -55,6 +55,63 @@
     "commercial_use": null
   },
   {
+    "id": "agasac-hga-rnaseq-ncounter",
+    "name": "GSE302161 / GSE301538 — Canine Anal Sac Adenocarcinoma vs Hepatoid Gland Adenoma (PLoS ONE 2026)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "A hallmarks-of-cancer comparison between malignant apocrine gland anal sac adenocarcinoma (AGASAC), including sublumbar nodal metastases, and benign hepatoid gland adenoma (HGA) from FFPE archival tissue. The paper reports RNA-seq on 25 samples from 21 cases (15 AGASAC, of which 11 primaries and 4 nodal metastases, plus 10 HGA), deposited as GEO GSE302161 (BioProject PRJNA1289115). A NanoString nCounter panel is deposited as GSE301538 (PRJNA1285400, 45 samples). Analysis code is on figshare.\n",
+    "scale": "RNA-seq: 25 samples per paper (6 public SRA runs); nCounter: 45 samples",
+    "size_bytes": 1658717072,
+    "modalities": [
+      "bulk-rna-seq",
+      "nanostring"
+    ],
+    "formats": [
+      "fastq",
+      "tsv",
+      "rcc",
+      "csv"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE302161",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE302161",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Institute of Veterinary Pathology, Freie Universität Berlin",
+      "key_refs": [
+        "10.1371/journal.pone.0351773",
+        "10.6084/m9.figshare.30763643"
+      ]
+    },
+    "accessions": [
+      "GSE302161",
+      "PRJNA1289115",
+      "GSE301538",
+      "PRJNA1285400"
+    ],
+    "last_updated": "2025-12",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "This is the first public transcriptome we have found for AGASAC, a common canine tumour that was absent from the catalog. It includes paired primary and nodal-metastasis samples and a benign comparator.\n"
+    },
+    "agent_access": "GEO supplementary files and SRA runs, no auth.",
+    "caveats": "Count mismatch: GEO/ENA list only 6 RNA-seq samples/runs, while the paper reports 25 RNA-seq samples. Check whether the remaining samples are only in the GEO TSV count matrix. FFPE material. No explicit reuse license (NCBI).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE302161",
+    "commercial_use": null
+  },
+  {
     "id": "ameloblastoma-oscc-rnaseq",
     "name": "GSE317244 / GSE317641 — Canine Acanthomatous Ameloblastoma & Oral SCC RNA-seq + snRNA-seq",
     "category": "cancer-genomics",
@@ -421,6 +478,247 @@
     "commercial_use": true
   },
   {
+    "id": "equine-sarcoid-methylome",
+    "name": "Equine sarcoid DNA methylation (GSE208778 / GSE89859)",
+    "category": "cancer-genomics",
+    "species": [
+      "horse"
+    ],
+    "description": "DNA-methylation profiling of equine sarcoid versus normal skin: a reduced-representation bisulfite (RRBS) dataset (GSE208778) paired with the transcriptome study, and an earlier array/methylation profiling dataset (GSE89859). Characterizes aberrant methylation in papillomavirus-associated equine sarcoids.\n",
+    "scale": "paired sarcoid/skin methylation cohorts (RRBS + earlier profiling)",
+    "modalities": [
+      "rrbs",
+      "dna-methylation"
+    ],
+    "formats": [
+      "fastq",
+      "methylation-tables"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE208778",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE208778",
+    "license": "NCBI/GEO public-domain terms",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Semik-Gurgul et al. and earlier equine epigenetics groups; NCBI GEO",
+      "key_refs": [
+        "10.1038/s41598-023-39947-0",
+        "10.1186/s12864-017-3628-3"
+      ]
+    },
+    "last_updated": "2022 (GSE208778); 2017 (GSE89859)",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Equine tumor epigenetics complementing the sarcoid transcriptome; cross-species methylation context for comparative oncology.\n"
+    },
+    "agent_access": "Two GEO series (GSE208778, GSE89859); download via GEO FTP / SRA, no auth.\n",
+    "caveats": "Two distinct studies/platforms bundled here — treat as separate records if granularity matters. Confirm both accessions resolve.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE208778",
+    "commercial_use": null
+  },
+  {
+    "id": "equine-sarcoid-transcriptome",
+    "name": "Equine sarcoid vs healthy skin transcriptome (GSE226986 / PRJNA942611)",
+    "category": "cancer-genomics",
+    "species": [
+      "horse"
+    ],
+    "description": "RNA-seq of equine sarcoid tumors versus matched/healthy equine skin (12 sarcoid and 12 healthy skin samples), used to characterize altered coding and long non-coding RNA expression in bovine papillomavirus-associated equine sarcoids. Companion species (equine) tumor transcriptomics.\n",
+    "scale": "12 sarcoid + 12 healthy skin RNA-seq samples",
+    "modalities": [
+      "rna-seq",
+      "lncrna"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE226986",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE226986",
+    "license": "NCBI/GEO public-domain terms",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Semik-Gurgul et al. (National Research Institute of Animal Production, Poland); NCBI GEO/SRA; OmicsDI PRJNA942611",
+      "key_refs": [
+        "10.1038/s41598-023-39947-0"
+      ]
+    },
+    "last_updated": "2023",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Extends comparative tumor transcriptomics to horses; a virally-driven skin tumor contrasting with canine/feline tumor biology for cross-species TME and oncogenesis comparison.\n"
+    },
+    "agent_access": "GEO GSE226986 (also BioProject PRJNA942611 on OmicsDI); raw reads via SRA/ENA, no auth.\n",
+    "caveats": "Sarcoid is a locally aggressive fibroblastic (papillomavirus-driven) tumor, not a classic metastatic carcinoma — scope comparisons accordingly. Verify accession currency.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE226986",
+    "commercial_use": null
+  },
+  {
+    "id": "feline-oscc-wes-2023",
+    "name": "Feline Oral Squamous Cell Carcinoma genomics (Rodrigues et al. 2023)",
+    "category": "cancer-genomics",
+    "species": [
+      "cat"
+    ],
+    "description": "Whole-exome sequencing of tumor and matched blood from six cats with feline oral squamous cell carcinoma (FOSCC), plus RNA-seq of six tumors and normal oral mucosa from three healthy cats. Characterizes the FOSCC genomic landscape and gene-expression profiles as a model of HPV-negative human head and neck squamous cell carcinoma.\n",
+    "scale": "6 FOSCC tumors (WES + RNA-seq) + 3 normal mucosa (RNA-seq)",
+    "modalities": [
+      "wes",
+      "rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "bam"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA844099",
+    "download_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA844099",
+    "license": "NCBI/SRA public-domain terms",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Study authors (deposited in NCBI); see PMC10229771",
+      "key_refs": [
+        "10.3389/fvets.2023.1097067"
+      ]
+    },
+    "last_updated": "2023",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Feline cancer genomics extending comparative oncology to cats; FOSCC as a spontaneous model of HPV-negative human HNSCC for mutational and expression comparison.\n"
+    },
+    "agent_access": "Exome data under BioProject PRJNA844099 (SRA); programmatic download via SRA Toolkit / ENA. RNA-seq accession not explicitly stated in the data-availability text — check the paper/supplement.\n",
+    "caveats": "Small n (6 tumors). RNA-seq accession must be confirmed from the paper. SRA data are raw reads (no license per se; NCBI public-access terms).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA844099",
+    "commercial_use": null
+  },
+  {
+    "id": "feline-oscc-wes-2026",
+    "name": "Feline Oral Squamous Cell Carcinoma exome (Chu et al. 2026)",
+    "category": "cancer-genomics",
+    "species": [
+      "cat"
+    ],
+    "description": "Whole-exome sequencing cohort of feline oral squamous cell carcinoma showing genomic parallels with human head and neck SCC: TP53 as the most commonly mutated gene (consequential variants in 71% of tumors) and a very low tumor mutational burden (0–1.6, mean 0.66).\n",
+    "scale": "FOSCC tumor exomes (cohort); TMB 0–1.6",
+    "modalities": [
+      "wes"
+    ],
+    "formats": [
+      "fastq",
+      "bam"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1135178",
+    "download_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1135178",
+    "license": "NCBI/SRA public-domain terms",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Chu et al. (deposited in NCBI SRA); see PMC13420018",
+      "key_refs": [
+        "10.1111/vco.70054"
+      ]
+    },
+    "last_updated": "2026",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Second independent feline FOSCC exome resource; strengthens cross-species comparison of TP53-driven, low-TMB squamous carcinomas between cats and humans.\n"
+    },
+    "agent_access": "Openly available in SRA under BioProject PRJNA1135178; fetch via SRA Toolkit / ENA.\n",
+    "caveats": "Raw reads; low TMB limits neoantigen yield but informs comparative mutational-signature work.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1135178",
+    "commercial_use": null
+  },
+  {
+    "id": "ffpe-3prime-rnaseq-vs-ncounter-berlin",
+    "name": "GSE261790 / GSE261791 — Canine Archival-Tissue 3' RNA-seq vs nCounter Benchmark (Front Vet Sci 2025)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "A method benchmark comparing QuantSeq 3' RNA-seq (GSE261790, PRJNA1089080, 25 samples) with NanoString nCounter hybridisation (GSE261791, PRJNA1089079) on FFPE canine archival tumour tissue. GEO sample records list AGASAC samples, and NCBI search also indexes the series under histiocytic sarcoma.\n",
+    "scale": "25 FFPE samples (3' RNA-seq) + matched nCounter",
+    "size_bytes": 4929373526,
+    "modalities": [
+      "bulk-rna-seq",
+      "nanostring"
+    ],
+    "formats": [
+      "fastq",
+      "txt",
+      "rcc"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261790",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261790",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Institute of Veterinary Pathology, Freie Universität Berlin",
+      "key_refs": [
+        "10.3389/fvets.2025.1601306"
+      ]
+    },
+    "accessions": [
+      "GSE261790",
+      "PRJNA1089080",
+      "GSE261791",
+      "PRJNA1089079"
+    ],
+    "last_updated": "2024-03",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Adds more AGASAC expression samples and tests how far FFPE archives can be used for canine transcriptomics, which matters because most canine tumour material is FFPE.\n"
+    },
+    "caveats": "Exact tumour-type composition was not verified sample by sample; read the GEO characteristics before use. 3' tag libraries give gene counts only, with no isoform or variant calling. No explicit reuse license (NCBI).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261790",
+    "commercial_use": null
+  },
+  {
     "id": "fidocure-clinicogenomics",
     "name": "FidoCure / One Health Company Canine Clinico-Genomics",
     "category": "cancer-genomics",
@@ -778,6 +1076,57 @@
     "commercial_use": null
   },
   {
+    "id": "gse196108-adrenocortical-csact",
+    "name": "GSE196108 — Canine Cortisol-Secreting Adrenocortical Tumour RNA-seq (Vet Comp Oncol 2023)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "RNA-seq of 48 canine cortisol-secreting adrenocortical tumours (csACTs) and 10 normal adrenal cortices. The study defines two prognostic subtypes and nominates CYP26B1 as a therapeutic target, cross-checked against a human cortisol-secreting ACC dataset. SRA SRP358249, BioProject PRJNA803356.\n",
+    "scale": "59 samples (48 csACT + 10 normal + 1); 118 runs",
+    "size_bytes": 16518344130,
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196108",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196108",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Utrecht University, Faculty of Veterinary Medicine",
+      "key_refs": [
+        "10.1111/vco.12871"
+      ]
+    },
+    "accessions": [
+      "GSE196108",
+      "PRJNA803356",
+      "SRP358249"
+    ],
+    "last_updated": "2022-02",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Adrenocortical tumours were absent from the catalog. This is a sizeable cohort with survival data and an explicit cross-species (human ACC) comparison.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI). GEO lists 59 samples, while the paper describes 48 + 10; check metadata.",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196108",
+    "commercial_use": null
+  },
+  {
     "id": "gse208664-sts-3types",
     "name": "GSE208664 — Canine Soft-Tissue Sarcoma, 3 Subtypes FFPE RNA-seq (PLoS ONE 2022)",
     "category": "cancer-genomics",
@@ -875,6 +1224,56 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE214154",
+    "commercial_use": null
+  },
+  {
+    "id": "gse223526-pheochromocytoma-ppgl",
+    "name": "GSE223526 — Canine Pheochromocytoma / Paraganglioma RNA-seq (Front Vet Sci 2023)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Whole-transcriptome RNA-seq of 19 canine pheochromocytomas/paragangliomas (18 PCC, 1 PGL) and 10 normal adrenal medullas. The study defines two transcriptional groups with significantly different survival. BioProject PRJNA926644.\n",
+    "scale": "29 samples (19 tumours + 10 normal medulla); 58 runs",
+    "size_bytes": 31742248522,
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE223526",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE223526",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — Frontiers in Veterinary Science 2023)",
+      "key_refs": [
+        "10.3389/fvets.2023.1155804"
+      ]
+    },
+    "accessions": [
+      "GSE223526",
+      "PRJNA926644"
+    ],
+    "last_updated": "2023-08",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Adds a neuroendocrine tumour type with a matched normal-tissue baseline and a link between expression subtype and survival.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI). Two tumours were excluded as PCA outliers in the paper.",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE223526",
     "commercial_use": null
   },
   {
@@ -1018,6 +1417,154 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE295311",
+    "commercial_use": null
+  },
+  {
+    "id": "gse346824-oscc-spatial-geomx",
+    "name": "GSE346824 — Canine Oral SCC Spatial Transcriptomics, Tumour and Lymph Node (Int J Mol Sci 2026)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "GeoMx digital spatial profiling (306 areas of illumination) of canine oral squamous cell carcinoma and of regional lymph nodes with and without locoregional metastasis. Regions include subcapsular/medullary sinus and paracortex. The aim is spatial signatures that detect occult nodal metastasis. BioProject PRJNA1526669.\n",
+    "scale": "306 AOIs (GeoMx DCC/PKC)",
+    "modalities": [
+      "spatial-transcriptomics"
+    ],
+    "formats": [
+      "dcc",
+      "pkc"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE346824",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE346824",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — International Journal of Molecular Sciences 2026)",
+      "key_refs": [
+        "10.3390/ijms27209163"
+      ]
+    },
+    "accessions": [
+      "GSE346824",
+      "PRJNA1526669"
+    ],
+    "last_updated": "2026-11",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Spatially resolved immune context of the tumour-draining lymph node in a canine HNSCC model; complements the domain-14 ameloblastoma/OSCC snRNA atlas.\n"
+    },
+    "caveats": "GeoMx probe-count data only, with no raw reads in SRA. Requires a canine-compatible GeoMx PKC. No explicit reuse license (NCBI).",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE346824",
+    "commercial_use": null
+  },
+  {
+    "id": "gse45832-fcr-hs-array",
+    "name": "GSE45832 — Flat-Coated Retriever Histiocytic Sarcoma Expression Arrays (PLoS ONE 2013)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Two-colour expression microarrays of soft-tissue and visceral histiocytic sarcomas in the highly predisposed Flat-coated Retriever breed (38 arrays). BioProject PRJNA196521.\n",
+    "scale": "38 arrays",
+    "modalities": [
+      "expression-array"
+    ],
+    "formats": [
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE45832",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE45832",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — PLoS ONE 2013)",
+      "key_refs": [
+        "10.1371/journal.pone.0071094"
+      ]
+    },
+    "accessions": [
+      "GSE45832",
+      "PRJNA196521"
+    ],
+    "last_updated": "2013-08",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "A breed-specific HS expression reference that separates the soft-tissue and visceral forms."
+    },
+    "caveats": "Legacy two-colour array against a reference design, so it is not directly comparable with RNA-seq. No explicit reuse license.",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE45832",
+    "commercial_use": null
+  },
+  {
+    "id": "gse95048-meningioma-ffpe",
+    "name": "GSE95048 — Canine Meningioma FFPE RNA-seq (PLoS ONE 2017)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "RNA-seq of FFPE and flash-frozen canine meningiomas against normal meninges. The final analysis kept 13 tumours (11 FFPE, 2 frozen) and 3 controls out of 24 tumours sequenced. BioProject PRJNA375808.\n",
+    "scale": "16 samples deposited (13 tumours + 3 normal analysed)",
+    "size_bytes": 13236271069,
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE95048",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE95048",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — PLoS ONE 2017)",
+      "key_refs": [
+        "10.1371/journal.pone.0187150"
+      ]
+    },
+    "accessions": [
+      "GSE95048",
+      "PRJNA375808"
+    ],
+    "last_updated": "2017-10",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "An early canine meningioma expression set with normal meninges; useful as an independent validation set for GSE250310."
+    },
+    "caveats": "No explicit reuse license (NCBI). FFPE degradation; small n; 2 excluded samples were reclassified as melanoma.",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE95048",
     "commercial_use": null
   },
   {
@@ -1834,6 +2381,58 @@
     "commercial_use": null
   },
   {
+    "id": "mct-expression-arrays",
+    "name": "GSE122590 / GSE50433 — Canine Cutaneous MCT Expression Arrays (metastasis; prognosis)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Two MCT microarray cohorts. GSE122590 (PRJNA505684, 34 arrays, Affymetrix CEL) compares primary cutaneous MCTs that later metastasised with those that did not. GSE50433 (PRJNA217482, 51 biopsies, Agilent Canine V2 4x44k) profiles MCT for classification and prognosis by differentiation grade.\n",
+    "scale": "34 + 51 arrays",
+    "modalities": [
+      "expression-array"
+    ],
+    "formats": [
+      "cel",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE122590",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE50433",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see papers — PLoS ONE 2018; PLoS ONE 2014)",
+      "key_refs": [
+        "10.1371/journal.pone.0208026",
+        "10.1371/journal.pone.0095481"
+      ]
+    },
+    "accessions": [
+      "GSE122590",
+      "PRJNA505684",
+      "GSE50433",
+      "PRJNA217482"
+    ],
+    "last_updated": "2018-12",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Outcome-annotated MCT expression (metastasis, grade) that complements the domain-14 MCT exome and LCM RNA-seq entries."
+    },
+    "caveats": "Array platforms differ from each other and from RNA-seq; batch-correct before combining. No explicit reuse license.",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE50433",
+    "commercial_use": null
+  },
+  {
     "id": "mct-lcm-rnaseq-2026",
     "name": "Canine MCT Laser-Capture-Microdissection RNA-seq (Sci Rep 2026)",
     "category": "cancer-genomics",
@@ -2238,6 +2837,60 @@
     "commercial_use": null
   },
   {
+    "id": "prjdb10211-chs-wes-rnaseq",
+    "name": "PRJDB10211 / PRJDB11462 — Canine Histiocytic Sarcoma WES + RNA-seq (Sci Rep 2023)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Whole-exome sequencing (SureSelect Canine All Exon V2) of 5 canine HS tumour/normal pairs (PRJDB10211) and RNA-seq of 4 HS samples (PRJDB11462). The study shows ERK and Akt pathway activation. The paper cites DRA runs DRA010452, DRA013421 and DRA013450.\n",
+    "scale": "WES: 5 tumour + 5 normal (10 runs); RNA-seq: 4 runs",
+    "size_bytes": 138110990544,
+    "modalities": [
+      "whole-exome-seq",
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://ddbj.nig.ac.jp/search/entry/bioproject/PRJDB10211",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJDB10211",
+    "license": "unknown",
+    "license_url": "https://www.ddbj.nig.ac.jp/policies-e.html",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Laboratory of Veterinary Internal Medicine, The University of Tokyo",
+      "key_refs": [
+        "10.1038/s41598-023-35813-1"
+      ]
+    },
+    "accessions": [
+      "PRJDB10211",
+      "PRJDB11462",
+      "DRA010452",
+      "DRA013421",
+      "DRA013450"
+    ],
+    "last_updated": "2022-04",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Matched tumour/normal exomes allow somatic calling in HS. The domain-14 HS entry (GSE288068) is RNA-only."
+    },
+    "caveats": "The paper's RNA comparator was CD14+ monocytes from one healthy beagle, whose data are not in PRJDB11462 as far as we verified. Run-to-DRA mapping was inferred from run counts. Small n. No explicit reuse license.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJDB10211",
+    "commercial_use": null
+  },
+  {
     "id": "prjeb12081-oral-melanoma",
     "name": "PRJEB12081 — Canine Oral Melanoma (ENA; Hendricks)",
     "category": "cancer-genomics",
@@ -2283,6 +2936,100 @@
       3
     ],
     "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJEB12081",
+    "commercial_use": null
+  },
+  {
+    "id": "prjeb24200-mct-sanger-arendt",
+    "name": "PRJEB24200 — Canine Mast Cell Tumours Sequencing (Sanger, Arendt; 2019)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Fifty canine mast cell tumour libraries (ENA strategy WXS) deposited by the Wellcome Sanger Institute. The project text frames the work around tumour behaviour and detecting metastatic versus reactive mast cells.\n",
+    "scale": "50 runs / 50 samples",
+    "size_bytes": 166436360760,
+    "modalities": [
+      "whole-exome-seq"
+    ],
+    "formats": [
+      "fastq",
+      "cram"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB24200",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB24200",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/ena/browser/about/policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Wellcome Sanger Institute (with M. Arendt)",
+      "key_refs": []
+    },
+    "accessions": [
+      "PRJEB24200"
+    ],
+    "last_updated": "2019-07",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "A further open MCT exome/capture cohort, roughly the size of PRJNA518003 (domain-14)."
+    },
+    "caveats": "No linked publication found. Tumour/normal pairing and capture design are unverified. May overlap PRJEB56233 (FUR MCT). No explicit reuse license.",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJEB24200",
+    "commercial_use": null
+  },
+  {
+    "id": "prjeb36828-chs-rnaseq-rennes",
+    "name": "PRJEB36828 — Canine Histiocytic Sarcoma RNA-seq vs Healthy Tissue (Univ Rennes/CNRS 2020)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "RNA-seq of canine histiocytic sarcoma compared with healthy tissue to identify dysregulated pathways, deposited by the CNRS / University of Rennes canine genetics group (7 runs).\n",
+    "scale": "7 samples",
+    "size_bytes": 14173951720,
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB36828",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB36828",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/ena/browser/about/policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Université de Rennes / CNRS (BioProject submitter)",
+      "key_refs": []
+    },
+    "accessions": [
+      "PRJEB36828"
+    ],
+    "last_updated": "2020-02",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "An independent European HS transcriptome for cross-cohort validation against the US (GSE288068) and Japanese (PRJDB11462) sets."
+    },
+    "caveats": "No linked publication identified; this group's HS papers (e.g. PTPN11, Int J Cancer 2020) are genetic, not this RNA-seq. No explicit reuse license (INSDC).",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJEB36828",
     "commercial_use": null
   },
   {
@@ -2384,6 +3131,105 @@
     "commercial_use": null
   },
   {
+    "id": "prjna1294405-cpac-genomic-landscape",
+    "name": "PRJNA1294405 — Canine Pulmonary Adenocarcinoma WGS/WES/RNA-seq (Vet Comp Oncol 2026) — NOT YET RELEASED",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "A genomic landscape study of 46 dogs with pulmonary adenocarcinoma (cPAC), a model for never-smoker human NSCLC: WGS on 8 tumour/normal pairs, WES on 5, and tumour-only RNA-seq on 36. It reports candidate targetable gene fusions and HER2 V659E. The paper states the data are in SRA under BioProject PRJNA1294405.\n",
+    "scale": "46 dogs; WGS n=8, WES n=5, RNA-seq n=36 (per paper)",
+    "modalities": [
+      "whole-genome-seq",
+      "whole-exome-seq",
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1294405",
+    "download_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1294405",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "request",
+    "provenance": {
+      "maintainer": "(see paper — Veterinary and Comparative Oncology 2026)",
+      "key_refs": [
+        "10.1111/vco.70063",
+        "10.1158/1078-0432.CCR-19-1145"
+      ]
+    },
+    "accessions": [
+      "PRJNA1294405"
+    ],
+    "last_updated": "2025-07",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "The only multi-modal canine lung cancer genomics cohort we found. Fusions and HER2 hotspot calls would give canine lung neoantigen candidates once the data are released.\n"
+    },
+    "caveats": "Not available yet: the BioProject is registered (2025-07-21), but on 2026-11-15 NCBI SRA had 0 experiments and ENA had 0 public runs under it, so the paper's availability claim does not yet match the archive. Re-check later or contact the authors. \"access: request\" reflects the current practical state, not a stated policy.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1294405",
+    "commercial_use": null
+  },
+  {
+    "id": "prjna1354447-chs-lowpass-wgs-rennes",
+    "name": "PRJNA1354447 / PRJNA1354253 — Canine Histiocytic Sarcoma Low-pass WGS + Cell Lines (Rennes 2025)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Two companion BioProjects from CNRS / University of Rennes. PRJNA1354447 holds low-pass WGS of blood and tumour tissue from 10 dogs with HS (10 runs). PRJNA1354253 holds deeper WGS of 3 HS cell lines and matched blood from two affected dogs (3 runs, ~226 GB).\n",
+    "scale": "PRJNA1354447: 10 runs; PRJNA1354253: 3 runs",
+    "size_bytes": 239440998326,
+    "modalities": [
+      "whole-genome-seq",
+      "copy-number"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1354447",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJNA1354253",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "CNRS / Université de Rennes",
+      "key_refs": []
+    },
+    "accessions": [
+      "PRJNA1354447",
+      "PRJNA1354253"
+    ],
+    "last_updated": "2025-10",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Adds copy-number and structural genomic data to the HS cluster. Copy-number change is a known hallmark of HS (e.g. CDKN2A loss)."
+    },
+    "caveats": "No publication yet. size_bytes is the sum of ENA FASTQ sizes (13,241,806,713 + 226,199,191,613). The low-pass data suit copy-number analysis, not SNV calling. No explicit reuse license.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJNA1354253",
+    "commercial_use": null
+  },
+  {
     "id": "prjna1399620-hsa-organoid",
     "name": "PRJNA1399620 — Canine Hemangiosarcoma Organoid RNA-seq",
     "category": "cancer-genomics",
@@ -2427,6 +3273,53 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1399620",
+    "commercial_use": null
+  },
+  {
+    "id": "prjna1438806-cpac-smallrna-rnaseq",
+    "name": "PRJNA1438806 — Canine Pulmonary Adenocarcinoma Small RNA-seq + RNA-seq (Kagoshima 2026)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Small RNA-seq (miRNA) and whole-transcriptome RNA-seq (mRNA and lncRNA) of lung tissue from 5 dogs with pulmonary adenocarcinoma and 6 healthy control dogs, deposited as a comparative resource.\n",
+    "scale": "11 dogs; 22 runs (11 RNA-seq + 11 miRNA-seq)",
+    "size_bytes": 48836896538,
+    "modalities": [
+      "bulk-rna-seq",
+      "small-rna-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1438806",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJNA1438806",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Kagoshima University",
+      "key_refs": []
+    },
+    "accessions": [
+      "PRJNA1438806"
+    ],
+    "last_updated": "2026-04",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "This is the only public canine lung adenocarcinoma expression data we found with healthy-lung controls."
+    },
+    "caveats": "No linked publication found. Small n. No explicit reuse license (INSDC).",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJNA1438806",
     "commercial_use": null
   },
   {
@@ -2523,6 +3416,56 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA376380",
+    "commercial_use": null
+  },
+  {
+    "id": "prjna418842-intestinal-polyposis",
+    "name": "PRJNA418842 — Canine Extreme Intestinal Polyposis WGS + RNA-seq (Oncotarget 2018)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Whole-genome sequencing (17 runs) and RNA-seq (28 runs) of canine intestinal tumours and normal tissue from a case of extreme intestinal polyposis. The study integrated genomic, transcriptomic and microbiome changes. A later canine colorectal adenoma-to-carcinoma transcriptome study (Front Vet Sci 2023) re-analysed this project together with PRJNA396033 (Dog Genomics Resources normal tissue).\n",
+    "scale": "45 runs (17 WGS + 28 RNA-seq)",
+    "size_bytes": 233276848587,
+    "modalities": [
+      "whole-genome-seq",
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA418842",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJNA418842",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — Oncotarget 2018)",
+      "key_refs": [
+        "10.18632/oncotarget.25646",
+        "10.3389/fvets.2023.1192525"
+      ]
+    },
+    "accessions": [
+      "PRJNA418842"
+    ],
+    "last_updated": "2017-12",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "The only open canine intestinal-tumour WGS+RNA set we found; it gives a colorectal comparator to human CRC."
+    },
+    "caveats": "Unusual phenotype (extreme polyposis), so it may not represent sporadic canine CRC. PRJNA396033 is a general dog genomics resource of normal tissues, not a tumour dataset. No explicit reuse license (INSDC).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJNA418842",
     "commercial_use": null
   },
   {
@@ -3013,6 +3956,52 @@
     "commercial_use": null
   },
   {
+    "id": "prjna667767-mct-kit-amplicon",
+    "name": "PRJNA667767 — Australian Canine MCT KIT Mutation Amplicon Survey (Univ. Adelaide 2020)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Ion AmpliSeq sequencing of KIT exons and non-coding regions (upstream, downstream, splice sites, UTRs) in 67 cutaneous and 14 subcutaneous FFPE canine MCTs, linked to clinical and survival data.\n",
+    "scale": "81 tumours (amplicon)",
+    "size_bytes": 113217138,
+    "modalities": [
+      "targeted-panel-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA667767",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJNA667767",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "The University of Adelaide",
+      "key_refs": []
+    },
+    "accessions": [
+      "PRJNA667767"
+    ],
+    "last_updated": "2020-10",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "A KIT variant prevalence reference, including non-coding variants, in an independent geographic cohort."
+    },
+    "caveats": "Single-gene panel. Paper DOI not located via PubMed. No explicit reuse license.",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJNA667767",
+    "commercial_use": null
+  },
+  {
     "id": "prjna677995-hsa-splenic-exome",
     "name": "PRJNA677995 / PRJNA417727 — Canine Splenic HSA Exome (heterogeneity + actionable mutations)",
     "category": "cancer-genomics",
@@ -3453,6 +4442,72 @@
       3
     ],
     "ingest_endpoint": "https://www.cbioportal.org/api",
+    "commercial_use": null
+  },
+  {
+    "id": "sanger-fur-canine-tgs-programme",
+    "name": "Wellcome Sanger \"FUR\" Canine Tumour/Germline Targeted-Sequencing Programme (16 ENA projects)",
+    "category": "cancer-genomics",
+    "species": [
+      "dog"
+    ],
+    "description": "Sixteen ENA projects deposited by the Wellcome Sanger Institute (2023-09 to 2024-05), each titled \"FUR__Canine_<tumour>_TGS\", sequencing tumour/germline pairs of common canine cancers with a targeted capture panel. The stated aim, modelled on MSK-IMPACT, is to define driver genes in companion-animal cancers. Tumour types: pancreatic carcinoma, basal cell carcinoma, mast cell tumour, thyroid carcinoma, osteosarcoma, cholangiocarcinoma, colorectal carcinoma, gastric carcinoma, lymphoma, cutaneous melanoma, splenic haemangiosarcoma, histiocytic sarcoma, hepatocellular carcinoma, mammary gland carcinoma, seminoma and Sertoli cell tumour.\n",
+    "scale": "3,010 runs / 1,851 samples across 16 tumour types (tumour + germline); ~3.80 TB FASTQ",
+    "size_bytes": 3801816628256,
+    "modalities": [
+      "targeted-panel-seq",
+      "tumour-normal-pairs"
+    ],
+    "formats": [
+      "fastq",
+      "cram"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB48341",
+    "download_url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB48341&result=read_run&fields=run_accession,fastq_ftp",
+    "api": "https://www.ebi.ac.uk/ena/portal/api/",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/ena/browser/about/policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Wellcome Sanger Institute",
+      "key_refs": []
+    },
+    "accessions": [
+      "PRJEB56232",
+      "PRJEB56647",
+      "PRJEB56233",
+      "PRJEB52323",
+      "PRJEB52321",
+      "PRJEB58094",
+      "PRJEB56298",
+      "PRJEB55860",
+      "PRJEB55865",
+      "PRJEB55864",
+      "PRJEB55829",
+      "PRJEB48343",
+      "PRJEB48342",
+      "PRJEB48341",
+      "PRJEB48340",
+      "PRJEB48339"
+    ],
+    "last_updated": "2024-05",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "The largest open set of canine tumour/germline pairs we have found, covering several tumour types that have no other public genomics (cholangiocarcinoma, pancreatic, basal cell, seminoma, Sertoli, gastric, hepatocellular). Matched germline allows somatic calling, and therefore canine neoantigen candidate generation, across tumour types.\n"
+    },
+    "agent_access": "Public ENA FASTQ over FTP/HTTPS/Aspera, no auth; ENA portal filereport gives per-run URLs and sizes. Bulk size is ~3.8 TB, so plan egress and storage.\n",
+    "caveats": "We found no canine publication describing these projects. ENA library_strategy is \"WXS\", but the project text describes targeted sequencing (TGS): panel content and gene list are unverified, so do not assume whole-exome coverage. Tumour/normal pairing must be rebuilt from sample metadata. No explicit reuse license (INSDC policy). Some samples may overlap with the earlier Sanger Arendt MCT project (PRJEB24200); de-duplicate by biosample. Sample counts are ENA biosamples (tumour + normal), not dogs.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/portal/api/",
     "commercial_use": null
   },
   {
@@ -4138,6 +5193,107 @@
     "commercial_use": true
   },
   {
+    "id": "canine-feline-lymphoma-histology",
+    "name": "Canine & feline lymphoma H&E nuclei-segmentation datasets",
+    "category": "comparative-oncology",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "description": "Publicly released canine and feline lymphoma histology (H&E) image datasets with manual nuclei segmentation, supporting a modular deep-learning pipeline for histological lymphoma classification across both species.\n",
+    "scale": "canine + feline lymphoma H&E image sets with manual nuclei annotations (counts per repo)",
+    "modalities": [
+      "histopathology",
+      "nuclei-segmentation"
+    ],
+    "formats": [
+      "image",
+      "annotations"
+    ],
+    "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10636139/",
+    "download_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10636139/",
+    "license": "unknown",
+    "license_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10636139/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "University of Applied Sciences Upper Austria group (data via a public Git repository)",
+      "key_refs": [
+        "10.3389/fvets.2023.1223261"
+      ]
+    },
+    "last_updated": "2023",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Paired canine and feline lymphoma histology with cell-level annotation; a two-species comparative resource for hematopoietic-tumor morphology and nuclei modeling.\n"
+    },
+    "agent_access": "Datasets stated to be publicly available through a Git link in the paper; resolve the exact repo URL and clone. No single-archive DOI located.\n",
+    "caveats": "License not stated in the search-visible text — mark unknown and confirm at the repo. Exact image counts/format require reading the repository.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10636139/",
+    "commercial_use": null
+  },
+  {
+    "id": "canine-mammary-carcinoma-wsi",
+    "name": "Canine Mammary Carcinoma (CMC) completely annotated WSI dataset",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "21 H&E whole slide images of canine mammary (breast) carcinoma, completely annotated for mitotic figures by two expert pathologists, plus tumor-region outlines and a defined region of interest of highest mitotic count. Positioned as a canine model for human breast cancer digital pathology. Cell annotations provided in a SQLite3 database.\n",
+    "scale": "21 WSIs; 13,907–13,937 mitotic figures; 36,346 hard negatives",
+    "modalities": [
+      "whole-slide-image",
+      "histopathology",
+      "mitosis-annotations"
+    ],
+    "formats": [
+      "svs",
+      "sqlite"
+    ],
+    "landing_url": "https://doi.org/10.6084/m9.figshare.c.4951281",
+    "download_url": "https://springernature.figshare.com/collections/Dogs_as_Model_for_Human_Breast_Cancer_A_Completely_Annotated_Whole_Slide_Image_Dataset/4951281",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "FAU Erlangen / FU Berlin (Aubreville, Bertram, Donovan, Marzahl, Maier, Klopfleisch)",
+      "key_refs": [
+        "10.1038/s41597-020-00756-z",
+        "10.6084/m9.figshare.c.4951281"
+      ]
+    },
+    "last_updated": "2020",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Explicit dog-as-human-breast-cancer-model WSI resource; comparative digital-pathology substrate linking canine mammary tumors to human breast cancer biology.\n"
+    },
+    "agent_access": "Springer Nature figshare collection; a paper notebook auto-downloads the data from figshare. Direct download, no auth.\n",
+    "caveats": "Mitotic-figure counts differ slightly between the paper and figshare (versioning). Confirm the CC BY 4.0 license field on the collection. Scanner: Aperio ScanScope CS2 at 0.25 um/px (file format not stated explicitly — expect SVS). Shares authorship with CATCH/MIDOG/MITOS sets.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://springernature.figshare.com/collections/Dogs_as_Model_for_Human_Breast_Cancer_A_Completely_Annotated_Whole_Slide_Image_Dataset/4951281",
+    "commercial_use": true
+  },
+  {
     "id": "canine-mzl-2025-gse343505",
     "name": "Canine marginal zone lymphoma single-cell + spatial atlas (GSE343505)",
     "category": "comparative-oncology",
@@ -4345,6 +5501,159 @@
     "commercial_use": null
   },
   {
+    "id": "canine-tumor-cytology-cnn-zenodo",
+    "name": "7 Common Canine Tumours Cytology Dataset + Background Tiles",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "Tile-based canine cytology image dataset for CNN training to recognize seven common canine tumor types in veterinary cytology samples, plus background tiles. Inferred tumor classes from archive names: carcinoma, histiocytoma, lymphoma, melanoma, MCT (mast cell tumor), PCT (plasma cell tumor), STS (soft tissue sarcoma); includes MATLAB training code.\n",
+    "scale": "~1.7 GB of image tiles across 7 tumor classes + background; count not stated",
+    "modalities": [
+      "cytology",
+      "microscopy",
+      "image-tiles"
+    ],
+    "formats": [
+      "zip",
+      "txt"
+    ],
+    "landing_url": "https://zenodo.org/records/19493409",
+    "download_url": "https://doi.org/10.5281/zenodo.19493409",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Dataset authors (deposited on Zenodo)",
+      "key_refs": [
+        "10.5281/zenodo.19493409"
+      ]
+    },
+    "last_updated": "2025",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Broad-coverage (7-class) canine cytology tile set for classification; useful comparative substrate for tumor-type recognition and pretraining in companion-animal pathology.\n"
+    },
+    "agent_access": "Zenodo record (DOI 10.5281/zenodo.19493409), CC BY 4.0; direct download of ZIP archives (per-class: BG 236.5 MB, Carcinoma 176.2 MB, Histiocytoma 187.7 MB, Lymphoma 187.0 MB, MCT 259.6 MB, Melanoma 272.4 MB, PCT 199.9 MB, STS 201.5 MB), no auth.\n",
+    "caveats": "Tiles are pre-processed for CNN training (not raw WSIs/FNAs); total image count and per-slide provenance not stated on the record. Class abbreviations (MCT/PCT/STS) inferred from file names.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://doi.org/10.5281/zenodo.19493409",
+    "commercial_use": true
+  },
+  {
+    "id": "canine-vhs-radiographs-mendeley",
+    "name": "Canine thoracic radiographs for VHS determination (Mendeley Data)",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "Open dataset of canine latero-lateral thoracic radiographs curated as an educational/research resource for vertebral heart score (VHS) determination, from a veterinary teaching hospital. Anonymized images with associated VHS learning materials. The main openly published canine thoracic radiograph image set with a formal data descriptor.\n",
+    "scale": "~152–156 anonymized radiographs (PNG)",
+    "modalities": [
+      "radiography",
+      "thoracic-imaging"
+    ],
+    "formats": [
+      "png"
+    ],
+    "landing_url": "https://data.mendeley.com/datasets/ktx4cj55pn/1",
+    "download_url": "https://doi.org/10.17632/ktx4cj55pn.1",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Flores Duenas et al., Small Animal Veterinary Teaching Hospital, Autonomous University of Baja California (Mendeley Data)",
+      "key_refs": [
+        "10.1016/j.dib.2021.107040",
+        "10.17632/ktx4cj55pn.1"
+      ]
+    },
+    "last_updated": "2021",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "A rare openly licensed canine radiology dataset; seeds comparative veterinary imaging capability (cardiac/thoracic) adjacent to oncology imaging workflows.\n"
+    },
+    "agent_access": "Mendeley Data record (DOI 10.17632/ktx4cj55pn.1), CC BY 4.0; direct download of PNG images, no auth.\n",
+    "caveats": "Small (~152 images) and cardiology/VHS-focused, not oncology-specific. Image counts differ between the Data-in-Brief article (153) and the Mendeley record (152/156). (Note: the separate \"DogHeart\" cardiomegaly set exists but its repository/license were not verified and it is not catalogued here.)\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://doi.org/10.17632/ktx4cj55pn.1",
+    "commercial_use": true
+  },
+  {
+    "id": "catch-histology",
+    "name": "CAnine CuTaneous Cancer Histology (CATCH) dataset",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "Pan-tumor canine cutaneous histology WSI dataset: 350 H&E whole slide images spanning seven cutaneous tumor subtypes (e.g., mast cell tumor, melanoma, histiocytoma, squamous cell carcinoma, plasmacytoma, peripheral nerve sheath tumor, trichoblastoma) with 12,424 polygon annotations across 13 histologic classes. Train/val/test split of 245/35/70 slides. Mirrored to the NCI Imaging Data Commons as DICOM.\n",
+    "scale": "350 WSIs; 12,424 polygon annotations; 13 classes; 522.1 GB",
+    "modalities": [
+      "whole-slide-image",
+      "histopathology",
+      "polygon-annotations"
+    ],
+    "formats": [
+      "svs",
+      "json",
+      "sqlite",
+      "dicom"
+    ],
+    "landing_url": "https://www.cancerimagingarchive.net/collection/catch/",
+    "download_url": "https://doi.org/10.7937/TCIA.2M93-FX66",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Flinders/FAU group (Wilm, Aubreville, Bertram et al.); hosted by The Cancer Imaging Archive (TCIA) and NCI Imaging Data Commons",
+      "key_refs": [
+        "10.1038/s41597-022-01692-w",
+        "10.7937/TCIA.2M93-FX66",
+        "10.5281/zenodo.18526942"
+      ]
+    },
+    "last_updated": "2022",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Large annotated canine tumor digital-pathology resource spanning multiple skin-cancer subtypes; a substrate for comparative tumor-microenvironment and morphology models relevant to immuno-oncology.\n"
+    },
+    "agent_access": "Open, no registration. Primary SVS images (522 GB) download via IBM Aspera Faspex (browser plugin required); annotations as JSON/SQLite. IDC DICOM mirror fetchable with the idc-index Python package (\"idc download catch\"). A Zenodo copy of the original data also exists (10.5281/zenodo.18526942).\n",
+    "caveats": "Very large (522 GB) — plan storage/bandwidth. Aspera plugin complicates headless automation; prefer the IDC idc-index route for programmatic access. CC BY 4.0 requires attribution + TCIA data citation.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://doi.org/10.7937/TCIA.2M93-FX66",
+    "commercial_use": true
+  },
+  {
     "id": "cotc-copprogram",
     "name": "NCI Comparative Oncology Program (COP) / COTC Trials",
     "category": "comparative-oncology",
@@ -4495,6 +5804,163 @@
       5
     ],
     "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/SAMEA2358413",
+    "commercial_use": null
+  },
+  {
+    "id": "dog-aging-project",
+    "name": "Dog Aging Project (DAP) Curated Open Data",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "Large prospective longitudinal cohort of US companion dogs (the \"Pack\") with annual owner surveys (Health and Life Experience Survey), electronic veterinary medical records, environmental data, and a multi-omic \"precision\" sub-cohort. Disease-outcome fields include cancer diagnoses, making it a population-scale resource for canine cancer epidemiology and healthy-aging baselines. Annual Curated Data releases are shared with outside researchers at a ~one-year lag.\n",
+    "scale": "~50,188 dogs in the 2024 Curated Data Open Access Release v1.1; tens of thousands enrolled",
+    "modalities": [
+      "survey-epidemiology",
+      "electronic-health-records",
+      "environmental",
+      "multi-omic"
+    ],
+    "formats": [
+      "tabular",
+      "codebooks",
+      "terra-workspace"
+    ],
+    "landing_url": "https://dogagingproject.org/open_data_access/",
+    "download_url": "https://data.dogagingproject.org/",
+    "license": "unknown",
+    "license_url": "https://dogagingproject.org/open_data_access/",
+    "access": "controlled-access",
+    "provenance": {
+      "maintainer": "Dog Aging Project consortium (University of Washington, Texas A&M; data curated/hosted on Terra, Broad Institute); NIH/NIA U19 funded",
+      "key_refs": [
+        "10.1038/s41586-022-05446-x",
+        "10.1007/s11357-026-02580-6",
+        "10.1371/journal.pone.0295840"
+      ]
+    },
+    "last_updated": "2024 (Curated Data Open Access Release v1.1; annual March releases)",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Population-scale canine health and cancer-incidence data to anchor comparative-oncology epidemiology and to define healthy companion-dog baselines against which tumor cohorts are read.\n"
+    },
+    "agent_access": "Not directly fetchable. Requires an online Application for Data Access plus a signed DAP Data Use Agreement; approved users get Terra credentials and work in the Terra workspace. Codebooks are public (Terra workspace and the DAP public GitHub). Commercial use is negotiated separately.\n",
+    "caveats": "Access is gated by a DUA (nonprofit/research use); no SPDX license stated — flag before any redistribution or ML-training use. One-year access lag behind internal releases. Cancer outcomes are owner/clinic-reported, not centrally pathology-verified.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://data.dogagingproject.org/",
+    "commercial_use": null
+  },
+  {
+    "id": "grls-data-commons",
+    "name": "Golden Retriever Lifetime Study (GRLS) — Bette M. Morris Data Commons",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "Prospective lifetime cohort of ~3,000 US Golden Retrievers followed since 2012 with annual owner and veterinary questionnaires, physical exams, clinicopathology, and a biorepository (blood, serum, DNA, urine, feces, hair, toenails). Cancer is a primary study endpoint (Goldens have high lifetime cancer risk). Eleven subject areas: activity, behavior, dental, disease diagnoses, diet, environment, grooming, geography, medications, physical exams, reproduction.\n",
+    "scale": "~3,000 dogs, 10+ years of annual follow-up",
+    "modalities": [
+      "survey-epidemiology",
+      "clinical-exam",
+      "clinicopathology",
+      "biorepository"
+    ],
+    "formats": [
+      "tabular",
+      "data-commons-portal"
+    ],
+    "landing_url": "https://www.morrisanimalfoundation.org/data-commons",
+    "download_url": "https://datacommons.morrisanimalfoundation.org/",
+    "license": "unknown",
+    "license_url": "https://www.morrisanimalfoundation.org/data-commons-faqs",
+    "access": "registration",
+    "provenance": {
+      "maintainer": "Morris Animal Foundation",
+      "key_refs": [
+        "10.1371/journal.pone.0269425"
+      ]
+    },
+    "last_updated": "2025 (ongoing; 2025 outcomes report)",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Deep single-breed longitudinal phenotyping with a matched biorepository; a controlled model for cancer-incidence and risk-factor analysis and for linking phenotype to future biosample assays.\n"
+    },
+    "agent_access": "Not agent-fetchable. Data Commons access requires credentialed academic/nonprofit/government affiliation, account creation, and agreement to a data use agreement; samples require a separate call-for-proposals. Commercial requests are case-by-case.\n",
+    "caveats": "Single-breed (Golden Retriever) — limits generalizability. DUA-gated; no SPDX license published. Samples are not downloadable (physical biorepository, proposal-based).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://datacommons.morrisanimalfoundation.org/",
+    "commercial_use": null
+  },
+  {
+    "id": "gse250310-meningioma-mengc",
+    "name": "GSE250310 — Canine Meningioma Molecular Classes / Human MenG C Counterpart (Acta Neuropathol 2024)",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "RNA-seq of 62 canine meningiomas. The tumours separate into molecular classes, and an aggressive class (chromosomal instability, cell-cycle activation, high MKI67) mirrors the aggressive human MenG C group. BioProject PRJNA1053343.\n",
+    "scale": "62 tumours, 62 runs",
+    "size_bytes": 24353515111,
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "txt"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE250310",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE250310",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — Acta Neuropathologica 2024)",
+      "key_refs": [
+        "10.1007/s00401-024-02692-3"
+      ]
+    },
+    "accessions": [
+      "GSE250310",
+      "PRJNA1053343"
+    ],
+    "last_updated": "2024-02",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Largest open canine meningioma cohort, with an explicit mapping to a human molecular class. It supports cross-species validity arguments for brain tumours beyond glioma.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI). The same group registered DNA-methylation BioProjects (PRJNA1046409, PRJNA1045298) that we did not verify; check them separately.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE250310",
     "commercial_use": null
   },
   {
@@ -4963,6 +6429,210 @@
     "commercial_use": true
   },
   {
+    "id": "midog-plus-plus",
+    "name": "MIDOG++ multi-domain mitotic figure dataset",
+    "category": "comparative-oncology",
+    "species": [
+      "dog",
+      "human"
+    ],
+    "description": "Comprehensive multi-domain mitotic-figure detection dataset spanning seven tumor types from human and canine cases (breast carcinoma, lung carcinoma, lymphosarcoma, neuroendocrine tumor, cutaneous mast cell tumor, cutaneous melanoma, (sub)cutaneous soft tissue sarcoma), across multiple scanners. Underpins the MIDOG challenge series on domain-robust mitosis detection.\n",
+    "scale": "11,937 mitotic figures (vs 14,351 imposter cells) across 503 tumor specimens, 7 tumor types",
+    "modalities": [
+      "region-of-interest-images",
+      "histopathology",
+      "mitosis-annotations"
+    ],
+    "formats": [
+      "image",
+      "annotations"
+    ],
+    "landing_url": "https://research.tue.nl/en/datasets/midog-a-comprehensive-multi-domain-dataset-for-mitotic-figure-det/",
+    "download_url": "https://doi.org/10.6084/m9.figshare.c.6615571",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "DeepMicroscopy / FAU Erlangen & collaborators (Aubreville, Bertram et al.)",
+      "key_refs": [
+        "10.1038/s41597-023-02327-4",
+        "10.6084/m9.figshare.c.6615571"
+      ]
+    },
+    "last_updated": "2023",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Mixed human+canine annotated mitosis benchmark; directly supports cross-species digital-pathology model development where canine tumors serve as comparative models of human cancers.\n"
+    },
+    "agent_access": "figshare collection (DOI 10.6084/m9.figshare.c.6615571), CC BY 4.0, direct download no auth.\n",
+    "caveats": "ROI images rather than full WSIs; file format not stated on the landing page — confirm on figshare. Challenge test sets may carry separate terms. Overlaps in provenance with CATCH/MITOS_WSI_CCMCT (shared authors) — dedup on specimen identity if combining.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://doi.org/10.6084/m9.figshare.c.6615571",
+    "commercial_use": true
+  },
+  {
+    "id": "mitos-wsi-ccmct",
+    "name": "MITOS_WSI_CCMCT — canine cutaneous mast cell tumor mitotic-figure WSI dataset",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "Large-scale, completely annotated whole-slide dataset of canine cutaneous mast cell tumor for mitotic-figure assessment: 32 H&E WSIs selected across low- and high-grade cases, with 44,880 mitotic-figure annotations plus secondary annotations for neoplastic mast cells, granulocytes, and mitotic look-alikes. Cell annotations provided as a SQLite database.\n",
+    "scale": "32 WSIs; 44,880 mitotic figure annotations",
+    "modalities": [
+      "whole-slide-image",
+      "histopathology",
+      "mitosis-annotations"
+    ],
+    "formats": [
+      "svs",
+      "sqlite"
+    ],
+    "landing_url": "https://github.com/DeepMicroscopy/MITOS_WSI_CCMCT",
+    "download_url": "https://springernature.figshare.com/collections/A_large-scale_dataset_for_mitotic_figure_assessment_on_whole_slide_images_of_canine_cutaneous_mast_cell_tumor/4552445",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "DeepMicroscopy group (Bertram, Aubreville et al.), FAU Erlangen; data on Springer Nature figshare",
+      "key_refs": [
+        "10.1038/s41597-019-0290-4"
+      ]
+    },
+    "last_updated": "2019",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Deeply annotated single-tumor-type canine WSI set for mitosis and cell-level modeling; a building block for canine tumor-grading and TME-adjacent digital-pathology work.\n"
+    },
+    "agent_access": "Code/notebooks on GitHub (DeepMicroscopy); individual WSIs (~1 GB each) and annotation DB on Springer Nature figshare, CC BY 4.0, direct download. No single-archive bulk link — fetch per-slide.\n",
+    "caveats": "Large per-slide SVS files. Confirm the CC BY 4.0 license on each figshare item. Shares authorship with MIDOG++/CMC — potential specimen overlap; dedup before pooling.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://springernature.figshare.com/collections/A_large-scale_dataset_for_mitotic_figure_assessment_on_whole_slide_images_of_canine_cutaneous_mast_cell_tumor/4552445",
+    "commercial_use": true
+  },
+  {
+    "id": "pethis-histopathology",
+    "name": "PetHIS — pet histopathological image database",
+    "category": "comparative-oncology",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "description": "Histopathological image database for training CNNs to classify cancer in pets, labeled benign vs malignant. Built from 82 original images expanded by augmentation (flips, random crop) to 592 labeled images; sourced from a Brazilian veterinary pathology laboratory.\n",
+    "scale": "82 original images augmented to 592 labeled (benign/malignant) images; 942 MB",
+    "modalities": [
+      "histopathology",
+      "microscopy",
+      "binary-classification"
+    ],
+    "formats": [
+      "zip",
+      "image"
+    ],
+    "landing_url": "https://zenodo.org/records/8322517",
+    "download_url": "https://doi.org/10.5281/zenodo.8322517",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Laboratory of Veterinary Medicine, State University of Maranhao / Federal Institute of Maranhao (Brazil)",
+      "key_refs": [
+        "10.5281/zenodo.8322517"
+      ]
+    },
+    "last_updated": "2023",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Small, clean benign/malignant companion-animal histopathology set; a lightweight comparative classification resource and augmentation reference.\n"
+    },
+    "agent_access": "Single ~942 MB ZIP (\"Base de dados PetsHI.zip\") on Zenodo, CC BY 4.0, direct download no auth.\n",
+    "caveats": "Very small base (82 originals); the 592 count is augmentation-inflated — do not treat augmented copies as independent samples. Binary labels only (no tumor subtype).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://doi.org/10.5281/zenodo.8322517",
+    "commercial_use": true
+  },
+  {
+    "id": "prjeb10386-gr-mct-germline",
+    "name": "PRJEB10386 — Golden Retriever Mast Cell Tumour Germline Risk Resequencing (Uppsala; PLoS Genet 2015)",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "Pooled targeted resequencing (ENA strategy POOLCLONE; 17 pools, 62 runs) of GWAS-associated regions in MCT-affected and control Golden Retrievers, used to fine-map germline risk loci for mast cell tumours.\n",
+    "scale": "17 pooled samples, 62 runs",
+    "size_bytes": 188907245709,
+    "modalities": [
+      "targeted-resequencing",
+      "germline"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB10386",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJEB10386",
+    "license": "unknown",
+    "license_url": "https://www.ebi.ac.uk/ena/browser/about/policies",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Uppsala University",
+      "key_refs": [
+        "10.1371/journal.pgen.1005647"
+      ]
+    },
+    "accessions": [
+      "PRJEB10386"
+    ],
+    "last_updated": "2015-10",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Germline risk architecture for a common canine cancer; the background needed to interpret breed effects in MCT somatic data."
+    },
+    "caveats": "Pooled DNA, so the data give no individual genotypes. Matched to the 2015 GWAS paper by submitter, date and design; the paper's accession statement was not read. No explicit reuse license.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJEB10386",
+    "commercial_use": null
+  },
+  {
     "id": "prjeb19508-ctvt-regression-rnaseq",
     "name": "PRJEB19508 — CTVT Regression RNA-seq (Frampton 2018)",
     "category": "comparative-oncology",
@@ -5060,6 +6730,265 @@
       5
     ],
     "ingest_endpoint": "https://trace.ncbi.nlm.nih.gov/Traces/?study=SRP046723",
+    "commercial_use": null
+  },
+  {
+    "id": "swiss-canine-cancer-registry",
+    "name": "Swiss Canine Cancer Registry (SCCR) data 2008–2020",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "Registry extract of canine tumor cases in Switzerland (2008–2020) diagnosed by histology (biopsy and necropsy) and cytology at four veterinary pathology laboratories, coded with Vet-ICD-O-canine-1. Supports incidence-rate estimation per 100,000 dog-years overall and by breed and tumor morphology.\n",
+    "scale": "54,986 tumors; 7,135,182 dog-years at risk",
+    "modalities": [
+      "cancer-registry",
+      "epidemiology",
+      "histopathology-diagnoses"
+    ],
+    "formats": [
+      "xlsx"
+    ],
+    "landing_url": "https://doi.org/10.5281/zenodo.8282940",
+    "download_url": "https://zenodo.org/records/8282940",
+    "license": "unknown",
+    "license_url": "https://zenodo.org/records/8282940",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Institute of Veterinary Pathology, Vetsuisse Faculty, University of Zurich (Guscetti, Dhein et al.)",
+      "key_refs": [
+        "10.1371/journal.pone.0302231",
+        "10.5281/zenodo.8282940"
+      ]
+    },
+    "last_updated": "2023 (Zenodo deposit); covers 2008–2020",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Breed- and morphology-resolved canine cancer incidence from a defined pathology-confirmed registry; a reference for tumor-type prevalence weighting and breed-risk comparison.\n"
+    },
+    "agent_access": "Single 15.0 MB Excel workbook (\"Dataset SCCR, 2008-2020.xlsx\") on Zenodo; direct download, no auth.\n",
+    "caveats": "Zenodo shows \"Open\" access but no explicit SPDX license is displayed — mark license unknown and confirm before redistribution. Some sensitive fields withheld under local law. Diagnoses coded in Vet-ICD-O-canine-1 (needs mapping to other oncology ontologies).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://zenodo.org/records/8282940",
+    "commercial_use": null
+  },
+  {
+    "id": "vet-cytology-segmentation",
+    "name": "Veterinary Cytological Images segmentation dataset (CYFROVET)",
+    "category": "comparative-oncology",
+    "species": [
+      "dog"
+    ],
+    "description": "Annotated veterinary cytology image dataset for neoplastic-tumor diagnosis: ~1,206 images across four categories — three round-cell tumor types (lymphoma, histiocytoma, mastocytoma) plus inflammation — with per-cell annotations (tumor cells, neutrophils, damaged cells) supporting segmentation and detection. (A detection variant lists 1,219 images / 28,149 objects.)\n",
+    "scale": "~1,206 images, 4 categories (detection variant: 1,219 images, 28,149 objects)",
+    "modalities": [
+      "cytology",
+      "microscopy",
+      "cell-segmentation",
+      "detection"
+    ],
+    "formats": [
+      "image",
+      "annotations"
+    ],
+    "landing_url": "https://git.plgrid.pl/projects/CYFROVET/repos/dataset-segmentation",
+    "download_url": "https://git.plgrid.pl/projects/CYFROVET/repos/dataset-segmentation",
+    "license": "unknown",
+    "license_url": "https://arxiv.org/abs/2305.04332",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Grzeszczyk et al. (Warsaw University of Technology / Sano Centre); hosted on PLGrid GitLab",
+      "key_refs": [
+        "10.48550/arXiv.2305.04332",
+        "10.3390/app11167181"
+      ]
+    },
+    "last_updated": "2023",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Canine cytology (not histology) image resource for round-cell tumors; complements WSI datasets with fine-needle-aspirate morphology relevant to practical comparative diagnostics.\n"
+    },
+    "agent_access": "Hosted on a PLGrid GitLab instance (git.plgrid.pl); repository access/clone method and rate limits unverified — may require navigating the GitLab UI. No Zenodo mirror found.\n",
+    "caveats": "No explicit license located — mark license unknown and confirm before reuse/ML training. Image count differs between segmentation (1,206) and detection (1,219) variants (versioning).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "https://git.plgrid.pl/projects/CYFROVET/repos/dataset-segmentation",
+    "commercial_use": null
+  },
+  {
+    "id": "vmdb",
+    "name": "Veterinary Medical Database (VMDB)",
+    "category": "comparative-oncology",
+    "species": [
+      "dog",
+      "cat",
+      "other"
+    ],
+    "description": "National database of standardized veterinary clinical records (demographics, dates, diagnoses, procedures) contributed by North American university teaching hospitals since 1964; diagnoses coded in SNOMED. Widely used for retrospective cancer-demographics and disease-frequency studies across species, though skewed toward referral-hospital caseloads.\n",
+    "scale": ">7 million records from 26 US/Canadian university teaching hospitals",
+    "modalities": [
+      "clinical-records",
+      "diagnoses",
+      "procedures",
+      "snomed-coded"
+    ],
+    "formats": [
+      "tabular",
+      "snomed-coded-records"
+    ],
+    "landing_url": "http://www.vmdb.org/",
+    "download_url": "http://www.vmdb.org/",
+    "license": "unknown",
+    "license_url": "http://www.vmdb.org/",
+    "access": "request",
+    "provenance": {
+      "maintainer": "Veterinary Medical Database, housed at Purdue University since 1988",
+      "key_refs": [
+        "10.1016/j.prevetmed.2010.01.007",
+        "10.4142/jvs.2020.21.e70"
+      ]
+    },
+    "last_updated": "ongoing",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Long-running, SNOMED-coded multi-species diagnosis corpus; a historical denominator and tumor-demographics source for comparative oncology across dogs and cats.\n"
+    },
+    "agent_access": "Not agent-fetchable. Data are provided on request for a fee (fee waived for researchers at participating institutions). No public bulk download or API.\n",
+    "caveats": "Strong referral bias (teaching-hospital caseloads over-represent rare/severe disease). Fee/request gated; no public license. Confirm the site is live before relying on access terms.\n",
+    "agent_automatable": false,
+    "open_access": false,
+    "feeds_stages": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ingest_endpoint": "http://www.vmdb.org/",
+    "commercial_use": null
+  },
+  {
+    "id": "absolut",
+    "name": "Absolut! in silico antibody-antigen binding database",
+    "category": "functional-assay",
+    "species": [
+      "human",
+      "mouse"
+    ],
+    "description": "A large synthetic (in silico) antibody-antigen binding dataset: CDR-H3 sequences docked against lattice representations of real PDB-derived antigens with an exhaustive, deterministic binding energy for every pose. Designed to give unconstrained, fully-labelled ground truth for benchmarking antibody specificity / binding-prediction ML without experimental noise.\n",
+    "scale": "~159 lattice antigens; ~6.9M murine CDR-H3 sequences; on the order of ~1 billion antibody-antigen binding pairs",
+    "modalities": [
+      "synthetic-binding",
+      "antibody-antigen",
+      "cdrh3",
+      "binding-energy"
+    ],
+    "formats": [
+      "txt",
+      "csv"
+    ],
+    "landing_url": "https://github.com/csi-greifflab/Absolut",
+    "download_url": "https://ns9999k.webs.sigma2.no/10.11582_2021.00063/projects/NS9603K/pprobert/AbsolutOnline/",
+    "license": "unknown",
+    "license_url": "unknown",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Greiff lab (University of Oslo) and collaborators; hosted on Norstore/Sigma2",
+      "key_refs": [
+        "10.1038/s43588-022-00372-4"
+      ]
+    },
+    "last_updated": "2022",
+    "accessions": [
+      "10.11582/2021.00063"
+    ],
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "Fully-labelled, noise-free antibody-antigen binding ground truth at scale — a controlled benchmark for the recognition models and generative-design scoring that underpin the binder program, complementing noisy real assays.\n"
+    },
+    "agent_access": "Pre-generated files downloadable over HTTPS from the Sigma2/Norstore mirror (no auth); the Absolut! C++ code (csi-greifflab/Absolut) can regenerate or extend data but generation can take days. Large; pull selectively.\n",
+    "caveats": "Explicit reuse license not clearly stated on the mirror (license: unknown) — confirm via the Norstore DOI before redistribution; attribute Robert et al. 2022. SYNTHETIC/lattice data — a proxy for real binding, useful for method development but not a substitute for experimental affinities.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://ns9999k.webs.sigma2.no/10.11582_2021.00063/projects/NS9603K/pprobert/AbsolutOnline/",
+    "commercial_use": null
+  },
+  {
+    "id": "alphaseq-sarscov2",
+    "name": "AlphaSeq antibody-antigen binding dataset (SARS-CoV-2 peptide)",
+    "category": "functional-assay",
+    "species": [
+      "other"
+    ],
+    "description": "A large quantitative antibody-antigen binding dataset: ~105,000 scFv antibody variants assayed by the AlphaSeq yeast mating-based platform against a SARS-CoV-2 spike HR2 peptide, giving sequence-resolved, replicate, predicted affinity values. Built explicitly as a public ML benchmark pairing antibody sequence, antigen sequence and quantitative binding.\n",
+    "scale": "~104,972 antibodies vs a SARS-CoV-2 peptide; affinities ~37 pM to ~22 mM; 3 phage-display seed sequences with ~30k variants per library set",
+    "modalities": [
+      "binding-affinity",
+      "antibody-antigen",
+      "scfv",
+      "cdr-annotation"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://www.ll.mit.edu/partner-us/available-technologies/alphaseq-dataset-antibody-antigen-interactions-sars-cov-2",
+    "download_url": "https://www.ll.mit.edu/partner-us/available-technologies/alphaseq-dataset-antibody-antigen-interactions-sars-cov-2",
+    "license": "unknown",
+    "license_url": "unknown",
+    "access": "open",
+    "provenance": {
+      "maintainer": "MIT Lincoln Laboratory; data from A-Alpha Bio (Engelhart et al.)",
+      "key_refs": [
+        "10.1038/s41597-022-01779-4"
+      ]
+    },
+    "last_updated": "2022",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "design"
+      ],
+      "why": "One of the largest public datasets with real quantitative antibody binding affinities tied to sequence — a direct supervised benchmark for the recognition/affinity-prediction models behind binder design.\n"
+    },
+    "agent_access": "Two public releases hosted by MIT Lincoln Laboratory (Dataset 1: original AlphaSeq set; Dataset 2: ML-designed antibodies measured experimentally). CSV with sequences, CDRs, replicate IDs and log-scale nM affinity. Download via the MIT LL page.\n",
+    "caveats": "Each release subdirectory carries its own license (overall license: unknown until checked per subdir) — read before reuse; attribute Engelhart et al. 2022. Affinities are platform-predicted (AlphaSeq), replicate-averaged; blanks denote poor/non-binders. Single antigen (SARS-CoV-2 HR2 peptide).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ll.mit.edu/partner-us/available-technologies/alphaseq-dataset-antibody-antigen-interactions-sars-cov-2",
     "commercial_use": null
   },
   {
@@ -5221,6 +7150,58 @@
     "commercial_use": null
   },
   {
+    "id": "flab",
+    "name": "FLAb — Fitness Landscapes for Antibodies (developability benchmark)",
+    "category": "functional-assay",
+    "species": [
+      "human",
+      "mouse"
+    ],
+    "description": "A living benchmark aggregating experimentally measured therapeutic-antibody \"fitness\"/developability properties (e.g. binding affinity, thermostability, expression, aggregation, polyreactivity, viscosity, immunogenicity) across many published studies, with scoring scripts to test whether protein/antibody AI models can predict these properties.\n",
+    "scale": "FLAb2 (2025): developability data for >4M antibodies across 32 studies, 7 properties (FLAb v1 covered 6 properties)",
+    "modalities": [
+      "developability",
+      "binding-affinity",
+      "thermostability",
+      "expression",
+      "polyreactivity",
+      "antibody-sequence"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://github.com/Graylab/FLAb",
+    "download_url": "https://github.com/Graylab/FLAb",
+    "license": "CC BY 4.0",
+    "license_url": "https://registry.opendata.aws/flab/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Gray lab, Johns Hopkins University",
+      "key_refs": [
+        "10.1101/2024.01.13.575504",
+        "10.64898/2025.12.27.696706"
+      ]
+    },
+    "last_updated": "2025",
+    "relevance": {
+      "programs": [
+        "design"
+      ],
+      "why": "Developability is the make-or-break constraint for the binder-design program. FLAb is the central public benchmark of measured antibody properties for training and honestly evaluating developability predictors.\n"
+    },
+    "agent_access": "GitHub repo with datasets under data/ (organised by property) and scoring scripts under models/; also mirrored on the AWS Open Data Registry. No auth; clone/download directly. Per-dataset licenses listed in data/README.md.\n",
+    "caveats": "Aggregate license given as CC BY 4.0 (AWS Open Data Registry), but individual constituent datasets have their own licenses listed in data/README.md — check per dataset before redistribution. Properties/assays are heterogeneous across source studies; FLAb2 itself reports current AI models fail to predict most (~80%) developability datasets, so treat as a hard benchmark.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://github.com/Graylab/FLAb",
+    "commercial_use": true
+  },
+  {
     "id": "gse120272-mct-c2-rnaseq",
     "name": "GSE120272 — Canine C2 Mast Cell Line Transcriptome (G-quadruplex study)",
     "category": "functional-assay",
@@ -5267,6 +7248,161 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120272",
+    "commercial_use": null
+  },
+  {
+    "id": "gse217028-hnscc-nodal-irradiation",
+    "name": "GSE217028 — Canine Head-and-Neck Cancer Lymph Nodes after Elective Nodal Irradiation (Nat Commun 2022)",
+    "category": "functional-assay",
+    "species": [
+      "dog"
+    ],
+    "description": "NanoString gene expression of lymph nodes from canine head-and-neck cancer patients, used to test how elective nodal irradiation affects the immunity generated by combined radiation and immunotherapy. It is the canine translational arm of a mostly murine study. BioProject PRJNA896593.\n",
+    "scale": "12 samples (NanoString RCC)",
+    "modalities": [
+      "nanostring"
+    ],
+    "formats": [
+      "rcc",
+      "xlsx"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE217028",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE217028",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — Nature Communications 2022)",
+      "key_refs": [
+        "10.1038/s41467-022-34676-w"
+      ]
+    },
+    "accessions": [
+      "GSE217028",
+      "PRJNA896593"
+    ],
+    "last_updated": "2022-11",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "A rare canine dataset on how the immune response in draining lymph nodes changes after radiation, in a clinical (not experimental) setting."
+    },
+    "caveats": "Targeted panel, small n, and canine data are a minor part of the paper. No explicit reuse license (NCBI).",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE217028",
+    "commercial_use": null
+  },
+  {
+    "id": "gse261387-histiocytoma-regression",
+    "name": "GSE261387 / GSE261395 — Spontaneously Regressing Canine Cutaneous Histiocytoma, Stage-resolved (PeerJ 2024)",
+    "category": "functional-assay",
+    "species": [
+      "dog"
+    ],
+    "description": "QuantSeq 3' RNA-seq (GSE261387, PRJNA1086830, 21 FFPE samples) and nCounter (GSE261395, PRJNA1086843) of canine cutaneous histiocytoma, a Langerhans-cell tumour of young dogs that regresses spontaneously. Samples span three regression stages. The study traces the anti-tumour immune dynamics behind regression; proteomics is also reported in the paper.\n",
+    "scale": "21 FFPE tumours across 3 stages",
+    "size_bytes": 4429814126,
+    "modalities": [
+      "bulk-rna-seq",
+      "nanostring"
+    ],
+    "formats": [
+      "fastq",
+      "tsv",
+      "rcc"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261387",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261387",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Institute of Veterinary Pathology, Freie Universität Berlin",
+      "key_refs": [
+        "10.7717/peerj.18444"
+      ]
+    },
+    "accessions": [
+      "GSE261387",
+      "PRJNA1086830",
+      "GSE261395",
+      "PRJNA1086843"
+    ],
+    "last_updated": "2024-04",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Together with CTVT (domain-14), one of two canine models of immune-mediated tumour regression. Stage-resolved expression shows which T-cell and antigen-presentation programmes accompany successful rejection.\n"
+    },
+    "caveats": "3' tag FFPE data (gene-level only). nCounter is a targeted panel. No explicit reuse license (NCBI).",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261387",
+    "commercial_use": null
+  },
+  {
+    "id": "gse76126-facc-celline-panel",
+    "name": "GSE76126 / GSE76128 — Flint Animal Cancer Center (FACC) Canine Cancer Cell-Line Panel Expression",
+    "category": "functional-assay",
+    "species": [
+      "dog"
+    ],
+    "description": "Affymetrix Canine 2.0 expression profiles of a 29-line, multi-tumour canine cancer cell-line panel assembled at Colorado State University as a canine counterpart to NCI-60/CCLE/GDSC (GSE76126). GSE76128 (62 arrays) combines the panel with osteosarcoma primary tumours and was used to build cross-species drug-response models.\n",
+    "scale": "29 cell lines (GSE76126); 62 arrays incl. OSA primaries (GSE76128)",
+    "modalities": [
+      "expression-array"
+    ],
+    "formats": [
+      "cel"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE76126",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE76128",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Colorado State University, Flint Animal Cancer Center (Gustafson lab)",
+      "key_refs": [
+        "10.1186/s12859-016-0942-8"
+      ]
+    },
+    "accessions": [
+      "GSE76126",
+      "PRJNA306370",
+      "GSE76128",
+      "PRJNA306368"
+    ],
+    "last_updated": "2015-12",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "An expression baseline for a widely used canine cell-line panel. It complements the domain-7 cell-line WES (PRJNA503864) so lines can be matched on expression and mutations.\n"
+    },
+    "caveats": "Microarray, not RNA-seq. The drug-screen data were not verified as public. No explicit reuse license.",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE76128",
     "commercial_use": null
   },
   {
@@ -5518,6 +7654,100 @@
     "commercial_use": null
   },
   {
+    "id": "prjdb17594-chs-celllines-rnaseq",
+    "name": "PRJDB17594 — RNA-seq of 11 Canine Histiocytic Sarcoma Cell Lines (Vet Comp Oncol 2025)",
+    "category": "functional-assay",
+    "species": [
+      "dog"
+    ],
+    "description": "Poly(A) RNA-seq (NovaSeq, 150 bp PE, ~26.7 M reads per sample) of 11 canine histiocytic sarcoma cell lines. The lines cluster into two molecular subtypes, separated by NF-kB activation and inflammatory chemokines (CCL3/4/5/7, CLEC7A, TLR4), and differ in sensitivity to dasatinib and trametinib. DDBJ Sequence Read Archive, as confirmed in the paper's Data Availability statement.\n",
+    "scale": "11 cell lines; 13 runs / 12 biosamples",
+    "size_bytes": 34133739277,
+    "modalities": [
+      "bulk-rna-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://ddbj.nig.ac.jp/search/entry/bioproject/PRJDB17594",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJDB17594",
+    "license": "unknown",
+    "license_url": "https://www.ddbj.nig.ac.jp/policies-e.html",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Laboratory of Veterinary Internal Medicine, The University of Tokyo",
+      "key_refs": [
+        "10.1111/vco.13071"
+      ]
+    },
+    "accessions": [
+      "PRJDB17594"
+    ],
+    "last_updated": "2025-02",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "The largest open canine HS cell-line expression panel we found, with drug-response context. It resolves the domain-14 gap for the HS cell-line classification study.\n"
+    },
+    "caveats": "Cell lines only. Twelve biosamples for 11 lines: one may be replicated, so check metadata. No explicit reuse license (INSDC/DDBJ).",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJDB17594",
+    "commercial_use": null
+  },
+  {
+    "id": "prjdb42258-apc-small-bowel-celllines",
+    "name": "PRJDB42258 — Cell Lines from Hereditary Canine Small-Bowel Adenocarcinoma with Germline APC Variant (Gifu 2026)",
+    "category": "functional-assay",
+    "species": [
+      "dog"
+    ],
+    "description": "WGS of cell lines established from liver, lung and pancreatic-lymph-node metastases of a jejunal adenocarcinoma in a dog with germline APC variants. The study characterises the genetic alterations behind tumour development and progression. Deposited in DDBJ.\n",
+    "scale": "3 cell lines (WGS)",
+    "size_bytes": 155708327376,
+    "modalities": [
+      "whole-genome-seq"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://ddbj.nig.ac.jp/search/entry/bioproject/PRJDB42258",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJDB42258",
+    "license": "unknown",
+    "license_url": "https://www.ddbj.nig.ac.jp/policies-e.html",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Laboratory of Veterinary Pathology, Gifu University",
+      "key_refs": []
+    },
+    "accessions": [
+      "PRJDB42258"
+    ],
+    "last_updated": "2026-07",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "These are the first canine GI adenocarcinoma cell lines with open genomes we found, and an APC-driven model analogous to human FAP/CRC. They fill the gap in GI cell-line coverage.\n"
+    },
+    "caveats": "No linked publication found yet. One donor dog. No explicit reuse license (INSDC/DDBJ).",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJDB42258",
+    "commercial_use": null
+  },
+  {
     "id": "sahin-2017-rna-mutanome-vaccine",
     "name": "Sahin 2017 personalized RNA mutanome vaccine (melanoma)",
     "category": "functional-assay",
@@ -5719,6 +7949,60 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306811",
+    "commercial_use": null
+  },
+  {
+    "id": "briney-2019-grp",
+    "name": "Briney 2019 baseline human antibody repertoire (Great Repertoire Project)",
+    "category": "healthy-baseline",
+    "species": [
+      "human"
+    ],
+    "description": "The largest single-study collection of human antibody heavy-chain repertoire sequences: UMI-corrected, deep NGS of circulating B cells from ten healthy adult donors, used to characterise the baseline naive/memory repertoire and estimate its diversity. Provides raw reads, UMI-consensus sequences and annotated consensus tables, plus synthetic (IGoR-generated) repertoires.\n",
+    "scale": "~3 billion raw heavy-chain reads; ~3.64e8 productive unique sequences after annotation/dedup; 10 donors",
+    "modalities": [
+      "bcr-repertoire",
+      "antibody-sequence",
+      "heavy-chain",
+      "synthetic-repertoire"
+    ],
+    "formats": [
+      "fastq",
+      "fasta",
+      "csv",
+      "json"
+    ],
+    "landing_url": "https://github.com/brineylab/grp-paper",
+    "download_url": "https://burtonlab.s3.amazonaws.com/",
+    "license": "unknown",
+    "license_url": "https://github.com/brineylab/grp-paper/blob/master/LICENSE",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Briney lab / Burton lab, The Scripps Research Institute",
+      "key_refs": [
+        "10.1038/s41586-019-0879-y"
+      ]
+    },
+    "last_updated": "2019",
+    "accessions": [
+      "PRJNA511481"
+    ],
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "A clean healthy-baseline human heavy-chain repertoire for defining germline usage, CDR-H3 length distributions and \"self-like\" priors that a designed binder should respect to stay developable and low-immunogenicity.\n"
+    },
+    "agent_access": "Direct HTTP download from a public S3 bucket (burtonlab.s3.amazonaws.com), per-subject links in the GitHub README. No auth. Very large: raw FASTQ ~100 GB/subject; annotated JSON up to ~1 TB uncompressed per subject — plan for selective download of consensus FASTA / annotated CSV rather than raw.\n",
+    "caveats": "Repository code is MIT-licensed, but the data files carry no explicit license — redistribution terms unconfirmed (license: unknown); attribute Briney et al. 2019. Heavy chain only, unpaired. Enormous footprint. PRJNA accession should be confirmed in the paper's data-availability statement.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2
+    ],
+    "ingest_endpoint": "https://burtonlab.s3.amazonaws.com/",
     "commercial_use": null
   },
   {
@@ -6782,6 +9066,98 @@
     ],
     "ingest_endpoint": "https://cellxgene.cziscience.com/collections/e5f58829-1a66-40b5-a624-9046778e74f5",
     "commercial_use": true
+  },
+  {
+    "id": "vetcompass-cat-lifetables",
+    "name": "VetCompass UK Cat Life Tables (figshare dataset)",
+    "category": "healthy-baseline",
+    "species": [
+      "cat"
+    ],
+    "description": "Open dataset behind the UK companion-cat life tables: annual life expectancy and risk factors for mortality in cats under primary veterinary care, from the VetCompass Programme. Companion feline population-mortality baseline analogous to the canine life tables.\n",
+    "scale": "UK primary-care cat population sample (figshare dataset)",
+    "modalities": [
+      "epidemiology",
+      "life-tables",
+      "mortality"
+    ],
+    "formats": [
+      "tabular"
+    ],
+    "landing_url": "https://doi.org/10.6084/m9.figshare.25006802",
+    "download_url": "https://doi.org/10.6084/m9.figshare.25006802",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "VetCompass Programme, Royal Veterinary College (RVC)",
+      "key_refs": [
+        "10.1177/1098612X241234556"
+      ]
+    },
+    "last_updated": "2024",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Feline population mortality baseline extending comparative work to cats; denominators for feline cancer and comorbidity epidemiology.\n"
+    },
+    "agent_access": "figshare record with a stated DOI; direct download, no auth (CC BY 4.0).\n",
+    "caveats": "Confirm the figshare license field resolves to CC BY 4.0 for the specific files. Published extract, not raw VetCompass records.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2
+    ],
+    "ingest_endpoint": "https://doi.org/10.6084/m9.figshare.25006802",
+    "commercial_use": true
+  },
+  {
+    "id": "vetcompass-dog-lifetables",
+    "name": "VetCompass UK Companion Dog Life Tables (open-access dataset)",
+    "category": "healthy-baseline",
+    "species": [
+      "dog"
+    ],
+    "description": "Open-access dataset underlying the first UK companion-dog life tables: annual life expectancy and mortality derived from VetCompass primary-care veterinary records, stratified by sex, Kennel Club breed group, and common breeds. Built from a random sample of dogs under veterinary care with recorded deaths (2016–2020). Provides population mortality denominators for canine disease work.\n",
+    "scale": "~30,563 dog-death records (random sample of 29,865 dogs analyzed)",
+    "modalities": [
+      "epidemiology",
+      "life-tables",
+      "mortality"
+    ],
+    "formats": [
+      "xlsx"
+    ],
+    "landing_url": "https://rvc-repository.worktribe.com/output/1558210",
+    "download_url": "https://rvc-repository.worktribe.com/output/1558210",
+    "license": "unknown",
+    "license_url": "https://www.nature.com/articles/s41598-022-10341-6",
+    "access": "open",
+    "provenance": {
+      "maintainer": "VetCompass Programme, Royal Veterinary College (RVC), University of London",
+      "key_refs": [
+        "10.1038/s41598-022-10341-6"
+      ]
+    },
+    "last_updated": "2022",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Primary-care (not referral-biased) UK population mortality baseline; the denominator layer for canine cancer epidemiology and for contextualizing tumor-cohort survival.\n"
+    },
+    "agent_access": "Open-access spreadsheet deposited in the RVC research repository (file \"210624 VetCompass Lifetable Open Access Data\"); direct download, no auth. Full VetCompass database is not bulk-downloadable — per-paper datasets are released individually (several via figshare under the RVC account).\n",
+    "caveats": "No explicit SPDX license on the repository record (described as open access) — confirm terms before redistribution. This is the published life-table extract, not the raw VetCompass clinical records.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2
+    ],
+    "ingest_endpoint": "https://rvc-repository.worktribe.com/output/1558210",
+    "commercial_use": null
   },
   {
     "id": "wang-29-tissues-proteome",
@@ -11226,6 +13602,52 @@
     "commercial_use": null
   },
   {
+    "id": "antiref",
+    "name": "AntiRef (reference clusters of human antibody sequences)",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "Non-redundant reference clusters of human antibody sequences derived by clustering large public repertoire data at multiple identity thresholds, analogous to UniRef for antibodies. Provides representative sequences that collapse the massive redundancy of raw repertoires into tractable, deduplicated reference sets for search and model training.\n",
+    "scale": "Clustered sets at several identity thresholds (e.g. 100/90/.../50% id); tens of millions of representatives depending on threshold",
+    "modalities": [
+      "bcr-repertoire",
+      "antibody-sequence",
+      "sequence-clusters"
+    ],
+    "formats": [
+      "fasta"
+    ],
+    "landing_url": "https://github.com/brineylab/antiref",
+    "download_url": "https://github.com/brineylab/antiref",
+    "license": "unknown",
+    "license_url": "unknown",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Briney lab, The Scripps Research Institute",
+      "key_refs": [
+        "10.1093/bioadv/vbad109"
+      ]
+    },
+    "last_updated": "2023",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "Deduplicated antibody reference sets give cleaner training/search corpora than raw repertoires, reducing sampling bias when pretraining antibody models or searching for natural analogues of a designed binder.\n"
+    },
+    "agent_access": "Distributed via GitHub with downloadable FASTA cluster files (hosted on public object storage per the repo). No auth. Scriptable.\n",
+    "caveats": "No explicit data license surfaced — treat as unconfirmed (license: unknown) and attribute Briney 2023. Human only; derived product (clustering choices affect downstream stats). Unpaired.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://github.com/brineylab/antiref",
+    "commercial_use": null
+  },
+  {
     "id": "barkbase",
     "name": "BarkBase — Canine Epigenomic Annotation",
     "category": "reference",
@@ -11272,6 +13694,52 @@
       0
     ],
     "ingest_endpoint": "http://www.barkbase.org/",
+    "commercial_use": null
+  },
+  {
+    "id": "cab-rep",
+    "name": "cAb-Rep (Curated Antibody Repertoires)",
+    "category": "reference",
+    "species": [
+      "human"
+    ],
+    "description": "A curated database of full-length, IgBLAST-annotated human antibody variable (IGH, IGK, IGL) repertoires assembled to study antibody diversity and to estimate the prevalence of a given antibody lineage across donors. Each transcript carries V/D/J gene usage, isotype and somatic-hypermutation annotation. Useful for asking how \"public\"/recurrent a designed or isolated antibody is.\n",
+    "scale": "306 Ig repertoires from 121 human donors; ~267.9M heavy-chain and ~72.9M light-chain transcripts",
+    "modalities": [
+      "bcr-repertoire",
+      "antibody-sequence",
+      "unpaired-chain"
+    ],
+    "formats": [
+      "fasta"
+    ],
+    "landing_url": "https://cab-rep.c2b2.columbia.edu/",
+    "download_url": "https://cab-rep.c2b2.columbia.edu/",
+    "license": "unknown",
+    "license_url": "unknown",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Shapiro lab, Columbia University (C2B2)",
+      "key_refs": [
+        "10.3389/fimmu.2019.02365"
+      ]
+    },
+    "last_updated": "2019",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "design"
+      ],
+      "why": "Donor-resolved human repertoires let you score the natural prevalence and germline plausibility of candidate antibody sequences, a useful prior for the design program and for interpreting recognition breadth.\n"
+    },
+    "agent_access": "Web resource; repertoires provided as FASTA. No documented API; expect to download per-donor/per-repertoire FASTA files. No auth.\n",
+    "caveats": "No explicit license found on the site/paper — treat redistribution as unconfirmed (license: unknown) and attribute Guo et al. 2019. Human only; static (2019) and not updated. Unpaired chains only.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://cab-rep.c2b2.columbia.edu/",
     "commercial_use": null
   },
   {
@@ -11579,6 +14047,56 @@
     ],
     "ingest_endpoint": "https://cancer.sanger.ac.uk/cosmic/download/cosmic",
     "commercial_use": false
+  },
+  {
+    "id": "cov-abdab",
+    "name": "CoV-AbDab — Coronavirus Antibody Database",
+    "category": "reference",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "A curated database of antibodies and nanobodies known to bind coronaviruses (SARS-CoV-2, SARS-CoV-1, MERS and others), each with heavy/light sequences where available, binding/neutralisation evidence, epitope/antigen target, origin and links to source publications and any PDB structures. A compact, antigen-labelled benchmark set for binder recognition.\n",
+    "scale": "~12,916 entries (site last updated 8 Feb 2024; may be higher now)",
+    "modalities": [
+      "antibody-sequence",
+      "nanobody-sequence",
+      "binding-evidence",
+      "neutralization",
+      "epitope-annotation"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://opig.stats.ox.ac.uk/webapps/covabdab/",
+    "download_url": "https://opig.stats.ox.ac.uk/webapps/covabdab/",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Oxford Protein Informatics Group (OPIG), University of Oxford",
+      "key_refs": [
+        "10.1093/bioinformatics/btaa739"
+      ]
+    },
+    "last_updated": "2024-02",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "design"
+      ],
+      "why": "Sequence-paired, antigen- and epitope-labelled antibodies with binding and neutralisation outcomes — a clean supervised set for antibody-antigen recognition models and for validating binder-design pipelines against a well-characterised antigen family.\n"
+    },
+    "agent_access": "Full database downloadable as CSV without registration; no auth. Community submissions accepted by email. Trivially scriptable.\n",
+    "caveats": "CC BY 4.0 (attribute Raybould et al. 2021 and original studies). Scope limited to coronaviruses; update cadence is intermittent (last site update Feb 2024). Binding/neutralisation evidence is aggregated from heterogeneous assays — read per-entry provenance before treating labels as uniform.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://opig.stats.ox.ac.uk/webapps/covabdab/",
+    "commercial_use": true
   },
   {
     "id": "ctdatabase",
@@ -12131,6 +14649,54 @@
     "commercial_use": false
   },
   {
+    "id": "indi",
+    "name": "INDI — Integrated Nanobody Database for Immunoinformatics",
+    "category": "reference",
+    "species": [
+      "other"
+    ],
+    "description": "An integrated database of camelid single-domain antibody (VHH / nanobody) sequences and metadata aggregated from all major public outlets: patents, GenBank, next-generation sequencing repositories, deposited structures and the scientific literature. Entries are filtered to contain all three CDRs and only canonical amino acids, with provenance and annotation.\n",
+    "scale": ">11 million nanobody sequences (2021 preprint figure)",
+    "modalities": [
+      "nanobody-sequence",
+      "vhh",
+      "antibody-sequence",
+      "single-domain"
+    ],
+    "formats": [
+      "csv",
+      "fasta"
+    ],
+    "landing_url": "https://research.naturalantibody.com/nanobodies",
+    "download_url": "https://research.naturalantibody.com/nanobodies",
+    "license": "unknown",
+    "license_url": "unknown",
+    "access": "open",
+    "provenance": {
+      "maintainer": "NaturalAntibody (Poland), with Harvard Medical School, Abterra Biosciences, Alector",
+      "key_refs": [
+        "10.1093/nar/gkab1021"
+      ]
+    },
+    "last_updated": "2022",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "Nanobodies are a primary scaffold for the binder-design program (small, stable, single-domain). INDI is the largest aggregation of natural VHH sequence space for pretraining and for sampling realistic CDR-H3 loops.\n"
+    },
+    "agent_access": "Web portal with sequence / CDR-H3 / text search. Bulk-download availability and any API are not clearly documented — confirm on the portal before assuming programmatic bulk access; may require contacting maintainers.\n",
+    "caveats": "No explicit reuse license found (license: unknown) — confirm terms with NaturalAntibody before redistribution or ML training. Aggregated from mixed sources (patents, NGS) with heterogeneous quality; dedup needed. Camelid single-domain only.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://research.naturalantibody.com/nanobodies",
+    "commercial_use": null
+  },
+  {
     "id": "interpro",
     "name": "InterPro",
     "category": "reference",
@@ -12344,6 +14910,108 @@
     "commercial_use": true
   },
   {
+    "id": "oas",
+    "name": "Observed Antibody Space (OAS)",
+    "category": "reference",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "The reference corpus of cleaned, numbered, annotated and translated antibody repertoire sequences mined from published BCR/antibody next-generation sequencing studies. Contains both unpaired heavy/light-chain sequences and natively paired heavy-light sequences, each annotated with chain type, species, isotype, B-cell source, disease state and IMGT/ANARCI numbering. The de facto training set for antibody language models and generative antibody design.\n",
+    "scale": ">1 billion unpaired sequences from >80 studies; paired subset on the order of ~1.5M+ heavy-light pairs (growing). 2021 paper reported ~1.5B unpaired + ~121,838 pairs; site now larger.",
+    "modalities": [
+      "bcr-repertoire",
+      "antibody-sequence",
+      "paired-chain",
+      "unpaired-chain"
+    ],
+    "formats": [
+      "csv",
+      "json",
+      "fasta"
+    ],
+    "landing_url": "https://opig.stats.ox.ac.uk/webapps/oas/",
+    "download_url": "https://opig.stats.ox.ac.uk/webapps/oas/",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Oxford Protein Informatics Group (OPIG), Dept of Statistics, University of Oxford",
+      "key_refs": [
+        "10.1002/pro.4205",
+        "10.4049/jimmunol.1800708"
+      ]
+    },
+    "last_updated": "2025 (continuously updated as new studies are ingested)",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "Primary sequence substrate for antibody design and antibody language-model pretraining. The paired subset is the key resource for learning native heavy-light pairing, directly relevant to designing developable binders.\n"
+    },
+    "agent_access": "Bulk download of the whole dataset or of filtered subsets built from the search forms (filter by chain type, species, isotype, disease, B-source). No auth. Downloads are per-study data units (CSV/JSON) served over HTTPS; easily scripted. No documented hard rate limit but be polite on bulk pulls.\n",
+    "caveats": "Redistribution allowed under CC BY (attribute OPIG + original studies). Heavy study-to-study redundancy and sampling bias toward human peripheral blood; dedup and clonal-collapse needed before training. Paired data far smaller than unpaired. No canine repertoires — human/mouse dominate, so not a source for the comparative-oncology program.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://opig.stats.ox.ac.uk/webapps/oas/",
+    "commercial_use": true
+  },
+  {
+    "id": "omia",
+    "name": "Online Mendelian Inheritance in Animals (OMIA)",
+    "category": "reference",
+    "species": [
+      "dog",
+      "cat",
+      "horse",
+      "other"
+    ],
+    "description": "Curated catalogue of inherited and single-locus traits, disorders, and causal variants in animals (vertebrates), analogous to OMIM for humans. Includes many cancer-predisposition and tumor-related phenes and variants across dogs, cats, horses and other species, with cross-references to breeds, genes and literature. Full database is downloadable as a MySQL dump.\n",
+    "scale": "thousands of phenes and likely-causal variants across >300 species",
+    "modalities": [
+      "gene-disease-associations",
+      "variants",
+      "phene-catalogue"
+    ],
+    "formats": [
+      "sql",
+      "xml"
+    ],
+    "landing_url": "https://omia.org/home/",
+    "download_url": "https://omia.org/download/",
+    "api": "",
+    "license": "CC BY 4.0",
+    "license_url": "https://omia.org/download/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "University of Sydney (Sydney School of Veterinary Science) with ongoing community curation",
+      "key_refs": [
+        "10.1093/nar/gkae950"
+      ]
+    },
+    "last_updated": "2024 (continuous updates)",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "Reference layer linking canine/feline/equine cancer phenotypes to genes and causal variants; supports breed-risk interpretation and comparative cancer-genetics annotation.\n"
+    },
+    "agent_access": "Full MySQL dump (zipped/gzipped SQL and XML) is freely downloadable, no auth; no public API or SPARQL endpoint. A separate gene list maps OMIA internal gene IDs to NCBI gene IDs.\n",
+    "caveats": "License is reported inconsistently across indexers (re3data: CC BY 4.0; Integbio: CC0; a Sydney library record: all-rights-reserved) — treat as CC BY 4.0 but verify, and honor OMIA's citation / co-authorship-discussion request for dump-based work. Internal gene IDs need mapping.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://omia.org/download/",
+    "commercial_use": true
+  },
+  {
     "id": "pfam",
     "name": "Pfam (protein families)",
     "category": "reference",
@@ -12395,6 +15063,108 @@
     ],
     "ingest_endpoint": "https://ftp.ebi.ac.uk/pub/databases/Pfam/",
     "commercial_use": true
+  },
+  {
+    "id": "plabdab",
+    "name": "PLAbDab — Patent and Literature Antibody Database",
+    "category": "reference",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "A curated, literature- and patent-annotated reference set of (mostly paired) antibody sequences with functional context: each entry links back to the patent or paper it was scraped from, and many are functionally characterised (antigen, therapeutic use). Searchable by keyword, sequence and structure, with ABodyBuilder2 models attached to entries.\n",
+    "scale": "~150,000 paired antibody sequences from >10,000 small-scale studies/patents",
+    "modalities": [
+      "antibody-sequence",
+      "paired-chain",
+      "structure-model",
+      "functional-annotation"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://opig.stats.ox.ac.uk/webapps/plabdab/",
+    "download_url": "https://opig.stats.ox.ac.uk/webapps/plabdab/",
+    "api": "https://github.com/oxpig/PLAbDab",
+    "license": "unknown",
+    "license_url": "unknown",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Oxford Protein Informatics Group (OPIG), University of Oxford",
+      "key_refs": [
+        "10.1093/nar/gkad1056"
+      ]
+    },
+    "last_updated": "2024",
+    "accessions": [
+      "10.5281/zenodo.7258553"
+    ],
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "Unlike raw repertoires, PLAbDab entries carry antigen/function annotation and literature provenance, making it a high-value, functionally grounded set of developed/paired antibodies to anchor design and to find natural analogues of candidate binders.\n"
+    },
+    "agent_access": "Web app with keyword/sequence/structure search and a Download link for all hits of a query; precomputed structural models downloadable per entry. Python API via the oxpig/PLAbDab GitHub repo (contact maintainers / open an issue for programmatic access). Structural models bulk-archived on Zenodo.\n",
+    "caveats": "The PLAbDab \"about\" page states no explicit license (license: unknown), even though sibling OPIG resources OAS and CoV-AbDab are CC BY 4.0 — confirm terms before redistribution; patent-derived sequences may carry IP considerations. Attribute Abanades et al. 2024.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://github.com/oxpig/PLAbDab",
+    "commercial_use": null
+  },
+  {
+    "id": "plabdab-nano",
+    "name": "PLAbDab-nano — nanobodies from patents and literature",
+    "category": "reference",
+    "species": [
+      "other"
+    ],
+    "description": "The single-domain (nanobody) companion to PLAbDab: camelid VHH and shark VNAR sequences curated from patents and literature, each linked to its source and shipped with a precomputed NanoBodyBuilder2 structural model. Annotated with domain type (VHH/VNAR), CDR lengths and CDR sequences.\n",
+    "scale": "~4,913 entries (VHH + VNAR)",
+    "modalities": [
+      "nanobody-sequence",
+      "vhh",
+      "vnar",
+      "single-domain",
+      "structure-model"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://opig.stats.ox.ac.uk/webapps/plabdab-nano/",
+    "download_url": "https://opig.stats.ox.ac.uk/webapps/plabdab-nano/",
+    "api": "https://github.com/oxpig/PLAbDab_nano",
+    "license": "unknown",
+    "license_url": "unknown",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Oxford Protein Informatics Group (OPIG), University of Oxford",
+      "key_refs": [
+        "10.1093/nar/gkae881"
+      ]
+    },
+    "last_updated": "2025",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "Literature/patent-grounded single-domain antibodies with attached structural models — directly useful for the nanobody binder-design program and for benchmarking generated VHH/VNAR loops against real ones.\n"
+    },
+    "agent_access": "Three gzipped CSV downloads (all / VHH-only / VNAR-only) plus a Python package (oxpig/PLAbDab_nano) that reads the extracted database. Web app supports keyword/sequence/structure search. No auth; trivially scriptable.\n",
+    "caveats": "No explicit license on the page (license: unknown) — confirm before reuse; attribute Gordon et al. 2025. The preprint warned that many patent/literature \"nanobody\" hits are false positives (VHH count dropped from ~21k to <7k after curation) — trust the curated published counts, not raw scrapes.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0
+    ],
+    "ingest_endpoint": "https://github.com/oxpig/PLAbDab_nano",
+    "commercial_use": null
   },
   {
     "id": "refseq",
@@ -13139,6 +15909,55 @@
     "commercial_use": null
   },
   {
+    "id": "canine-oscc-spatial-geomx",
+    "name": "Spatial Transcriptomic Landscape of Canine Oral Squamous Cell Carcinoma (GSE292226)",
+    "category": "single-cell",
+    "species": [
+      "dog"
+    ],
+    "description": "Spatially resolved (NanoString GeoMx DSP) transcriptomic profiling of canine oral squamous cell carcinoma with region-level distinction between surface tumor, deep invasive front, tumor microenvironment, peritumoral dysplasia, and matched normal mucosa. Resolves region-specific programs (EGFR/EMT, KRAS/SPP1/KRT14), M2-macrophage/IL-10 immunosuppression, and CD4+ T-cell stimulatory/inhibitory signaling (e.g., CTLA4) in the TME.\n",
+    "scale": "6 dogs; multi-region GeoMx segments (surface/deep/TME/dysplasia/normal)",
+    "modalities": [
+      "spatial-transcriptomics",
+      "geomx-dsp",
+      "tumor-microenvironment"
+    ],
+    "formats": [
+      "dcc",
+      "pkc"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE292226",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE292226",
+    "license": "NCBI/GEO public-domain terms",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Goldschmidt et al. (deposited in NCBI GEO)",
+      "key_refs": [
+        "10.1002/mc.23932"
+      ]
+    },
+    "last_updated": "2025-06",
+    "relevance": {
+      "programs": [
+        "comparative",
+        "recognition"
+      ],
+      "why": "Region-resolved canine TME immune landscape (macrophage polarization, CD4+ T-cell checkpoint signaling) directly relevant to immuno-oncology targets and antigen-recognition context in a spontaneous large-animal cancer model.\n"
+    },
+    "agent_access": "GEO series GSE292226, platform GPL35351; GeoMx DCC/PKC supplementary files downloadable via GEO FTP, no auth. GEO web pages are reCAPTCHA-gated for scraping — use NCBI eutils/FTP for programmatic access.\n",
+    "caveats": "GeoMx DSP is region/segment-level (not single-cell resolution despite the single-cell category). Small n (6 dogs).\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE292226",
+    "commercial_use": null
+  },
+  {
     "id": "caushi-2021-nsclc-mana-til",
     "name": "Caushi et al. 2021 — Neoantigen-specific TIL in anti-PD-1 lung cancer (scRNA + TCR)",
     "category": "single-cell",
@@ -13783,6 +16602,57 @@
     "commercial_use": null
   },
   {
+    "id": "gse224723-meningioma-scrna",
+    "name": "GSE224723 — Canine Meningioma Single-cell RNA-seq (Cancer Discov 2024)",
+    "category": "single-cell",
+    "species": [
+      "dog"
+    ],
+    "description": "scRNA-seq of 54,607 cells from 3 canine meningiomas and 2 canine dura samples. It is a sub-series of the human+dog SuperSeries GSE235998 for the study showing that perivascular NOTCH3+ stem cells drive meningioma tumorigenesis and radiotherapy resistance. BioProject PRJNA932291.\n",
+    "scale": "54,607 cells; 5 samples (3 tumour, 2 dura)",
+    "size_bytes": 123782608962,
+    "modalities": [
+      "single-cell-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "tar"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE224723",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE224723",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(see paper — Cancer Discovery 2024)",
+      "key_refs": [
+        "10.1158/2159-8290.CD-23-1459"
+      ]
+    },
+    "accessions": [
+      "GSE224723",
+      "PRJNA932291",
+      "GSE235998"
+    ],
+    "last_updated": "2024-05",
+    "relevance": {
+      "programs": [
+        "comparative"
+      ],
+      "why": "A canine brain-tumour single-cell atlas that includes immune and stromal compartments, with a matched human companion series for direct cross-species comparison.\n"
+    },
+    "caveats": "No explicit reuse license (NCBI). Only 3 tumours. The SuperSeries mixes human and canine samples; filter by organism.",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE224723",
+    "commercial_use": null
+  },
+  {
     "id": "gse225599-leukocyte-atlas",
     "name": "GSE225599 — Canine Circulating Leukocyte scRNA Atlas (healthy + OSA)",
     "category": "single-cell",
@@ -13924,6 +16794,56 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE252470",
+    "commercial_use": null
+  },
+  {
+    "id": "gse298472-sinonasal-sbrt-scrna",
+    "name": "GSE298472 — Canine Sinonasal Carcinoma Nasal-Lavage scRNA-seq Before/After SBRT (2026)",
+    "category": "single-cell",
+    "species": [
+      "dog"
+    ],
+    "description": "Serial scRNA-seq of nasal-lavage cells from dogs with sinonasal carcinoma, taken before and after stereotactic body radiotherapy (day 0 vs day 14 or day 90; 4 dogs, 8 samples). Neutrophils dominate the samples, and interferon-signature tumour-associated neutrophils increase after SBRT. BioProject PRJNA1269512.\n",
+    "scale": "8 samples (4 dogs x pre/post)",
+    "size_bytes": 393241490157,
+    "modalities": [
+      "single-cell-rna-seq"
+    ],
+    "formats": [
+      "fastq",
+      "mtx",
+      "tsv"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE298472",
+    "download_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE298472",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "(submitter of PRJNA1269512; publication not yet indexed)",
+      "key_refs": []
+    },
+    "accessions": [
+      "GSE298472",
+      "PRJNA1269512"
+    ],
+    "last_updated": "2026-10",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "comparative"
+      ],
+      "why": "Fills the nasal-tumour gap with primary-tumour immune data. It is a longitudinal record of the local immune response to radiotherapy in a spontaneous canine cancer, sampled minimally invasively.\n"
+    },
+    "caveats": "Lavage cells, not tumour tissue. No PubMed-linked paper at verification. The raw data are large (~393 GB FASTQ); GEO MTX/TSV processed matrices are the practical entry point.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE298472",
     "commercial_use": null
   },
   {
@@ -18301,6 +21221,57 @@
     "commercial_use": null
   },
   {
+    "id": "thera-sabdab",
+    "name": "Thera-SAbDab — Therapeutic Structural Antibody Database",
+    "category": "structure",
+    "species": [
+      "human",
+      "mouse",
+      "other"
+    ],
+    "description": "Tracks every antibody- and nanobody-derived therapeutic recognised by the WHO (INN-assigned), recording sequence, format, target antigen, development status and links to matching experimental structures in SAbDab. The curated reference for what clinically-relevant antibodies look like in sequence and structure.\n",
+    "scale": "All WHO-recognised antibody/nanobody therapeutics (461 unique molecules as of Aug 2019; grows with each INN list)",
+    "modalities": [
+      "antibody-sequence",
+      "therapeutic-annotation",
+      "structure-link",
+      "paired-chain"
+    ],
+    "formats": [
+      "csv"
+    ],
+    "landing_url": "https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/therasabdab",
+    "download_url": "https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/therasabdab/search/",
+    "license": "unknown",
+    "license_url": "unknown",
+    "access": "open",
+    "provenance": {
+      "maintainer": "Oxford Protein Informatics Group (OPIG), University of Oxford",
+      "key_refs": [
+        "10.1093/bioinformatics/btz827"
+      ]
+    },
+    "last_updated": "2025 (updated with WHO INN lists)",
+    "relevance": {
+      "programs": [
+        "design",
+        "recognition"
+      ],
+      "why": "The developability/clinical \"gold set\": sequences and structures of approved and clinical-stage antibodies define the target region of sequence space a designed binder should land in to be developable.\n"
+    },
+    "agent_access": "Searchable web app; sequences of all listed therapeutics plus metadata downloadable as a single spreadsheet. No auth. Cross-links to SAbDab structures (which are CC BY 4.0).\n",
+    "caveats": "The Thera-SAbDab page states no explicit license (license: unknown); its parent SAbDab is CC BY 4.0, but do not assume the same for Thera-SAbDab — confirm before redistribution. Attribute Raybould et al. 2020. Small, curated set (clinical molecules only), not a repertoire corpus.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      5
+    ],
+    "ingest_endpoint": "https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/therasabdab/search/",
+    "commercial_use": null
+  },
+  {
     "id": "airr-data-commons",
     "name": "AIRR Data Commons (ADC) + iReceptor",
     "category": "tcr-recognition",
@@ -19652,6 +22623,56 @@
     "commercial_use": null
   },
   {
+    "id": "prjna476127-canine-igh-repertoire",
+    "name": "PRJNA476127 — Canine IGH Repertoire, 3 Healthy Dogs x 3 Lymphoid Organs (Guelph; Vet Immunol Immunopathol 2018)",
+    "category": "tcr-recognition",
+    "species": [
+      "dog"
+    ],
+    "description": "5'-RACE amplicon sequencing (Illumina MiSeq) of the immunoglobulin heavy-chain repertoire from lymph node, spleen and bone marrow of 3 healthy dogs (9 biosamples, 36 runs). The data were analysed with ARResT/Interrogate in the first comprehensive NGS characterisation of the canine IGH repertoire.\n",
+    "scale": "9 samples (3 dogs x 3 organs), 36 runs",
+    "size_bytes": 2501487213,
+    "modalities": [
+      "bcr-seq",
+      "immune-repertoire"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA476127",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJNA476127",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "University of Guelph (BioProject submitter)",
+      "key_refs": [
+        "10.1016/j.vetimm.2018.07.002"
+      ]
+    },
+    "accessions": [
+      "PRJNA476127"
+    ],
+    "last_updated": "2018-08",
+    "relevance": {
+      "programs": [
+        "recognition"
+      ],
+      "why": "A healthy-dog, multi-organ IGH baseline that resolves the domain-14 gap for the 2018 IGH repertoire study. It pairs with PRJNA790470 (healthy and lymphoma IGH/IGK/IGL) and the IMGT canine germline.\n"
+    },
+    "caveats": "The paper-to-BioProject link is inferred: submitter (Guelph), registration date (2018-06, paper 2018-07) and design (3 dogs x 3 organs, 5'-RACE MiSeq) all match, but the paywalled article's data statement was not read. Heavy chain only. No explicit reuse license.\n",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJNA476127",
+    "commercial_use": null
+  },
+  {
     "id": "prjna742469-sctcr",
     "name": "PRJNA742469 / SRP326193 — Canine Single-cell TCR + scRNA (Hoang 2024)",
     "category": "tcr-recognition",
@@ -19750,6 +22771,104 @@
       3
     ],
     "ingest_endpoint": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA790470",
+    "commercial_use": null
+  },
+  {
+    "id": "prjna857425-hemophilia-fviii-bcr",
+    "name": "PRJNA857425 — Canine FVIII-specific BCR Repertoires in Hemophilia A Dogs (UPenn 2022)",
+    "category": "tcr-recognition",
+    "species": [
+      "dog"
+    ],
+    "description": "Antibody phage display combined with NGS of total and FVIII-specific B-cell receptor repertoires from 3 severe hemophilia A dogs with high-titre inhibitors against canine FVIII (13 runs).\n",
+    "scale": "3 dogs, 13 runs",
+    "size_bytes": 518370800,
+    "modalities": [
+      "bcr-seq",
+      "phage-display",
+      "immune-repertoire"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA857425",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJNA857425",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "University of Pennsylvania",
+      "key_refs": []
+    },
+    "accessions": [
+      "PRJNA857425"
+    ],
+    "last_updated": "2023-08",
+    "relevance": {
+      "programs": [
+        "recognition",
+        "design"
+      ],
+      "why": "Antigen-specific canine BCR sequences are scarce. This set pairs repertoires with a known antigen, which is useful for canine antibody modelling and specificity-inference benchmarks. It is not a cancer dataset.\n"
+    },
+    "caveats": "Not cancer: an alloimmune response to a therapeutic protein. Linked paper not located. No explicit reuse license.",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJNA857425",
+    "commercial_use": null
+  },
+  {
+    "id": "prjna971129-cmt-ig-vh-vl",
+    "name": "PRJNA971129 — Canine Immunoglobulin VH/VL Repertoire in Mammary Tumour and Hyperplasia (UNESP 2023)",
+    "category": "tcr-recognition",
+    "species": [
+      "dog"
+    ],
+    "description": "Amplicon sequencing of expressed immunoglobulin heavy and light variable-region repertoires from hyperplastic and tumoral mammary tissue of female dogs (12 samples). The project reports >18,000 filtered V-region sequences and a previously unsequenced, highly variable IGHD region.\n",
+    "scale": "12 samples (amplicon); >18,000 V sequences",
+    "size_bytes": 1471590931,
+    "modalities": [
+      "bcr-seq",
+      "immune-repertoire"
+    ],
+    "formats": [
+      "fastq"
+    ],
+    "landing_url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA971129",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/view/PRJNA971129",
+    "license": "unknown",
+    "license_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "access": "open",
+    "provenance": {
+      "maintainer": "São Paulo State University (UNESP)",
+      "key_refs": []
+    },
+    "accessions": [
+      "PRJNA971129"
+    ],
+    "last_updated": "2026-06",
+    "relevance": {
+      "programs": [
+        "recognition"
+      ],
+      "why": "The only canine tumour-infiltrating BCR repertoire data we found, from the tumour bed rather than blood."
+    },
+    "caveats": "No linked publication found; runs became public 2026-06. Small n. No explicit reuse license.",
+    "agent_automatable": true,
+    "open_access": true,
+    "feeds_stages": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ingest_endpoint": "https://www.ebi.ac.uk/ena/browser/view/PRJNA971129",
     "commercial_use": null
   },
   {

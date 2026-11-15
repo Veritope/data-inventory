@@ -1202,6 +1202,48 @@
     the full training data. Model drops records whose TCR names are not in its reference DB. No dog.
 
     '
+- id: prjna476127-canine-igh-repertoire
+  name: PRJNA476127 — Canine IGH Repertoire, 3 Healthy Dogs x 3 Lymphoid Organs (Guelph; Vet Immunol Immunopathol
+    2018)
+  category: tcr-recognition
+  species:
+  - dog
+  description: '5''-RACE amplicon sequencing (Illumina MiSeq) of the immunoglobulin heavy-chain repertoire
+    from lymph node, spleen and bone marrow of 3 healthy dogs (9 biosamples, 36 runs). The data were analysed
+    with ARResT/Interrogate in the first comprehensive NGS characterisation of the canine IGH repertoire.
+
+    '
+  scale: 9 samples (3 dogs x 3 organs), 36 runs
+  size_bytes: 2501487213
+  modalities:
+  - bcr-seq
+  - immune-repertoire
+  formats:
+  - fastq
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA476127
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJNA476127
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: University of Guelph (BioProject submitter)
+    key_refs:
+    - 10.1016/j.vetimm.2018.07.002
+  accessions:
+  - PRJNA476127
+  last_updated: 2018-08
+  relevance:
+    programs:
+    - recognition
+    why: 'A healthy-dog, multi-organ IGH baseline that resolves the domain-14 gap for the 2018 IGH repertoire
+      study. It pairs with PRJNA790470 (healthy and lymphoma IGH/IGK/IGL) and the IMGT canine germline.
+
+      '
+  caveats: 'The paper-to-BioProject link is inferred: submitter (Guelph), registration date (2018-06,
+    paper 2018-07) and design (3 dogs x 3 organs, 5''-RACE MiSeq) all match, but the paywalled article''s
+    data statement was not read. Heavy chain only. No explicit reuse license.
+
+    '
 - id: prjna742469-sctcr
   name: PRJNA742469 / SRP326193 — Canine Single-cell TCR + scRNA (Hoang 2024)
   category: tcr-recognition
@@ -1287,6 +1329,80 @@
     clonality analysis.
 
     '
+- id: prjna857425-hemophilia-fviii-bcr
+  name: PRJNA857425 — Canine FVIII-specific BCR Repertoires in Hemophilia A Dogs (UPenn 2022)
+  category: tcr-recognition
+  species:
+  - dog
+  description: 'Antibody phage display combined with NGS of total and FVIII-specific B-cell receptor repertoires
+    from 3 severe hemophilia A dogs with high-titre inhibitors against canine FVIII (13 runs).
+
+    '
+  scale: 3 dogs, 13 runs
+  size_bytes: 518370800
+  modalities:
+  - bcr-seq
+  - phage-display
+  - immune-repertoire
+  formats:
+  - fastq
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA857425
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJNA857425
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: University of Pennsylvania
+    key_refs: []
+  accessions:
+  - PRJNA857425
+  last_updated: 2023-08
+  relevance:
+    programs:
+    - recognition
+    - design
+    why: 'Antigen-specific canine BCR sequences are scarce. This set pairs repertoires with a known antigen,
+      which is useful for canine antibody modelling and specificity-inference benchmarks. It is not a
+      cancer dataset.
+
+      '
+  caveats: 'Not cancer: an alloimmune response to a therapeutic protein. Linked paper not located. No
+    explicit reuse license.'
+- id: prjna971129-cmt-ig-vh-vl
+  name: PRJNA971129 — Canine Immunoglobulin VH/VL Repertoire in Mammary Tumour and Hyperplasia (UNESP
+    2023)
+  category: tcr-recognition
+  species:
+  - dog
+  description: 'Amplicon sequencing of expressed immunoglobulin heavy and light variable-region repertoires
+    from hyperplastic and tumoral mammary tissue of female dogs (12 samples). The project reports >18,000
+    filtered V-region sequences and a previously unsequenced, highly variable IGHD region.
+
+    '
+  scale: 12 samples (amplicon); >18,000 V sequences
+  size_bytes: 1471590931
+  modalities:
+  - bcr-seq
+  - immune-repertoire
+  formats:
+  - fastq
+  landing_url: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA971129
+  download_url: https://www.ebi.ac.uk/ena/browser/view/PRJNA971129
+  license: unknown
+  license_url: https://www.ncbi.nlm.nih.gov/home/about/policies/
+  access: open
+  provenance:
+    maintainer: São Paulo State University (UNESP)
+    key_refs: []
+  accessions:
+  - PRJNA971129
+  last_updated: 2026-06
+  relevance:
+    programs:
+    - recognition
+    why: The only canine tumour-infiltrating BCR repertoire data we found, from the tumour bed rather
+      than blood.
+  caveats: No linked publication found; runs became public 2026-06. Small n. No explicit reuse license.
 - id: tchard
   name: TChard
   category: tcr-recognition
