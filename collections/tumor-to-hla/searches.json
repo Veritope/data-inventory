@@ -1,0 +1,25 @@
+{
+  "revision": 1,
+  "searches": [
+    {
+      "stage":"somatic",
+      "europepmc":"((TITLE_ABS:\"whole genome\" OR TITLE_ABS:\"pan-cancer\" OR TITLE_ABS:osteosarcoma OR TITLE_ABS:leukemia) AND (TITLE_ABS:\"driver mutations\" OR TITLE_ABS:\"somatic alterations\" OR TITLE_ABS:\"mutational landscape\" OR TITLE_ABS:\"gene fusions\"))",
+      "datacite":"(titles.title:(tumor OR tumour OR cancer OR leukaemia OR leukemia OR osteosarcoma) AND titles.title:(somatic OR mutation OR fusions OR genome))"
+    },
+    {
+      "stage":"translation",
+      "europepmc":"((TITLE_ABS:proteogenomic* OR TITLE_ABS:\"ribosome profiling\" OR TITLE_ABS:\"allele-specific expression\") AND (TITLE_ABS:tumor OR TITLE_ABS:tumour OR TITLE_ABS:cancer))",
+      "datacite":"(titles.title:(tumor OR tumour OR cancer) AND titles.title:(proteogenomics OR proteogenomic OR translation))"
+    },
+    {
+      "stage":"processing",
+      "europepmc":"((TITLE_ABS:proteasom* OR TITLE_ABS:immunoproteasom* OR TITLE_ABS:ERAP1 OR TITLE_ABS:ERAP2) AND (TITLE_ABS:\"peptide generation\" OR TITLE_ABS:cleavage OR TITLE_ABS:\"antigen processing\"))",
+      "datacite":"(titles.title:(proteasome OR proteasomal OR immunoproteasome OR trimming) AND titles.title:(digestion OR peptides OR cleavage OR processing))"
+    },
+    {
+      "stage":"presentation",
+      "europepmc":"((TITLE_ABS:immunopeptidom* OR TITLE_ABS:ligandom* OR TITLE_ABS:\"HLA ligands\" OR TITLE_ABS:\"HLA loss\" OR TITLE_ABS:\"MHC class I presentation\") AND (TITLE_ABS:tumor OR TITLE_ABS:tumour OR TITLE_ABS:cancer OR TITLE_ABS:malignan* OR TITLE_ABS:leukemia OR TITLE_ABS:melanoma OR TITLE_ABS:carcinoma OR TITLE_ABS:lymphoma OR TITLE_ABS:sarcoma))",
+      "datacite":"(titles.title:(immunopeptidomics OR immunopeptidome OR ligandomics) OR (titles.title:(HLA OR DLA) AND titles.title:(peptides OR ligands OR tumor OR tumour)))"
+    }
+  ]
+}

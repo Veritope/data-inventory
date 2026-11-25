@@ -1,0 +1,162 @@
+[
+  {
+    "project": "acc",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/acc_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "5d2a68369e4d071e2b3b997429098b29b27432ed3055566a9106dc5974b196d6"
+  },
+  {
+    "project": "blca",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/blca_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "124ccdb6221367f6aacb40b5ff6e9f9ab7f27df77c40129a978e416f31d84481"
+  },
+  {
+    "project": "brca",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/brca_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "bc0fc83e7e4093dfa8d5511d95f0efa5855cd20e9fc76b41b6d29a69970d2321"
+  },
+  {
+    "project": "cesc",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/cesc_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "75244c3a1ed9e464004a1a38c119537f299e5052c87a72b21c5137657bbceb5b"
+  },
+  {
+    "project": "chol",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/chol_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "42991dd8109c82338b86de5114546217a59e1b049cd894cd5e90a65d8b3b3e7c"
+  },
+  {
+    "project": "coadread",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/coadread_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "12106c5ff9024a5a5dde4765ebdc5ca0efa45faa40cca5a9c349c66bca6afc29"
+  },
+  {
+    "project": "dlbc",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/dlbc_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "80aefbea5c8dc8a10c2fbae36d566c225a153be67cbc5d626a19b64fbc9851e0"
+  },
+  {
+    "project": "esca",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/esca_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "f938bf75fd233e785033c346e997faaa4de0bb629d17f6c521348ee3eb69736f"
+  },
+  {
+    "project": "gbm",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/gbm_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "ef618b214d2a8f6bb3b8ad4a930c49aa11457babaaf01cb26e5e0f977f0f6689"
+  },
+  {
+    "project": "hnsc",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/hnsc_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "3e21b315259a699793dba518a92795f952d96bc92b099c732b112425eed30f79"
+  },
+  {
+    "project": "kich",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/kich_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "0bc539ebc9b9d445e01f610aaa38534b2baad01ef97d11404dbb68ccfc61ac09"
+  },
+  {
+    "project": "kirc",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/kirc_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "1c09de8ef722bc606119c0088464d046f4a71bedb1a2827dc37316fd8fd6376d"
+  },
+  {
+    "project": "kirp",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/kirp_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "e87085357601b4ef135085c293592dfff71c4c684b705ade6da6529626dd7b8c"
+  },
+  {
+    "project": "laml",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/laml_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "e5eb49fd566a32aa050c62088ea02fcb54fe9ec64155ccd6d8b5918dfffcab87"
+  },
+  {
+    "project": "lgg",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/lgg_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "baf8d3bc5618acae478fe5f3452f65af8316d3308a85bd60124b5a075334a427"
+  },
+  {
+    "project": "lihc",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/lihc_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "58d32c94a09ecb78cc90a713e5b6c5f9e4ea1d733183ccb826ea7b821eb25d68"
+  },
+  {
+    "project": "luad",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/luad_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "1663a32c2d704a9d5953f357385812f537222079684ab0a71408bc4b9c0a6b43"
+  },
+  {
+    "project": "lusc",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/lusc_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "68a3f5d2f93c020d4c9948476db781f5591ffb0830380695c12e68b8945cf6ed"
+  },
+  {
+    "project": "meso",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/meso_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "19869b88dc9d22fdd1202def5154fb817704962f2eed3b77c639c0852b0c67b5"
+  },
+  {
+    "project": "ov",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/ov_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "3582129072792efa2e056ce21a312a2aa5eec0a997ab929cf1eca11772f1f798"
+  },
+  {
+    "project": "paad",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/paad_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "63b9f6edf64cfd2a3d834b62c078090af5b7db7416cdf88f36f8c113fb923dda"
+  },
+  {
+    "project": "pcpg",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/pcpg_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "a5eb700252d05ff323c4c49cc6902f0b2c0c54a4dc0ccb76dbda349ee9550015"
+  },
+  {
+    "project": "prad",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/prad_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "6c07965a993195c112be53b3d43adcacf9e866709f20c6fc9e86d121be877b7f"
+  },
+  {
+    "project": "sarc",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/sarc_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "e2348d92ad70342453d311a718e0b02f20093afe9e4536b8045628087928edef"
+  },
+  {
+    "project": "skcm",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/skcm_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "0eea7ff1f514a345b32e841ad2641b4488e21e9879455122f903750810cc7ee6"
+  },
+  {
+    "project": "stad",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/stad_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "0a37809c8893b5a66e6188ae91b333c967921cc8244658b38ff0358dabcecc06"
+  },
+  {
+    "project": "tgct",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/tgct_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "bb44631e837d518b16cfa93cd60bb5aa85c61cced1427e6b4b0103338364f13a"
+  },
+  {
+    "project": "thca",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/thca_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "99e9e7aa72b6383697060617e507a1409b27e979e62964c4961a865aa6bc79be"
+  },
+  {
+    "project": "thym",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/thym_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "7e9a0e5602b76c64528fb845aadb33e305d9ce265055309f679f4d5f5e902b43"
+  },
+  {
+    "project": "ucec",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/ucec_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "2d0d438b6417d83e31bfbf912669e2f16b04d7b54cd2f84ffed3c16e62ad41c2"
+  },
+  {
+    "project": "ucs",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/ucs_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "ec7f36a2d74c74eb4919353b70e055ce326382d2b8b23fa3a95c1e713de90d49"
+  },
+  {
+    "project": "uvm",
+    "url": "https://raw.githubusercontent.com/cBioPortal/datahub/026a269c6946f41815481af3263d2539db91fbb2/public/uvm_tcga_pan_can_atlas_2018/case_lists/cases_all.txt",
+    "sha256": "e24f5127b4678f64c21659ac3207fc40dbefa17b3db0084e8f08493bd977fa6b"
+  }
+]

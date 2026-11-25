@@ -1,0 +1,40 @@
+name: Tumor-to-HLA evidence watch
+on:
+  schedule:
+    - cron: '17 12 * * 1'
+  workflow_dispatch:
+    inputs:
+      start:
+        description: Optional first inclusion day (YYYY-MM-DD, UTC)
+        required: false
+      end:
+        description: Optional final inclusion day (YYYY-MM-DD, UTC)
+        required: false
+permissions:
+  contents: read
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify collector and catalog references
+        run: python3 -B -m unittest discover -s tests -p test_tumor_to_hla_watch.py
+      - name: Collect candidate metadata
+        env:
+          START_DAY: ${{ inputs.start }}
+          END_DAY: ${{ inputs.end }}
+        run: |
+          args=(--output "$RUNNER_TEMP/tumor-to-hla.json")
+          if [[ -n "$START_DAY" ]]; then args+=(--start "$START_DAY"); fi
+          if [[ -n "$END_DAY" ]]; then args+=(--end "$END_DAY"); fi
+          python3 scripts/watch_tumor_to_hla.py "${args[@]}"
+      - name: Save dated candidate report
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: tumor-to-hla-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/tumor-to-hla.json
+          if-no-files-found: error
+          retention-days: 60

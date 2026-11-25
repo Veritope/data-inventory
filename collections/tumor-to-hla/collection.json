@@ -1,0 +1,536 @@
+{
+  "version": 1,
+  "catalog_groups": [
+    {
+      "stage": "somatic",
+      "ids": [
+        "pcawg",
+        "tcga",
+        "tcga-mc3",
+        "tcga-pancanatlas",
+        "target"
+      ],
+      "use": "WGS, exome/RNA and pediatric cohorts. Resolve overlap across TCGA-derived resources before pooling."
+    },
+    {
+      "stage": "translation",
+      "ids": [
+        "cptac",
+        "uniprot"
+      ],
+      "use": "Proteogenomics and reference proteins. Pin the studied cohort and the proteome release, isoforms and file hash."
+    },
+    {
+      "stage": "processing",
+      "ids": [
+        "specht-2020-proteasome-peptide-db"
+      ],
+      "use": "Isolated enzyme digestion observations. An in vitro product does not establish tumor cell surface display."
+    },
+    {
+      "stage": "presentation",
+      "ids": [
+        "bassani-sternberg-2016-melanoma",
+        "marcu-2021-hla-ligand-atlas-raw",
+        "hla-ligand-atlas-usecase",
+        "onekg-hla-types"
+      ],
+      "use": "Separate primary tumor observations, healthy-tissue ligand measurements, and population HLA typing."
+    },
+    {
+      "stage": "comparative",
+      "ids": [
+        "pxd074485-canine-tumor-peptides",
+        "canine-dla88-immunopeptidome-atlas"
+      ],
+      "use": "Canine evidence is a separate stratum with its own assay and patient denominator."
+    }
+  ],
+  "aliases": [
+    {
+      "canonical": "bassani-sternberg-2016-melanoma",
+      "aliases": [
+        "bassani-2016-melanoma-neoepitopes"
+      ],
+      "same_deposition": "PXD004894",
+      "doi": "10.1038/ncomms13404"
+    },
+    {
+      "canonical": "marcu-2021-hla-ligand-atlas-raw",
+      "aliases": [
+        "hla-ligand-atlas-dda"
+      ],
+      "same_deposition": "PXD019643"
+    }
+  ],
+  "pinned_sources": [
+    {
+      "id": "filip-2023-tcga-arcashlaquant",
+      "stage": "presentation",
+      "paper": "https://doi.org/10.1186/s13073-023-01154-x",
+      "repository": "https://github.com/RabadanLab/arcasHLA",
+      "git_commit": "9fa54a212d134b0d9894d1fc19ec1bdc6f62eb55",
+      "path": "results/TCGA-cohorts-arcasHLAquant-results.tsv",
+      "versioned_url": "https://github.com/RabadanLab/arcasHLA/blob/9fa54a212d134b0d9894d1fc19ec1bdc6f62eb55/results/TCGA-cohorts-arcasHLAquant-results.tsv",
+      "sha256": "3742bf8179e26ef5820df46c1048db1c8e4a2b3dd0f602957d40bd00c0580dcb",
+      "role": "HLA-A/B/C genotype and allele-specific expression in the assayed TCGA cohort; parent article reports aggregate HLA-type counts.",
+      "caveat": "TCGA-selected participants. Genotyping and RNA abundance do not measure malignant cell surface peptide display. Use exact sample-type, missingness and patient deduplication rules before analysis. Store only aggregate outputs.",
+      "separate_expression_figure": {
+        "sha256": "f5934a503f29459d91ef2a72688c1e699eba782565fb4f2c9446c76b98e52867",
+        "url": "https://raw.githubusercontent.com/RabadanLab/arcasHLA/9fa54a212d134b0d9894d1fc19ec1bdc6f62eb55/FigureData.zip"
+      }
+    },
+    {
+      "id": "roetschke-invitrospi-example",
+      "stage": "processing",
+      "repository": "https://github.com/QuantSysBio/invitroSPI",
+      "git_commit": "08139903e95ed2155f6624f6979570625176efc3",
+      "path": "OUTPUT/test_data/ProteasomeDB.csv",
+      "versioned_url": "https://github.com/QuantSysBio/invitroSPI/blob/08139903e95ed2155f6624f6979570625176efc3/OUTPUT/test_data/ProteasomeDB.csv",
+      "sha256": "10463255a5a2908be689fce6911a5bcfef525ffb99eb05a47436118b83dae169",
+      "role": "Two human PMEL polypeptide digestion examples; the author CSV contains matched spectra. Count distinct observed products and covered substrate positions separately.",
+      "paper": "https://doi.org/10.1038/s41597-022-01890-6",
+      "caveat": "Data redistribution and commercial reuse terms require separate verification from the software license."
+    },
+    {
+      "id": "nicholas-nsclc-s1",
+      "stage": "presentation",
+      "repository": "https://github.com/ab604/lung-neoantigen-supplement",
+      "git_commit": "8d161fe4ba4b9fc4fee1bda5079f015338e6df03",
+      "path": "Supplementary-Data-S1-nsclc-patient-information-table-2024-08-14.csv",
+      "versioned_url": "https://github.com/ab604/lung-neoantigen-supplement/blob/8d161fe4ba4b9fc4fee1bda5079f015338e6df03/Supplementary-Data-S1-nsclc-patient-information-table-2024-08-14.csv",
+      "sha256": "4afb40e3e1fa2b4eb0572e67d79ccee434e3019632bfae2fda4922ce8e688242",
+      "role": "Donor-level lung cancer metadata. Distinguish counts of all eluted class I ligands from detection of tumor-specific ligands. Dataset DOI 10.5281/zenodo.12820423.",
+      "paper": "https://doi.org/10.1101/2024.05.30.596609",
+      "accession": "10.5281/zenodo.12820423"
+    },
+    {
+      "id": "novoneo-msv000096853",
+      "stage": "presentation",
+      "repository": "https://github.com/nh2tran/NovoNeo",
+      "git_commit": "2c23e50c46994a26ce8318f6cdded924773fcb70",
+      "path": "aa.tumor_wide.ipynb",
+      "versioned_url": "https://github.com/nh2tran/NovoNeo/blob/2c23e50c46994a26ce8318f6cdded924773fcb70/aa.tumor_wide.ipynb",
+      "sha256": "5c9dd1ba0f8f6101a7d2cc25e7d2b8be57f47baad48ef722e90498d081786059",
+      "role": "Stored author notebook output for a pancreatic tumor discovery cohort. Variant-labeled candidates and confirmed somatic malignant-cell surface display have different criteria.",
+      "accession": "MSV000096853"
+    },
+    {
+      "id": "immunoverse-variant-summary",
+      "stage": "presentation",
+      "repository": "https://github.com/amans44/immunoverse-portal",
+      "git_commit": "155f1109065add966c903827b112eed2ddd303fe",
+      "path": "data/_summary.json",
+      "versioned_url": "https://github.com/amans44/immunoverse-portal/blob/155f1109065add966c903827b112eed2ddd303fe/data/_summary.json",
+      "sha256": "99a4ad67086f92580ca0e4de3dc078ae8d8ea3c3d6fb883ca49a5aa24a68a00b",
+      "role": "Versioned public portal snapshot. Variant-labeled rows across histologies cannot estimate patient-level display prevalence without deduplication, provenance and denominators.",
+      "paper": "https://doi.org/10.1101/2025.01.22.634237"
+    },
+    {
+      "id": "openpedcan-v12-fusion-frequencies",
+      "stage": "somatic",
+      "repository": "https://github.com/d3b-center/OpenPedCan-analysis",
+      "git_commit": "f8a806ba3b54e7029f0a9600617acc7107939011",
+      "path": "analyses/fusion-frequencies/results/putative-oncogene-fusion-freq.tsv.gz",
+      "versioned_url": "https://github.com/d3b-center/OpenPedCan-analysis/blob/f8a806ba3b54e7029f0a9600617acc7107939011/analyses/fusion-frequencies/results/putative-oncogene-fusion-freq.tsv.gz",
+      "sha256": "f2e38bfefde1ac72564aa2df1753fb3e2d2eeb399dfce5dbe6daf1b6ea010ab2",
+      "role": "RNA fusion frequency table by histology, reading frame, breakpoints and partner. Source denominators are RNA-cohort patients. Do not sum rows across fusions, frames or breakpoints."
+    },
+    {
+      "id": "pcawg7-signature-spectra-sbs",
+      "stage": "somatic",
+      "repository": "https://github.com/steverozen/PCAWG7",
+      "git_commit": "2e8a1a16f7b3b761593002f3c72c29dd278a2da3",
+      "path": "data-raw/spectra/WGS_PCAWG.96.csv",
+      "versioned_url": "https://github.com/steverozen/PCAWG7/blob/2e8a1a16f7b3b761593002f3c72c29dd278a2da3/data-raw/spectra/WGS_PCAWG.96.csv",
+      "sha256": "906ad6aa8f319b65d5b1d77fa7ecf4278fb99a93abcb8f9101e08573ac205362",
+      "role": "Counts of single-base substitutions stratified by sequence context."
+    },
+    {
+      "id": "pcawg7-signature-spectra-dbs",
+      "stage": "somatic",
+      "repository": "https://github.com/steverozen/PCAWG7",
+      "git_commit": "2e8a1a16f7b3b761593002f3c72c29dd278a2da3",
+      "path": "data-raw/spectra/WGS_PCAWG.dinucs.csv",
+      "versioned_url": "https://github.com/steverozen/PCAWG7/blob/2e8a1a16f7b3b761593002f3c72c29dd278a2da3/data-raw/spectra/WGS_PCAWG.dinucs.csv",
+      "sha256": "0d2a36351287eff9387c919288cb946e372802a6fa27cf2d4cb27a34340e32a0",
+      "role": "Counts of doublet-base substitutions."
+    },
+    {
+      "id": "pcawg7-signature-spectra-indels",
+      "stage": "somatic",
+      "repository": "https://github.com/steverozen/PCAWG7",
+      "git_commit": "2e8a1a16f7b3b761593002f3c72c29dd278a2da3",
+      "path": "data-raw/spectra/WGS_PCAWG.indels.csv",
+      "versioned_url": "https://github.com/steverozen/PCAWG7/blob/2e8a1a16f7b3b761593002f3c72c29dd278a2da3/data-raw/spectra/WGS_PCAWG.indels.csv",
+      "sha256": "264ae21f75d8621a66bc24e1c7d2747fa25d59b01fda390e90a3997796423286",
+      "role": "Counts of insertions and deletions by context."
+    },
+    {
+      "id": "pcawg7-manifest",
+      "stage": "somatic",
+      "repository": "https://github.com/steverozen/PCAWG7",
+      "git_commit": "2e8a1a16f7b3b761593002f3c72c29dd278a2da3",
+      "path": "data-raw/pcawg.sample.sheets/pcawg_sample_sheet.v1.4.2016-09-14.tsv",
+      "versioned_url": "https://github.com/steverozen/PCAWG7/blob/2e8a1a16f7b3b761593002f3c72c29dd278a2da3/data-raw/pcawg.sample.sheets/pcawg_sample_sheet.v1.4.2016-09-14.tsv",
+      "sha256": "0dc9871196e5c4587b2b562d94e1c62305adc2daf7f9439a7ad759f17bec7572",
+      "role": "PCAWG sample types and cohort denominators."
+    },
+    {
+      "id": "tcga-laml-selected-genes",
+      "stage": "somatic",
+      "repository": "https://github.com/PoisonAlien/maftools",
+      "git_commit": "015a4cf8c69ba89a55a3fdcea911421509e9a198",
+      "path": "inst/extdata/LAML_sig_genes.txt.gz",
+      "versioned_url": "https://github.com/PoisonAlien/maftools/blob/015a4cf8c69ba89a55a3fdcea911421509e9a198/inst/extdata/LAML_sig_genes.txt.gz",
+      "sha256": "9a85bf28dd59bdabb42297d0475085f257b1625b27d302779671020d8c1cd04d",
+      "role": "Published significance calls for candidate driver genes in adult AML. Significance is gene-level."
+    },
+    {
+      "id": "tcga-laml-maf",
+      "stage": "somatic",
+      "repository": "https://github.com/PoisonAlien/maftools",
+      "git_commit": "015a4cf8c69ba89a55a3fdcea911421509e9a198",
+      "path": "inst/extdata/tcga_laml.maf.gz",
+      "versioned_url": "https://github.com/PoisonAlien/maftools/blob/015a4cf8c69ba89a55a3fdcea911421509e9a198/inst/extdata/tcga_laml.maf.gz",
+      "sha256": "d102b071a052265b6f8ad7947bad1d58d3e3036fd17d6b274f7ea09a376cd6a0",
+      "role": "TCGA adult AML panel of somatic variant calls for reported recurrent genes. Capture limitations differ from whole genomes."
+    },
+    {
+      "id": "pcawg-consortium-2020-sv-table1",
+      "stage": "somatic",
+      "paper": "https://doi.org/10.1038/s41586-020-1969-6",
+      "versioned_url": "https://media.springernature.com/full/springer-static/esm/art%3A10.1038%2Fs41586-020-1969-6/MediaObjects/41586_2020_1969_MOESM3_ESM.zip",
+      "sha256": "1959619da84d7c46eb6292a1a64f209d64b4c95174436d73a9340da25bcea993",
+      "member": "supplementary Tables/Supplementary Table 1.xlsx",
+      "member_sha256": "791012a864c1d3005dcb28838a5de87df9e26c3288474253e861fda096dd0b58",
+      "role": "PCAWG matched tumor-normal WGS consortium table with donor-level structural event counts and histologies. Overlaps PCAWG signature and Li et al. analyses. Preserve explicit zeros and missing SV counts."
+    },
+    {
+      "id": "lawrence-2013-coding-rates-s2",
+      "stage": "somatic",
+      "role": "Per-specimen callable coding denominator from Supplementary Table S2. TCGA overlaps other surveys.",
+      "paper": "https://doi.org/10.1038/nature12213",
+      "files": {
+        "tableS2": {
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fnature12213/MediaObjects/41586_2013_BFnature12213_MOESM256_ESM.xls",
+          "sha256": "b9ee85b01a6ce3e8ba04c549ddf677493af4bc2fb41c0a12c02864a4e0607c9d"
+        }
+      }
+    },
+    {
+      "id": "sosinsky-100k-genomes-2024",
+      "stage": "somatic",
+      "role": "UK 100,000 Genomes cancer programme. Public aggregate supplement covers S8–S15 including the S12 evaluable high-burden denominator; the authors’ R code documents the per-tumor coding rate. Underlying individual-level genomes require approved access.",
+      "paper": "https://doi.org/10.1038/s41591-023-02682-0",
+      "code_doi": "https://doi.org/10.5281/zenodo.8311292",
+      "files": {
+        "supplement": {
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41591-023-02682-0/MediaObjects/41591_2023_2682_MOESM3_ESM.xlsx",
+          "sha256": "14f852cab6afb8dae183c634ad7fe0ccde52bed2b4d38965567e3815eff100d7"
+        },
+        "authorsCode": {
+          "url": "https://zenodo.org/api/records/8311292/files/100k_cancer_programme.tar.gz/content",
+          "sha256": "8a6fb17e06b01cd8bf282c79944aaff71b74dc3803e81fd3de61883abc29e240",
+          "member": "100k_cancer_programme/figure_2/pan_cancer_figure_2_tmb.R"
+        }
+      }
+    },
+    {
+      "id": "pcawg7-tcga-wes-spectra",
+      "stage": "somatic",
+      "role": "Project-wide TCGA exome SBS, DBS and indel count matrices; distinguish these exomes from PCAWG WGS and account for donor overlap.",
+      "paper": "https://doi.org/10.1038/s41586-020-1943-3",
+      "files": {
+        "SBS": {
+          "url": "https://raw.githubusercontent.com/steverozen/PCAWG7/2e8a1a16f7b3b761593002f3c72c29dd278a2da3/data-raw/spectra/WES_TCGA.96.csv",
+          "sha256": "cacd9b3caa7dc2eeda3e2ad30891843464da989b7383418fe46f77d3bab41c1e"
+        },
+        "DBS": {
+          "url": "https://raw.githubusercontent.com/steverozen/PCAWG7/2e8a1a16f7b3b761593002f3c72c29dd278a2da3/data-raw/spectra/WES_TCGA.dinucs.csv",
+          "sha256": "8202921956732661e6c3c65d3c22e38e7b33f0b2788a6ed6568330794e5a9271"
+        },
+        "ID": {
+          "url": "https://raw.githubusercontent.com/steverozen/PCAWG7/2e8a1a16f7b3b761593002f3c72c29dd278a2da3/data-raw/spectra/WES_TCGA.indels.csv",
+          "sha256": "ed8c909edd70dbd50ca9555e98d7c3769632ab1b0d89934623b5fcab24e0d369"
+        }
+      }
+    },
+    {
+      "id": "tcga-pancanatlas-case-rosters",
+      "stage": "somatic",
+      "role": "Project labels for specimens in the TCGA exome matrix. Exact repository revision and individual file SHA-256 for each roster, including projects whose counts are later withheld.",
+      "manifest": {
+        "path": "manifests/tcga-case-rosters.json",
+        "sha256": "602a90b51c6b3547e84735126f2ab1a890568c9370b5fe778c83d7e73b5302e0"
+      }
+    },
+    {
+      "id": "sanchez-vega-2018-tcga-oncogenic-pathways",
+      "stage": "somatic",
+      "catalog_id": "tcga-pancanatlas",
+      "paper": "https://doi.org/10.1016/j.cell.2018.03.035",
+      "pmid": "29625050",
+      "pmcid": "PMC6070353",
+      "release": "Cell, 2018-04-05, Oncogenic Signaling Pathways in The Cancer Genome Atlas, Tables S1, S3 and S4",
+      "role": "S1 identifies one selected specimen per patient and its diagnosis and subtype. S3 defines pathway membership. S4 records qualifying alterations across 410 gene-mechanism columns, 187 genes and 10 pathways.",
+      "cohort": "9,125 of 11,276 TCGA PanCanAtlas patients across 33 diagnoses passed pathology and quality review and had mutation, copy number, DNA methylation and mRNA data. The selected specimens comprise 8,602 primary solid tumors, 162 AML blood tumors and 361 melanoma metastases.",
+      "caveat": "TCGA resources reuse patients. Pathways and mechanisms also overlap within each patient. Report each pathway against its assessed denominator. An S4 NA is unresolved. A patient with no positive call and any unresolved pathway remains unresolved for the ten-pathway union (95 patients). The selected cohort measures curated alterations and has no population-incidence weighting.",
+      "files": {
+        "S1": {
+          "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0092867418303593-mmc1.xlsx",
+          "sha256": "35071f5cf78b28adefe42ce9c1fcb61d35d3a6118ed0c4b4363b20a69eb31c70"
+        },
+        "S3": {
+          "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0092867418303593-mmc3.xlsx",
+          "sha256": "df722435b7c069b9225c9e4bbef7ab812385bd5e8ab7c415837cde5f2838c640"
+        },
+        "S4": {
+          "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0092867418303593-mmc4.xlsx",
+          "sha256": "708b497b2e066b519807fabefc87a6640c273a7a351c9cd637b2811692f05ea3"
+        }
+      }
+    },
+    {
+      "id": "rvdriver-zenodo-15656415",
+      "stage": "somatic",
+      "role": "Selected paired DNA/RNA somatic-mutation cohort",
+      "paper": "https://doi.org/10.1186/s13059-025-03557-y",
+      "data": "https://doi.org/10.5281/zenodo.15656415",
+      "files": {
+        "mutation_archive": {
+          "url": "https://zenodo.org/api/records/15656415/files/TCGA_mutation_tables.zip/content",
+          "sha256": "efebebc69371a4fb0d63faafac8651564823aadc666f80e837fb93095bd4ac6b"
+        },
+        "annotated": {
+          "url": "https://zenodo.org/api/records/15656415/files/RVdriver_TCGA_mutation_table.RDS/content",
+          "sha256": "093068f4b20bd03c3d5d6c0db151fc902eb5e27fb8789ce9c1162bd31764778d"
+        }
+      }
+    },
+    {
+      "id": "soh-human-20s-pxd044463",
+      "stage": "processing",
+      "role": "Whole-substrate human 20S proteasome digestion experiment",
+      "paper": "https://doi.org/10.1038/s41467-024-45339-3",
+      "data": "https://www.ebi.ac.uk/pride/archive/projects/PXD044463",
+      "other_accession": "MSV000092631",
+      "primary_source_data": "Figure 3d and Figure 6c",
+      "files": {
+        "source_data": {
+          "url": "https://media.springernature.com/full/springer-static/esm/art%3A10.1038%2Fs41467-024-45339-3/MediaObjects/41467_2024_45339_MOESM14_ESM.xlsx",
+          "sha256": "576dde90637804061ff6d5a75e711df5ffae6d71306bffebd1e9c82c5ef93e38"
+        }
+      }
+    },
+    {
+      "id": "rvdriver-public-examples",
+      "stage": "somatic",
+      "role": "Two author example subsets for external access and release sanity checks, overlapping the Zenodo cohort.",
+      "paper": "https://doi.org/10.1186/s13059-025-03557-y",
+      "files": {
+        "UCS": {
+          "url": "https://raw.githubusercontent.com/McGranahanLab/RVdriver/ae9fd47261324b04b9e2d1bd6da5cde8ccd5dffd/inst/example_data/UCS_mutation_table.rds",
+          "sha256": "14d7ff5c5cf2e0d27a1c22610e56efa858ab3d5a677df63223047419e0a70f4f"
+        },
+        "UVM": {
+          "url": "https://raw.githubusercontent.com/McGranahanLab/RVdriver/ae9fd47261324b04b9e2d1bd6da5cde8ccd5dffd/inst/example_data/UVM_mutation_table.rds",
+          "sha256": "a2dc837e26c1d7192da0c13db4b7f1233ca637d22f46f02db033b247a8595358"
+        }
+      }
+    },
+    {
+      "id": "savage-2024-cptac-proteogenomics",
+      "stage": "translation",
+      "role": "CPTAC pan-cancer mutant protein observations, search/denominator sheets, and published figure. Keep lab-prepared peptides and predicted HLA binding distinct from natural surface display.",
+      "paper": "https://doi.org/10.1016/j.cell.2024.05.039",
+      "files": {
+        "s1": {
+          "url": "https://ars.els-cdn.com/content/image/1-s2.0-S009286742400583X-mmc1.pdf",
+          "sha256": "d1997a82577aaa13bf12a91a2825cde8236b7b25c55150f5c8e5e843c8ac02c4"
+        },
+        "s7": {
+          "url": "https://ars.els-cdn.com/content/image/1-s2.0-S009286742400583X-mmc7.xlsx",
+          "sha256": "f8e9653a105ff95c5a50883d42e6db1ce4b79065f11c48c82094f192794199e3"
+        },
+        "fig6": {
+          "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0d9f/12010439/fe0fa92a96cf/nihms-2068352-f0006.jpg",
+          "sha256": "24386a695a9233889873468d49a7daf2b0ee99a91313040e35a4b1b29bda4f6a"
+        }
+      }
+    },
+    {
+      "id": "bassani-2016-melanoma-primary-tables",
+      "stage": "presentation",
+      "role": "Mass-spectrometry cohort selection and mutant hits. This is the PXD004894 study already registered in the catalog. The two supplements are direct measurement sources for the same five exome-searched patients.",
+      "catalog_id": "bassani-sternberg-2016-melanoma",
+      "paper": "https://doi.org/10.1038/ncomms13404",
+      "files": {
+        "melanoma_assays": {
+          "sha256": "36567bf148bfd8576fef936d5979016e63a1ba48ddcc92a2ecbb0db4814c20b7",
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fncomms13404/MediaObjects/41467_2016_BFncomms13404_MOESM1317_ESM.xlsx"
+        },
+        "melanoma_hits": {
+          "sha256": "74369938a10ef0939c8bc5f95de36d0cc7353dc89adf395676e28949893d863a",
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fncomms13404/MediaObjects/41467_2016_BFncomms13404_MOESM1322_ESM.xlsx"
+        }
+      }
+    },
+    {
+      "id": "newey-2019-crc-organoid-tables",
+      "stage": "presentation",
+      "role": "Publisher article tables for five untreated colorectal organoid lines. Unit is an organoid line; keep separate from native tissue and treatment arms.",
+      "paper": "https://doi.org/10.1186/s40425-019-0769-8",
+      "files": {
+        "PMC_tables": {
+          "sha256": "40505bf0d831b3061aefabea2b45d7cb5212c795dee7a042c2df16b3648e320b",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=6859637&retmode=xml"
+        }
+      }
+    },
+    {
+      "id": "uniprot-reference-e04",
+      "stage": "translation",
+      "role": "Human and canine proteomes used in the exact-match analysis. The current-release locations rotate; release label, per-file checksums and the versioned analysis manifest identify this acquisition. The AML MAF is already pinned separately.",
+      "catalog_id": "uniprot",
+      "release": "UniProtKB reference proteomes 2026_04, 2026-11-04",
+      "human_proteome": "UP000005640",
+      "canine_proteome": "UP000805418",
+      "source": "https://www.uniprot.org/proteomes/UP000005640",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "files": {
+        "human_metalink.xml": {
+          "url": "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000005640/RELEASE.metalink",
+          "sha256": "ed35242f3a91c8e7b900b4bca93a2c2c22487b44924cc9a65167a78eb201b205"
+        },
+        "human_main.fasta.gz": {
+          "url": "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000005640/UP000005640_9606.fasta.gz",
+          "sha256": "9ff6719ed2f8cd86614277fec86e729d26c3cd1f8edd95e8f8d44b219f9bee01",
+          "publisher_md5": "90bbb81def853de76e402571f730d27c"
+        },
+        "human_additional.fasta.gz": {
+          "url": "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000005640/UP000005640_9606_additional.fasta.gz",
+          "sha256": "c6ce12f943c6be6b2f72676d97d82051ba47d501cb355b2ee0e340082533b246",
+          "publisher_md5": "657662fe8716a65ce2d66dc7016ceade"
+        },
+        "dog_dog-meta.xml": {
+          "url": "https://ftp.expasy.org/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000805418/RELEASE.metalink",
+          "sha256": "75902c6b503acc4053b5384785a45161c6e017512a80daa1874f43aed5984345"
+        },
+        "dog_dog-main.fasta.gz": {
+          "url": "https://ftp.expasy.org/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000805418/UP000805418_9615.fasta.gz",
+          "sha256": "37fb6fc5b23084ccb7fdc1c5ef99374dabb27b403a4c1d59dd6e90a1ec9a1bde",
+          "publisher_md5": "9dfd9659ab831ee55bf1d54a8f2b88c0"
+        },
+        "dog_dog-additional.fasta.gz": {
+          "url": "https://ftp.expasy.org/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000805418/UP000805418_9615_additional.fasta.gz",
+          "sha256": "542096f467e627968c0f84a5392ca5c693fae9c43262785e63c92b8559d651fe",
+          "publisher_md5": "2776fb77aaba0e5c4b1e8bc4b743c8f1"
+        }
+      }
+    },
+    {
+      "id": "refseq-tcga-laml-cds-annotation",
+      "stage": "translation",
+      "role": "RefSeq translations for versioned transcripts requested from the exact TCGA AML MAF. The checksum covers the normalized transcript-to-protein mapping produced by the archived analysis. Dataset counts are reported by donor in the parent release.",
+      "study": "https://doi.org/10.1056/NEJMoa1301689",
+      "input_id": "tcga-laml-maf",
+      "reference": {
+        "source": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+        "database": "nuccore",
+        "rettype": "fasta_cds_aa",
+        "normalized_sha256": "4a703dba1ae7135097c28fd3584b854ceffa97f1d6077cc3dd1a9fa1450ee55f"
+      },
+      "versioned_method": "https://github.com/Veritope/veritope/blob/6071698dbb6ed069602a60f38d3c37359d28b56f/research/projects/tumor-to-hla/analysis/novelty/summarize.py"
+    },
+    {
+      "id": "ligand-mhc-atlas-2025",
+      "stage": "presentation",
+      "role": "Pooled ligand atlas across studies; distinct resource from the normal-tissue HLA Ligand Atlas",
+      "paper": "https://doi.org/10.1093/bib/bbaf314",
+      "manifest": {
+        "path": "manifests/ligand-mhc-atlas-acquisition.json",
+        "sha256": "843a66d92b87bc2d8050eb9e0b58436cfc91606bc4c0afbd723e341ae22a5a9c"
+      },
+      "transport_status": "Publisher HTTP distribution. The available HTTPS index and equivalent test file returned 503 at collection. Content hashes identify this acquisition but cannot authenticate it.",
+      "scope": "Historical pooled class I ligand union. Independent donors and authenticated immutable publisher links are unavailable; hashes identify the acquired bytes and do not authenticate HTTP transport."
+    },
+    {
+      "id": "native-crc-paired-2025",
+      "stage": "presentation",
+      "paper": "https://doi.org/10.1016/j.xgen.2025.101062",
+      "scope": "Ten paired colorectal donors. The fraction with an identified ligand depends on whether the source definition includes exonic DNA, noncoding DNA, or RNA-only assignments.",
+      "files": [
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12926194/supplementaryFiles",
+          "member": "mmc2.xlsx",
+          "sha256": "30ac18501653bf45d46dad78d22f2e98229a35230b3319bb8b286aebb20fa76e"
+        }
+      ]
+    },
+    {
+      "id": "absolute-quantitative-immunopeptidomics-2020",
+      "stage": "presentation",
+      "paper": "https://doi.org/10.1038/s41467-020-16588-9",
+      "scope": "Absolute copies per input cell in a breast cancer cell-line lysate. Distinct measured ligands and copies per cell are separate quantities.",
+      "files": [
+        {
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-16588-9/MediaObjects/41467_2020_16588_MOESM10_ESM.xlsx",
+          "member": "Figure 3d workbook",
+          "sha256": "28ea23a4c783609ba920856c2dd60c02fbe74a97bf90cb5dff4167e6d8b1ae52"
+        }
+      ]
+    },
+    {
+      "id": "cptac-skcm-discovery-hla-pdc000749",
+      "stage": "presentation",
+      "paper": "https://pubmed.ncbi.nlm.nih.gov/43043388/",
+      "repository": "https://pdc.cancer.gov/pdc/study/PDC000749",
+      "accession": "PDC000749",
+      "archive_id": "d4659d00-ae1d-11f1-b328-0a200668d9ef",
+      "archive_bytes": 1038219071,
+      "archive_publisher_md5": "f8df4feda46736130caab4001dd1c09c",
+      "files": [
+        {
+          "member": "CPTAC_Melanoma_MultiOmics_Processed_Data_20260902/Clinical and demographic characteristics.xlsx",
+          "bytes": 35489,
+          "sha256": "489481b2f08ebb0bc381ea4d77b00aeab07b92ba88c1e01a7e37c8d078f89276"
+        },
+        {
+          "member": "CPTAC_Melanoma_MultiOmics_Processed_Data_20260902/Discovery_cohort/Proteomics/HLA_I_peptidome/Immunoproteomics total peptide.xlsx",
+          "bytes": 36317933,
+          "sha256": "e3f365303f4dad0c8c60cd3a8d1c5bbd304478d0a32aace83d50ee8fb379cf57"
+        },
+        {
+          "member": "CPTAC_Melanoma_MultiOmics_Processed_Data_20260902/README.docx",
+          "bytes": 23764,
+          "sha256": "e8b761b7f5960dc4b790ef7b0d4bc886f52ba87dab1d6b98c13c8ec886e79d42"
+        },
+        {
+          "member": "CPTAC_Melanoma_MultiOmics_Processed_Data_20260902/Discovery_cohort/Genomics/somatic_mutation/somatic_mutation_unique_gene_name.csv",
+          "bytes": 37164337,
+          "sha256": "948168b12095ec770400ff323499f042f93ac54d3cc069691fbe8cebbc67a416"
+        }
+      ],
+      "scope": "The clinical records, somatic calls and HLA discovery runs require a specimen crosswalk. A raw-run count does not give the number of donors with a mutation-supported HLA-I ligand."
+    },
+    {
+      "id": "monte-luad-native-ms",
+      "stage": "presentation",
+      "paper": "https://doi.org/10.1038/s41467-023-37547-0",
+      "repository": "https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000090437",
+      "accession": "MSV000090437",
+      "pmcid": "PMC10070353",
+      "publication_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10070353/",
+      "text_body_sha256": "7d8085aa3b8032a96a5dc305511d82c9361026a626a1fb23aeea823ca29edfc4",
+      "scope": "Ten selected lung adenocarcinoma tumors. Distinct mutation-bearing ligand species, donor-level detection, and the molecular source of each ligand are separate outcomes. The comparison uses the primary article and Figure 5D."
+    }
+  ],
+  "handoff_sources": [
+    {
+      "id": "owner-original-report-and-model",
+      "access": "private",
+      "reference": "manifests/original-handoff.json"
+    }
+  ]
+}

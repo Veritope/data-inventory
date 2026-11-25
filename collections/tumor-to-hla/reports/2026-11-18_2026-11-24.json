@@ -1,0 +1,1015 @@
+{
+  "candidates": [
+    {
+      "id": "doi:10.1016/j.bbadis.2026.168539",
+      "record_sha256": "96da39046fcd7e4edcf8cb36a24bece01dcfb95edf22c9516342cc6aca1dca7c",
+      "records": [
+        {
+          "id": "doi:10.1016/j.bbadis.2026.168539",
+          "kind": "review; journal article",
+          "pmcid": null,
+          "pmid": "43063687",
+          "provider": "europepmc",
+          "provider_id": "MED:43063687",
+          "published": "2026-11-20",
+          "title": "The mechanistic insights and therapeutic potential of immunoproteasomes in inflammatory bowel disease.",
+          "url": "https://europepmc.org/article/MED/43063687"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "processing"
+      ]
+    },
+    {
+      "id": "doi:10.1016/j.tibs.2026.10.009",
+      "record_sha256": "376024d6436ac54cf9aeb5d6f4715f612c4764fde8b27f5c188064edab962252",
+      "records": [
+        {
+          "id": "doi:10.1016/j.tibs.2026.10.009",
+          "kind": "review; journal article",
+          "pmcid": null,
+          "pmid": "43064563",
+          "provider": "europepmc",
+          "provider_id": "MED:43064563",
+          "published": "2026-11-20",
+          "title": "NRF1 as a sentinel of cellular proteostasis.",
+          "url": "https://europepmc.org/article/MED/43064563"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "processing"
+      ]
+    },
+    {
+      "id": "doi:10.1016/j.vetpar.2026.110976",
+      "record_sha256": "de69e2e1a2c713fcd1239640056161ab23c198c223338d79992d835832a62b8e",
+      "records": [
+        {
+          "id": "doi:10.1016/j.vetpar.2026.110976",
+          "kind": "journal article",
+          "pmcid": null,
+          "pmid": "43044318",
+          "provider": "europepmc",
+          "provider_id": "MED:43044318",
+          "published": "2026-11-16",
+          "title": "Genome-wide scan for runs of homozygosity and selection signatures for gastrointestinal nematode resistance in Santa Ines sheep.",
+          "url": "https://europepmc.org/article/MED/43044318"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "processing"
+      ]
+    },
+    {
+      "id": "doi:10.1093/bioadv/vbag312",
+      "record_sha256": "e7a6ac3a2890841d3a2bf6a977a1cfb7bb067e233e0f9035154acd2e15395ad4",
+      "records": [
+        {
+          "id": "doi:10.1093/bioadv/vbag312",
+          "kind": "brief-report; journal article",
+          "pmcid": "PMC13778629",
+          "pmid": "43054624",
+          "provider": "europepmc",
+          "provider_id": "MED:43054624",
+          "published": "2026-11-06",
+          "title": "DreamAI2: an imputation tool for data-independent acquisition proteomics data.",
+          "url": "https://europepmc.org/article/MED/43054624"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "translation"
+      ]
+    },
+    {
+      "id": "doi:10.1111/cas.70590",
+      "record_sha256": "fc88aef7663c4025f5518389050966aa9e906908db473414affba470d955f416",
+      "records": [
+        {
+          "id": "doi:10.1111/cas.70590",
+          "kind": "review-article; review; journal article",
+          "pmcid": "PMC13774785",
+          "pmid": "43040938",
+          "provider": "europepmc",
+          "provider_id": "MED:43040938",
+          "published": "2026-11-16",
+          "title": "Gut Bacteria-Derived Colibactin as a Driver of Early-Onset Colorectal Cancer.",
+          "url": "https://europepmc.org/article/MED/43040938"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.1158/2159-8290.cd-26-0302",
+      "record_sha256": "36e792f117d1264ea3b8007c6f091ca22b55a94c1e178d9e09cec00fad87a974",
+      "records": [
+        {
+          "id": "doi:10.1158/2159-8290.cd-26-0302",
+          "kind": "journal article",
+          "pmcid": null,
+          "pmid": "43043388",
+          "provider": "europepmc",
+          "provider_id": "MED:43043388",
+          "published": "2026-11-17",
+          "title": "A comprehensive proteogenomic, immunopeptidomic, and metabolomic atlas decodes immunogenicity in cutaneous melanoma.",
+          "url": "https://europepmc.org/article/MED/43043388"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "presentation",
+        "translation"
+      ]
+    },
+    {
+      "id": "doi:10.1210/endocr/bqag120",
+      "record_sha256": "bbaf064c881bf5af125b1f4829e6c6eac9a40461da1a0d38926b5f86db8dd98d",
+      "records": [
+        {
+          "id": "doi:10.1210/endocr/bqag120",
+          "kind": "journal article",
+          "pmcid": null,
+          "pmid": "43043827",
+          "provider": "europepmc",
+          "provider_id": "MED:43043827",
+          "published": "2026-11-17",
+          "title": "NH2-Terminal Truncation of Progesterone Receptor-B in Myometrial Cells: Possible Role in the Control of Parturition.",
+          "url": "https://europepmc.org/article/MED/43043827"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "processing"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-11143133/v1",
+      "record_sha256": "47fdb079c4fe528eaa07d009e1436955ad5bbbd0c6cbb57bc85640fe0358b28c",
+      "records": [
+        {
+          "id": "doi:10.21203/rs.3.rs-11143133/v1",
+          "kind": "preprint",
+          "pmcid": null,
+          "pmid": null,
+          "provider": "europepmc",
+          "provider_id": "PPR:PPR1371591",
+          "published": "2026-11-19",
+          "title": "Peptide-independent deep learning with TRIOPS predicts TCR–HLA restriction and recovers locus-biased HLA loss in tumors",
+          "url": "https://europepmc.org/article/PPR/PPR1371591"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "presentation"
+      ]
+    },
+    {
+      "id": "doi:10.3389/fcell.2026.1947508",
+      "record_sha256": "8981992bd9887978441bebf48ab2fa7a87aa5cb83fe54666cbad7b47b006c3c2",
+      "records": [
+        {
+          "id": "doi:10.3389/fcell.2026.1947508",
+          "kind": "review-article; review; journal article",
+          "pmcid": "PMC13771303",
+          "pmid": "43041538",
+          "provider": "europepmc",
+          "provider_id": "MED:43041538",
+          "published": "2026-11-02",
+          "title": "Leukemia as the price of immunity? An evolutionary cost framework.",
+          "url": "https://europepmc.org/article/MED/43041538"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.3389/fimmu.2026.1939091",
+      "record_sha256": "69dd6a09aa227e7a0b4e7174294bbf4aa07b458f49f41c20261a0e39c32afae8",
+      "records": [
+        {
+          "id": "doi:10.3389/fimmu.2026.1939091",
+          "kind": "research support, non-u.s. gov't; review-article; review; journal article",
+          "pmcid": "PMC13775016",
+          "pmid": "43047677",
+          "provider": "europepmc",
+          "provider_id": "MED:43047677",
+          "published": "2026-11-03",
+          "title": "Non-canonical open reading frame-derived antigens as emerging immune targets in cancer immunotherapy.",
+          "url": "https://europepmc.org/article/MED/43047677"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "presentation",
+        "translation"
+      ]
+    },
+    {
+      "id": "doi:10.3389/fimmu.2026.1997527",
+      "record_sha256": "ea6cb8cd14823bb2bd7e031c55b64881e4713454d0432fd4a5040ac7906b75dc",
+      "records": [
+        {
+          "id": "doi:10.3389/fimmu.2026.1997527",
+          "kind": "research support, non-u.s. gov't; journal article",
+          "pmcid": null,
+          "pmid": "43065612",
+          "provider": "europepmc",
+          "provider_id": "MED:43065612",
+          "published": "2026-11-06",
+          "title": "Mapping the prediction-invisible fraction of an engineered immunopeptidome: a pilot analysis of immunoproteasome-reprogrammed mesenchymal stromal cells.",
+          "url": "https://europepmc.org/article/MED/43065612"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "presentation",
+        "processing"
+      ]
+    },
+    {
+      "id": "doi:10.3389/fonc.2026.2012113",
+      "record_sha256": "c5ea7153be19424cd029b57cbb80da472eca18a1fbef43d011f3f06a1ff6ca74",
+      "records": [
+        {
+          "id": "doi:10.3389/fonc.2026.2012113",
+          "kind": "journal article; case reports; case-report",
+          "pmcid": "PMC13789579",
+          "pmid": "43074805",
+          "provider": "europepmc",
+          "provider_id": "MED:43074805",
+          "published": "2026-11-09",
+          "title": "A novel &lt;i&gt;RUNX1::ANKLE2&lt;/i&gt; fusion in high-risk MDS with progression to AML: a case report.",
+          "url": "https://europepmc.org/article/MED/43074805"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.17985995",
+      "record_sha256": "b485da732e05cfe5f49ea45fa05fffbcc426ee8fb8b87a4957f8935771e1dfc3",
+      "records": [
+        {
+          "created": "2025-12-19T10:52:24Z",
+          "id": "doi:10.5281/zenodo.17985995",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.17985995",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.17985996",
+              "relation": "HasVersion"
+            }
+          ],
+          "title": "PTM Immunopeptidomics",
+          "updated": "2026-11-18T14:21:54Z",
+          "url": "https://doi.org/10.5281/zenodo.17985995",
+          "version": null
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "presentation"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.17985996",
+      "record_sha256": "1a89baa018383a0903024cf3c5743359db60b91c80e1dd63dbf6285096cc04d8",
+      "records": [
+        {
+          "created": "2025-12-19T10:52:24Z",
+          "id": "doi:10.5281/zenodo.17985996",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.17985996",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.17985995",
+              "relation": "IsVersionOf"
+            }
+          ],
+          "title": "PTM Immunopeptidomics",
+          "updated": "2026-11-18T14:21:53Z",
+          "url": "https://doi.org/10.5281/zenodo.17985996",
+          "version": null
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "presentation"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.19371165",
+      "record_sha256": "fee81c713b74d74f5383d8a0c69450f01a72debc288c44114c36019ed95bab11",
+      "records": [
+        {
+          "created": "2026-04-02T21:53:27Z",
+          "id": "doi:10.5281/zenodo.19371165",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.19371165",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.19371166",
+              "relation": "HasVersion"
+            },
+            {
+              "identifier": "10.5281/zenodo.24297129",
+              "relation": "HasVersion"
+            }
+          ],
+          "title": "Spatial proteomics dataset of single cells with translation activity (pS6) in tumour microenvironment",
+          "updated": "2026-11-18T15:55:21Z",
+          "url": "https://doi.org/10.5281/zenodo.19371165",
+          "version": null
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "translation"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22696798",
+      "record_sha256": "9498ef26cb9da2d64bc3f9c1e4b169043a3ac3358b25993e5daa7cee5975f0eb",
+      "records": [
+        {
+          "created": "2026-09-10T19:38:50Z",
+          "id": "doi:10.5281/zenodo.22696798",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.22696798",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.1016/j.chembiol.2026.09.011",
+              "relation": "IsSupplementTo"
+            },
+            {
+              "identifier": "10.5281/zenodo.22696799",
+              "relation": "HasVersion"
+            },
+            {
+              "identifier": "10.5281/zenodo.23674710",
+              "relation": "HasVersion"
+            },
+            {
+              "identifier": "10.5281/zenodo.24297873",
+              "relation": "HasVersion"
+            },
+            {
+              "identifier": "10.5281/zenodo.24373077",
+              "relation": "HasVersion"
+            },
+            {
+              "identifier": "10.5281/zenodo.24406688",
+              "relation": "HasVersion"
+            },
+            {
+              "identifier": "10.5281/zenodo.24429699",
+              "relation": "HasVersion"
+            },
+            {
+              "identifier": "https://github.com/Shechterlab/PTM_Pipeline",
+              "relation": "IsSupplementTo"
+            }
+          ],
+          "title": "Human methylarginine sites, context marks, cancer and germline variants and their mutation propensity, v1.7.0 (PTM_Pipeline)",
+          "updated": "2026-11-21T22:16:07Z",
+          "url": "https://doi.org/10.5281/zenodo.22696798",
+          "version": "v1.7.0"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24297129",
+      "record_sha256": "53a9074c01cfccb7d629a3ffca6aac56bb0d0d02eaac14235fd06280d704dce6",
+      "records": [
+        {
+          "created": "2026-11-18T15:55:18Z",
+          "id": "doi:10.5281/zenodo.24297129",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24297129",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.19371165",
+              "relation": "IsVersionOf"
+            }
+          ],
+          "title": "Spatial proteomics dataset of single cells with translation activity (pS6) in tumour microenvironment",
+          "updated": "2026-11-18T15:55:19Z",
+          "url": "https://doi.org/10.5281/zenodo.24297129",
+          "version": null
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "translation"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24329157",
+      "record_sha256": "73d783404207ffb32c6a598f9aa7213863f8e2bbc57dca2401e9e0a83a846247",
+      "records": [
+        {
+          "created": "2026-11-18T02:50:30Z",
+          "id": "doi:10.5281/zenodo.24329157",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24329157",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.24329158",
+              "relation": "HasVersion"
+            }
+          ],
+          "title": "OncoRead locked signature library: 1,900 locked tumour genome state signatures across 31 cancers, with external evidence table",
+          "updated": "2026-11-18T02:50:30Z",
+          "url": "https://doi.org/10.5281/zenodo.24329157",
+          "version": null
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24329158",
+      "record_sha256": "d838ffd60853a5df0addfdbb23f3b27024d4ab256b6c5110c0feb11cbf8eda5e",
+      "records": [
+        {
+          "created": "2026-11-18T02:50:29Z",
+          "id": "doi:10.5281/zenodo.24329158",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24329158",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.24329157",
+              "relation": "IsVersionOf"
+            }
+          ],
+          "title": "OncoRead locked signature library: 1,900 locked tumour genome state signatures across 31 cancers, with external evidence table",
+          "updated": "2026-11-18T02:50:30Z",
+          "url": "https://doi.org/10.5281/zenodo.24329158",
+          "version": null
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24337286",
+      "record_sha256": "d5ef9670e876aba02db7e640a0a8cd894fcc24dea11be31d91d9a8a0c213641c",
+      "records": [
+        {
+          "created": "2026-11-20T09:28:57Z",
+          "id": "doi:10.5281/zenodo.24337286",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24337286",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.24337287",
+              "relation": "HasVersion"
+            },
+            {
+              "identifier": "10.5281/zenodo.24393421",
+              "relation": "HasVersion"
+            },
+            {
+              "identifier": "10.5281/zenodo.24455067",
+              "relation": "HasVersion"
+            },
+            {
+              "identifier": "https://github.com/siddugayam/miRBioGenAtlas",
+              "relation": "IsSupplementTo"
+            }
+          ],
+          "title": "miRBioGenAtlas: Sample-level multi-modal somatic alteration landscape of the miRNA biogenesis machinery across 32 TCGA cancer studies",
+          "updated": "2026-11-23T06:37:37Z",
+          "url": "https://doi.org/10.5281/zenodo.24337286",
+          "version": "2.0.2"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24337287",
+      "record_sha256": "68e0de54ea8d254a454f75ffe24c8817eb67acf5475c3d8f26bf84cada3bc6e7",
+      "records": [
+        {
+          "created": "2026-11-20T09:28:56Z",
+          "id": "doi:10.5281/zenodo.24337287",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24337287",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.24337286",
+              "relation": "IsVersionOf"
+            },
+            {
+              "identifier": "https://github.com/siddugayam/miRBioGenAtlas",
+              "relation": "IsSupplementTo"
+            }
+          ],
+          "title": "miRBioGenAtlas: Sample-level multi-modal somatic alteration landscape of the miRNA biogenesis machinery across 32 TCGA cancer studies",
+          "updated": "2026-11-20T09:28:57Z",
+          "url": "https://doi.org/10.5281/zenodo.24337287",
+          "version": "2.0.0"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24393421",
+      "record_sha256": "70e7b338e815bbc3bef50f33e74cc893ab80c3100598f0984e96fa0a3402c50b",
+      "records": [
+        {
+          "created": "2026-11-20T10:11:47Z",
+          "id": "doi:10.5281/zenodo.24393421",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24393421",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.24337286",
+              "relation": "IsVersionOf"
+            },
+            {
+              "identifier": "https://github.com/siddugayam/miRBioGenAtlas",
+              "relation": "IsSupplementTo"
+            }
+          ],
+          "title": "miRBioGenAtlas: Sample-level multi-modal somatic alteration landscape of the miRNA biogenesis machinery across 32 TCGA cancer studies",
+          "updated": "2026-11-20T10:11:47Z",
+          "url": "https://doi.org/10.5281/zenodo.24393421",
+          "version": "2.0.1"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24403025",
+      "record_sha256": "f33f1499102b54e2ecc76d89926544fbaf5b7bed75ea97cefc18af820bf9fd09",
+      "records": [
+        {
+          "created": "2026-11-20T17:52:12Z",
+          "id": "doi:10.5281/zenodo.24403025",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24403025",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.24403027",
+              "relation": "HasVersion"
+            }
+          ],
+          "title": "Mutation-Annotation Sensitivity and Longitudinal Reproducibility of Genotype-Associated Cancer Dependencies: Data and Code Reproduction Archive",
+          "updated": "2026-11-20T17:52:13Z",
+          "url": "https://doi.org/10.5281/zenodo.24403025",
+          "version": "2.1.0"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24403027",
+      "record_sha256": "1f5df5e71ea3882bffa9a4cd1886966ef0f298d8c4b9c42f7536de40ddb5b48d",
+      "records": [
+        {
+          "created": "2026-11-20T17:52:12Z",
+          "id": "doi:10.5281/zenodo.24403027",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24403027",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.24403025",
+              "relation": "IsVersionOf"
+            }
+          ],
+          "title": "Mutation-Annotation Sensitivity and Longitudinal Reproducibility of Genotype-Associated Cancer Dependencies: Data and Code Reproduction Archive",
+          "updated": "2026-11-20T17:52:12Z",
+          "url": "https://doi.org/10.5281/zenodo.24403027",
+          "version": "2.1.0"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24429699",
+      "record_sha256": "89cabc2f33095a4f9087cc8cbfe4737b5bb579f9b09675f7de3ec3368e6cfe1e",
+      "records": [
+        {
+          "created": "2026-11-21T22:16:05Z",
+          "id": "doi:10.5281/zenodo.24429699",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24429699",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.1016/j.chembiol.2026.09.011",
+              "relation": "IsSupplementTo"
+            },
+            {
+              "identifier": "10.5281/zenodo.22696798",
+              "relation": "IsVersionOf"
+            },
+            {
+              "identifier": "https://github.com/Shechterlab/PTM_Pipeline",
+              "relation": "IsSupplementTo"
+            }
+          ],
+          "title": "Human methylarginine sites, context marks, cancer and germline variants and their mutation propensity, v1.7.0 (PTM_Pipeline)",
+          "updated": "2026-11-21T22:16:05Z",
+          "url": "https://doi.org/10.5281/zenodo.24429699",
+          "version": "v1.7.0"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24455067",
+      "record_sha256": "0c35afecd0806a339bcd37db7b5d580433ad40aa2cb0e55c3922591590c6d9c4",
+      "records": [
+        {
+          "created": "2026-11-23T06:37:37Z",
+          "id": "doi:10.5281/zenodo.24455067",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24455067",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.24337286",
+              "relation": "IsVersionOf"
+            },
+            {
+              "identifier": "https://github.com/siddugayam/miRBioGenAtlas",
+              "relation": "IsSupplementTo"
+            }
+          ],
+          "title": "miRBioGenAtlas: Sample-level multi-modal somatic alteration landscape of the miRNA biogenesis machinery across 32 TCGA cancer studies",
+          "updated": "2026-11-23T06:37:37Z",
+          "url": "https://doi.org/10.5281/zenodo.24455067",
+          "version": "2.0.2"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24487217",
+      "record_sha256": "f20f3dda6ecd4279f5920c11d17c351a1a2e9a4778e69d3dee011f7312b6e700",
+      "records": [
+        {
+          "created": "2026-11-24T06:08:51Z",
+          "id": "doi:10.5281/zenodo.24487217",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24487217",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.24487218",
+              "relation": "HasVersion"
+            }
+          ],
+          "title": "Published cancer cell line growth claims linked to genome-wide CRISPR and RNA interference screens",
+          "updated": "2026-11-24T06:08:52Z",
+          "url": "https://doi.org/10.5281/zenodo.24487217",
+          "version": "1.0"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.24487218",
+      "record_sha256": "343143ad4a8c24bd0621de2b1582c9034bb4dbf7898d6859d089d8a64efc0234",
+      "records": [
+        {
+          "created": "2026-11-24T06:08:47Z",
+          "id": "doi:10.5281/zenodo.24487218",
+          "provider": "datacite",
+          "provider_id": "10.5281/zenodo.24487218",
+          "publisher": "Zenodo",
+          "relations": [
+            {
+              "identifier": "10.5281/zenodo.24487217",
+              "relation": "IsVersionOf"
+            }
+          ],
+          "title": "Published cancer cell line growth claims linked to genome-wide CRISPR and RNA interference screens",
+          "updated": "2026-11-24T06:08:47Z",
+          "url": "https://doi.org/10.5281/zenodo.24487218",
+          "version": "1.0"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.64898/2026.11.16.766984",
+      "record_sha256": "444f4a3a79ca2b4faeb0d979a6da5c46f1b43901fd7525ef3ec0b5711524a3d5",
+      "records": [
+        {
+          "id": "doi:10.64898/2026.11.16.766984",
+          "kind": "preprint",
+          "pmcid": null,
+          "pmid": null,
+          "provider": "europepmc",
+          "provider_id": "PPR:PPR1371220",
+          "published": "2026-11-18",
+          "title": "Multiomic analysis of a pleural mesothelioma organoid biobank defines gene dependencies and therapeutic vulnerabilities",
+          "url": "https://europepmc.org/article/PPR/PPR1371220"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.64898/2026.11.18.26368225",
+      "record_sha256": "ac91b366c2dce0fe9dd32cc19da6ca879b150b96ea8bb952ab62e3184ae51f5a",
+      "records": [
+        {
+          "id": "doi:10.64898/2026.11.18.26368225",
+          "kind": "preprint",
+          "pmcid": null,
+          "pmid": null,
+          "provider": "europepmc",
+          "provider_id": "PPR:PPR1373727",
+          "published": "2026-11-19",
+          "title": "A pilot study of the mutational landscape of colorectal cancer in Black South Africans",
+          "url": "https://europepmc.org/article/PPR/PPR1373727"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.64898/2026.11.18.767656",
+      "record_sha256": "cee660faa231505ce43fc57bf9c2767db246f5ba4192c0de0b8b5b165f3f9647",
+      "records": [
+        {
+          "id": "doi:10.64898/2026.11.18.767656",
+          "kind": "preprint",
+          "pmcid": null,
+          "pmid": null,
+          "provider": "europepmc",
+          "provider_id": "PPR:PPR1372060",
+          "published": "2026-11-19",
+          "title": "Continuous karyotypic and cryptic structural fluctuations drive acral melanoma evolution",
+          "url": "https://europepmc.org/article/PPR/PPR1372060"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.64898/2026.11.19.26364643",
+      "record_sha256": "9866002fd821c6dd8bfc4d8843539f264695b45534f2a03f7d986cad7573b0d9",
+      "records": [
+        {
+          "id": "doi:10.64898/2026.11.19.26364643",
+          "kind": "preprint",
+          "pmcid": null,
+          "pmid": null,
+          "provider": "europepmc",
+          "provider_id": "PPR:PPR1373782",
+          "published": "2026-11-19",
+          "title": "Excess of de novo substitutions in the genomes of individuals with newly acquired germline  <i>TP53</i>  mutations",
+          "url": "https://europepmc.org/article/PPR/PPR1373782"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "somatic"
+      ]
+    },
+    {
+      "id": "doi:10.64898/2026.11.19.767422",
+      "record_sha256": "b7a4fa8ee7d5a728ad5d74faff4e386342c26542c00c3a06e065a4d806fcc814",
+      "records": [
+        {
+          "id": "doi:10.64898/2026.11.19.767422",
+          "kind": "preprint",
+          "pmcid": null,
+          "pmid": null,
+          "provider": "europepmc",
+          "provider_id": "PPR:PPR1373844",
+          "published": "2026-11-20",
+          "title": "ADP-ribosylation drives the repair of topoisomerase IIIβ-induced nucleic acid damage",
+          "url": "https://europepmc.org/article/PPR/PPR1373844"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "processing"
+      ]
+    },
+    {
+      "id": "doi:10.64898/2026.11.20.768099",
+      "record_sha256": "a819f939f9fdbbecb18b60a3166486baa4c10f4a5aef8d7c77b2e364be08e24c",
+      "records": [
+        {
+          "id": "doi:10.64898/2026.11.20.768099",
+          "kind": "preprint",
+          "pmcid": null,
+          "pmid": null,
+          "provider": "europepmc",
+          "provider_id": "PPR:PPR1375475",
+          "published": "2026-11-23",
+          "title": "Nonsense-mediated mRNA Decay Inhibition Triggers Immunogenicity by HLA Class I Immunopeptide Remodeling in Non-Small Cell Lung Cancer Cells",
+          "url": "https://europepmc.org/article/PPR/PPR1375475"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "presentation",
+        "translation"
+      ]
+    },
+    {
+      "id": "doi:10.7759/cureus.118351",
+      "record_sha256": "c5044b70d705e2874b93a14b2401451982c81f828e80729ca60b70244612afef",
+      "records": [
+        {
+          "id": "doi:10.7759/cureus.118351",
+          "kind": "review; journal article",
+          "pmcid": null,
+          "pmid": "43067919",
+          "provider": "europepmc",
+          "provider_id": "MED:43067919",
+          "published": "2026-10-22",
+          "title": "Proteogenomic Signatures in Complex Diseases: Implications for Targeted Interventions.",
+          "url": "https://europepmc.org/article/MED/43067919"
+        }
+      ],
+      "review": "pending",
+      "stages": [
+        "translation"
+      ]
+    }
+  ],
+  "git_revision": "764d1b9e02c80c0ead096f672e25f510fc2e6dce",
+  "input_sha256": {
+    "collections/tumor-to-hla/collection.json": "8d2f65289bb49676e12da3b36268c50562da494f8bf5dba946ec303286453cb5",
+    "collections/tumor-to-hla/decisions.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "collections/tumor-to-hla/searches.json": "610228c9e55e43f0dd9b7fe918977ef9c6272633f2195683d87445a201f36583",
+    "index.json": "447109ffef3fb522db0aedd6e51be6cb1e5ba760e773faa6cb7f0ba34335e90b",
+    "scripts/watch_tumor_to_hla.py": "78f8adbc98b4bd2be053917a4bf10a3627af6a3dd7e8ab96da48c9a4bfe27895"
+  },
+  "interval_utc": {
+    "end": "2026-11-24",
+    "start": "2026-11-18"
+  },
+  "retrieved_at": "2026-11-25T14:26:01.974551+00:00",
+  "runs": [
+    {
+      "expected_records": 7,
+      "pages": [
+        {
+          "records": 7,
+          "sha256": "29b17f10ebf15afa147f7f38e9c2fc6cc5967625b6b50042a0968c55187d26fa",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%28%28TITLE_ABS%3A%22whole+genome%22+OR+TITLE_ABS%3A%22pan-cancer%22+OR+TITLE_ABS%3Aosteosarcoma+OR+TITLE_ABS%3Aleukemia%29+AND+%28TITLE_ABS%3A%22driver+mutations%22+OR+TITLE_ABS%3A%22somatic+alterations%22+OR+TITLE_ABS%3A%22mutational+landscape%22+OR+TITLE_ABS%3A%22gene+fusions%22%29%29%29+AND+FIRST_IDATE%3A%5B2026-11-18+TO+2026-11-24%5D&format=json&resultType=lite&pageSize=100&cursorMark=%2A"
+        }
+      ],
+      "provider": "europepmc",
+      "stage": "somatic"
+    },
+    {
+      "expected_records": 12,
+      "pages": [
+        {
+          "records": 12,
+          "sha256": "cdfe297196085a9a17bb788a0c7ddff291bf6fbb8f715021b8ef9da33d8a98c8",
+          "url": "https://api.datacite.org/dois?query=%28%28titles.title%3A%28tumor+OR+tumour+OR+cancer+OR+leukaemia+OR+leukemia+OR+osteosarcoma%29+AND+titles.title%3A%28somatic+OR+mutation+OR+fusions+OR+genome%29%29%29+AND+updated%3A%5B2026-11-18T00%3A00%3A00Z+TO+2026-11-24T23%3A59%3A59.999Z%5D&resource-type-id=dataset&page%5Bsize%5D=100&page%5Bnumber%5D=1"
+        }
+      ],
+      "provider": "datacite",
+      "stage": "somatic"
+    },
+    {
+      "expected_records": 5,
+      "pages": [
+        {
+          "records": 5,
+          "sha256": "b92a1c283085722955ba02955065b924c7ef44521427c7a24b30f15da86ddb06",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%28%28TITLE_ABS%3Aproteogenomic%2A+OR+TITLE_ABS%3A%22ribosome+profiling%22+OR+TITLE_ABS%3A%22allele-specific+expression%22%29+AND+%28TITLE_ABS%3Atumor+OR+TITLE_ABS%3Atumour+OR+TITLE_ABS%3Acancer%29%29%29+AND+FIRST_IDATE%3A%5B2026-11-18+TO+2026-11-24%5D&format=json&resultType=lite&pageSize=100&cursorMark=%2A"
+        }
+      ],
+      "provider": "europepmc",
+      "stage": "translation"
+    },
+    {
+      "expected_records": 2,
+      "pages": [
+        {
+          "records": 2,
+          "sha256": "32009a3e5db80b4da4053d43eb04804fb7ae7b9a1165a22a9e201d5424195768",
+          "url": "https://api.datacite.org/dois?query=%28%28titles.title%3A%28tumor+OR+tumour+OR+cancer%29+AND+titles.title%3A%28proteogenomics+OR+proteogenomic+OR+translation%29%29%29+AND+updated%3A%5B2026-11-18T00%3A00%3A00Z+TO+2026-11-24T23%3A59%3A59.999Z%5D&resource-type-id=dataset&page%5Bsize%5D=100&page%5Bnumber%5D=1"
+        }
+      ],
+      "provider": "datacite",
+      "stage": "translation"
+    },
+    {
+      "expected_records": 6,
+      "pages": [
+        {
+          "records": 6,
+          "sha256": "5fbe4f5570e977a20bc8a85dec5e6d65baad5b41c1cce4dd72156c577045afda",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%28%28TITLE_ABS%3Aproteasom%2A+OR+TITLE_ABS%3Aimmunoproteasom%2A+OR+TITLE_ABS%3AERAP1+OR+TITLE_ABS%3AERAP2%29+AND+%28TITLE_ABS%3A%22peptide+generation%22+OR+TITLE_ABS%3Acleavage+OR+TITLE_ABS%3A%22antigen+processing%22%29%29%29+AND+FIRST_IDATE%3A%5B2026-11-18+TO+2026-11-24%5D&format=json&resultType=lite&pageSize=100&cursorMark=%2A"
+        }
+      ],
+      "provider": "europepmc",
+      "stage": "processing"
+    },
+    {
+      "expected_records": 0,
+      "pages": [
+        {
+          "records": 0,
+          "sha256": "9acb5bfac6114c197f75011327ab53170f440de680165151d5129164e3946bd8",
+          "url": "https://api.datacite.org/dois?query=%28%28titles.title%3A%28proteasome+OR+proteasomal+OR+immunoproteasome+OR+trimming%29+AND+titles.title%3A%28digestion+OR+peptides+OR+cleavage+OR+processing%29%29%29+AND+updated%3A%5B2026-11-18T00%3A00%3A00Z+TO+2026-11-24T23%3A59%3A59.999Z%5D&resource-type-id=dataset&page%5Bsize%5D=100&page%5Bnumber%5D=1"
+        }
+      ],
+      "provider": "datacite",
+      "stage": "processing"
+    },
+    {
+      "expected_records": 5,
+      "pages": [
+        {
+          "records": 5,
+          "sha256": "978fa989cccd2d6e98f8dfda3186e54c3497166f1096f7c8f0e73a70caf12c75",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%28%28TITLE_ABS%3Aimmunopeptidom%2A+OR+TITLE_ABS%3Aligandom%2A+OR+TITLE_ABS%3A%22HLA+ligands%22+OR+TITLE_ABS%3A%22HLA+loss%22+OR+TITLE_ABS%3A%22MHC+class+I+presentation%22%29+AND+%28TITLE_ABS%3Atumor+OR+TITLE_ABS%3Atumour+OR+TITLE_ABS%3Acancer+OR+TITLE_ABS%3Amalignan%2A+OR+TITLE_ABS%3Aleukemia+OR+TITLE_ABS%3Amelanoma+OR+TITLE_ABS%3Acarcinoma+OR+TITLE_ABS%3Alymphoma+OR+TITLE_ABS%3Asarcoma%29%29%29+AND+FIRST_IDATE%3A%5B2026-11-18+TO+2026-11-24%5D&format=json&resultType=lite&pageSize=100&cursorMark=%2A"
+        }
+      ],
+      "provider": "europepmc",
+      "stage": "presentation"
+    },
+    {
+      "expected_records": 2,
+      "pages": [
+        {
+          "records": 2,
+          "sha256": "3ac95c33fe583374b13826ff58b40b6435fed0ceec1416662e7599be433369cb",
+          "url": "https://api.datacite.org/dois?query=%28%28titles.title%3A%28immunopeptidomics+OR+immunopeptidome+OR+ligandomics%29+OR+%28titles.title%3A%28HLA+OR+DLA%29+AND+titles.title%3A%28peptides+OR+ligands+OR+tumor+OR+tumour%29%29%29%29+AND+updated%3A%5B2026-11-18T00%3A00%3A00Z+TO+2026-11-24T23%3A59%3A59.999Z%5D&resource-type-id=dataset&page%5Bsize%5D=100&page%5Bnumber%5D=1"
+        }
+      ],
+      "provider": "datacite",
+      "stage": "presentation"
+    }
+  ],
+  "schema_version": 1
+}

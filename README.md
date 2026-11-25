@@ -9,6 +9,8 @@ the **comparative-oncology** (dog → human) setting we start in.
 [`OVERVIEW.md`](OVERVIEW.md) reads the catalog: what we have, what to use first for
 each program, the licensing picture, and the confirmed gaps.
 
+[Tumor-to-HLA evidence watch](collections/tumor-to-hla/README.md) tracks the source collection, weekly candidate search and review history for the living article.
+
 ## Layout
 ```
 data-inventory/
