@@ -34,7 +34,7 @@ def fetch(url):
     request = Request(url, headers={"Accept": "application/json", "User-Agent": "VeritopeEvidenceWatch/1"})
     for attempt in range(3):
         try:
-            with urlopen(request, timeout=35) as response:
+            with urlopen(request, timeout=60) as response:
                 return response.read()
         except HTTPError as error:
             if error.code not in (429, 500, 502, 503, 504) or attempt == 2:
@@ -43,6 +43,11 @@ def fetch(url):
             if retry_after.isdigit() and int(retry_after) > 60:
                 raise
             time.sleep(int(retry_after) if retry_after.isdigit() else 2 ** (attempt + 1))
+        except (TimeoutError, URLError) as error:
+            cause = error.reason if isinstance(error, URLError) else error
+            if not isinstance(cause, (TimeoutError, ConnectionResetError)) or attempt == 2:
+                raise
+            time.sleep(2 ** (attempt + 1))
 
 
 def doi_id(doi):
@@ -144,11 +149,13 @@ def review_index():
     return index
 
 
-def collect(start, end, reader=fetch):
+def collect(start, end, reader=fetch, report_progress=False):
     config = json.loads((PROJECT / "searches.json").read_text())
     grouped, runs = {}, []
     for search in config["searches"]:
         for provider in ("europepmc", "datacite"):
+            if report_progress:
+                print(f"Searching {provider} for {search['stage']}...", file=sys.stderr, flush=True)
             items, run = pages(provider, search[provider], start, end, reader)
             runs.append({"stage": search["stage"], **run})
             for item in items:
@@ -188,7 +195,7 @@ def main():
         parser.error("Use an ordered interval of completed UTC dates")
     if args.output.exists():
         parser.error("Choose a new output filename to preserve the previous report")
-    report = collect(start, args.end)
+    report = collect(start, args.end, report_progress=True)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(mode="w", dir=args.output.parent, delete=False) as temp:
         temp_path = Path(temp.name)

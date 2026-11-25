@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "id": "doi:10.1158/2159-8290.cd-26-0302",
+    "record_sha256": "36e792f117d1264ea3b8007c6f091ca22b55a94c1e178d9e09cec00fad87a974",
+    "decision": "defer",
+    "reason": "Primary cutaneous melanoma multi-omics cohort published online Nov 17. Extract and reconcile the immunopeptidomics subset, sample unit, somatic attribution, detection rule and patient overlap before updating any display endpoint. The 183 profiled melanomas in the abstract are not automatically 183 assessable HLA measurements.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen"
+  },
+  {
+    "id": "doi:10.64898/2026.11.18.767656",
+    "record_sha256": "cee660faa231505ce43fc57bf9c2767db246f5ba4192c0de0b8b5b165f3f9647",
+    "decision": "defer",
+    "reason": "Acral melanoma preprint with DNA structural dynamics. Review sampling, assayed material and denominator for a future somatic-stage claim; reassess after peer review.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen"
+  },
+  {
+    "id": "doi:10.3389/fonc.2026.2012113",
+    "record_sha256": "c5ea7153be19424cd029b57cbb80da472eca18a1fbef43d011f3f06a1ff6ca74",
+    "decision": "exclude",
+    "reason": "The primary study describes a fusion in one selected MDS-to-AML case. It provides no cohort denominator for prevalence.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen"
+  },
+  {
+    "id": "doi:10.3389/fcell.2026.1947508",
+    "record_sha256": "8981992bd9887978441bebf48ab2fa7a87aa5cb83fe54666cbad7b47b006c3c2",
+    "decision": "exclude",
+    "reason": "Review article presenting an evolutionary framework for leukemia. It does not provide a new primary donor-level prevalence assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen"
+  }
+]
