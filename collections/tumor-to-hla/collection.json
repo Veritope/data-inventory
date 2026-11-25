@@ -428,7 +428,39 @@
       },
       "transport_status": "Publisher HTTP distribution. The available HTTPS index and equivalent test file returned 503 at collection. Content hashes identify this acquisition but cannot authenticate it.",
       "scope": "Historical pooled class I ligand union. Independent donors and authenticated immutable publisher links are unavailable; hashes identify the acquired bytes and do not authenticate HTTP transport."
+    },
+    {
+      "id": "native-crc-paired-2025",
+      "stage": "presentation",
+      "paper": "https://doi.org/10.1016/j.xgen.2025.101062",
+      "scope": "Ten paired colorectal donors. The fraction with an identified ligand depends on whether the source definition includes exonic DNA, noncoding DNA, or RNA-only assignments.",
+      "files": [
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12926194/supplementaryFiles",
+          "member": "mmc2.xlsx",
+          "sha256": "30ac18501653bf45d46dad78d22f2e98229a35230b3319bb8b286aebb20fa76e"
+        }
+      ]
+    },
+    {
+      "id": "hla-copies-abacus-2020",
+      "stage": "presentation",
+      "paper": "https://doi.org/10.1038/s41467-020-16588-9",
+      "scope": "Absolute copies per input cell in a breast cancer cell-line lysate. Distinct measured ligands and copies per cell are separate quantities.",
+      "files": [
+        {
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-020-16588-9/MediaObjects/41467_2020_16588_MOESM10_ESM.xlsx",
+          "member": "Figure 3d workbook",
+          "sha256": "28ea23a4c783609ba920856c2dd60c02fbe74a97bf90cb5dff4167e6d8b1ae52"
+        }
+      ]
     }
   ],
-  "handoff_sources": []
+  "handoff_sources": [
+    {
+      "id": "owner-original-report-and-model",
+      "access": "private",
+      "reference": "manifests/original-handoff.json"
+    }
+  ]
 }

@@ -1,33 +1,5 @@
 {
-  "source_type": "owner-supplied historical analysis",
-  "received_on": "2026-11-25",
-  "versioned_receipt": "https://github.com/Veritope/veritope/blob/5350e999ca664806c0ccfd6aaa77eabb2d62f33a/research/projects/tumor-to-hla/handoff/archive-receipt.json",
-  "original_archive": {
-    "filename": "Tumor_Peptide_Model_and_Data.zip",
-    "access": "private GitHub release asset, requires read access to Veritope/veritope",
-    "repository": "Veritope/veritope",
-    "release_id": 458256580,
-    "asset_id": 791965479,
-    "release_url": "https://github.com/Veritope/veritope/releases/tag/tumor-hla-source-handoff",
-    "release_api": "https://api.github.com/repos/Veritope/veritope/releases/458256580",
-    "asset_api": "https://api.github.com/repos/Veritope/veritope/releases/assets/791965479",
-    "bytes": 81348755,
-    "sha256": "275fa9925ac5d232f444482bd0f4a5969f148bab127b5fdd57e4e9da75ac395d"
-  },
-  "original_reports": [
-    {
-      "role": "PDF separately uploaded with the user handoff",
-      "filename": "Quantitative_Tumor_Peptide_Availability.pdf",
-      "retained_at": "https://github.com/Veritope/veritope/blob/64916b6c451d21e4bbacea4c33af224d8e43ed12/research/projects/tumor-to-hla/handoff/2026-11-24-availability.pdf",
-      "bytes": 493076,
-      "sha256": "54e00439d123bdbf6d6bbf979916b7d569d331a6287b81e19a7e6c4db552f207"
-    },
-    {
-      "role": "PDF edition embedded in the private original ZIP",
-      "archive_member": "Quantitative_Tumor_Peptide_Availability.pdf",
-      "bytes": 468113,
-      "sha256": "8575e55b496a431c2983c46a0103abbb5d1165b4fd8d8f8b073cc150013152c0"
-    }
-  ],
-  "report_comparison": "The files have distinct binary hashes. All 11 pages match when extracting text and when rendering at 72 dpi under the versioned receipt. Preserve both identities when citing original results."
+  "source_type": "Owner-supplied historical analysis",
+  "access": "Managed in the private Veritope research repository. Authorized researchers can find the original archive, both PDF receipts and retrieval information in the tumor-to-HLA project handoff.",
+  "public_reconstructions": "The collection records independent publisher datasets and study accessions used to reproduce and extend the historical analysis."
 }
