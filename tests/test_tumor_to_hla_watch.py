@@ -66,6 +66,24 @@ class WatchTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Duplicate"):
             watch.pages("europepmc", "q", START, END, repeated)
 
+    def test_completed_first_screen_and_source_manifests(self):
+        report = watch.PROJECT / "reports" / "2026-11-18_2026-11-24.json"
+        self.assertEqual("41b71b312ef85cf78a37f8559f9efc6ed4e5cf66d8d8d54bbaef9ee670685436",
+                         watch.digest(report.read_bytes()))
+        ledger = watch.review_index()
+        candidates = json.loads(report.read_text())["candidates"]
+        for item in candidates:
+            self.assertEqual(item["record_sha256"], watch.digest(watch.encode(item["records"])))
+            decision = ledger[(item["id"], item["record_sha256"])]
+            self.assertTrue(decision["basis"]["url"].startswith("https://"))
+        collection = json.loads((watch.PROJECT / "collection.json").read_text())
+        groups = collection["pinned_sources"]
+        self.assertEqual(len(groups), len({g["id"] for g in groups}))
+        for group in groups:
+            if "manifest" in group:
+                manifest = group["manifest"]
+                self.assertEqual(manifest["sha256"], watch.digest((watch.PROJECT / manifest["path"]).read_bytes()))
+
     def test_collection_refs(self):
         records = {r["id"]: r for r in json.loads((watch.ROOT / "index.json").read_text())}
         collection = json.loads((watch.PROJECT / "collection.json").read_text())

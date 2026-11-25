@@ -1,0 +1,1071 @@
+{
+  "index_url": "http://modinfor.com/Ligand.MHC-Atlas/Download.php",
+  "index_sha256": "e8ae9362f1feea51b473f1ed4eb9ddfa6b5379394b2ef74f0a0875439ea743f6",
+  "transport": "Publisher HTTP distribution. The available HTTPS index and equivalent test file returned 503 at collection. Content hashes identify this acquisition but cannot authenticate it.",
+  "files": [
+    {
+      "allotype": "HLA-A*01:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0101.zip",
+      "zip_bytes": 6926345,
+      "member_bytes": 52825833,
+      "sha256": "6732aa339fbfe2902f24401cc7891db890314f7bbaa69c15497857fb95c2d9ed"
+    },
+    {
+      "allotype": "HLA-A*01:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0103.zip",
+      "zip_bytes": 31898,
+      "member_bytes": 234012,
+      "sha256": "c7b23968c8286b534f6e8a99f7a1660df93494d56ba93cf4fbc2b906649287db"
+    },
+    {
+      "allotype": "HLA-A*01:22",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0122.zip",
+      "zip_bytes": 2407,
+      "member_bytes": 17747,
+      "sha256": "eab5f3643ddde1b699e52474a39216f9742e201ef70b25835d041a4348b3aa20"
+    },
+    {
+      "allotype": "HLA-A*01:25",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0125.zip",
+      "zip_bytes": 1497,
+      "member_bytes": 8570,
+      "sha256": "68285d67c34d99803364bc4dc5fdb04d151d0d3a51355374a1b29b2e694922fc"
+    },
+    {
+      "allotype": "HLA-A*02:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0201.zip",
+      "zip_bytes": 16139625,
+      "member_bytes": 122435129,
+      "sha256": "7d8ea2d8be6ffa13805285d31bade6e5fcb9914298553fdc96c9b3c2131f613a"
+    },
+    {
+      "allotype": "HLA-A*02:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0202.zip",
+      "zip_bytes": 263034,
+      "member_bytes": 2090133,
+      "sha256": "cd5672c400a950ef3832caff01a97dd625dbcbb66cdc65e4471ee9955bce7439"
+    },
+    {
+      "allotype": "HLA-A*02:04",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0204.zip",
+      "zip_bytes": 37678,
+      "member_bytes": 311247,
+      "sha256": "34c316e4a8f75dd498fe31ab85dcf99851a6be7c3af091dab6003a091c44f0a6"
+    },
+    {
+      "allotype": "HLA-A*02:05",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0205.zip",
+      "zip_bytes": 1078170,
+      "member_bytes": 8281732,
+      "sha256": "48da5baed764a31dbae46d2b54772fee42521d09f5912a60701f0a7edd4531cf"
+    },
+    {
+      "allotype": "HLA-A*02:06",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0206.zip",
+      "zip_bytes": 344050,
+      "member_bytes": 2445762,
+      "sha256": "513f1df3c57c64975c3d17a7ccee257336e62599fd1ee6740ba05ab4573e9ded"
+    },
+    {
+      "allotype": "HLA-A*02:07",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0207.zip",
+      "zip_bytes": 270834,
+      "member_bytes": 1894566,
+      "sha256": "f82ea95ff7d56ea2d257f78ca0e2f37d755a10d9aef5d5a44e50df9b7a614044"
+    },
+    {
+      "allotype": "HLA-A*02:09",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0209.zip",
+      "zip_bytes": 56507,
+      "member_bytes": 403021,
+      "sha256": "fe6f645970b7456acae9302119f9c396375060aaca7c346ffe302c3826545386"
+    },
+    {
+      "allotype": "HLA-A*02:11",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0211.zip",
+      "zip_bytes": 104884,
+      "member_bytes": 826174,
+      "sha256": "ecccd765714e726111f3edcd74b006b63b6145cef2ca744ca8fda782be6b1a97"
+    },
+    {
+      "allotype": "HLA-A*02:17",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0217.zip",
+      "zip_bytes": 140845,
+      "member_bytes": 1179747,
+      "sha256": "c4c310ffd4d3e17c8de74eeb7b6210666924dd50a80a3a43f5f600993c39f904"
+    },
+    {
+      "allotype": "HLA-A*02:20",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0220.zip",
+      "zip_bytes": 398822,
+      "member_bytes": 2845994,
+      "sha256": "d76be94775d2f4d2e03266ee9aa806da3833deb33294f75c6a1832c64a685899"
+    },
+    {
+      "allotype": "HLA-A*02:50",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0250.zip",
+      "zip_bytes": 4523,
+      "member_bytes": 34836,
+      "sha256": "3a8c657accf895b04fb48014779179d51a50beed442d47673bf964615028b6e6"
+    },
+    {
+      "allotype": "HLA-A*03:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0301.zip",
+      "zip_bytes": 9675817,
+      "member_bytes": 69742554,
+      "sha256": "1202bb898190ceb6f6fef1d4f8e85a94c477f310cb67dd6643b45200c5a3efaf"
+    },
+    {
+      "allotype": "HLA-A*03:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A0302.zip",
+      "zip_bytes": 35097,
+      "member_bytes": 244177,
+      "sha256": "871ccb3ae327eb9bc40bb3d399c885d7b27ad28c6b72564c1dd51624c1bb8457"
+    },
+    {
+      "allotype": "HLA-A*11:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A1101.zip",
+      "zip_bytes": 8688791,
+      "member_bytes": 61947607,
+      "sha256": "0538f1df6d05d65c3fb08220f3d1c00c3cb4c99748dba250ef9f23b51b5b8c9a"
+    },
+    {
+      "allotype": "HLA-A*11:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A1102.zip",
+      "zip_bytes": 133253,
+      "member_bytes": 1078616,
+      "sha256": "7dbd1a482b649e1196852e6da4d49f251a949c2c4ba744b0b7dc21926db70667"
+    },
+    {
+      "allotype": "HLA-A*23:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A2301.zip",
+      "zip_bytes": 1451182,
+      "member_bytes": 10954778,
+      "sha256": "bc2fa6d14dcfe093ba43c43c4a5441c7a0ff602acaf8a52ea78ce0135d378328"
+    },
+    {
+      "allotype": "HLA-A*24:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A2402.zip",
+      "zip_bytes": 3055210,
+      "member_bytes": 24601030,
+      "sha256": "e8e34fc83062ead2319233cb090ad4784ff11fc7c24e0620e22e70ec7094394c"
+    },
+    {
+      "allotype": "HLA-A*24:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A2403.zip",
+      "zip_bytes": 46374,
+      "member_bytes": 362108,
+      "sha256": "4371b2d9763e5f031b7cfcf76af6de2408df3db15e1669f23576956371d3f69e"
+    },
+    {
+      "allotype": "HLA-A*24:07",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A2407.zip",
+      "zip_bytes": 47428,
+      "member_bytes": 380795,
+      "sha256": "f62f02b07d2b4b307528ab27b013823f929b122b1b46c63ef984d12ed54c2630"
+    },
+    {
+      "allotype": "HLA-A*25:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A2501.zip",
+      "zip_bytes": 2218375,
+      "member_bytes": 17751620,
+      "sha256": "9ec0cedb8738e69d50b216b11c4f7edeea7b351b53f53537f72c676b0a767cbf"
+    },
+    {
+      "allotype": "HLA-A*26:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A2601.zip",
+      "zip_bytes": 893286,
+      "member_bytes": 6904597,
+      "sha256": "6aceb4a51757c22dbb673723b654a31aa98d155bfbae00c560fa3f940d156326"
+    },
+    {
+      "allotype": "HLA-A*26:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A2603.zip",
+      "zip_bytes": 16607,
+      "member_bytes": 115520,
+      "sha256": "b7e59e3a5fd56fbbdc3f7151bc82e2ca2921a1f7cbc0b977364696c2f584c27a"
+    },
+    {
+      "allotype": "HLA-A*26:08",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A2608.zip",
+      "zip_bytes": 19791,
+      "member_bytes": 130519,
+      "sha256": "ce666dc6ecbc31e018f1daf1005c9b3a705ac8c6d2704af711621bf4d63dc0ec"
+    },
+    {
+      "allotype": "HLA-A*29:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A2901.zip",
+      "zip_bytes": 38212,
+      "member_bytes": 292169,
+      "sha256": "9f6cd05a820bbeccacd4bdc0d9e7348be4408cc4518694f5aad01d39759f58c6"
+    },
+    {
+      "allotype": "HLA-A*29:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A2902.zip",
+      "zip_bytes": 341441,
+      "member_bytes": 2510789,
+      "sha256": "f0105823f45da3c3e3393b1854cb43116075898587c163a68b7eea68f7413035"
+    },
+    {
+      "allotype": "HLA-A*29:06",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A2906.zip",
+      "zip_bytes": 75815,
+      "member_bytes": 684222,
+      "sha256": "47430a5f012c9e07a72000b547796d2bc4f69ec451a07ae37d504e8ae2757163"
+    },
+    {
+      "allotype": "HLA-A*30:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A3001.zip",
+      "zip_bytes": 6524469,
+      "member_bytes": 50563347,
+      "sha256": "f0e317626f45406d59d3e1c40a5a6c4c5725b827060ae78b008099eec2d798ed"
+    },
+    {
+      "allotype": "HLA-A*30:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A3002.zip",
+      "zip_bytes": 294961,
+      "member_bytes": 2079539,
+      "sha256": "f45520a17017f6dae7fade2bb3805fadeb73b951f9a239455a7b4bd36881ac16"
+    },
+    {
+      "allotype": "HLA-A*31:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A3101.zip",
+      "zip_bytes": 1443113,
+      "member_bytes": 10643896,
+      "sha256": "28d321288da9f860aba65e2bba92814bda3e62df45223b9b0471ede8fc1b9633"
+    },
+    {
+      "allotype": "HLA-A*32:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A3201.zip",
+      "zip_bytes": 672274,
+      "member_bytes": 5130064,
+      "sha256": "20e0dffe2caf1cabf948423fa8b7d37f0848adf64014b8a5a37476d76805a1ab"
+    },
+    {
+      "allotype": "HLA-A*32:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A3202.zip",
+      "zip_bytes": 4163,
+      "member_bytes": 42799,
+      "sha256": "04fa3f657279910be30264d27b10cf92f826a1e25e092e31e2f6ec98e008c2ea"
+    },
+    {
+      "allotype": "HLA-A*32:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A3203.zip",
+      "zip_bytes": 3300,
+      "member_bytes": 19216,
+      "sha256": "6e67824b7468c7e3344a8e0146d9a1bd726e68db54712bdbe10d2a4040b780d1"
+    },
+    {
+      "allotype": "HLA-A*33:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A3301.zip",
+      "zip_bytes": 386680,
+      "member_bytes": 2998749,
+      "sha256": "02c276449d5c6d893dc1bb6b54c9a80bb0825046826dde151ce7160544ef3cae"
+    },
+    {
+      "allotype": "HLA-A*33:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A3303.zip",
+      "zip_bytes": 256490,
+      "member_bytes": 2032725,
+      "sha256": "454772e51c307290646894203f2615fe24ef7eae0ca5e78ecb9ead6a09e7f789"
+    },
+    {
+      "allotype": "HLA-A*34:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A3401.zip",
+      "zip_bytes": 61475,
+      "member_bytes": 481717,
+      "sha256": "5d8f8f9da0498671b36b35e155938ba0d5becd57037dc160e756ec124884a6e8"
+    },
+    {
+      "allotype": "HLA-A*34:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A3402.zip",
+      "zip_bytes": 192248,
+      "member_bytes": 1489814,
+      "sha256": "9d3c96767ec0fd9d3e317a26ceb553cf4ea1e7df89910d6d441d65dbce50067b"
+    },
+    {
+      "allotype": "HLA-A*36:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A3601.zip",
+      "zip_bytes": 123058,
+      "member_bytes": 917626,
+      "sha256": "c7729dea940970e2365577c39c4b0dbce80486c3b6890d640930b10b13022509"
+    },
+    {
+      "allotype": "HLA-A*66:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A6601.zip",
+      "zip_bytes": 280534,
+      "member_bytes": 2107990,
+      "sha256": "495791076ca41458f1a811984d9e4f919753bfddb0ebcea2a36b9ac8558822d7"
+    },
+    {
+      "allotype": "HLA-A*68:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A6801.zip",
+      "zip_bytes": 5704871,
+      "member_bytes": 41121975,
+      "sha256": "d4f5c0c68f3bd967f97c1b8d6434ca8fbebb622e089b9bccf3ed5c47ec20ebaf"
+    },
+    {
+      "allotype": "HLA-A*68:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A6802.zip",
+      "zip_bytes": 251544,
+      "member_bytes": 1792973,
+      "sha256": "f4717e1a5b2ca20483f615e2d8be6ffe5a9989676f235fdc64bee27ceadc48ea"
+    },
+    {
+      "allotype": "HLA-A*69:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A6901.zip",
+      "zip_bytes": 113190,
+      "member_bytes": 772148,
+      "sha256": "b679888d14ad77423427c6d9cd3947428c4c6a549e780a2128d0fea85539030f"
+    },
+    {
+      "allotype": "HLA-A*74:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-A7401.zip",
+      "zip_bytes": 76906,
+      "member_bytes": 590041,
+      "sha256": "b213ad432359d44df45c3b4c6381f72178c9b166d4b60ab693a680a25a11c70a"
+    },
+    {
+      "allotype": "HLA-B*07:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B0702.zip",
+      "zip_bytes": 9749052,
+      "member_bytes": 74858412,
+      "sha256": "4d8c679619b969a89c34f1022a319065358b12a1aa179bf1dead7cf8a242fd1a"
+    },
+    {
+      "allotype": "HLA-B*07:04",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B0704.zip",
+      "zip_bytes": 34326,
+      "member_bytes": 272075,
+      "sha256": "b1486c1d0f88ebac007b20eeb488f9e6d2d390c5f4b929cebaaefe3497f4c7bb"
+    },
+    {
+      "allotype": "HLA-B*07:05",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B0705.zip",
+      "zip_bytes": 4351,
+      "member_bytes": 27092,
+      "sha256": "f65612bec39b03ee4edf2572579f5b370a71cfde132258a4504acb195b4324df"
+    },
+    {
+      "allotype": "HLA-B*07:06",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B0706.zip",
+      "zip_bytes": 70021,
+      "member_bytes": 500640,
+      "sha256": "c0ff56d26ca328c0a711771065e5c6f1f1a3e71bfebbde8236ecd0f0fa35d181"
+    },
+    {
+      "allotype": "HLA-B*08:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B0801.zip",
+      "zip_bytes": 3822580,
+      "member_bytes": 26831553,
+      "sha256": "e4dd4fda90efd8d2f52ef921180164b6b04863d688924b45b7a9bc4d8236b781"
+    },
+    {
+      "allotype": "HLA-B*13:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1301.zip",
+      "zip_bytes": 23038,
+      "member_bytes": 160790,
+      "sha256": "d7eddb4a0ef227a2fe7c6a6dac4b4d908f5ae72f0d2959540e2ca2077d8cb0b4"
+    },
+    {
+      "allotype": "HLA-B*13:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1302.zip",
+      "zip_bytes": 1490497,
+      "member_bytes": 10837202,
+      "sha256": "8c8bd3366fa2440ac0e4fed4b8e19adcac6e4eea1e00e4e1ea66d4b043a9dcac"
+    },
+    {
+      "allotype": "HLA-B*14:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1401.zip",
+      "zip_bytes": 67472,
+      "member_bytes": 464036,
+      "sha256": "cbf1b6b5b661a700c185212987e06591439783cbd5fbc298bf448ccf652eee93"
+    },
+    {
+      "allotype": "HLA-B*14:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1402.zip",
+      "zip_bytes": 425791,
+      "member_bytes": 2965067,
+      "sha256": "1341d17803322840750755ffcdd4df37bb802a0bd84755b4a00fb7db41ec57a5"
+    },
+    {
+      "allotype": "HLA-B*15:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1501.zip",
+      "zip_bytes": 6073945,
+      "member_bytes": 44402966,
+      "sha256": "ca0c39f5a69f6619d4c099784299c46b68da4cce67928cfd58e9e8d1d3b21352"
+    },
+    {
+      "allotype": "HLA-B*15:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1502.zip",
+      "zip_bytes": 34126,
+      "member_bytes": 258418,
+      "sha256": "c640053807daa07043bd6ad619ae4da2a80787b5d19b6c685d2d2d87727cbb81"
+    },
+    {
+      "allotype": "HLA-B*15:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1503.zip",
+      "zip_bytes": 100601,
+      "member_bytes": 806331,
+      "sha256": "acdc8e478b92b1871b53f18e05e5dcc822e0590a53cb9bc22977175c0030a4d3"
+    },
+    {
+      "allotype": "HLA-B*15:08",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1508.zip",
+      "zip_bytes": 16998,
+      "member_bytes": 104248,
+      "sha256": "9b83377a8b5ccdc35053467984641c0ed1f9b3e672c2cd08042cefddda7db774"
+    },
+    {
+      "allotype": "HLA-B*15:10",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1510.zip",
+      "zip_bytes": 163202,
+      "member_bytes": 1358151,
+      "sha256": "2944a2fe046e2e16b09d95fc9d045d874ce9aadc4e5ee4b89bda2f12a0bd352b"
+    },
+    {
+      "allotype": "HLA-B*15:11",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1511.zip",
+      "zip_bytes": 131827,
+      "member_bytes": 974452,
+      "sha256": "195a774e97e55d6dfd298a48a321e5ab4acc047fd9517236e49973ea701edc97"
+    },
+    {
+      "allotype": "HLA-B*15:17",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1517.zip",
+      "zip_bytes": 30469,
+      "member_bytes": 228500,
+      "sha256": "94b9fbd07b13b1b4546fed7a5e28b8ba5f9ea42db97bb0bf22f0a1d6b9be52c1"
+    },
+    {
+      "allotype": "HLA-B*15:18",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1518.zip",
+      "zip_bytes": 152045,
+      "member_bytes": 1035902,
+      "sha256": "34d530158e4602c62dc68b03962a7ec92c89750aff16208332520795cf762a7f"
+    },
+    {
+      "allotype": "HLA-B*15:24",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1524.zip",
+      "zip_bytes": 16719,
+      "member_bytes": 96923,
+      "sha256": "7b7c4aaf6311378c29041f1b3d13c43ab342780902ba68c2722e071a16bb92ab"
+    },
+    {
+      "allotype": "HLA-B*15:25",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1525.zip",
+      "zip_bytes": 29418,
+      "member_bytes": 191309,
+      "sha256": "78e2e38fa442221cc5bc29ea1df561463af16d17c5b6229f4701804f818f2483"
+    },
+    {
+      "allotype": "HLA-B*18:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1801.zip",
+      "zip_bytes": 3080153,
+      "member_bytes": 25052897,
+      "sha256": "485a3f36e2393a112014ed4e7bc431b1fa383bb68e75a53d7f87ad30e26c0f23"
+    },
+    {
+      "allotype": "HLA-B*18:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B1803.zip",
+      "zip_bytes": 8816,
+      "member_bytes": 60250,
+      "sha256": "958ef0e22036840eb9d0178ae28dd39e853900ce315b4f7598db5e5f345d329f"
+    },
+    {
+      "allotype": "HLA-B*27:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B2702.zip",
+      "zip_bytes": 16649,
+      "member_bytes": 120269,
+      "sha256": "35ab3e6eb8fa08923a674a435b24663f90c43f0d264e639f6ca0db086fef0c07"
+    },
+    {
+      "allotype": "HLA-B*27:04",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B2704.zip",
+      "zip_bytes": 89177,
+      "member_bytes": 583225,
+      "sha256": "7339c05bc6f6c0d8bae6f612b035320d02a48c6c549974e7c8012a7089667c03"
+    },
+    {
+      "allotype": "HLA-B*27:05",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B2705.zip",
+      "zip_bytes": 1259343,
+      "member_bytes": 8729038,
+      "sha256": "81b5708ac544a8530711d603c86760758d63e893b49b7f4414dedcab652fa2b0"
+    },
+    {
+      "allotype": "HLA-B*27:20",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B2720.zip",
+      "zip_bytes": 3808,
+      "member_bytes": 25800,
+      "sha256": "6a179b6a513f8a7451b90301c6918b20aa61fcffa46d016d961d08a02c4434f5"
+    },
+    {
+      "allotype": "HLA-B*35:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3501.zip",
+      "zip_bytes": 1138312,
+      "member_bytes": 8730984,
+      "sha256": "7153e3c0d9bde0a0388c48382468aaa9a6a23b27a139a30c6c72cc2839ae9138"
+    },
+    {
+      "allotype": "HLA-B*35:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3502.zip",
+      "zip_bytes": 371762,
+      "member_bytes": 2782385,
+      "sha256": "930eb7fedfdd5dcb6361dbfbf00c9a952ec3c03e063e89e2387352f96f45e5fc"
+    },
+    {
+      "allotype": "HLA-B*35:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3503.zip",
+      "zip_bytes": 1418189,
+      "member_bytes": 11159192,
+      "sha256": "363ccc9b417d544d43476993a0748f10d0ae15634d0e2a942274ab7d5e9d61f1"
+    },
+    {
+      "allotype": "HLA-B*35:07",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3507.zip",
+      "zip_bytes": 43173,
+      "member_bytes": 355437,
+      "sha256": "908f6e262183c98c92177fb396b6b67745c4ec7b64101c5c67eff3a316b23fd8"
+    },
+    {
+      "allotype": "HLA-B*35:08",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3508.zip",
+      "zip_bytes": 360749,
+      "member_bytes": 2563805,
+      "sha256": "a261accf20474477263bac96904c310e440e59f48c8eb55eebbb6f07b68a9a1f"
+    },
+    {
+      "allotype": "HLA-B*37:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3701.zip",
+      "zip_bytes": 368654,
+      "member_bytes": 2613252,
+      "sha256": "139f7863b214e41b00333cbbd05998e04aee9a9fb8f44ee7ca630fb02b8594f1"
+    },
+    {
+      "allotype": "HLA-B*38:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3801.zip",
+      "zip_bytes": 2113809,
+      "member_bytes": 17406077,
+      "sha256": "6291025efcaac8db1300f8618fe570bf706dcc59d015cd5da46fc55873d26f2a"
+    },
+    {
+      "allotype": "HLA-B*38:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3802.zip",
+      "zip_bytes": 198901,
+      "member_bytes": 1668812,
+      "sha256": "6bd4ff29fe31d44de4a9509ba074a76ad24b07b6e470f2bfbc7da0751ddc77b6"
+    },
+    {
+      "allotype": "HLA-B*39:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3901.zip",
+      "zip_bytes": 890111,
+      "member_bytes": 6675357,
+      "sha256": "b7eb866ec5adf2c62fbce5e89669f61576a1758998208f801b9db1eb5af5d476"
+    },
+    {
+      "allotype": "HLA-B*39:05",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3905.zip",
+      "zip_bytes": 9167,
+      "member_bytes": 73031,
+      "sha256": "797c3762f56dbb4be767667d33c4f75bbe337a5c1bb5ef11e76cd8e0b9529b8e"
+    },
+    {
+      "allotype": "HLA-B*39:06",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3906.zip",
+      "zip_bytes": 706791,
+      "member_bytes": 4724045,
+      "sha256": "3b3fa06808a66386712a9e1fe0011002b8c20fce903f2bf045fa83749eb8d1ca"
+    },
+    {
+      "allotype": "HLA-B*39:24",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B3924.zip",
+      "zip_bytes": 23896,
+      "member_bytes": 155482,
+      "sha256": "32d16e49f6691d074f939779ca6c09e273a68d9c4d89a5b4f8bc66c7998eb863"
+    },
+    {
+      "allotype": "HLA-B*40:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4001.zip",
+      "zip_bytes": 2051561,
+      "member_bytes": 15713695,
+      "sha256": "00ef9f3f13be33240ee33daca7a7da5ca638005aa7b767046c01066ad4f596e0"
+    },
+    {
+      "allotype": "HLA-B*40:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4002.zip",
+      "zip_bytes": 485895,
+      "member_bytes": 3576066,
+      "sha256": "02154bac368e464cd9dcd1a798851207809c3571a431add3736c3172ddf2943c"
+    },
+    {
+      "allotype": "HLA-B*40:06",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4006.zip",
+      "zip_bytes": 70187,
+      "member_bytes": 557595,
+      "sha256": "56cb768718049c28c2b8935e23b6daa020ca705c240993d07165b61cb3104981"
+    },
+    {
+      "allotype": "HLA-B*40:32",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4032.zip",
+      "zip_bytes": 37851,
+      "member_bytes": 233515,
+      "sha256": "59941aa9fbfbf6e56acee9d661c43fcc47f290244161d40584feea48bd593b61"
+    },
+    {
+      "allotype": "HLA-B*41:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4101.zip",
+      "zip_bytes": 179594,
+      "member_bytes": 1288775,
+      "sha256": "54aa96dbd7170749b6783f6541f45f75c03325c858b25a129b84ed05eb5d2418"
+    },
+    {
+      "allotype": "HLA-B*41:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4102.zip",
+      "zip_bytes": 62248,
+      "member_bytes": 427618,
+      "sha256": "6c6640e36a268af6b0d760005c948d3afeaaa32c110444cf77d75804318aede1"
+    },
+    {
+      "allotype": "HLA-B*42:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4201.zip",
+      "zip_bytes": 101305,
+      "member_bytes": 827160,
+      "sha256": "8447b1117716251d43bd0f91e028540d68cb8c6eefa870e7f55fc4ebb289f26e"
+    },
+    {
+      "allotype": "HLA-B*44:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4402.zip",
+      "zip_bytes": 2396017,
+      "member_bytes": 18163423,
+      "sha256": "570237db7a67aab8fd27f630a21a30e7017bd24895f8f5b53f8d1e84e43f4394"
+    },
+    {
+      "allotype": "HLA-B*44:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4403.zip",
+      "zip_bytes": 5438609,
+      "member_bytes": 41253966,
+      "sha256": "e12bab4780250d57893ba32da1c9328e9d8e31b5c69af5b0f39458ef0ac2400a"
+    },
+    {
+      "allotype": "HLA-B*44:05",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4405.zip",
+      "zip_bytes": 738795,
+      "member_bytes": 5602780,
+      "sha256": "71b4f138834665083f44a2bfb9a53fe2cb35e6ff78e45e972a9c78c47398258f"
+    },
+    {
+      "allotype": "HLA-B*45:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4501.zip",
+      "zip_bytes": 426155,
+      "member_bytes": 3560782,
+      "sha256": "eb7ff1d3f1299d1b86f0860ac03ec1dd26197aaefaabb90be81c2e90c95515ee"
+    },
+    {
+      "allotype": "HLA-B*46:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4601.zip",
+      "zip_bytes": 129237,
+      "member_bytes": 853282,
+      "sha256": "6cc1964bc6cb5a4b5662351df688bc1432f8c834b33e9ee4ff5fb5c6b822cff4"
+    },
+    {
+      "allotype": "HLA-B*47:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4701.zip",
+      "zip_bytes": 45592,
+      "member_bytes": 279853,
+      "sha256": "ada96d8891c819c7b6d24a1800268fe045a680035b9259dd8453b1923ea5d5c3"
+    },
+    {
+      "allotype": "HLA-B*48:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4801.zip",
+      "zip_bytes": 13159,
+      "member_bytes": 89251,
+      "sha256": "3c47f1077880067de929daff6d316e3ad69287034b33e76fa91934da1d67d9ae"
+    },
+    {
+      "allotype": "HLA-B*49:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B4901.zip",
+      "zip_bytes": 876860,
+      "member_bytes": 6680030,
+      "sha256": "cb7cb082892255e6ecb51c9611ce6a9250c12d028bab334db4d7f6b01f43709b"
+    },
+    {
+      "allotype": "HLA-B*50:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5001.zip",
+      "zip_bytes": 948584,
+      "member_bytes": 7516369,
+      "sha256": "3df87e95bcdc8f66bd063cdb222895cda7e05a3fe08e597200710ecd81c21bb9"
+    },
+    {
+      "allotype": "HLA-B*51:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5101.zip",
+      "zip_bytes": 1862359,
+      "member_bytes": 13722317,
+      "sha256": "7c4ed7740d5f4622a7dc260a1c7a2255fe73149719053e4810223e7fa3217be7"
+    },
+    {
+      "allotype": "HLA-B*51:08",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5108.zip",
+      "zip_bytes": 145465,
+      "member_bytes": 927665,
+      "sha256": "2aeec344166540b3ab5c813559ae6881f5dcee4862de544d7bd5e7f0489f4189"
+    },
+    {
+      "allotype": "HLA-B*52:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5201.zip",
+      "zip_bytes": 205218,
+      "member_bytes": 1628568,
+      "sha256": "b8fb35845ff86541c408a8b64379209445ef4ac702ec8f1a9e3405200b60eb88"
+    },
+    {
+      "allotype": "HLA-B*53:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5301.zip",
+      "zip_bytes": 161725,
+      "member_bytes": 1272646,
+      "sha256": "4958ef47be4c1547e61ab263a97fc3f3e5cbeb0f48e9689266e52d434993060a"
+    },
+    {
+      "allotype": "HLA-B*54:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5401.zip",
+      "zip_bytes": 78893,
+      "member_bytes": 609286,
+      "sha256": "5b4257c530f0eccde5891c606bb057af889af6197dc2fd0ed05de2db240479ad"
+    },
+    {
+      "allotype": "HLA-B*55:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5501.zip",
+      "zip_bytes": 363144,
+      "member_bytes": 2611285,
+      "sha256": "eb20ec6d16223f25f122e265700e10d73faf667934440edce3b83d08cae546a3"
+    },
+    {
+      "allotype": "HLA-B*55:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5502.zip",
+      "zip_bytes": 72592,
+      "member_bytes": 546099,
+      "sha256": "1947dbecd552303c5ddc965437790d33174b3ae45c1f8f5b0e088dc14d061202"
+    },
+    {
+      "allotype": "HLA-B*56:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5601.zip",
+      "zip_bytes": 81385,
+      "member_bytes": 589699,
+      "sha256": "5e7c93f23e901c6fcb312cc731c1c94d3f5e7d55d081e457f1726e63684f12dc"
+    },
+    {
+      "allotype": "HLA-B*57:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5701.zip",
+      "zip_bytes": 3133664,
+      "member_bytes": 22664246,
+      "sha256": "f6cd986fa728e39759c3c725a88f5fff03be71eb43919b0663365b03f7895f1f"
+    },
+    {
+      "allotype": "HLA-B*57:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5703.zip",
+      "zip_bytes": 259466,
+      "member_bytes": 1903139,
+      "sha256": "6fa961793556a3e71076b595fd59f75488376b007ab1bf28a375547975fb45d8"
+    },
+    {
+      "allotype": "HLA-B*58:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5801.zip",
+      "zip_bytes": 276798,
+      "member_bytes": 2130641,
+      "sha256": "19f27c0b97db9b519546ecadda275d1ba3d158fdaaf15073a2a099ebe80d57c7"
+    },
+    {
+      "allotype": "HLA-B*58:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5802.zip",
+      "zip_bytes": 55661,
+      "member_bytes": 393125,
+      "sha256": "e9b89c4b44f2edbbe632b274319525b0112696b1a603c9caa60f93fdfe58027c"
+    },
+    {
+      "allotype": "HLA-B*59:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B5901.zip",
+      "zip_bytes": 6919,
+      "member_bytes": 40015,
+      "sha256": "31fda231efed43d06c75a87bc345d105353930535d0f7b9d4d03fbbf08bc86c9"
+    },
+    {
+      "allotype": "HLA-B*73:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-B7301.zip",
+      "zip_bytes": 80838,
+      "member_bytes": 521343,
+      "sha256": "69c550d5477d94ec1ba80b486bbfbbb0b16fdd5d7b153a1f7bfaedbef5b79b29"
+    },
+    {
+      "allotype": "HLA-C*01:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0102.zip",
+      "zip_bytes": 707085,
+      "member_bytes": 4960974,
+      "sha256": "fdfae24a47d2353539c1f0fc6ccd46913efab8dde69e63f2e3f1832885d46a75"
+    },
+    {
+      "allotype": "HLA-C*02:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0202.zip",
+      "zip_bytes": 1086939,
+      "member_bytes": 7524195,
+      "sha256": "d5a7f8fd7fe5512548fbdff9ad444c0e5203d9fe7c2be98bcc5771a212c628b5"
+    },
+    {
+      "allotype": "HLA-C*02:10",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0210.zip",
+      "zip_bytes": 4405,
+      "member_bytes": 24959,
+      "sha256": "2c5b04a4fa628ff580ff5fb42e5a1c236695c37fc1123fcd5f40e28f8bd6d0b2"
+    },
+    {
+      "allotype": "HLA-C*03:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0302.zip",
+      "zip_bytes": 13780,
+      "member_bytes": 102148,
+      "sha256": "7efdd72768cda9e52fa01db2fb53b64ce6a51a89ac36c2a4ec1adaf55252b1e9"
+    },
+    {
+      "allotype": "HLA-C*03:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0303.zip",
+      "zip_bytes": 857466,
+      "member_bytes": 6231870,
+      "sha256": "dd12f2b94efebccbc6ec3304a9ef63210fca7c902748d12a3ff9a54303ec7444"
+    },
+    {
+      "allotype": "HLA-C*03:04",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0304.zip",
+      "zip_bytes": 2552711,
+      "member_bytes": 19075287,
+      "sha256": "622139563c0d3dd48a0799de28a2dfc911ef8839cc073da9f30a0c31c3e3e72a"
+    },
+    {
+      "allotype": "HLA-C*03:16",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0316.zip",
+      "zip_bytes": 19038,
+      "member_bytes": 153465,
+      "sha256": "f247088ea7d1cae38f53d7604be34799f2eaed22925cd267e45597f9b14674f1"
+    },
+    {
+      "allotype": "HLA-C*04:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0401.zip",
+      "zip_bytes": 1219477,
+      "member_bytes": 9511141,
+      "sha256": "0a3bf61b794b00b0a428137537b1ab42c062368a0ad64848fa898642e1e551d2"
+    },
+    {
+      "allotype": "HLA-C*05:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0501.zip",
+      "zip_bytes": 854103,
+      "member_bytes": 6431509,
+      "sha256": "fa29a26d405fc9093a9d438715d58b29a055bbbdbebb6d857ce41573600a9d9d"
+    },
+    {
+      "allotype": "HLA-C*05:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0502.zip",
+      "zip_bytes": 2636,
+      "member_bytes": 19833,
+      "sha256": "4d11eb3a78a19af80be1c47183ddbe3bc3d94f762d0b300d8f58bf5b663d0fd0"
+    },
+    {
+      "allotype": "HLA-C*06:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0602.zip",
+      "zip_bytes": 3261265,
+      "member_bytes": 22837116,
+      "sha256": "40788e6a246c1308ba63880a54117ad6194b3644a22cdbd60b2b2cab90a6f240"
+    },
+    {
+      "allotype": "HLA-C*07:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0701.zip",
+      "zip_bytes": 1744488,
+      "member_bytes": 12515072,
+      "sha256": "93e4801e4e9b7bc5e3267d319f775922bd9e42ca362d0d502fce9541d0004659"
+    },
+    {
+      "allotype": "HLA-C*07:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0702.zip",
+      "zip_bytes": 5559913,
+      "member_bytes": 41493156,
+      "sha256": "d93b8d4c90b10da5bf68d7b9839dbeda72fc70b1ff6b0efcedc46b74f4b96f6a"
+    },
+    {
+      "allotype": "HLA-C*07:04",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0704.zip",
+      "zip_bytes": 272192,
+      "member_bytes": 1851861,
+      "sha256": "d210af117d46c947a8a5f8461e2ea6754739fecd9f319e16949b1839f2d70c33"
+    },
+    {
+      "allotype": "HLA-C*07:17",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0717.zip",
+      "zip_bytes": 3984,
+      "member_bytes": 24989,
+      "sha256": "99db07309900dec064f988f8cc71dd2392eedfdad5afead10f3d86c8c4f384bd"
+    },
+    {
+      "allotype": "HLA-C*07:18",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0718.zip",
+      "zip_bytes": 30652,
+      "member_bytes": 234641,
+      "sha256": "bd828774aff3ec08dc1f8f9e47cdf7da8053db169b86d9fde5f9868aeacf3791"
+    },
+    {
+      "allotype": "HLA-C*07:21",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0721.zip",
+      "zip_bytes": 686738,
+      "member_bytes": 6349384,
+      "sha256": "13d956fa8f7ee7abe63a12273d505f73bb17ee599ec1d02ebf98f37b6fc4106b"
+    },
+    {
+      "allotype": "HLA-C*08:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0801.zip",
+      "zip_bytes": 67203,
+      "member_bytes": 493852,
+      "sha256": "aab9ef45a3caa6596314fa386249c94498c9d8423929ad8ad9e2e9e3bf3fae40"
+    },
+    {
+      "allotype": "HLA-C*08:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0802.zip",
+      "zip_bytes": 443342,
+      "member_bytes": 3332464,
+      "sha256": "28876cf41838bb15dbcdaf0a2e3422c910f06eee2706eb4ce05feee0bffe7540"
+    },
+    {
+      "allotype": "HLA-C*08:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C0803.zip",
+      "zip_bytes": 1755,
+      "member_bytes": 8434,
+      "sha256": "842e556b0c5a5c079f68e8acd63393a5329364b044b739e7a8400d7ed94533d0"
+    },
+    {
+      "allotype": "HLA-C*12:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1202.zip",
+      "zip_bytes": 150368,
+      "member_bytes": 1177330,
+      "sha256": "bfcd7901ddee04e8b61c34ee932375cfe0403cb92a1a73b9662c4b6ce539e26a"
+    },
+    {
+      "allotype": "HLA-C*12:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1203.zip",
+      "zip_bytes": 2099236,
+      "member_bytes": 15948080,
+      "sha256": "65450a22814a70eaedcb1436d4a975aeef138f4b1cfa18f22d8e04398206c5bf"
+    },
+    {
+      "allotype": "HLA-C*12:04",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1204.zip",
+      "zip_bytes": 203587,
+      "member_bytes": 1306904,
+      "sha256": "592cb2a62b684b4a813d2963e073a9827f8b8bee74b2fba6a6dc8cdf1918618f"
+    },
+    {
+      "allotype": "HLA-C*14:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1402.zip",
+      "zip_bytes": 850192,
+      "member_bytes": 6235466,
+      "sha256": "a4acd19703ef5a972b94637bd4ffb773e597d2f847425d1f3c34cee896ddb24e"
+    },
+    {
+      "allotype": "HLA-C*14:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1403.zip",
+      "zip_bytes": 80960,
+      "member_bytes": 654305,
+      "sha256": "70875f1b5ba5d632844f094c4ceaa4792c4984bf0f12f25ba02b08877bce1e2f"
+    },
+    {
+      "allotype": "HLA-C*15:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1502.zip",
+      "zip_bytes": 228729,
+      "member_bytes": 1564517,
+      "sha256": "512c7c6495b8079e67a3a767c4831461130dcac4e6b0cf6e7745344c341c632a"
+    },
+    {
+      "allotype": "HLA-C*15:04",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1504.zip",
+      "zip_bytes": 5383,
+      "member_bytes": 30725,
+      "sha256": "98a1ff6b091a8a3ceef52bb2abc445ac9d1327e4767ab6f6ffb0ec65d0dcc35a"
+    },
+    {
+      "allotype": "HLA-C*15:05",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1505.zip",
+      "zip_bytes": 76789,
+      "member_bytes": 498425,
+      "sha256": "88b08a79f72a1734a46006d6edf37802cafd83868cdff884f56e6d22e0f64096"
+    },
+    {
+      "allotype": "HLA-C*15:06",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1506.zip",
+      "zip_bytes": 51527,
+      "member_bytes": 328875,
+      "sha256": "b8312b562de0369ff9d8d06986ffb0f0f716fdeb9608eceacc5b9887f8289e50"
+    },
+    {
+      "allotype": "HLA-C*15:13",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1513.zip",
+      "zip_bytes": 890,
+      "member_bytes": 3142,
+      "sha256": "f779f24260679960bf56e2e229cbc61d7179755d21ae4c1c302204d057980e8f"
+    },
+    {
+      "allotype": "HLA-C*16:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1601.zip",
+      "zip_bytes": 1609191,
+      "member_bytes": 12564038,
+      "sha256": "3d1807ccee90a8f5898e8a70f120afa883b31a10c7e82b9ece32b993edbb6b5f"
+    },
+    {
+      "allotype": "HLA-C*16:02",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1602.zip",
+      "zip_bytes": 128914,
+      "member_bytes": 889780,
+      "sha256": "7bfefe3915acb7bbe3490bf2a61f7fb07c0eb07481f1af659db5c32d2fe6451b"
+    },
+    {
+      "allotype": "HLA-C*17:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1701.zip",
+      "zip_bytes": 222967,
+      "member_bytes": 1635898,
+      "sha256": "702168e5ce40f294739c90c29e87d34a2fe9759f339b32a6c946541c4f807e03"
+    },
+    {
+      "allotype": "HLA-C*17:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1703.zip",
+      "zip_bytes": 7857,
+      "member_bytes": 59556,
+      "sha256": "3b35ce6cf8a3cdcf2d3be45f026d3467b656be58c80681c7cc74330decf15d1b"
+    },
+    {
+      "allotype": "HLA-C*18:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-C1801.zip",
+      "zip_bytes": 2118,
+      "member_bytes": 9696,
+      "sha256": "7e216c0325dc610dec5f99f4425942e0bee50f5657fd7e3eec4580ad087f3150"
+    },
+    {
+      "allotype": "HLA-E*01:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-E0101.zip",
+      "zip_bytes": 11062,
+      "member_bytes": 99169,
+      "sha256": "f9b2eaacb07270a57a232731c69633e1fd422bc09fe27613b496a11212fe9cac"
+    },
+    {
+      "allotype": "HLA-G*01:01",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-G0101.zip",
+      "zip_bytes": 80489,
+      "member_bytes": 564218,
+      "sha256": "dc69ee9abb1b14d2d68c3ce6ac7af7cb7f241ea871576ee11f636f587edb08ef"
+    },
+    {
+      "allotype": "HLA-G*01:03",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-G0103.zip",
+      "zip_bytes": 14553,
+      "member_bytes": 100344,
+      "sha256": "ef003e5919f3fa24459c8a8a0fb393f689030745e84059478b70518b215f1dce"
+    },
+    {
+      "allotype": "HLA-G*01:04",
+      "url": "http://modinfor.com/Ligand.MHC-Atlas/Download/HLA-G0104.zip",
+      "zip_bytes": 22269,
+      "member_bytes": 158180,
+      "sha256": "9ac85e71a1314c997076b0bf8621d9b619f4779d06e445a524475823d5887913"
+    }
+  ]
+}

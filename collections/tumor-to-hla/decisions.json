@@ -1,27 +1,99 @@
 [
   {
+    "id": "doi:10.1016/j.bbadis.2026.168539",
+    "record_sha256": "96da39046fcd7e4edcf8cb36a24bece01dcfb95edf22c9516342cc6aca1dca7c",
+    "decision": "exclude",
+    "reason": "A review of immunoproteasome biology in inflammatory bowel disease. It contributes no new tumor or digestion cohort for any numerical stage.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43063687/"
+    }
+  },
+  {
+    "id": "doi:10.1016/j.tibs.2026.10.009",
+    "record_sha256": "376024d6436ac54cf9aeb5d6f4715f612c4764fde8b27f5c188064edab962252",
+    "decision": "exclude",
+    "reason": "A review of NRF1-mediated proteasome recovery during cellular stress. No new cleavage products or patient-level HLA assay are reported.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43064563/"
+    }
+  },
+  {
+    "id": "doi:10.1016/j.vetpar.2026.110976",
+    "record_sha256": "de69e2e1a2c713fcd1239640056161ab23c198c223338d79992d835832a62b8e",
+    "decision": "exclude",
+    "reason": "The authors measured germline homozygosity and parasite-resistance traits in sheep. The samples and endpoint do not concern human or canine tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43044318/"
+    }
+  },
+  {
+    "id": "doi:10.1093/bioadv/vbag312",
+    "record_sha256": "e7a6ac3a2890841d3a2bf6a977a1cfb7bb067e233e0f9035154acd2e15395ad4",
+    "decision": "exclude",
+    "reason": "DIA proteomics imputation benchmark. Its performance estimates concern missing intensity values. Imputed intensities cannot be treated as observed mutant protein or HLA ligands.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43054624/"
+    }
+  },
+  {
+    "id": "doi:10.1111/cas.70590",
+    "record_sha256": "fc88aef7663c4025f5518389050966aa9e906908db473414affba470d955f416",
+    "decision": "exclude",
+    "reason": "Narrative review of early-onset colorectal cancer etiology and mutational signatures. Any underlying cohort needs its own enrollment and mutation-calling denominator.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43040938/"
+    }
+  },
+  {
     "id": "doi:10.1158/2159-8290.cd-26-0302",
     "record_sha256": "36e792f117d1264ea3b8007c6f091ca22b55a94c1e178d9e09cec00fad87a974",
     "decision": "defer",
-    "reason": "Primary cutaneous melanoma multi-omics cohort published online Nov 17. Extract and reconcile the immunopeptidomics subset, sample unit, somatic attribution, detection rule and patient overlap before updating any display endpoint. The 183 profiled melanomas in the abstract are not automatically 183 assessable HLA measurements.",
+    "reason": "PubMed PMID 43043388 reports 183 melanomas across 13 omics layers. The screened record gives neither the mutation-confirmed HLA-positive donor numerator nor the denominator assessed for that search. Obtain primary supplemental tables, verify overlap and record typed-subset selection before inclusion.",
     "reviewed_on": "2026-11-25",
-    "reviewer": "Codex preliminary evidence screen"
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43043388/"
+    }
   },
   {
-    "id": "doi:10.64898/2026.11.18.767656",
-    "record_sha256": "cee660faa231505ce43fc57bf9c2767db246f5ba4192c0de0b8b5b165f3f9647",
-    "decision": "defer",
-    "reason": "Acral melanoma preprint with DNA structural dynamics. Review sampling, assayed material and denominator for a future somatic-stage claim; reassess after peer review.",
-    "reviewed_on": "2026-11-25",
-    "reviewer": "Codex preliminary evidence screen"
-  },
-  {
-    "id": "doi:10.3389/fonc.2026.2012113",
-    "record_sha256": "c5ea7153be19424cd029b57cbb80da472eca18a1fbef43d011f3f06a1ff6ca74",
+    "id": "doi:10.1210/endocr/bqag120",
+    "record_sha256": "bbaf064c881bf5af125b1f4829e6c6eac9a40461da1a0d38926b5f86db8dd98d",
     "decision": "exclude",
-    "reason": "The primary study describes a fusion in one selected MDS-to-AML case. It provides no cohort denominator for prevalence.",
+    "reason": "Mechanistic study of progesterone-receptor truncation in pregnancy-associated myometrium. This tissue and proteolytic endpoint do not assay tumor mutations or short HLA ligands.",
     "reviewed_on": "2026-11-25",
-    "reviewer": "Codex preliminary evidence screen"
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43043827/"
+    }
+  },
+  {
+    "id": "doi:10.21203/rs.3.rs-11143133/v1",
+    "record_sha256": "47fdb079c4fe528eaa07d009e1436955ad5bbbd0c6cbb57bc85640fe0358b28c",
+    "decision": "exclude",
+    "reason": "The primary model predicts TCR–HLA restriction. Its application to TCGA HLA loss lacks a directly measured somatic ligand endpoint and overlaps TCGA cohorts already under study.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Crossref abstract and publication metadata",
+      "url": "https://api.crossref.org/works/10.21203/rs.3.rs-11143133/v1"
+    }
   },
   {
     "id": "doi:10.3389/fcell.2026.1947508",
@@ -29,6 +101,322 @@
     "decision": "exclude",
     "reason": "Review article presenting an evolutionary framework for leukemia. It does not provide a new primary donor-level prevalence assay.",
     "reviewed_on": "2026-11-25",
-    "reviewer": "Codex preliminary evidence screen"
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43041538/"
+    }
+  },
+  {
+    "id": "doi:10.3389/fimmu.2026.1939091",
+    "record_sha256": "69dd6a09aa227e7a0b4e7174294bbf4aa07b458f49f41c20261a0e39c32afae8",
+    "decision": "exclude",
+    "reason": "Narrative synthesis of noncanonical ORFs and immune targets. It is a source of primary references, not an independent cohort; noncanonical translation alone does not establish somatic sequence novelty.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43047677/"
+    }
+  },
+  {
+    "id": "doi:10.3389/fimmu.2026.1997527",
+    "record_sha256": "ea6cb8cd14823bb2bd7e031c55b64881e4713454d0432fd4a5040ac7906b75dc",
+    "decision": "defer",
+    "reason": "Pilot with an engineered stromal-cell immunopeptidome. Review primary spectra, controls, replication and training-set overlap if using it to challenge processing predictions. It cannot estimate native tumor display prevalence.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43065612/"
+    }
+  },
+  {
+    "id": "doi:10.3389/fonc.2026.2012113",
+    "record_sha256": "c5ea7153be19424cd029b57cbb80da472eca18a1fbef43d011f3f06a1ff6ca74",
+    "decision": "exclude",
+    "reason": "The primary study describes a fusion in one selected MDS-to-AML case. It provides no cohort denominator for prevalence.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43074805/"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.17985995",
+    "record_sha256": "b485da732e05cfe5f49ea45fa05fffbcc426ee8fb8b87a4957f8935771e1dfc3",
+    "decision": "exclude",
+    "reason": "Concept DOI points to version 10.5281/zenodo.17985996. The Zenodo file listing gives one HLA class II table; one deposit, and a different HLA class from the present study.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite metadata and Zenodo deposit file listing",
+      "url": "https://zenodo.org/api/records/17985995"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.17985996",
+    "record_sha256": "1a89baa018383a0903024cf3c5743359db60b91c80e1dd63dbf6285096cc04d8",
+    "decision": "exclude",
+    "reason": "Zenodo lists ALL_HLA-II_alleles_August2025.csv for this version. Neither the class II file nor its concept DOI 10.5281/zenodo.17985995 supplies a class I tumor cohort.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite metadata and Zenodo deposit file listing",
+      "url": "https://zenodo.org/api/records/17985996"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.19371165",
+    "record_sha256": "fee81c713b74d74f5383d8a0c69450f01a72debc288c44114c36019ed95bab11",
+    "decision": "exclude",
+    "reason": "Concept DOI for version 10.5281/zenodo.24297129 and an earlier version. Three mesothelioma specimens were profiled for pS6 and imaging markers, which do not identify translated mutant sequences.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.19371165"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.22696798",
+    "record_sha256": "9498ef26cb9da2d64bc3f9c1e4b169043a3ac3358b25993e5daa7cee5975f0eb",
+    "decision": "exclude",
+    "reason": "Concept DOI for the methylarginine-site atlas. The records describe annotated residues and mutation propensity across existing resources. Its versions, including 10.5281/zenodo.24429699, do not constitute new tumor-level presentation assays.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.22696798"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24297129",
+    "record_sha256": "53a9074c01cfccb7d629a3ffca6aac56bb0d0d02eaac14235fd06280d704dce6",
+    "decision": "exclude",
+    "reason": "Revised version of 10.5281/zenodo.19371165. pS6 imaging in three tumor specimens measures a marker of translation activity without sequence-resolved mutant protein or surface ligand measurements.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24297129"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24329157",
+    "record_sha256": "73d783404207ffb32c6a598f9aa7213863f8e2bbc57dca2401e9e0a83a846247",
+    "decision": "exclude",
+    "reason": "Concept DOI for the OncoRead expression-signature library, also indexed as 10.5281/zenodo.24329158. Counts of locked signatures and external validations are not independent assayed tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24329157"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24329158",
+    "record_sha256": "d838ffd60853a5df0addfdbb23f3b27024d4ab256b6c5110c0feb11cbf8eda5e",
+    "decision": "exclude",
+    "reason": "Version of 10.5281/zenodo.24329157. The external evidence table validates expression signatures and scores; it has no compatible somatic peptide or native HLA detection denominator.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24329158"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24337286",
+    "record_sha256": "d5ef9670e876aba02db7e640a0a8cd894fcc24dea11be31d91d9a8a0c213641c",
+    "decision": "exclude",
+    "reason": "Concept record for three miRBioGenAtlas versions. It summarizes 15 preselected microRNA-pathway genes in existing TCGA and clinical data; pooling its published N with the source cohorts would double count people.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24337286"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24337287",
+    "record_sha256": "68e0de54ea8d254a454f75ffe24c8817eb67acf5475c3d8f26bf84cada3bc6e7",
+    "decision": "exclude",
+    "reason": "Earlier version of miRBioGenAtlas (concept 10.5281/zenodo.24337286). The restricted 15-gene selection and overlapping TCGA/clinical cohorts cannot supply a genome-wide burden or independent prevalence cohort.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24337287"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24393421",
+    "record_sha256": "70e7b338e815bbc3bef50f33e74cc893ab80c3100598f0984e96fa0a3402c50b",
+    "decision": "exclude",
+    "reason": "Intermediate miRBioGenAtlas version under 10.5281/zenodo.24337286. A new release of those selected genes is not a new tumor cohort.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24393421"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24403025",
+    "record_sha256": "f33f1499102b54e2ecc76d89926544fbaf5b7bed75ea97cefc18af820bf9fd09",
+    "decision": "exclude",
+    "reason": "Concept DOI for a DepMap mutation-annotation and dependency reproducibility archive. Its version 10.5281/zenodo.24403027 uses cell-line dependency endpoints, outside this patient-level funnel.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24403025"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24403027",
+    "record_sha256": "1f5df5e71ea3882bffa9a4cd1886966ef0f298d8c4b9c42f7536de40ddb5b48d",
+    "decision": "exclude",
+    "reason": "Version of 10.5281/zenodo.24403025. Gene-dependency and annotation sensitivity in DepMap cell lines provide no newly assessed in-patient mutation-to-display series.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24403027"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24429699",
+    "record_sha256": "89cabc2f33095a4f9087cc8cbfe4737b5bb579f9b09675f7de3ec3368e6cfe1e",
+    "decision": "exclude",
+    "reason": "Methylarginine site atlas v1.7.0 (concept 10.5281/zenodo.22696798). Codon-adjusted mutation propensity across existing data is a site-level analysis. It cannot supply a tumor-level HLA result.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24429699"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24455067",
+    "record_sha256": "0c35afecd0806a339bcd37db7b5d580433ad40aa2cb0e55c3922591590c6d9c4",
+    "decision": "exclude",
+    "reason": "Version of 10.5281/zenodo.24337286. The atlas reanalyzes a 15-gene microRNA-biology panel. The same cohort registrations under several versions cannot establish an independent all-mutation denominator.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24455067"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24487217",
+    "record_sha256": "f20f3dda6ecd4279f5920c11d17c351a1a2e9a4778e69d3dee011f7312b6e700",
+    "decision": "exclude",
+    "reason": "Concept DOI and version 10.5281/zenodo.24487218 link literature claims about cell-line growth to loss-of-function screens. Claims, genes and cell lines are not assayed patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24487217"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24487218",
+    "record_sha256": "343143ad4a8c24bd0621de2b1582c9034bb4dbf7898d6859d089d8a64efc0234",
+    "decision": "exclude",
+    "reason": "Version of 10.5281/zenodo.24487217. CRISPR/RNAi growth dependencies in DepMap models assay cell growth, not a source alteration, translated mutant product or natural HLA ligand in a tumor.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "DataCite deposit description and DOI version relationships",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24487218"
+    }
+  },
+  {
+    "id": "doi:10.64898/2026.11.16.766984",
+    "record_sha256": "444f4a3a79ca2b4faeb0d979a6da5c46f1b43901fd7525ef3ec0b5711524a3d5",
+    "decision": "defer",
+    "reason": "Preprint describing a 26-organoid mesothelioma biobank. Check the primary tissue–organoid pairing, sample selection, normal comparator, calling thresholds and donor independence before testing a mesothelioma-specific somatic-stage claim.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Crossref abstract and publication metadata",
+      "url": "https://api.crossref.org/works/10.64898/2026.11.16.766984"
+    }
+  },
+  {
+    "id": "doi:10.64898/2026.11.18.26368225",
+    "record_sha256": "ac91b366c2dce0fe9dd32cc19da6ca879b150b96ea8bb952ab62e3184ae51f5a",
+    "decision": "defer",
+    "reason": "Pilot preprint recruited five Black South African colorectal cancer patients. Review matched-normal and coverage criteria, specimen selection and release of per-case measurements as a bounded population-specific comparison. Do not generalize five cases to population prevalence.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Crossref abstract and publication metadata",
+      "url": "https://api.crossref.org/works/10.64898/2026.11.18.26368225"
+    }
+  },
+  {
+    "id": "doi:10.64898/2026.11.18.767656",
+    "record_sha256": "cee660faa231505ce43fc57bf9c2767db246f5ba4192c0de0b8b5b165f3f9647",
+    "decision": "defer",
+    "reason": "Acral melanoma preprint with DNA structural dynamics. Review sampling, assayed material and denominator for a future somatic-stage claim; reassess after peer review.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Crossref abstract and publication metadata",
+      "url": "https://api.crossref.org/works/10.64898/2026.11.18.767656"
+    }
+  },
+  {
+    "id": "doi:10.64898/2026.11.19.26364643",
+    "record_sha256": "9866002fd821c6dd8bfc4d8843539f264695b45534f2a03f7d986cad7573b0d9",
+    "decision": "exclude",
+    "reason": "Family-quartet study estimates origins and timing of newly acquired germline TP53 substitutions. Constitutional variants, pedigrees and germline mutation rates are outside the somatic tumor endpoint.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Crossref abstract and publication metadata",
+      "url": "https://api.crossref.org/works/10.64898/2026.11.19.26364643"
+    }
+  },
+  {
+    "id": "doi:10.64898/2026.11.19.767422",
+    "record_sha256": "b7a4fa8ee7d5a728ad5d74faff4e386342c26542c00c3a06e065a4d806fcc814",
+    "decision": "exclude",
+    "reason": "Mechanistic study of repair of topoisomerase–nucleic acid complexes. The experiments do not measure source-matched tumor peptide production or display.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Crossref abstract and publication metadata",
+      "url": "https://api.crossref.org/works/10.64898/2026.11.19.767422"
+    }
+  },
+  {
+    "id": "doi:10.64898/2026.11.20.768099",
+    "record_sha256": "a819f939f9fdbbecb18b60a3166486baa4c10f4a5aef8d7c77b2e364be08e24c",
+    "decision": "defer",
+    "reason": "Preprint reports an NMD perturbation in an NSCLC cell line. Inspect untreated replicates, genotype match, biological replication, MS confidence and independent datasets before considering a context-specific assay comparison. Cell-line perturbation yields cannot enter untreated-patient prevalence.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Crossref abstract and publication metadata",
+      "url": "https://api.crossref.org/works/10.64898/2026.11.20.768099"
+    }
+  },
+  {
+    "id": "doi:10.7759/cureus.118351",
+    "record_sha256": "c5044b70d705e2874b93a14b2401451982c81f828e80729ca60b70244612afef",
+    "decision": "exclude",
+    "reason": "Review synthesizing proteogenomics across multiple disease areas. It provides background references; its narrative conclusions are not a new matched donor/assay table.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43067919/"
+    }
   }
 ]
