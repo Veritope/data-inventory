@@ -24,6 +24,8 @@ A run records inclusive dates, full request URLs, result counts, page hashes, re
 
 [The project source collection](collection.json) records exact file URLs and acquisition hashes. Study-specific manifests list the TCGA case rosters and pooled historical HLA downloads. Publisher URLs sometimes rotate; always compare the expected hash and do not treat an HTTP acquisition checksum as publisher authentication.
 
+The original handoff has a private release asset and two binary editions of the same report. The archive receipt records the release and asset IDs, byte lengths, hashes and edition-specific locations. [Original handoff manifest](manifests/original-handoff.json)
+
 ## Weekly editorial routine
 
 1. Check the last completed report's dates. Backfill gaps, then review records marked `pending` and previously deferred items whose prerequisite has arrived. Read the primary publication, correction status, limitations and data release. Log a reason when a report is peripheral or duplicates an existing source.
