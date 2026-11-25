@@ -266,6 +266,32 @@
       }
     },
     {
+      "id": "sanchez-vega-2018-tcga-oncogenic-pathways",
+      "stage": "somatic",
+      "catalog_id": "tcga-pancanatlas",
+      "paper": "https://doi.org/10.1016/j.cell.2018.03.035",
+      "pmid": "29625050",
+      "pmcid": "PMC6070353",
+      "release": "Cell, 2018-04-05, Oncogenic Signaling Pathways in The Cancer Genome Atlas, Tables S1, S3 and S4",
+      "role": "S1 identifies one selected specimen per patient and its diagnosis and subtype. S3 defines pathway membership. S4 records qualifying alterations across 410 gene-mechanism columns, 187 genes and 10 pathways.",
+      "cohort": "9,125 of 11,276 TCGA PanCanAtlas patients across 33 diagnoses passed pathology and quality review and had mutation, copy number, DNA methylation and mRNA data. The selected specimens comprise 8,602 primary solid tumors, 162 AML blood tumors and 361 melanoma metastases.",
+      "caveat": "TCGA resources reuse patients. Pathways and mechanisms also overlap within each patient. Report each pathway against its assessed denominator. An S4 NA is unresolved. A patient with no positive call and any unresolved pathway remains unresolved for the ten-pathway union (95 patients). The selected cohort measures curated alterations and has no population-incidence weighting.",
+      "files": {
+        "S1": {
+          "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0092867418303593-mmc1.xlsx",
+          "sha256": "35071f5cf78b28adefe42ce9c1fcb61d35d3a6118ed0c4b4363b20a69eb31c70"
+        },
+        "S3": {
+          "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0092867418303593-mmc3.xlsx",
+          "sha256": "df722435b7c069b9225c9e4bbef7ab812385bd5e8ab7c415837cde5f2838c640"
+        },
+        "S4": {
+          "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0092867418303593-mmc4.xlsx",
+          "sha256": "708b497b2e066b519807fabefc87a6640c273a7a351c9cd637b2811692f05ea3"
+        }
+      }
+    },
+    {
       "id": "rvdriver-zenodo-15656415",
       "stage": "somatic",
       "role": "Selected paired DNA/RNA somatic-mutation cohort",
