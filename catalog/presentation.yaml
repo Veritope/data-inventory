@@ -1095,6 +1095,141 @@
     tumor antigen presentation).
 
     '
+- id: pxd004746-mantle-cell-lymphoma
+  name: Antigen Presentation Profiling Reveals T-cell Recognition of Lymphoma Immunoglobulin Neoantigens
+    (PXD004746)
+  category: presentation
+  species:
+  - human
+  description: Primary mantle cell lymphoma immunoglobulin ligandome, including class I and HLA-DR tumor
+    lysate measurements.
+  modalities:
+  - immunopeptidomics
+  - HLA ligandomics
+  formats:
+  - mass-spectrometry files
+  - processed search results
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD004746
+  api: https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD004746
+  access: open
+  license: EBI terms of use
+  license_url: https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD004746
+  provenance:
+    maintainer: Study authors and the EMBL-EBI PRIDE Archive
+    key_refs:
+    - 10.1038/nature21433
+    - PXD004746
+  last_updated: '2017-03-27'
+  relevance:
+    programs:
+    - presentation
+    why: Annotated primary study with public acquisition data for evaluating observed antigen presentation
+      within the stated assay.
+  agent_access: Use the PRIDE project API and accession-specific file listing. Review available file formats
+    and sizes before selecting downloads.
+  caveats: The figure and supplementary table use different class I assignments. The MSV000098361 regular-search
+    archive mirrors this deposit. Whole-cell HLA isolation leaves cell-of-origin and surface localization
+    unresolved.
+- id: pxd010808-b-cell-lymphoma
+  name: B cell Lymphomas present Immunoglobulin Neoantigens (PXD010808)
+  category: presentation
+  species:
+  - human
+  description: Class I and HLA-DR immunoglobulin ligandome in B-cell lymphomas, with a separate mantle
+    cell activation comparison.
+  modalities:
+  - immunopeptidomics
+  - HLA ligandomics
+  formats:
+  - mass-spectrometry files
+  - processed search results
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD010808
+  api: https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD010808
+  access: open
+  license: Creative Commons Public Domain (CC0)
+  license_url: https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD010808
+  provenance:
+    maintainer: Study authors and the EMBL-EBI PRIDE Archive
+    key_refs:
+    - 10.1182/blood-2018-06-845156
+    - PXD010808
+  last_updated: '2019-01-07'
+  relevance:
+    programs:
+    - presentation
+    why: Annotated primary study with public acquisition data for evaluating observed antigen presentation
+      within the stated assay.
+  agent_access: Use the PRIDE project API and accession-specific file listing. Review available file formats
+    and sizes before selecting downloads.
+  caveats: Several follicular specimens have no numerical class I ligand yield. Keep the later activation
+    arm separate from the primary untreated cohorts and verify class-specific denominators in the supplement.
+- id: pxd037655-immuneo-master
+  name: Proteogenomic analysis reveals RNA as a source for tumor-agnostic neoantigen identification (PXD037655)
+  category: presentation
+  species:
+  - human
+  description: Mass spectrometry from the ImmuNEO MASTER rare-cancer project, with publicly linked cohort
+    and candidate supplements.
+  modalities:
+  - immunopeptidomics
+  - HLA ligandomics
+  formats:
+  - mass-spectrometry files
+  - processed search results
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD037655
+  api: https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD037655
+  access: open
+  license: Creative Commons Public Domain (CC0)
+  license_url: https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD037655
+  provenance:
+    maintainer: Study authors and the EMBL-EBI PRIDE Archive
+    key_refs:
+    - 10.1038/s41467-023-39570-7
+    - PXD037655
+  last_updated: '2023-05-16'
+  relevance:
+    programs:
+    - presentation
+    why: Annotated primary study with public acquisition data for evaluating observed antigen presentation
+      within the stated assay.
+  agent_access: Use the PRIDE project API and accession-specific file listing. Review available file formats
+    and sizes before selecting downloads.
+  caveats: DNA and RNA sequencing have controlled access at EGAS00001006706. Histologies and specimen-specific
+    assay coverage require the published roster.
+- id: pxd055544-spotneomet
+  name: Recurrent immunogenic neoantigens and their cognate T-cell receptors in treatment-resistant metastatic
+    prostate cancer (PXD055544)
+  category: presentation
+  species:
+  - human
+  description: Mass spectrometry in prostate cancer cell models studied alongside clinical genotype-frequency
+    analyses.
+  modalities:
+  - immunopeptidomics
+  - HLA ligandomics
+  formats:
+  - mass-spectrometry files
+  - processed search results
+  landing_url: https://www.ebi.ac.uk/pride/archive/projects/PXD055544
+  api: https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD055544
+  access: open
+  license: Creative Commons Public Domain (CC0)
+  license_url: https://www.ebi.ac.uk/pride/ws/archive/v3/projects/PXD055544
+  provenance:
+    maintainer: Study authors and the EMBL-EBI PRIDE Archive
+    key_refs:
+    - 10.1158/2159-8290.CD-24-1213
+    - PXD055544
+  last_updated: '2025-10-03'
+  relevance:
+    programs:
+    - presentation
+    why: Annotated primary study with public acquisition data for evaluating observed antigen presentation
+      within the stated assay.
+  agent_access: Use the PRIDE project API and accession-specific file listing. Review available file formats
+    and sizes before selecting downloads.
+  caveats: Experimental model ligands and clinical mutation-plus-HLA genotype results come from separate
+    arms. The article has different licensing from the PRIDE deposit.
 - id: pxd074485
   name: PXD074485 — Identical Tumor Antigen Peptides by Canine & Human MHC-I (Kaabinejadian, iScience
     2026)

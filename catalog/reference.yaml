@@ -2698,6 +2698,33 @@
     not a source for the comparative-oncology program.
 
     '
+- id: ogrdb-human-igh-germline
+  name: OGRDB curated human IGH extended germline gene set
+  category: reference
+  species:
+  - human
+  description: Versioned human immunoglobulin heavy-chain germline gene reference. The pinned source collection
+    points to release 10 in AIRR format.
+  modalities:
+  - immunoglobulin germline genes
+  formats:
+  - AIRR JSON
+  landing_url: https://ogrdb.airr-community.org/germline_sets
+  api: https://ogrdb.airr-community.org/api/germline/set/G00060/10/airr_ex
+  license: unknown
+  access: open
+  provenance:
+    maintainer: Open Germline Receptor Database (OGRDB)
+    key_refs:
+    - OGRDB:G00060, release 10
+  last_updated: '2026-05-27'
+  relevance:
+    programs:
+    - presentation
+    why: A versioned germline comparison for immunoglobulin-derived ligands.
+  agent_access: Retrieve the exact set and numbered release via HTTPS. Check the release date and checksum.
+  caveats: The downloaded data did not establish a redistribution license. A germline set omits rearranged
+    and somatically hypermutated antibodies, including antibodies from normal B cells.
 - id: oma
   name: OMA (Orthologous MAtrix)
   category: reference
