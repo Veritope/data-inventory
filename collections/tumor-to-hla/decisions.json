@@ -418,5 +418,1461 @@
       "type": "PubMed abstract",
       "url": "https://pubmed.ncbi.nlm.nih.gov/43067919/"
     }
+  },
+  {
+    "id": "doi:10.1007/164_2026_861",
+    "record_sha256": "6544b67fcf746bcdab251a51455bf16f6602ac146eb0fe9a9d03dd0b7639ed24",
+    "decision": "exclude",
+    "reason": "Pharmacokinetics review of boron-containing drugs, including proteasome inhibitors. It supplies no tumor sample or quantitative peptide-processing assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43024087/"
+    }
+  },
+  {
+    "id": "doi:10.1016/j.autrev.2026.104249",
+    "record_sha256": "299c91e9df714fc882bd1061aa2a743d68c92127fc2002e404e59e43a60afc19",
+    "decision": "exclude",
+    "reason": "Narrative review of HLA-B27 and ERAP1 in axial spondyloarthritis. It supplies no primary tumor or direct cleavage-product dataset.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43025675/"
+    }
+  },
+  {
+    "id": "doi:10.1016/j.ebiom.2026.106545",
+    "record_sha256": "caf3721111ba4054563a6e67dc01dfec9bee4e25b014ea55dc7748ce489ee7b9",
+    "decision": "exclude",
+    "reason": "Mouse MRI and human CPTAC pancreatic CT features predict immune and stromal biomarkers. The comparison reuses CPTAC and measures neither an altered protein nor patient-linked HLA ligands.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43013920/"
+    }
+  },
+  {
+    "id": "doi:10.1016/j.lfs.2026.124785",
+    "record_sha256": "3f9bcadf1d324670b4428dfd7a5f658bc151f0e62ec597354db2e2f52e5b3822",
+    "decision": "exclude",
+    "reason": "Review of Cas9 cytotoxicity and immunogenicity. Turnover of the editing reagent is outside the mutation-to-tumor-ligand endpoint.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43035122/"
+    }
+  },
+  {
+    "id": "doi:10.1093/ajcp/aqag119",
+    "record_sha256": "b7b0e8144c0e07af194373f8c3add4c8adddb4511354214ad039fe8bc439e99f",
+    "decision": "exclude",
+    "reason": "Diagnostic guidance with illustrative scenarios and published registries for fusion-defined hematologic disease. Fusion-positive case illustrations cannot estimate the fraction of an unselected tumor cohort with fusions.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43017919/"
+    }
+  },
+  {
+    "id": "doi:10.1177/10445498261508940",
+    "record_sha256": "f2d5432420ea074a158057e7c9f59d543b68ed295ab2b8a86ad2029ba2a2a49f",
+    "decision": "exclude",
+    "reason": "The report discusses interferon-induced tumor-cell killing and kinase status. Surface expression of a sequence-confirmed altered ligand in a patient cohort was outside the reported endpoint.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43023786/"
+    }
+  },
+  {
+    "id": "doi:10.1182/blood.2026034793",
+    "record_sha256": "18c8227796607f5c10e05cd9c4152e58e02f2edc16fa95a9fa4e83315c76c384",
+    "decision": "exclude",
+    "reason": "The assay tracks clonal hematopoiesis in sickle cell disease mice, including after serial transplantation. A mouse model of predisposition cannot supply independent human tumor counts.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43038169/"
+    }
+  },
+  {
+    "id": "doi:10.1186/s40170-026-00452-3",
+    "record_sha256": "1c5cb0f37c415eb0ebef36dcba90b44843beb1b3e754e531a0117104178f0179",
+    "decision": "exclude",
+    "reason": "Ribosome profiling examines lactate-induced metabolic translation in cell models and xenografts. The measured proteins are not quantified per validated somatic allele in a human tumor cohort.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43040558/"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1agb/pdb",
+    "record_sha256": "31aafe3938d6fb34ee431db21b1769431bfcb559401e5ebe71cafafb26db5388",
+    "decision": "exclude",
+    "reason": "HLA crystal structures use selected viral antigen ligands. Structural entry counts cannot estimate native somatic ligand display across human tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1agb/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1agc/pdb",
+    "record_sha256": "f0169ad3f70538d28c39f15ab60e0b08dc07095b9017e5bfe8b42b39cc1c68ac",
+    "decision": "exclude",
+    "reason": "HLA crystal structures use selected viral antigen ligands. Structural entry counts cannot estimate native somatic ligand display across human tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1agc/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1agd/pdb",
+    "record_sha256": "126419f3ec72f8dfa806b374490dba0b36cbd38e3493dc7f76ef9787cd291b36",
+    "decision": "exclude",
+    "reason": "HLA crystal structures use selected viral antigen ligands. Structural entry counts cannot estimate native somatic ligand display across human tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1agd/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1age/pdb",
+    "record_sha256": "0aac4eab36f08488738071e234d2cb44d1a101348d77272186fdcf0870779ea4",
+    "decision": "exclude",
+    "reason": "HLA crystal structures use selected viral antigen ligands. Structural entry counts cannot estimate native somatic ligand display across human tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1age/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1agf/pdb",
+    "record_sha256": "e94b11ee0a0e80e16953ae97a138e2780e0517e6f91d29654878c88dc82c970c",
+    "decision": "exclude",
+    "reason": "HLA crystal structures use selected viral antigen ligands. Structural entry counts cannot estimate native somatic ligand display across human tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1agf/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1hhg/pdb",
+    "record_sha256": "9d74a684422550b9bfd9f4bb2dd27c686b741d3c9c223f3d78b95cd153892d41",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1hhg/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1hhh/pdb",
+    "record_sha256": "6eb0ea91d33e4e282c452882f21a644f48e9e7452484484aab226eabcd639d22",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1hhh/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1hhi/pdb",
+    "record_sha256": "2ed068ace72600ccfb44f6a07edfc24e6bf38b58ac7d6a249d6142d7b9beb191",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1hhi/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1hhj/pdb",
+    "record_sha256": "8f62b4fccd954f4a48746a88342340fec5f8b1fd5754bbdabbe197f5f72325ae",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1hhj/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1hhk/pdb",
+    "record_sha256": "5ba93ea3922e354dc54332fafe295e53ceac4b52ff42f19376f8d02105eb2e0f",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1hhk/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1hsb/pdb",
+    "record_sha256": "8e2c6a8a85a44eda4fd3559413dc66db0b22237280e7e8383abbe83398d15722",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1hsb/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1n5o/pdb",
+    "record_sha256": "5dc832910cdc854d84201efdde783d7c05ceb19a8fcd958d7f405973cf9a7d99",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1n5o/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1q5r/pdb",
+    "record_sha256": "aa38003cd3dfd496c3539438ebb819404a50223389da16b34fb3dce5f66f7a14",
+    "decision": "exclude",
+    "reason": "Bacterial proteasome coordinate entry. Its structure supplies no human tumor cleavage-product, source-protein coverage or native HLA denominator.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1q5r/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1x2j/pdb",
+    "record_sha256": "392d9beaa25836ccaee37e33cca7705d38f7ba4789d128a6c5e137f040e701a1",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1x2j/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1x2r/pdb",
+    "record_sha256": "65a47f0c185d3a0aa925afdfe7987dbffa315bb56cb3ab1d88f8a69e8cb28c18",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1x2r/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1xh3/pdb",
+    "record_sha256": "5d288d44293465fd507eaf55b8c4981b39ef973e9ebb48d050857134cc785740",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1xh3/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1xr8/pdb",
+    "record_sha256": "c09d58ed51ef17d0b2113568b785abc1e97c030c27069dec433b5ae88d895504",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1xr8/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb1xr9/pdb",
+    "record_sha256": "6d2c413e96c316fbfee77ca6b48a0b6ae2dfdd8aaa56552ba8a0cbbcbf18ed11",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb1xr9/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb2bsr/pdb",
+    "record_sha256": "74aff88a5eb17480b8f1c3b2821bb9739a3da08ed9cfdf0f77c2647e2b052f8f",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb2bsr/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb2bss/pdb",
+    "record_sha256": "7b41eaaa37feafce5d73fa6f50943bdf3e97fc322bd04eae875238b257996433",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb2bss/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb2bst/pdb",
+    "record_sha256": "977c8f3f6885b48c0ec45decb2873cfed73685b3abe87b09f709dcc5ade37101",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb2bst/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb2mqt/pdb",
+    "record_sha256": "9db95c71c9156d028cb5faf41e9130bec7652657bce97267e64196d3ee725fb2",
+    "decision": "exclude",
+    "reason": "Structure of a viral RNA domain. The accession describes neither somatic tumor alterations nor a directly measured tumor HLA ligand.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb2mqt/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb2mqv/pdb",
+    "record_sha256": "4f2fa07141439fbdb3618038715233f1a06139ae81284d35d5cd3242e943bb18",
+    "decision": "exclude",
+    "reason": "Structure of a viral RNA domain. The accession describes neither somatic tumor alterations nor a directly measured tumor HLA ligand.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb2mqv/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb2uzr/pdb",
+    "record_sha256": "7441b6ff42dd44d6e77b7ab66b5395bea4bff8ff9417b89080283c92ef12c62e",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb2uzr/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb2uzs/pdb",
+    "record_sha256": "66e50a8b926f7502e0dbd42d10343455b47bb4b7274261f0fdb7cee3a43a0f96",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb2uzs/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb3ik3/pdb",
+    "record_sha256": "fb8b3ea782ac6b3fac957d7d18fc90c1b06b02b7bfba356eebb542bfc684a1a6",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb3ik3/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb4hx1/pdb",
+    "record_sha256": "acf28111872aca6b738886aaba5da1c2a50fe27995ef837a0a9cc440be6eddf4",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb4hx1/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb4ij0/pdb",
+    "record_sha256": "a0f3f295914b4e176cf40d5356a8a41e2d6a4ee783cc2de361c1fce09d879e7c",
+    "decision": "exclude",
+    "reason": "A DNA duplex structure examines a chemical lesion associated with mutagenesis. This molecular fixture cannot estimate tumor mutation counts or patient-linked translation.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb4ij0/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb4itd/pdb",
+    "record_sha256": "31cff40ea19a332c6e82b4d331f401a36b14172666a358c4b75943fc9a451d03",
+    "decision": "exclude",
+    "reason": "A DNA duplex structure examines a chemical lesion associated with mutagenesis. This molecular fixture cannot estimate tumor mutation counts or patient-linked translation.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb4itd/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb4j96/pdb",
+    "record_sha256": "a8ab5892a3e313e7d4f21600cb1360296cdb6afbd8a7fbf1a31960e3f2131b6a",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb4j96/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb4j97/pdb",
+    "record_sha256": "fdceb74c5cba0343b83c1cf9fc1aa03fcb98a7feffa4e14a3803b8ddf326d78a",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb4j97/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb4rix/pdb",
+    "record_sha256": "4c1a10a6d0b86966d1938ec830d2f471250d09ca48ddd5c8f537cd93da847ffc",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb4rix/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb4riy/pdb",
+    "record_sha256": "f28b3d01886eaa30c4ebbe1280c9f1d1da793ea846e6c2da61bd9ee98e0a3f86",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb4riy/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb4wj5/pdb",
+    "record_sha256": "b1d7eb9d7c27f847784408f7b13937b3daa001acaefaded1056fdd77ec90314a",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb4wj5/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb5i6v/pdb",
+    "record_sha256": "05c5fac188c86e6c02b456d0532dbbb1287930d404329517a53c24ac4cf36108",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb5i6v/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb5ibm/pdb",
+    "record_sha256": "f7b953d30d34a6caffa72b1f6d03fd5d11f9b960bf3b5f4ded59d69e8a505023",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb5ibm/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb5ibs/pdb",
+    "record_sha256": "9c31eb3feec98434941f73c3c162e909bb49afc4795d2f3ad0325f7b8fa8f686",
+    "decision": "exclude",
+    "reason": "Selected protein-domain structure examines a cancer-associated alteration or its inhibitor. A structure of one molecular species supplies no cohort-level variant frequency, translation rate or native HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb5ibs/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb5iue/pdb",
+    "record_sha256": "d4800489807ca71359b15c6f7390849e8de46dc237911661cb8c24dbc06a34a2",
+    "decision": "exclude",
+    "reason": "Coordinates describe the nonclassical HLA-F molecule and its ligands. The tracked presentation endpoint uses classical HLA-A, -B and -C in human tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb5iue/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb5knm/pdb",
+    "record_sha256": "ec229f7acf5a22f3ad9c1fb80e79fb419ae4def3de2efa5bf5c8447028dc0a0e",
+    "decision": "exclude",
+    "reason": "Coordinates describe the nonclassical HLA-F molecule and its ligands. The tracked presentation endpoint uses classical HLA-A, -B and -C in human tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb5knm/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb5txs/pdb",
+    "record_sha256": "51614a3d70a7382c792ac88dedd190d96d0735d5bcdf5a63557176b77516ded6",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb5txs/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb5vz5/pdb",
+    "record_sha256": "6c91f72e159b97b9e49db8fde009b76e3efafba76fc08dee5ff3e43c02843417",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb5vz5/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6at9/pdb",
+    "record_sha256": "3b23465541ce1aec9d6d7a258fb89ecf9a769aab535539fb1955e32349e56fa7",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6at9/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6epd/pdb",
+    "record_sha256": "e2917467a800b864f1970b1ba060e4f062d68234a2fbf226ad385d5475a3d9a9",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6epd/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6epe/pdb",
+    "record_sha256": "64859411d5bee0f227d63be727472cb0ef410805eb63a7db93246e9d234285a7",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6epe/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6hby/pdb",
+    "record_sha256": "dad2fc4e0529c9468aa3dd6d9ae227c5cea9fc378c836101b616955f99984fe8",
+    "decision": "exclude",
+    "reason": "The deposited structure concerns class II antigen presentation. The tracked quantitative display endpoint uses classical HLA class I.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6hby/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6j2n/pdb",
+    "record_sha256": "416a6b0fbe106e561304f06cef7770182aa7f293e702f7b0abd156d373d9e42b",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6j2n/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6j2n/pdbx",
+    "record_sha256": "543a54c78664da71d543f881ebe06891d1961ab009e484c73fc0a05af5b1f008",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6j2n/pdbx"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6jtn/pdb",
+    "record_sha256": "48655c1d119320a73ee9176afd82f61d97350748bc23dabfbef257b7a01c9159",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6jtn/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6jto/pdb",
+    "record_sha256": "632787aacf7a06721236bfd3df83dc19d01274c1e97ad30de46e71ade322837a",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6jto/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6jtp/pdb",
+    "record_sha256": "78cffed2e712070bf595692706045fff6e81e6afe4b14ed7a2cbd047788a1db4",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6jtp/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6uli/pdb",
+    "record_sha256": "9231b82a5dece28c7f92e712610ba267d1a9f1e12b9764fe4966f1f2330167a1",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6uli/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6ulk/pdb",
+    "record_sha256": "de35f06b53b3f4804d4a9788719188eeff2251c5b8f89279f706a688b71731de",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6ulk/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6uln/pdb",
+    "record_sha256": "4c2254920fdd26dc37a4d62f2d6faf43f17cb9f59f1ff22137105dfa541bc670",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6uln/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6ulr/pdb",
+    "record_sha256": "0a00f8b07d3572a3c47aa2f805d277bdc2f5c782c08f858234ddf06418a19412",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6ulr/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6uon/pdb",
+    "record_sha256": "fc844465351b698f320c7d42fb6c99b8ccdfb5efaa68c9b3b96decab22b473f8",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6uon/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb6wnk/pdb",
+    "record_sha256": "8483ae2830b4135bf32f6d1d45541808e997313cff80aaf2fd781349beb87aa9",
+    "decision": "exclude",
+    "reason": "Bacterial proteasome coordinate entry. Its structure supplies no human tumor cleavage-product, source-protein coverage or native HLA denominator.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb6wnk/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb7sr5/pdb",
+    "record_sha256": "ac819ca1d3d724a550956ffab12ab5ff4e760b145cb4b5d23a5d24a876f8efe4",
+    "decision": "exclude",
+    "reason": "Selected tumor-antigen complex studied by structural biology. A deposited complex can inform molecular illustration, but does not establish independent patients tested or mutation-confirmed ligands eluted from their tumors.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb7sr5/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb8e13/pdb",
+    "record_sha256": "45dee866db96f766e4e20b26532582a52c5a16cd9fc22bcca8ca275d6902e7ac",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb8e13/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb8e2z/pdb",
+    "record_sha256": "3cccb39d252d12a380caac8d267736daff0ae603a92f06c6782e63d3fcfb078c",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb8e2z/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb8e8i/pdb",
+    "record_sha256": "865534653e19761876a4d24eb1843e443f46f9c6f423dcb33f0c4042aac48ff6",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb8e8i/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb8ec5/pdb",
+    "record_sha256": "f76ba548a8f636c0ea12f904759f461d7057cf2c0fd7b20c9ef31182013dac34",
+    "decision": "exclude",
+    "reason": "A selected peptide–HLA structure establishes ligand conformation. This coordinate entry has no sampled-tumor denominator or direct native somatic-ligand assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb8ec5/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb8usc/pdb",
+    "record_sha256": "9bd6f6bde6497beba77280ad4d927c863ee37ce0aa5d68528f2c26865df7af0e",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb8usc/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb9e8g/pdb",
+    "record_sha256": "f4931c8ca538e52bb4db4982f1bae58f74f1ef2086635726a0da0b3c9a356d46",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb9e8g/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb9e8j/pdb",
+    "record_sha256": "8a3db5477ac3c735d8de40b98888bc06c5892dffc2e39d8cc6687e2379854fd1",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb9e8j/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb9e8k/pdb",
+    "record_sha256": "d9446e062e49c987643cb9d2495597a685ac3965c063bf55d69366f59628c76a",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb9e8k/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb9e8l/pdb",
+    "record_sha256": "526384c02761aa4b9195de5e6829e04c3e7d1a0ac57b9bd188bf535e62a73ab7",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb9e8l/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb9e8n/pdb",
+    "record_sha256": "342d8d99cfdc3449a41b837616d9b33d845e6d93f269f37a4ccfaf1d40d0fed6",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb9e8n/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb9e8o/pdb",
+    "record_sha256": "56beae0145fd3125a1e2cfc392a62240cfcccd976e8f0991a66367389023b3d9",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb9e8o/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb9e8q/pdb",
+    "record_sha256": "64c01afe34bf23323494f3dfbd27b6e2dc4fd18ed1bc3e48b8e0f3866d4b8841",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb9e8q/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb9pdi/pdb",
+    "record_sha256": "9b471a15f7723aec2bcdfadeca736347c0d95ec366d0abf92c6289d30aacb937",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb9pdi/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb9pdl/pdb",
+    "record_sha256": "4561bdd8c83f1159dc3d165b6a3397856829268f8e804a380a637827d80f30a9",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb9pdl/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb9pdn/pdb",
+    "record_sha256": "00dc04b390b97a327be30057be3a5c45dbeb121f93b85b151492f5e66384b21c",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb9pdn/pdb"
+    }
+  },
+  {
+    "id": "doi:10.2210/pdb9pf1/pdb",
+    "record_sha256": "6ef7c84850805c0af25a45e9c01dcdfb83ef2fc90034e76502c974d8eafa76cc",
+    "decision": "exclude",
+    "reason": "Proteasome structures capture selected substrate-processing conformations. Coordinates alone do not measure digestion products, cleavage probabilities or altered HLA ligands across patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.2210/pdb9pf1/pdb"
+    }
+  },
+  {
+    "id": "doi:10.25345/c58c9rk1d",
+    "record_sha256": "7580451d227ae9da6318e81173fdb06d14b82116d892cf4a9a005a1f12c5cfd1",
+    "decision": "defer",
+    "reason": "The official MSV000104023 page identifies a still-private deposit. Confirm material, assay, somatic search and independent donors from released primary evidence before using it at any stage.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "MassIVE public accession status",
+      "url": "https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000104023"
+    }
+  },
+  {
+    "id": "doi:10.25345/c5js9hp5d",
+    "record_sha256": "c022d73677b1f23aa55783533ebec60ee2471c98d253e5d6948060f35ecc67c0",
+    "decision": "exclude",
+    "reason": "The registered endpoint is affinity and internalization of anti–Plexin-B2 antibodies. The current private MassIVE deposit supplies no publicly verifiable patient-level somatic or HLA assay.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "MassIVE public accession status and DOI registration",
+      "url": "https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000104013"
+    }
+  },
+  {
+    "id": "doi:10.3389/fimmu.2026.1984200",
+    "record_sha256": "eef80fcd40c1368f983922c913efb360ed0ebad36c75897720905dd5326b792c",
+    "decision": "exclude",
+    "reason": "Review of noncanonical microproteins and shared tumor antigens. Extract any new patient-level data from the primary studies, with a somatic variant assignment for the tracked endpoint.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43022210/"
+    }
+  },
+  {
+    "id": "doi:10.3389/fonc.2026.1974260",
+    "record_sha256": "219ee022cf7ae7772d39ae01c47dc19ed84033629437a56585b425003b0851ba",
+    "decision": "exclude",
+    "reason": "Commentary on reuse of gastric cancer omics cohorts, including TCGA. It introduces no independently measured altered protein or tumor ligand cohort.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43005429/"
+    }
+  },
+  {
+    "id": "doi:10.3390/ijms27219717",
+    "record_sha256": "66c3038eefc5ffce10df9023265316ed1e212519e978496ae5a12906e4596c93",
+    "decision": "exclude",
+    "reason": "Human biopsies measure endogenous retroviral RNA, with cell-line and mouse experiments. Expression of inherited retroviral sequences does not establish mutation-derived HLA ligands in the sampled patients.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43027965/"
+    }
+  },
+  {
+    "id": "doi:10.34133/csbj.0274",
+    "record_sha256": "5e20b50ac651e0ee77a1802f2fe86273876e95316b763637ef2b49a50ddbd9b9",
+    "decision": "exclude",
+    "reason": "The published demonstration reanalyzes HLA MS data from breast cancer and melanoma cell lines. The platform’s reference library, predictions and cell-line spectra do not supply an assayed patient cohort.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Open primary publication",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13760139/"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.18415987",
+    "record_sha256": "aeb87bbae82fd3df3e37ae6ce929a2c947afc97c6bc977d2584d79311614bdd8",
+    "decision": "exclude",
+    "reason": "The depositor describes inherited pancreatic cancer susceptibility in a case–control GWAS. The concept and version DOI describe the same release of germline summary statistics.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.18415987"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.18415988",
+    "record_sha256": "65390b07325be6f71fd9b4119c37a59e04c7879021d2429b3907550af3e204ca",
+    "decision": "exclude",
+    "reason": "The depositor describes inherited pancreatic cancer susceptibility in a case–control GWAS. The concept and version DOI describe the same release of germline summary statistics.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.18415988"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24142878",
+    "record_sha256": "6d2cb78595c06a98e25cd8b3720b43c2a619b6cd18d587acaf247446b377a1e6",
+    "decision": "defer",
+    "reason": "The concept and version DOI resolve to the same restricted atlas. The version record describes code and listed no public files at review. Obtain input study provenance, callable cases and unique donors before comparing its somatic estimates against prior cohorts.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Zenodo version record, access and file listing",
+      "url": "https://zenodo.org/api/records/24142879"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24142879",
+    "record_sha256": "94f1176d0709b239f43715ada41a2626a896b1bda2462f930f31137e6afb9919",
+    "decision": "defer",
+    "reason": "The concept and version DOI resolve to the same restricted atlas. The version record describes code and listed no public files at review. Obtain input study provenance, callable cases and unique donors before comparing its somatic estimates against prior cohorts.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Zenodo version record, access and file listing",
+      "url": "https://zenodo.org/api/records/24142879"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24183227",
+    "record_sha256": "f79dd9daa78ab5e8881e80f7214ec25a9a3ee7e355d015984449635c0ed345ff",
+    "decision": "exclude",
+    "reason": "This concept/version pair embeds the existing PCAWG somatic structural variant consensus in a reference graph. The deposited catalog and alignment analysis do not represent an independently sequenced tumor cohort.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Zenodo version record and file listing",
+      "url": "https://zenodo.org/api/records/24183228"
+    }
+  },
+  {
+    "id": "doi:10.5281/zenodo.24183228",
+    "record_sha256": "ff93d3e864f23cc764278c443854445b61184d321ee679d02762544225f8fd93",
+    "decision": "exclude",
+    "reason": "This concept/version pair embeds the existing PCAWG somatic structural variant consensus in a reference graph. The deposited catalog and alignment analysis do not represent an independently sequenced tumor cohort.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Zenodo version record and file listing",
+      "url": "https://zenodo.org/api/records/24183228"
+    }
+  },
+  {
+    "id": "doi:10.6084/m9.figshare.35000138",
+    "record_sha256": "4b89c029ac7d39cb407d7052cd274d9fa412abcc6e769c8bc059228b4b579835",
+    "decision": "exclude",
+    "reason": "Both records point to the same FGFBP2 supplement. The primary study tests an alteration in cancer-associated fibroblasts and conditioned media. It supplies no cross-patient frequency or HLA assay for malignant cells.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Primary study Crossref abstract and Figshare deposit relations",
+      "url": "https://api.crossref.org/works/10.1186/s12967-026-09137-3"
+    }
+  },
+  {
+    "id": "doi:10.6084/m9.figshare.35000138.v1",
+    "record_sha256": "cf868ec2b4782fc68bed6d2fc2e36042da68cd0687bbddd9ee19d85bb46cf0ca",
+    "decision": "exclude",
+    "reason": "Both records point to the same FGFBP2 supplement. The primary study tests an alteration in cancer-associated fibroblasts and conditioned media. It supplies no cross-patient frequency or HLA assay for malignant cells.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Primary study Crossref abstract and Figshare deposit relations",
+      "url": "https://api.crossref.org/works/10.1186/s12967-026-09137-3"
+    }
+  },
+  {
+    "id": "doi:10.7937/6rda-p940",
+    "record_sha256": "7c873993d8badacc09a11f9e5ab067599feb3cad1af68a27cef3d8854628bc86",
+    "decision": "exclude",
+    "reason": "This accession contains digitized tumor pathology slides from an ovarian proteogenomic study. Variant-aware RNA, protein and patient-matched assay tables would require their own molecular source.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/6rda-p940"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2014.k6m61gdw",
+    "record_sha256": "b0740ad70aadfddf20b3bd9a1de9cc7e887f67edb5ee81c2953042acc7fde2ba",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2014.k6m61gdw"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.8lng8xdr",
+    "record_sha256": "e625196da8174eb94f0d3c5f86cf4e0f29ef2aad4a9342c9fa09a1c0d831a0af",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.8lng8xdr"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.9zfrvf1b",
+    "record_sha256": "9412e04e7a126ee5a6b319ce52a736418a95a86fca947de1eb5239fc33ceea4d",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.9zfrvf1b"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.ab2nazrp",
+    "record_sha256": "661c54d29735e15330e0c023c01eea8c747c17d7821bc2c43b84bf06b28248ce",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.ab2nazrp"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.acwogbef",
+    "record_sha256": "a3c316ab880c4340fced53360bcff74fa54c1328d9cae4875bcb7ec82643bfad",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.acwogbef"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.cx6ylsux",
+    "record_sha256": "9e2ecde7b4b5c9b55031e4ea6d3de91c1a1228b0c518e74eb84606913c6c75b4",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.cx6ylsux"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.f7ppnpnu",
+    "record_sha256": "beb5dd197b1f74270a4cba23c7b14c02539a6a6fd865aa1b010793e36b511899",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.f7ppnpnu"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.gdhl9kim",
+    "record_sha256": "ca4f7c540a42a9317b5b5b2fbf4265807b4fadc39c78d85545d5360b105acb2d",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.gdhl9kim"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.gkj0zwac",
+    "record_sha256": "210baa44c681abb94d059417d7539ce154ebc5cd5bf48246e2c91c5dae3abb7f",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.gkj0zwac"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.hjjhboxz",
+    "record_sha256": "e35ed1187e52882bd7de48c6690129bff2b6e8b4c54a82921a0cb633a2b99f30",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.hjjhboxz"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.immqw8uq",
+    "record_sha256": "f2657fe8f1be3f47091dfb4a70696e324e2604a40978e20a25a9173b7d6ea5d7",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.immqw8uq"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.jgnihep5",
+    "record_sha256": "94c6f2ec23b199b4ba0b585196d7c3bd61cfbcd2ba86e072b73dc6fc21930846",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.jgnihep5"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.l4ltd3tk",
+    "record_sha256": "b6741b43ba6cea4af41c17f41f9020512e142c9c5b040f3a5ea3a7074552961a",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.l4ltd3tk"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.lxkq47ms",
+    "record_sha256": "6ff7eec1fb1a703d624f1824a3b269a9c72f3452bb979b4ce4a2185fa6920dda",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.lxkq47ms"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.ndo1mdfq",
+    "record_sha256": "251dc2d4c637efe84ef9c372614369350c1c2b9f403c646a72401a40dc63ba3d",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.ndo1mdfq"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.rnyfuye9",
+    "record_sha256": "c0f939011ee385609ac5a53b34298ab105847c57963a3809639f2770f9aa16e3",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.rnyfuye9"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.sq4m8yp4",
+    "record_sha256": "267baa1e8a6a1fa664386199f3dffefda62afb234422cdaa579ac7fb593ff3e9",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.sq4m8yp4"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.tygkkfmq",
+    "record_sha256": "42e37a8650b573ff66e87f38e6bf1944468e4b47a00c9af8bee657260ba10aee",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.tygkkfmq"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.v6pbvtdr",
+    "record_sha256": "a679b02279d46801052390be08d0430f81fbfe106c216426fadcc9247572da3d",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.v6pbvtdr"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.vptnrgfy",
+    "record_sha256": "ab914ff829f10ba98c569386d75a52585f2c5108c43e33442ad58be24920b120",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.vptnrgfy"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.yu3rbczn",
+    "record_sha256": "46663531652549022a59331867d9f5eb14d4a0c03cb2f0317a9569996fe2e59c",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.yu3rbczn"
+    }
+  },
+  {
+    "id": "doi:10.7937/k9/tcia.2016.yxoglm4y",
+    "record_sha256": "ee5ea2b359946460cc1e5c0fdb7ffcc7fdeadc4fa26ad03215f80b56801960e2",
+    "decision": "exclude",
+    "reason": "The TCIA record describes imaging linked to existing TCGA patients. Images supply no new independent mutation cohort or direct variant-specific protein or HLA measurement.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/k9/tcia.2016.yxoglm4y"
+    }
+  },
+  {
+    "id": "doi:10.7937/tcia.2019.9stoinf1",
+    "record_sha256": "3dd3ad88e54196d1ecf7e2ab36f842d88f76f67c4febafbaff62be221547b027",
+    "decision": "exclude",
+    "reason": "The ovarian CT–proteomics study associates imaging features with protein abundance in a selected TCGA cohort. No variant-specific protein or native HLA endpoint is identified in this record.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Depositor metadata (DataCite)",
+      "url": "https://api.datacite.org/dois/10.7937/tcia.2019.9stoinf1"
+    }
+  },
+  {
+    "id": "epmc:PMC:PMC12600145",
+    "record_sha256": "971c9d6cacb1c9f8604daf3964dd5a9e1e793c153206e7afe70c46451edcb9c0",
+    "decision": "defer",
+    "reason": "In conference abstract IMMU-54 the authors profiled 20 cancer tissue samples, including 14 glioblastomas. The reported initial findings are tumor-associated antigens. The somatic-antigen analysis is described as future work. Reopen on a patient-linked results release.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Published meeting abstract, PMC12600145",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12600145/"
+    }
+  },
+  {
+    "id": "epmc:PMC:PMC12600636",
+    "record_sha256": "ab19c1b322a37264f2e9d84cbed30837f1768cff0d1fe0380d58c08559e8c376",
+    "decision": "defer",
+    "reason": "EPCO-01 counts 923 brain metastases and 82 matched primary tumors. The subsequent atlas from the same group includes 1,032 metastases and 160 whole-exome samples (78 newly generated, 82 public, Table 2). Reconcile those specimens, donors and overlapping cohorts before extracting a somatic rate. The author correction concerns a grant number.",
+    "reviewed_on": "2026-11-25",
+    "reviewer": "Codex preliminary evidence screen",
+    "basis": {
+      "type": "Published meeting abstract and subsequent primary article, Table 2",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12946203/",
+      "related_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12600636/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13083926/"
+      ]
+    }
   }
 ]
