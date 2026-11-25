@@ -487,6 +487,17 @@
         }
       ],
       "scope": "The clinical records, somatic calls and HLA discovery runs require a specimen crosswalk. A raw-run count does not give the number of donors with a mutation-supported HLA-I ligand."
+    },
+    {
+      "id": "monte-luad-native-ms",
+      "stage": "presentation",
+      "paper": "https://doi.org/10.1038/s41467-023-37547-0",
+      "repository": "https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000090437",
+      "accession": "MSV000090437",
+      "pmcid": "PMC10070353",
+      "publication_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10070353/",
+      "text_body_sha256": "7d8085aa3b8032a96a5dc305511d82c9361026a626a1fb23aeea823ca29edfc4",
+      "scope": "Ten selected lung adenocarcinoma tumors. Distinct mutation-bearing ligand species, donor-level detection, and the molecular source of each ligand are separate outcomes. The comparison uses the primary article and Figure 5D."
     }
   ],
   "handoff_sources": [
