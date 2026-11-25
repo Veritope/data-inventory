@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "catalog_groups": [
+    {"stage":"somatic","ids":["pcawg","tcga","tcga-mc3","tcga-pancanatlas","target"],"use":"WGS, exome/RNA and pediatric cohorts. Resolve overlap across TCGA-derived resources before pooling."},
+    {"stage":"translation","ids":["cptac","uniprot"],"use":"Proteogenomics and reference proteins. Pin the studied cohort and the proteome release, isoforms and file hash."},
+    {"stage":"processing","ids":["specht-2020-proteasome-peptide-db"],"use":"Isolated enzyme digestion observations. An in vitro product does not establish tumor cell surface display."},
+    {"stage":"presentation","ids":["bassani-sternberg-2016-melanoma","marcu-2021-hla-ligand-atlas-raw","hla-ligand-atlas-usecase","onekg-hla-types"],"use":"Separate primary tumor observations, healthy-tissue ligand measurements, and population HLA typing."},
+    {"stage":"comparative","ids":["pxd074485-canine-tumor-peptides","canine-dla88-immunopeptidome-atlas"],"use":"Canine evidence is a separate stratum with its own assay and patient denominator."}
+  ],
+  "aliases": [
+    {"canonical":"bassani-sternberg-2016-melanoma","aliases":["bassani-2016-melanoma-neoepitopes"],"same_deposition":"PXD004894","doi":"10.1038/ncomms13404"},
+    {"canonical":"marcu-2021-hla-ligand-atlas-raw","aliases":["hla-ligand-atlas-dda"],"same_deposition":"PXD019643"}
+  ],
+  "pinned_sources": [
+    {"id":"filip-2023-tcga-arcashlaquant","stage":"presentation","paper":"https://doi.org/10.1186/s13073-023-01154-x","repository":"https://github.com/RabadanLab/arcasHLA","git_commit":"9fa54a212d134b0d9894d1fc19ec1bdc6f62eb55","path":"results/TCGA-cohorts-arcasHLAquant-results.tsv","versioned_url":"https://github.com/RabadanLab/arcasHLA/blob/9fa54a212d134b0d9894d1fc19ec1bdc6f62eb55/results/TCGA-cohorts-arcasHLAquant-results.tsv","sha256":"3742bf8179e26ef5820df46c1048db1c8e4a2b3dd0f602957d40bd00c0580dcb","role":"HLA-A/B/C genotype and allele-specific expression in the assayed TCGA cohort; parent article reports aggregate HLA-type counts.","caveat":"TCGA-selected participants. Genotyping and RNA abundance do not measure malignant cell surface peptide display. Use exact sample-type, missingness and patient deduplication rules before analysis. Store only aggregate outputs."}
+  ],
+  "handoff_sources": [
+    {"id":"rvdriver-zenodo-15656415","stage":"somatic","paper":"https://doi.org/10.1186/s13059-025-03557-y","data":"https://doi.org/10.5281/zenodo.15656415","role":"Selected paired DNA/RNA somatic-mutation cohort","status":"Reported in supplied analysis; verify deposition version, exclusion criteria, reuse terms and file hashes before import."},
+    {"id":"soh-human-20s-pxd044463","stage":"processing","paper":"https://doi.org/10.1038/s41467-024-45339-3","data":"https://www.ebi.ac.uk/pride/archive/projects/PXD044463","other_accession":"MSV000092631","role":"Whole-substrate human 20S proteasome digestion experiment","status":"Reported in supplied analysis; verify sample and file identities across mirrors before import."},
+    {"id":"ligand-mhc-atlas-2025","stage":"presentation","paper":"https://doi.org/10.1093/bib/bbaf314","role":"Pooled ligand atlas across studies; distinct resource from the normal-tissue HLA Ligand Atlas","status":"Reported in supplied analysis; pin allele tables and inspect tissue, FDR and source-study overlap before import."}
+  ]
+}
